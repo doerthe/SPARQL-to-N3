@@ -18,6 +18,6 @@
 {?t_3 math:lessThan 18 . ?t_2 my:age ?t_3} => {ex:query ex:leadsTo true}.
 {(1 {?t_3 math:lessThan 18 . ?t_2 my:age ?t_3} ()) log:collectAllIn ?U_0} => {ex:query ex:leadsTo false}.
 
-#2023-02-01T10:57:30.607Z in=31 out=3 ent=3 step=4 brake=3 inf=70534 sec=0.044 inf/sec=1603045
+#2023-02-01T15:09:22.531Z in=31 out=3 ent=3 step=4 brake=3 inf=72528 sec=0.059 inf/sec=1229288
 #ENDS
 
