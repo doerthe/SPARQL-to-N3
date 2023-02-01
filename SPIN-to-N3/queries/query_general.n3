@@ -1,0 +1,25 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+
+# rule to generate rule
+{   ?x a       sp:Construct ;
+      sp:templates ?temps ;
+      sp:where ?where.
+ 	    ?where aux:createGraph ?g1.
+      ?temps aux:createGraph ?g2
+	}=>{?g1=>?g2. }.
+
+  # rule to generate rule
+  {   ?x a       sp:Ask ;
+        sp:where ?where.
+   	   ?where aux:createGraph ?g1.
+  	}=>{?g1 => {ex:query ex:leadsTo true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{ex:query ex:leadsTo false}
+    }.

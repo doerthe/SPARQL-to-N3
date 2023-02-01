@@ -1,0 +1,23 @@
+#Processed by EYE v2.5.0 josd
+#eye construct-1.n3 ask-1.ttl aux.n3 --query query_general.n3 --nope --quantify http://spinrdf.org/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix my: <http://example.org/my#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+
+
+{?t_0 ex:child ?t_1. ?t_1 ex:child ?t_2} => {?t_2 ex:grandParent ?t_0}.
+{?t_3 math:lessThan 18 . ?t_2 my:age ?t_3} => {ex:query ex:leadsTo true}.
+{(1 {?t_3 math:lessThan 18 . ?t_2 my:age ?t_3} ()) log:collectAllIn ?U_0} => {ex:query ex:leadsTo false}.
+
+#2023-01-31T15:38:48.335Z in=30 out=3 ent=3 step=4 brake=3 inf=68662 sec=0.047 inf/sec=1460894
+#ENDS

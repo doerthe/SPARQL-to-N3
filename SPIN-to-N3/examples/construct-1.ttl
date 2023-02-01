@@ -1,0 +1,26 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+# example from https://spinrdf.org/sp.html
+    [ a       sp:Construct ;
+      rdfs:comment "infer grandParent relationship"^^xsd:string ;
+      sp:templates ([ sp:object sp:_grandParent ;
+                      sp:predicate ex:grandParent ;
+                      sp:subject spin:_this
+                    ]) ;
+      sp:where ([ sp:object spin:_this ;
+                  sp:predicate ex:child ;
+                  sp:subject sp:_parent
+                ]
+                [ sp:object sp:_parent ;
+                  sp:predicate ex:child ;
+                  sp:subject sp:_grandParent
+                ])
+    ].
