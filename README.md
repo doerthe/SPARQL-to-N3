@@ -12,5 +12,5 @@ http://dig.csail.mit.edu/2009/policy-assurance/sparql2n3.py
 The ClioPatria SPARQL editor (thanks Tim!):  
 https://cliopatria.swi-prolog.org/yasgui/index.html
 
-Runtime:
+Runtime:  
 https://github.com/ClioPatria/ClioPatria/blob/master/rdfql/sparql_runtime.pl
