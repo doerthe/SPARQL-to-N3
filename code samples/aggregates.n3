@@ -1,0 +1,62 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> . 
+@prefix log: <http://www.w3.org/2000/10/swap/log#> . 
+@prefix math: <http://www.w3.org/2000/10/swap/math#> . 
+@prefix : <http://sparql-to-n3/> .
+@base <http://sparql-to-n3/> .
+
+:book1 a :Book ; :cost 100 ; :cost 200 .
+:book2 a :Book ; :cost 120 ; :cost 125 .
+
+:query a :Query .
+    # :groupBy ?x ;
+    # :aggregateBy ?cost ;
+    #:aggregator math:sum .
+    # :where {
+    #     ?x a :Book ;
+    #         :cost ?cost
+    # } .
+
+{
+    ?query a :Query .
+        # :groupBy ?groupVar ;
+        # :aggregateBy ?aggrVar ;
+  		# :aggregator ?aggr ;
+        # :where ?where .
+
+    # collect pairs of (groupVar, aggrVar) values
+    ( ( ?x ?cost ) 
+    {
+        ?x a :Book ;
+            :cost ?cost
+    } ?pairs ) log:collectAllIn _:t .
+
+    # get all groupVar values from these pairs
+    ( ?groupVal { ?pairs list:member ?pair . ( ?pair 0 ) list:memberAt ?groupVal } ?groupVals )
+        log:collectAllIn _:t .
+
+    # get all unique groupVar values
+    ?groupVals list:removeDuplicates ?uniqueGroupVals .
+
+    ((?groupVal  ?result )
+    {
+        # for each unique groupVar value
+        ?uniqueGroupVals list:member ?groupVal .
+        "T0" log:trace ( ?groupVal ) .
+        # collect all corresponding aggrVar values
+        (?val
+        {
+            ?pairs list:member ?pair .
+            ( ?pair 0 ) list:memberAt ?groupVal .
+            ( ?pair 1 ) list:memberAt ?val
+        } ?values) log:collectAllIn _:t .
+        
+        "T1" log:trace ( ?values ) .
+        
+        # calculate result!
+        ?values math:sum ?result .
+
+    } ?groupResults) log:collectAllIn _:t .
+
+} => {
+    ?query :results ?groupResults .
+} .
