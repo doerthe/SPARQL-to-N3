@@ -5,7 +5,7 @@ https://n3-editor.herokuapp.com/n3/sparql2n3/
 
 Some useful links from our meetings:
 
-SPARQL builtins:
+SPARQL builtins:  
 https://www.w3.org/TR/sparql11-query/#SparqlOps
 https://github.com/TriplyDB/Yasgui/blob/438ed23889546a3c788f385d1dd9852cdaf1d3f0/packages/yasqe/grammar/sparql11-grammar.pl#L523
 
