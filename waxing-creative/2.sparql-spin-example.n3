@@ -1,0 +1,53 @@
+@prefix source: <http://source.org/source#> .
+@prefix target: <http://target.org/target#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema# .
+@prefix spin: <http://spinrdf.org/spin# .
+@prefix : <http://example.org/ .
+
+{
+
+[]  a spin:Construct ;
+        spin:templates (
+            [ spin:object target:Subject ;
+                spin:predicate rdfs:type ;
+                spin:subject [ spin:varName "subject" ]] 
+            [ spin:object [ spin:varName "lgrade" ] ;
+                spin:predicate target:grade ;
+                spin:subject [ spin:varName "subject"]]
+        ) ;
+        spin:where (
+            [ spin:object source:Module ;
+                spin:predicate rdfs:type ;
+                spin:subject [ spin:varName "s" ]] 
+            [ spin:object [ spin:varName "grade" ] ;
+                spin:predicate source:hasGrade ;
+                spin:subject [ spin:varName "s" ]] 
+            [ spin:object [ spin:varName "moduleID" ] ;
+                spin:predicate source:hasModuleID ;
+                spin:subject [ spin:varName "s" ]] 
+            [ spin:object [ spin:varName "moduleName"] ;
+                spin:predicate source:hasModuleName ;
+                spin:subject [ spin:varName "s"]] 
+            [ a spin:Bind ;
+                spin:expression [ a spin:lcase ;
+                                    spin:arg1 [ spin:varName "grade" ]] ;
+                spin:variable [ spin:varName "lgrade" ]] 
+            [ a spin:Bind ;
+                spin:expression [ a spin:uri ;
+                                    spin:arg1 [ a spin:concat ;
+                                                    spin:arg1 "http://example.org/" ;
+                                                    spin:arg2 [ spin:varName "moduleID" ] ;
+                                                    spin:arg3 "_" ;
+                                                    spin:arg4 [ a spin:replace ;
+                                                                spin:arg1 [ spin:varName "moduleName" ] ;
+                                                                spin:arg2 " " ;
+                                                                spin:arg3 "" ]]] ;
+                spin:variable [ spin:varName "subject"]
+            ]
+        ) .
+} 
+=> 
+{
+    ?subject a target:Subject ;
+    target:grade ?lgrade .
+} .
