@@ -15,15 +15,19 @@
  ?suri string:startsWith "http://spinrdf.org/".
  ?s e:skolem ?s1.
  ("!") e:derive true}.
-{?s aux:gets ?s1}<={?s sp:variable [ sp:varName ?name ]. ?name e:skolem ?s1.}.
+{?s aux:gets ?s1}<={?s  sp:varName ?name . ?name e:skolem ?s1. ("!") e:derive true
+  }.
 {?s aux:gets ?s}<={}.
 
 
 #create a graph from subject-predicate-object patterns
 {?list aux:createGraph ?graph }<={
-  ({?s ?p ?o}{?t list:in ?list. ?t sp:subject ?s;
+  ({?s1 ?p1 ?o1}{?t list:in ?list. ?t sp:subject ?s;
                                                sp:predicate ?p;
                                                sp:object ?o.
+                                               ?s aux:gets ?s1.
+                                               ?p aux:gets ?p1.
+                                               ?o aux:gets ?o1
                } ?whereList) log:collectAllIn ?scope.
   #filter
   (?tr {?t list:in ?list. ?t a  sp:Filter ;
@@ -31,7 +35,9 @@
                               ?e sp:arg1 ?a1 ;
                                 sp:arg2 ?a2 ;
                                 a ?f.
-                  (?f ?a1 ?a2) aux:funcTranslation ?tr.
+                                ?a1 aux:gets ?a11.
+                                ?a2 aux:gets ?a22.
+                  (?f ?a11 ?a22) aux:funcTranslation ?tr.
                } ?filterList) log:collectAllIn ?scope.
             (?whereList ?filterList  ) list:append ?outList.
             ?outList  log:conjunction ?graph.
