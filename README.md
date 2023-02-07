@@ -1,5 +1,8 @@
 # SPARQL-to-N3
 
+SPARQL-SPIN-N3 editor:
+https://n3-editor.herokuapp.com/n3/sparql2n3/
+
 Some useful links from our meeting:
 
 https://spinrdf.org/sp.html#overview  
