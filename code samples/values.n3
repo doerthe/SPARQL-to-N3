@@ -1,0 +1,26 @@
+# VALUES example from https://www.w3.org/TR/sparql11-query/#inline-data-examples
+
+@prefix dc:   <http://purl.org/dc/elements/1.1/> .
+@prefix :     <http://example.org/book/> .
+@prefix ns:   <http://example.org/ns#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+
+:book1  dc:title  "SPARQL Tutorial" .
+:book1  ns:price  42 .
+:book2  dc:title  "The Semantic Web" .
+:book2  ns:price  23 .
+
+# SELECT ?book ?title ?price
+# {
+#    VALUES ?book { :book1 :book3 }
+#    ?book dc:title ?title ;
+#          ns:price ?price .
+# }
+
+{
+    (:book1 :book3) list:member ?book.
+    ?book dc:title ?title ;
+        ns:price ?price .
+} => {
+    [] :result (?book ?title ?price).
+}.
