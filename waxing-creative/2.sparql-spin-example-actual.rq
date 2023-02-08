@@ -1,0 +1,19 @@
+
+prefix source: <http://source.org/source#>
+prefix target: <http://target.org/target#>
+prefix : <http://example.org/>
+
+construct {
+    ?subject a target:Subject ;
+        target:grade ?lgrade .
+}
+where {
+    ?s a source:Module ;
+        source:hasGrade ?grade ;
+        source:hasModuleID ?moduleID ;
+        source:hasModuleName ?moduleName .
+    bind(lcase(?grade) as ?lgrade)
+    bind(uri(concat('http://example.org/', ?moduleID, "_", replace(?moduleName, ' ', ''))) as ?subject)
+
+}
+

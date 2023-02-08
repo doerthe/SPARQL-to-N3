@@ -1,0 +1,25 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix spin: <http://spinrdf.org/sp#> .
+@prefix ex: <http://example.org#> .
+
+{
+    # sparql is converted to the spin below in the rule before sending to reasoner
+    []  a   spin:Construct ;
+        spin:templates
+                ([ spin:object [ spin:varName "grandParent"] ;
+                    spin:predicate ex:grandParent ;
+                    spin:subject [ spin:varName "this"]]) ;
+        spin:where(
+                [ spin:object [ spin:varName "this"] ;
+                    spin:predicate ex:child ;
+                    spin:subject [ spin:varName "parent"]] 
+                [ spin:object [ spin:varName "parent"] ;
+                    spin:predicate ex:child ;
+                    spin:subject [ spin:varName "grandParent"]]) .
+
+    (?grandParent " is the grandparent of " ?this ) string:concatenation ?result.
+}
+=>
+{ 
+    :result :is ?result . 
+} .

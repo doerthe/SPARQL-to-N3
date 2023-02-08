@@ -1,0 +1,21 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix ex: <http://example.org#> .
+
+{  
+    # not sure if this is the right way to do this, 
+    # would it be better to make it a literal string as an object? e.g., [] log:includes """..."""
+    CONSTRUCT {
+    	?this ex:grandParent ?grandParent .
+    }
+    WHERE {
+        ?parent ex:child ?this .
+        ?grandParent ex:child ?parent .
+    }
+    """
+    (?grandParent " is the grandparent of " ?this ) string:concatenation ?result.
+}
+=>
+{
+    :result :is ?result .
+} .
