@@ -1,5 +1,5 @@
 #Processed by EYE v2.7.5 josd
-#eye examples/construct-2.ttl examples/construct-1.ttl examples/ask-1.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/
+#eye examples/construct-2.ttl examples/construct-1.ttl examples/ask-1.ttl examples/union.ttl examples/union_1.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -13,13 +13,20 @@
 @prefix my: <http://example.org/my#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4430964635776878947#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3413364511422873752#>.
 
-{?t_7 <http://example.org#child> ?t_8. ?t_9 <http://example.org#child> ?t_7} => {?t_8 <http://example.org#grandParent> ?t_9}.
-{?t_10 ex:child ?t_11. ?t_12 ex:child ?t_10} => {?t_11 ex:grandParent ?t_12}.
-{?t_13 math:lessThan 18 . ?t_11 my:age ?t_13} => {ex:query ex:leadsTo true}.
-{(1 {?t_13 math:lessThan 18 . ?t_11 my:age ?t_13} ()) log:collectAllIn ?U_0} => {ex:query ex:leadsTo false}.
+{?t_10 <http://example.org#child> ?t_11. ?t_12 <http://example.org#child> ?t_10} => {?t_11 <http://example.org#grandParent> ?t_12}.
+{?t_13 ex:child ?t_14. ?t_15 ex:child ?t_13} => {?t_14 ex:grandParent ?t_15}.
+{?t_16 <http://xmlns.com/foaf/0.1/firstname> ?t_17. ?t_16 <http://xmlns.com/foaf/0.1/surname> ?t_18} => {?t_16 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_18. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_17}.
+{?t_16 <http://xmlns.com/foaf/0.1/family_name> ?t_18. ?t_16 <http://xmlns.com/foaf/0.1/firstname> ?t_17} => {?t_16 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_18. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_17}.
+{?t_16 <http://xmlns.com/foaf/0.1/givenname> ?t_17. ?t_16 <http://xmlns.com/foaf/0.1/surname> ?t_18} => {?t_16 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_18. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_17}.
+{?t_16 <http://xmlns.com/foaf/0.1/family_name> ?t_18. ?t_16 <http://xmlns.com/foaf/0.1/givenname> ?t_17} => {?t_16 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_18. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_17}.
+{?t_16 <http://xmlns.com/foaf/0.1/firstname> ?t_17} => {?t_16 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_2. _:e_b1_2 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_17}.
+{?t_16 <http://xmlns.com/foaf/0.1/givenname> ?t_17} => {?t_16 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_2. _:e_b1_2 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_17}.
+{?t_14 my:age ?t_19. ?t_19 math:lessThan 18} => {ex:query ex:leadsTo true}.
+{(1 {?t_14 my:age ?t_19. ?t_19 math:lessThan 18} ()) log:collectAllIn ?U_0} => {ex:query ex:leadsTo false}.
 
-#2023-02-07T13:58:56.454Z in=49 out=4 ent=4 step=6 brake=3 inf=90036 sec=0.043 inf/sec=2093860
+#2023-02-08T12:35:45.776Z in=116 out=10 ent=10 step=18 brake=3 inf=171876 sec=0.054 inf/sec=3182889
 #ENDS
 

@@ -9,6 +9,7 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 # create variable if needed
 {?s aux:gets ?s1}<={?s log:uri ?suri.
@@ -20,8 +21,19 @@
 {?s aux:gets ?s}<={}.
 
 
+{?list aux:createGraph ?graph}<={
+?list aux:handleTriples ?graph1.
+?list aux:handleFilter ?graph2.
+?list aux:handleUnion ?graph3.
+
+(?graph2 ?graph1 ?graph3) log:conjunction ?graph
+
+  }.
+
+
 #create a graph from subject-predicate-object patterns
-{?list aux:createGraph ?graph }<={
+{?list aux:handleTriples ?graph }<={
+  #normal triples
   ({?s1 ?p1 ?o1}{?t list:in ?list. ?t sp:subject ?s;
                                                sp:predicate ?p;
                                                sp:object ?o.
@@ -29,6 +41,13 @@
                                                ?p aux:gets ?p1.
                                                ?o aux:gets ?o1
                } ?whereList) log:collectAllIn ?scope.
+               (?whereList ({})) list:append ?fl.
+               ?fl  log:conjunction ?graph.
+
+
+  }.
+
+  {?list aux:handleFilter ?graph }<={
   #filter
   (?tr {?t list:in ?list. ?t a  sp:Filter ;
                               sp:expression ?e.
@@ -39,9 +58,32 @@
                                 ?a2 aux:gets ?a22.
                   (?f ?a11 ?a22) aux:funcTranslation ?tr.
                } ?filterList) log:collectAllIn ?scope.
-            (?whereList ?filterList  ) list:append ?outList.
-            ?outList  log:conjunction ?graph.
+               (?filterList ({})) list:append ?fl.
+            ?fl  log:conjunction ?graph.
+}.
+
+#union
+{?list aux:handleUnion ?graph}<={
+  (?t {?t list:in ?list. ?t a  sp:Union .} ?uList) log:collectAllIn ?scope.
+  (?uList {}) aux:createUGraph ?graph.
+
   }.
+
+{ (() ?graph) aux:createUGraph ?graph.}<={}.
+
+{(?uList ?ingraph ) aux:createUGraph ?graph.}<={
+  ?uList rdf:first ?t.
+  ?t sp:elements ?elist.
+  ?et list:in ?elist.
+  ?et aux:handleTriples ?tr.
+  ?uList rdf:rest ?rest.
+  (?ingraph ?tr) log:conjunction ?newgraph.
+  (?rest ?newgraph ) aux:createUGraph ?graph.
+  }.
+
+
+
+
 
 #functions and their translations
 {  (sp:lt ?a1 ?a2) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.

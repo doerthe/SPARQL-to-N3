@@ -14,7 +14,7 @@
       sp:templates ?temps ;
       sp:where ?where.
  	    ?where aux:createGraph ?g1.
-      ?temps aux:createGraph ?g2
+      ?temps aux:handleTriples ?g2
 	}=>{?g1=>?g2. }.
 
   # rule to generate rule

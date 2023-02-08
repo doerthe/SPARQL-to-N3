@@ -1,0 +1,25 @@
+#Processed by EYE v2.7.5 josd
+#eye examples/union.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3498739243609460500#>.
+
+{?t_3 <http://xmlns.com/foaf/0.1/firstname> ?t_4. ?t_3 <http://xmlns.com/foaf/0.1/surname> ?t_5} => {?t_3 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_5. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_4}.
+{?t_3 <http://xmlns.com/foaf/0.1/family_name> ?t_5. ?t_3 <http://xmlns.com/foaf/0.1/firstname> ?t_4} => {?t_3 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_5. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_4}.
+{?t_3 <http://xmlns.com/foaf/0.1/givenname> ?t_4. ?t_3 <http://xmlns.com/foaf/0.1/surname> ?t_5} => {?t_3 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_5. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_4}.
+{?t_3 <http://xmlns.com/foaf/0.1/family_name> ?t_5. ?t_3 <http://xmlns.com/foaf/0.1/givenname> ?t_4} => {?t_3 <http://www.w3.org/2001/vcard-rdf/3.0#N> _:e_b1_1. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#familyName> ?t_5. _:e_b1_1 <http://www.w3.org/2001/vcard-rdf/3.0#givenName> ?t_4}.
+
+#2023-02-08T10:42:01.556Z in=51 out=4 ent=4 step=8 brake=3 inf=103118 sec=0.050 inf/sec=2062360
+#ENDS
+
