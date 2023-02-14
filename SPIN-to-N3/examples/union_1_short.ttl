@@ -1,0 +1,33 @@
+#Processed by EYE v2.7.5 josd
+#eye examples/union_1.ttl --nope --pass
+
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+
+_:bn_1 a sp:Construct.
+_:bn_6 a sp:Union.
+_:bn_1 sp:templates (_:bn_2 _:bn_4).
+_:bn_2 sp:object _:e_b1_1.
+_:bn_4 sp:object _:bn_5.
+_:bn_7 sp:object _:bn_8.
+_:bn_10 sp:object _:bn_11.
+_:bn_2 sp:predicate <http://www.w3.org/2001/vcard-rdf/3.0#N>.
+_:bn_4 sp:predicate <http://www.w3.org/2001/vcard-rdf/3.0#givenName>.
+_:bn_7 sp:predicate <http://xmlns.com/foaf/0.1/firstname>.
+_:bn_10 sp:predicate <http://xmlns.com/foaf/0.1/givenname>.
+_:bn_2 sp:subject _:bn_3.
+_:bn_4 sp:subject _:e_b1_1.
+_:bn_7 sp:subject _:bn_9.
+_:bn_10 sp:subject _:bn_12.
+_:bn_3 sp:varName "x".
+_:bn_5 sp:varName "gname".
+_:bn_8 sp:varName "gname".
+_:bn_9 sp:varName "x".
+_:bn_11 sp:varName "gname".
+_:bn_12 sp:varName "x".
+_:bn_1 sp:where (_:bn_6).
+_:bn_6 sp:elements ((_:bn_7) (_:bn_10)).
+
+#2023-02-07T14:24:39.741Z in=23 out=23 ent=0 step=0 brake=2 inf=37037 sec=0.039 inf/sec=949667
+#ENDS
+

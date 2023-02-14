@@ -1,0 +1,15 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "title"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "title"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://purl.org/dc/elements/1.1/title> ;
+                  <http://spinrdf.org/sp#subject>
+                          <http://example.org/book/book1>
+                ]) .

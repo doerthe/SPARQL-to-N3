@@ -1,0 +1,73 @@
+# all examples from this file are taken from https://www.w3.org/TR/sparql11-query/#matchingRDFLiterals
+
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "v"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          "cat" ;
+                  <http://spinrdf.org/sp#predicate>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "p"
+                          ] ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "v"
+                          ]
+                ]) .
+
+[]    a       <http://spinrdf.org/sp#Select> ;
+                      <http://spinrdf.org/sp#resultVariables>
+                              ([ <http://spinrdf.org/sp#varName>
+                                          "v"
+                                ]) ;
+                      <http://spinrdf.org/sp#where>
+                              ([ <http://spinrdf.org/sp#object>
+                                          "cat"@en ;
+                                  <http://spinrdf.org/sp#predicate>
+                                          [ <http://spinrdf.org/sp#varName>
+                                                    "p"
+                                          ] ;
+                                  <http://spinrdf.org/sp#subject>
+                                          [ <http://spinrdf.org/sp#varName>
+                                                    "v"
+                                          ]
+                                ]) .
+
+[]    a       <http://spinrdf.org/sp#Select> ;
+                                      <http://spinrdf.org/sp#resultVariables>
+                                              ([ <http://spinrdf.org/sp#varName>
+                                                          "v"
+                                                ]) ;
+                                      <http://spinrdf.org/sp#where>
+                                              ([ <http://spinrdf.org/sp#object>
+                                                          42 ;
+                                                  <http://spinrdf.org/sp#predicate>
+                                                          [ <http://spinrdf.org/sp#varName>
+                                                                    "p"
+                                                          ] ;
+                                                  <http://spinrdf.org/sp#subject>
+                                                          [ <http://spinrdf.org/sp#varName>
+                                                                    "v"
+                                                          ]
+                                                ]) .
+
+[]    a       <http://spinrdf.org/sp#Select> ;
+                                                      <http://spinrdf.org/sp#resultVariables>
+                                                              ([ <http://spinrdf.org/sp#varName>
+                                                                          "v"
+                                                                ]) ;
+                                                      <http://spinrdf.org/sp#where>
+                                                              ([ <http://spinrdf.org/sp#object>
+                                                                          "abc"^^<http://example.org/datatype#specialDatatype> ;
+                                                                  <http://spinrdf.org/sp#predicate>
+                                                                          [ <http://spinrdf.org/sp#varName>
+                                                                                    "p"
+                                                                          ] ;
+                                                                  <http://spinrdf.org/sp#subject>
+                                                                          [ <http://spinrdf.org/sp#varName>
+                                                                                    "v"
+                                                                          ]
+                                                                ]) .

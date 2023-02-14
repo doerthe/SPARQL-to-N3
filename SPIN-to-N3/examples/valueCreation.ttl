@@ -1,0 +1,41 @@
+# the examples in this file are taken from https://www.w3.org/TR/sparql11-query/#CreatingValuesWithExpressions
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#expression>
+                          [ a       <http://spinrdf.org/sp#concat> ;
+                            <http://spinrdf.org/sp#arg1>
+                                    [ <http://spinrdf.org/sp#varName>
+                                              "G"
+                                    ] ;
+                            <http://spinrdf.org/sp#arg2>
+                                    " " ;
+                            <http://spinrdf.org/sp#arg3>
+                                    [ <http://spinrdf.org/sp#varName>
+                                              "S"
+                                    ]
+                          ] ;
+                  <http://spinrdf.org/sp#varName>
+                          "name"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "G"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://xmlns.com/foaf/0.1/givenName> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "P"
+                          ]
+                ] [ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "S"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://xmlns.com/foaf/0.1/surname> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "P"
+                          ]
+                ]) .

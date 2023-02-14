@@ -21,5 +21,15 @@
   {   ?x a       sp:Ask ;
         sp:where ?where.
    	   ?where aux:createGraph ?g1.
-  	}=>{?g1 => {ex:query ex:leadsTo true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{ex:query ex:leadsTo false}
+  	}=>{?g1 => {[] ex:result true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{[] ex:result false}
     }.
+
+## select
+{   ?x a       sp:Select ;
+      sp:where ?where;
+      sp:resultVariables ?varlist.
+      ((?name ?s1){?s list:in ?varlist. ?s  sp:varName ?name . ?name e:skolem ?s1.} ?outvars) log:collectAllIn ?scope.
+     ?where aux:createGraph ?g1.
+
+  }=>{?g1 => {[] ex:result ?outvars}.
+  }.

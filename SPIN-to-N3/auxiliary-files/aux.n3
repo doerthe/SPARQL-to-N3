@@ -11,6 +11,7 @@
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
+
 # create variable if needed
 {?s aux:gets ?s1}<={?s log:uri ?suri.
  ?suri string:startsWith "http://spinrdf.org/".
@@ -56,7 +57,7 @@
                                 a ?f.
                                 ?a1 aux:gets ?a11.
                                 ?a2 aux:gets ?a22.
-                  (?f ?a11 ?a22) aux:funcTranslation ?tr.
+                  ((?a11 ?a22) ?f true ) aux:funcTranslation ?tr.
                } ?filterList) log:collectAllIn ?scope.
                (?filterList ({})) list:append ?fl.
             ?fl  log:conjunction ?graph.
@@ -86,4 +87,5 @@
 
 
 #functions and their translations
-{  (sp:lt ?a1 ?a2) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{  ((?a1 ?a2) sp:lt  true ) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{(?list sp:concat ?out) aux:funcTranslation {?list string:concatenation ?out}. }<={}.

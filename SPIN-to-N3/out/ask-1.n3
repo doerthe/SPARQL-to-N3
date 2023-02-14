@@ -1,0 +1,24 @@
+#Processed by EYE v2.7.5 josd
+#eye examples/ask-1.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix my: <http://example.org/my#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2880932740427925591#>.
+
+{?t_3 my:age ?t_2. ?t_2 math:lessThan 18} => {_:sk_0 ex:result true}.
+{(1 {?t_3 my:age ?t_2. ?t_2 math:lessThan 18} ()) log:collectAllIn ?U_1} => {_:sk_2 ex:result false}.
+
+#2023-02-14T14:57:09.075Z in=25 out=2 ent=2 step=2 brake=3 inf=80268 sec=0.042 inf/sec=1911143
+#ENDS
+
