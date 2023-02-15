@@ -1,0 +1,103 @@
+[]    a       <http://spinrdf.org/sp#Construct> ;
+      <http://spinrdf.org/sp#templates>
+              ([ <http://spinrdf.org/sp#object>
+                          <http://target.org/target#Subject> ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "subject"
+                          ]
+                ] [ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "lgrade"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://target.org/target#grade> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "subject"
+                          ]
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          <http://source.org/source#Module> ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "s"
+                          ]
+                ] [ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "grade"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://source.org/source#hasGrade> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "s"
+                          ]
+                ] [ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "moduleID"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://source.org/source#hasModuleID> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "s"
+                          ]
+                ] [ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "moduleName"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://source.org/source#hasModuleName> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "s"
+                          ]
+                ] [ a       <http://spinrdf.org/sp#Bind> ;
+                  <http://spinrdf.org/sp#expression>
+                          [ a       <http://spinrdf.org/sp#lcase> ;
+                            <http://spinrdf.org/sp#arg1>
+                                    [ <http://spinrdf.org/sp#varName>
+                                              "grade"
+                                    ]
+                          ] ;
+                  <http://spinrdf.org/sp#variable>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "lgrade"
+                          ]
+                ] [ a       <http://spinrdf.org/sp#Bind> ;
+                  <http://spinrdf.org/sp#expression>
+                          [ a       <http://spinrdf.org/sp#uri> ;
+                            <http://spinrdf.org/sp#arg1>
+                                    [ a       <http://spinrdf.org/sp#concat> ;
+                                      <http://spinrdf.org/sp#arg1>
+                                              "http://example.org/" ;
+                                      <http://spinrdf.org/sp#arg2>
+                                              [ <http://spinrdf.org/sp#varName>
+                                                        "moduleID"
+                                              ] ;
+                                      <http://spinrdf.org/sp#arg3>
+                                              "_" ;
+                                      <http://spinrdf.org/sp#arg4>
+                                              [ a       <http://spinrdf.org/sp#replace> ;
+                                                <http://spinrdf.org/sp#arg1>
+                                                        [ <http://spinrdf.org/sp#varName>
+                                                                  "moduleName"
+                                                        ] ;
+                                                <http://spinrdf.org/sp#arg2>
+                                                        " " ;
+                                                <http://spinrdf.org/sp#arg3>
+                                                        ""
+                                              ]
+                                    ]
+                          ] ;
+                  <http://spinrdf.org/sp#variable>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "subject"
+                          ]
+                ]) .

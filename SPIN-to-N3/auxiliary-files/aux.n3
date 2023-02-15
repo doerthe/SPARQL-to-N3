@@ -52,12 +52,20 @@
   #filter
   (?tr {?t list:in ?list. ?t a  sp:Filter ;
                               sp:expression ?e.
-                              ?e sp:arg1 ?a1 ;
-                                sp:arg2 ?a2 ;
-                                a ?f.
-                                ?a1 aux:gets ?a11.
-                                ?a2 aux:gets ?a22.
-                  ((?a11 ?a22) ?f true ) aux:funcTranslation ?tr.
+                              #getArguments
+                              # get  argument-predicates
+                              (?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
+                              ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
+                                  } ?ns ) log:collectAllIn ?scope.
+                              ?ns e:sort ?nsort.
+                              # get arguments in the right order
+                              (?argl {
+                                ?argp list:in ?nsort.
+                                ?e ?argp ?arg.
+                                ?arg aux:gets ?argl.
+                                  } ?arguments ) log:collectAllIn ?scope.
+                              ?e  a ?f.
+                  (?arguments ?f ?out ) aux:funcTranslation ?tr.
                } ?filterList) log:collectAllIn ?scope.
                (?filterList ({})) list:append ?fl.
             ?fl  log:conjunction ?graph.
@@ -88,4 +96,5 @@
 
 #functions and their translations
 {  ((?a1 ?a2) sp:lt  true ) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
-{(?list sp:concat ?out) aux:funcTranslation {?list string:concatenation ?out}. }<={}.
+{(?list sp:concat ?o) aux:funcTranslation { ?list string:concatenation ?o. }. }<={?out e:skolem ?o.}.
+{( (?a1 ?a2) sp:eq true ) aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
