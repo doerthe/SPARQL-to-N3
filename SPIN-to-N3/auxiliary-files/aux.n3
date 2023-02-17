@@ -132,6 +132,6 @@
 {(?list sp:concat ?o) aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
 {( (?a1 ?a2) sp:eq ?o) aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
 { ((?a) sp:lcase ?o) aux:funcTranslation {?a string:lowerCase ?o}}<={}.
-{ ((?a) sp:uri ?o) aux:funcTranslation {?a log:uri ?o}}<={}.
-{ ((?a) sp:iri ?o) aux:funcTranslation {?a log:uri ?o}}<={}.
+{ ((?a) sp:uri ?o) aux:funcTranslation {?o log:uri ?a}}<={}.
+{ ((?a) sp:iri ?o) aux:funcTranslation {?o log:uri ?a}}<={}.
 {(?list sp:replace ?o) aux:funcTranslation {?list string:replace ?o}}<={}.

@@ -13,10 +13,10 @@
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/1039894831598588455#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4434757840678413329#>.
 
-{?t_10 log:equalTo ?t_11. ?t_12 log:equalTo ?t_13. ?t_14 log:uri ?t_12. ("http://example.org/" ?t_15 "_" ?t_16) string:concatenation ?t_14. ?t_17 string:lowerCase ?t_10. (?t_18 " " "") string:replace ?t_16. ?t_19 <http://source.org/source#hasGrade> ?t_17. ?t_19 <http://source.org/source#hasModuleID> ?t_15. ?t_19 <http://source.org/source#hasModuleName> ?t_18. ?t_19 a <http://source.org/source#Module>} => {?t_13 <http://target.org/target#grade> ?t_11. ?t_13 a <http://target.org/target#Subject>}.
+{?t_10 log:equalTo ?t_11. ?t_12 log:equalTo ?t_13. ?t_12 log:uri ?t_14. ("http://example.org/" ?t_15 "_" ?t_16) string:concatenation ?t_14. ?t_17 string:lowerCase ?t_10. (?t_18 " " "") string:replace ?t_16. ?t_19 <http://source.org/source#hasGrade> ?t_17. ?t_19 <http://source.org/source#hasModuleID> ?t_15. ?t_19 <http://source.org/source#hasModuleName> ?t_18. ?t_19 a <http://source.org/source#Module>} => {?t_13 <http://target.org/target#grade> ?t_11. ?t_13 a <http://target.org/target#Subject>}.
 
-#2023-02-17T14:54:19.057Z in=78 out=1 ent=1 step=1 brake=2 inf=136526 sec=0.057 inf/sec=2395193
+#2023-02-17T15:35:31.442Z in=78 out=1 ent=1 step=1 brake=2 inf=136526 sec=0.057 inf/sec=2395193
 #ENDS
 
