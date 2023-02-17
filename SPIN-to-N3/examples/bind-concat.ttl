@@ -1,0 +1,33 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "s"
+                ] [ <http://spinrdf.org/sp#varName>
+                          "oo"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "o"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://example.org/p> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "s"
+                          ]
+                ] [ a       <http://spinrdf.org/sp#Bind> ;
+                  <http://spinrdf.org/sp#expression>
+                          [ a       <http://spinrdf.org/sp#concat> ;
+                            <http://spinrdf.org/sp#arg1>
+                                    [ <http://spinrdf.org/sp#varName>
+                                              "o"
+                                    ] ;
+                            <http://spinrdf.org/sp#arg2>
+                                    "d"
+                          ] ;
+                  <http://spinrdf.org/sp#variable>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "oo"
+                          ]
+                ]) .
