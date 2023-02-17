@@ -54,7 +54,7 @@
   #filter
   (?tr {?t list:in ?list. ?t a  sp:Filter ;
                               sp:expression ?e.
-                ?e aux:translateFunction ?tr.
+                   ?e aux:getFunctionTriples ?tr.
                } ?filterList) log:collectAllIn ?scope.
                (?filterList ({})) list:append ?fl.
             ?fl  log:conjunction ?graph.
@@ -79,30 +79,40 @@
   (?rest ?newgraph ) aux:createUGraph ?graph.
   }.
 
-# translate function
-{?e aux:translateFunction ?tr.}<=
-{
-#getArguments
-# get  argument-predicates
-(?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
-?argpuri string:startsWith "http://spinrdf.org/sp#arg".
-    } ?ns ) log:collectAllIn ?scope.
-?ns e:sort ?nsort.
-# get arguments in the right order
-(?argl {
-  ?argp list:in ?nsort.
-  ?e ?argp ?arg.
-  ?arg aux:gets ?argl.
-    } ?arguments ) log:collectAllIn ?scope.
-?e  a ?f.
+{?e aux:getFunctionTriples ?tr}<={
+  ({?e ?pp ?oo.} {?e ?pp ?oo.} ?info) log:collectAllIn ?scope.
+  ?e sp:arg1 ?something.
+  ("!") e:derive true.
+  #getArguments
+  # get  argument-predicates
+  (?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
+  ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
+      } ?ns ) log:collectAllIn ?scope.
+  ?ns e:sort ?nsort.
+  # get arguments in the right order
+  (?argl {
+    ?argp list:in ?nsort.
+    ?e ?argp ?arg.
+    ?arg aux:gets ?argl.
+      } ?arguments ) log:collectAllIn ?scope.
+  ?e  a ?f.
+  ?e e:skolem ?e1.
+(?arguments ?f ?e1 ) aux:funcTranslation ?tr1.
+# check for arguments of arguments
+(?triples {
+  ?ar list:in ?arguments.
+  ?aa e:skolem ?ar.
+  ?aa aux:getFunctionTriples ?triples.
+    } ?trlist  ) log:collectAllIn ?scope.
+  ((?tr1) ?trlist) list:append ?trs.
+  ?trs log:conjunction ?tr.
+  }.
 
-?e e:skolem ?el.
-(?arguments ?f ?el ) aux:funcTranslation ?tr.
-}.
+  {?e aux:getFunctionTriples {}}<={}.
 
 
 
 #functions and their translations
-{  ((?a1 ?a2) sp:lt  ?e ) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{  ((?a1 ?a2) sp:lt  ?o) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
 {(?list sp:concat ?o) aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
-{( (?a1 ?a2) sp:eq ?e ) aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
+{( (?a1 ?a2) sp:eq ?o) aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
