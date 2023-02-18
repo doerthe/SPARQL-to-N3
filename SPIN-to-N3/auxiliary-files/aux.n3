@@ -97,7 +97,7 @@
       } ?arguments ) log:collectAllIn ?scope.
   ?e  a ?f.
   ?e e:skolem ?e1.
-(?arguments ?f ?e1 ) aux:funcTranslation ?tr1.
+{?arguments ?f ?e1 } aux:funcTranslation ?tr1.
 # check for arguments of arguments
 (?triples {
   ?ar list:in ?arguments.
@@ -128,10 +128,15 @@
 
 
 #functions and their translations
-{  ((?a1 ?a2) sp:lt  ?o) aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
-{(?list sp:concat ?o) aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
-{( (?a1 ?a2) sp:eq ?o) aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
-{ ((?a) sp:lcase ?o) aux:funcTranslation {?a string:lowerCase ?o}}<={}.
-{ ((?a) sp:uri ?o) aux:funcTranslation {?o log:uri ?a}}<={}.
-{ ((?a) sp:iri ?o) aux:funcTranslation {?o log:uri ?a}}<={}.
-{(?list sp:replace ?o) aux:funcTranslation {?list string:replace ?o}}<={}.
+{  {(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
+{{ (?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
+{ {(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
+{ {(?a) sp:uri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
+{ {(?a) sp:iri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
+{{?list sp:replace ?o} aux:funcTranslation {?list string:replace ?o}}<={}.
+{{(?a) sp:bound ?o} aux:funcTranslation {?a log:rawType ?t. ?t log:notEqualTo log:ForAll}}<={}.
+{{(?a) sp:isIri ?o} aux:funcTranslation {?a log:rawType log:Other. ?a log:uri []}}<={}.
+{{(?a) sp:isUri ?o} aux:funcTranslation {?a log:rawType log:Other. ?a log:uri []}}<={}.
+{{(?a) sp:isBlank ?o} aux:funcTranslation {?a log:rawType ?type. ?type log:uri ?string. ?string string:endsWith "BlankNode"}}<={}.
+{{(?a) sp:isLiteral ?o} aux:funcTranslation {?a log:rawType log:Literal. }}<={}.
