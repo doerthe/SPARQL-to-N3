@@ -28,9 +28,7 @@
 {   ?x a       sp:Select .
 
     ?x  sp:where ?where.
-    ?x  sp:resultVariables ?varlist.
-      ((?name ?s1){?s list:in ?varlist. ?s  sp:varName ?name . ?name e:skolem ?s1.} ?outvars) log:collectAllIn ?scope.
-
+    ?x aux:getResultVariables ?outvars.
      ?where aux:createGraph ?g1.
 
   }=>{?g1 => {[] ex:result ?outvars}.

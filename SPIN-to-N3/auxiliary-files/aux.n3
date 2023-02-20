@@ -125,6 +125,22 @@
 ?pList log:conjunction ?graph.
 }.
 
+#select with variables
+{?x aux:getResultVariables ?outvars}<={
+  ?x  sp:resultVariables ?varlist.
+  ("!") e:derive true.
+    ((?name ?s1){?s list:in ?varlist. ?s  sp:varName ?name . ?name e:skolem ?s1.} ?outvars) log:collectAllIn ?scope.
+}.
+
+#handle star
+{?x aux:getResultVariables ?outvars}<={
+?x sp:where ?where.
+((?name ?s1) {?t list:in ?list. ?t ?p ?s.
+                       ?p list:in (sp:subject sp:predicate sp:object).
+                       ?s  sp:varName ?name . ?name e:skolem ?s1.
+             } ?preVarList) log:collectAllIn ?scope.
+?preVarList list:removeDuplicates ?outvars.
+}.
 
 
 #functions and their translations
