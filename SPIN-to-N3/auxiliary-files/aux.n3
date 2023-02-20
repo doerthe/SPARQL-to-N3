@@ -156,3 +156,9 @@
 {{(?a) sp:isUri ?o} aux:funcTranslation {?a log:rawType log:Other. ?a log:uri []}}<={}.
 {{(?a) sp:isBlank ?o} aux:funcTranslation {?a log:rawType ?type. ?type log:uri ?string. ?string string:endsWith "BlankNode"}}<={}.
 {{(?a) sp:isLiteral ?o} aux:funcTranslation {?a log:rawType log:Literal. }}<={}.
+#to be discussed! https://www.w3.org/TR/sparql11-query/#func-isNumeric
+{{(?a) sp:isNumeric ?o} aux:funcTranslation { (?a 1) math:sum ?b }}<={}.
+{{(?a) sp:str ?o} aux:funcTranslation { ?scope e:optional {?a log:uri ?o}. ?scope e:optional {?a log:rawType log:Literal. ?a log:equalTo ?o}.}}<={}.
+{{(?a) sp:lang ?o} aux:funcTranslation { ([] ?o) log:langlit ?a}}<={}.
+{{(?a) sp:datatype ?o} aux:funcTranslation { ([] ?o) log:dtlit ?a}}<={}.
+{{?list sp:bnode ?o} aux:funcTranslation { ?list log:skolem ?o}}<={}.
