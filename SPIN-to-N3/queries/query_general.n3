@@ -39,14 +39,17 @@
 
       # should be able to collect instances of these variables here,
       # given ?g as the clause
-      # but, doesn't work since these are skolems :-(
+
+      "T0" log:trace ( ?aggrVar ?groupVar ?g ) .
 
       ( ( ?aggrVar ?groupVar )
       ?g
       ?pairs ) log:collectAllIn _:t .
 
+      "T1" log:trace ( ?pairs ) .
+
 } => {
-      ?g1 => { [] ex:result ?outVars }.
+      ?g => { [] ex:result ?outVars }.
 } .
 
 
