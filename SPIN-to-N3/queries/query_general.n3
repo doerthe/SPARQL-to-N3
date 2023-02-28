@@ -24,6 +24,32 @@
   	}=>{?g1 => {[] ex:result true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{[] ex:result false}
     }.
 
+
+## select with aggregates
+{     ?x a sp:Select .
+      ?x!sp:groupBy!list:member!sp:varName e:skolem ?groupVar .
+      ("!") e:derive true .
+
+      ?x!sp:resultVariables list:member [ sp:expression ?exp ] .
+      ?exp a ?aggrFn .
+      ?exp!sp:expression!sp:varName e:skolem ?aggrVar .
+
+      ?x!sp:where aux:createGraph ?g .
+      ?x aux:getResultVariables ?outVars .
+
+      # should be able to collect instances of these variables here,
+      # given ?g as the clause
+      # but, doesn't work since these are skolems :-(
+
+      ( ( ?aggrVar ?groupVar )
+      ?g
+      ?pairs ) log:collectAllIn _:t .
+
+} => {
+      ?g1 => { [] ex:result ?outVars }.
+} .
+
+
 ## select
 {   ?x a       sp:Select .
 

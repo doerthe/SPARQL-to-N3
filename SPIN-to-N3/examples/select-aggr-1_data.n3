@@ -1,0 +1,8 @@
+@prefix : <http://books.example/> .
+
+:org1 :affiliates :auth1 , :auth2 .
+:auth1 :writesBook :book1 . :book1 :price 100 .
+:auth2 :writesBook :book2 . :book1 :price 50 .
+
+:org2 :affiliates :auth3 .
+:auth3 :writesBook :book3 . :book3 :price 200 .
