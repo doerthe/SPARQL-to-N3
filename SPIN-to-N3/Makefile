@@ -7,5 +7,9 @@ example1:
 		> out/example1.n3
 
 aggr:
-	eye examples/select-aggr-1.n3 examples/select-aggr-1_data.n3 auxiliary-files/aux.n3 \
+	eye examples/select-aggr-1.n3 auxiliary-files/aux.n3 \
 	    --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ \
+		> out/aggr-1.n3
+
+	eye auxiliary-files/aux-aggr.n3 \
+	    examples/select-aggr-1_data.n3 out/aggr-1.n3 --nope --pass-only-new 

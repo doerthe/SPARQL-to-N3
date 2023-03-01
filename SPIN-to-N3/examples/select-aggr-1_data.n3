@@ -1,8 +1,8 @@
-@prefix : <http://books.example/> .
+@prefix ex: <http://books.example/> .
 
-:org1 :affiliates :auth1 , :auth2 .
-:auth1 :writesBook :book1 . :book1 :price 100 .
-:auth2 :writesBook :book2 . :book1 :price 50 .
+ex:org1 ex:affiliates ex:auth1 , ex:auth2 .
+ex:auth1 ex:writesBook ex:book1 . ex:book1 ex:price 100 .
+ex:auth2 ex:writesBook ex:book2 . ex:book1 ex:price 50 .
 
-:org2 :affiliates :auth3 .
-:auth3 :writesBook :book3 . :book3 :price 200 .
+ex:org2 ex:affiliates ex:auth3 .
+ex:auth3 ex:writesBook ex:book3 . ex:book3 ex:price 200 .
