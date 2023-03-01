@@ -1,0 +1,22 @@
+#Processed by EYE v2.12.2 josd
+#eye examples/select-aggr-3.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2878789796706110459#>.
+
+{(((?t_4 ?t_5) (?t_6 ?t_6)) {?t_4 <http://books.example/affiliates> ?t_7. ?t_5 <http://books.example/price> ?t_6. ?t_7 <http://books.example/writesBook> ?t_5} ?U_13) log:collectAllIn ?U_14. "pairs" log:trace (?U_13). (?U_15 {?U_13 list:member ?U_16. (?U_16 0) list:memberAt ?U_15} ?U_17) log:collectAllIn ?U_14. ?U_17 list:removeDuplicates ?U_18. "uniqueGroupVals" log:trace (?U_18). ?U_18 list:member ?U_15. "groupVal" log:trace (?U_15). (?U_19 {?U_13 list:member ?U_16. (?U_16 0) list:memberAt ?U_15. (?U_16 1) list:memberAt ?U_19} ?U_20) log:collectAllIn ?U_14. "aggrValueLists" log:trace (?U_20). (?U_21 {((sp:Sum ?t_6 "totalPrice") (sp:Avg ?t_6 "avgPrice")) list:iterate (?U_22 (?U_4 ?U_5 ?U_6)). "aggr" log:trace (?U_4 ?U_5 ?U_6). (?U_23 {?U_20 list:member ?U_19. (?U_19 ?U_22) list:memberAt ?U_23} ?U_24) log:collectAllIn ?U_14. ?U_24 ?U_4 ?U_25. "result" log:trace (?U_24 ?U_4 ?U_25). (?U_6 ?U_25) log:equalTo ?U_21} ?U_26) log:collectAllIn ?U_14} => {_:sk_27 ex:result ?U_26}.
+
+#2023-03-01T16:32:50.622Z in=67 out=1 ent=1 step=1 brake=2 inf=172254 sec=0.038 inf/sec=4533000
+#ENDS
+

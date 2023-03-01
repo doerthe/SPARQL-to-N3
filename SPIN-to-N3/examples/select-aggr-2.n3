@@ -5,12 +5,14 @@
 #   ?auth :writesBook ?book .
 #   ?book :price ?lprice .
 # }
-# GROUP BY ?org
+# GROUP BY ?org ?book
 
 []    a       <http://spinrdf.org/sp#Select> ;
       <http://spinrdf.org/sp#groupBy>
               ([ <http://spinrdf.org/sp#varName>
                           "org"
+                ] [ <http://spinrdf.org/sp#varName>
+                          "book"
                 ]) ;
       <http://spinrdf.org/sp#resultVariables>
               ([ <http://spinrdf.org/sp#expression>

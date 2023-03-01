@@ -52,62 +52,84 @@
 # } .
 
 
-## select with aggregates
-{     ?x a sp:Select .
-      ?x!sp:groupBy!list:member!sp:varName e:skolem ?groupVar .
+## select (with aggregate result variables)
+{     ?x a sp:Select ;
+            sp:groupBy ?z .
 
-      ?x!sp:resultVariables list:member ?resultVar .
-      ?resultVar sp:expression ?exp .
-      ?exp a ?aggrFn .
-      ?exp!sp:expression!sp:varName e:skolem ?aggrVar .
-      ?resultVar sp:varName ?aggrAlias .
+      ( ?groupVar { ?x!sp:groupBy!list:member!sp:varName e:skolem ?groupVar } ?groupVars ) 
+            log:collectAllIn _:t .
+
+      ( ( ?aggrFn ?aggrVar ?aggrAlias ) 
+      {
+            ?x!sp:resultVariables list:member ?resultVar .
+            ?resultVar sp:expression ?exp .
+            ?exp a ?aggrFn .
+            ?exp!sp:expression!sp:varName e:skolem ?aggrVar .
+            ?resultVar sp:varName ?aggrAlias .
+
+      } ?aggrs ) log:collectAllIn _:t .
+
+      ( ?aggrVar { ?aggrs list:member ?aggr . ( ?aggr 1 ) list:memberAt ?aggrVar } ?aggrVars ) log:collectAllIn _:t .
 
       ?x!sp:where aux:createGraph ?g .
 
 } => {
       { 
-            ( ( ?groupVar ?aggrVar ) ?g ?pairs ) 
-                  log:collectAllIn _:t .
+            # collect all relevant variable values from the WHERE clause
+            ( ( ?groupVars ?aggrVars ) ?g ?pairs ) log:collectAllIn _:t .
 
-            # get all groupVar values from these pairs
+            "pairs" log:trace ( ?pairs ) .
+
+            # get all group-variable(s) values from these pairs
             ( ?groupVal { ?pairs list:member ?pair . ( ?pair 0 ) list:memberAt ?groupVal } ?groupVals )
                   log:collectAllIn _:t .
 
-            # get all unique groupVar values
+            # get all unique group-variables values
             ?groupVals list:removeDuplicates ?uniqueGroupVals .
+            "uniqueGroupVals" log:trace ( ?uniqueGroupVals ) .
 
-            # "uniqueGroupVals" log:trace ( ?uniqueGroupVals ) .
+            # for each unique groupVar value
+            ?uniqueGroupVals list:member ?groupVal .
+            "groupVal" log:trace ( ?groupVal ) .
 
-            ( ?resultCell
+            # collect all corresponding aggrVar values
+            ( ?aggrValueList
             {
-                  # for each unique groupVar value
-                  ?uniqueGroupVals list:member ?groupVal .
-                  # "groupVal" log:trace ( ?groupVal ) .
-
-                  # collect all corresponding aggrVar values
-                  ( ?val
-                  {
-                        ?pairs list:member ?pair .
-                        ( ?pair 0 ) list:memberAt ?groupVal .
-                        ( ?pair 1 ) list:memberAt ?val
-                  } ?values ) log:collectAllIn _:t .
+                  ?pairs list:member ?pair .
+                  ( ?pair 0 ) list:memberAt ?groupVal .
+                  ( ?pair 1 ) list:memberAt ?aggrValueList
                   
-                  ?values ?aggrFn ?result .
-                  # "result" log:trace ( ?values ?aggrFn ?result ) .
+            } ?aggrValueLists ) log:collectAllIn _:t .
+            "aggrValueLists" log:trace ( ?aggrValueLists ) .
+            
+            ( ?varResultCell
+            { 
+                  ?aggrs list:iterate ( ?i ( ?aggrFn ?aggrVar ?aggrAlias ) ) .
+                  "aggr" log:trace ( ?aggrFn ?aggrVar ?aggrAlias ) .  
 
-                  ( ?aggrAlias ?result ) log:equalTo ?resultCell .
+                  ( ?aggrValue
+                  {
+                        ?aggrValueLists list:member ?aggrValueList .
+                        ( ?aggrValueList ?i ) list:memberAt ?aggrValue .
+                  
+                  } ?aggrValues ) log:collectAllIn _:t .
 
-            } ?resultCells ) log:collectAllIn _:t .
+                  ?aggrValues ?aggrFn ?result .
+                  "result" log:trace ( ?aggrValues ?aggrFn ?result ) .
 
-            # "resultCells" log:trace ( ?resultCells ) .
+                  ( ?aggrAlias ?result ) log:equalTo ?varResultCell .
+            
+            } ?resultCell ) log:collectAllIn _:t .
 
-      } => { [] ex:result ?resultCells } .
+
+      } => { [] ex:result ?resultCell } .
 } .
 
 
-## select
+## select (without aggregate result variables)
 {     ?x a sp:Select .
-      _:t log:notIncludes { ?x!sp:resultVariables!list:member sp:expression ?e } .
+      # does not include any expressions as result variables (i.e., aggregate functions)
+      (?e { ?x!sp:resultVariables!list:member sp:expression ?e } ()) log:collectAllIn _:t .
 
       ?x  sp:where ?where.
       ?x aux:getResultVariables ?outvars.

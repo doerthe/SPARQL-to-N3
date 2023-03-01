@@ -1,0 +1,18 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://books.example/> .
+
+:org1 :affiliates :auth1 , :auth2 .
+:auth1 :writesBook :book1 . :book1 :price 100 .
+:auth2 :writesBook :book2 . :book1 :price 50 .
+
+:org2 :affiliates :auth3 .
+:auth3 :writesBook :book3 . :book3 :price 200 .
+
+{
+  ( (_:t_5 _:t_6 )
+  {
+    _:t_6 :affiliates _:t_7. _:t_8 :price _:t_5. _:t_7 :writesBook _:t_8
+                      
+  } ?pairs) log:collectAllIn _:t .
+   
+} => { <> :out ?pairs } .

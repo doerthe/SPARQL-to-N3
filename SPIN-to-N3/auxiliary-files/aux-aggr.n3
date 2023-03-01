@@ -1,0 +1,15 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> . 
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+
+# COUNT, SUM, MIN, MAX, AVG, GROUP_CONCAT, and SAMPLE.
+{ ?values sp:Sum ?result } <= { ?values math:sum ?result } .
+{ ?values sp:Avg ?result } <= { ?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result } .
