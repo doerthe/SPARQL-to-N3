@@ -26,37 +26,24 @@
     }.
 
 
+# TODO
 ## select with aggregates
 # (no group-by)
-# {     ?x a sp:Select .
-
-#       ?x!sp:resultVariables list:member ?resultVar .
-#       ?resultVar sp:expression ?exp .
-
-#       _:t log:notIncludes { ?x sp:groupBy ?g } .
-
-#       ?exp a ?aggrFn .
-#       ?exp!sp:expression!sp:varName e:skolem ?aggrVar .
-#       ?resultVar sp:varName ?aggrAlias .
-
-#       ?x!sp:where aux:createGraph ?g .
-
-# } => {
-#       { 
-#             ( ?values ?g ?pairs ) log:collectAllIn _:t .
-
-#             ?values ?aggrFn ?result .
-#             ( ?aggrAlias ?result ) log:equalTo ?resultCell .
-
-#       } => { [] ex:result ?resultCell } .
-# } .
-
 
 ## select (with aggregate result variables)
 {     ?x a sp:Select ;
             sp:groupBy ?z .
 
-      ( ?groupVar { ?x!sp:groupBy!list:member!sp:varName e:skolem ?groupVar } ?groupVars ) 
+      # TODO check whether output variable names is a subset of group variable names 
+      # if not, "throw" an error ...
+
+      ( ( ?groupVarName ?groupVar ) 
+      {     ?x!sp:groupBy!list:member sp:varName ?groupVarName .
+            ?groupVarName e:skolem ?groupVar 
+
+      } ?groups ) log:collectAllIn _:t .
+
+      ( ?groupVar { ?groups list:member ?group . ( ?group 1) list:memberAt ?groupVar } ?groupVars ) 
             log:collectAllIn _:t .
 
       ( ( ?aggrFn ?aggrVar ?aggrAlias )
@@ -73,8 +60,6 @@
             log:collectAllIn _:t .
 
       ?x!sp:where aux:createGraph ?g .
-
-      # ?x aux:getResultVariables ?outVars .
 
 } => {
       {     # collect all relevant variable values from the WHERE clause
@@ -107,13 +92,13 @@
             # a list of values, one for each aggr-variable
             "aggrValueLists" log:trace ( ?aggrValueLists ) .
             
-            ( ?varResultCell
+            ( ?aggrResultCell
             { 
                   # for each aggr-variable entry
                   ?aggrs list:iterate ( ?i ( ?aggrFn ?aggrVar ?aggrAlias ) ) .
                   "aggr" log:trace ( ?aggrFn ?aggrVar ?aggrAlias ) .  
 
-                  # get the value of the corresponding aggr-variable
+                  # get all values of the corresponding aggr-variable
                   ( ?aggrValue
                   {
                         ?aggrValueLists list:member ?aggrValueList .
@@ -125,10 +110,27 @@
                   ?aggrValues ?aggrFn ?result .
                   "result" log:trace ( ?aggrValues ?aggrFn ?result ) .
 
-                  ( ?aggrAlias ?result ) log:equalTo ?varResultCell .
+                  ( ?aggrAlias ?result ) log:equalTo ?aggrResultCell .
             
-            } ?resultCell ) log:collectAllIn _:t .
+            } ?aggrResultCells ) log:collectAllIn _:t .
+            
+            "aggrResultCells" log:trace ( ?aggrResultCells ) .
 
+            # for each group-variable being returned, get the group value
+            ( ( ?indivGroupVal ?groupVarName )
+            {
+                  ?groups list:iterate ( ?i ?group ) .
+                  # group-variable name
+                  ( ?group 0 ) list:memberAt ?groupVarName .
+
+                  # group-variable value
+                  ( ?groupVal ?i ) list:memberAt ?indivGroupVal .
+            
+            } ?groupResultCells ) log:collectAllIn _:t .
+
+            "groupResultCells" log:trace ( ?groupResultCells ) .
+
+            ( ?aggrResultCells ?groupResultCells ) list:append ?resultCell .
 
       } => { [] ex:result ?resultCell } .
 } .

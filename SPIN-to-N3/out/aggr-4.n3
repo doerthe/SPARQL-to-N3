@@ -1,0 +1,22 @@
+#Processed by EYE v3.4.1 josd
+#eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2454213460164783403#>.
+
+{(((?t_4) (?t_5)) {?t_4 <http://books.example/affiliates> ?t_6. ?t_7 <http://books.example/price> ?t_5. ?t_6 <http://books.example/writesBook> ?t_7} ?U_14) log:collectAllIn ?U_15. "pairs" log:trace (?U_14). (?U_16 {?U_14 list:member ?U_17. (?U_17 0) list:memberAt ?U_16} ?U_18) log:collectAllIn ?U_15. ?U_18 list:removeDuplicates ?U_19. "uniqueGroupVals" log:trace (?U_19). ?U_19 list:member ?U_16. "groupVal" log:trace (?U_16). (?U_20 {?U_14 list:member ?U_17. (?U_17 0) list:memberAt ?U_16. (?U_17 1) list:memberAt ?U_20} ?U_21) log:collectAllIn ?U_15. "aggrValueLists" log:trace (?U_21). (?U_22 {((sp:Sum ?t_5 "totalPrice")) list:iterate (?U_23 (?U_5 ?U_6 ?U_7)). "aggr" log:trace (?U_5 ?U_6 ?U_7). (?U_24 {?U_21 list:member ?U_20. (?U_20 ?U_23) list:memberAt ?U_24} ?U_25) log:collectAllIn ?U_15. ?U_25 ?U_5 ?U_26. "result" log:trace (?U_25 ?U_5 ?U_26). (?U_7 ?U_26) log:equalTo ?U_22} ?U_27) log:collectAllIn ?U_15. "aggrResultCells" log:trace (?U_27). ((?U_28 ?U_0) {(("org" ?t_4)) list:iterate (?U_23 ?U_4). (?U_4 0) list:memberAt ?U_0. (?U_16 ?U_23) list:memberAt ?U_28} ?U_29) log:collectAllIn ?U_15. "groupResultCells" log:trace (?U_29). (?U_27 ?U_29) list:append ?U_30} => {_:sk_31 ex:result ?U_30}.
+
+#2023-03-01T21:34:48.161Z in=62 out=1 ent=1 step=1 brake=2 inf=177971 sec=0.038 inf/sec=4683447
+#ENDS
+
