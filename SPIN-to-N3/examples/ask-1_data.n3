@@ -1,0 +1,3 @@
+@prefix ex: <http://example.org/spin#>.
+
+ex:will ex:age 38 .

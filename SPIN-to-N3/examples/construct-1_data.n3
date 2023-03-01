@@ -1,0 +1,4 @@
+@prefix ex: <http://example.org/spin#>.
+
+ex:edward ex:child ex:paul .
+ex:paul ex:child ex:will .

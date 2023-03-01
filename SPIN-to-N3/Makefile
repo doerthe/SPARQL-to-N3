@@ -14,7 +14,7 @@ example2:
 	eye examples/select2_data.n3 out/select2.n3 --nope --pass-only-new 
 
 aggr:
-	eye examples/select-aggr-1.n3 auxiliary-files/aux.n3 \
+	eye examples/select-aggr-1.spin auxiliary-files/aux.n3 \
 	    --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ \
 		> out/aggr-1.n3
 
@@ -22,7 +22,7 @@ aggr:
 	    examples/select-aggr-1_data.n3 out/aggr-1.n3 --nope --pass-only-new 
 
 aggr2:
-	eye examples/select-aggr-2.n3 auxiliary-files/aux.n3 \
+	eye examples/select-aggr-2.spin auxiliary-files/aux.n3 \
 	    --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ \
 		> out/aggr-2.n3
 
@@ -30,7 +30,7 @@ aggr2:
 	    examples/select-aggr-2_data.n3 out/aggr-2.n3 --nope --pass-only-new
 
 aggr3:
-	eye examples/select-aggr-3.n3 auxiliary-files/aux.n3 \
+	eye examples/select-aggr-3.spin auxiliary-files/aux.n3 \
 	    --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ \
 		> out/aggr-3.n3
 

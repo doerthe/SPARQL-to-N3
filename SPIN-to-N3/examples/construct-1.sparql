@@ -1,0 +1,10 @@
+PREFIX ex: <http://example.org/spin#>
+
+# infer grandParent relationship
+CONSTRUCT {
+    ?this ex:grandParent ?grandParent .
+}
+WHERE {
+    ?parent ex:child ?this .
+    ?grandParent ex:child ?parent .
+}

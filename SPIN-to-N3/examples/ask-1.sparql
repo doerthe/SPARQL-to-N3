@@ -1,0 +1,7 @@
+PREFIX ex: <http://example.org/spin#>
+
+# must be at least 18 years old
+ASK WHERE {
+    ?this ex:age ?age .
+    FILTER (?age >= 18) .
+}
