@@ -34,18 +34,19 @@
 {     ?x a sp:Select ;
             sp:groupBy ?z .
 
-      # TODO check whether output variable names is a subset of group variable names 
-      # if not, "throw" an error ...
-
-      ( ( ?groupVarName ?groupVar ) 
-      {     ?x!sp:groupBy!list:member sp:varName ?groupVarName .
-            ?groupVarName e:skolem ?groupVar 
-
-      } ?groups ) log:collectAllIn _:t .
-
-      ( ?groupVar { ?groups list:member ?group . ( ?group 1) list:memberAt ?groupVar } ?groupVars ) 
+      # get all group-variable names
+      ( ?groupVarName { ?x!sp:groupBy!list:member sp:varName ?groupVarName } ?groupVarNames ) 
             log:collectAllIn _:t .
 
+      # get all group-variable vars
+      ( ?groupVar { ?groupVarNames!list:member e:skolem ?groupVar } ?groupVars ) 
+            log:collectAllIn _:t .
+
+      # get all select-variable names
+      ( ?selectVarName { ?x!sp:resultVariables!list:member sp:varName ?selectVarName } ?selectVarNames) 
+            log:collectAllIn _:t.
+
+      # get all aggregates (function, var, alias)
       ( ( ?aggrFn ?aggrVar ?aggrAlias )
       {
             ?x!sp:resultVariables list:member ?resultVar .
@@ -56,9 +57,11 @@
 
       } ?aggrs ) log:collectAllIn _:t .
 
+      # from these, get aggr-variable vars
       ( ?aggrVar { ?aggrs list:member ?aggr . ( ?aggr 1 ) list:memberAt ?aggrVar } ?aggrVars ) 
             log:collectAllIn _:t .
 
+      # get the N3 equivalent of the where clause
       ?x!sp:where aux:createGraph ?g .
 
 } => {
@@ -67,7 +70,7 @@
 
             "pairs" log:trace ( ?pairs ) .
 
-            # get all group-variable(s) values from these pairs
+            # get all group-variables values from these pairs
             ( ?groupVal { ?pairs list:member ?pair . ( ?pair 0 ) list:memberAt ?groupVal } ?groupVals )
                   log:collectAllIn _:t .
 
@@ -119,9 +122,11 @@
             # for each group-variable being returned, get the group value
             ( ( ?indivGroupVal ?groupVarName )
             {
-                  ?groups list:iterate ( ?i ?group ) .
-                  # group-variable name
-                  ( ?group 0 ) list:memberAt ?groupVarName .
+                  ?groupVarNames list:iterate ( ?i ?groupVarName ) .
+                  "T0" log:trace ( ?groupVarName ?selectVarNames ) .
+
+                  # make sure it's being returned
+                  ?groupVarName list:in ?selectVarNames .
 
                   # group-variable value
                   ( ?groupVal ?i ) list:memberAt ?indivGroupVal .
