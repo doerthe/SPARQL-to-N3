@@ -1,12 +1,6 @@
 []    a       <http://spinrdf.org/sp#Select> ;
-      <http://spinrdf.org/sp#groupBy>
-              ([ <http://spinrdf.org/sp#varName>
-                          "org"
-                ]) ;
       <http://spinrdf.org/sp#resultVariables>
-              ([ <http://spinrdf.org/sp#varName>
-                          "org"
-                ] [ <http://spinrdf.org/sp#expression>
+              ([ <http://spinrdf.org/sp#expression>
                           [ a       <http://spinrdf.org/sp#Avg> ;
                             <http://spinrdf.org/sp#expression>
                                     [ <http://spinrdf.org/sp#varName>

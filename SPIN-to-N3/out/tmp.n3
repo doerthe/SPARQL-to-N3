@@ -13,10 +13,10 @@
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/2954043589888512133#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4511655520795545241#>.
 
-{(((?t_4) (?t_5)) {?t_4 <http://books.example/affiliates> ?t_6. ?t_7 <http://books.example/price> ?t_5. ?t_6 <http://books.example/writesBook> ?t_7} ?U_17) log:collectAllIn ?U_18. "pairs" log:trace (?U_17). (?U_19 {?U_17 list:member ?U_20. (?U_20 0) list:memberAt ?U_19} ?U_21) log:collectAllIn ?U_18. ?U_21 list:removeDuplicates ?U_22. "uniqueGroupVals" log:trace (?U_22). ?U_22 list:member ?U_19. "groupVal" log:trace (?U_19). (?U_23 {?U_17 list:member ?U_20. (?U_20 0) list:memberAt ?U_19. (?U_20 1) list:memberAt ?U_23} ?U_24) log:collectAllIn ?U_18. "aggrValueLists" log:trace (?U_24). (?U_25 {((sp:Avg ?t_5 "avgPrice")) list:iterate (?U_26 (?U_8 ?U_9 ?U_10)). "aggr" log:trace (?U_8 ?U_9 ?U_10). (?U_27 {?U_24 list:member ?U_23. (?U_23 ?U_26) list:memberAt ?U_27} ?U_28) log:collectAllIn ?U_18. ?U_28 ?U_8 ?U_29. "result" log:trace (?U_28 ?U_8 ?U_29). (?U_10 ?U_29) log:equalTo ?U_25} ?U_30) log:collectAllIn ?U_18. "aggrResultCells" log:trace (?U_30). ((?U_31 ?U_0) {("org") list:iterate (?U_26 ?U_0). "T0" log:trace (?U_0 ("org" "avgPrice")). ?U_0 list:in ("org" "avgPrice"). (?U_19 ?U_26) list:memberAt ?U_31} ?U_32) log:collectAllIn ?U_18. "groupResultCells" log:trace (?U_32). (?U_30 ?U_32) list:append ?U_33} => {_:sk_34 ex:result ?U_33}.
+{((?t_4) {?t_5 <http://books.example/affiliates> ?t_6. ?t_7 <http://books.example/price> ?t_4. ?t_6 <http://books.example/writesBook> ?t_7} ?U_10) log:collectAllIn ?U_11. (?U_12 {((sp:Avg ?t_4 "avgPrice")) list:iterate (?U_13 (?U_1 ?U_2 ?U_3)). (?U_14 {?U_10 list:member ?U_15. (?U_15 ?U_13) list:memberAt ?U_14} ?U_16) log:collectAllIn ?U_11. ?U_16 ?U_1 ?U_17. (?U_3 ?U_17) log:equalTo ?U_12} ?U_18) log:collectAllIn ?U_11} => {_:sk_19 ex:result ?U_18}.
 
-#2023-03-02T17:16:00.138Z in=62 out=1 ent=1 step=1 brake=2 inf=180186 sec=0.030 inf/sec=6006200
+#2023-03-02T20:08:09.341Z in=60 out=1 ent=1 step=1 brake=2 inf=184370 sec=0.030 inf/sec=6145667
 #ENDS
 
