@@ -6,4 +6,4 @@ WHERE {
   ?auth :writesBook ?book .
   ?book :price ?lprice .
 }
-GROUP BY ?org ?book
+GROUP BY ?org

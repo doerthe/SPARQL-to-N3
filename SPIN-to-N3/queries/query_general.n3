@@ -110,6 +110,10 @@
 
       } ?aggrs ) log:collectAllIn _:t .
 
+      # TODO
+      # map to N3 builtins before creating the rule
+      # (shouldn't rely on aux files when exec N3 rules)
+
       # from these, get aggr-variable vars
       ( ?aggrVar { ?aggrs list:member ?aggr . ( ?aggr 1 ) list:memberAt ?aggrVar } ?aggrVars ) 
             log:collectAllIn _:t .
@@ -121,7 +125,7 @@
       {     # collect all relevant variable values from the WHERE clause
             ( ( ?groupVars ?aggrVars ) ?g ?pairs ) log:collectAllIn _:t .
 
-            # "pairs" log:trace ( ?pairs ) .
+            "pairs" log:trace ( ?pairs ) .
 
             # get all group-variables values from these pairs
             ( ?groupVal { ?pairs list:member ?pair . ( ?pair 0 ) list:memberAt ?groupVal } ?groupVals )
@@ -129,7 +133,7 @@
 
             # get all unique group-variables values
             ?groupVals list:removeDuplicates ?uniqueGroupVals .
-            # "uniqueGroupVals" log:trace ( ?uniqueGroupVals ) .
+            "uniqueGroupVals" log:trace ( ?uniqueGroupVals ) .
 
             # for each unique group-variables value
             ?uniqueGroupVals list:member ?groupVal .
@@ -138,15 +142,16 @@
             # collect all corresponding aggr-variables values
             ( ?aggrValueList
             {
-                  ?pairs list:member ?pair .
-                  ( ?pair 0 ) list:memberAt ?groupVal .
-                  ( ?pair 1 ) list:memberAt ?aggrValueList
+                  ?pairs list:member ( ?groupVal ?aggrValueList ) .
+                  # ?pair log:equalTo ( ?groupVal ?aggrValueList )
+                  # ( ?pair 0 ) list:memberAt ?groupVal .
+                  # ( ?pair 1 ) list:memberAt ?aggrValueList
                   
             } ?aggrValueLists ) log:collectAllIn _:t .
             
             # per unique group-variables combination: 
             # a list of values, one for each aggr-variable
-            # "aggrValueLists" log:trace ( ?aggrValueLists ) .
+            "aggrValueLists" log:trace ( ?aggrValueLists ) .
             
             ( ?aggrResultCell
             { 
@@ -173,7 +178,7 @@
             # "aggrResultCells" log:trace ( ?aggrResultCells ) .
 
             # for each group-variable being returned, get the group value
-            ( ( ?indivGroupVal ?groupVarName )
+            ( ( ?groupVarName ?indivGroupVal )
             {
                   ?groupVarNames list:iterate ( ?i ?groupVarName ) .
                   # "T0" log:trace ( ?groupVarName ?selectVarNames ) .
