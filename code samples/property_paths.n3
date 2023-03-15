@@ -1,0 +1,59 @@
+# @alsoload ex_path1.n3
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#> . 
+@prefix log: <http://www.w3.org/2000/10/swap/log#> . 
+@prefix string: <http://www.w3.org/2000/10/swap/string#> . 
+@prefix list: <http://www.w3.org/2000/10/swap/list#> . 
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+{
+    ?x sp:where ?clause .
+
+    ?clause list:member ?triple .
+    ?triple a sp:TriplePath ;
+        sp:path ?path .
+
+    ?path a sp:SeqPath .
+
+    ?triple!sp:subject log:skolem ?ss .
+    ?triple!sp:object log:skolem ?os .
+
+    ( ?pathPred
+    {   ?path ?pathPred ?pred . 
+        ?pathPred!log:uri string:startsWith "http://spinrdf.org/sp#path" 
+
+    } ?pathPreds) log:collectAllIn _:t . 
+
+    ?pathPreds e:sort ?pathPredsSorted .
+    ?pathPreds list:length ?len .
+    
+    "T2" log:trace ( ?pathPredsSorted ) .
+
+    ( ?pathVar
+    {   ?pathPredsSorted list:iterate ( ?i [] ) .
+        ?i math:lessThan ( ?len -1 )!math:sum .
+        ?i log:skolem ?pathVar .
+
+    } ?intermPathVars ) log:collectAllIn _:t .
+
+    ( ( ?ss ) ?intermPathVars ( ?os ) ) list:append ?pathVars .
+
+    "T1" log:trace ( ?intermPathVars ) .
+
+    ( ?pathTriple
+    {   ?pathPredsSorted list:iterate ( ?cur ?pathPred ).
+        
+        ?path ?pathPred ?pred .
+
+        ( ?pathVars ?cur ) list:memberAt ?startVar .
+        ( ?cur 1 )  math:sum ?next .
+        ( ?pathVars ?next ) list:memberAt ?endVar .
+
+        { ?startVar ?pred ?endVar } log:equalTo ?pathTriple .
+
+    } ?pathTriples ) log:collectAllIn _:t . 
+
+} => {
+    <> :out ?pathTriples .
+} .
