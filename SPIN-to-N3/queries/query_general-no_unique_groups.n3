@@ -125,19 +125,7 @@
       {     # collect all relevant variable values from the WHERE clause
             ( ( ?groupVars ?aggrVars ) ?g ?pairs ) log:collectAllIn _:t .
 
-            # "pairs" log:trace ( ?pairs ) .
-
-            # get all group-variables values from these pairs
-            ( ?groupVal { ?pairs list:member ?pair . ( ?pair 0 ) list:memberAt ?groupVal } ?groupVals )
-                  log:collectAllIn _:t .
-
-            # get all unique group-variables values
-            ?groupVals list:removeDuplicates ?uniqueGroupVals .
-            # "uniqueGroupVals" log:trace ( ?uniqueGroupVals ) .
-
-            # for each unique group-variables value
-            ?uniqueGroupVals list:member ?groupVal .
-            # "groupVal" log:trace ( ?groupVal ) .
+            ?pairs list:member ( ?groupVal [] ) .
 
             # collect all corresponding aggr-variables values
             ( ?aggrValueList

@@ -1,0 +1,3 @@
+./sparql2n3-2.sh queries/query_general.n3 examples/select-aggr-6.sparql examples/select-aggr-6_data.n3
+
+./sparql2n3-2.sh queries/query_general-no_unique_groups.n3 examples/select-aggr-6.sparql examples/select-aggr-6_data.n3
