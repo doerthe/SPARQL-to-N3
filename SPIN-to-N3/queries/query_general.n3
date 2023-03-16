@@ -9,7 +9,7 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix aux: <http://example.org/aux#>.
 
-# rule to generate rule
+## construct
 {   ?x a       sp:Construct ;
       sp:templates ?temps ;
       sp:where ?where.
@@ -17,19 +17,27 @@
       ?temps aux:handleTriples ?g2
 	}=>{?g1=>?g2. }.
 
-  # rule to generate rule
+## ask
   {   ?x a       sp:Ask ;
         sp:where ?where.
    	   ?where aux:createGraph ?g1.
-  	}=>{?g1 => {[] ex:result true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{[] ex:result false}
+  	}=>{?g1 => {?x ex:result true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{?x ex:result false}
     }.
 
 ## select
 {   ?x a       sp:Select .
 
     ?x  sp:where ?where.
-    ?x aux:getResultVariables ?outvars.
-     ?where aux:createGraph ?g1.
+    #get result variables 
+    ?x aux:getResultVariables ?outvars .
+    
+    #handle graph
+    ?where aux:createGraph ?g1.
 
-  }=>{?g1 => {[] ex:result ?outvars}.
+    #handle aggregation
+    (?x ?g1) aux:handleAggregation ?g.
+
+    
+
+  }=>{?g => {?x ex:result ?outvars}.
   }.
