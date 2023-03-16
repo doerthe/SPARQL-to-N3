@@ -1,4 +1,4 @@
-# @alsoload ex_path1.n3
+# @alsoload tmp.spin
 
 @prefix math: <http://www.w3.org/2000/10/swap/math#> . 
 @prefix log: <http://www.w3.org/2000/10/swap/log#> . 
@@ -6,32 +6,60 @@
 @prefix list: <http://www.w3.org/2000/10/swap/list#> . 
 @prefix sp: <http://spinrdf.org/sp#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
 
 {
-    ?x sp:where ?clause .
+    ?x aux:collectPaths ?paths
+} <= {
+    ?x a sp:SeqPath ;
+        sp:path1 ?p1 ;
+        sp:path2 ?p2 .
 
-    ?clause list:member ?triple .
-    ?triple a sp:TriplePath ;
+    ?p1 aux:collectPaths ?p1s .
+    ?p2 aux:collectPaths ?p2s .
+
+    ( ?p1s ?p2s ) list:append ?paths .
+} .
+
+{
+    ?x aux:collectPaths ?paths
+} <= {
+    _:t log:notIncludes { ?x a sp:SeqPath } .
+    ?x log:rawType log:Other .
+    ?paths log:equalTo ( ?x ) .
+} .
+
+# testing collection of paths
+# {
+#     ?x sp:where ?where .
+#     ?where list:member ?tp .
+#     ?tp sp:path ?path .
+
+#     ?path aux:collectPaths ?paths
+
+# } => {
+#     <> :out ?paths .
+# } .
+
+{
+    ?x sp:where ?where .
+
+    ?where list:member ?tp .
+    ?tp a sp:TriplePath ;
         sp:path ?path .
 
-    ?path a sp:SeqPath .
+    "T0" log:trace ( ?path ) .
 
-    ?triple!sp:subject log:skolem ?ss .
-    ?triple!sp:object log:skolem ?os .
+    ?path aux:collectPaths ?pathPreds .
+    "T1" log:trace ( ?pathPreds ) .
 
-    ( ?pathPred
-    {   ?path ?pathPred ?pred . 
-        ?pathPred!log:uri string:startsWith "http://spinrdf.org/sp#path" 
+    ?tp!sp:subject log:skolem ?ss .
+    ?tp!sp:object log:skolem ?os .
 
-    } ?pathPreds) log:collectAllIn _:t . 
-
-    ?pathPreds e:sort ?pathPredsSorted .
     ?pathPreds list:length ?len .
-    
-    "T2" log:trace ( ?pathPredsSorted ) .
 
     ( ?pathVar
-    {   ?pathPredsSorted list:iterate ( ?i [] ) .
+    {   ?pathPreds list:iterate ( ?i [] ) .
         ?i math:lessThan ( ?len -1 )!math:sum .
         ?i log:skolem ?pathVar .
 
@@ -39,18 +67,16 @@
 
     ( ( ?ss ) ?intermPathVars ( ?os ) ) list:append ?pathVars .
 
-    "T1" log:trace ( ?intermPathVars ) .
+    "T2" log:trace ( ?pathVars ) .
 
     ( ?pathTriple
-    {   ?pathPredsSorted list:iterate ( ?cur ?pathPred ).
-        
-        ?path ?pathPred ?pred .
+    {   ?pathPreds list:iterate ( ?cur ?pathPred ).
 
         ( ?pathVars ?cur ) list:memberAt ?startVar .
         ( ?cur 1 )  math:sum ?next .
         ( ?pathVars ?next ) list:memberAt ?endVar .
 
-        { ?startVar ?pred ?endVar } log:equalTo ?pathTriple .
+        { ?startVar ?pathPred ?endVar } log:equalTo ?pathTriple .
 
     } ?pathTriples ) log:collectAllIn _:t . 
 

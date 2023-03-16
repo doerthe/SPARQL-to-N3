@@ -20,7 +20,8 @@
                                     "name"
                           ] ;
                   <http://spinrdf.org/sp#path>
-                          [ a       <http://spinrdf.org/sp#SeqPath> ;
+                          [     id <http://spinrdf.org/sp#somePath1>
+                                a       <http://spinrdf.org/sp#SeqPath> ;
                             <http://spinrdf.org/sp#path1>
                                     [ a       <http://spinrdf.org/sp#SeqPath> ;
                                       <http://spinrdf.org/sp#path1>
