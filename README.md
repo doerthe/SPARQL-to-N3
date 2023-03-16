@@ -3,6 +3,11 @@
 SPARQL-SPIN-N3 editor:
 https://n3-editor.herokuapp.com/n3/sparql2n3/
 
+SPARQL execution:
+http://n3-editor.herokuapp.com/n3/sparql
+
+# Links
+
 Some useful links from our meetings:
 
 SPARQL builtins:  
