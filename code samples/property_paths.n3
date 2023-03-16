@@ -1,5 +1,6 @@
 # @alsoload tmp.spin
 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
 @prefix math: <http://www.w3.org/2000/10/swap/math#> . 
 @prefix log: <http://www.w3.org/2000/10/swap/log#> . 
 @prefix string: <http://www.w3.org/2000/10/swap/string#> . 
@@ -24,12 +25,25 @@
 {
     ?x aux:collectPaths ?paths
 } <= {
-    _:t log:notIncludes { ?x a sp:SeqPath } .
-    ?x log:rawType log:Other .
-    ?paths log:equalTo ( ?x ) .
+    ?x a sp:ModPath ;
+        sp:subPath ?p ;
+        sp:modMin ?min ;
+        sp:modMax ?max .
+
+    ?paths log:equalTo ( ( ?p ?min ?max ) )
 } .
 
-# testing collection of paths
+{
+    ?x aux:collectPaths ?paths
+} <= {
+    _:t log:notIncludes { ?x a sp:SeqPath } .
+    _:t log:notIncludes { ?x a sp:ModPath } .
+    ?x log:rawType log:Other .
+
+    ?paths log:equalTo ( ( ?x 1 1 ) ) .
+} .
+
+# # testing collection of paths
 # {
 #     ?x sp:where ?where .
 #     ?where list:member ?tp .
@@ -41,6 +55,53 @@
 #     <> :out ?paths .
 # } .
 
+
+{   ( ?endIdx ?idxs ) aux:startIdx ?startIdx 
+
+} <= {
+    ( ?idxs 0 ) list:memberAt ?endIdx .
+    ?startIdx log:equalTo -1 .
+} .
+
+{
+    ( ?endIdx ?idxs ) aux:startIdx ?startIdx 
+
+} <= {
+    ( ?idxs ?i ) list:memberAt ?endIdx .
+    ?i math:greaterThan 0 .
+    ( ?i -1 ) math:sum ?pi .
+    ( ?idxs ?pi ) list:memberAt ?startIdx .
+} .
+
+
+{   ( -1 ?x ) aux:startTriples () } <= {} .
+
+{   ( ?startIdx ?pathVars ) aux:startTriples ?extra
+
+} <= {
+    ?startIdx math:greaterThan -1 .
+
+    ( ?pathVars ?startIdx ) list:memberAt ?priorVar .
+    ( ?startIdx ?priorVar ) aux:intermResultTriple ?extra .
+} .
+
+
+{   ( ?endIdx ?pathVars ) aux:resultTriples ?extra
+
+} <= {
+    ( ?pathVars ?endIdx ) list:memberAt ?curVar .
+    ( ?endIdx ?curVar ) aux:intermResultTriple ?extra .
+} .
+
+
+{   ( ?idx ?var ) aux:intermResultTriple ?t
+
+} <= {
+    ( "http://example.org/aux#IntermResult" ?idx )!string:concatenation <-log:uri ?resUri .
+    ( { ?resUri rdfs:value ?var } ) log:equalTo ?t .
+} .
+
+
 {
     ?x sp:where ?where .
 
@@ -48,10 +109,10 @@
     ?tp a sp:TriplePath ;
         sp:path ?path .
 
-    "T0" log:trace ( ?path ) .
+    # "T0" log:trace ( ?path ) .
 
     ?path aux:collectPaths ?pathPreds .
-    "T1" log:trace ( ?pathPreds ) .
+    "pathPreds" log:trace ( ?pathPreds ) .
 
     ?tp!sp:subject log:skolem ?ss .
     ?tp!sp:object log:skolem ?os .
@@ -67,19 +128,44 @@
 
     ( ( ?ss ) ?intermPathVars ( ?os ) ) list:append ?pathVars .
 
-    "T2" log:trace ( ?pathVars ) .
+    "pathVars" log:trace ( ?pathVars ) .
+
+    ( ?i
+    {
+        ?pathPreds list:iterate ( ?i ?pathPred ) .
+        ( ?pathPred 2 ) list:memberAt -2 .
+
+    } ?arbits ) log:collectAllIn _:t .
+
+    ( ?arbits ( ?len ) ) list:append ?allIdxs .
+
+    "allIdxs" log:trace ( ?allIdxs ) .
+
+    ?allIdxs list:iterate ( ?i ?endIdx ) .
+    ( ?endIdx ?allIdxs ) aux:startIdx ?startIdx .
 
     ( ?pathTriple
-    {   ?pathPreds list:iterate ( ?cur ?pathPred ).
+        {   
+            ?pathPreds list:iterate ( ?cur ( ?pred [] [] )) .
+            ?cur math:greaterThan ?startIdx ; math:notGreaterThan ?endIdx .
 
-        ( ?pathVars ?cur ) list:memberAt ?startVar .
-        ( ?cur 1 )  math:sum ?next .
-        ( ?pathVars ?next ) list:memberAt ?endVar .
+            ( ?pathVars ?cur ) list:memberAt ?startVar .
+            ( ?cur 1 )  math:sum ?next .
+            ( ?pathVars ?next ) list:memberAt ?endVar .
 
-        { ?startVar ?pathPred ?endVar } log:equalTo ?pathTriple .
+            { ?startVar ?pred ?endVar } log:equalTo ?pathTriple .
+        }
 
-    } ?pathTriples ) log:collectAllIn _:t . 
+    ?pathTriples ) log:collectAllIn _:t .
+
+    ( ?startIdx ?pathVars ) aux:startTriples ?startTriples .
+    "startTriples" log:trace ( ?startTriples ) .
+
+    ( ?endIdx ?pathVars ) aux:resultTriples ?resultTriples .
+    "resultTriples" log:trace ( ?resultTriples ) .
+
+    ( ?startTriples ?pathTriples ) list:append ?allTriples .
 
 } => {
-    <> :out ?pathTriples .
+    <> :out ( ?allTriples ?resultTriples ) .
 } .

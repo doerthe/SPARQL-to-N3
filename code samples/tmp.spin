@@ -20,19 +20,20 @@
                                     "name"
                           ] ;
                   <http://spinrdf.org/sp#path>
-                          [     id <http://spinrdf.org/sp#somePath1>
-                                a       <http://spinrdf.org/sp#SeqPath> ;
+                          [ a       <http://spinrdf.org/sp#SeqPath> ;
                             <http://spinrdf.org/sp#path1>
                                     [ a       <http://spinrdf.org/sp#SeqPath> ;
                                       <http://spinrdf.org/sp#path1>
-                                              [ a       <http://spinrdf.org/sp#SeqPath> ;
-                                                <http://spinrdf.org/sp#path1>
-                                                        <http://xmlns.com/foaf/0.1/knows> ;
-                                                <http://spinrdf.org/sp#path2>
-                                                        <http://xmlns.com/foaf/0.1/knows>
-                                              ] ;
+                                              <http://xmlns.com/foaf/0.1/worksWith> ;
                                       <http://spinrdf.org/sp#path2>
-                                              <http://xmlns.com/foaf/0.1/knows>
+                                              [ a       <http://spinrdf.org/sp#ModPath> ;
+                                                <http://spinrdf.org/sp#modMax>
+                                                        -2 ;
+                                                <http://spinrdf.org/sp#modMin>
+                                                        1 ;
+                                                <http://spinrdf.org/sp#subPath>
+                                                        <http://xmlns.com/foaf/0.1/knows>
+                                              ]
                                     ] ;
                             <http://spinrdf.org/sp#path2>
                                     <http://xmlns.com/foaf/0.1/name>
