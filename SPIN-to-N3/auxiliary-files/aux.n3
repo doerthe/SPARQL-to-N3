@@ -90,7 +90,6 @@
 #getFunctions
 {?t aux:getFunctionTriples ?tr}<={
   ?t sp:expression ?e.
-  66 e:trace ?t.
   ?e sp:arg1 ?something.
    ("!") e:derive true.
  
@@ -100,7 +99,6 @@
   (?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
   ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
       } ?ns ) log:collectAllIn ?scope.
-  3 e:trace "hier".
   ?ns e:sort ?nsort.
   # get labeled arguments in the right order
   (?argl {
@@ -113,20 +111,14 @@
     ?argp list:in ?nsort.
     ?e ?argp ?arg.
       } ?uarguments ) log:collectAllIn ?scope.
-  4 e:trace "hier".
   ?e  a ?f.
-    5 e:trace "hier".
   ?t aux:gets ?e1.
-    6 e:trace "hier".
 {?arguments ?f ?e1 } log:equalTo ?in.
  ?in  aux:funcTranslation ?tr1.
-33 e:trace "hier".
 # check for arguments of arguments
 (?triples {
   ?ar list:in ?uarguments.
-  4 e:trace ?ar.
   ?ar ?p ?o.
-  488 e:trace {?ar ?p ?o.}.
   ?ar aux:getFunctionTriples ?triples.
     } ?trlist  ) log:collectAllIn ?scope.
 
@@ -160,20 +152,15 @@
     ?argp list:in ?nsort.
     ?t ?argp ?arg.
       } ?uarguments ) log:collectAllIn ?scope.
-  4 e:trace "hier".
   ?t  a ?f.
-    5 e:trace "hier".
-  ?t aux:gets ?e1.
-    6 e:trace "hier".
+  ?t aux:gets ?e1. 
 {?arguments ?f ?e1 } log:equalTo ?in.
  ?in  aux:funcTranslation ?tr1.
-33 e:trace "hier".
+
 # check for arguments of arguments
 (?triples {
   ?ar list:in ?uarguments.
-  4 e:trace ?ar.
   ?ar ?p ?o.
-  488 e:trace {?ar ?p ?o.}.
   ?ar aux:getFunctionTriples ?triples.
     } ?trlist  ) log:collectAllIn ?scope.
 
@@ -206,12 +193,8 @@
 <=
 {
 ?t sp:expression ?ex.
-
-
-77 e:trace ?t.
 ?ex sp:expression [sp:varName ?aggrVar].
 ("!") e:derive true.
-1111 e:trace ?t.
 ?t aux:gets ?nvar.
 
 ?ex a ?function.
@@ -292,7 +275,6 @@
 <=
 {
  ?x sp:varName ?name.
- 3 e:trace ?name.
  ?name log:skolem ?ns.
 }.
 
@@ -327,11 +309,7 @@
  #getting all aggregate function expressions
 
  (?tr {?t list:in ?list.
- 19 e:trace ?t.
   ?t aux:getFunctionTriples ?tr.
- ?t ?p ?o.
- 9898 e:trace  {?t ?p ?o}.
- 1199 e:trace (?t ?tr).
                } ?aggList) log:collectAllIn ?scope.
    #make query to get groups
         (?x ?g ) aux:makeGroups ?collectExpression.
@@ -384,13 +362,10 @@ aux:value log:skolem ?value.
  #get aggregation variables needed in the query
  ?x aux:getQueryVariables ?qvars.
 
- "222" e:trace ?qvars.
 
-
- "variables1" e:trace (?qvars ?outvars).
   (?qvars ?outvars) aux:listIntersection ?aggvars.
 
-  "variables" e:trace ?aggvars.
+
   
   
 

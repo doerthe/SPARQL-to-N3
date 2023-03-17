@@ -1,0 +1,45 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#groupBy>
+              ([ <http://spinrdf.org/sp#varName>
+                          "x"
+                ]) ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "x"
+                ] [ <http://spinrdf.org/sp#expression>
+                          [ a       <http://spinrdf.org/sp#mul> ;
+                            <http://spinrdf.org/sp#arg1>
+                                    [ a       <http://spinrdf.org/sp#Min> ;
+                                      <http://spinrdf.org/sp#expression>
+                                              [ <http://spinrdf.org/sp#varName>
+                                                        "y"
+                                              ]
+                                    ] ;
+                            <http://spinrdf.org/sp#arg2>
+                                    2
+                          ] ;
+                  <http://spinrdf.org/sp#varName>
+                          "min"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "y"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://example.com/data/#p> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "x"
+                          ]
+                ] [ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "z"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://example.com/data/#q> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "x"
+                          ]
+                ]) .

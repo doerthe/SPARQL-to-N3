@@ -1,0 +1,24 @@
+#Processed by EYE v3.10.0
+#eye examples/select-aggr-4_data.n3 --query out/select-aggr-4-rule.n3 --nope
+
+@prefix ex: <http://books.example/>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ns1: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/553580029058558441#>.
+
+_:sk_5 ns1:result (("org" ex:org1) ("totalPrice" 475)).
+_:sk_11 ns1:result (("org" ex:org2) ("totalPrice" 425)).
+
+#2023-03-17T09:59:02.259Z in=14 out=2 ent=2 step=7 brake=2 inf=44463 sec=0.053 inf/sec=838925
+#ENDS
+
