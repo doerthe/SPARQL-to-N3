@@ -245,18 +245,31 @@
 
 
 #get graph variables
-#todo - bind is not refelcted
 {?x aux:getGraphVariables ?outvars}
 <=
 {
 
   ?x sp:where ?where.
+  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
+  
 
-((?name ?s1) {?t list:in ?list. ?t ?p ?s.
-                       ?p list:in (sp:subject sp:predicate sp:object).
-                       ?s  sp:varName ?name . ?name e:skolem ?s1.
-             } ?preVarList) log:collectAllIn ?scope.
-?preVarList list:removeDuplicates ?outvars.}.
+  ?vars list:removeDuplicates ?outvars.}.
+
+
+ {?t aux:bgpOrBindVars (?name ?s1).}<=
+ {
+                    ?t ?p ?s.
+                     ?p list:in (sp:subject sp:predicate sp:object).
+                     ?s  sp:varName ?name . ?name e:skolem ?s1.
+ }.
+
+ {?t aux:bgpOrBindVar (?name ?ns)}<={
+   ?t a sp:Bind.
+   ?t sp:varName ?name.
+ ?name log:skolem ?ns.
+ }.
+
+
 
 #get all variables mentioned in the result pattern
 { ?x aux:getQueryVariables ?invars.}
