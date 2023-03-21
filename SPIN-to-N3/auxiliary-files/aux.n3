@@ -6,7 +6,6 @@
 @prefix spin: <http://spinrdf.org/spin#>.
 @prefix sp: <http://spinrdf.org/sp#>.
 @prefix ex: <http://example.org/spin#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -16,13 +15,13 @@
 ##################################################
 {?s aux:gets ?s1}<={?s log:uri ?suri.
  ?suri string:startsWith "http://spinrdf.org/".
- ?s e:skolem ?s1.
- ("!") e:derive true}.
-{?s aux:gets ?s1}<={?s  sp:varName ?name . ?name e:skolem ?s1. ("!") e:derive true
+ ?s log:skolem ?s1.
+ true log:callWithCut true}.
+{?s aux:gets ?s1}<={?s  sp:varName ?name . ?name log:skolem ?s1. true log:callWithCut true
   }.
-{?s aux:gets ?s1}<={?s  sp:arg1 ?arg . ?s e:skolem ?s1. ("!") e:derive true
+{?s aux:gets ?s1}<={?s  sp:arg1 ?arg . ?s log:skolem ?s1. true log:callWithCut true
     }.
-{?s aux:gets ?s1}<={?s  sp:expression ?arg . ?s e:skolem ?s1. ("!") e:derive true
+{?s aux:gets ?s1}<={?s  sp:expression ?arg . ?s log:skolem ?s1. true log:callWithCut true
     }.
 {?s aux:gets ?s}<={}.
 
@@ -91,7 +90,7 @@
 {?t aux:getFunctionTriples ?tr}<={
   ?t sp:expression ?e.
   ?e sp:arg1 ?something.
-   ("!") e:derive true.
+   true log:callWithCut true.
  
   
   #getArguments
@@ -99,7 +98,7 @@
   (?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
   ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
       } ?ns ) log:collectAllIn ?scope.
-  ?ns e:sort ?nsort.
+  ?ns list:sort ?nsort.
   # get labeled arguments in the right order
   (?argl {
     ?argp list:in ?nsort.
@@ -131,7 +130,7 @@
 {?t aux:getFunctionTriples ?tr}<={
 
   ?t sp:arg1 ?something.
-   ("!") e:derive true.
+   true log:callWithCut true.
  
   
   #getArguments
@@ -140,7 +139,7 @@
   ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
       } ?ns ) log:collectAllIn ?scope.
  
-  ?ns e:sort ?nsort.
+  ?ns list:sort ?nsort.
   # get labeled arguments in the right order
   (?argl {
     ?argp list:in ?nsort.
@@ -176,13 +175,13 @@
 ?t sp:expression ?ex.
 
 ?ex sp:varName ?aggrVar.
-("!") e:derive true.
+true log:callWithCut true.
 ?t aux:gets ?nvar.
 
 ?t a ?function.
              
 
-(aux:aggregationInput ?aggrVar) e:skolem ?args.
+(aux:aggregationInput ?aggrVar) log:skolem ?args.
 # this log:equalTo is only here for technical reasons
 ?d log:equalTo {?args ?function ?nvar}.
 ?d aux:aggTranslation ?tr.
@@ -194,14 +193,14 @@
 {
 ?t sp:expression ?ex.
 ?ex sp:expression [sp:varName ?aggrVar].
-("!") e:derive true.
+true log:callWithCut true.
 ?t aux:gets ?nvar.
 
 ?ex a ?function.
 
              
 
-             (aux:aggregationInput ?aggrVar) e:skolem ?args.
+             (aux:aggregationInput ?aggrVar) log:skolem ?args.
              # this log:equalTo is only here for technical reasons
              ?d log:equalTo {?args ?function ?nvar}.
              ?d aux:aggTranslation ?tr.
@@ -233,8 +232,8 @@
 #select with variables
 {?x aux:getResultVariables ?outvars}<={
   ?x  sp:resultVariables ?varlist.
-  ("!") e:derive true.
-    ((?name ?s1){?s list:in ?varlist. ?s  sp:varName ?name . ?name e:skolem ?s1.} ?outvars) log:collectAllIn ?scope.
+  true log:callWithCut true.
+    ((?name ?s1){?s list:in ?varlist. ?s  sp:varName ?name . ?name log:skolem ?s1.} ?outvars) log:collectAllIn ?scope.
 }.
 
 #select with star 
@@ -260,7 +259,7 @@
  {
                     ?t ?p ?s.
                      ?p list:in (sp:subject sp:predicate sp:object).
-                     ?s  sp:varName ?name . ?name e:skolem ?s1.
+                     ?s  sp:varName ?name . ?name log:skolem ?s1.
  }.
 
  {?t aux:bgpOrBindVar (?name ?ns)}<={
@@ -318,7 +317,7 @@
 {(?x ?g) aux:handleAggregation ?g2 }<={
  ?x sp:resultVariables ?list.
  _:t list:in ?list; sp:expression _:e.
- ("!") e:derive true.
+ true log:callWithCut true.
  #getting all aggregate function expressions
 
  (?tr {?t list:in ?list.
@@ -350,7 +349,7 @@
 #makeGroups
 {( ?x ?g) aux:makeGroups ?graph.}<={
   ?x sp:groupBy ?vars.
-  ("!") e:derive true.
+  true log:callWithCut true.
     # create all new variables needed
 aux:scope log:skolem ?scope.
 aux:pairs log:skolem ?pairs.
@@ -362,7 +361,7 @@ aux:ilist log:skolem ?ilist.
 aux:value log:skolem ?value.
 
   #get group variables
-   ( (?groupVarName ?groupVar) { ?x!sp:groupBy!list:member sp:varName ?groupVarName. ?groupVarName e:skolem ?groupVar.  } ?groupVars ) 
+   ( (?groupVarName ?groupVar) { ?x!sp:groupBy!list:member sp:varName ?groupVarName. ?groupVarName log:skolem ?groupVar.  } ?groupVars ) 
             log:collectAllIn _:t .
 
 
@@ -394,7 +393,7 @@ aux:value log:skolem ?value.
     } 
     #based on
     {(?name ?var) list:in ?aggvars.
-    (aux:aggregationInput ?name) e:skolem ?args.
+    (aux:aggregationInput ?name) log:skolem ?args.
   } ?tripleList ) log:collectAllIn _:t.
  
 
@@ -456,7 +455,7 @@ aux:value log:skolem ?value.
 {{(?a) sp:isBlank ?o} aux:funcTranslation {?a log:rawType ?type. ?type list:in ( log:BlankNode log:LabeledBlankNode  log:UnlabeledBlankNode)}}<={}.
 {{(?a) sp:isLiteral ?o} aux:funcTranslation {?a log:rawType log:Literal. }}<={}.
 {{(?a) sp:isNumeric ?o} aux:funcTranslation { (?z ?dt)log:dtlit ?a.	?dt list:in (xsd:byte xsd:decimal xsd:int xsd:integer xsd:long xsd:negativeInteger xsd:nonNegativeInteger xsd:nonPositiveInteger xsd:positiveInteger xsd:short xsd:unsignedLong xsd:unsignedInt xsd:unsignedShort xsd:unsignedByte )}}<={}.
-{{(?a) sp:str ?o} aux:funcTranslation { ?scope e:optional {?a log:uri ?o}. ?scope e:optional {?a log:rawType log:Literal. ?a log:equalTo ?o}.}}<={}.
+{{(?a) sp:str ?o} aux:funcTranslation { true log:callWithOptional {?a log:uri ?o}. true log:callWithOptional {?a log:rawType log:Literal. ?a log:equalTo ?o}.}}<={}.
 {{(?a) sp:lang ?o} aux:funcTranslation { ([] ?o) log:langlit ?a}}<={}.
 {{(?a) sp:datatype ?o} aux:funcTranslation { ([] ?o) log:dtlit ?a}}<={}.
 {{?list sp:bnode ?o} aux:funcTranslation { ?list log:skolem ?o}}<={}.
