@@ -1,0 +1,136 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+# EXAMPLE DATA
+
+:alice foaf:mbox <mailto:alice@example> ;
+   foaf:name "alice" .
+:alice foaf:worksWith [ id :bob
+    foaf:name "bob" 
+] .
+:bob foaf:knows [ id :trudy
+    foaf:name "trudy" 
+] .
+:trudy foaf:knows [ id :greg
+    foaf:name "greg" 
+] .
+
+
+# EXAMPLE QUERIES
+
+# PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+# SELECT ?x ?name 
+# WHERE  {
+#     ?x foaf:mbox <mailto:alice@example> .
+#     ?x foaf:worksWith/foaf:knows+/foaf:name ?name .
+#   }
+# {
+#    ?x foaf:mbox <mailto:alice@example> .
+#    ?x foaf:worksWith ?y .
+#    ( ?y ?z ) :chain foaf:knows .
+#    ?z foaf:name ?name 
+# }
+# => 
+# {
+#    [] :solution ( ( "x" ?x ) ( "name" ?name ) ) 
+# } .
+
+
+# PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+# SELECT ?x ?name 
+# WHERE  {
+#     ?x foaf:mbox <mailto:alice@example> .
+#     ?x foaf:worksWith/foaf:knows*/foaf:name ?name .
+#   }
+# {
+#    ?x foaf:mbox <mailto:alice@example> .
+#    ?x foaf:worksWith ?y .
+#    ( ?y ?z ) :optionalChain foaf:knows .
+#    ?z foaf:name ?name 
+# }
+# => 
+# {
+#    [] :solution ( ( "x" ?x ) ( "name" ?name ) ) 
+# } .
+
+
+# PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+# SELECT ?x ?name 
+# WHERE  {
+#     ?x foaf:mbox <mailto:alice@example> .
+#     ?x foaf:knows? ?y .
+#     ?y foaf:name ?name 
+#   }
+#
+{
+   ?x foaf:mbox <mailto:alice@example> .
+   ( ?x ?y ) :optional foaf:worksWith .
+   ?y foaf:name ?name 
+}
+=> 
+{
+   [] :solution ( ( "x" ?x ) ( "name" ?name ) ) 
+} .
+
+
+# AUX
+
+# - optional chain
+#
+{
+   ( ?a ?b ) :optionalChain ?predicate .
+}
+<= 
+{
+   ?a log:equalTo ?b 
+} .
+
+#
+{
+   ( ?a ?b ) :optionalChain ?predicate .
+}
+<= 
+{
+   ( ?a ?b ) :chain ?predicate .
+} .
+
+
+# - chain
+#
+{
+   ( ?a ?b ) :chain ?predicate .
+}
+<= 
+{
+   ?a ?predicate ?b .
+} .
+
+#
+{
+   ( ?a ?x ) :chain ?predicate .
+}
+<= 
+{
+   ?a ?predicate ?b .
+   ( ?b ?x ) :chain ?predicate 
+} .
+
+
+# - optional
+#
+{
+   ( ?a ?b ) :optional ?predicate 
+}
+<= 
+{
+   ?a log:equalTo ?b 
+} .
+
+#
+{
+   ( ?a ?b ) :optional ?predicate 
+}
+<= 
+{
+   ?a ?predicate ?b 
+} .

@@ -1,0 +1,36 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:alice foaf:mbox <mailto:alice@example> .
+:alice foaf:worksWith :bob .
+:bob foaf:knows [ id :trudy foaf:name "trudy" ].
+:trudy foaf:knows [ id :greg foaf:name "greg" ] .
+
+#
+{
+   ?x foaf:mbox <mailto:alice@example> .
+   ?x foaf:worksWith ?y 
+}
+=> 
+{
+   ?y a :IntermSol0 
+} .
+
+#
+{
+   ?x a :IntermSol0 .
+   ?x foaf:knows ?y .
+}
+=> 
+{
+   ?y a :IntermSol0 , :IntermSol1 
+} .
+
+#
+{
+   ?x a :IntermSol1 .
+   ?x foaf:name ?y 
+}
+=> 
+{
+   <> :solution ?y 
+} .
