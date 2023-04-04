@@ -35,9 +35,10 @@
 ?list aux:handleFilter ?graph2.
 ?list aux:handleUnion ?graph3.
 ?list aux:handleBind ?graph4.
+?list aux:handleOptional ?graph5.
 
 
-(?graph1 ?graph2 ?graph3 ?graph4) log:conjunction ?graph
+(?graph1 ?graph2 ?graph3 ?graph4 ?graph5) log:conjunction ?graph
 
 }.
 
@@ -56,8 +57,9 @@
                ?fl  log:conjunction ?graph.
   }.
 
-###################
+########################
 # filter
+#######################
   {?list aux:handleFilter ?graph }<={
   (?tr {?t list:in ?list. ?t a  sp:Filter ;
                     aux:getFunctionTriples ?tr.
@@ -66,8 +68,9 @@
             ?fl  log:conjunction ?graph. 
 }.
 
-##############
+##########################################
 # union
+###########################################
 {?list aux:handleUnion ?graph}<={
   (?t {?t list:in ?list. ?t a  sp:Union .} ?uList) log:collectAllIn ?scope.
   (?uList {}) aux:createUGraph ?graph.
@@ -84,6 +87,28 @@
   ?uList rdf:rest ?rest.
   (?ingraph ?tr) log:conjunction ?newgraph.
   (?rest ?newgraph ) aux:createUGraph ?graph.
+  }.
+
+##########################################
+# optional
+###########################################
+{?list aux:handleOptional ?graph}<={
+  (?t {?t list:in ?list. ?t a  sp:Optional .} ?oList) log:collectAllIn ?scope.
+  (?oList {}) aux:createOGraph ?graph.
+
+  }.
+
+{ (() ?graph) aux:createOGraph ?graph.}<={}.
+
+{(?oList ?ingraph ) aux:createOGraph ?graph.}<={
+  ?oList rdf:first ?t.
+  ?oList rdf:rest ?rest.
+  ?t sp:elements ?elist.
+  ?elist aux:createGraph ?gr.
+  :scope log:skolem ?scope.
+  ({?scope e:optional ?gr } ?ingraph ) log:conjunction ?newgraph.
+(?rest ?newgraph ) aux:createOGraph ?graph
+ 
   }.
 
 ##############################################
@@ -366,7 +391,7 @@ aux:value log:skolem ?value.
             log:collectAllIn _:t .
 
 
-  #get agg variables -> todo:involve filter
+  #get agg variables 
  ?x aux:getGraphVariables ?outvars2.
  (?outvars2 ?groupVars) aux:listDifference ?outvars.
 
