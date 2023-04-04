@@ -1,0 +1,29 @@
+#Processed by EYE v3.13.0
+#eye examples/not-exists-spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2925499587789775181#>.
+
+{
+    ?t_3 a <http://xmlns.com/foaf/0.1/Person>.
+    (1 {
+        ?t_3 <http://xmlns.com/foaf/0.1/name> ?t_4.
+    } ()) log:collectAllIn ?t_5.
+} => {
+    _:bn_1 ex:result (("person" ?t_3)).
+}.
+
+#2023-04-04T13:43:16.627Z in=89 out=1 ent=1 step=1 brake=2 inf=240042 sec=0.068 inf/sec=3530029
+#ENDS
+

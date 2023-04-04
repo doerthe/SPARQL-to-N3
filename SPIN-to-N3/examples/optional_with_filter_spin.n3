@@ -1,0 +1,42 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "title"
+                ] [ <http://spinrdf.org/sp#varName>
+                          "price"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "title"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://purl.org/dc/elements/1.1/title> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "x"
+                          ]
+                ] [ a       <http://spinrdf.org/sp#Optional> ;
+                  <http://spinrdf.org/sp#elements>
+                          ([ <http://spinrdf.org/sp#object>
+                                      [ <http://spinrdf.org/sp#varName>
+                                                "price"
+                                      ] ;
+                              <http://spinrdf.org/sp#predicate>
+                                      <http://example.org/ns#price> ;
+                              <http://spinrdf.org/sp#subject>
+                                      [ <http://spinrdf.org/sp#varName>
+                                                "x"
+                                      ]
+                            ] [ a       <http://spinrdf.org/sp#Filter> ;
+                              <http://spinrdf.org/sp#expression>
+                                      [ a       <http://spinrdf.org/sp#lt> ;
+                                        <http://spinrdf.org/sp#arg1>
+                                                [ <http://spinrdf.org/sp#varName>
+                                                          "price"
+                                                ] ;
+                                        <http://spinrdf.org/sp#arg2>
+                                                30
+                                      ]
+                            ])
+                ]) .
