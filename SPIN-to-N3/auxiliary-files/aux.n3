@@ -9,6 +9,7 @@
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 
 
 ##################################################
@@ -31,11 +32,12 @@
 # translate where clause to n3 graph
 ##################################################
 {?list aux:createGraph ?graph}<={
-?list aux:handleTriples ?graph1.
-?list aux:handleFilter ?graph2.
-?list aux:handleUnion ?graph3.
-?list aux:handleBind ?graph4.
-?list aux:handleOptional ?graph5.
+(?list ()) aux:flatten ?list2.
+?list2 aux:handleTriples ?graph1.
+?list2 aux:handleFilter ?graph2.
+?list2 aux:handleUnion ?graph3.
+?list2 aux:handleBind ?graph4.
+?list2 aux:handleOptional ?graph5.
 
 
 (?graph1 ?graph2 ?graph3 ?graph4 ?graph5) log:conjunction ?graph
@@ -462,6 +464,19 @@ aux:value log:skolem ?value.
  (?x {?x list:in ?l1, ?l2 } ?xs) log:collectAllIn _:t.
  ?xs list:removeDuplicates ?result.
 }.
+
+#flatten lists
+{(() ?res ) aux:flatten ?res}<={ true log:callWithCut true}.
+{(?list ?res ) aux:flatten ?olist}<={
+    ?list rdf:first ?f.
+    ?f log:rawType rdf:List. true log:callWithCut true.
+    (?f ()) aux:flatten ?result. (?res ?result) list:append ?new.
+    ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
+
+{(?list ?res ) aux:flatten ?olist}<={
+    ?list rdf:first ?f.
+    (?res (?f)) list:append ?new.
+    ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
 
 #####################################################################################
 # sparql-functions and their translations

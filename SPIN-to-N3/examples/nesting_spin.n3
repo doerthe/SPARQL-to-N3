@@ -1,0 +1,29 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "name"
+                ] [ <http://spinrdf.org/sp#varName>
+                          "mbox"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              (([ <http://spinrdf.org/sp#object>
+                            [ <http://spinrdf.org/sp#varName>
+                                      "name"
+                            ] ;
+                    <http://spinrdf.org/sp#predicate>
+                            <http://xmlns.com/foaf/0.1/name> ;
+                    <http://spinrdf.org/sp#subject>
+                            [ <http://spinrdf.org/sp#varName>
+                                      "x"
+                            ]
+                  ]) ([ <http://spinrdf.org/sp#object>
+                            [ <http://spinrdf.org/sp#varName>
+                                      "mbox"
+                            ] ;
+                    <http://spinrdf.org/sp#predicate>
+                            <http://xmlns.com/foaf/0.1/mbox> ;
+                    <http://spinrdf.org/sp#subject>
+                            [ <http://spinrdf.org/sp#varName>
+                                      "x"
+                            ]
+                  ])) .
