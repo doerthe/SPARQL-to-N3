@@ -244,6 +244,15 @@ true log:callWithCut true.
 
 }.
 
+# exists
+{?e aux:getFunctionTriples {?scope e:match ?graph}}<={
+ ?e sp:expression ?ex.
+ ?ex a sp:exists;
+     sp:elements ?elements. 
+ ?elements aux:createGraph ?graph.
+ :scope log:skolem ?scope
+
+}.
 
 
 {?e aux:getFunctionTriples {}}<={}.

@@ -1,0 +1,31 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "person"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          <http://xmlns.com/foaf/0.1/Person> ;
+                  <http://spinrdf.org/sp#predicate>
+                          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "person"
+                          ]
+                ] [ a       <http://spinrdf.org/sp#Filter> ;
+                  <http://spinrdf.org/sp#expression>
+                          [ a       <http://spinrdf.org/sp#exists> ;
+                            <http://spinrdf.org/sp#elements>
+                                    ([ <http://spinrdf.org/sp#object>
+                                                [ <http://spinrdf.org/sp#varName>
+                                                          "name"
+                                                ] ;
+                                        <http://spinrdf.org/sp#predicate>
+                                                <http://xmlns.com/foaf/0.1/name> ;
+                                        <http://spinrdf.org/sp#subject>
+                                                [ <http://spinrdf.org/sp#varName>
+                                                          "person"
+                                                ]
+                                      ])
+                          ]
+                ]) .
