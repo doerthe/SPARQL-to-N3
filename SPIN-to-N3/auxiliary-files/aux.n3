@@ -10,6 +10,7 @@
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
+
 ##################################################
 # create variable if needed (used in where clause and in select pattern)
 ##################################################
@@ -104,8 +105,7 @@
   ?oList rdf:rest ?rest.
   ?t sp:elements ?elist.
   ?elist aux:createGraph ?gr.
-  :scope log:skolem ?scope.
-  ({?scope e:optional ?gr } ?ingraph ) log:conjunction ?newgraph.
+  ({true log:callWithOptional ?gr } ?ingraph ) log:conjunction ?newgraph.
 (?rest ?newgraph ) aux:createOGraph ?graph
  
   }.
