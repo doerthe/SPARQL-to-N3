@@ -13,7 +13,7 @@
 @prefix spin: <http://spinrdf.org/spin#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3440315715475669280#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4382813350895151747#>.
 
 {
     (() {
@@ -41,6 +41,6 @@
     _:sk_23 ex:result (("x" ?t_3) ("name" ?t_5)).
 }.
 
-#2023-04-05T15:22:23.313Z in=71 out=2 ent=2 step=2 brake=2 inf=230838 sec=0.034 inf/sec=6789353
+#2023-04-05T15:42:27.919Z in=71 out=2 ent=2 step=2 brake=2 inf=230837 sec=0.034 inf/sec=6789324
 #ENDS
 
