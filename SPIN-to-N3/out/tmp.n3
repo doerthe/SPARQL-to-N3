@@ -13,13 +13,12 @@
 @prefix spin: <http://spinrdf.org/spin#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4382813350895151747#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3922510267576311643#>.
 
 {
     (() {
-        ?t_3 <http://xmlns.com/foaf/0.1/mbox> <mailto:alice@example>.
-        ?t_4 <http://xmlns.com/foaf/0.1/name> ?t_5.
-        (?t_3 ?t_4) aux:optional <http://xmlns.com/foaf/0.1/knows>.
+        ?t_3 <http://purl.org/dc/elements/1.0/title> ?t_4.
+        ?t_3 <http://purl.org/dc/elements/1.0/author> ?t_5.
     } ?U_10) log:collectAllIn ?U_11.
     (?U_12 {
         () list:iterate (?U_13 (?U_1 ?U_2 ?U_3)).
@@ -34,13 +33,35 @@
     _:sk_19 ex:result ?U_18.
 }.
 {
-    ?t_3 <http://xmlns.com/foaf/0.1/mbox> <mailto:alice@example>.
-    ?t_4 <http://xmlns.com/foaf/0.1/name> ?t_5.
-    (?t_3 ?t_4) aux:optional <http://xmlns.com/foaf/0.1/knows>.
+    (() {
+        ?t_3 <http://purl.org/dc/elements/1.1/title> ?t_4.
+        ?t_3 <http://purl.org/dc/elements/1.1/author> ?t_5.
+    } ?U_30) log:collectAllIn ?U_31.
+    (?U_32 {
+        () list:iterate (?U_33 (?U_21 ?U_22 ?U_23)).
+        (?U_34 {
+            ?U_30 list:member ?U_35.
+            (?U_35 ?U_33) list:memberAt ?U_34.
+        } ?U_36) log:collectAllIn ?U_31.
+        ?U_36 ?U_21 ?U_37.
+        (?U_23 ?U_37) log:equalTo ?U_32.
+    } ?U_38) log:collectAllIn ?U_31.
 } => {
-    _:sk_23 ex:result (("x" ?t_3) ("name" ?t_5)).
+    _:sk_39 ex:result ?U_38.
+}.
+{
+    ?t_3 <http://purl.org/dc/elements/1.0/title> ?t_4.
+    ?t_3 <http://purl.org/dc/elements/1.0/author> ?t_5.
+} => {
+    _:sk_43 ex:result (("title" ?t_4) ("author" ?t_5)).
+}.
+{
+    ?t_3 <http://purl.org/dc/elements/1.1/title> ?t_4.
+    ?t_3 <http://purl.org/dc/elements/1.1/author> ?t_5.
+} => {
+    _:sk_47 ex:result (("title" ?t_4) ("author" ?t_5)).
 }.
 
-#2023-04-05T15:42:27.919Z in=71 out=2 ent=2 step=2 brake=2 inf=230837 sec=0.034 inf/sec=6789324
+#2023-04-05T16:21:39.632Z in=75 out=4 ent=4 step=4 brake=2 inf=238462 sec=0.036 inf/sec=6623944
 #ENDS
 

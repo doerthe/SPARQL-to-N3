@@ -1,45 +1,52 @@
 []    a       <http://spinrdf.org/sp#Select> ;
       <http://spinrdf.org/sp#resultVariables>
               ([ <http://spinrdf.org/sp#varName>
-                          "x"
+                          "title"
                 ] [ <http://spinrdf.org/sp#varName>
-                          "name"
+                          "author"
                 ]) ;
       <http://spinrdf.org/sp#where>
-              ([ <http://spinrdf.org/sp#object>
-                          <mailto:alice@example> ;
-                  <http://spinrdf.org/sp#predicate>
-                          <http://xmlns.com/foaf/0.1/mbox> ;
-                  <http://spinrdf.org/sp#subject>
-                          [ <http://spinrdf.org/sp#varName>
-                                    "x"
-                          ]
-                ] [ a       <http://spinrdf.org/sp#TriplePath> ;
-                  <http://spinrdf.org/sp#object>
-                          [ <http://spinrdf.org/sp#varName>
-                                    "y"
-                          ] ;
-                  <http://spinrdf.org/sp#path>
-                          [ a       <http://spinrdf.org/sp#ModPath> ;
-                            <http://spinrdf.org/sp#modMax>
-                                    -1 ;
-                            <http://spinrdf.org/sp#modMin>
-                                    0 ;
-                            <http://spinrdf.org/sp#subPath>
-                                    <http://xmlns.com/foaf/0.1/knows>
-                          ] ;
-                  <http://spinrdf.org/sp#subject>
-                          [ <http://spinrdf.org/sp#varName>
-                                    "x"
-                          ]
-                ] [ <http://spinrdf.org/sp#object>
-                          [ <http://spinrdf.org/sp#varName>
-                                    "name"
-                          ] ;
-                  <http://spinrdf.org/sp#predicate>
-                          <http://xmlns.com/foaf/0.1/name> ;
-                  <http://spinrdf.org/sp#subject>
-                          [ <http://spinrdf.org/sp#varName>
-                                    "y"
-                          ]
+              ([ a       <http://spinrdf.org/sp#Union> ;
+                  <http://spinrdf.org/sp#elements>
+                          (([ <http://spinrdf.org/sp#object>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "title"
+                                        ] ;
+                                <http://spinrdf.org/sp#predicate>
+                                        <http://purl.org/dc/elements/1.0/title> ;
+                                <http://spinrdf.org/sp#subject>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "book"
+                                        ]
+                              ] [ <http://spinrdf.org/sp#object>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "author"
+                                        ] ;
+                                <http://spinrdf.org/sp#predicate>
+                                        <http://purl.org/dc/elements/1.0/author> ;
+                                <http://spinrdf.org/sp#subject>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "book"
+                                        ]
+                              ]) ([ <http://spinrdf.org/sp#object>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "title"
+                                        ] ;
+                                <http://spinrdf.org/sp#predicate>
+                                        <http://purl.org/dc/elements/1.1/title> ;
+                                <http://spinrdf.org/sp#subject>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "book"
+                                        ]
+                              ] [ <http://spinrdf.org/sp#object>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "author"
+                                        ] ;
+                                <http://spinrdf.org/sp#predicate>
+                                        <http://purl.org/dc/elements/1.1/author> ;
+                                <http://spinrdf.org/sp#subject>
+                                        [ <http://spinrdf.org/sp#varName>
+                                                  "book"
+                                        ]
+                              ]))
                 ]) .

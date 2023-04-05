@@ -55,7 +55,7 @@
    ?list aux:handleUnion ?graph3 .
    ?list aux:handleBind ?graph4 .
    ?list aux:handlePropertyPath ?graph5 .
-   ( ?graph1 ?graph2 ?graph3 ?graph4 ?graph5 ) log:conjunction ?graph 
+   ( ?graph1 ?graph2 ?graph3 ?graph4 ) log:conjunction ?graph 
 } .
 
 
@@ -68,82 +68,110 @@
 {
    ?x sp:where ?where .
    ?where list:member ?tp .
-   ?tp a sp:TriplePath ; sp:path ?path .
+   ?tp a sp:TriplePath ;
+       sp:path ?path .
    ?tp!sp:subject aux:gets ?s .
    ?tp!sp:object aux:gets ?o .
 
     # "T0" log:trace ( ?path ) .
    ?path aux:collectPathSteps ?steps .
-   "steps" log:trace ( ?steps ) .
-   
-   ( ?steps ?s ?o {} ) aux:propertyPathSteps ?graph .
-   "result" log:trace ( ?graph ) .
+#    "steps" log:trace ( ?steps ) .
+   (
+       ?steps
+       ?s
+       ?o
+       {}
+   ) aux:propertyPathSteps ?graph .
+#    "result" log:trace ( ?graph ) .
 } .
 
 #
 {
-  ( ?steps ?s ?end ?accum ) aux:propertyPathSteps ?result
-} 
-<=
+   ?list aux:handlePropertyPath ?graph 
+}
+<= 
 {
-    ?steps list:firstRest ( ?step ?rest ) .
-    ?rest!list:length math:greaterThan 0 .
+   ?x sp:where ?where .
+   _:t log:notIncludes 
+   {
+       ?where!list:member a sp:TriplePath 
+   }
+} .
 
-    ?step log:skolem ?o .
-    ( ?s ?o ?step ) aux:propertyPathStep ?triple .
+#
+{
+   ( ?steps ?s ?end ?accum ) aux:propertyPathSteps ?result 
+}
+<= 
+{
+   ?steps list:firstRest ( ?step ?rest ) .
+   ?rest!list:length math:greaterThan 0 .
+   ?step log:skolem ?o .
+   ( ?s ?o ?step ) aux:propertyPathStep ?triple .
     
-    "pp step (0)" log:trace ( ?step ?triple ) .
-    ( ?accum ?triple ) log:conjunction ?newAccum .
-
-    ( ?rest ?o ?end ?newAccum ) aux:propertyPathSteps ?result .
+    # "pp step (0)" log:trace ( ?step ?triple ) .
+   ( ?accum ?triple ) log:conjunction ?newAccum .
+   ( ?rest ?o ?end ?newAccum ) aux:propertyPathSteps ?result .
 } .
 
 #
 {
-  ( ?steps ?s ?end ?accum ) aux:propertyPathSteps ?result
-} 
-<=
-{
-    ?steps list:firstRest ( ?step () ) .
-    ( ?s ?end ?step ) aux:propertyPathStep ?triple .
-    "pp step (1)" log:trace ( ?step ?triple ) .
-    ( ?accum ?triple ) log:conjunction ?result .
-} .
-
-#
-{
-  ( ?s ?o ( ?pred 1 1 ) ) aux:propertyPathStep ?triple
+   ( ?steps ?s ?end ?accum ) aux:propertyPathSteps ?result 
 }
-<=
+<= 
 {
-  ?triple log:equalTo { ?s ?pred ?o }
+   ?steps list:firstRest ( ?step ( ) ) .
+   ( ?s ?end ?step ) aux:propertyPathStep ?triple .
+    # "pp step (1)" log:trace ( ?step ?triple ) .
+   ( ?accum ?triple ) log:conjunction ?result .
 } .
 
 #
 {
-  ( ?s ?o ( ?pred 0 -2 ) ) aux:propertyPathStep ?triple
+   ( ?s ?o ( ?pred 1 1 ) ) aux:propertyPathStep ?triple 
 }
-<=
+<= 
 {
-  ?triple log:equalTo { ( ?s ?o ) aux:optionalChain ?pred }
+   ?triple log:equalTo 
+   {
+       ?s ?pred ?o 
+   }
 } .
 
 #
 {
-  ( ?s ?o ( ?pred 1 -2 ) ) aux:propertyPathStep ?triple
+   ( ?s ?o ( ?pred 0 -2 ) ) aux:propertyPathStep ?triple 
 }
-<=
+<= 
 {
-  ?triple log:equalTo { ( ?s ?o ) aux:chain ?pred }
+   ?triple log:equalTo 
+   {
+       ( ?s ?o ) aux:optionalChain ?pred 
+   }
 } .
 
 #
 {
-  ( ?s ?o ( ?pred 0 -1 ) ) aux:propertyPathStep ?triple
+   ( ?s ?o ( ?pred 1 -2 ) ) aux:propertyPathStep ?triple 
 }
-<=
+<= 
 {
-  ?triple log:equalTo { ( ?s ?o ) aux:optional ?pred }
+   ?triple log:equalTo 
+   {
+       ( ?s ?o ) aux:chain ?pred 
+   }
+} .
+
+#
+{
+   ( ?s ?o ( ?pred 0 -1 ) ) aux:propertyPathStep ?triple 
+}
+<= 
+{
+   ?triple log:equalTo 
+   {
+       ( ?s ?o ) aux:optional ?pred 
+   }
 } .
 
 # END property path
