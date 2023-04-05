@@ -32,7 +32,8 @@
        sp:subPath ?p ;
        sp:modMin ?min ;
        sp:modMax ?max .
-   ?paths log:equalTo ( ( ?p ?min ?max ) ) 
+   ?p aux:collectPathSteps ?ps .
+   ?paths log:equalTo ( ( ?ps ?min ?max ) )
 } .
 
 #

@@ -55,7 +55,7 @@
    ?list aux:handleUnion ?graph3 .
    ?list aux:handleBind ?graph4 .
    ?list aux:handlePropertyPath ?graph5 .
-   ( ?graph1 ?graph2 ?graph3 ?graph4 ) log:conjunction ?graph 
+   ( ?graph1 ?graph2 ?graph3 ?graph4 ?graph5 ) log:conjunction ?graph 
 } .
 
 
@@ -75,14 +75,9 @@
 
     # "T0" log:trace ( ?path ) .
    ?path aux:collectPathSteps ?steps .
-#    "steps" log:trace ( ?steps ) .
-   (
-       ?steps
-       ?s
-       ?o
-       {}
-   ) aux:propertyPathSteps ?graph .
-#    "result" log:trace ( ?graph ) .
+   ?graph log:equalTo {
+        ( ?s ?o ) aux:stepThroughPath ?steps
+   } .
 } .
 
 #
@@ -98,33 +93,6 @@
    }
 } .
 
-#
-{
-   ( ?steps ?s ?end ?accum ) aux:propertyPathSteps ?result 
-}
-<= 
-{
-   ?steps list:firstRest ( ?step ?rest ) .
-   ?rest!list:length math:greaterThan 0 .
-   ?step log:skolem ?o .
-   ( ?s ?o ?step ) aux:propertyPathStep ?triple .
-    
-    # "pp step (0)" log:trace ( ?step ?triple ) .
-   ( ?accum ?triple ) log:conjunction ?newAccum .
-   ( ?rest ?o ?end ?newAccum ) aux:propertyPathSteps ?result .
-} .
-
-#
-{
-   ( ?steps ?s ?end ?accum ) aux:propertyPathSteps ?result 
-}
-<= 
-{
-   ?steps list:firstRest ( ?step ( ) ) .
-   ( ?s ?end ?step ) aux:propertyPathStep ?triple .
-    # "pp step (1)" log:trace ( ?step ?triple ) .
-   ( ?accum ?triple ) log:conjunction ?result .
-} .
 
 #
 {
