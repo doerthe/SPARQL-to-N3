@@ -62,15 +62,26 @@
 #     ?y foaf:name ?name 
 #   }
 #
-{
-   ?x foaf:mbox <mailto:alice@example> .
-   ( ?x ?y ) :optional foaf:worksWith .
-   ?y foaf:name ?name 
-}
-=> 
-{
-   [] :solution ( ( "x" ?x ) ( "name" ?name ) ) 
-} .
+# {
+#    ?x foaf:mbox <mailto:alice@example> .
+#    ( ?x ?y ) :optional foaf:worksWith .
+#    ?y foaf:name ?name 
+# }
+# => 
+# {
+#    [] :solution ( ( "x" ?x ) ( "name" ?name ) ) 
+# } .
+
+
+#
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+# PREFIX ex: <http://example.org/>
+
+# SELECT ?x ?y WHERE 
+# { ?x ((foaf:worksWith/foaf:knows)+/foaf:name)+ ?y }
+
+
 
 
 # AUX

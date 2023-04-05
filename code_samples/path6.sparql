@@ -1,0 +1,7 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX ex: <http://example.org/>
+
+SELECT ?x ?y WHERE 
+#{ ?x ((foaf:worksWith/foaf:knows)+/foaf:name)+ ?y }
+{ ?x ((foaf:worksWith/foaf:knows)*/foaf:name)+ ?y }
