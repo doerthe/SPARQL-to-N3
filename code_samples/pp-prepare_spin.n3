@@ -1,0 +1,71 @@
+# @alsoload tmp.spin
+
+@prefix aux: <http://example.org/aux#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+
+#
+{
+   ?x aux:collectPaths ?paths 
+}
+<= 
+{
+   ?x a sp:SeqPath ;
+       sp:path1 ?p1 ;
+       sp:path2 ?p2 .
+   ?p1 aux:collectPaths ?p1s .
+   ?p2 aux:collectPaths ?p2s .
+   ( ?p1s ?p2s ) list:append ?paths .
+} .
+
+#
+{
+   ?x aux:collectPaths ?paths 
+}
+<= 
+{
+   ?x a sp:ModPath ;
+       sp:subPath ?p ;
+       sp:modMin ?min ;
+       sp:modMax ?max .
+   ?paths log:equalTo ( ( ?p ?min ?max ) ) 
+} .
+
+#
+{
+   ?x aux:collectPaths ?paths 
+}
+<= 
+{
+   _:t log:notIncludes 
+   {
+       ?x a sp:SeqPath 
+   } .
+   _:t log:notIncludes 
+   {
+       ?x a sp:ModPath 
+   } .
+   ?x log:rawType log:Other .
+   ?paths log:equalTo ( ( ?x 1 1 ) ) .
+} .
+
+#
+{
+   ?x sp:where ?where .
+   ?where list:member ?tp .
+   ?tp a sp:TriplePath ;
+       sp:path ?path .
+
+    # "T0" log:trace ( ?path ) .
+   ?path aux:collectPaths ?pathPreds .
+   "pathPreds" log:trace ( ?pathPreds ) .
+}
+=> 
+{
+   <> :out ?pathPreds .
+} .

@@ -1,22 +1,46 @@
-#Processed by EYE v3.4.1 josd
-#eye out/tmp.spin auxiliary-files/aux.n3 --query queries/query_general-no_unique_groups.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+#Processed by EYE v3.12.4
+#eye out/tmp.spin auxiliary-files/aux.n3 auxiliary-files/aux-pp.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix ex: <http://example.org/spin#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix spin: <http://spinrdf.org/spin#>.
-@prefix sp: <http://spinrdf.org/sp#>.
-@prefix ex: <http://example.org/spin#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3393654148250487614#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3440315715475669280#>.
 
-{(((?t_5) (?t_6 ?t_7)) {?t_5 <http://books.example/affiliates> ?t_8. ?t_9 <http://books.example/nrPages> ?t_7. ?t_9 <http://books.example/price> ?t_6. ?t_8 <http://books.example/writesBook> ?t_9} ?U_17) log:collectAllIn ?U_18. ?U_17 list:member (?U_19 ?U_20). (?U_21 {?U_17 list:member (?U_19 ?U_21)} ?U_22) log:collectAllIn ?U_18. (?U_23 {((sp:Sum ?t_6 "totalPrice") (sp:Sum ?t_7 "totalPages")) list:iterate (?U_24 (?U_8 ?U_9 ?U_10)). (?U_25 {?U_22 list:member ?U_21. (?U_21 ?U_24) list:memberAt ?U_25} ?U_26) log:collectAllIn ?U_18. ?U_26 ?U_8 ?U_27. (?U_10 ?U_27) log:equalTo ?U_23} ?U_28) log:collectAllIn ?U_18. ((?U_0 ?U_29) {("org") list:iterate (?U_24 ?U_0). ?U_0 list:in ("org" "totalPrice" "totalPages"). (?U_19 ?U_24) list:memberAt ?U_29} ?U_30) log:collectAllIn ?U_18. "groupResultCells" log:trace (?U_19 ?U_30). (?U_28 ?U_30) list:append ?U_31} => {_:sk_32 ex:result ?U_31}.
+{
+    (() {
+        ?t_3 <http://xmlns.com/foaf/0.1/mbox> <mailto:alice@example>.
+        ?t_4 <http://xmlns.com/foaf/0.1/name> ?t_5.
+        (?t_3 ?t_4) aux:optional <http://xmlns.com/foaf/0.1/knows>.
+    } ?U_10) log:collectAllIn ?U_11.
+    (?U_12 {
+        () list:iterate (?U_13 (?U_1 ?U_2 ?U_3)).
+        (?U_14 {
+            ?U_10 list:member ?U_15.
+            (?U_15 ?U_13) list:memberAt ?U_14.
+        } ?U_16) log:collectAllIn ?U_11.
+        ?U_16 ?U_1 ?U_17.
+        (?U_3 ?U_17) log:equalTo ?U_12.
+    } ?U_18) log:collectAllIn ?U_11.
+} => {
+    _:sk_19 ex:result ?U_18.
+}.
+{
+    ?t_3 <http://xmlns.com/foaf/0.1/mbox> <mailto:alice@example>.
+    ?t_4 <http://xmlns.com/foaf/0.1/name> ?t_5.
+    (?t_3 ?t_4) aux:optional <http://xmlns.com/foaf/0.1/knows>.
+} => {
+    _:sk_23 ex:result (("x" ?t_3) ("name" ?t_5)).
+}.
 
-#2023-03-15T20:01:11.221Z in=73 out=1 ent=1 step=1 brake=2 inf=194610 sec=0.030 inf/sec=6487000
+#2023-04-05T15:22:23.313Z in=71 out=2 ent=2 step=2 brake=2 inf=230838 sec=0.034 inf/sec=6789353
 #ENDS
 

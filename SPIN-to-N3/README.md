@@ -1,5 +1,11 @@
 # Usage
 
+Try SPARQL -> SPIN -> N3 & run on data:
 ```
-make example1
+./sparql2n3.sh ../code_samples/path5.sparql ../code_samples/path5.ttl   
+```
+
+Try SPARQL on data:
+```
+java -jar sparql.jar -n3 ../code_samples/path5.ttl -query ../code_samples/path5.sparql
 ```
