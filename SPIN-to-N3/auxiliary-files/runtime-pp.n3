@@ -22,10 +22,7 @@
    # steps = list with steps (again lists) as elements
    # (individual steps would have numbers as last elements)
    ?steps!list:last log:rawType rdf:List .
-   # rest not empty yet
-   #
-   ?steps list:last ?last .
-   "listOfSteps" log:trace ( ?start ?end ?step ) .
+   # "sequenceOfSteps" log:trace ?step .
    ( ?start ?interm ) aux:stepThroughPath ?step .
    #
    ( ?interm ?end ) aux:stepThroughPath ?rest 
@@ -38,7 +35,7 @@
 <= {} .
 
 
-# - singleStep
+# - predicatePath
 {
    ( ?s ?o ) aux:stepThroughPath ( ?pred 1 1 ) 
 }
@@ -49,13 +46,13 @@
 } .
 
 
-# - oneOrMoreSequence
+# - oneOrMorePath
 {
    ( ?start ?end ) aux:stepThroughPath ( ?nested 1 -2 ) 
 }
 <= 
 {
-   #"oneOrMoreSteps" log:trace ( ?start ?end ?nested ) .
+   #"oneOrMorePath" log:trace ( ?start ?end ?nested ) .
    ( ?start ?end ) aux:stepThroughPath ?nested .
 } .
 
@@ -70,7 +67,7 @@
 } .
 
 
-# - zeroOrMoreSequence
+# - zeroOrMorePath
 {
    ( ?start ?start ) aux:stepThroughPath ( ?nested 0 -2 ) 
 }
@@ -86,11 +83,13 @@
 } .
 
 
-# - optional
+# - zeroOrOnePath
 {
    ( ?start ?start ) aux:stepThroughPath ( ?nested 0 -1 ) 
 }
 <= {} .
+
+#
 {
    ( ?start ?end ) aux:stepThroughPath ( ?nested 0 -1 ) 
 }
@@ -99,59 +98,32 @@
    ( ?start ?end ) aux:stepThroughPath ?nested .
 } .
 
-
-
-# CHAIN PREDICATES
-# - optional chain
-#
+# - altPath
 {
-   ( ?a ?a ) :optionalChain ?predicate .
-}
-<= {} .
-
-#
-{
-   ( ?a ?b ) :optionalChain ?predicate .
+   ( ?start ?end ) aux:stepThroughPath ( ?options "alt" ) 
 }
 <= 
 {
-   ( ?a ?b ) :chain ?predicate .
-} .
-
-
-# - chain
-#
-{
-   ( ?a ?b ) :chain ?predicate .
-}
-<= 
-{
-   ?a ?predicate ?b .
+   # "altPath" log:trace ?options .
+   ( ?start ?end ) aux:tryAlts ?options .
 } .
 
 #
 {
-   ( ?a ?x ) :chain ?predicate .
+   ( ?start ?end ) aux:tryAlts ?options 
 }
 <= 
 {
-   ?a ?predicate ?b .
-   ( ?b ?x ) :chain ?predicate 
+   ?options rdf:first ?first .
+   ( ?start ?end ) aux:stepThroughPath ?first
 } .
 
-
-# - optional
 #
 {
-   ( ?a ?a ) :optional ?predicate 
-}
-<= {} .
-
-#
-{
-   ( ?a ?b ) :optional ?predicate 
+   ( ?start ?end ) aux:tryAlts ?options 
 }
 <= 
 {
-   ?a ?predicate ?b 
+   ?options rdf:rest ?rest .
+   ( ?start ?end ) aux:tryAlts ?rest
 } .

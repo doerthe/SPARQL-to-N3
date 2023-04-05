@@ -13,12 +13,12 @@
 @prefix spin: <http://spinrdf.org/spin#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/1159203832330953370#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4278697105490304255#>.
 
 {
     (() {
         ?t_2 <http://xmlns.com/foaf/0.1/mbox> <mailto:alice@example>.
-        (?t_2 ?t_3) aux:stepThroughPath ((((<http://xmlns.com/foaf/0.1/knows> 1 1)) 0 -1) (<http://xmlns.com/foaf/0.1/name> 1 1)).
+        (?t_2 ?t_3) aux:stepThroughPath (((((<http://xmlns.com/foaf/0.1/knows> 1 1) (<http://xmlns.com/foaf/0.1/knows> 1 1)) ((<http://xmlns.com/foaf/0.1/worksWith> 1 1) (<http://xmlns.com/foaf/0.1/knows> 1 1))) "alt") (<http://xmlns.com/foaf/0.1/name> 1 1)).
     } ?U_10) log:collectAllIn ?U_11.
     (?U_12 {
         () list:iterate (?U_13 (?U_1 ?U_2 ?U_3)).
@@ -34,11 +34,11 @@
 }.
 {
     ?t_2 <http://xmlns.com/foaf/0.1/mbox> <mailto:alice@example>.
-    (?t_2 ?t_3) aux:stepThroughPath ((((<http://xmlns.com/foaf/0.1/knows> 1 1)) 0 -1) (<http://xmlns.com/foaf/0.1/name> 1 1)).
+    (?t_2 ?t_3) aux:stepThroughPath (((((<http://xmlns.com/foaf/0.1/knows> 1 1) (<http://xmlns.com/foaf/0.1/knows> 1 1)) ((<http://xmlns.com/foaf/0.1/worksWith> 1 1) (<http://xmlns.com/foaf/0.1/knows> 1 1))) "alt") (<http://xmlns.com/foaf/0.1/name> 1 1)).
 } => {
-    _:sk_23 ex:result (("x" ?t_2) ("name" ?t_3)).
+    _:sk_23 ex:result (("x" ?t_2) ("y" ?t_3)).
 }.
 
-#2023-04-05T19:55:40.635Z in=68 out=2 ent=2 step=2 brake=2 inf=220662 sec=0.034 inf/sec=6490059
+#2023-04-05T21:30:58.232Z in=74 out=2 ent=2 step=2 brake=2 inf=242785 sec=0.036 inf/sec=6744028
 #ENDS
 

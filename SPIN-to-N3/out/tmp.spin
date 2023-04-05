@@ -3,7 +3,7 @@
               ([ <http://spinrdf.org/sp#varName>
                           "x"
                 ] [ <http://spinrdf.org/sp#varName>
-                          "name"
+                          "y"
                 ]) ;
       <http://spinrdf.org/sp#where>
               ([ <http://spinrdf.org/sp#object>
@@ -17,18 +17,26 @@
                 ] [ a       <http://spinrdf.org/sp#TriplePath> ;
                   <http://spinrdf.org/sp#object>
                           [ <http://spinrdf.org/sp#varName>
-                                    "name"
+                                    "y"
                           ] ;
                   <http://spinrdf.org/sp#path>
                           [ a       <http://spinrdf.org/sp#SeqPath> ;
                             <http://spinrdf.org/sp#path1>
-                                    [ a       <http://spinrdf.org/sp#ModPath> ;
-                                      <http://spinrdf.org/sp#modMax>
-                                              -1 ;
-                                      <http://spinrdf.org/sp#modMin>
-                                              0 ;
-                                      <http://spinrdf.org/sp#subPath>
-                                              <http://xmlns.com/foaf/0.1/knows>
+                                    [ a       <http://spinrdf.org/sp#AltPath> ;
+                                      <http://spinrdf.org/sp#path1>
+                                              [ a       <http://spinrdf.org/sp#SeqPath> ;
+                                                <http://spinrdf.org/sp#path1>
+                                                        <http://xmlns.com/foaf/0.1/knows> ;
+                                                <http://spinrdf.org/sp#path2>
+                                                        <http://xmlns.com/foaf/0.1/knows>
+                                              ] ;
+                                      <http://spinrdf.org/sp#path2>
+                                              [ a       <http://spinrdf.org/sp#SeqPath> ;
+                                                <http://spinrdf.org/sp#path1>
+                                                        <http://xmlns.com/foaf/0.1/worksWith> ;
+                                                <http://spinrdf.org/sp#path2>
+                                                        <http://xmlns.com/foaf/0.1/knows>
+                                              ]
                                     ] ;
                             <http://spinrdf.org/sp#path2>
                                     <http://xmlns.com/foaf/0.1/name>
