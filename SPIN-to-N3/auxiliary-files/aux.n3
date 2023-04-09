@@ -74,7 +74,7 @@
    ?tp!sp:object aux:gets ?o .
 
    ?path aux:collectPathSteps ?steps .
-   # "steps" log:trace ( ?steps ) .
+   "steps" log:trace ?steps .
    ?graph log:equalTo {
         ( ?s ?o ) aux:stepThroughPath ?steps
    } .

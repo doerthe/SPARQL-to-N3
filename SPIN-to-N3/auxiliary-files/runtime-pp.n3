@@ -46,6 +46,16 @@
 } .
 
 
+# - reversePath
+{
+   ( ?s ?o ) aux:stepThroughPath ( ?nested "rev" )
+}
+<=
+{
+   ( ?o ?s ) aux:stepThroughPath ?nested
+} .
+
+
 # - oneOrMorePath
 {
    ( ?start ?end ) aux:stepThroughPath ( ?nested 1 -2 ) 
