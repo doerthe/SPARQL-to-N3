@@ -6,5 +6,4 @@ SELECT ?x ?y
 WHERE  {
     ?x foaf:mbox <mailto:alice@example> .
     ?x ((foaf:knows/foaf:knows)|(foaf:worksWith/foaf:knows))/foaf:name ?y .
-    # ?x foaf:knows/foaf:name ?y .
 }
