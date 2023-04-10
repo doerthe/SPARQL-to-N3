@@ -2,5 +2,5 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX : <http://example.org/>
 
 SELECT * WHERE
-#{ ?x !foaf:knows :alice }
-{ ?x !(foaf:knows|foaf:worksWith) :alice }
+{ :alice !(foaf:knows|^foaf:worksWith) ?x }
+#{ ?x !(foaf:knows|foaf:worksWith) :alice }

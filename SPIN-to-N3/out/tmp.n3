@@ -1,4 +1,4 @@
-#Processed by EYE v3.12.4
+#Processed by EYE v3.16.0
 #eye out/tmp.spin auxiliary-files/aux.n3 auxiliary-files/aux-pp.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix aux: <http://example.org/aux#>.
@@ -13,9 +13,30 @@
 @prefix spin: <http://spinrdf.org/spin#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/1180601569505722823#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/1266013657003061406#>.
 
+{
+    (() {
+        (<http://example.org/alice> ?t_1) aux:stepThroughPath ((<http://xmlns.com/foaf/0.1/knows_link> <http://xmlns.com/foaf/0.1/worksWith_revlink>) "neg").
+    } ?U_10) log:collectAllIn ?U_11.
+    (?U_12 {
+        () list:iterate (?U_13 (?U_1 ?U_2 ?U_3)).
+        (?U_14 {
+            ?U_10 list:member ?U_15.
+            (?U_15 ?U_13) list:memberAt ?U_14.
+        } ?U_16) log:collectAllIn ?U_11.
+        ?U_16 ?U_1 ?U_17.
+        (?U_3 ?U_17) log:equalTo ?U_12.
+    } ?U_18) log:collectAllIn ?U_11.
+} => {
+    _:sk_19 ex:result ?U_18.
+}.
+{
+    (<http://example.org/alice> ?t_1) aux:stepThroughPath ((<http://xmlns.com/foaf/0.1/knows_link> <http://xmlns.com/foaf/0.1/worksWith_revlink>) "neg").
+} => {
+    _:sk_23 ex:result (("x" ?t_1)).
+}.
 
-#2023-04-09T13:17:44.783Z in=57 out=0 ent=0 step=0 brake=2 inf=212535 sec=0.034 inf/sec=6251029
+#2023-04-10T14:46:03.320Z in=62 out=2 ent=2 step=2 brake=2 inf=222156 sec=0.036 inf/sec=6171000
 #ENDS
 

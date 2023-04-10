@@ -17,4 +17,4 @@ echo -e "(stored at $n3_file)"
 
 echo -e "\n\n>> executing n3 <<"
 eye auxiliary-files/runtime-pp.n3 \
-    $data --query out/tmp.n3 --nope
+    $data $spin_file --query out/tmp.n3 --nope

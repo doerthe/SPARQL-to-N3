@@ -27,14 +27,14 @@
 
 #
 {
-    ?x aux:collectPathSteps ?paths 
+   ?x aux:collectPathSteps ?paths 
 }
 <= 
 {
    ?x a sp:ReversePath ;
-      sp:subPath ?p .
-    ?p aux:collectPathSteps ?ps .
-    ?paths log:equalTo ( ( ?ps "rev" ) )
+       sp:subPath ?p .
+   ?p aux:collectPathSteps ?ps .
+   ?paths log:equalTo ( ( ?ps "rev" ) ) 
 } .
 
 #
@@ -63,7 +63,7 @@
        sp:modMin ?min ;
        sp:modMax ?max .
    ?p aux:collectPathSteps ?ps .
-   ?paths log:equalTo ( ( ?ps ?min ?max ) )
+   ?paths log:equalTo ( ( ?ps ?min ?max ) ) 
 } .
 
 #
@@ -72,7 +72,19 @@
 }
 <= 
 {
+   ?x a sp:NegatedPath ;
+       sp:subPath ?options .
+   
+   ?paths log:equalTo ( ?options "neg" )
+} .
+
+#
+{
+   ?x aux:collectPathSteps ?paths
+}
+<= 
+{
    ?x log:rawType log:Other .
-   ?x!log:uri string:notMatches "http://spinrdf.org/sp#(SeqPath|AltPath|ModPath)" . 
+   ?x!log:uri string:notMatches "http://spinrdf.org/sp#(SeqPath|AltPath|ModPath|NegatedPath)" .
    ?paths log:equalTo ( ( ?x 1 1 ) ) .
 } .

@@ -22,7 +22,7 @@
    # steps = list with steps (again lists) as elements
    # (individual steps would have numbers as last elements)
    ?steps!list:last log:rawType rdf:List .
-   # "sequenceOfSteps" log:trace ?step .
+   "sequenceOfSteps" log:trace ?step .
    ( ?start ?interm ) aux:stepThroughPath ?step .
    #
    ( ?interm ?end ) aux:stepThroughPath ?rest 
@@ -48,11 +48,11 @@
 
 # - reversePath
 {
-   ( ?s ?o ) aux:stepThroughPath ( ?nested "rev" )
+   ( ?s ?o ) aux:stepThroughPath ( ?nested "rev" ) 
 }
-<=
+<= 
 {
-   ( ?o ?s ) aux:stepThroughPath ?nested
+   ( ?o ?s ) aux:stepThroughPath ?nested 
 } .
 
 
@@ -125,7 +125,7 @@
 <= 
 {
    ?options rdf:first ?first .
-   ( ?start ?end ) aux:stepThroughPath ?first
+   ( ?start ?end ) aux:stepThroughPath ?first 
 } .
 
 #
@@ -135,5 +135,64 @@
 <= 
 {
    ?options rdf:rest ?rest .
-   ( ?start ?end ) aux:tryAlts ?rest
+   ( ?start ?end ) aux:tryAlts ?rest 
+} .
+
+
+# negatedPath
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?options "neg" ) 
+}
+<= 
+{
+   ( ?start ?end ) aux:tryNeg ?options 
+} .
+
+
+#
+{
+   ( ?start ?end ) aux:tryNeg ?options .
+} 
+<= 
+{
+   ( ?options sp:LinkPath ) aux:collectLinkRegex ?regex .
+   #
+   "tryNeg (1)" log:trace ( ?start ?end ?regex ) .
+   ?start ?pred ?end .
+   ?pred!log:uri string:notMatches ?regex 
+} .
+
+
+#
+{
+   ( ?start ?end ) aux:tryNeg ?options .
+} 
+<= 
+{
+   ( ?options sp:ReverseLinkPath ) aux:collectLinkRegex ?regex .
+   #
+   "tryNeg (2)" log:trace ( ?start ?end ?regex ) .
+   ?end ?pred ?start .
+   ?pred!log:uri string:notMatches ?regex 
+} .
+
+
+#
+{
+   ( ?options ?type ) aux:collectLinkRegex ?regex 
+}
+<= 
+{
+   (
+       ?uriStr
+       {
+           ?option list:in ?options .
+           ?option a ?type .
+           ?option!sp:node log:uri ?uriStr 
+       }
+       ?uriStrs
+   ) log:collectAllIn _:t .
+   #
+   ?uriStrs!list:length math:greaterThan 0 .
+   ( ?uriStrs "|" ) string:join ?regex .
 } .
