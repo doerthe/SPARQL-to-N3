@@ -9,3 +9,4 @@
    foaf:knows :alan ;
    foaf:worksWith :bob .
 :bob foaf:worksWith :alice .
+:alan foaf:something :alice .
