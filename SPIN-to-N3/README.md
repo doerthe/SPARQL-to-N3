@@ -2,7 +2,7 @@
 
 Try SPARQL -> SPIN -> N3 & run on data:
 ```
-./sparql2n3.sh ../code_samples/path8.sparql ../code_samples/path8.ttl
+./sparql2n3.sh ../code_samples/path9.sparql ../code_samples/path9.ttl
 ```
 
 Try SPARQL on data:

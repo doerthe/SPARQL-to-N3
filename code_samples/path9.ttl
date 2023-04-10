@@ -6,6 +6,6 @@
 
 :alice foaf:mbox <mailto:alice@example> ;
    foaf:name "alice" ;
-   foaf:knows :alan .
-#   foaf:worksWith :bob .
+   foaf:knows :alan ;
+   foaf:worksWith :bob .
 :bob foaf:worksWith :alice .

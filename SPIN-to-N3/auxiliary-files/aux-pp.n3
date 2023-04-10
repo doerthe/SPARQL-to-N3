@@ -74,13 +74,22 @@
 {
    ?x a sp:NegatedPath ;
        sp:subPath ?options .
-   
-   ?paths log:equalTo ( ?options "neg" )
+   (
+       ( ?node ?type )
+       {
+           ?option list:in ?options .
+           ?option a ?type ;
+               sp:node ?node 
+       }
+       ?cells
+   ) log:collectAllIn _:t .
+   #
+   ?paths log:equalTo ( ?cells "neg" ) 
 } .
 
 #
 {
-   ?x aux:collectPathSteps ?paths
+   ?x aux:collectPathSteps ?paths 
 }
 <= 
 {

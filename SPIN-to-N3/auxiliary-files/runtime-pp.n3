@@ -22,7 +22,7 @@
    # steps = list with steps (again lists) as elements
    # (individual steps would have numbers as last elements)
    ?steps!list:last log:rawType rdf:List .
-   "sequenceOfSteps" log:trace ?step .
+   # "sequenceOfSteps" log:trace ?step .
    ( ?start ?interm ) aux:stepThroughPath ?step .
    #
    ( ?interm ?end ) aux:stepThroughPath ?rest 
@@ -186,9 +186,8 @@
    (
        ?uriStr
        {
-           ?option list:in ?options .
-           ?option a ?type .
-           ?option!sp:node log:uri ?uriStr 
+           ( ?option ?type ) list:in ?options .
+           ?option log:uri ?uriStr 
        }
        ?uriStrs
    ) log:collectAllIn _:t .
