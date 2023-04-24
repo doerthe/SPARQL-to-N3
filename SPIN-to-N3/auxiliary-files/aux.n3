@@ -528,15 +528,15 @@ aux:value log:skolem ?value.
 {{(?a1 ?a2) sp:contains ?o} aux:funcTranslation { ?a1 string:contains ?a2}}<={}.
 {{?list sp:mul ?o} aux:funcTranslation {?list math:product ?o}}<={}.
 # MISSING: uuid, struuid
-{{?a sp:abs ?o} aux:funcTranslation {?a math:absoluteValue ?o}}<={}.
-{{?a sp:round ?o} aux:funcTranslation {?a math:rounded ?o}}<={}.
-{{?a sp:year ?o} aux:funcTranslation {?a time:year ?o}}<={}.
-{{?a sp:month ?o} aux:funcTranslation {?a time:month ?o}}<={}.
-{{?a sp:day ?o} aux:funcTranslation {?a time:day ?o}}<={}.
-{{?a sp:hours ?o} aux:funcTranslation {?a time:hour ?o}}<={}.
-{{?a sp:minutes ?o} aux:funcTranslation {?a time:minute ?o}}<={}.
-{{?a sp:seconds ?o} aux:funcTranslation {?a time:second ?o}}<={}.
-{{?a sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
+{{(?a) sp:abs ?o} aux:funcTranslation {?a math:absoluteValue ?o}}<={}.
+{{(?a) sp:round ?o} aux:funcTranslation {?a math:rounded ?o}}<={}.
+{{(?a) sp:year ?o} aux:funcTranslation {?a time:year ?o}}<={}.
+{{(?a) sp:month ?o} aux:funcTranslation {?a time:month ?o}}<={}.
+{{(?a) sp:day ?o} aux:funcTranslation {?a time:day ?o}}<={}.
+{{(?a) sp:hours ?o} aux:funcTranslation {?a time:hour ?o}}<={}.
+{{(?a) sp:minutes ?o} aux:funcTranslation {?a time:minute ?o}}<={}.
+{{(?a) sp:seconds ?o} aux:funcTranslation {?a time:second ?o}}<={}.
+{{(?a) sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
 
 #aggregate functions
 {{ ?values sp:Sum ?result } aux:aggTranslation { ?values math:sum ?result }}<={} .
