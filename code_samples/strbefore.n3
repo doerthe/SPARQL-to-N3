@@ -1,0 +1,145 @@
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#
+:p1 rdf:value "abcdec"@en .
+:p2 rdf:value "c" .
+
+#
+{
+   :p1 rdf:value ?str1 .
+   :p2 rdf:value ?str2 .
+
+   # TODO error when not matching (?)
+   ?str1 :matchLangTags ?str2 .
+   
+   # make sure there's no tags in str2 
+   # (messes up the regex; a bug in eye?)
+   ?str2 :stripTag ?lex2 .
+   
+   # create regex
+   # TODO get actual regex to work in eye
+   ( "(.*)%s.*" ?lex2 ) string:format ?regex .
+   ( ?str1 ?regex ) string:scrape ?result .
+   #
+   ( ?str1 ?result ) :annotateString ?annotatedResult
+}
+=> 
+{
+   <> :out1 ?annotatedResult 
+} .
+
+
+
+#
+{
+   ?str1 :matchLangTags ?str2 
+}
+<= 
+{
+   ?str1 :langTag ?str2!:langTag 
+} .
+
+#
+{
+   ?str1 :matchLangTags ?str2 
+}
+<= 
+{
+   ?str2 :langTag ( ) 
+} .
+
+
+
+#
+{
+   ( ?source ?str ) :annotateString ?annStr 
+}
+<= 
+{
+   ?source :langTag ?tags .
+   ( ?tags 0 ) list:memberAt ?tag .
+    #
+   ( ?str ?tag ) log:langlit ?annStr 
+} .
+
+#
+{
+   ( ?source ?str ) :annotateString ?annStr 
+}
+<= 
+{
+   ?source :langTag ( ) ;
+       :datatype ?datatypes .
+   ( ?datatypes 0 ) list:memberAt ?datatype .
+   #
+   ( ?str ?datatype ) log:dtlit ?annStr .
+} .
+
+#
+{
+   ( ?source ?str ) :annotateString ?str 
+}
+<= 
+{
+   ?source :langTag ( ) ;
+       :datatype ( ) 
+} .
+
+
+
+#
+{
+   ?str :stripTag ?str 
+}
+<= 
+{
+   ?str :langTag ( ) 
+} .
+
+#
+{
+   ?str :stripTag ?stripped 
+}
+<= 
+{
+   ( ?stripped ?tag ) log:langlit ?str 
+} .
+
+
+
+#
+{
+   ?str :langTag ?tags 
+}
+<= 
+{
+   (
+       ?tag
+       {
+           ( ?lex ?tag ) log:langlit ?str 
+       }
+       ?tags
+   ) log:collectAllIn _:t .
+} .
+
+
+#
+{
+   ?str :datatype ?datatypes 
+}
+<= 
+{
+   (
+       ?datatype
+       {
+           ( ?lex ?datatype ) log:dtlit ?str 
+       }
+       ?datatypes
+   ) log:collectAllIn _:t .
+} .
