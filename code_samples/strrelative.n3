@@ -7,33 +7,77 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #
-:p1 rdf:value "abcdec"@en .
-:p2 rdf:value "c" .
+{
+   ( ?arg1 ?arg2 ) :strbefore ?result 
+}
+<= 
+{
+   ( ?arg1 ?arg2 "(.*?)%s.*" ) :strrelative ?result 
+} .
 
 #
 {
-   :p1 rdf:value ?str1 .
-   :p2 rdf:value ?str2 .
+   ( ?arg1 ?arg2 ) :strbefore ?result 
+}
+<= 
+{
+   ?arg2 :stripTag "" .
+   ?arg1 :matchLangTags ?arg2 .
+   #
+   ( ?arg1 "" ) :annotateString ?result 
+} .
 
+#
+{
+   ( ?arg1 ?arg2 ) :strafter ?result 
+}
+<= 
+{
+   ( ?arg1 ?arg2 ".*?%s(.*)" ) :strrelative ?result 
+} .
+
+#
+{
+   ( ?arg1 ?arg2 ) :strafter ?arg1 
+}
+<= 
+{
+   ?arg2 :stripTag "" .
+   ?arg1 :matchLangTags ?arg2 .
+} .
+
+#
+{
+   ( ?arg1 ?arg2 ?template ) :strrelative ?result 
+}
+<= 
+{
    # TODO error when not matching (?)
-   ?str1 :matchLangTags ?str2 .
+   ?arg1 :matchLangTags ?arg2 .
    
    # make sure there's no tags in str2 
    # (messes up the regex; a bug in eye?)
-   ?str2 :stripTag ?lex2 .
+   ?arg2 :stripTag ?lex2 .
    
    # create regex
-   # TODO get actual regex to work in eye
-   ( "(.*)%s.*" ?lex2 ) string:format ?regex .
-   ( ?str1 ?regex ) string:scrape ?result .
+   ( ?template ?lex2 ) string:format ?regex .
    #
-   ( ?str1 ?result ) :annotateString ?annotatedResult
-}
-=> 
-{
-   <> :out1 ?annotatedResult 
+   (
+       {
+           # try scraping before/after group from arg1
+           ( ?arg1 ?regex ) string:scrape ?untaggedResult .
+       }
+       {
+           # if scrape was successful, copy tag/datatype from arg1
+           ( ?arg1 ?untaggedResult ) :annotateString ?result 
+       }
+       {
+           # else, return empty string
+           ?result log:equalTo "" 
+       }
+   ) log:ifThenElseIn _:t .
+   #
 } .
-
 
 
 #

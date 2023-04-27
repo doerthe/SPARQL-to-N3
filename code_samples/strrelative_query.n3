@@ -1,0 +1,64 @@
+@prefix : <http://example.org/> .
+
+# 
+{
+   ( "abcdec"@en "c" ) :strbefore ?result 
+}
+=> 
+{
+   :success1 :before ?result 
+} .
+
+# (incompatible language tags)
+{
+   ( "abcdec"@en "c"@de ) :strbefore ?result 
+}
+=> 
+{
+   :error1 :before ?result 
+} .
+
+#
+{
+   ( "abcdec"@en "" ) :strbefore ?result 
+}
+=> 
+{
+   :success2 :before ?result 
+} .
+
+#
+{
+   ( "abcdec" "c" ) :strafter ?result 
+}
+=> 
+{
+   :success3 :after ?result 
+} .
+
+# (empty string)
+{
+   ( "abcdec" "q" ) :strafter ?result 
+}
+=> 
+{
+   :success4 :after ?result 
+} .
+
+#
+{
+   ( "abcdec"@en "" ) :strafter ?result 
+}
+=> 
+{
+   :success5 :after ?result 
+} .
+
+# (incompatible language tags)
+{
+   ( "abcdec" ""@de ) :strafter ?result 
+}
+=> 
+{
+   :error2 :after ?result 
+} .
