@@ -8,6 +8,8 @@
 @prefix ex: <http://example.org/spin#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 
@@ -499,13 +501,13 @@ aux:value log:skolem ?value.
 #####################################################################################
 # sparql-functions and their translations
 #####################################################################################
-{  {(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{{(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
 {{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
-{{ (?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
-{ {(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
-{ {(?a) sp:ucase ?o} aux:funcTranslation {?a string:upperCase ?o}}<={}.
-{ {(?a) sp:uri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
-{ {(?a) sp:iri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
+{{(?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
+{{(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
+{{(?a) sp:ucase ?o} aux:funcTranslation {?a string:upperCase ?o}}<={}.
+{{(?a) sp:uri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
+{{(?a) sp:iri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
 {{?list sp:replace ?o} aux:funcTranslation {?list string:replace ?o}}<={}.
 {{(?a) sp:bound ?o} aux:funcTranslation {?a log:bound true}}<={}.
 {{(?a) sp:isIri ?o} aux:funcTranslation {?a log:rawType log:Other. ?a log:uri []}}<={}.
@@ -526,6 +528,15 @@ aux:value log:skolem ?value.
 {{(?a1 ?a2) sp:contains ?o} aux:funcTranslation { ?a1 string:contains ?a2}}<={}.
 {{?list sp:mul ?o} aux:funcTranslation {?list math:product ?o}}<={}.
 # MISSING: uuid, struuid
+{{(?a) sp:abs ?o} aux:funcTranslation {?a math:absoluteValue ?o}}<={}.
+{{(?a) sp:round ?o} aux:funcTranslation {?a math:rounded ?o}}<={}.
+{{(?a) sp:year ?o} aux:funcTranslation {?a time:year ?o}}<={}.
+{{(?a) sp:month ?o} aux:funcTranslation {?a time:month ?o}}<={}.
+{{(?a) sp:day ?o} aux:funcTranslation {?a time:day ?o}}<={}.
+{{(?a) sp:hours ?o} aux:funcTranslation {?a time:hour ?o}}<={}.
+{{(?a) sp:minutes ?o} aux:funcTranslation {?a time:minute ?o}}<={}.
+{{(?a) sp:seconds ?o} aux:funcTranslation {?a time:second ?o}}<={}.
+{{(?a) sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
 
 #aggregate functions
 {{ ?values sp:Sum ?result } aux:aggTranslation { ?values math:sum ?result }}<={} .
