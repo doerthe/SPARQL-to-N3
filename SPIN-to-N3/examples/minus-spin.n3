@@ -1,0 +1,32 @@
+[]    a       <http://spinrdf.org/sp#Select> ;
+      <http://spinrdf.org/sp#distinct>
+              "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+      <http://spinrdf.org/sp#resultVariables>
+              ([ <http://spinrdf.org/sp#varName>
+                          "s"
+                ]) ;
+      <http://spinrdf.org/sp#where>
+              ([ <http://spinrdf.org/sp#object>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "o"
+                          ] ;
+                  <http://spinrdf.org/sp#predicate>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "p"
+                          ] ;
+                  <http://spinrdf.org/sp#subject>
+                          [ <http://spinrdf.org/sp#varName>
+                                    "s"
+                          ]
+                ] [ a       <http://spinrdf.org/sp#Minus> ;
+                  <http://spinrdf.org/sp#elements>
+                          ([ <http://spinrdf.org/sp#object>
+                                      "Bob" ;
+                              <http://spinrdf.org/sp#predicate>
+                                      <http://xmlns.com/foaf/0.1/givenName> ;
+                              <http://spinrdf.org/sp#subject>
+                                      [ <http://spinrdf.org/sp#varName>
+                                                "s"
+                                      ]
+                            ])
+                ]) .

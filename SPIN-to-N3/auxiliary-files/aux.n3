@@ -33,14 +33,14 @@
 ##################################################
 # translate where clause to n3 graph
 ##################################################
-{(?parent ?list) aux:createGraph ?graph}<={
+{ ?list aux:createGraph ?graph}<={
 (?list ()) aux:flatten ?list2.
 ?list2 aux:handleTriples ?graph1.
 ?list2 aux:handleFilter ?graph2.
 ?list2 aux:handleUnion ?graph3.
 ?list2 aux:handleBind ?graph4.
 ?list2 aux:handleOptional ?graph5.
-?list2 aux:handleMinus ?graph6.
+ ?list2 aux:handleMinus ?graph6.
 
 
 (?graph1 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6
@@ -112,7 +112,7 @@
   ?oList rdf:first ?t.
   ?oList rdf:rest ?rest.
   ?t sp:elements ?elist.
-  (?oList ?elist) aux:createGraph ?gr.
+  ?elist aux:createGraph ?gr.
   ({true log:callWithOptional ?gr } ?ingraph ) log:conjunction ?newgraph.
 (?rest ?newgraph ) aux:createOGraph ?graph
  
@@ -122,22 +122,34 @@
 # minus
 ##############################################  
 {?list aux:handleMinus ?graph}<={
-  (?t {?t list:in ?list. ?t a  sp:Minus .} ?mList) log:collectAllIn ?scope.
-  
-  (?mList {}) aux:createMGraph ?graph.
+  #test: is there a minus?
+  ?t list:in ?list. ?t a  sp:Minus .
+  true log:callWithCut true.
+
+  ?list aux:getVars ?vars.
+
+  (?e {?t2 list:in ?list. ?t2 a  sp:Minus . (?t2 ?vars) aux:createMinusExpression ?e   } ?eList) log:collectAllIn ?scope.
+  ?eList log:conjunction ?graph.
   }.
 
-{(() ?graph) aux:createMGraph ?graph.}<={}.
+ # case: no minus
+ {?list aux:handleMinus {}}<={ }.
 
-{(?list ?ingraph) aux:createMGraph ?graph.}<={
+ {(?t ?vars) aux:createMinusExpression ?e}<={
+  ?t sp:elements ?list.
+  ?list aux:getVars ?v2.
+  (?vars ?v2) aux:listIntersection ?intv.
+  (?intv ?t) aux:minExpr ?e.
+ }.
 
-?list rdf:first ?x.
-  1 e:trace "hier".
-?x aux:getMinVariables ?vars.
-1 e:trace ?vars.
-?list rdf:rest ?rest.
-(?rest ?ingraph) aux:createMGraph ?graph.
+ {(() ?t) aux:minExpr {}.}<={true log:callWithCut true.}.
+
+{ (?list ?t) aux:minExpr {?scope log:notIncludes ?g}.}<={
+  ?t sp:elements ?e.
+  ?e aux:createGraph ?g.
+  :scope log:skolem ?scope.
 }.
+#todo add relabel-function for ?g
 
 ##############################################
 #getFunctions
@@ -267,7 +279,7 @@ true log:callWithCut true.
  ?ex a sp:notExists;
      sp:elements ?elements. 
 
- (?e ?elements) aux:createGraph ?graph.
+ ?elements aux:createGraph ?graph.
  :scope log:skolem ?scope
 
 }.
@@ -277,12 +289,12 @@ true log:callWithCut true.
  ?e sp:expression ?ex.
  ?ex a sp:exists;
      sp:elements ?elements. 
- (?e ?elements) aux:createGraph ?graph.
+ ?elements aux:createGraph ?graph.
  :scope log:skolem ?scope
 
 }.
 
-{?e aux:getFunctionTriples {}}<={1 e:trace "hieruu".}.
+{?e aux:getFunctionTriples {}}<={}.
 
 
 #Bind
@@ -501,6 +513,18 @@ aux:value log:skolem ?value.
 
 #todo: aggregation without groupBy
 
+#######################
+# Functions for variables
+########################
+# get variables out of lists which represent graphs (can be in minus or in where)
+{
+  ?list aux:getVars ?outvars
+}<=
+{
+(?var {?t list:in ?list.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
+  ?vars list:removeDuplicates ?outvars.
+}.
+
 
 #######################################################
 # list functions (use them where you want :) 
@@ -538,7 +562,7 @@ aux:value log:skolem ?value.
 # sparql-functions and their translations
 #####################################################################################
 {{(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
-{{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={
+{{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
 {{(?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:bound true. ?a2 log:bound true. ?a1 log:equalTo ?a2. }. }<={}.
 {{(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
 {{(?a) sp:ucase ?o} aux:funcTranslation {?a string:upperCase ?o}}<={}.
@@ -580,7 +604,7 @@ aux:value log:skolem ?value.
 {{(?a) sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
 
 #aggregate functions
-{{ ?values sp:Sum ?result } aux:aggTranslation { ?values math:sum ?result }}<={} .
-{{ ?values sp:Avg ?result } aux:aggTranslation { ?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result }}<={}.
-{{ ?values sp:Max ?result } aux:aggTranslation { ?values math:max ?result }}<={}.
-{{ ?values sp:Min ?result } aux:aggTranslation { ?values math:min ?result }}<={}.
+{{?values sp:Sum ?result } aux:aggTranslation {?values math:sum ?result }}<={} .
+{{?values sp:Avg ?result } aux:aggTranslation {?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result }}<={}.
+{{?values sp:Max ?result } aux:aggTranslation {?values math:max ?result }}<={}.
+{{?values sp:Min ?result } aux:aggTranslation {?values math:min ?result }}<={}.
