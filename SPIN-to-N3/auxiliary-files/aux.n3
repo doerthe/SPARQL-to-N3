@@ -31,18 +31,22 @@
 ##################################################
 # translate where clause to n3 graph
 ##################################################
-{?list aux:createGraph ?graph}<={
+{(?parent ?list) aux:createGraph ?graph}<={
 (?list ()) aux:flatten ?list2.
 ?list2 aux:handleTriples ?graph1.
 ?list2 aux:handleFilter ?graph2.
 ?list2 aux:handleUnion ?graph3.
 ?list2 aux:handleBind ?graph4.
 ?list2 aux:handleOptional ?graph5.
+?list2 aux:handleMinus ?graph6.
 
 
-(?graph1 ?graph2 ?graph3 ?graph4 ?graph5) log:conjunction ?graph
+(?graph1 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6
+) log:conjunction ?graph
 
 }.
+
+
 
 
 #create a graph from subject-predicate-object patterns
@@ -106,11 +110,32 @@
   ?oList rdf:first ?t.
   ?oList rdf:rest ?rest.
   ?t sp:elements ?elist.
-  ?elist aux:createGraph ?gr.
+  (?oList ?elist) aux:createGraph ?gr.
   ({true log:callWithOptional ?gr } ?ingraph ) log:conjunction ?newgraph.
 (?rest ?newgraph ) aux:createOGraph ?graph
  
   }.
+
+##############################################
+# minus
+##############################################  
+{?list aux:handleMinus ?graph}<={
+  (?t {?t list:in ?list. ?t a  sp:Minus .} ?mList) log:collectAllIn ?scope.
+  
+  (?mList {}) aux:createMGraph ?graph.
+  }.
+
+{(() ?graph) aux:createMGraph ?graph.}<={}.
+
+{(?list ?ingraph) aux:createMGraph ?graph.}<={
+
+?list rdf:first ?x.
+  1 e:trace "hier".
+?x aux:getMinVariables ?vars.
+1 e:trace ?vars.
+?list rdf:rest ?rest.
+(?rest ?ingraph) aux:createMGraph ?graph.
+}.
 
 ##############################################
 #getFunctions
@@ -239,23 +264,23 @@ true log:callWithCut true.
  ?e sp:expression ?ex.
  ?ex a sp:notExists;
      sp:elements ?elements. 
- ?elements aux:createGraph ?graph.
+
+ (?e ?elements) aux:createGraph ?graph.
  :scope log:skolem ?scope
 
 }.
 
 # exists
-{?e aux:getFunctionTriples {?scope e:match ?graph}}<={
+{?e aux:getFunctionTriples {?scope log:includesNotBind ?graph}}<={
  ?e sp:expression ?ex.
  ?ex a sp:exists;
      sp:elements ?elements. 
- ?elements aux:createGraph ?graph.
+ (?e ?elements) aux:createGraph ?graph.
  :scope log:skolem ?scope
 
 }.
 
-
-{?e aux:getFunctionTriples {}}<={}.
+{?e aux:getFunctionTriples {}}<={1 e:trace "hieruu".}.
 
 
 #Bind
@@ -295,6 +320,17 @@ true log:callWithCut true.
 
   ?x sp:where ?where.
   (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
+  
+
+  ?vars list:removeDuplicates ?outvars.}.
+
+#get min variables
+{?x aux:getMinVariables ?outvars}
+<=
+{
+
+  ?x sp:elements ?el.
+  (?var {?t list:in ?el.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
   
 
   ?vars list:removeDuplicates ?outvars.}.
@@ -501,7 +537,7 @@ aux:value log:skolem ?value.
 #####################################################################################
 {  {(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
 {{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
-{{ (?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:equalTo ?a2. }. }<={}.
+{{ (?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:bound true. ?a2 log:bound true. ?a1 log:equalTo ?a2. }. }<={}.
 { {(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
 { {(?a) sp:ucase ?o} aux:funcTranslation {?a string:upperCase ?o}}<={}.
 { {(?a) sp:uri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
@@ -524,6 +560,10 @@ aux:value log:skolem ?value.
 {{(?a1 ?a2) sp:strStarts ?o} aux:funcTranslation { ?a1 string:startsWith ?a2}}<={}.
 {{(?a1 ?a2) sp:strEnds ?o} aux:funcTranslation { ?a1 string:endsWith ?a2}}<={}.
 {{(?a1 ?a2) sp:contains ?o} aux:funcTranslation { ?a1 string:contains ?a2}}<={}.
+# STRBEFORE
+# STRAfter
+#Encode_For_URI
+{{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?a2}}<={}.
 {{?list sp:mul ?o} aux:funcTranslation {?list math:product ?o}}<={}.
 # MISSING: uuid, struuid
 
