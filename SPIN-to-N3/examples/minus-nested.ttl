@@ -1,0 +1,32 @@
+[ a  <http://spinrdf.org/sp#Select> ;
+  <http://spinrdf.org/sp#where>  ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+                           "n" ] ;
+         <http://spinrdf.org/sp#predicate>
+                 <http://example/p> ;
+         <http://spinrdf.org/sp#subject>
+                 [ <http://spinrdf.org/sp#varName>
+                           "x" ]
+       ]
+       [ a       <http://spinrdf.org/sp#Minus> ;
+         <http://spinrdf.org/sp#elements>
+                 ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+           "m" ] ;
+                     <http://spinrdf.org/sp#predicate>
+                             <http://example/q> ;
+                     <http://spinrdf.org/sp#subject>
+                             [ <http://spinrdf.org/sp#varName>
+           "x" ]
+                   ]
+                   [ a       <http://spinrdf.org/sp#Filter> ;
+                     <http://spinrdf.org/sp#expression>
+                             [ a <http://spinrdf.org/sp#eq> ;
+   <http://spinrdf.org/sp#arg1>  [ <http://spinrdf.org/sp#varName>
+                     "n" ] ;
+   <http://spinrdf.org/sp#arg2>  [ <http://spinrdf.org/sp#varName>
+                     "m" ]
+                             ]
+                   ]
+                 )
+       ]
+     )
+] .

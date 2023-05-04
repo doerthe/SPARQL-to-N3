@@ -1,0 +1,32 @@
+#Processed by EYE v3.10.0
+#eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3372164244228077449#>.
+
+{
+#(((("org" ?t_14)) (("auth" ?t_15) ("book" ?t_16) ("lprice" ?t_17))) {?t_14 <http://books.example/affiliates> ?t_15. ?t_15 <http://books.example/writesBook> ?t_16. ?t_16 <http://books.example/price> ?t_17} ?t_18) log:collectAllIn ?t_19.
+?t_14 <http://books.example/affiliates> ?t_151. ?t_151 <http://books.example/writesBook> ?t_161. ?t_161 <http://books.example/price> ?t_171.
+
+# (?t_20 ?t_21) list:in ?t_18. (?t_22 {(?t_20 ?t_23) list:in ?t_18.("lprice" ?t_22) list:in ?t_23} ?t_24) log:collectAllIn ?t_19. 
+
+(?t_17 {?t_14 <http://books.example/affiliates> ?t_15. ?t_15 <http://books.example/writesBook> ?t_16. ?t_16 <http://books.example/price> ?t_17.} ?t_24) log:collectAllIn ?t_19.
+
+
+#("org" ?t_14) list:in ?t_20. 
+?t_24 math:sum ?t_25} => {_:bn_1 ex:result (("org" ?t_14) ("totalPrice" ?t_25))}.
+
+#2023-03-17T09:57:11.152Z in=89 out=1 ent=1 step=1 brake=2 inf=229567 sec=0.055 inf/sec=4173945
+#ENDS
+
