@@ -1,5 +1,5 @@
 # Processed by EYE v3.22.2 (2023-05-03)
-# eye examples/optional_spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eye
+# eye examples/minus-2.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -15,17 +15,14 @@
 @prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3084663944923141335#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/536809146852495029#>.
 
 {
-    ?t_3 <http://xmlns.com/foaf/0.1/name> ?t_4.
-    true log:callWithOptional {
-        ?t_3 <http://xmlns.com/foaf/0.1/mbox> ?t_5.
-    }.
+    ?t_3 ?t_4 ?t_5.
 } => {
-    _:bn_1 ex:result (("name" ?t_4) ("mbox" ?t_5)).
+    _:bn_1 ex:result (("o" ?t_5) ("p" ?t_4) ("s" ?t_3)).
 }.
 
-# 2023-05-04T15:39:29.227Z in=114 out=1 ent=1 step=1 brake=2 inf=296566 sec=0.068 inf/sec=4361265
+# 2023-05-04T15:39:29.620Z in=110 out=1 ent=1 step=1 brake=2 inf=292179 sec=0.067 inf/sec=4360881
 # ENDS
 

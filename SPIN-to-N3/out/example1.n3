@@ -1,5 +1,5 @@
-#Processed by EYE v2.5.0 josd
-#eye examples/construct-1.ttl examples/ask-1.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://spinrdf.org/
+#Processed by EYE v2.12.1 josd
+#eye examples/construct-1.ttl examples/ask-1.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -13,11 +13,13 @@
 @prefix my: <http://example.org/my#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2026521502083425723#>.
 
-{?t_0 ex:child ?t_1. ?t_1 ex:child ?t_2} => {?t_2 ex:grandParent ?t_0}.
-{?t_3 math:lessThan 18 . ?t_2 my:age ?t_3} => {ex:query ex:leadsTo true}.
-{(1 {?t_3 math:lessThan 18 . ?t_2 my:age ?t_3} ()) log:collectAllIn ?U_0} => {ex:query ex:leadsTo false}.
+{?t_5 ex:child ?t_6. ?t_7 ex:child ?t_5} => {?t_6 ex:grandParent ?t_7}.
+{?t_6 my:age ?t_8} => {_:bn_5 ex:result true}.
+{(1 {?t_6 my:age ?t_8} ()) log:collectAllIn ?U_0} => {_:bn_5 ex:result false}.
 
-#2023-02-01T15:09:22.531Z in=31 out=3 ent=3 step=4 brake=3 inf=72528 sec=0.059 inf/sec=1229288
+#2023-03-01T12:51:00.238Z in=67 out=3 ent=3 step=2 brake=2 inf=150787 sec=0.052 inf/sec=2899750
 #ENDS
 

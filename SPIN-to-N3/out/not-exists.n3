@@ -1,5 +1,5 @@
-# Processed by EYE v3.22.2 (2023-05-03)
-# eye examples/not-exists-spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+#Processed by EYE v3.13.0
+#eye examples/not-exists-spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -11,11 +11,9 @@
 @prefix ex: <http://example.org/spin#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix time: <http://www.w3.org/2000/10/swap/time#>.
-@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/745406962502491550#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3963785444870855901#>.
 
 {
     ?t_3 a <http://xmlns.com/foaf/0.1/Person>.
@@ -26,6 +24,6 @@
     _:bn_1 ex:result (("person" ?t_3)).
 }.
 
-# 2023-05-04T15:39:29.028Z in=114 out=1 ent=1 step=1 brake=2 inf=296969 sec=0.067 inf/sec=4432373
-# ENDS
+#2023-04-04T13:40:15.317Z in=89 out=1 ent=1 step=1 brake=2 inf=240042 sec=0.067 inf/sec=3582716
+#ENDS
 

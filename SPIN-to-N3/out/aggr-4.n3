@@ -1,5 +1,5 @@
 #Processed by EYE v2.12.1 josd
-#eye examples/filter-concat.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+#eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -13,10 +13,10 @@
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3000477935548291934#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/1474024854746480254#>.
 
-{?t_4 <http://ex.org/p> ?t_5. ?t_6 log:equalTo "abcd". (?t_5 "d") string:concatenation ?t_6} => {_:sk_3 ex:result (("s" ?t_4) ("o" ?t_5))}.
+{?t_5 <http://books.example/affiliates> ?t_6. ?t_7 <http://books.example/price> ?t_8. ?t_6 <http://books.example/writesBook> ?t_7} => {_:bn_1 ex:result (("org" ?t_5) ("totalPrice" _:t_9))}.
 
-#2023-02-17T14:25:00.113Z in=41 out=1 ent=1 step=1 brake=2 inf=103672 sec=0.063 inf/sec=1645587
+#2023-03-14T17:10:11.460Z in=72 out=1 ent=1 step=1 brake=2 inf=156186 sec=0.057 inf/sec=2740105
 #ENDS
 

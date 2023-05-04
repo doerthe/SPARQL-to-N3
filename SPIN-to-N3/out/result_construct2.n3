@@ -1,5 +1,5 @@
-#Processed by EYE v2.7.5 josd
-#eye examples/construct-2.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/
+# Processed by EYE v3.22.2 (2023-05-03)
+# eye examples/construct-2.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -9,13 +9,21 @@
 @prefix spin: <http://spinrdf.org/spin#>.
 @prefix sp: <http://spinrdf.org/sp#>.
 @prefix ex: <http://example.org/spin#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3658700300137489683#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3304775783859753078#>.
 
-{?t_3 <http://example.org#child> ?t_4. ?t_5 <http://example.org#child> ?t_3} => {?t_4 <http://example.org#grandParent> ?t_5}.
+{
+    ?t_3 <http://example.org#child> ?t_4.
+    ?t_5 <http://example.org#child> ?t_3.
+} => {
+    ?t_4 <http://example.org#grandParent> ?t_5.
+}.
 
-#2023-02-07T13:55:50.997Z in=25 out=1 ent=1 step=2 brake=3 inf=62521 sec=0.048 inf/sec=1302521
-#ENDS
+# 2023-05-04T15:39:27.638Z in=115 out=1 ent=1 step=1 brake=2 inf=296488 sec=0.073 inf/sec=4061479
+# ENDS
 

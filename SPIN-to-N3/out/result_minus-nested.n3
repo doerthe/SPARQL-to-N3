@@ -1,5 +1,5 @@
 # Processed by EYE v3.22.2 (2023-05-03)
-# eye examples/optional_spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eye
+# eye examples/minus-nested.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -15,17 +15,20 @@
 @prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3084663944923141335#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/1379482439380699232#>.
 
 {
-    ?t_3 <http://xmlns.com/foaf/0.1/name> ?t_4.
-    true log:callWithOptional {
-        ?t_3 <http://xmlns.com/foaf/0.1/mbox> ?t_5.
+    ?t_10 <http://example/p> ?t_11.
+    ?t_12 log:notIncludes {
+        ?t_10 <http://example/q> ?t_13.
+        ?t_14 log:bound true.
+        ?t_15 log:bound true.
+        ?t_14 log:equalTo ?t_15.
     }.
 } => {
-    _:bn_1 ex:result (("name" ?t_4) ("mbox" ?t_5)).
+    _:bn_1 ex:result (("n" ?t_11) ("x" ?t_10)).
 }.
 
-# 2023-05-04T15:39:29.227Z in=114 out=1 ent=1 step=1 brake=2 inf=296566 sec=0.068 inf/sec=4361265
+# 2023-05-04T15:39:29.819Z in=118 out=1 ent=1 step=1 brake=2 inf=301608 sec=0.067 inf/sec=4501612
 # ENDS
 

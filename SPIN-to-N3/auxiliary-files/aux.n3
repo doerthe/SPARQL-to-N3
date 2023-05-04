@@ -33,15 +33,21 @@
 ##################################################
 # translate where clause to n3 graph
 ##################################################
-{ ?list aux:createGraph ?graph}<={
+{ (?vars ?list) aux:createGraph ?graph}<={
 (?list ()) aux:flatten ?list2.
-?list2 aux:handleTriples ?graph1.
-?list2 aux:handleFilter ?graph2.
-?list2 aux:handleUnion ?graph3.
-?list2 aux:handleBind ?graph4.
-?list2 aux:handleOptional ?graph5.
- ?list2 aux:handleMinus ?graph6.
-
+#1 e:trace {(?vars ?list) aux:createGraph ?graph}.
+(?vars ?list2) aux:handleTriples ?graph1.
+#2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
+(?vars ?list2) aux:handleFilter ?graph2.
+#3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
+(?vars ?list2) aux:handleUnion ?graph3.
+#4 e:trace {(?vars ?list2) aux:handleUnion ?graph3.}.
+(?vars ?list2) aux:handleBind ?graph4.
+#5 e:trace {(?vars ?list2) aux:handleBind ?graph4.}.
+(?vars ?list2) aux:handleOptional ?graph5.
+# 6 e:trace {(?vars ?list2) aux:handleOptional ?graph5.}.
+(?vars ?list2) aux:handleMinus ?graph6.
+#7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
 
 (?graph1 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6
 ) log:conjunction ?graph
@@ -52,7 +58,7 @@
 
 
 #create a graph from subject-predicate-object patterns
-{?list aux:handleTriples ?graph }<={
+{(?vars ?list) aux:handleTriples ?graph }<={
   #normal triples
   ({?s1 ?p1 ?o1}{?t list:in ?list. ?t sp:subject ?s;
                                                sp:predicate ?p;
@@ -68,18 +74,20 @@
 ########################
 # filter
 #######################
-  {?list aux:handleFilter ?graph }<={
+  {(?vars ?list) aux:handleFilter ?graph }<={
   (?tr {?t list:in ?list. ?t a  sp:Filter ;
                     aux:getFunctionTriples ?tr.
                } ?filterList) log:collectAllIn ?scope.
                (?filterList ({})) list:append ?fl.
-            ?fl  log:conjunction ?graph. 
+            ?fl  log:conjunction ?graph1. 
+            (?vars ?graph1) aux:relabelGraph ?graph.
 }.
+
 
 ##########################################
 # union
 ###########################################
-{?list aux:handleUnion ?graph}<={
+{(?vars ?list) aux:handleUnion ?graph}<={
   (?t {?t list:in ?list. ?t a  sp:Union .} ?uList) log:collectAllIn ?scope.
   (?uList {}) aux:createUGraph ?graph.
 
@@ -91,7 +99,7 @@
   ?uList rdf:first ?t.
   ?t sp:elements ?elist.
   ?et list:in ?elist.
-  ?et aux:handleTriples ?tr.
+  (?vars ?et) aux:handleTriples ?tr.
   ?uList rdf:rest ?rest.
   (?ingraph ?tr) log:conjunction ?newgraph.
   (?rest ?newgraph ) aux:createUGraph ?graph.
@@ -100,29 +108,30 @@
 ##########################################
 # optional
 ###########################################
-{?list aux:handleOptional ?graph}<={
+{(?vars ?list) aux:handleOptional ?graph}<={
   (?t {?t list:in ?list. ?t a  sp:Optional .} ?oList) log:collectAllIn ?scope.
-  (?oList {}) aux:createOGraph ?graph.
+  (?vars ?oList {}) aux:createOGraph ?graph.
 
   }.
 
-{ (() ?graph) aux:createOGraph ?graph.}<={}.
+{ (?vars () ?graph) aux:createOGraph ?graph.}<={}.
 
-{(?oList ?ingraph ) aux:createOGraph ?graph.}<={
+{(?vars ?oList ?ingraph ) aux:createOGraph ?graph.}<={
   ?oList rdf:first ?t.
   ?oList rdf:rest ?rest.
   ?t sp:elements ?elist.
-  ?elist aux:createGraph ?gr.
+  (?vars ?elist) aux:createGraph ?gr.
   ({true log:callWithOptional ?gr } ?ingraph ) log:conjunction ?newgraph.
-(?rest ?newgraph ) aux:createOGraph ?graph
+(?vars ?rest ?newgraph ) aux:createOGraph ?graph
  
   }.
 
 ##############################################
 # minus
 ##############################################  
-{?list aux:handleMinus ?graph}<={
-  #test: is there a minus?
+#test: is there a minus?
+#yes
+{(?inVars ?list) aux:handleMinus ?graph}<={
   ?t list:in ?list. ?t a  sp:Minus .
   true log:callWithCut true.
 
@@ -133,7 +142,7 @@
   }.
 
  # case: no minus
- {?list aux:handleMinus {}}<={ }.
+ {(?vars ?list) aux:handleMinus {}}<={ }.
 
  {(?t ?vars) aux:createMinusExpression ?e}<={
   ?t sp:elements ?list.
@@ -146,10 +155,30 @@
 
 { (?list ?t) aux:minExpr {?scope log:notIncludes ?g}.}<={
   ?t sp:elements ?e.
-  ?e aux:createGraph ?g.
+  (?list ?e) aux:createGraph ?g1.
+  (?list ?g1) aux:relabelGraph ?g.
   :scope log:skolem ?scope.
 }.
-#todo add relabel-function for ?g
+#relabel-function for ?g 
+{(false ?graph) aux:relabelGraph ?graph}<={true log:callWithCut true}.
+{(?list {}) aux:relabelGraph {}}<={true log:callWithCut true}.
+
+
+{(?list ?graph) aux:relabelGraph ?gout}
+<=
+{
+  ({?s1 ?p1 ?o1} {?graph log:includes {?s ?p ?o}.
+   (?graph ?list ?s) aux:newLabel ?s1. (?graph ?list ?p) aux:newLabel ?p1. (?graph ?list ?o) aux:newLabel ?o1.
+   } ?tlist) log:collectAllIn ?scope.
+  ?tlist log:conjunction ?gout
+}. 
+
+{(?graph ?list ?x) aux:newLabel ?x.}<={ (?z ?x) list:in ?list. true log:callWithCut true }.
+{(?graph ?list ?x) aux:newLabel ?x1.}<={?x log:rawType  log:SkolemIRI.  (?graph ?list ?x) e:skolem ?x1. }. 
+{(?graph ?list ?x) aux:newLabel ?g.}<={?x log:rawType log:Formula. (?list ?x) aux:relabelGraph ?g. }.
+{(?graph ?list ?x) aux:newLabel ?x.}<={?x log:rawType ?type. ?type list:in (log:Other log:Literal).}. 
+{(?graph ?list ?x) aux:newLabel ?out.}<={?x log:rawType rdf:List. ( ?eL {?e list:in ?x. ?e aux:newLabel ?eL} ?out ) log:collectAllIn ?scope }.
+
 
 ##############################################
 #getFunctions
@@ -279,7 +308,7 @@ true log:callWithCut true.
  ?ex a sp:notExists;
      sp:elements ?elements. 
 
- ?elements aux:createGraph ?graph.
+ (?vars ?elements) aux:createGraph ?graph.
  :scope log:skolem ?scope
 
 }.
@@ -289,7 +318,7 @@ true log:callWithCut true.
  ?e sp:expression ?ex.
  ?ex a sp:exists;
      sp:elements ?elements. 
- ?elements aux:createGraph ?graph.
+ (?vars ?elements) aux:createGraph ?graph.
  :scope log:skolem ?scope
 
 }.
@@ -299,7 +328,7 @@ true log:callWithCut true.
 
 #Bind
 {
-  ?list aux:handleBind ?graph.
+  (?vars ?list) aux:handleBind ?graph.
   }<={
 (?t {?t list:in ?list. ?t a  sp:Bind .} ?bList) log:collectAllIn ?scope.
 (({?e1 log:equalTo ?v1} ?tr) {?b list:in ?bList. ?b sp:expression ?e. ?b sp:variable ?v. ?v aux:gets ?v1. ?e aux:gets ?e1.

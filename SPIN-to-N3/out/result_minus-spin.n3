@@ -1,4 +1,4 @@
-# Processed by EYE v3.20.4 (2023-04-17)
+# Processed by EYE v3.22.2 (2023-05-03)
 # eye examples/minus-spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
@@ -15,9 +15,17 @@
 @prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4459326489838481098#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/1837660869885678046#>.
 
+{
+    ?t_4 ?t_5 ?t_6.
+    ?t_7 log:notIncludes {
+        ?t_4 <http://xmlns.com/foaf/0.1/givenName> "Bob".
+    }.
+} => {
+    _:bn_1 ex:result (("s" ?t_4)).
+}.
 
-# 2023-05-03T15:52:19.545Z in=103 out=0 ent=0 step=0 brake=2 inf=263458 sec=0.065 inf/sec=4053200
+# 2023-05-04T15:39:29.424Z in=114 out=1 ent=1 step=1 brake=2 inf=296991 sec=0.068 inf/sec=4367515
 # ENDS
 

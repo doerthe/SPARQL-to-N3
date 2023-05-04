@@ -1,5 +1,5 @@
-#Processed by EYE v2.7.5 josd
-#eye examples/union_1.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/
+#Processed by EYE v2.12.1 josd
+#eye examples/select4.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
 
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -12,8 +12,11 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix aux: <http://example.org/aux#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2209376160174498059#>.
 
+{?t_2 <http://xmlns.com/foaf/0.1/name> ?t_3} => {_:sk_0 ex:result (("name" ?t_3) ("x" ?t_2))}.
 
-#2023-02-07T14:22:59.188Z in=30 out=0 ent=0 step=0 brake=3 inf=64828 sec=0.046 inf/sec=1409304
+#2023-02-20T16:30:12.329Z in=37 out=1 ent=1 step=1 brake=2 inf=111785 sec=0.057 inf/sec=1961140
 #ENDS
 
