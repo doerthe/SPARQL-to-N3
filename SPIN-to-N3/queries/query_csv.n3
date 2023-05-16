@@ -41,6 +41,6 @@
   }=>{
     {?x11 aux:getString ?u11}<={?x11 log:uri ?u11. }.
     {?x11 aux:getString ?x11}<={?x11 log:rawType ?t11. ?t11 log:notEqualTo log:Other}.
-    {( ?xx 1) e:call ?g} => {1 log:outputString ?outname}.
-    {( ?xx 1) e:call ?gout} => {2 log:outputString ?out}.
+    ?g => {1 log:outputString ?outname}.
+   ?gout => {2 log:outputString ?out}.
   }.

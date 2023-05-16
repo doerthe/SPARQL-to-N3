@@ -15,7 +15,7 @@
 @prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4560066204232923022#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3007043040233697038#>.
 
 {
     ?U_6 aux:getString ?U_7.
@@ -29,48 +29,44 @@
     ?U_8 log:notEqualTo log:Other.
 }.
 {
-    (?U_9 1) e:call {
-        (((("org" ?t_15)) (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))) {
-            ?t_15 <http://books.example/affiliates> ?t_16.
-            ?t_16 <http://books.example/writesBook> ?t_17.
-            ?t_17 <http://books.example/price> ?t_18.
-        } ?t_19) log:collectAllIn ?t_20.
-        (?t_21 ?t_22) list:in ?t_19.
-        (?t_23 {
-            (?t_21 ?t_24) list:in ?t_19.
-            ("lprice" ?t_23) list:in ?t_24.
-        } ?t_25) log:collectAllIn ?t_20.
-        ("org" ?t_15) list:in ?t_21.
-        ?t_25 math:sum ?t_26.
-    }.
+    (((("org" ?t_15)) (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))) {
+        ?t_15 <http://books.example/affiliates> ?t_16.
+        ?t_16 <http://books.example/writesBook> ?t_17.
+        ?t_17 <http://books.example/price> ?t_18.
+    } ?t_19) log:collectAllIn ?t_20.
+    (?t_21 ?t_22) list:in ?t_19.
+    (?t_23 {
+        (?t_21 ?t_24) list:in ?t_19.
+        ("lprice" ?t_23) list:in ?t_24.
+    } ?t_25) log:collectAllIn ?t_20.
+    ("org" ?t_15) list:in ?t_21.
+    ?t_25 math:sum ?t_26.
 } => {
     1 log:outputString "org,totalPrice\n".
 }.
 {
-    (?U_9 1) e:call {
-        (((("org" ?t_15)) (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))) {
-            ?t_15 <http://books.example/affiliates> ?t_16.
-            ?t_16 <http://books.example/writesBook> ?t_17.
-            ?t_17 <http://books.example/price> ?t_18.
-        } ?t_19) log:collectAllIn ?t_20.
-        (?t_21 ?t_22) list:in ?t_19.
-        (?t_23 {
-            (?t_21 ?t_24) list:in ?t_19.
-            ("lprice" ?t_23) list:in ?t_24.
-        } ?t_25) log:collectAllIn ?t_20.
-        ("org" ?t_15) list:in ?t_21.
-        ?t_25 math:sum ?t_26.
-        (?U_2 {
-            (?U_0 ?U_1) list:in (("org" ?t_15) ("totalPrice" ?t_26)).
-            ?U_1 aux:getString ?U_2.
-        } ?U_3) log:collectAllIn ?U_4.
-        (?U_3 ",") string:join ?U_5.
-        (?U_5 "\n") string:concatenation ?t_27.
-    }.
+    (((("org" ?t_15)) (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))) {
+        ?t_15 <http://books.example/affiliates> ?t_16.
+        ?t_16 <http://books.example/writesBook> ?t_17.
+        ?t_17 <http://books.example/price> ?t_18.
+    } ?t_19) log:collectAllIn ?t_20.
+    (?t_21 ?t_22) list:in ?t_19.
+    (?t_23 {
+        (?t_21 ?t_24) list:in ?t_19.
+        ("lprice" ?t_23) list:in ?t_24.
+    } ?t_25) log:collectAllIn ?t_20.
+    ("org" ?t_15) list:in ?t_21.
+    ?t_25 math:sum ?t_26.
+    (?U_2 {
+        (?U_0 ?U_1) list:in (("org" ?t_15) ("totalPrice" ?t_26)).
+        ?U_1 aux:getString ?U_2.
+    } ?U_3) log:collectAllIn ?U_4.
+    (?U_3 ",") string:join ?U_5.
+    (?U_5 "\n") string:concatenation ?t_27.
 } => {
     2 log:outputString ?t_27.
 }.
 
-# 2023-05-16T14:53:44.209Z in=121 out=4 ent=4 step=1 brake=2 inf=318836 sec=0.069 inf/sec=4620812
+# 2023-05-16T16:10:43.475Z in=121 out=4 ent=4 step=1 brake=2 inf=317661 sec=0.077 inf/sec=4125468
 # ENDS
 
