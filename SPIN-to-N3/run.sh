@@ -14,7 +14,6 @@ eye examples/construct-2.ttl auxiliary-files/aux.n3 --nope --query queries/query
 eye examples/construct_blank.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/ >out/result_blank.n3
 
 # union
-    #(with construct)
 eye examples/union_1.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/ > out/result_union1.n3
 eye examples/union.ttl auxiliary-files/aux.n3 --nope --query queries/query_general.n3 --quantify http://eyereasoner.github.io/.well-known/genid/ >out/result_u.n3
 
@@ -24,13 +23,17 @@ eye examples/bind-concat.ttl auxiliary-files/aux.n3 --query queries/query_genera
 
 # aggregates
 eye examples/select-aggr-5.ttl auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/select-aggr-5-rule.n3
-eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/result_select-aggr-4.n3
+
+    #full example
+eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/select-aggr-4-rule.n3
+eye examples/select-aggr-4_data.n3 --query out/select-aggr-4-rule.n3 --nope > out/select-aggr-4-query-result.n3
+eye out/select-aggr-4-query-result.n3 --nope auxiliary-files/csv-convert.n3 --strings > out/aggr-4.csv
 
 # not exists
 eye examples/not-exists-spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/not-exists-rule.n3
 
 # optional
-eye examples/optional_spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eye >out/optional-rule.n3
+eye examples/optional_spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/optional-rule.n3
 
 
 # minus
