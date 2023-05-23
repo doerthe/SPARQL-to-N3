@@ -31,6 +31,9 @@ eye out/select-aggr-4-query-result.n3 --nope auxiliary-files/csv-convert.n3 --st
     # with direct csv production
 eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_csv.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/select-aggr-4-rule-csv.n3
 eye examples/select-aggr-4_data.n3 --nope out/select-aggr-4-rule-csv.n3 --strings > out/aggr-4-al.csv
+    #using EYE's csv production (there is still a problem with duplicates)
+eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_csv_direct.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/select-aggr-4-rule-csv_d.n3
+eye examples/select-aggr-4_data.n3 --nope --query out/select-aggr-4-rule-csv_d.n3 --strings --output out/aggr-4-al_d.csv  
 
 # not exists
 eye examples/not-exists-spin.n3 auxiliary-files/aux.n3 --query queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ >out/not-exists-rule.n3
