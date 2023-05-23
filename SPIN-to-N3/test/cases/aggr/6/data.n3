@@ -1,0 +1,16 @@
+@prefix ex: <http://books.example/> .
+
+ex:org1 ex:affiliates ex:auth1 , ex:auth2 .
+
+ex:auth1 ex:writesBook ex:book11 , ex:book12 , ex:book13 . 
+ex:book11 ex:price 100 ; ex:nrPages 15 .
+ex:book12 ex:price 110 ; ex:nrPages 20 .
+ex:book13 ex:price 115 ; ex:nrPages 17 .
+
+ex:auth2 ex:writesBook ex:book22 . 
+ex:book22 ex:price 50 ; ex:nrPages 15 .
+
+ex:org2 ex:affiliates ex:auth3 .
+ex:auth3 ex:writesBook ex:book31 , ex:book32 . 
+ex:book31 ex:price 200 ; ex:nrPages 15 .
+ex:book32 ex:price 225 ; ex:nrPages 25 .
