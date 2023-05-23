@@ -615,8 +615,8 @@ aux:value log:skolem ?value.
 {{(?a1 ?a2) sp:strStarts ?o} aux:funcTranslation { ?a1 string:startsWith ?a2}}<={}.
 {{(?a1 ?a2) sp:strEnds ?o} aux:funcTranslation { ?a1 string:endsWith ?a2}}<={}.
 {{(?a1 ?a2) sp:contains ?o} aux:funcTranslation { ?a1 string:contains ?a2}}<={}.
-# STRBEFORE
-# STRAfter
+{{(?a1 ?a2) sp:strbefore ?o} aux:funcTranslation {( "(.*?)%s.*" ?a2) string:format ?regex .( ?a1 ?regex) string:scrape ?o .}}<={}.
+{{(?a1 ?a2) sp:strafter ?o} aux:funcTranslation {( ".*?%s(.*)" ?a2) string:format ?regex .( ?a1 ?regex) string:scrape ?o .}}<={}.
 #Encode_For_URI
 # problem: https://n3-editor.herokuapp.com/n3/editor/s/NZ0zbiJ2
 # langMatches
