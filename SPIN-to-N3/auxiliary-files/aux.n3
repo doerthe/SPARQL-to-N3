@@ -38,6 +38,8 @@
 #1 e:trace {(?vars ?list) aux:createGraph ?graph}.
 (?vars ?list2) aux:handleTriples ?graph1.
 #2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
+(?vars ?list2) aux:handlePropertyPath ?graph11.
+#21 e:trace {(?vars ?list2) aux:handlePropertyPath ?graph11 .}.
 (?vars ?list2) aux:handleFilter ?graph2.
 #3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
 (?vars ?list2) aux:handleUnion ?graph3.
@@ -49,7 +51,7 @@
 (?vars ?list2) aux:handleMinus ?graph6.
 #7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
 
-(?graph1 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6
+(?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6
 ) log:conjunction ?graph
 
 }.
@@ -70,6 +72,121 @@
                (?whereList ({})) list:append ?fl.
                ?fl  log:conjunction ?graph.
   }.
+
+#######################################
+# property paths
+#######################################
+{
+   (?vars ?list) aux:handlePropertyPath ?graph 
+}
+<= 
+{
+  ({( ?s ?o ) aux:stepThroughPath ?steps} { 
+        ?list list:member ?tp .
+        ?tp a sp:TriplePath ;
+          sp:path ?path .
+        ?tp sp:subject ?s1. ?s1 aux:gets ?s .
+        ?tp sp:object ?o1. ?o1 aux:gets ?o .
+        ?path aux:collectPathSteps ?steps .
+      } ?olist) log:collectAllIn ?scope.
+  (?olist ({})) list:append ?oolist. 
+  ?oolist log:conjunction ?graph.
+} .
+
+
+
+
+#
+{ ( ?s ?o ( ?pred 1 1 ) ) aux:propertyPathStep    {?s ?pred ?o}}<= {} .
+{ ( ?s ?o ( ?pred 0 -2 ) ) aux:propertyPathStep    {( ?s ?o ) aux:optionalChain ?pred } }<= {} .
+{ ( ?s ?o ( ?pred 1 -2 ) ) aux:propertyPathStep {( ?s ?o ) aux:chain ?pred}}<= {}.
+{ ( ?s ?o ( ?pred 0 -1 ) ) aux:propertyPathStep   {( ?s ?o ) aux:optional ?pred}}<= {} .
+
+# collect path steps for easier processing
+# (also, flatten seq, alt paths)
+
+#
+{
+   ?x aux:collectPathSteps ?paths 
+}
+<= 
+{
+   ?x a sp:SeqPath ;
+       sp:path1 ?p1 ;
+       sp:path2 ?p2 .
+   # - flatten seq paths
+   ?p1 aux:collectPathSteps ?p1s .
+   ?p2 aux:collectPathSteps ?p2s .
+   ( ?p1s ?p2s ) list:append ?paths .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?ps "rev" ) ) 
+}
+<= 
+{
+   ?x a sp:ReversePath ;
+       sp:subPath ?p .
+   ?p aux:collectPathSteps ?ps .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?p1s ?p2s ) "alt" ) 
+}
+<= 
+{
+   ?x a sp:AltPath ;
+       sp:path1 ?p1 ;
+       sp:path2 ?p2 .
+   # - flatten alt paths
+   ?p1 aux:collectPathSteps ?p1s .
+   ?p2 aux:collectPathSteps ?p2s .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?ps ?min ?max ) ) 
+}
+<= 
+{
+   ?x a sp:ModPath ;
+       sp:subPath ?p ;
+       sp:modMin ?min ;
+       sp:modMax ?max .
+   ?p aux:collectPathSteps ?ps .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ?cells "neg" )
+}
+<= 
+{
+   ?x a sp:NegatedPath ;
+       sp:subPath ?options .
+   (
+       ( ?node ?type )
+       {
+           ?option list:in ?options .
+           ?option a ?type ;
+               sp:node ?node 
+       }
+       ?cells
+   ) log:collectAllIn _:t .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?x 1 1 ) ) 
+}
+<= 
+{
+   ?x log:rawType log:Other .
+   ?x!log:uri string:notMatches "http://spinrdf.org/sp#(SeqPath|AltPath|ModPath|NegatedPath)" .
+} .
+
 
 ########################
 # filter
@@ -150,6 +267,7 @@
   (?vars ?v2) aux:listIntersection ?intv.
   (?intv ?t) aux:minExpr ?e.
  }.
+ # TODO: multiple minus?
 
  {(() ?t) aux:minExpr {}.}<={true log:callWithCut true.}.
 
@@ -367,16 +485,7 @@ true log:callWithCut true.
 
   ?vars list:removeDuplicates ?outvars.}.
 
-#get min variables
-{?x aux:getMinVariables ?outvars}
-<=
-{
 
-  ?x sp:elements ?el.
-  (?var {?t list:in ?el.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
-  
-
-  ?vars list:removeDuplicates ?outvars.}.
 
 
  {?t aux:bgpOrBindVars (?name ?s1).}<=
