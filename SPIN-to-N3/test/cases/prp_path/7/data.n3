@@ -1,0 +1,19 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://example.org/> .
+
+# EXAMPLE DATA
+
+:alice foaf:mbox <mailto:alice@example> ;
+   foaf:name "alice" ;
+   foaf:knows :alan .
+# :alice foaf:worksWith :bob .
+:bob foaf:name "bob" .
+:bob foaf:knows :trudy .
+:trudy foaf:name "trudy" .
+:trudy foaf:knows :greg .
+:greg foaf:name "greg" .
+:trudy foaf:worksWith :alan .
+:alan foaf:name "alan" .
+:alan foaf:knows :adam .
+:adam foaf:name "adam" .
