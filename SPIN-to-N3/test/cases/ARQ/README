@@ -1,0 +1,6 @@
+## Source
+https://github.com/apache/jena/tree/main/jena-arq/testing/ARQ
+
+There are manifest generating scripts for Syntax/ and Serialization/
+Look for *.sh
+e
