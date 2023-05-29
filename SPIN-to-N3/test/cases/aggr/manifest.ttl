@@ -1,0 +1,46 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix qt:     <http://www.w3.org/2001/sw/DataAccess/tests/test-query#> .
+
+<>  rdf:type mf:Manifest ;
+    rdfs:label "Aggregation test cases" ;
+    mf:entries
+    ( 
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 1" ;
+        mf:action
+            [ qt:query  <1/query.sparql> ;
+              qt:data   <1/data.n3> ]
+      ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 2" ;
+        mf:action
+            [ qt:query  <2/query.sparql> ;
+              qt:data   <2/data.n3> ]
+      ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 3" ;
+        mf:action
+            [ qt:query  <3/query.sparql> ;
+              qt:data   <3/data.n3> ]
+      ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 4" ;
+        mf:action
+            [ qt:query  <4/query.sparql> ;
+              qt:data   <4/data.n3> ]
+      ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 5" ;
+        mf:action
+            [ qt:query  <5/query.sparql> ;
+              qt:data   <5/data.n3> ]
+      ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 6" ;
+        mf:action
+            [ qt:query  <6/query.sparql> ;
+              qt:data   <6/data.n3> ]
+      ]
+    ).
