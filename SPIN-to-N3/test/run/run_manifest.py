@@ -26,7 +26,7 @@ def get_name(path):
 def to_path(el):
     return str(el)[len("file://"):]
 
-def load_manifest(path):
+def run_manifest(path, engine):
     print(f">> loading manifest: {get_name(path)}<<")
     g = Graph()
     g.parse(path, format='turtle')
@@ -37,14 +37,14 @@ def load_manifest(path):
         if lst is not None:
             for el in Collection(g=g, list=lst):
                 path = str(el)
-                load_manifest(path)
+                run_manifest(path, engine)
         # test entries
         lst = g.value(mf, MF.entries)
         if lst is not None:
             for el in Collection(g=g, list=lst):
-                run_test(g, el)
+                run_test(g, el, engine)
 
-def run_test(g, test):   
+def run_test(g, test, engine):   
     # if (g.value(test, RDF.type) == MF.QueryEvaluationTest):
     name = str(g.value(test, MF.name))
     query = to_path(g.value(g.value(test, MF.action), QT.query))
@@ -52,15 +52,17 @@ def run_test(g, test):
     # result = to_path(g.value(test, MF.result))
     
     print(f">> running test: {name}")
-    subprocess.run(['./test_case.sh', query, data])
+    subprocess.run(['./test_case.sh', query, data, engine])
     print("\n")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run test manifest.")
     parser.add_argument('path', help="Path to the test manifest file.")
+    parser.add_argument('engine', help="SPARQL execution engine to compare results to.", choices=["rdflib", "jena"])
 
     args = parser.parse_args()
     path = args.path
+    engine = args.engine
 
-    load_manifest(path)
+    run_manifest(path, engine)
 

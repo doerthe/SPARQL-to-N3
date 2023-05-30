@@ -1,3 +1,25 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl --query tmp/n3query.n3 --nope
+# eye /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/prp_path/8/data.n3 --query tmp/n3query.n3 --nope
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://example.org/>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4547053922463622542#>.
+
+
+# 2023-05-30T13:55:55.576Z in=13 out=0 ent=0 step=0 brake=1 inf=34207 sec=0.024 inf/sec=1425292
+# ENDS
 
