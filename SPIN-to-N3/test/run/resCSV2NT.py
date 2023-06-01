@@ -32,13 +32,14 @@ def csv_reader(csv_data, dialect=csv.excel, **kwargs):
         yield row
 
 class RESRDF:
-    def __init__(self):
+    def __init__(self, ordered=False):
         self.BASE = rdflib.Namespace("http://example.org/")
         self.PROPBASE = rdflib.Namespace("http://example.org/")
         self.IDENT = "auto"
         self.DEFAULT = None
         self.COLUMNS = {}
         self.OUT = sys.stdout
+        self.ORDERED = ordered
         self.triples = 0
 
     def triple(self, s, p, o):
@@ -64,7 +65,10 @@ class RESRDF:
         for l_ in csvreader:
             try:
                 if self.IDENT == "auto":
-                    uri = self.BASE["%d" % rows]
+                    if self.ORDERED == True:
+                        subj = self.BASE["%d" % rows]
+                    else:
+                        subj = rdflib.BNode()
                 for i, x in enumerate(l_):
                     x = x.strip()
                     if x != "":
@@ -74,9 +78,9 @@ class RESRDF:
                             o = self.COLUMNS.get(i, rdflib.Literal)(x)
                             if isinstance(o, list):
                                 for _o in o:
-                                    self.triple(uri, headers[i], _o)
+                                    self.triple(subj, headers[i], _o)
                             else:
-                                self.triple(uri, headers[i], o)
+                                self.triple(subj, headers[i], o)
                         except Exception as e:
                             warnings.warn(
                                 "Could not process value for column "
@@ -100,7 +104,14 @@ def main():
     csv2rdf = RESRDF()
     parser = argparse.ArgumentParser(description='Convert CSV files to RDF.')
     parser.add_argument('files', metavar='FILE', type=str, nargs='+', help='CSV files to convert')
+    parser.add_argument('-o', '--ordered', action='store_true', help='Use ordered subject URIs')
     args = parser.parse_args()
+
+    if args.ordered:
+        csv2rdf = RESRDF(ordered=True)
+    else:
+        csv2rdf = RESRDF()
+
     csv2rdf.convert(csv_reader(fileinput.input(args.files)))
 
 if __name__ == "__main__":
