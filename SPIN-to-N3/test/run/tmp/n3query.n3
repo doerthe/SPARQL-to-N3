@@ -15,14 +15,16 @@
 @prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4547053922463622542#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3777944453252705217#>.
 
 {
-    (?t_1 <http://example.org/alice>) aux:stepThroughPath ((((((<http://xmlns.com/foaf/0.1/knows> 1 1)) 1 -2)) "rev")).
+    ?t_3 a <http://example/X>.
+    ?t_3 <http://example/p> ?t_4.
+    ?t_3 <http://example/n> ?t_5.
 } => {
-    _:bn_1 ex:result (("x" ?t_1)).
+    _:bn_1 ex:result (("p" ?t_4)).
 }.
 
-# 2023-05-30T13:55:55.533Z in=122 out=1 ent=1 step=1 brake=2 inf=323884 sec=0.038 inf/sec=8523263
+# 2023-06-03T17:29:17.291Z in=129 out=1 ent=1 step=1 brake=2 inf=329227 sec=0.038 inf/sec=8663868
 # ENDS
 

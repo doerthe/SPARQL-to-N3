@@ -3,6 +3,7 @@
 query=$1
 data=$2
 engine=$3
+ordered=$4
 
 echo -e "(executing sparql using $engine)"
 sp_res_csv="results/sparql_results.csv"
@@ -19,11 +20,18 @@ echo -e "(executing N3 queries)"
 n3_res_csv="results/n3q_results.csv"
 ./sparql2n3.sh $query $data > $n3_res_csv
 
-echo -e "(comparing results)"
+extra=""
+if [[ $ordered == "true" ]]; then
+    extra="--ordered"
+    echo -e "(comparing ordered results)"
+else
+    echo -e "(comparing results)"
+fi
+
 sp_res_nt="results/sparql_results.nt"
-python3 resCSV2NT.py $sp_res_csv > $sp_res_nt
+python3 resCSV2NT.py $sp_res_csv $extra > $sp_res_nt
 
 n3_res_nt="results/n3q_results.nt"
-python3 resCSV2NT.py $n3_res_csv > $n3_res_nt
+python3 resCSV2NT.py $n3_res_csv $extra > $n3_res_nt
 
 python3 NTCompare.py $sp_res_nt $n3_res_nt

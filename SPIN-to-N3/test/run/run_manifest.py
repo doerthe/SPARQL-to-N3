@@ -26,7 +26,7 @@ def get_name(path):
 def to_path(el):
     return str(el)[len("file://"):]
 
-def run_manifest(path, engine):
+def run_manifest(path, engine, ordered):
     print(f">> loading manifest: {get_name(path)}<<")
     g = Graph()
     g.parse(path, format='turtle')
@@ -37,14 +37,14 @@ def run_manifest(path, engine):
         if lst is not None:
             for el in Collection(g=g, list=lst):
                 path = str(el)
-                run_manifest(path, engine)
+                run_manifest(path, engine, ordered)
         # test entries
         lst = g.value(mf, MF.entries)
         if lst is not None:
             for el in Collection(g=g, list=lst):
-                run_test(g, el, engine)
+                run_test(g, el, engine, ordered)
 
-def run_test(g, test, engine):   
+def run_test(g, test, engine, ordered):   
     # if (g.value(test, RDF.type) == MF.QueryEvaluationTest):
     name = str(g.value(test, MF.name))
     query = to_path(g.value(g.value(test, MF.action), QT.query))
@@ -52,17 +52,19 @@ def run_test(g, test, engine):
     # result = to_path(g.value(test, MF.result))
     
     print(f">> running test: {name}")
-    subprocess.run(['./test_case.sh', query, data, engine])
+    subprocess.run(['./test_case.sh', query, data, engine, ("true" if ordered else "false")])
     print("\n")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run test manifest.")
-    parser.add_argument('path', help="Path to the test manifest file.")
-    parser.add_argument('engine', help="SPARQL execution engine to compare results to.", choices=["rdflib", "jena"])
+    parser.add_argument('--manifest', help="Path to the test manifest file.", required=True)
+    parser.add_argument('--engine', help="SPARQL execution engine to compare results to.", choices=["rdflib", "jena"], required=True)
+    parser.add_argument('--ordered', help='Consider result ordering during comparison', action="store_true")
 
     args = parser.parse_args()
-    path = args.path
+    path = args.manifest
     engine = args.engine
+    ordered = args.ordered
 
-    run_manifest(path, engine)
+    run_manifest(path, engine, ordered)
 
