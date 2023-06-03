@@ -15,16 +15,17 @@
 @prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3777944453252705217#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3697153805965563645#>.
 
 {
-    ?t_3 a <http://example/X>.
-    ?t_3 <http://example/p> ?t_4.
-    ?t_3 <http://example/n> ?t_5.
+    ?t_5 a <http://example/X>.
+    ?t_5 <http://example/p> ?t_6.
+    ?t_5 <http://example/q> ?t_7.
+    ?t_5 <http://example/n> ?t_8.
 } => {
-    _:bn_1 ex:result (("p" ?t_4)).
+    _:bn_1 ex:result (("z" _:t_9)).
 }.
 
-# 2023-06-03T17:29:17.291Z in=129 out=1 ent=1 step=1 brake=2 inf=329227 sec=0.038 inf/sec=8663868
+# 2023-06-03T17:38:18.688Z in=134 out=1 ent=1 step=1 brake=2 inf=332895 sec=0.039 inf/sec=8535769
 # ENDS
 
