@@ -5,6 +5,9 @@ data=$2
 engine=$3
 ordered=$4
 
+mkdir -p results
+mkdir -p tmp
+
 echo -e "(executing sparql using $engine)"
 sp_res_csv="results/sparql_results.csv"
 if [[ $engine == "rdflib" ]]; then
