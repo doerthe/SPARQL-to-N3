@@ -549,16 +549,19 @@ true log:callWithCut true.
 ##################################################
 {(?x ?g) aux:handleAggregation ?g2 }<={
  ?x sp:resultVariables ?list.
+
  _:t list:in ?list; sp:expression _:e.
  true log:callWithCut true.
  #getting all aggregate function expressions
 
+
  (?tr {?t list:in ?list.
   ?t aux:getFunctionTriples ?tr.
                } ?aggList) log:collectAllIn ?scope.
+  1 e:trace ?aggList.
    #make query to get groups
         (?x ?g ) aux:makeGroups ?collectExpression.
-
+ 2 e:trace ?collectExpression.
    #putting all together       
           ( (?collectExpression) ?aggList) list:append ?fl.
             ?fl  log:conjunction ?g2.
@@ -581,8 +584,8 @@ true log:callWithCut true.
 
 #makeGroups
 {( ?x ?g) aux:makeGroups ?graph.}<={
-  ?x sp:groupBy ?vars.
-  true log:callWithCut true.
+#  ?x sp:groupBy ?vars.
+#  true log:callWithCut true.
     # create all new variables needed
 aux:scope log:skolem ?scope.
 aux:pairs log:skolem ?pairs.
@@ -649,19 +652,7 @@ aux:value log:skolem ?value.
  ?graphList log:conjunction ?graph.
 }.
 
-#todo: aggregation without groupBy
 
-#######################
-# Functions for variables
-########################
-# get variables out of lists which represent graphs (can be in minus or in where)
-{
-  ?list aux:getVars ?outvars
-}<=
-{
-(?var {?t list:in ?list.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
-  ?vars list:removeDuplicates ?outvars.
-}.
 
 
 #######################################################
