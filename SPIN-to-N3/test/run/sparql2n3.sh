@@ -19,6 +19,6 @@ eye $spin_file ../../auxiliary-files/aux.n3 \
 result_file="tmp/results.n3"
 #echo -e "\n\n>> executing n3 <<"
 # TODO add runtime-pp as data input file
-eye $data --query $n3_file --nope > $result_file 2>/dev/null
+eye ../../auxiliary-files/runtime.n3 $data --query $n3_file --nope > $result_file 2>/dev/null
 
 eye $result_file --nope ../../auxiliary-files/csv-convert.n3 --strings 2>/dev/null
