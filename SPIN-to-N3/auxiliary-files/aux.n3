@@ -50,8 +50,10 @@
 # 6 e:trace {(?vars ?list2) aux:handleOptional ?graph5.}.
 (?vars ?list2) aux:handleMinus ?graph6.
 #7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
+(?vars ?list2) aux:handleSubquery ?graph7.
+#8 e:trace {(?vars ?list2) aux:handleSubquery ?graph7.}.
 
-(?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6
+(?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6 ?graph7
 ) log:conjunction ?graph
 
 }.
@@ -462,10 +464,18 @@ true log:callWithCut true.
 
 #select with variables
 {?x aux:getResultVariables ?outvars}<={
+ # ?x sp:where ?w.
+ # ?w log:notEqualTo ().
   ?x  sp:resultVariables ?varlist.
+
   true log:callWithCut true.
     ((?name ?s1){?s list:in ?varlist. ?s  sp:varName ?name . ?name log:skolem ?s1.} ?outvars) log:collectAllIn ?scope.
+
 }.
+# select with empty graph
+#{?x aux:getResultVariables ()}<={
+#  ?x sp:where  ().
+#}.
 
 #select with star 
 {?x aux:getResultVariables ?outvars}<={
@@ -480,9 +490,14 @@ true log:callWithCut true.
 {
 
   ?x sp:where ?where.
-  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
-  
-
+  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var. } ?vars1) log:collectAllIn _:x.
+  (?var2 {?t list:in ?where.  ?t sp:query ?q.
+   ?q aux:getResultVariables ?var2.
+   } ?vars2) log:collectAllIn _:x.
+   (?vars2 ()) aux:flatten ?vars22.
+   (?vars22 ()) aux:makePairs ?pairs.
+   
+ (?vars1 ?pairs) list:append ?vars.
   ?vars list:removeDuplicates ?outvars.}.
 
 
@@ -558,10 +573,9 @@ true log:callWithCut true.
  (?tr {?t list:in ?list.
   ?t aux:getFunctionTriples ?tr.
                } ?aggList) log:collectAllIn ?scope.
-  1 e:trace ?aggList.
+
    #make query to get groups
         (?x ?g ) aux:makeGroups ?collectExpression.
- 2 e:trace ?collectExpression.
    #putting all together       
           ( (?collectExpression) ?aggList) list:append ?fl.
             ?fl  log:conjunction ?g2.
@@ -653,6 +667,25 @@ aux:value log:skolem ?value.
 }.
 
 
+##################################
+# handle subqueries
+#################################
+{(?vars ?list2) aux:handleSubquery ?graph7.}
+<={
+ 
+  (?g {?x list:in ?list2. ?x a sp:SubQuery. ?x sp:query ?y. 
+  ?y aux:getResultVariables ?outvars.  ?y sp:where ?w.  (?outvars ?w ) aux:createGraph ?g1. (?x ?g1) aux:handleAggregation ?g.
+  } ?gs) log:collectAllIn ?scope. 
+
+  (?gs ({})) list:append ?g2.
+
+  ?g2 log:conjunction ?graph7.
+}.
+
+#################################
+# test: is subquery?
+##################################
+{?x aux:subtest false.}<={?scope e:fail {?y sp:query ?x. ?y a sp:SubQuery}}.
 
 
 #######################################################
@@ -686,6 +719,14 @@ aux:value log:skolem ?value.
     ?list rdf:first ?f.
     (?res (?f)) list:append ?new.
     ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
+#make pairs
+{(() ?result) aux:makePairs ?result.}<={true log:callWithCut true}.
+{(?list ?res) aux:makePairs ?result.}<={
+  ((?first ?second) ?rest) list:append ?list.
+  (?res ((?first ?second)) ) list:append ?res2.
+  (?rest ?res2) aux:makePairs ?result.
+  }.
+
 
 #####################################################################################
 # sparql-functions and their translations
