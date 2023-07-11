@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ut: <http://example.org/utils#>
+PREFIX fh: <http://hl7.org/fhir/>
+PREFIX zk: <http://example.org/zika#>
+
+CONSTRUCT {
+    ?p zk:isPregnant true
+
+} WHERE {
+    ?p a fh:Patient .
+    ?p fh:sex 'female' .
+
+    ?p fh:id/fh:v ?id .
+    ?c a fh:Condition .
+    ?c fh:subject/fh:reference/fh:v ?id .
+
+    ?c fh:code/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v 77386006 . # (SNOMED) pregnancy
+    ?c fh:clinicalStatus/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v 'active' .
+    ?c fh:verificationStatus/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v 'confirmed' .
+}
