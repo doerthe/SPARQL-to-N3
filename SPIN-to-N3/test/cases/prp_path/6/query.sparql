@@ -4,4 +4,5 @@ PREFIX ex: <http://example.org/>
 
 SELECT ?x ?y WHERE 
 #{ ?x ((foaf:worksWith/foaf:knows)+/foaf:name)+ ?y }
+#{ ex:alice ((foaf:worksWith/foaf:knows)*/foaf:name)+ ?y }
 { ?x ((foaf:worksWith/foaf:knows)*/foaf:name)+ ?y }

@@ -11,54 +11,73 @@
         mf:name    "Case 1" ;
         mf:action
             [ qt:query  <1/query.sparql> ;
-              qt:data   <1/data.n3> ]
+              qt:data   <1/data.n3> ; 
+              qt:ordered true  
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 2" ;
         mf:action
             [ qt:query  <2/query.sparql> ;
-              qt:data   <2/data.n3> ]
+              qt:data   <2/data.n3> ;
+              qt:ordered true
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 3" ;
         mf:action
             [ qt:query  <3/query.sparql> ;
-              qt:data   <3/data.n3> ]
+              qt:data   <3/data.n3> ;
+              qt:ordered true
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 4" ;
         mf:action
             [ qt:query  <4/query.sparql> ;
-              qt:data   <4/data.n3> ]
+              qt:data   <4/data.n3> ;
+              qt:ordered true
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 5" ;
         mf:action
             [ qt:query  <5/query.sparql> ;
-              qt:data   <5/data.n3> ]
+              qt:data   <5/data.n3> ;
+              qt:ordered true
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 6" ;
         mf:action
             [ qt:query  <6/query.sparql> ;
-              qt:data   <6/data.n3> ]
+              qt:data   <6/data.n3> ;
+              qt:ordered false
+            ]
       ]
+      # NOT WORKING (different results)
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 7" ;
         mf:action
             [ qt:query  <7/query.sparql> ;
-              qt:data   <7/data.n3> ]
+              qt:data   <7/data.n3> ;
+              qt:ordered true
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 8" ;
         mf:action
             [ qt:query  <8/query.sparql> ;
-              qt:data   <8/data.n3> ]
+              qt:data   <8/data.n3> ;
+              qt:ordered true
+            ]
       ]
       [ rdf:type mf:QueryEvaluationTest ;
         mf:name    "Case 9" ;
         mf:action
             [ qt:query  <9/query.sparql> ;
-              qt:data   <9/data.n3> ]
+              qt:data   <9/data.n3> ;
+              qt:ordered false
+            ]
       ]
     ).

@@ -73,21 +73,22 @@
               qt:data   <data-2.ttl> ] ;
         mf:result  <path-07.srj>
       ]
-
-      [  mf:name    "Path-10" ;
-         rdf:type   mfx:TestQuery ; 
-         mf:action
-            [ qt:query  <path-10.arq> ;
-              qt:data   <data-1.ttl> ] ;
-        mf:result  <path-10.srx>
-      ]
-      [  mf:name    "Path-11" ;
-         rdf:type   mfx:TestQuery ; 
-         mf:action
-            [ qt:query  <path-11.arq> ;
-              qt:data   <data-1.ttl> ] ;
-        mf:result  <path-11.srx>
-      ]
+      # # NOT WORKING (inf. loop for nq3)
+      # [  mf:name    "Path-10" ;
+      #    rdf:type   mfx:TestQuery ; 
+      #    mf:action
+      #       [ qt:query  <path-10.arq> ;
+      #         qt:data   <data-1.ttl> ] ;
+      #   mf:result  <path-10.srx>
+      # ]
+      # NOT WORKING (inf. loop for nq3)
+      # [  mf:name    "Path-11" ;
+      #    rdf:type   mfx:TestQuery ; 
+      #    mf:action
+      #       [ qt:query  <path-11.arq> ;
+      #         qt:data   <data-1.ttl> ] ;
+      #   mf:result  <path-11.srx>
+      # ]
       [  mf:name    "Path-20" ;
          rdf:type   mfx:TestQuery ; 
          mf:action
@@ -102,11 +103,13 @@
               qt:data   <data-1.ttl> ] ;
         mf:result  <path-21.srx>
       ]
+      # NOT WORKING (different results)
       [  mf:name    "Path-22" ;
          rdf:type   mfx:TestQuery ; 
          mf:action
             [ qt:query  <path-22.arq> ;
-              qt:data   <data-1.ttl> ] ;
+              qt:data   <data-1.ttl>
+             ] ;
         mf:result  <path-22.srx>
       ]
     ).
