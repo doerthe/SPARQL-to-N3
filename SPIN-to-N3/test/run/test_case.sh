@@ -28,7 +28,7 @@ if [[ $ordered == "true" ]]; then
     extra="--ordered"
     echo -e "(comparing ordered results)"
 else
-    echo -e "(comparing results)"
+    echo -e "(comparing non-ordered results)"
 fi
 
 sp_res_nt="results/sparql_results.nt"
