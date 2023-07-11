@@ -13,7 +13,6 @@ ut:now rdf:value 1689083255140 .
 # 1 week ago: 1688478455140; 2 weeks ago: 1687873655140; 3 weeks ago: 1687268855140; 6 weeks ago: 1685454455140
 
 :p0 a fh:Patient ;
-    fh:sex 'female' ;
     fh:id [ fh:v "Patient/p0" ] .
 
 

@@ -11,7 +11,6 @@ CONSTRUCT {
 
 } WHERE {
     ?p a fh:Patient .
-    ?p fh:sex 'female' .
 
     ?p fh:id/fh:v ?id .
     ?c a fh:Condition .

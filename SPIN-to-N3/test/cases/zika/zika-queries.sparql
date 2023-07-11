@@ -13,7 +13,6 @@ CONSTRUCT {
 
 } WHERE {
     ?p a fh:Patient .
-    ?p fh:sex 'female' .
     ?p ut:hasCondition ?c .    
     ?c fh:code/ut:hasCodeValue 77386006 . # (SNOMED) pregnancy
     ?c fh:clinicalStatus/ut:hasCodeValue 'active' .
@@ -108,6 +107,7 @@ CONSTRUCT {
     ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince
 
 } WHERE {
+   ?p a fh:Patient .
    {
         SELECT AVG(?timeSince)
         WHERE {
