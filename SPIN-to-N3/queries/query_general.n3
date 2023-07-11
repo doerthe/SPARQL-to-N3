@@ -13,6 +13,7 @@
 {   ?x a       sp:Construct ;
       sp:templates ?temps ;
       sp:where ?where.
+    ?x aux:subtest false.
  	   (false ?where) aux:createGraph ?g1.
      (false ?temps) aux:handleTriples ?g2
 	}=>{?g1=>?g2. }.
@@ -20,6 +21,7 @@
 ## ask
   {   ?x a       sp:Ask ;
         sp:where ?where.
+    ?x aux:subtest false.
    	    (false ?where) aux:createGraph ?g1.
   	}=>{?g1 => {?x ex:result true}. {(1 ?g1 ()) log:collectAllIn ?scope}=>{?x ex:result false}
     }.
@@ -28,7 +30,7 @@
 {   ?x a       sp:Select .
 
     ?x  sp:where ?where.
-
+   ?x aux:subtest false.
 
     #get result variables 
     ?x aux:getResultVariables ?outvars.
