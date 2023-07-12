@@ -11,7 +11,7 @@ mkdir -p tmp
 echo -e "(executing sparql using $engine)"
 sp_res_csv="results/sparql_results.csv"
 if [[ $engine == "rdflib" ]]; then
-    python3 sparql.py -query $query -data $data > $sp_res_csv
+    python3 sparql_ttl.py -query $query -data $data > $sp_res_csv
 elif [[ $engine == "jena" ]]; then
     java -jar sparql.jar -n3 $data -query $query > $sp_res_csv
 else
