@@ -32,5 +32,5 @@ CONSTRUCT {
         }
         GROUP BY ?p
     }
-    FILTER (?avgTime < 7257600000) # 12 weeks
+    FILTER (?avgTime > 0 && ?avgTime < 7257600000) # 12 weeks
 }

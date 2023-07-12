@@ -17,7 +17,7 @@ CONSTRUCT {
     ?c fh:code/ut:hasCodeValue 77386006 . # (SNOMED) pregnancy
     ?c fh:clinicalStatus/ut:hasCodeValue 'active' .
     ?c fh:verificationStatus/ut:hasCodeValue 'confirmed' .
-} .
+}
 
 CONSTRUCT {
     ?p zk:hasZikaSymptom ?c
@@ -32,7 +32,7 @@ CONSTRUCT {
 
    # https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.7459
    FILTER (?code IN ( 84387000, 271749004, 47725002, 57676002, 9826008, 68962001, 25064002 ))
-} .
+}
 
 CONSTRUCT {
     ?p zk:residentOfZikaArea true 
@@ -41,7 +41,7 @@ CONSTRUCT {
     ?p a fh:Patient .
     ?p fh:address/fh:country/fh:v ?country .
     ?country zk:isZikaArea true
-} .
+}
 
 CONSTRUCT {
     ?p zk:recentTravelToZikaArea true
@@ -60,14 +60,14 @@ CONSTRUCT {
 
    ?cmp ut:timeSinceObsEnd ?timeSince .
    FILTER (?timeSince < 2678400000) # 1 month
-} .
+}
 
 CONSTRUCT {
     ?country zk:isZikaArea true
 
 } WHERE {
     FILTER (?country in ( 'American Samoa', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Aruba', 'Bahamas', 'Bangladesh', 'Barbados', 'Belize', 'Bolivia', 'Bonaire', 'Brazil', 'British Virgin Islands', 'Burkina Faso', 'Burma', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Colombia', 'Cook Islands', 'Costa Rica', 'Cuba', 'Curacao', 'Dominica', 'Dominican Republic', 'Easter Island', 'Ecuador', 'El Salvador', 'Ethiopia', 'Federated States of Micronesia', 'Fiji', 'France', 'French Guiana', 'French Polynesia', 'Gabon', 'Grenada', 'Guadeloupe', 'Guatemala', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'India', 'Indonesia', 'Ivory Coast', 'Jamaica', 'Kenya', 'Kiribati', 'Laos', 'Malaysia', 'Maldives', 'Marshall Islands', 'Martinique', 'Mexico', 'Montserrat', 'New Caledonia', 'Nicaragua', 'Nigeria', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Puerto Rico', 'Saba', 'Saint Barthelemy', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Vincent and the Grenadines', 'Samoa', 'Senegal', 'Singapore', 'Sint Eustatius', 'Sint Maarten', 'Solomon Islands', 'Suriname', 'Thailand', 'Tonga', 'Trinidad and Tobago', 'Turks and Caicos', 'Uganda', 'United States (Continental US)', 'United States Virgin Islands', 'Vanuatu', 'Venezuela', 'Vietnam' ) ) .
-} .
+}
 
 CONSTRUCT {
     ?p zk:recentSexualEncounterWithZikaResidentOrTraveler true
@@ -88,7 +88,7 @@ CONSTRUCT {
 
     ?o ut:timeSinceObsEnd ?timeSince .
     FILTER (?timeSince < 2678400000) # 1 month
-} .
+}
 
 CONSTRUCT {
     ?p zk:possibleZikaExposure true
@@ -101,21 +101,22 @@ CONSTRUCT {
     {
         ?p zk:recentSexualEncounterWithZikaResidentOrTraveler true
     }
-} .
+}
 
 CONSTRUCT {
-    ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince
+    ?p zk:avgTimeSinceZikaSymptomsOnset ?avgTimeSince
 
 } WHERE {
-   ?p a fh:Patient .
    {
-        SELECT AVG(?timeSince)
+        SELECT (AVG(?timeSince) as ?avgTimeSince) ?p
         WHERE {
+            ?p a fh:Patient .
             ?p fh:hasZikaSymptom ?c .
             ?c ut:timeSinceCondOnset ?timeSince .
-        } .
+        } 
+        GROUP BY ?p
     }
-} .
+}
 
 CONSTRUCT {
     [ a fh:ServiceRequest ;
@@ -138,7 +139,7 @@ CONSTRUCT {
     
     ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince .
     FILTER (?timeSince < 7257600000) # 12 weeks
-} .
+}
 
 
 # utilities
@@ -149,7 +150,7 @@ CONSTRUCT {
 } WHERE {
     ?p ut:has ?c .
     ?c a fh:Condition ;
-} .
+}
 
 CONSTRUCT {
     ?p ut:hasObservation ?o
@@ -157,7 +158,7 @@ CONSTRUCT {
 } WHERE {
     ?p ut:has ?o .
     ?o a fh:Observation ;
-} .
+}
 
 CONSTRUCT {
     ?p ut:has ?r
@@ -165,14 +166,14 @@ CONSTRUCT {
 } WHERE {
     ?p fh:id/fh:v ?id .
     ?r fh:subject/fh:reference/fh:v ?id .
-} .
+}
 
 CONSTRUCT {
     ?r ut:hasCodeValue ?c
 
 } WHERE {
     ?r fh:coding/rdf:rest*/rdf:first/fh:code/fh:v ?c
-} .
+}
 
 CONSTRUCT {
     ?r ut:refersTo ?p
@@ -180,7 +181,7 @@ CONSTRUCT {
 } WHERE {
     ?p fh:id/fh:v ?id .
     ?r fh:reference/fh:v ?id
-} .
+}
 
 CONSTRUCT {
     ?o ut:timeSinceObsEnd ?timeSince
@@ -191,7 +192,7 @@ CONSTRUCT {
    # BIND (now() as ?now ) .
    ut:now rdf:value ?now .
    BIND ((?now - ?end) AS ?timeSince) .
-} .
+}
 
 CONSTRUCT {
     ?c ut:timeSinceCondOnset ?timeSince
@@ -201,4 +202,4 @@ CONSTRUCT {
    # BIND (now() as ?now ) .
    ut:now rdf:value ?now .
    BIND ((?now - ?onset) AS ?timeSince) .
-} .
+}
