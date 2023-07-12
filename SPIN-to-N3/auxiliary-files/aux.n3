@@ -313,7 +313,8 @@
   (?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
   ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
       } ?ns ) log:collectAllIn ?scope.
-  ?ns list:sort ?nsort.
+  ?ns aux:sort ?nsort.
+  1 e:trace ?nsort.
   # get labeled arguments in the right order
   (?argl {
     ?argp list:in ?nsort.
@@ -740,6 +741,14 @@ aux:value log:skolem ?value.
   ((?first ?second) ?rest) list:append ?list.
   (?res ((?first ?second)) ) list:append ?res2.
   (?rest ?res2) aux:makePairs ?result.
+  }.
+
+  #create arument list in order (assumption: we start at 1 and count upwards)
+ { ?ns aux:sort ?nsort.}<={?ns list:sort ?slist. ?slist list:length ?n. (?n ()) aux:makeArgList ?nsort }.
+ {(0 ?list) aux:makeArgList ?list} <={}.
+ {(?n ?list) aux:makeArgList ?out} <={?n math:notEqualTo 0. ("http://spinrdf.org/sp#arg" ?n) string:concatenation ?con. ?uri log:uri ?con. ((?uri) ?list) list:append ?nlist.
+ (?n 1) math:difference ?m.
+ (?m ?nlist) aux:makeArgList ?out
   }.
 
 
