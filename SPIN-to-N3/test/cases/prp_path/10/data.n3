@@ -7,13 +7,25 @@
 # EXAMPLE DATA
 
 :p0_cond0 a fh:Condition ;
-   fh:code [
-       fh:coding ( [
-           fh:system [
-               fh:v 'http://snomed.org/sct' 
-           ] ;
-           fh:code [
-               fh:v 271749004 
-           ] # (SNOMED) Acute onset of fever
-       ] ) 
-   ] .
+fh:subject [
+    fh:reference [ fh:v "Patient/p0" ]
+] ;
+fh:code [
+    fh:coding ( [
+        fh:system [ fh:v 'http://snomed.org/sct' ] ;
+        fh:code [ fh:v 271749004 ] # (SNOMED) Acute onset of fever
+    ] )
+] ;
+fh:onset [ fh:v 1688478455140 ] ; # 1 week ago
+fh:clinicalStatus [
+    fh:coding ( [
+        fh:system [ fh:v 'http://terminology.hl7.org/CodeSystem/condition-clinical' ] ;
+        fh:code [ fh:v 'active' ]
+    ] )
+] ;
+fh:verificationStatus [
+    fh:coding ( [
+        fh:system [ fh:v 'http://terminology.hl7.org/CodeSystem/condition-ver-status' ] ;
+        fh:code [ fh:v 'confirmed' ]
+    ] )
+] .
