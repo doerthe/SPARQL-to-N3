@@ -505,7 +505,7 @@ true log:callWithCut true.
 {
 
   ?x sp:where ?where.
-  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var. } ?vars1) log:collectAllIn _:x.
+  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var.  } ?vars1) log:collectAllIn _:x.
   (?var2 {?t list:in ?where.  ?t sp:query ?q.
    ?q aux:getResultVariables ?var2.
    } ?vars2) log:collectAllIn _:x.
@@ -525,9 +525,10 @@ true log:callWithCut true.
                      ?s  sp:varName ?name . ?name log:skolem ?s1.
  }.
 
- {?t aux:bgpOrBindVar (?name ?ns)}<={
+ {?t aux:bgpOrBindVars (?name ?ns)}<={
    ?t a sp:Bind.
-   ?t sp:varName ?name.
+  ?t sp:variable ?v.
+   ?v sp:varName ?name.
  ?name log:skolem ?ns.
  }.
 
@@ -635,6 +636,7 @@ aux:value log:skolem ?value.
 
 
 
+
  #get aggregation variables needed in the query
  ?x aux:getQueryVariables ?qvars.
 
@@ -647,6 +649,7 @@ aux:value log:skolem ?value.
 
   #get list of only aggvarsnames
  ( ?name {(?name ?var) list:in ?aggvars } ?aggvarNames ) log:collectAllIn _:t.
+
  
  #create one collectAllIn expression per aggregate variable name
  (
