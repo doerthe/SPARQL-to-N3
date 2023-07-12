@@ -297,7 +297,7 @@
 {(?graph ?list ?x) aux:newLabel ?x1.}<={?x log:rawType  log:SkolemIRI.  (?graph ?list ?x) e:skolem ?x1. }. 
 {(?graph ?list ?x) aux:newLabel ?g.}<={?x log:rawType log:Formula. (?list ?x) aux:relabelGraph ?g. }.
 {(?graph ?list ?x) aux:newLabel ?x.}<={?x log:rawType ?type. ?type list:in (log:Other log:Literal).}. 
-{(?graph ?list ?x) aux:newLabel ?out.}<={?x log:rawType rdf:List. ( ?eL {?e list:in ?x. ?e aux:newLabel ?eL} ?out ) log:collectAllIn ?scope }.
+{(?graph ?list ?x) aux:newLabel ?out.}<={?x log:rawType rdf:List.  ( ?eL {?e list:in ?x.   (?graph ?list ?e) aux:newLabel ?eL} ?out ) log:collectAllIn ?scope.  }.
 
 
 ##############################################
@@ -313,7 +313,7 @@
   (?argp {?e ?argp ?o. ?argp log:uri ?argpuri.
   ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
       } ?ns ) log:collectAllIn ?scope.
-  ?ns list:sort ?nsort.
+  ?ns aux:sort ?nsort.
   # get labeled arguments in the right order
   (?argl {
     ?argp list:in ?nsort.
@@ -443,8 +443,23 @@ true log:callWithCut true.
 
 }.
 
-{?e aux:getFunctionTriples {}}<={}.
 
+# aggregation function has * as argument
+#{?t aux:getFunctionTriples ?tr.}
+#<=
+#{
+#?t sp:expression ?ex.
+#?ex sp:expression [sp:varName ?aggrVar].
+#true log:callWithCut true.
+#?t aux:gets ?nvar.
+#?ex a ?function.
+#(aux:aggregationInput ) log:skolem ?args.
+             # this log:equalTo is only here for technical reasons
+ #           ?d log:equalTo {?args ?function ?nvar}.
+ #            ?d aux:aggTranslation ?tr.          
+#}.
+
+{?e aux:getFunctionTriples {}}<={}.
 
 #Bind
 {
@@ -490,7 +505,7 @@ true log:callWithCut true.
 {
 
   ?x sp:where ?where.
-  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var. } ?vars1) log:collectAllIn _:x.
+  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var.  } ?vars1) log:collectAllIn _:x.
   (?var2 {?t list:in ?where.  ?t sp:query ?q.
    ?q aux:getResultVariables ?var2.
    } ?vars2) log:collectAllIn _:x.
@@ -510,9 +525,10 @@ true log:callWithCut true.
                      ?s  sp:varName ?name . ?name log:skolem ?s1.
  }.
 
- {?t aux:bgpOrBindVar (?name ?ns)}<={
+ {?t aux:bgpOrBindVars (?name ?ns)}<={
    ?t a sp:Bind.
-   ?t sp:varName ?name.
+  ?t sp:variable ?v.
+   ?v sp:varName ?name.
  ?name log:skolem ?ns.
  }.
 
@@ -592,9 +608,7 @@ true log:callWithCut true.
 
 
 
-               
-
-
+            
 
 #makeGroups
 {( ?x ?g) aux:makeGroups ?graph.}<={
@@ -621,6 +635,7 @@ aux:value log:skolem ?value.
 
 
 
+
  #get aggregation variables needed in the query
  ?x aux:getQueryVariables ?qvars.
 
@@ -633,6 +648,7 @@ aux:value log:skolem ?value.
 
   #get list of only aggvarsnames
  ( ?name {(?name ?var) list:in ?aggvars } ?aggvarNames ) log:collectAllIn _:t.
+
  
  #create one collectAllIn expression per aggregate variable name
  (
@@ -674,8 +690,9 @@ aux:value log:skolem ?value.
 <={
  
   (?g {?x list:in ?list2. ?x a sp:SubQuery. ?x sp:query ?y. 
-  ?y aux:getResultVariables ?outvars.  ?y sp:where ?w.  (?outvars ?w ) aux:createGraph ?g1. (?x ?g1) aux:handleAggregation ?g.
+  ?y aux:getResultVariables ?outvars.  ?y sp:where ?w.   (?outvars ?w ) aux:createGraph ?g1.  (?y ?g1) aux:handleAggregation ?g. 
   } ?gs) log:collectAllIn ?scope. 
+
 
   (?gs ({})) list:append ?g2.
 
@@ -719,12 +736,21 @@ aux:value log:skolem ?value.
     ?list rdf:first ?f.
     (?res (?f)) list:append ?new.
     ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
+
 #make pairs
 {(() ?result) aux:makePairs ?result.}<={true log:callWithCut true}.
 {(?list ?res) aux:makePairs ?result.}<={
   ((?first ?second) ?rest) list:append ?list.
   (?res ((?first ?second)) ) list:append ?res2.
   (?rest ?res2) aux:makePairs ?result.
+  }.
+
+  #create arument list in order (assumption: we start at 1 and count upwards)
+ { ?ns aux:sort ?nsort.}<={?ns list:sort ?slist. ?slist list:length ?n. (?n ()) aux:makeArgList ?nsort }.
+ {(0 ?list) aux:makeArgList ?list} <={}.
+ {(?n ?list) aux:makeArgList ?out} <={?n math:notEqualTo 0. ("http://spinrdf.org/sp#arg" ?n) string:concatenation ?con. ?uri log:uri ?con. ((?uri) ?list) list:append ?nlist.
+ (?n 1) math:difference ?m.
+ (?m ?nlist) aux:makeArgList ?out
   }.
 
 
@@ -762,6 +788,7 @@ aux:value log:skolem ?value.
 # problem: https://n3-editor.herokuapp.com/n3/editor/s/NZ0zbiJ2
 # langMatches
 {{?list sp:mul ?o} aux:funcTranslation {?list math:product ?o}}<={}.
+{{?list sp:sub ?o} aux:funcTranslation {?list math:difference ?o}}<={}.
 # MISSING: uuid, struuid
 {{(?a) sp:abs ?o} aux:funcTranslation {?a math:absoluteValue ?o}}<={}.
 {{(?a) sp:round ?o} aux:funcTranslation {?a math:rounded ?o}}<={}.
@@ -772,9 +799,11 @@ aux:value log:skolem ?value.
 {{(?a) sp:minutes ?o} aux:funcTranslation {?a time:minute ?o}}<={}.
 {{(?a) sp:seconds ?o} aux:funcTranslation {?a time:second ?o}}<={}.
 {{(?a) sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
+{{?l sp:in ?o} aux:funcTranslation {?v list:in ?list}}<={  ?l rdf:first ?v. ?l rdf:rest ?list}.
 
 #aggregate functions
 {{?values sp:Sum ?result } aux:aggTranslation {?values math:sum ?result }}<={} .
 {{?values sp:Avg ?result } aux:aggTranslation {?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result }}<={}.
 {{?values sp:Max ?result } aux:aggTranslation {?values math:max ?result }}<={}.
 {{?values sp:Min ?result } aux:aggTranslation {?values math:min ?result }}<={}.
+{{?values sp:Count ?result } aux:aggTranslation {?values list:length ?result . }}<={}.
