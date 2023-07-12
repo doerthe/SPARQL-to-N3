@@ -314,7 +314,6 @@
   ?argpuri string:startsWith "http://spinrdf.org/sp#arg".
       } ?ns ) log:collectAllIn ?scope.
   ?ns aux:sort ?nsort.
-  1 e:trace ?nsort.
   # get labeled arguments in the right order
   (?argl {
     ?argp list:in ?nsort.
@@ -786,6 +785,7 @@ aux:value log:skolem ?value.
 # problem: https://n3-editor.herokuapp.com/n3/editor/s/NZ0zbiJ2
 # langMatches
 {{?list sp:mul ?o} aux:funcTranslation {?list math:product ?o}}<={}.
+{{?list sp:sub ?o} aux:funcTranslation {?list math:difference ?o}}<={}.
 # MISSING: uuid, struuid
 {{(?a) sp:abs ?o} aux:funcTranslation {?a math:absoluteValue ?o}}<={}.
 {{(?a) sp:round ?o} aux:funcTranslation {?a math:rounded ?o}}<={}.
