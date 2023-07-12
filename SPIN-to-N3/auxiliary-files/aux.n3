@@ -581,7 +581,6 @@ true log:callWithCut true.
 {(?x ?g) aux:handleAggregation ?g2 }<={
  ?x sp:resultVariables ?list.
 
-
  _:t list:in ?list; sp:expression _:e.
  true log:callWithCut true.
  #getting all aggregate function expressions
@@ -691,7 +690,7 @@ aux:value log:skolem ?value.
 <={
  
   (?g {?x list:in ?list2. ?x a sp:SubQuery. ?x sp:query ?y. 
-  ?y aux:getResultVariables ?outvars.  ?y sp:where ?w.   (?outvars ?w ) aux:createGraph ?g1.  (?x ?g1) aux:handleAggregation ?g.
+  ?y aux:getResultVariables ?outvars.  ?y sp:where ?w.   (?outvars ?w ) aux:createGraph ?g1.  (?y ?g1) aux:handleAggregation ?g. 
   } ?gs) log:collectAllIn ?scope. 
 
 
