@@ -443,8 +443,23 @@ true log:callWithCut true.
 
 }.
 
-{?e aux:getFunctionTriples {}}<={}.
 
+# aggregation function has * as argument
+#{?t aux:getFunctionTriples ?tr.}
+#<=
+#{
+#?t sp:expression ?ex.
+#?ex sp:expression [sp:varName ?aggrVar].
+#true log:callWithCut true.
+#?t aux:gets ?nvar.
+#?ex a ?function.
+#(aux:aggregationInput ) log:skolem ?args.
+             # this log:equalTo is only here for technical reasons
+ #           ?d log:equalTo {?args ?function ?nvar}.
+ #            ?d aux:aggTranslation ?tr.          
+#}.
+
+{?e aux:getFunctionTriples {}}<={}.
 
 #Bind
 {
@@ -565,6 +580,7 @@ true log:callWithCut true.
 {(?x ?g) aux:handleAggregation ?g2 }<={
  ?x sp:resultVariables ?list.
 
+
  _:t list:in ?list; sp:expression _:e.
  true log:callWithCut true.
  #getting all aggregate function expressions
@@ -592,9 +608,7 @@ true log:callWithCut true.
 
 
 
-               
-
-
+            
 
 #makeGroups
 {( ?x ?g) aux:makeGroups ?graph.}<={
@@ -719,6 +733,7 @@ aux:value log:skolem ?value.
     ?list rdf:first ?f.
     (?res (?f)) list:append ?new.
     ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
+
 #make pairs
 {(() ?result) aux:makePairs ?result.}<={true log:callWithCut true}.
 {(?list ?res) aux:makePairs ?result.}<={
@@ -772,9 +787,11 @@ aux:value log:skolem ?value.
 {{(?a) sp:minutes ?o} aux:funcTranslation {?a time:minute ?o}}<={}.
 {{(?a) sp:seconds ?o} aux:funcTranslation {?a time:second ?o}}<={}.
 {{(?a) sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
+{{?l sp:in ?o} aux:funcTranslation {?v list:in ?list}}<={ ?l rdf:first ?v. ?l rdf:rest ?list}.
 
 #aggregate functions
 {{?values sp:Sum ?result } aux:aggTranslation {?values math:sum ?result }}<={} .
 {{?values sp:Avg ?result } aux:aggTranslation {?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result }}<={}.
 {{?values sp:Max ?result } aux:aggTranslation {?values math:max ?result }}<={}.
 {{?values sp:Min ?result } aux:aggTranslation {?values math:min ?result }}<={}.
+{{?values sp:Count ?result } aux:aggTranslation {?values list:length ?result . }}<={}.
