@@ -194,12 +194,13 @@
 # filter
 #######################
   {(?vars ?list) aux:handleFilter ?graph }<={
-  (?tr {?t list:in ?list. ?t a  sp:Filter ;
+  (?tr2 {?t list:in ?list. ?t a  sp:Filter ;
                     aux:getFunctionTriples ?tr.
+                (?vars ?tr ?t)  aux:relabelGraph ?tr2.
                } ?filterList) log:collectAllIn ?scope.
                (?filterList ({})) list:append ?fl.
-            ?fl  log:conjunction ?graph1. 
-            (?vars ?graph1) aux:relabelGraph ?graph.
+            ?fl  log:conjunction ?graph. 
+           # (?vars ?graph1) aux:relabelGraph ?graph.
 }.
 
 
@@ -276,29 +277,34 @@
 { (?list ?t) aux:minExpr {?scope log:notIncludes ?g}.}<={
   ?t sp:elements ?e.
   (?list ?e) aux:createGraph ?g1.
-  (?list ?g1) aux:relabelGraph ?g.
+  (?list ?g1 ?t) aux:relabelGraph ?g.
   :scope log:skolem ?scope.
 }.
 #relabel-function for ?g 
-{(false ?graph) aux:relabelGraph ?graph}<={true log:callWithCut true}.
-{(?list {}) aux:relabelGraph {}}<={true log:callWithCut true}.
+{(false ?graph ?x) aux:relabelGraph ?graph}<={true log:callWithCut true}.
+{(?list {} ?x) aux:relabelGraph {}}<={true log:callWithCut true}.
 
 
-{(?list ?graph) aux:relabelGraph ?gout}
+{(?list ?graph ?id) aux:relabelGraph ?gout}
 <=
 {
   ({?s1 ?p1 ?o1} {?graph log:includes {?s ?p ?o}.
-   (?graph ?list ?s) aux:newLabel ?s1. (?graph ?list ?p) aux:newLabel ?p1. (?graph ?list ?o) aux:newLabel ?o1.
+   (?id ?list ?s) aux:newLabel ?s1. (?id ?list ?p) aux:newLabel ?p1. (?id ?list ?o) aux:newLabel ?o1
    } ?tlist) log:collectAllIn ?scope.
   ?tlist log:conjunction ?gout
 }. 
 
-{(?graph ?list ?x) aux:newLabel ?x.}<={ (?z ?x) list:in ?list. true log:callWithCut true }.
-{(?graph ?list ?x) aux:newLabel ?x1.}<={?x log:rawType  log:SkolemIRI.  (?graph ?list ?x) e:skolem ?x1. }. 
-{(?graph ?list ?x) aux:newLabel ?g.}<={?x log:rawType log:Formula. (?list ?x) aux:relabelGraph ?g. }.
-{(?graph ?list ?x) aux:newLabel ?x.}<={?x log:rawType ?type. ?type list:in (log:Other log:Literal).}. 
-{(?graph ?list ?x) aux:newLabel ?out.}<={?x log:rawType rdf:List.  ( ?eL {?e list:in ?x.   (?graph ?list ?e) aux:newLabel ?eL} ?out ) log:collectAllIn ?scope.  }.
+{(?id ?list ?x) aux:newLabel ?x.}<={ (?z ?x) list:in ?list. true log:callWithCut true.}.
+{(?id ?list ?x) aux:newLabel ?x1 .}<={?x log:rawType  log:SkolemIRI. true log:callWithCut true.  (?id ?x) e:skolem ?x1.  }. 
+{(?id ?list ?x) aux:newLabel ?g.}<={?x log:rawType log:Formula. true log:callWithCut true. (?list ?x ?id) aux:relabelGraph ?g.}.
+{(?id ?list ?x) aux:newLabel ?x.}<={?x log:rawType ?type. ?type list:in (log:Other log:Literal). true log:callWithCut true. }. 
+{(?id ?list ?x) aux:newLabel ?out.}<={?x log:rawType rdf:List.  (?id ?list ?x ()) aux:newLabelList ?out. true log:callWithCut true. }.
 
+{(?id ?list () ?out) aux:newLabelList ?out}<={}.
+{(?id ?list ?x ?in) aux:newLabelList ?out}<={?x rdf:first ?first. (?id ?list ?first) aux:newLabel ?l. (?in (?l)) list:append ?in2.
+                 ?x rdf:rest ?rest. (?id ?list ?rest ?in2) aux:newLabelList ?out }.
+
+ 
 
 ##############################################
 #getFunctions
@@ -417,6 +423,7 @@ true log:callWithCut true.
 
              (aux:aggregationInput ?aggrVar) log:skolem ?args.
              # this log:equalTo is only here for technical reasons
+            
              ?d log:equalTo {?args ?function ?nvar}.
              ?d aux:aggTranslation ?tr.
           
@@ -688,10 +695,14 @@ aux:value log:skolem ?value.
 #################################
 {(?vars ?list2) aux:handleSubquery ?graph7.}
 <={
- 
-  (?g {?x list:in ?list2. ?x a sp:SubQuery. ?x sp:query ?y. 
+
+  (?gr {?x list:in ?list2.  ?x a sp:SubQuery.  ?x sp:query ?y.
   ?y aux:getResultVariables ?outvars.  ?y sp:where ?w.   (?outvars ?w ) aux:createGraph ?g1.  (?y ?g1) aux:handleAggregation ?g. 
+  (?outvars ?g ?y) aux:relabelGraph ?gr. 
   } ?gs) log:collectAllIn ?scope. 
+
+
+ # (?gr {(?oin ?gin) list:in ?gs.  (?oin ?gin) aux:relabelGraph ?gr } ?grs) log:collectAllIn ?scope.
 
 
   (?gs ({})) list:append ?g2.
@@ -758,6 +769,7 @@ aux:value log:skolem ?value.
 # sparql-functions and their translations
 #####################################################################################
 {{(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{{(?a1 ?a2) sp:gt  ?o} aux:funcTranslation {?a2 math:lessThan ?a1}.}<={}.
 {{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
 {{(?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:bound true. ?a2 log:bound true. ?a1 log:equalTo ?a2. }. }<={}.
 {{(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
@@ -768,12 +780,14 @@ aux:value log:skolem ?value.
 {{(?a) sp:bound ?o} aux:funcTranslation {?a log:bound true}}<={}.
 {{(?a) sp:isIri ?o} aux:funcTranslation {?a log:rawType log:Other. ?a log:uri []}}<={}.
 {{(?a) sp:isUri ?o} aux:funcTranslation {?a log:rawType log:Other. ?a log:uri []}}<={}.
-{{(?a) sp:isBlank ?o} aux:funcTranslation {?a log:rawType ?type. ?type list:in ( log:BlankNode log:LabeledBlankNode  log:UnlabeledBlankNode)}}<={}.
+{{(?a) sp:isBlank ?o} aux:funcTranslation {?a log:rawType ?type. ?type list:in ( log:BlankNode log:LabeledBlankNode  log:UnlabeledBlankNode)}}
+    <={(?a log:rawType) log:skolem ?type }.
 {{(?a) sp:isLiteral ?o} aux:funcTranslation {?a log:rawType log:Literal. }}<={}.
-{{(?a) sp:isNumeric ?o} aux:funcTranslation { (?z ?dt)log:dtlit ?a.	?dt list:in (xsd:byte xsd:decimal xsd:int xsd:integer xsd:long xsd:negativeInteger xsd:nonNegativeInteger xsd:nonPositiveInteger xsd:positiveInteger xsd:short xsd:unsignedLong xsd:unsignedInt xsd:unsignedShort xsd:unsignedByte )}}<={}.
+{{(?a) sp:isNumeric ?o} aux:funcTranslation { (?z ?dt)log:dtlit ?a.	?dt list:in (xsd:byte xsd:decimal xsd:int xsd:integer xsd:long xsd:negativeInteger xsd:nonNegativeInteger xsd:nonPositiveInteger xsd:positiveInteger xsd:short xsd:unsignedLong xsd:unsignedInt xsd:unsignedShort xsd:unsignedByte )}}
+    <={(1 ?a log:dtlit) log:skolem ?z. (2 ?a log:dtlit) log:skolem ?dt.}.
 {{(?a) sp:str ?o} aux:funcTranslation { true log:callWithOptional {?a log:uri ?o}. true log:callWithOptional {?a log:rawType log:Literal. ?a log:equalTo ?o}.}}<={}.
-{{(?a) sp:lang ?o} aux:funcTranslation { ([] ?o) log:langlit ?a}}<={}.
-{{(?a) sp:datatype ?o} aux:funcTranslation { ([] ?o) log:dtlit ?a}}<={}.
+{{(?a) sp:lang ?o} aux:funcTranslation { (?sk ?o) log:langlit ?a}}<={(?a ?o log:langlit) log:skolem ?sk}.
+{{(?a) sp:datatype ?o} aux:funcTranslation { (?sk ?o) log:dtlit ?a}}<={(?a ?o log:dtlit) log:skolem ?sk}.
 {{?list sp:bnode ?o} aux:funcTranslation { ?list log:skolem ?o}}<={}.
 {{?list sp:strdt ?o} aux:funcTranslation { ?list log:dtlit ?o}}<={}.
 {{?list sp:strlang ?o} aux:funcTranslation { ?list log:langlit ?o}}<={}.
@@ -782,8 +796,10 @@ aux:value log:skolem ?value.
 {{(?a1 ?a2) sp:strStarts ?o} aux:funcTranslation { ?a1 string:startsWith ?a2}}<={}.
 {{(?a1 ?a2) sp:strEnds ?o} aux:funcTranslation { ?a1 string:endsWith ?a2}}<={}.
 {{(?a1 ?a2) sp:contains ?o} aux:funcTranslation { ?a1 string:contains ?a2}}<={}.
-{{(?a1 ?a2) sp:strbefore ?o} aux:funcTranslation {( "(.*?)%s.*" ?a2) string:format ?regex .( ?a1 ?regex) string:scrape ?o .}}<={}.
-{{(?a1 ?a2) sp:strafter ?o} aux:funcTranslation {( ".*?%s(.*)" ?a2) string:format ?regex .( ?a1 ?regex) string:scrape ?o .}}<={}.
+{{(?a1 ?a2) sp:strbefore ?o} aux:funcTranslation {( "(.*?)%s.*" ?a2) string:format ?regex .( ?a1 ?regex) string:scrape ?o .}}
+  <={ ( ".*?%s(.*)" ?a2) log:skolem ?regex.}.
+{{(?a1 ?a2) sp:strafter ?o} aux:funcTranslation {( ".*?%s(.*)" ?a2) string:format ?regex .( ?a1 ?regex) string:scrape ?o .}}
+  <={ ( ".*?%s(.*)" ?a2) log:skolem ?regex.}.
 #Encode_For_URI
 # problem: https://n3-editor.herokuapp.com/n3/editor/s/NZ0zbiJ2
 # langMatches
@@ -801,9 +817,15 @@ aux:value log:skolem ?value.
 {{(?a) sp:sha1 ?o} aux:funcTranslation {?a crypto:sha ?o}}<={}.
 {{?l sp:in ?o} aux:funcTranslation {?v list:in ?list}}<={  ?l rdf:first ?v. ?l rdf:rest ?list}.
 
+#logic
+{{(?a1 ?a2) sp:and ?o} aux:funcTranslation ?tr}<={ ?a1 aux:getFunctionTriples ?tr1. ?a2 aux:getFunctionTriples ?tr2. ({} ?tr1 ?tr2) log:conjunction ?tr }.
+
 #aggregate functions
 {{?values sp:Sum ?result } aux:aggTranslation {?values math:sum ?result }}<={} .
-{{?values sp:Avg ?result } aux:aggTranslation {?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result }}<={}.
+{{?values sp:Avg ?result } aux:aggTranslation {?values math:sum ?sum . ?values list:length ?l . ( ?sum ?l ) math:quotient ?result }}
+    <={
+        (?values math:sum) log:skolem ?sum. 
+        (?values list:length) log:skolem ?l  }.
 {{?values sp:Max ?result } aux:aggTranslation {?values math:max ?result }}<={}.
 {{?values sp:Min ?result } aux:aggTranslation {?values math:min ?result }}<={}.
 {{?values sp:Count ?result } aux:aggTranslation {?values list:length ?result . }}<={}.
