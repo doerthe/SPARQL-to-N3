@@ -17,15 +17,20 @@
 ##################################################
 # create variable if needed (used in where clause and in select pattern)
 ##################################################
-{?s aux:gets ?s1}<={?s log:uri ?suri.
+
+{() aux:gets ()}<={  
+ true log:callWithCut true.
+ }.
+{?s aux:gets ?s1}<={  ?s log:uri ?suri. 
  ?suri string:startsWith "http://spinrdf.org/".
  ?s log:skolem ?s1.
- true log:callWithCut true}.
-{?s aux:gets ?s1}<={?s  sp:varName ?name . ?name log:skolem ?s1. true log:callWithCut true
+ true log:callWithCut true.
+ }.
+{?s aux:gets ?s1}<={ ?s  sp:varName ?name . ?name log:skolem ?s1. true log:callWithCut true. 
   }.
-{?s aux:gets ?s1}<={?s  sp:arg1 ?arg . ?s log:skolem ?s1. true log:callWithCut true
+{?s aux:gets ?s1}<={  ?s  sp:arg1 ?arg . ?s log:skolem ?s1. true log:callWithCut true. 
     }.
-{?s aux:gets ?s1}<={?s  sp:expression ?arg . ?s log:skolem ?s1. true log:callWithCut true
+{?s aux:gets ?s1}<={  ?s  sp:expression ?arg . ?s log:skolem ?s1. true log:callWithCut true. 
     }.
 {?s aux:gets ?s}<={}.
 
@@ -67,9 +72,9 @@
   ({?s1 ?p1 ?o1}{?t list:in ?list. ?t sp:subject ?s;
                                                sp:predicate ?p;
                                                sp:object ?o.
-                                               ?s aux:gets ?s1.
-                                               ?p aux:gets ?p1.
-                                               ?o aux:gets ?o1
+                                               ?s aux:gets ?s1. 
+                                               ?p aux:gets ?p1. 
+                                               ?o aux:gets ?o1. 
                } ?whereList) log:collectAllIn ?scope.
                (?whereList ({})) list:append ?fl.
                ?fl  log:conjunction ?graph.
