@@ -5,7 +5,7 @@ data=$2
 
 spin_file="tmp/query.spin"
 #echo -e ">> getting spin <<"
-$(java -jar sparql2spin.jar -sparql $query > $spin_file)
+$(java -jar sparql2spin.jar -sparql $query -multi > $spin_file)
 #echo -e "(stored at $spin_file)"
 
 n3_file="tmp/n3query.n3"
