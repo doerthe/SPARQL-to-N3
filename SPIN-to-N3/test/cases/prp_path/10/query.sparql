@@ -2,5 +2,10 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX fh: <http://hl7.org/fhir/>
 PREFIX : <http://example.org/>
 
-SELECT ?c ?code WHERE
-{ ?c fh:code/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v ?code }
+SELECT ?c ?code ?onset WHERE { 
+    ?c fh:clinicalStatus/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v 'active' .
+    ?c fh:verificationStatus/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v 'confirmed' .
+            
+    ?c fh:code/fh:coding/rdf:rest*/rdf:first/fh:code/fh:v ?code .
+    ?c fh:onset/fh:v ?onset .
+ }

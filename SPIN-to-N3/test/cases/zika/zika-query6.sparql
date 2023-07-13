@@ -10,10 +10,11 @@ CONSTRUCT {
     ?p zk:avgTimeSinceZikaSymptomsOnset ?avgTime
 
 } WHERE {
-    ?p a fh:Patient .
-    ?p fh:id/fh:v ?id .
     {
-        SELECT (AVG(?timeSince) as ?avgTime) WHERE {
+        SELECT (AVG(?timeSince) as ?avgTime) ?p WHERE {
+            ?p a fh:Patient .
+            ?p fh:id/fh:v ?id .
+
             ?c a fh:Condition .
             ?c fh:subject/fh:reference/fh:v ?id .
 
@@ -29,6 +30,7 @@ CONSTRUCT {
             ut:now rdf:value ?now .
             BIND ((?now - ?onset) AS ?timeSince) .
         }
+        GROUP BY ?p
     }
     FILTER (?avgTime > 0 && ?avgTime < 7257600000) # 12 weeks
 }
