@@ -21,7 +21,7 @@ fi
 
 echo -e "(executing N3 queries)"
 n3_res_csv="results/n3q_results.csv"
-./sparql2n3.sh $query $data > $n3_res_csv
+./run_spin3.sh $query $data > $n3_res_csv
 
 extra=""
 if [[ $ordered == "true" ]]; then
