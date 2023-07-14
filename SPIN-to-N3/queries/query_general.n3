@@ -30,6 +30,7 @@
 {   ?x a       sp:Select .
 
     ?x  sp:where ?where.
+   # only if this is no sub-query 
    ?x aux:subtest false.
 
     #get result variables 
