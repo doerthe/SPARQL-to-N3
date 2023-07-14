@@ -27,7 +27,6 @@
    # "sequenceOfSteps" log:trace ?step .
    ( ?start ?interm ) aux:stepThroughPath ?step .
    #
-   "hier" e:trace true.
    ( ?interm ?end ) aux:stepThroughPath ?rest 
 } .
 
