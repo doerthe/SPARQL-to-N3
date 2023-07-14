@@ -54,7 +54,7 @@ def run_test(g, test, engine):
     # result = to_path(g.value(test, MF.result))
     
     print(f">> running test: {name}")
-    subprocess.run(['./test_case.sh', query, data, engine, ordered])
+    subprocess.run(['./test_select.sh', query, data, engine, ordered])
     print("\n")
 
 if __name__ == '__main__':
