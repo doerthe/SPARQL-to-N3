@@ -24,7 +24,7 @@ CONSTRUCT {
 
 } WHERE {
    ?p a fh:Patient .
-   ?p fh:hasCondition ?c .
+   ?p ut:hasCondition ?c .
    ?c fh:clinicalStatus/ut:hasCodeValue 'active' .
    ?c fh:verificationStatus/ut:hasCodeValue 'confirmed' .
    
@@ -50,7 +50,7 @@ CONSTRUCT {
     ?p a fh:Patient .
 
     # http://build.fh.org/ig/HL7/case-reporting/StructureDefinition-us-ph-travel-history.html
-    ?p fh:hasObservation ?o . 
+    ?p ut:hasObservation ?o . 
     ?o fh:code/ut:hasCodeValue 420008001 . # (SNOMED) Travel
    
    ?o fh:component/rdf:rest*/rdf:first ?cmp .
@@ -73,7 +73,7 @@ CONSTRUCT {
     ?p zk:recentSexualEncounterWithZikaResidentOrTraveler true
 
 } WHERE {
-    ?p fh:hasObservation ?o .
+    ?p ut:hasObservation ?o .
 
     {
         ?p2 zk:recentTravelToZikaArea true .
@@ -89,6 +89,7 @@ CONSTRUCT {
     ?o ut:timeSinceObsEnd ?timeSince .
     FILTER (?timeSince < 2678400000) # 1 month
 }
+
 
 CONSTRUCT {
     ?p zk:possibleZikaExposure true
@@ -111,7 +112,7 @@ CONSTRUCT {
         SELECT (AVG(?timeSince) as ?avgTimeSince) ?p
         WHERE {
             ?p a fh:Patient .
-            ?p fh:hasZikaSymptom ?c .
+            ?p zk:hasZikaSymptom ?c .
             ?c ut:timeSinceCondOnset ?timeSince .
         } 
         GROUP BY ?p
@@ -133,7 +134,7 @@ CONSTRUCT {
 
 } WHERE {
     ?p zk:isPregnant true .
-    ?p zk:hasZikaSymptom true .
+    ?p zk:hasZikaSymptom ?symptom .
 
     ?p zk:possibleZikaExposure true .
     
