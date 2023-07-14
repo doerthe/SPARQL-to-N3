@@ -14,7 +14,8 @@ fi
 if [[ $verbose == "true" ]]; then
     echo -e ">> executing SPIN <<"
 fi
-time_exec_spin=$( TIMEFORMAT="%R"; { time java -jar spin.jar -spin $spin -data $data > $result_file; } 2>&1 )
+# rely on internal java timing
+time_exec_spin=$( java -jar spin.jar -spin $spin -data $data -out $result_file )
 if [[ $verbose == "true" ]]; then
     echo -e "(stored results at $result_file)"
 fi
