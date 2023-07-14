@@ -2968,27 +2968,49 @@ owl:Class <http://spinrdf.org/spin#rule>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
     "m" ] ;
               <http://spinrdf.org/sp#predicate>
-                      <http://example.org/list#hasMember> ;
+                      <http://niche.cs.dal.ca/owl/list#hasMember> ;
               <http://spinrdf.org/sp#subject>
                       [ <http://spinrdf.org/sp#varName>
     "l" ]
             ]
           ) ;
-  <http://spinrdf.org/sp#where>  ( [ a   <http://spinrdf.org/sp#TriplePath> ;
-         <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+  <http://spinrdf.org/sp#where>  ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
                            "m" ] ;
-         <http://spinrdf.org/sp#path>    [ a  <http://spinrdf.org/sp#SeqPath> ;
-               <http://spinrdf.org/sp#path1>  [ a   <http://spinrdf.org/sp#ModPath> ;
-                    <http://spinrdf.org/sp#modMax>  -2 ;
-                    <http://spinrdf.org/sp#modMin>  0 ;
-                    <http://spinrdf.org/sp#subPath>
-                            <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>
-                  ] ;
-               <http://spinrdf.org/sp#path2>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first>
-             ] ;
+         <http://spinrdf.org/sp#predicate>
+                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> ;
          <http://spinrdf.org/sp#subject>
                  [ <http://spinrdf.org/sp#varName>
                            "l" ]
+       ]
+     )
+] .
+owl:Class <http://spinrdf.org/spin#rule>
+[ a  <http://spinrdf.org/sp#Construct> ;
+  <http://spinrdf.org/sp#templates>
+          ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+    "m" ] ;
+              <http://spinrdf.org/sp#predicate>
+                      <http://niche.cs.dal.ca/owl/list#hasMember> ;
+              <http://spinrdf.org/sp#subject>
+                      [ <http://spinrdf.org/sp#varName>
+    "l1" ]
+            ]
+          ) ;
+  <http://spinrdf.org/sp#where>  ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+                           "l2" ] ;
+         <http://spinrdf.org/sp#predicate>
+                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> ;
+         <http://spinrdf.org/sp#subject>
+                 [ <http://spinrdf.org/sp#varName>
+                           "l1" ]
+       ]
+       [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+                           "m" ] ;
+         <http://spinrdf.org/sp#predicate>
+                 <http://niche.cs.dal.ca/owl/list#hasMember> ;
+         <http://spinrdf.org/sp#subject>
+                 [ <http://spinrdf.org/sp#varName>
+                           "l2" ]
        ]
      )
 ] .

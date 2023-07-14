@@ -1,6 +1,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  true ;
@@ -58,7 +58,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -132,7 +132,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  true ;
@@ -173,7 +173,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  true ;
@@ -291,7 +291,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  true ;
@@ -403,7 +403,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  true ;
@@ -479,7 +479,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  true ;
@@ -510,7 +510,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -569,7 +569,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  <http://hl7.org/fhir/ServiceRequest> ;
@@ -685,7 +685,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -714,7 +714,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -743,7 +743,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -782,7 +782,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -821,7 +821,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -857,7 +857,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
@@ -920,7 +920,7 @@ owl:Class <http://spinrdf.org/spin#rule>
        ]
      )
 ] .
-owl:Class <http://spinrdf.org/spin#rule>
+<http://hl7.org/fhir/Patient> <http://spinrdf.org/spin#rule>
 [ a  <http://spinrdf.org/sp#Construct> ;
   <http://spinrdf.org/sp#templates>
           ( [ <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
