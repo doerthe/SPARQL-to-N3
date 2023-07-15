@@ -19,4 +19,4 @@ time_exec_spin=$( java -jar spin.jar -spin $spin -data $data -out $result_file )
 if [[ $verbose == "true" ]]; then
     echo -e "(stored results at $result_file)"
 fi
-echo -e "execute spin: $time_exec_spin"
+echo -e "$time_exec_spin"
