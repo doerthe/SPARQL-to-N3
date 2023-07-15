@@ -58,3 +58,8 @@ Directly run the `spin.jar` file (_SPIN (TopBraid)_) - this can be useful for de
 ```
 java -jar spin.jar -spin <spin> -data <data> -verbose
 ```
+
+To convert a particular file with SPARQL queries to SPIN:
+```
+java -jar sparql2spin.jar -sparql <sparql> -multi > <spin>
+```

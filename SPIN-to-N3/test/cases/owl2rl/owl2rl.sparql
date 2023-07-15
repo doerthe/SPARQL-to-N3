@@ -6,7 +6,7 @@ CONSTRUCT {
 }
 WHERE {
     ?s ?p ?o .
-}
+} .
 
 # eq-sym
 CONSTRUCT {
@@ -14,7 +14,8 @@ CONSTRUCT {
 }
 WHERE {
     ?x <http://www.w3.org/2002/07/owl#sameAs> ?y .
-}
+} .
+
 
 # eq-trans
 CONSTRUCT {
@@ -23,7 +24,8 @@ CONSTRUCT {
 WHERE {
     ?x <http://www.w3.org/2002/07/owl#sameAs> ?y .
     ?y <http://www.w3.org/2002/07/owl#sameAs> ?z .
-}
+} .
+
 
 # eq-rep-s
 CONSTRUCT {
@@ -32,7 +34,8 @@ CONSTRUCT {
 WHERE {
     ?s <http://www.w3.org/2002/07/owl#sameAs> ?s2 .
     ?s ?p ?o .
-}
+} .
+
 
 # eq-rep-p
 CONSTRUCT {
@@ -41,7 +44,8 @@ CONSTRUCT {
 WHERE {
     ?p <http://www.w3.org/2002/07/owl#sameAs> ?p2 .
     ?s ?p ?o .
-}
+} .
+
 
 # eq-rep-o
 CONSTRUCT {
@@ -50,7 +54,8 @@ CONSTRUCT {
 WHERE {
     ?o <http://www.w3.org/2002/07/owl#sameAs> ?o2 .
     ?s ?p ?o .
-}
+} .
+
 
 # eq-diff1
 CONSTRUCT {
@@ -62,7 +67,8 @@ CONSTRUCT {
 WHERE {
     ?x <http://www.w3.org/2002/07/owl#sameAs> ?y .
     ?x <http://www.w3.org/2002/07/owl#differentFrom> ?y .
-}
+} .
+
 
 # eq-diff2
 CONSTRUCT {
@@ -78,7 +84,8 @@ WHERE {
     ?list <http://example.org/list#hasMember> ?y2 .
     FILTER (?y1 != ?y2) .
     ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
-}
+} .
+
 
 # eq-diff3
 CONSTRUCT {
@@ -94,7 +101,8 @@ WHERE {
     ?list <http://example.org/list#hasMember> ?y2 .
     FILTER (?y1 != ?y2) .
     ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
-}
+} .
+
 
 # prp-dom
 CONSTRUCT {
@@ -103,7 +111,8 @@ CONSTRUCT {
 WHERE {
     ?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c .
     ?x ?p ?y .
-}
+} .
+
 
 # prp-rng
 CONSTRUCT {
@@ -112,7 +121,8 @@ CONSTRUCT {
 WHERE {
     ?p <http://www.w3.org/2000/01/rdf-schema#range> ?c .
     ?x ?p ?y .
-}
+} .
+
 
 # prp-fp
 CONSTRUCT {
@@ -123,7 +133,8 @@ WHERE {
     ?x ?p ?y1 .
     ?x ?p ?y2 .
     FILTER (?y1 != ?y2) .
-}
+} .
+
 
 # prp-ifp
 CONSTRUCT {
@@ -134,7 +145,8 @@ WHERE {
     ?x1 ?p ?y .
     ?x2 ?p ?y .
     FILTER (?x1 != ?x2) .
-}
+} .
+
 
 # prp-irp
 CONSTRUCT {
@@ -146,7 +158,8 @@ CONSTRUCT {
 WHERE {
     ?p a <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
     ?x ?p ?x .
-}
+} .
+
 
 # prp-symp
 CONSTRUCT {
@@ -155,7 +168,8 @@ CONSTRUCT {
 WHERE {
     ?p a <http://www.w3.org/2002/07/owl#SymmetricProperty> .
     ?x ?p ?y .
-}
+} .
+
 
 # prp-asyp
 CONSTRUCT {
@@ -168,7 +182,8 @@ WHERE {
     ?p a <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
     ?x ?p ?y .
     ?y ?p ?x .
-}
+} .
+
 
 # prp-trp
 CONSTRUCT {
@@ -178,7 +193,8 @@ WHERE {
     ?p a <http://www.w3.org/2002/07/owl#TransitiveProperty> .
     ?x ?p ?y .
     ?y ?p ?z .
-}
+} .
+
 
 # prp-spo1
 CONSTRUCT {
@@ -187,7 +203,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
     ?x ?p1 ?y .
-}
+} .
+
 
 # prp-eqp1
 CONSTRUCT {
@@ -196,7 +213,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
     ?x ?p1 ?y .
-}
+} .
+
 
 # prp-eqp2
 CONSTRUCT {
@@ -205,7 +223,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
     ?x ?p2 ?y .
-}
+} .
+
 
 # prp-pdw
 CONSTRUCT {
@@ -218,7 +237,8 @@ WHERE {
     ?p1 <http://www.w3.org/2002/07/owl#propertyDisjointWith> ?p2 .
     ?x ?p1 ?y .
     ?x ?p2 ?y .
-}
+} .
+
 
 # prp-adp
 CONSTRUCT {
@@ -235,7 +255,8 @@ WHERE {
     FILTER (?p1 != ?p2) .
     ?x ?p1 ?y .
     ?x ?p2 ?y .
-}
+} .
+
 
 # prp-inv1
 CONSTRUCT {
@@ -244,7 +265,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2002/07/owl#inverseOf> ?p2 .
     ?x ?p1 ?y .
-}
+} .
+
 
 # prp-inv2
 CONSTRUCT {
@@ -253,7 +275,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2002/07/owl#inverseOf> ?p2 .
     ?x ?p2 ?y .
-}
+} .
+
 
 # prp-npa1
 CONSTRUCT {
@@ -267,7 +290,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#assertionProperty> ?p .
     ?x <http://www.w3.org/2002/07/owl#targetIndividual> ?i2 .
     ?i1 ?p ?i2 .
-}
+} .
+
 
 # prp-npa2
 CONSTRUCT {
@@ -281,7 +305,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#assertionProperty> ?p .
     ?x <http://www.w3.org/2002/07/owl#targetValue> ?lt .
     ?i ?p ?lt .
-}
+} .
+
 
 # cls-nothing2 
 CONSTRUCT {
@@ -291,7 +316,8 @@ CONSTRUCT {
 }
 WHERE {
 	?x a <http://www.w3.org/2002/07/owl#Nothing> .
-}
+} .
+
 
 # cls-int2
 CONSTRUCT {
@@ -301,7 +327,8 @@ WHERE {
     ?c <http://www.w3.org/2002/07/owl#intersectionOf> ?x .
     ?x <http://example.org/list#hasMember> ?ci .
     ?y a ?c .
-}
+} .
+
 
 # cls-uni
 CONSTRUCT {
@@ -311,7 +338,8 @@ WHERE {
     ?c <http://www.w3.org/2002/07/owl#unionOf> ?x .
     ?x <http://example.org/list#hasMember> ?ci .
     ?y a ?ci .
-}
+} .
+
 
 # cls-com
 CONSTRUCT {
@@ -324,7 +352,8 @@ WHERE {
     ?c1 <http://www.w3.org/2002/07/owl#complementOf> ?c2 .
     ?x a ?c1 .
     ?x a ?c2 .
-}
+} .
+
 
 # cls-svf1
 CONSTRUCT {
@@ -335,7 +364,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?u ?p ?v .
     ?v a ?y .
-}
+} .
+
 
 # cls-svf2
 CONSTRUCT {
@@ -345,7 +375,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
     ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?u ?p ?v .
-}
+} .
+
 
 # cls-avf
 CONSTRUCT {
@@ -356,7 +387,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?u a ?x .
     ?u ?p ?v .
-}
+} .
+
 
 # cls-hv1
 CONSTRUCT {
@@ -366,7 +398,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#hasValue> ?y .
     ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?u a ?x .
-}
+} .
+
 
 # cls-hv2
 CONSTRUCT {
@@ -376,7 +409,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#hasValue> ?y .
     ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?u ?p ?y .
-}
+} .
+
 
 # cls-maxc1
 CONSTRUCT {
@@ -390,7 +424,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?u a ?x .
     ?u ?p ?y .
-}
+} .
+
 
 # cls-maxc2
 CONSTRUCT {
@@ -403,7 +438,8 @@ WHERE {
     ?u ?p ?y1 .
     ?u ?p ?y2 .
     FILTER(?y1 != ?y2)
-}
+} .
+
 
 # cls-maxqc1
 CONSTRUCT {
@@ -419,7 +455,8 @@ WHERE {
     ?u a ?x .
     ?u ?p ?y .
     ?y a ?c .
-}
+} .
+
 
 # cls-maxqc2
 CONSTRUCT {
@@ -434,7 +471,8 @@ WHERE {
     ?x <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2002/07/owl#Thing> .
     ?u a ?x .
     ?u ?p ?y .
-}
+} .
+
 
 # cls-maxqc3
 CONSTRUCT {
@@ -450,7 +488,8 @@ WHERE {
     FILTER(?y1 != ?y2)
     ?y1 a ?c .
     ?y2 a ?c .
-}
+} .
+
 
 # cls-maxqc4
 CONSTRUCT {
@@ -464,7 +503,8 @@ WHERE {
     ?u ?p ?y1 .
     ?u ?p ?y2 .
     FILTER(?y1 != ?y2)
-}
+} .
+
 
 # cls-oo
 CONSTRUCT {
@@ -473,7 +513,8 @@ CONSTRUCT {
 WHERE {
     ?c <http://www.w3.org/2002/07/owl#oneOf> ?x .
     ?x <http://example.org/list#hasMember> ?yi .
-}
+} .
+
 
 # cax-sco
 CONSTRUCT {
@@ -482,7 +523,8 @@ CONSTRUCT {
 WHERE {
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
     ?x a ?c1 .
-}
+} .
+
 
 # cax-eqc1
 CONSTRUCT {
@@ -491,7 +533,8 @@ CONSTRUCT {
 WHERE {
     ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
     ?x a ?c1 .
-}
+} .
+
 
 # cax-eqc2
 CONSTRUCT {
@@ -500,7 +543,8 @@ CONSTRUCT {
 WHERE {
     ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
     ?x a ?c2 .
-}
+} .
+
 
 # cax-dw
 CONSTRUCT {
@@ -513,7 +557,8 @@ WHERE {
     ?c1 <http://www.w3.org/2002/07/owl#disjointWith> ?c2 .
     ?x a ?c1 .
     ?x a ?c2 .
-}
+} .
+
 
 # cax-adc
 CONSTRUCT {
@@ -529,7 +574,8 @@ WHERE {
     FILTER (?c1 != ?c2) .
     ?x a ?c1 .
     ?x a ?c2 .
-}
+} .
+
 
 # scm-cls
 CONSTRUCT {
@@ -540,7 +586,8 @@ CONSTRUCT {
 }
 WHERE {
     ?c a <http://www.w3.org/2002/07/owl#Class> .
-}
+} .
+
 
 # scm-sco
 CONSTRUCT {
@@ -549,7 +596,8 @@ CONSTRUCT {
 WHERE {
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
     ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3 .
-}
+} .
+
 
 # scm-eqc1
 CONSTRUCT {
@@ -558,7 +606,8 @@ CONSTRUCT {
 }
 WHERE {
     ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
-}
+} .
+
 
 # scm-eqc2
 CONSTRUCT {
@@ -567,7 +616,8 @@ CONSTRUCT {
 WHERE {
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
     ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1 .
-}
+} .
+
 
 # scm-op
 CONSTRUCT {
@@ -576,7 +626,8 @@ CONSTRUCT {
 }
 WHERE {
     ?p a <http://www.w3.org/2002/07/owl#ObjectProperty> .
-}
+} .
+
 
 # scm-dp
 CONSTRUCT {
@@ -585,7 +636,8 @@ CONSTRUCT {
 }
 WHERE {
     ?p a <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-}
+} .
+
 
 # scm-spo
 CONSTRUCT {
@@ -594,7 +646,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
     ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p3 .
-}
+} .
+
 
 # scm-eqp1
 CONSTRUCT {
@@ -603,7 +656,8 @@ CONSTRUCT {
 }
 WHERE {
     ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
-}
+} .
+
 
 # scm-eqp2
 CONSTRUCT {
@@ -612,7 +666,8 @@ CONSTRUCT {
 WHERE {
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
     ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p1 .
-}
+} .
+
 
 # scm-dom1
 CONSTRUCT {
@@ -621,7 +676,8 @@ CONSTRUCT {
 WHERE {
     ?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c1 .
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
-}
+} .
+
 
 # scm-dom2
 CONSTRUCT {
@@ -630,7 +686,8 @@ CONSTRUCT {
 WHERE {
     ?p2 <http://www.w3.org/2000/01/rdf-schema#domain> ?c .
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
-}
+} .
+
 
 # scm-rng1
 CONSTRUCT {
@@ -639,7 +696,8 @@ CONSTRUCT {
 WHERE {
     ?p <http://www.w3.org/2000/01/rdf-schema#range> ?c1 .
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
-}
+} .
+
 
 # scm-rng2
 CONSTRUCT {
@@ -648,7 +706,8 @@ CONSTRUCT {
 WHERE {
     ?p2 <http://www.w3.org/2000/01/rdf-schema#range> ?c .
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
-}
+} .
+
 
 # scm-hv
 CONSTRUCT {
@@ -660,7 +719,8 @@ WHERE {
     ?c2 <http://www.w3.org/2002/07/owl#hasValue> ?i .
     ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2 .
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
-}
+} .
+
 
 # scm-svf1
 CONSTRUCT {
@@ -672,7 +732,8 @@ WHERE {
     ?c2 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y2 .
     ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?y1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?y2 .
-}
+} .
+
 
 # scm-svf2
 CONSTRUCT {
@@ -684,7 +745,8 @@ WHERE {
     ?c2 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y .
     ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2 .
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
-}
+} .
+
 
 # scm-avf1
 CONSTRUCT {
@@ -696,7 +758,8 @@ WHERE {
     ?c2 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y2 .
     ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p .
     ?y1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?y2 .
-}
+} .
+
 
 # scm-avf2
 CONSTRUCT {
@@ -708,7 +771,8 @@ WHERE {
     ?c2 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y .
     ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2 .
     ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
-}
+} .
+
 
 # scm-int
 CONSTRUCT {
@@ -717,7 +781,8 @@ CONSTRUCT {
 WHERE {
     ?c <http://www.w3.org/2002/07/owl#intersectionOf> ?x .
     ?x <http://example.org/list#hasMember> ?cl .
-}
+} .
+
 
 # scm-uni
 CONSTRUCT {
@@ -726,14 +791,16 @@ CONSTRUCT {
 WHERE {
     ?c <http://www.w3.org/2002/07/owl#unionOf> ?x .
     ?x <http://example.org/list#hasMember> ?cl .
-}
+} .
+
 
 # li-mem1
 CONSTRUCT {
 	?l <http://niche.cs.dal.ca/owl/list#hasMember> ?m .
 } WHERE {
 	?l <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> ?m .
-}
+} .
+
 
 # li-mem2
 CONSTRUCT {
@@ -742,4 +809,4 @@ CONSTRUCT {
 WHERE {
 	?l1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> ?l2 .
 	?l2 <http://niche.cs.dal.ca/owl/list#hasMember> ?m .
-}
+} .
