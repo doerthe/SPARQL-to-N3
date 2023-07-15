@@ -20,7 +20,7 @@
 {
    
    ?steps list:firstRest ( ?step ?rest ) .
-   true log:callWithCut true.
+
    # steps = list with steps (again lists) as elements
    # (individual steps would have numbers as last elements)
    ?steps!list:last log:rawType rdf:List .
