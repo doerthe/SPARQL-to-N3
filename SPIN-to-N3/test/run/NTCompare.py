@@ -9,12 +9,12 @@ def dump_nt_sorted(g):
             print(l)
 
 
-def compare_rdf_graphs(file1, file2):
+def compare_rdf_graphs(file1, format1, file2, format2):
     graph1 = Graph()
-    graph1.parse(file1, format='turtle')
+    graph1.parse(file1, format=format1)
 
     graph2 = Graph()
-    graph2.parse(file2, format='turtle')
+    graph2.parse(file2, format=format2)
     iso1 = compare.to_isomorphic(graph1)
     iso2 = compare.to_isomorphic(graph2)
 
@@ -35,12 +35,16 @@ def compare_rdf_graphs(file1, file2):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Compare two RDF Turtle files.")
-    parser.add_argument('file1', help="Path to the first RDF Turtle file.")
-    parser.add_argument('file2', help="Path to the second RDF Turtle file.")
+    parser.add_argument('file1', help="Path to the first RDF file.")
+    parser.add_argument('--format1', help="Format of the first RDF file.", required=False, default='turtle')
+    parser.add_argument('file2', help="Path to the second RDF file.")
+    parser.add_argument('--format2', help="Format of the second RDF file.", required=False, default='turtle')
 
     args = parser.parse_args()
     file1 = args.file1
+    format1 = args.format1
     file2 = args.file2
+    format2 = args.format2
 
-    compare_rdf_graphs(file1, file2)
+    compare_rdf_graphs(file1, format1, file2, format2)
 
