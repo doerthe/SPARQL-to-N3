@@ -42,7 +42,7 @@ CONSTRUCT {
 } WHERE {
     ?p a fh:Patient .
     ?p fh:address/fh:country/fh:v ?country .
-    ?country zk:isZikaArea true
+    <> zk:hasZikaArea ?country .
 } .
 
 
@@ -59,7 +59,7 @@ CONSTRUCT {
    ?o fh:component/rdf:rest*/rdf:first ?cmp .
    ?cmp fh:code/ut:hasCodeValue "LOC" .
    ?cmp fh:extension/rdf:rest*/rdf:first/fh:value/fh:country/fh:value ?country .
-   ?country zk:isZikaArea true .
+   <> zk:hasZikaArea ?country .
 
    ?cmp ut:timeSinceObsEnd ?timeSince .
    FILTER (?timeSince < 2678400000) # 1 month
@@ -67,7 +67,7 @@ CONSTRUCT {
 
 
 CONSTRUCT {
-    ?country zk:isZikaArea true
+    <> zk:hasZikaArea ?country .
 
 } WHERE {
     FILTER (?country in ( 'American Samoa', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Aruba', 'Bahamas', 'Bangladesh', 'Barbados', 'Belize', 'Bolivia', 'Bonaire', 'Brazil', 'British Virgin Islands', 'Burkina Faso', 'Burma', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Colombia', 'Cook Islands', 'Costa Rica', 'Cuba', 'Curacao', 'Dominica', 'Dominican Republic', 'Easter Island', 'Ecuador', 'El Salvador', 'Ethiopia', 'Federated States of Micronesia', 'Fiji', 'France', 'French Guiana', 'French Polynesia', 'Gabon', 'Grenada', 'Guadeloupe', 'Guatemala', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'India', 'Indonesia', 'Ivory Coast', 'Jamaica', 'Kenya', 'Kiribati', 'Laos', 'Malaysia', 'Maldives', 'Marshall Islands', 'Martinique', 'Mexico', 'Montserrat', 'New Caledonia', 'Nicaragua', 'Nigeria', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Puerto Rico', 'Saba', 'Saint Barthelemy', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Vincent and the Grenadines', 'Samoa', 'Senegal', 'Singapore', 'Sint Eustatius', 'Sint Maarten', 'Solomon Islands', 'Suriname', 'Thailand', 'Tonga', 'Trinidad and Tobago', 'Turks and Caicos', 'Uganda', 'United States (Continental US)', 'United States Virgin Islands', 'Vanuatu', 'Venezuela', 'Vietnam' ) ) .

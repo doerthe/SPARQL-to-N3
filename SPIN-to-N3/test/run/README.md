@@ -34,14 +34,14 @@ Will run the listed test and compare results with `jena` where result ordering i
 
 Run _spin3_ on `<sparql>` and _SPIN (TopBraid)_ on `<spin>` given `<data>` and compare the inference results.
 ```
-./test_inf.sh <sparql> <spin> <data>
+./test_inf.sh <sparql> <data>
 ```
 
 **Note**: _SPIN (TopBraid)_ expects the rules to be attached to a class, so we cannot just run our automated SPARQL-to-SPIN converter (we also have to do some minor manual effort afterwards). An alternative is to adapt the SPIN library to directly accept a set of CONSTRUCT queries.
 
 For instance:
 ```
-./test_inf.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-queries.spin ../cases/zika/zika-data.n3
+./test_inf.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3
 ```
 
 Run only _SPIN (TopBraid)_:
