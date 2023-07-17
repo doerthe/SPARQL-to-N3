@@ -14,4 +14,5 @@ n3_res_n3="results/spin3_inf_results.ttl"
 n3_out=$( ./run_spin3.sh $sparql $data true $n3_res_n3 )
 echo -e "$n3_out"
 
-# python3 NTCompare.py $sp_res_ttl $n3_res_n3 --format2 'n3'
+echo -e "\n"
+python3 NTCompare.py $sp_res_ttl $n3_res_n3 --format2 'n3'
