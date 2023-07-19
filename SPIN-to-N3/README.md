@@ -1,5 +1,1 @@
-# Usage
 
-```
-make example1
-```
