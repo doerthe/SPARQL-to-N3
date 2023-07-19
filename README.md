@@ -22,7 +22,7 @@ https://docs.stardog.com/inference-engine/user-defined-rules
 https://github.com/eyereasoner/eye/tree/master/reasoning/csv  
 http://dig.csail.mit.edu/2009/policy-assurance/sparql2n3.py  
 
-The ClioPatria SPARQL editor (thanks Tim!):  
+The ClioPatria SPARQL editor:  
 https://cliopatria.swi-prolog.org/yasgui/index.html
 
 Runtime:  
