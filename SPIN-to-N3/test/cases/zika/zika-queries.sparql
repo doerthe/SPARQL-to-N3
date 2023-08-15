@@ -126,7 +126,7 @@ CONSTRUCT {
     }
 } .
 
-
+# @filter
 CONSTRUCT {
     [ a fh:ServiceRequest ;
         fh:code [
@@ -217,4 +217,4 @@ CONSTRUCT {
    # BIND (now() as ?now ) .
    ut:now rdf:value ?now .
    BIND ((?now - ?onset) AS ?timeSince) .
-}
+} .
