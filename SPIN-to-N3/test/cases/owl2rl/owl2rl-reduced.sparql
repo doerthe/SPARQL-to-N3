@@ -1,12 +1,4 @@
-# eq-ref
-CONSTRUCT {
-    ?s <http://www.w3.org/2002/07/owl#sameAs> ?s .
-    ?p <http://www.w3.org/2002/07/owl#sameAs> ?p .
-    ?o <http://www.w3.org/2002/07/owl#sameAs> ?o .
-}
-WHERE {
-    ?s ?p ?o .
-} .
+# drops eq-ref, scm-cls, scm-eqc1
 
 # eq-sym
 CONSTRUCT {
@@ -577,18 +569,6 @@ WHERE {
 } .
 
 
-# scm-cls
-CONSTRUCT {
-    ?c <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c .
-    ?c <http://www.w3.org/2002/07/owl#equivalentClass> ?c .
-    ?c <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-    <http://www.w3.org/2002/07/owl#Nothing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c .
-}
-WHERE {
-    ?c a <http://www.w3.org/2002/07/owl#Class> .
-} .
-
-
 # scm-sco
 CONSTRUCT {
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3 .
@@ -596,16 +576,6 @@ CONSTRUCT {
 WHERE {
     ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
     ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3 .
-} .
-
-
-# scm-eqc1
-CONSTRUCT {
-    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
-    ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1 .
-}
-WHERE {
-    ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
 } .
 
 
