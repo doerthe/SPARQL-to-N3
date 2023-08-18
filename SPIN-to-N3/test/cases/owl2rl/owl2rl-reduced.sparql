@@ -1,0 +1,772 @@
+# drops eq-ref, scm-cls, scm-eqc1
+
+# eq-sym
+CONSTRUCT {
+    ?y <http://www.w3.org/2002/07/owl#sameAs> ?x .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#sameAs> ?y .
+} .
+
+
+# eq-trans
+CONSTRUCT {
+    ?x <http://www.w3.org/2002/07/owl#sameAs> ?z .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#sameAs> ?y .
+    ?y <http://www.w3.org/2002/07/owl#sameAs> ?z .
+} .
+
+
+# eq-rep-s
+CONSTRUCT {
+    ?s2 ?p ?o .
+}
+WHERE {
+    ?s <http://www.w3.org/2002/07/owl#sameAs> ?s2 .
+    ?s ?p ?o .
+} .
+
+
+# eq-rep-p
+CONSTRUCT {
+    ?s ?p2 ?o .
+}
+WHERE {
+    ?p <http://www.w3.org/2002/07/owl#sameAs> ?p2 .
+    ?s ?p ?o .
+} .
+
+
+# eq-rep-o
+CONSTRUCT {
+    ?s ?p ?o2 .
+}
+WHERE {
+    ?o <http://www.w3.org/2002/07/owl#sameAs> ?o2 .
+    ?s ?p ?o .
+} .
+
+
+# eq-diff1
+CONSTRUCT {
+    <http://example.org/violation#differentFrom> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#differentFrom> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#differentFrom> <http://example.org/violation#violationPath> <http://www.w3.org/2002/07/owl#sameAs> .
+    <http://example.org/violation#differentFrom> <http://www.w3.org/2000/01/rdf-schema#label> "Violates <http://www.w3.org/2002/07/owl#differentFrom>" .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#sameAs> ?y .
+    ?x <http://www.w3.org/2002/07/owl#differentFrom> ?y .
+} .
+
+
+# eq-diff2
+CONSTRUCT {
+    <http://example.org/violation#allDifferent> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#allDifferent> <http://example.org/violation#violationRoot> ?y1 .
+    <http://example.org/violation#allDifferent> <http://example.org/violation#violationPath> <http://www.w3.org/2002/07/owl#members> .
+    <http://example.org/violation#allDifferent> <http://www.w3.org/2000/01/rdf-schema#label> "Violation of <http://www.w3.org/2002/07/owl#AllDifferent>" .
+}
+WHERE {
+    ?x a <http://www.w3.org/2002/07/owl#AllDifferent> .
+    ?x <http://www.w3.org/2002/07/owl#members> ?list .
+    ?list <http://example.org/list#hasMember> ?y1 .
+    ?list <http://example.org/list#hasMember> ?y2 .
+    FILTER (?y1 != ?y2) .
+    ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
+} .
+
+
+# eq-diff3
+CONSTRUCT {
+    <http://example.org/violation#allDifferent> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#allDifferent> <http://example.org/violation#violationRoot> ?y1 .
+    <http://example.org/violation#allDifferent> <http://example.org/violation#violationPath> <http://www.w3.org/2002/07/owl#distinctMembers> .
+    <http://example.org/violation#allDifferent> <http://www.w3.org/2000/01/rdf-schema#label> "Violation of <http://www.w3.org/2002/07/owl#AllDifferent>" .
+}
+WHERE {
+    ?x a <http://www.w3.org/2002/07/owl#AllDifferent> .
+    ?x <http://www.w3.org/2002/07/owl#distinctMembers> ?list .
+    ?list <http://example.org/list#hasMember> ?y1 .
+    ?list <http://example.org/list#hasMember> ?y2 .
+    FILTER (?y1 != ?y2) .
+    ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
+} .
+
+
+# prp-dom
+CONSTRUCT {
+    ?x a ?c .
+}
+WHERE {
+    ?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c .
+    ?x ?p ?y .
+} .
+
+
+# prp-rng
+CONSTRUCT {
+    ?y a ?c .
+}
+WHERE {
+    ?p <http://www.w3.org/2000/01/rdf-schema#range> ?c .
+    ?x ?p ?y .
+} .
+
+
+# prp-fp
+CONSTRUCT {
+    ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+    ?x ?p ?y1 .
+    ?x ?p ?y2 .
+    FILTER (?y1 != ?y2) .
+} .
+
+
+# prp-ifp
+CONSTRUCT {
+    ?x1 <http://www.w3.org/2002/07/owl#sameAs> ?x2 .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+    ?x1 ?p ?y .
+    ?x2 ?p ?y .
+    FILTER (?x1 != ?x2) .
+} .
+
+
+# prp-irp
+CONSTRUCT {
+    <http://example.org/violation#irreflexiveProperty> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#irreflexiveProperty> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#irreflexiveProperty> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#irreflexiveProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Irreflexive property" .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+    ?x ?p ?x .
+} .
+
+
+# prp-symp
+CONSTRUCT {
+    ?y ?p ?x .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+    ?x ?p ?y .
+} .
+
+
+# prp-asyp
+CONSTRUCT {
+    <http://example.org/violation#asymmetricProperty> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#asymmetricProperty> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#asymmetricProperty> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#asymmetricProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Asymmetric property" .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+    ?x ?p ?y .
+    ?y ?p ?x .
+} .
+
+
+# prp-trp
+CONSTRUCT {
+    ?x ?p ?z .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+    ?x ?p ?y .
+    ?y ?p ?z .
+} .
+
+
+# prp-spo1
+CONSTRUCT {
+    ?x ?p2 ?y .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+    ?x ?p1 ?y .
+} .
+
+
+# prp-eqp1
+CONSTRUCT {
+    ?x ?p2 ?y .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
+    ?x ?p1 ?y .
+} .
+
+
+# prp-eqp2
+CONSTRUCT {
+    ?x ?p1 ?y .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
+    ?x ?p2 ?y .
+} .
+
+
+# prp-pdw
+CONSTRUCT {
+    <http://example.org/violation#propertyDisjointWith> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#propertyDisjointWith> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#propertyDisjointWith> <http://example.org/violation#violationPath> ?p1 .
+    <http://example.org/violation#propertyDisjointWith> <http://www.w3.org/2000/01/rdf-schema#label> "Property declared disjoint with" .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2002/07/owl#propertyDisjointWith> ?p2 .
+    ?x ?p1 ?y .
+    ?x ?p2 ?y .
+} .
+
+
+# prp-adp
+CONSTRUCT {
+    <http://example.org/violation#allDisjointProperties> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#allDisjointProperties> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#allDisjointProperties> <http://example.org/violation#violationPath> ?p1 .
+    <http://example.org/violation#allDisjointProperties> <http://www.w3.org/2000/01/rdf-schema#label> "Violation of <http://www.w3.org/2002/07/owl#AllDisjointProperties>" .
+}
+WHERE {
+    ?z a <http://www.w3.org/2002/07/owl#AllDisjointProperties> .
+    ?z <http://www.w3.org/2002/07/owl#members> ?members .
+    ?members <http://example.org/list#hasMember> ?p1 .
+    ?members <http://example.org/list#hasMember> ?p2 .
+    FILTER (?p1 != ?p2) .
+    ?x ?p1 ?y .
+    ?x ?p2 ?y .
+} .
+
+
+# prp-inv1
+CONSTRUCT {
+    ?y ?p2 ?x .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2002/07/owl#inverseOf> ?p2 .
+    ?x ?p1 ?y .
+} .
+
+
+# prp-inv2
+CONSTRUCT {
+    ?y ?p1 ?x .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2002/07/owl#inverseOf> ?p2 .
+    ?x ?p2 ?y .
+} .
+
+
+# prp-npa1
+CONSTRUCT {
+    <http://example.org/violation#negativePropertyAssertion> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#negativePropertyAssertion> <http://example.org/violation#violationRoot> ?i1 .
+    <http://example.org/violation#negativePropertyAssertion> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#negativePropertyAssertion> <http://www.w3.org/2000/01/rdf-schema#label> "Negative Property Assertion" .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#sourceIndividual> ?i1 .
+    ?x <http://www.w3.org/2002/07/owl#assertionProperty> ?p .
+    ?x <http://www.w3.org/2002/07/owl#targetIndividual> ?i2 .
+    ?i1 ?p ?i2 .
+} .
+
+
+# prp-npa2
+CONSTRUCT {
+    <http://example.org/violation#negativePropertyAssertion> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#negativePropertyAssertion> <http://example.org/violation#violationRoot> ?i .
+    <http://example.org/violation#negativePropertyAssertion> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#negativePropertyAssertion> <http://www.w3.org/2000/01/rdf-schema#label> "Negative Property Assertion" .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#sourceIndividual> ?i .
+    ?x <http://www.w3.org/2002/07/owl#assertionProperty> ?p .
+    ?x <http://www.w3.org/2002/07/owl#targetValue> ?lt .
+    ?i ?p ?lt .
+} .
+
+
+# cls-nothing2 
+CONSTRUCT {
+	<http://example.org/violation#nothingType> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#nothingType> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#nothingType> <http://www.w3.org/2000/01/rdf-schema#label> "Resource with type Nothing" .
+}
+WHERE {
+	?x a <http://www.w3.org/2002/07/owl#Nothing> .
+} .
+
+
+# cls-int2
+CONSTRUCT {
+    ?y a ?ci .
+}
+WHERE {
+    ?c <http://www.w3.org/2002/07/owl#intersectionOf> ?x .
+    ?x <http://example.org/list#hasMember> ?ci .
+    ?y a ?c .
+} .
+
+
+# cls-uni
+CONSTRUCT {
+    ?y a ?c .
+}
+WHERE {
+    ?c <http://www.w3.org/2002/07/owl#unionOf> ?x .
+    ?x <http://example.org/list#hasMember> ?ci .
+    ?y a ?ci .
+} .
+
+
+# cls-com
+CONSTRUCT {
+    <http://example.org/violation#disjointClass> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#disjointClass> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#disjointClass> <http://example.org/violation#violationPath> <http://www.w3.org/2002/07/owl#complementOf> .
+    <http://example.org/violation#disjointClass> <http://www.w3.org/2000/01/rdf-schema#label> "Resource is instance of two disjoint classes" .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#complementOf> ?c2 .
+    ?x a ?c1 .
+    ?x a ?c2 .
+} .
+
+
+# cls-svf1
+CONSTRUCT {
+    ?u a ?x .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#someValuesFrom> ?y .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u ?p ?v .
+    ?v a ?y .
+} .
+
+
+# cls-svf2
+CONSTRUCT {
+    ?u a ?x .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u ?p ?v .
+} .
+
+
+# cls-avf
+CONSTRUCT {
+    ?v a ?y .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#allValuesFrom> ?y .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u a ?x .
+    ?u ?p ?v .
+} .
+
+
+# cls-hv1
+CONSTRUCT {
+    ?u ?p ?y .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#hasValue> ?y .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u a ?x .
+} .
+
+
+# cls-hv2
+CONSTRUCT {
+    ?u a ?x .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#hasValue> ?y .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u ?p ?y .
+} .
+
+
+# cls-maxc1
+CONSTRUCT {
+    <http://example.org/violation#maxCardinality0> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#maxCardinality0> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#maxCardinality0> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#maxCardinality0> <http://www.w3.org/2000/01/rdf-schema#label> "<http://www.w3.org/2002/07/owl#maxCardinality> of 0" .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#maxCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u a ?x .
+    ?u ?p ?y .
+} .
+
+
+# cls-maxc2
+CONSTRUCT {
+    ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?u a ?x .
+    ?u ?p ?y1 .
+    ?u ?p ?y2 .
+    FILTER(?y1 != ?y2)
+} .
+
+
+# cls-maxqc1
+CONSTRUCT {
+    <http://example.org/violation#maxQualifiedCardinality0> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#maxQualifiedCardinality0> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#maxQualifiedCardinality0> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#maxQualifiedCardinality0> <http://www.w3.org/2000/01/rdf-schema#label> "Maximum qualified cardinality of 0" .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?x <http://www.w3.org/2002/07/owl#onClass> ?c .
+    ?u a ?x .
+    ?u ?p ?y .
+    ?y a ?c .
+} .
+
+
+# cls-maxqc2
+CONSTRUCT {
+    <http://example.org/violation#maxQualifiedCardinality0Thing> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#maxQualifiedCardinality0Thing> <http://example.org/violation#violationRoot> ?u .
+    <http://example.org/violation#maxQualifiedCardinality0Thing> <http://example.org/violation#violationPath> ?p .
+    <http://example.org/violation#maxQualifiedCardinality0Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Qualified max cardinality 0" .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?x <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2002/07/owl#Thing> .
+    ?u a ?x .
+    ?u ?p ?y .
+} .
+
+
+# cls-maxqc3
+CONSTRUCT {
+    ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?x <http://www.w3.org/2002/07/owl#onClass> ?c .
+    ?u a ?x .
+    ?u ?p ?y1 .
+    ?u ?p ?y2 .
+    FILTER(?y1 != ?y2)
+    ?y1 a ?c .
+    ?y2 a ?c .
+} .
+
+
+# cls-maxqc4
+CONSTRUCT {
+    ?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2 .
+}
+WHERE {
+    ?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+    ?x <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?x <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2002/07/owl#Thing> .
+    ?u a ?x .
+    ?u ?p ?y1 .
+    ?u ?p ?y2 .
+    FILTER(?y1 != ?y2)
+} .
+
+
+# cls-oo
+CONSTRUCT {
+    ?yi a ?c .
+}
+WHERE {
+    ?c <http://www.w3.org/2002/07/owl#oneOf> ?x .
+    ?x <http://example.org/list#hasMember> ?yi .
+} .
+
+
+# cax-sco
+CONSTRUCT {
+    ?x a ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+    ?x a ?c1 .
+} .
+
+
+# cax-eqc1
+CONSTRUCT {
+    ?x a ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
+    ?x a ?c1 .
+} .
+
+
+# cax-eqc2
+CONSTRUCT {
+    ?x a ?c1 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
+    ?x a ?c2 .
+} .
+
+
+# cax-dw
+CONSTRUCT {
+    <http://example.org/violation#disjointClass> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#disjointClass> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#disjointClass> <http://example.org/violation#violationPath> <http://www.w3.org/2002/07/owl#disjointWith> .
+    <http://example.org/violation#disjointClass> <http://www.w3.org/2000/01/rdf-schema#label> "Resource is instance of two disjoint classes" .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#disjointWith> ?c2 .
+    ?x a ?c1 .
+    ?x a ?c2 .
+} .
+
+
+# cax-adc
+CONSTRUCT {
+    <http://example.org/violation#allDisjointClasses> a <http://example.org/violation#ConstraintViolation> .
+    <http://example.org/violation#allDisjointClasses> <http://example.org/violation#violationRoot> ?x .
+    <http://example.org/violation#allDisjointClasses> <http://www.w3.org/2000/01/rdf-schema#label> "Shared instance of classes from an AllDisjointClasses block" .
+}
+WHERE {
+    ?y a <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+    ?y <http://www.w3.org/2002/07/owl#members> ?members .
+    ?members <http://example.org/list#hasMember> ?c1 .
+    ?members <http://example.org/list#hasMember> ?c2 .
+    FILTER (?c1 != ?c2) .
+    ?x a ?c1 .
+    ?x a ?c2 .
+} .
+
+
+# scm-sco
+CONSTRUCT {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+    ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3 .
+} .
+
+
+# scm-eqc2
+CONSTRUCT {
+    ?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+    ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1 .
+} .
+
+
+# scm-op
+CONSTRUCT {
+    ?p <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p .
+    ?p <http://www.w3.org/2002/07/owl#equivalentProperty> ?p .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#ObjectProperty> .
+} .
+
+
+# scm-dp
+CONSTRUCT {
+    ?p <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p .
+    ?p <http://www.w3.org/2002/07/owl#equivalentProperty> ?p .
+}
+WHERE {
+    ?p a <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+} .
+
+
+# scm-spo
+CONSTRUCT {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p3 .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+    ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p3 .
+} .
+
+
+# scm-eqp1
+CONSTRUCT {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+    ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p1 .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
+} .
+
+
+# scm-eqp2
+CONSTRUCT {
+    ?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2 .
+}
+WHERE {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+    ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p1 .
+} .
+
+
+# scm-dom1
+CONSTRUCT {
+    ?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c2 .
+}
+WHERE {
+    ?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c1 .
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+} .
+
+
+# scm-dom2
+CONSTRUCT {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#domain> ?c .
+}
+WHERE {
+    ?p2 <http://www.w3.org/2000/01/rdf-schema#domain> ?c .
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+} .
+
+
+# scm-rng1
+CONSTRUCT {
+    ?p <http://www.w3.org/2000/01/rdf-schema#range> ?c2 .
+}
+WHERE {
+    ?p <http://www.w3.org/2000/01/rdf-schema#range> ?c1 .
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+} .
+
+
+# scm-rng2
+CONSTRUCT {
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#range> ?c .
+}
+WHERE {
+    ?p2 <http://www.w3.org/2000/01/rdf-schema#range> ?c .
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+} .
+
+
+# scm-hv
+CONSTRUCT {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#hasValue> ?i .
+    ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p1 .
+    ?c2 <http://www.w3.org/2002/07/owl#hasValue> ?i .
+    ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2 .
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+} .
+
+
+# scm-svf1
+CONSTRUCT {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y1 .
+    ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?c2 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y2 .
+    ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?y1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?y2 .
+} .
+
+
+# scm-svf2
+CONSTRUCT {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y .
+    ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p1 .
+    ?c2 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y .
+    ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2 .
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+} .
+
+
+# scm-avf1
+CONSTRUCT {
+    ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y1 .
+    ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?c2 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y2 .
+    ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p .
+    ?y1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?y2 .
+} .
+
+
+# scm-avf2
+CONSTRUCT {
+    ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1 .
+}
+WHERE {
+    ?c1 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y .
+    ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p1 .
+    ?c2 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y .
+    ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2 .
+    ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2 .
+} .
+
+
+# scm-int
+CONSTRUCT {
+    ?c <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?cl .
+}
+WHERE {
+    ?c <http://www.w3.org/2002/07/owl#intersectionOf> ?x .
+    ?x <http://example.org/list#hasMember> ?cl .
+} .
+
+
+# scm-uni
+CONSTRUCT {
+    ?cl <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c .
+}
+WHERE {
+    ?c <http://www.w3.org/2002/07/owl#unionOf> ?x .
+    ?x <http://example.org/list#hasMember> ?cl .
+} .
+
+
+# li-mem1
+CONSTRUCT {
+	?l <http://niche.cs.dal.ca/owl/list#hasMember> ?m .
+} WHERE {
+    ?l <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>*/<http://www.w3.org/1999/02/22-rdf-syntax-ns#first> ?m .
+} .
