@@ -1,0 +1,1810 @@
+# Processed by EYE v4.13.3 (2023-08-17)
+# eye --nope --query compare_query.n3
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix ns1: <http://www.co-ode.org/ontologies/pizza/pizza.owl#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/6a3f598b-7c3d-43dd-b66d-769d557662eb#>.
+
+"triples in sin3 result but not in spin result" aux:graph {
+    <http://www.co-ode.org/ontologies/pizza> a owl:Ontology.
+    <http://www.co-ode.org/ontologies/pizza> owl:versionIRI <http://www.co-ode.org/ontologies/pizza/2.0.0>.
+    <http://www.co-ode.org/ontologies/pizza> dc:description "An ontology about pizzas and their toppings.\n\nThis is an example ontology that contains all constructs required for the various versions of the Pizza Tutorial run by Manchester University (see http://owl.cs.manchester.ac.uk/publications/talks-and-tutorials/protg-owl-tutorial)."@en.
+    <http://www.co-ode.org/ontologies/pizza> dc:title "pizza"@en.
+    <http://www.co-ode.org/ontologies/pizza> terms:contributor "Alan Rector".
+    <http://www.co-ode.org/ontologies/pizza> terms:contributor "Chris Wroe".
+    <http://www.co-ode.org/ontologies/pizza> terms:contributor "Matthew Horridge".
+    <http://www.co-ode.org/ontologies/pizza> terms:contributor "Nick Drummond".
+    <http://www.co-ode.org/ontologies/pizza> terms:contributor "Robert Stevens".
+    <http://www.co-ode.org/ontologies/pizza> terms:license "Creative Commons Attribution 3.0 (CC BY 3.0)".
+    <http://www.co-ode.org/ontologies/pizza> terms:provenance "v2.0 Added new annotations to the ontology using standard/well-know annotation properties\n\nv1.5. Removed protege.owl import and references. Made ontology URI date-independent\n\nv1.4. Added Food class (used in domain/range of hasIngredient), Added several hasCountryOfOrigin restrictions on pizzas, Made hasTopping invers functional"@en.
+    <http://www.co-ode.org/ontologies/pizza> rdfs:label "pizza".
+    <http://www.co-ode.org/ontologies/pizza> owl:versionInfo "2.0".
+    dc:description a owl:AnnotationProperty.
+    dc:title a owl:AnnotationProperty.
+    terms:contributor a owl:AnnotationProperty.
+    terms:license a owl:AnnotationProperty.
+    terms:provenance a owl:AnnotationProperty.
+    skos:altLabel a owl:AnnotationProperty.
+    skos:definition a owl:AnnotationProperty.
+    skos:prefLabel a owl:AnnotationProperty.
+    ns1:hasBase a owl:ObjectProperty.
+    ns1:hasBase a owl:FunctionalProperty.
+    ns1:hasBase a owl:InverseFunctionalProperty.
+    ns1:hasBase rdfs:subPropertyOf ns1:hasIngredient.
+    ns1:hasBase owl:inverseOf ns1:isBaseOf.
+    ns1:hasBase rdfs:domain ns1:Pizza.
+    ns1:hasBase rdfs:domain ns1:AmericanHot.
+    ns1:hasBase rdfs:range ns1:PizzaBase.
+    ns1:hasCountryOfOrigin a owl:ObjectProperty.
+    ns1:hasIngredient a owl:ObjectProperty.
+    ns1:hasIngredient a owl:TransitiveProperty.
+    ns1:hasIngredient owl:inverseOf ns1:isIngredientOf.
+    ns1:hasIngredient rdfs:domain ns1:Food.
+    ns1:hasIngredient rdfs:range ns1:Food.
+    ns1:hasIngredient rdfs:comment "NB Transitive - the ingredients of ingredients are ingredients of the whole"@en.
+    ns1:hasSpiciness a owl:ObjectProperty.
+    ns1:hasSpiciness a owl:FunctionalProperty.
+    ns1:hasSpiciness rdfs:range ns1:Spiciness.
+    ns1:hasSpiciness rdfs:range ns1:AmericanHot.
+    ns1:hasSpiciness rdfs:comment "A property created to be used with the ValuePartition - Spiciness."@en.
+    ns1:hasTopping a owl:ObjectProperty.
+    ns1:hasTopping a owl:InverseFunctionalProperty.
+    ns1:hasTopping rdfs:subPropertyOf ns1:hasIngredient.
+    ns1:hasTopping owl:inverseOf ns1:isToppingOf.
+    ns1:hasTopping rdfs:domain ns1:Pizza.
+    ns1:hasTopping rdfs:domain ns1:AmericanHot.
+    ns1:hasTopping rdfs:range ns1:PizzaTopping.
+    ns1:hasTopping rdfs:comment "Note that hasTopping is inverse functional because isToppingOf is functional"@en.
+    ns1:isBaseOf a owl:ObjectProperty.
+    ns1:isBaseOf a owl:FunctionalProperty.
+    ns1:isBaseOf a owl:InverseFunctionalProperty.
+    ns1:isBaseOf rdfs:subPropertyOf ns1:isIngredientOf.
+    ns1:isIngredientOf a owl:ObjectProperty.
+    ns1:isIngredientOf a owl:TransitiveProperty.
+    ns1:isIngredientOf rdfs:comment "The inverse property tree to hasIngredient - all subproperties and attributes of the properties should reflect those under hasIngredient."@en.
+    ns1:isToppingOf a owl:ObjectProperty.
+    ns1:isToppingOf a owl:FunctionalProperty.
+    ns1:isToppingOf rdfs:subPropertyOf ns1:isIngredientOf.
+    ns1:isToppingOf rdfs:comment "Any given instance of topping should only be added to a single pizza (no cheap half-measures on our pizzas)"@en.
+    ns1:American a owl:Class.
+    ns1:American rdfs:label "American"@en.
+    ns1:American rdfs:label "Americana"@pt.
+    ns1:American rdfs:subClassOf ns1:NamedPizza.
+    ns1:American rdfs:subClassOf ns1:AmericanHot.
+    ns1:American skos:altLabel "American"@en.
+    ns1:American skos:altLabel "American Pizza"@en.
+    ns1:American skos:prefLabel "American"@en.
+    ns1:AmericanHot a owl:Restriction.
+    ns1:AmericanHot owl:onProperty ns1:hasTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:MozzarellaTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:PeperoniSausageTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:TomatoTopping.
+    ns1:AmericanHot owl:allValuesFrom ns1:AmericanHot.
+    ns1:AmericanHot a owl:Class.
+    ns1:AmericanHot owl:unionOf (ns1:MozzarellaTopping ns1:PeperoniSausageTopping ns1:TomatoTopping).
+    ns1:AmericanHot owl:onProperty ns1:hasCountryOfOrigin.
+    ns1:AmericanHot owl:hasValue ns1:America.
+    ns1:AmericanHot rdfs:label "AmericanHot"@en.
+    ns1:AmericanHot rdfs:label "AmericanaPicante"@pt.
+    ns1:AmericanHot rdfs:subClassOf ns1:NamedPizza.
+    ns1:AmericanHot skos:altLabel "American Hot"@en.
+    ns1:AmericanHot skos:altLabel "American Hot Pizza"@en.
+    ns1:AmericanHot skos:prefLabel "American Hot"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:HotGreenPepperTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:JalapenoPepperTopping.
+    ns1:AmericanHot owl:unionOf (ns1:HotGreenPepperTopping ns1:JalapenoPepperTopping ns1:MozzarellaTopping ns1:PeperoniSausageTopping ns1:TomatoTopping).
+    ns1:AnchoviesTopping a owl:Class.
+    ns1:AnchoviesTopping rdfs:label "AnchoviesTopping"@en.
+    ns1:AnchoviesTopping rdfs:label "CoberturaDeAnchovies"@pt.
+    ns1:AnchoviesTopping rdfs:subClassOf ns1:FishTopping.
+    ns1:AnchoviesTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:AnchoviesTopping skos:prefLabel "Anchovies"@en.
+    ns1:ArtichokeTopping a owl:Class.
+    ns1:ArtichokeTopping rdfs:label "ArtichokeTopping"@en.
+    ns1:ArtichokeTopping rdfs:label "CoberturaDeArtichoke"@pt.
+    ns1:ArtichokeTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:ArtichokeTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:ArtichokeTopping skos:prefLabel "Artichoke"@en.
+    ns1:AmericanHot owl:onProperty ns1:hasSpiciness.
+    ns1:AmericanHot owl:someValuesFrom ns1:Mild.
+    ns1:AsparagusTopping a owl:Class.
+    ns1:AsparagusTopping rdfs:label "AsparagusTopping"@en.
+    ns1:AsparagusTopping rdfs:label "CoberturaDeAspargos"@pt.
+    ns1:AsparagusTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:AsparagusTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:AsparagusTopping skos:prefLabel "Asparagus"@en.
+    ns1:Cajun a owl:Class.
+    ns1:Cajun rdfs:label "Cajun"@en.
+    ns1:Cajun rdfs:label "Cajun"@pt.
+    ns1:Cajun rdfs:subClassOf ns1:NamedPizza.
+    ns1:Cajun rdfs:subClassOf ns1:AmericanHot.
+    ns1:Cajun skos:altLabel "Cajun"@en.
+    ns1:Cajun skos:altLabel "Cajun Pizza"@en.
+    ns1:Cajun skos:prefLabel "Cajun"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:OnionTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:PeperonataTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:PrawnsTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:TobascoPepperSauce.
+    ns1:AmericanHot owl:unionOf (ns1:MozzarellaTopping ns1:OnionTopping ns1:PeperonataTopping ns1:PrawnsTopping ns1:TobascoPepperSauce ns1:TomatoTopping).
+    ns1:CajunSpiceTopping a owl:Class.
+    ns1:CajunSpiceTopping rdfs:label "CajunSpiceTopping"@en.
+    ns1:CajunSpiceTopping rdfs:label "CoberturaDeCajun"@pt.
+    ns1:CajunSpiceTopping rdfs:subClassOf ns1:HerbSpiceTopping.
+    ns1:CajunSpiceTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:CajunSpiceTopping skos:prefLabel "Cajun Spice"@en.
+    ns1:CajunSpiceTopping owl:disjointWith ns1:RosemaryTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:Hot.
+    ns1:CaperTopping a owl:Class.
+    ns1:CaperTopping rdfs:label "CaperTopping"@en.
+    ns1:CaperTopping rdfs:label "CoberturaDeCaper"@pt.
+    ns1:CaperTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:CaperTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:CaperTopping skos:prefLabel "Caper"@en.
+    ns1:Capricciosa a owl:Class.
+    ns1:Capricciosa rdfs:label "Capricciosa"@en.
+    ns1:Capricciosa rdfs:label "Capricciosa"@pt.
+    ns1:Capricciosa rdfs:subClassOf ns1:NamedPizza.
+    ns1:Capricciosa rdfs:subClassOf ns1:AmericanHot.
+    ns1:Capricciosa skos:altLabel "Capricciosa"@en.
+    ns1:Capricciosa skos:altLabel "Capricciosa Pizza"@en.
+    ns1:Capricciosa skos:prefLabel "Capricciosa"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:AnchoviesTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:CaperTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:HamTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:OliveTopping.
+    ns1:AmericanHot owl:unionOf (ns1:AnchoviesTopping ns1:CaperTopping ns1:HamTopping ns1:MozzarellaTopping ns1:OliveTopping ns1:PeperonataTopping ns1:TomatoTopping).
+    ns1:Caprina a owl:Class.
+    ns1:Caprina rdfs:label "Caprina"@en.
+    ns1:Caprina rdfs:label "Caprina"@pt.
+    ns1:Caprina rdfs:subClassOf ns1:NamedPizza.
+    ns1:Caprina rdfs:subClassOf ns1:AmericanHot.
+    ns1:Caprina skos:altLabel "Caprina"@en.
+    ns1:Caprina skos:altLabel "Caprina Pizza"@en.
+    ns1:Caprina skos:prefLabel "Caprina"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:GoatsCheeseTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:SundriedTomatoTopping.
+    ns1:AmericanHot owl:unionOf (ns1:GoatsCheeseTopping ns1:MozzarellaTopping ns1:SundriedTomatoTopping ns1:TomatoTopping).
+    ns1:CheeseTopping a owl:Class.
+    ns1:CheeseTopping rdfs:label "CheeseTopping"@en.
+    ns1:CheeseTopping rdfs:label "CoberturaDeQueijo"@pt.
+    ns1:CheeseTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:CheeseTopping skos:prefLabel "Cheese"@en.
+    ns1:CheeseyPizza a owl:Class.
+    ns1:CheeseyPizza rdfs:label "CheesyPizza"@en.
+    ns1:CheeseyPizza rdfs:label "PizzaComQueijo"@pt.
+    ns1:CheeseyPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:CheeseyPizza skos:prefLabel "Cheesy Pizza"@en.
+    ns1:CheeseyPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:CheeseyPizza skos:definition "Any pizza that has at least 1 cheese topping."@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:CheeseTopping.
+    ns1:AmericanHot rdfs:subClassOf ns1:CheeseyPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:CheeseyPizza.
+    ns1:AmericanHot owl:intersectionOf (ns1:Pizza ns1:AmericanHot).
+    ns1:CheeseyVegetableTopping a owl:Class.
+    ns1:CheeseyVegetableTopping rdfs:label "CheesyVegetableTopping"@en.
+    ns1:CheeseyVegetableTopping rdfs:label "CoberturaDeQueijoComVegetais"@pt.
+    ns1:CheeseyVegetableTopping rdfs:comment "This class will be unsatisfiable. This is because we have given it 2 disjoint parents, which means it could never have any instances (as nothing can be both a CheeseTopping and a VegetableTopping). NB Called ProbeInconsistentTopping in the ProtegeOWL Tutorial."@en.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:ChickenTopping a owl:Class.
+    ns1:ChickenTopping rdfs:label "ChickenTopping"@en.
+    ns1:ChickenTopping rdfs:label "CoberturaDeFrango"@pt.
+    ns1:ChickenTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:ChickenTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:ChickenTopping skos:prefLabel "Chicken"@en.
+    ns1:Country a owl:Class.
+    ns1:Country rdfs:label "Country"@en.
+    ns1:Country rdfs:label "Pais"@pt.
+    ns1:Country rdfs:comment "A class that is equivalent to the set of individuals that are described in the enumeration - ie Countries can only be either America, England, France, Germany or Italy and nothing else. Note that these individuals have been asserted to be allDifferent from each other."@en.
+    ns1:Country rdfs:subClassOf ns1:AmericanHot.
+    ns1:Country skos:prefLabel "Country"@en.
+    ns1:Country owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot owl:oneOf (ns1:America ns1:England ns1:France ns1:Germany ns1:Italy).
+    ns1:AmericanHot owl:equivalentClass ns1:Country.
+    ns1:AmericanHot owl:intersectionOf (ns1:DomainConcept ns1:AmericanHot).
+    ns1:DeepPanBase a owl:Class.
+    ns1:DeepPanBase rdfs:label "BaseEspessa"@pt.
+    ns1:DeepPanBase rdfs:label "DeepPanBase"@en.
+    ns1:DeepPanBase rdfs:subClassOf ns1:PizzaBase.
+    ns1:DeepPanBase skos:prefLabel "Deep Pan Base"@en.
+    ns1:DeepPanBase owl:disjointWith ns1:ThinAndCrispyBase.
+    ns1:DomainConcept a owl:Class.
+    ns1:DomainConcept rdfs:label "DomainThing"@en.
+    ns1:DomainConcept skos:prefLabel "Domain Thing"@en.
+    ns1:DomainConcept owl:disjointWith ns1:ValuePartition.
+    ns1:Fiorentina a owl:Class.
+    ns1:Fiorentina rdfs:label "Fiorentina"@en.
+    ns1:Fiorentina rdfs:label "Fiorentina"@pt.
+    ns1:Fiorentina rdfs:subClassOf ns1:NamedPizza.
+    ns1:Fiorentina rdfs:subClassOf ns1:AmericanHot.
+    ns1:Fiorentina skos:altLabel "Fiorentina"@en.
+    ns1:Fiorentina skos:altLabel "Fiorentina Pizza"@en.
+    ns1:Fiorentina skos:prefLabel "Fiorentina"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:GarlicTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:ParmesanTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:SpinachTopping.
+    ns1:AmericanHot owl:unionOf (ns1:GarlicTopping ns1:MozzarellaTopping ns1:OliveTopping ns1:ParmesanTopping ns1:SpinachTopping ns1:TomatoTopping).
+    ns1:FishTopping a owl:Class.
+    ns1:FishTopping rdfs:label "CoberturaDePeixe"@pt.
+    ns1:FishTopping rdfs:label "SeafoodTopping"@en.
+    ns1:FishTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:FishTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:FishTopping skos:prefLabel "Seafood"@en.
+    ns1:Food a owl:Class.
+    ns1:Food rdfs:label "Food"@en.
+    ns1:Food rdfs:subClassOf ns1:DomainConcept.
+    ns1:Food skos:prefLabel "Food"@en.
+    ns1:FourCheesesTopping a owl:Class.
+    ns1:FourCheesesTopping rdfs:label "CoberturaQuatroQueijos"@pt.
+    ns1:FourCheesesTopping rdfs:label "FourCheesesTopping"@en.
+    ns1:FourCheesesTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:FourCheesesTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:FourCheesesTopping skos:prefLabel "Four Cheeses"@en.
+    ns1:FourSeasons a owl:Class.
+    ns1:FourSeasons rdfs:label "FourSeasons"@en.
+    ns1:FourSeasons rdfs:label "QuatroQueijos"@pt.
+    ns1:FourSeasons rdfs:subClassOf ns1:NamedPizza.
+    ns1:FourSeasons rdfs:subClassOf ns1:AmericanHot.
+    ns1:FourSeasons skos:altLabel "Four Seasons"@en.
+    ns1:FourSeasons skos:altLabel "Four Seasons Pizza"@en.
+    ns1:FourSeasons skos:prefLabel "Four Seasons"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:MushroomTopping.
+    ns1:AmericanHot owl:unionOf (ns1:AnchoviesTopping ns1:CaperTopping ns1:MozzarellaTopping ns1:MushroomTopping ns1:OliveTopping ns1:PeperoniSausageTopping ns1:TomatoTopping).
+    ns1:FruitTopping a owl:Class.
+    ns1:FruitTopping rdfs:label "CoberturaDeFrutas"@pt.
+    ns1:FruitTopping rdfs:label "FruitTopping"@en.
+    ns1:FruitTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:FruitTopping skos:prefLabel "Fruit"@en.
+    ns1:FruttiDiMare a owl:Class.
+    ns1:FruttiDiMare rdfs:label "FrutosDoMar"@pt.
+    ns1:FruttiDiMare rdfs:label "FruttiDiMare"@en.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:NamedPizza.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:AmericanHot.
+    ns1:FruttiDiMare skos:altLabel "Frutti Di Mare"@en.
+    ns1:FruttiDiMare skos:altLabel "Frutti Di Mare Pizza"@en.
+    ns1:FruttiDiMare skos:prefLabel "Frutti Di Mare"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:MixedSeafoodTopping.
+    ns1:AmericanHot owl:unionOf (ns1:GarlicTopping ns1:MixedSeafoodTopping ns1:TomatoTopping).
+    ns1:GarlicTopping a owl:Class.
+    ns1:GarlicTopping rdfs:label "CoberturaDeAlho"@pt.
+    ns1:GarlicTopping rdfs:label "GarlicTopping"@en.
+    ns1:GarlicTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:GarlicTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:GarlicTopping skos:prefLabel "Garlic"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:Medium.
+    ns1:Giardiniera a owl:Class.
+    ns1:Giardiniera rdfs:label "Giardiniera"@en.
+    ns1:Giardiniera rdfs:label "Giardiniera"@pt.
+    ns1:Giardiniera rdfs:subClassOf ns1:NamedPizza.
+    ns1:Giardiniera rdfs:subClassOf ns1:AmericanHot.
+    ns1:Giardiniera skos:altLabel "Giardiniera"@en.
+    ns1:Giardiniera skos:altLabel "Giardiniera Pizza"@en.
+    ns1:Giardiniera skos:prefLabel "Giardiniera"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:LeekTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:PetitPoisTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:SlicedTomatoTopping.
+    ns1:AmericanHot owl:unionOf (ns1:LeekTopping ns1:MozzarellaTopping ns1:MushroomTopping ns1:OliveTopping ns1:PeperonataTopping ns1:PetitPoisTopping ns1:SlicedTomatoTopping ns1:TomatoTopping).
+    ns1:GoatsCheeseTopping a owl:Class.
+    ns1:GoatsCheeseTopping rdfs:label "CoberturaDeQueijoDeCabra"@pt.
+    ns1:GoatsCheeseTopping rdfs:label "GoatsCheeseTopping"@en.
+    ns1:GoatsCheeseTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:GoatsCheeseTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:GoatsCheeseTopping skos:prefLabel "Goats Cheese"@en.
+    ns1:GorgonzolaTopping a owl:Class.
+    ns1:GorgonzolaTopping rdfs:label "CoberturaDeGorgonzola"@pt.
+    ns1:GorgonzolaTopping rdfs:label "GorgonzolaTopping"@en.
+    ns1:GorgonzolaTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:GorgonzolaTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:GorgonzolaTopping skos:prefLabel "Gorgonzola"@en.
+    ns1:GreenPepperTopping a owl:Class.
+    ns1:GreenPepperTopping rdfs:label "CoberturaDePimentaoVerde"@pt.
+    ns1:GreenPepperTopping rdfs:label "GreenPepperTopping"@en.
+    ns1:GreenPepperTopping rdfs:subClassOf ns1:PepperTopping.
+    ns1:GreenPepperTopping skos:prefLabel "Green Pepper"@en.
+    ns1:HamTopping a owl:Class.
+    ns1:HamTopping rdfs:label "CoberturaDePresunto"@pt.
+    ns1:HamTopping rdfs:label "HamTopping"@en.
+    ns1:HamTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:HamTopping skos:prefLabel "Ham"@en.
+    ns1:HerbSpiceTopping a owl:Class.
+    ns1:HerbSpiceTopping rdfs:label "CoberturaDeErvas"@pt.
+    ns1:HerbSpiceTopping rdfs:label "HerbSpiceTopping"@en.
+    ns1:HerbSpiceTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:HerbSpiceTopping skos:prefLabel "Herb Spice"@en.
+    ns1:Hot a owl:Class.
+    ns1:Hot rdfs:label "Hot"@en.
+    ns1:Hot rdfs:label "Picante"@pt.
+    ns1:Hot rdfs:subClassOf ns1:Spiciness.
+    ns1:Hot skos:prefLabel "Hot"@en.
+    ns1:HotGreenPepperTopping a owl:Class.
+    ns1:HotGreenPepperTopping rdfs:label "CoberturaDePimentaoVerdePicante"@pt.
+    ns1:HotGreenPepperTopping rdfs:label "HotGreenPepperTopping"@en.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:GreenPepperTopping.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:HotGreenPepperTopping skos:prefLabel "Hot Green Pepper"@en.
+    ns1:HotSpicedBeefTopping a owl:Class.
+    ns1:HotSpicedBeefTopping rdfs:label "CoberturaDeBifePicante"@pt.
+    ns1:HotSpicedBeefTopping rdfs:label "HotSpicedBeefTopping"@en.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:HotSpicedBeefTopping skos:prefLabel "Hot Spiced Beef"@en.
+    ns1:IceCream a owl:Class.
+    ns1:IceCream rdfs:label "IceCream"@en.
+    ns1:IceCream rdfs:label "Sorvete"@pt.
+    ns1:IceCream rdfs:comment "A class to demonstrate mistakes made with setting a property domain. The property hasTopping has a domain of Pizza. This means that the reasoner can infer that all individuals using the hasTopping property must be of type Pizza. Because of the restriction on this class, all members of IceCream must use the hasTopping property, and therefore must also be members of Pizza. However, Pizza and IceCream are disjoint, so this causes an inconsistency. If they were not disjoint, IceCream would be inferred to be a subclass of Pizza."@en.
+    ns1:IceCream rdfs:subClassOf ns1:Food.
+    ns1:IceCream rdfs:subClassOf ns1:AmericanHot.
+    ns1:IceCream skos:prefLabel "Ice Cream"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:FruitTopping.
+    ns1:InterestingPizza a owl:Class.
+    ns1:InterestingPizza rdfs:label "InterestingPizza"@en.
+    ns1:InterestingPizza rdfs:label "PizzaInteressante"@pt.
+    ns1:InterestingPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:InterestingPizza skos:prefLabel "Interesting Pizza"@en.
+    ns1:InterestingPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:InterestingPizza skos:definition "Any pizza that has at least 3 toppings. Note that this is a cardinality constraint on the hasTopping property and NOT a qualified cardinality constraint (QCR). A QCR would specify from which class the members in this relationship must be. eg has at least 3 toppings from PizzaTopping. This is currently not supported in OWL."@en.
+    ns1:AmericanHot owl:minCardinality "3"^^xsd:nonNegativeInteger.
+    ns1:AmericanHot rdfs:subClassOf ns1:InterestingPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:InterestingPizza.
+    ns1:JalapenoPepperTopping a owl:Class.
+    ns1:JalapenoPepperTopping rdfs:label "CoberturaDeJalapeno"@pt.
+    ns1:JalapenoPepperTopping rdfs:label "JalapenoPepperTopping"@en.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:PepperTopping.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:JalapenoPepperTopping skos:prefLabel "Jalapeno Pepper"@en.
+    ns1:LaReine a owl:Class.
+    ns1:LaReine rdfs:label "LaReine"@en.
+    ns1:LaReine rdfs:label "LaReine"@pt.
+    ns1:LaReine rdfs:subClassOf ns1:NamedPizza.
+    ns1:LaReine rdfs:subClassOf ns1:AmericanHot.
+    ns1:LaReine skos:altLabel "La Reine"@en.
+    ns1:LaReine skos:altLabel "La Reine Pizza"@en.
+    ns1:LaReine skos:prefLabel "La Reine"@en.
+    ns1:AmericanHot owl:unionOf (ns1:HamTopping ns1:MozzarellaTopping ns1:MushroomTopping ns1:OliveTopping ns1:TomatoTopping).
+    ns1:LeekTopping a owl:Class.
+    ns1:LeekTopping rdfs:label "CoberturaDeLeek"@pt.
+    ns1:LeekTopping rdfs:label "LeekTopping"@en.
+    ns1:LeekTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:LeekTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:LeekTopping skos:prefLabel "Leek"@en.
+    ns1:Margherita a owl:Class.
+    ns1:Margherita rdfs:label "Margherita"@en.
+    ns1:Margherita rdfs:label "Margherita"@pt.
+    ns1:Margherita rdfs:subClassOf ns1:NamedPizza.
+    ns1:Margherita rdfs:subClassOf ns1:AmericanHot.
+    ns1:Margherita skos:altLabel "Margherita"@en.
+    ns1:Margherita skos:altLabel "Margherita Pizza"@en.
+    ns1:Margherita skos:prefLabel "Margherita"@en.
+    ns1:AmericanHot owl:unionOf (ns1:MozzarellaTopping ns1:TomatoTopping).
+    ns1:MeatTopping a owl:Class.
+    ns1:MeatTopping rdfs:label "CoberturaDeCarne"@pt.
+    ns1:MeatTopping rdfs:label "MeatTopping"@en.
+    ns1:MeatTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:MeatTopping skos:prefLabel "Meat"@en.
+    ns1:MeatyPizza a owl:Class.
+    ns1:MeatyPizza rdfs:label "MeatyPizza"@en.
+    ns1:MeatyPizza rdfs:label "PizzaDeCarne"@pt.
+    ns1:MeatyPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:MeatyPizza skos:prefLabel "Meaty Pizza"@en.
+    ns1:MeatyPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:MeatyPizza skos:definition "Any pizza that has at least one meat topping"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:MeatTopping.
+    ns1:AmericanHot rdfs:subClassOf ns1:MeatyPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:MeatyPizza.
+    ns1:Medium a owl:Class.
+    ns1:Medium rdfs:label "Media"@pt.
+    ns1:Medium rdfs:label "Medium"@en.
+    ns1:Medium rdfs:subClassOf ns1:Spiciness.
+    ns1:Medium skos:prefLabel "Medium"@en.
+    ns1:Mild a owl:Class.
+    ns1:Mild rdfs:label "Mild"@en.
+    ns1:Mild rdfs:label "NaoPicante"@pt.
+    ns1:Mild rdfs:subClassOf ns1:Spiciness.
+    ns1:Mild skos:prefLabel "Mild"@en.
+    ns1:MixedSeafoodTopping a owl:Class.
+    ns1:MixedSeafoodTopping rdfs:label "CoberturaDeFrutosDoMarMistos"@pt.
+    ns1:MixedSeafoodTopping rdfs:label "MixedSeafoodTopping"@en.
+    ns1:MixedSeafoodTopping rdfs:subClassOf ns1:FishTopping.
+    ns1:MixedSeafoodTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:MixedSeafoodTopping skos:prefLabel "Mixed Seafood"@en.
+    ns1:MozzarellaTopping a owl:Class.
+    ns1:MozzarellaTopping rdfs:label "CoberturaDeMozzarella"@pt.
+    ns1:MozzarellaTopping rdfs:label "MozzarellaTopping"@en.
+    ns1:MozzarellaTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:MozzarellaTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:MozzarellaTopping skos:prefLabel "Mozzarella"@en.
+    ns1:AmericanHot owl:hasValue ns1:Italy.
+    ns1:Mushroom a owl:Class.
+    ns1:Mushroom rdfs:label "Cogumelo"@pt.
+    ns1:Mushroom rdfs:label "Mushroom"@en.
+    ns1:Mushroom rdfs:subClassOf ns1:NamedPizza.
+    ns1:Mushroom rdfs:subClassOf ns1:AmericanHot.
+    ns1:Mushroom skos:altLabel "Mushroom"@en.
+    ns1:Mushroom skos:altLabel "Mushroom Pizza"@en.
+    ns1:Mushroom skos:prefLabel "Mushroom"@en.
+    ns1:AmericanHot owl:unionOf (ns1:MozzarellaTopping ns1:MushroomTopping ns1:TomatoTopping).
+    ns1:MushroomTopping a owl:Class.
+    ns1:MushroomTopping rdfs:label "CoberturaDeCogumelo"@pt.
+    ns1:MushroomTopping rdfs:label "MushroomTopping"@en.
+    ns1:MushroomTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:MushroomTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:MushroomTopping skos:prefLabel "Mushroom"@en.
+    ns1:NamedPizza a owl:Class.
+    ns1:NamedPizza rdfs:label "PizzaComUmNome"@pt.
+    ns1:NamedPizza rdfs:comment "A pizza that can be found on a pizza menu"@en.
+    ns1:NamedPizza rdfs:subClassOf ns1:Pizza.
+    ns1:NamedPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:Napoletana a owl:Class.
+    ns1:Napoletana rdfs:label "Napoletana"@en.
+    ns1:Napoletana rdfs:label "Napoletana"@pt.
+    ns1:Napoletana rdfs:subClassOf ns1:NamedPizza.
+    ns1:Napoletana rdfs:subClassOf ns1:AmericanHot.
+    ns1:Napoletana skos:altLabel "Napoletana"@en.
+    ns1:Napoletana skos:altLabel "Napoletana Pizza"@en.
+    ns1:Napoletana skos:prefLabel "Napoletana"@en.
+    ns1:AmericanHot owl:unionOf (ns1:AnchoviesTopping ns1:CaperTopping ns1:MozzarellaTopping ns1:OliveTopping ns1:TomatoTopping).
+    ns1:NonVegetarianPizza a owl:Class.
+    ns1:NonVegetarianPizza rdfs:label "NonVegetarianPizza"@en.
+    ns1:NonVegetarianPizza rdfs:label "PizzaNaoVegetariana"@pt.
+    ns1:NonVegetarianPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:NonVegetarianPizza skos:prefLabel "Non Vegetarian Pizza"@en.
+    ns1:NonVegetarianPizza owl:disjointWith ns1:VegetarianPizza.
+    ns1:NonVegetarianPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:NonVegetarianPizza skos:definition "Any Pizza that is not a VegetarianPizza"@en.
+    ns1:AmericanHot owl:complementOf ns1:VegetarianPizza.
+    ns1:AmericanHot rdfs:subClassOf ns1:NonVegetarianPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:NonVegetarianPizza.
+    ns1:NutTopping a owl:Class.
+    ns1:NutTopping rdfs:label "CoberturaDeCastanha"@pt.
+    ns1:NutTopping rdfs:label "NutTopping"@en.
+    ns1:NutTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:NutTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:NutTopping skos:prefLabel "Nut"@en.
+    ns1:OliveTopping a owl:Class.
+    ns1:OliveTopping rdfs:label "CoberturaDeAzeitona"@pt.
+    ns1:OliveTopping rdfs:label "OliveTopping"@en.
+    ns1:OliveTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:OliveTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:OliveTopping skos:prefLabel "Olive"@en.
+    ns1:OnionTopping a owl:Class.
+    ns1:OnionTopping rdfs:label "CoberturaDeCebola"@pt.
+    ns1:OnionTopping rdfs:label "OnionTopping"@en.
+    ns1:OnionTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:OnionTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:OnionTopping skos:prefLabel "Onion"@en.
+    ns1:ParmaHamTopping a owl:Class.
+    ns1:ParmaHamTopping rdfs:label "CoberturaDePrezuntoParma"@pt.
+    ns1:ParmaHamTopping rdfs:label "ParmaHamTopping"@en.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:HamTopping.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:ParmaHamTopping skos:prefLabel "Parma Ham"@en.
+    ns1:Parmense a owl:Class.
+    ns1:Parmense rdfs:label "Parmense"@en.
+    ns1:Parmense rdfs:label "Parmense"@pt.
+    ns1:Parmense rdfs:subClassOf ns1:NamedPizza.
+    ns1:Parmense rdfs:subClassOf ns1:AmericanHot.
+    ns1:Parmense skos:altLabel "Parmese"@en.
+    ns1:Parmense skos:altLabel "Parmese Pizza"@en.
+    ns1:Parmense skos:prefLabel "Parmense"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:AsparagusTopping.
+    ns1:AmericanHot owl:unionOf (ns1:AsparagusTopping ns1:HamTopping ns1:MozzarellaTopping ns1:ParmesanTopping ns1:TomatoTopping).
+    ns1:ParmesanTopping a owl:Class.
+    ns1:ParmesanTopping rdfs:label "CoberturaDeParmesao"@pt.
+    ns1:ParmesanTopping rdfs:label "ParmezanTopping"@en.
+    ns1:ParmesanTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:ParmesanTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:ParmesanTopping skos:prefLabel "Parmezan"@en.
+    ns1:PeperonataTopping a owl:Class.
+    ns1:PeperonataTopping rdfs:label "CoberturaPeperonata"@pt.
+    ns1:PeperonataTopping rdfs:label "PeperonataTopping"@en.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:PepperTopping.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:PeperonataTopping skos:prefLabel "Peperonata"@en.
+    ns1:PeperoniSausageTopping a owl:Class.
+    ns1:PeperoniSausageTopping rdfs:label "CoberturaDeCalabreza"@pt.
+    ns1:PeperoniSausageTopping rdfs:label "PeperoniSausageTopping"@en.
+    ns1:PeperoniSausageTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:PeperoniSausageTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:PeperoniSausageTopping skos:prefLabel "Peperoni Sausage"@en.
+    ns1:PepperTopping a owl:Class.
+    ns1:PepperTopping rdfs:label "CoberturaDePimentao"@pt.
+    ns1:PepperTopping rdfs:label "PepperTopping"@en.
+    ns1:PepperTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:PepperTopping skos:prefLabel "Pepper"@en.
+    ns1:PetitPoisTopping a owl:Class.
+    ns1:PetitPoisTopping rdfs:label "CoberturaPetitPois"@pt.
+    ns1:PetitPoisTopping rdfs:label "PetitPoisTopping"@en.
+    ns1:PetitPoisTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:PetitPoisTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:PetitPoisTopping skos:prefLabel "Petit Pois"@en.
+    ns1:PineKernels a owl:Class.
+    ns1:PineKernels rdfs:label "CoberturaPineKernels"@pt.
+    ns1:PineKernels rdfs:label "PineKernelTopping"@en.
+    ns1:PineKernels rdfs:subClassOf ns1:NutTopping.
+    ns1:PineKernels rdfs:subClassOf ns1:AmericanHot.
+    ns1:PineKernels skos:prefLabel "Pine Kernel"@en.
+    ns1:Pizza a owl:Class.
+    ns1:Pizza rdfs:label "Pizza"@en.
+    ns1:Pizza rdfs:subClassOf ns1:Food.
+    ns1:Pizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:Pizza skos:prefLabel "Pizza"@en.
+    ns1:Pizza rdfs:seeAlso <https://en.wikipedia.org/wiki/Pizza>.
+    ns1:AmericanHot owl:onProperty ns1:hasBase.
+    ns1:AmericanHot owl:someValuesFrom ns1:PizzaBase.
+    ns1:PizzaBase a owl:Class.
+    ns1:PizzaBase rdfs:label "BaseDaPizza"@pt.
+    ns1:PizzaBase rdfs:label "PizzaBase"@en.
+    ns1:PizzaBase rdfs:subClassOf ns1:Food.
+    ns1:PizzaBase skos:prefLabel "Pizza Base"@en.
+    ns1:PizzaTopping a owl:Class.
+    ns1:PizzaTopping rdfs:label "CoberturaDaPizza"@pt.
+    ns1:PizzaTopping rdfs:label "PizzaTopping"@en.
+    ns1:PizzaTopping rdfs:subClassOf ns1:Food.
+    ns1:PizzaTopping skos:prefLabel "Pizza Topping"@en.
+    ns1:PolloAdAstra a owl:Class.
+    ns1:PolloAdAstra rdfs:label "PolloAdAstra"@en.
+    ns1:PolloAdAstra rdfs:label "PolloAdAstra"@pt.
+    ns1:PolloAdAstra rdfs:subClassOf ns1:NamedPizza.
+    ns1:PolloAdAstra rdfs:subClassOf ns1:AmericanHot.
+    ns1:PolloAdAstra skos:altLabel "Pollo Ad Astra"@en.
+    ns1:PolloAdAstra skos:altLabel "Pollo Ad Astra Pizza"@en.
+    ns1:PolloAdAstra skos:prefLabel "Pollo Ad Astra"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:CajunSpiceTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:ChickenTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:RedOnionTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:SweetPepperTopping.
+    ns1:AmericanHot owl:unionOf (ns1:CajunSpiceTopping ns1:ChickenTopping ns1:GarlicTopping ns1:MozzarellaTopping ns1:RedOnionTopping ns1:SweetPepperTopping ns1:TomatoTopping).
+    ns1:PrawnsTopping a owl:Class.
+    ns1:PrawnsTopping rdfs:label "CoberturaDeCamarao"@pt.
+    ns1:PrawnsTopping rdfs:label "PrawnsTopping"@en.
+    ns1:PrawnsTopping rdfs:subClassOf ns1:FishTopping.
+    ns1:PrawnsTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:PrawnsTopping skos:prefLabel "Prawns"@en.
+    ns1:PrinceCarlo a owl:Class.
+    ns1:PrinceCarlo rdfs:label "CoberturaPrinceCarlo"@pt.
+    ns1:PrinceCarlo rdfs:label "PrinceCarlo"@en.
+    ns1:PrinceCarlo rdfs:subClassOf ns1:NamedPizza.
+    ns1:PrinceCarlo rdfs:subClassOf ns1:AmericanHot.
+    ns1:PrinceCarlo skos:altLabel "Prince Carlo"@en.
+    ns1:PrinceCarlo skos:altLabel "Prince Carlo Pizza"@en.
+    ns1:PrinceCarlo skos:prefLabel "Prince Carlo"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:RosemaryTopping.
+    ns1:AmericanHot owl:unionOf (ns1:LeekTopping ns1:MozzarellaTopping ns1:ParmesanTopping ns1:RosemaryTopping ns1:TomatoTopping).
+    ns1:QuattroFormaggi a owl:Class.
+    ns1:QuattroFormaggi rdfs:label "QuatroQueijos"@pt.
+    ns1:QuattroFormaggi rdfs:label "QuattroFormaggi"@en.
+    ns1:QuattroFormaggi rdfs:subClassOf ns1:NamedPizza.
+    ns1:QuattroFormaggi rdfs:subClassOf ns1:AmericanHot.
+    ns1:QuattroFormaggi skos:altLabel "Quattro Formaggi"@en.
+    ns1:QuattroFormaggi skos:altLabel "Quattro Formaggi Pizza"@en.
+    ns1:QuattroFormaggi skos:prefLabel "Quattro Formaggi"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:FourCheesesTopping.
+    ns1:AmericanHot owl:unionOf (ns1:FourCheesesTopping ns1:TomatoTopping).
+    ns1:RealItalianPizza a owl:Class.
+    ns1:RealItalianPizza rdfs:label "PizzaItalianaReal"@pt.
+    ns1:RealItalianPizza rdfs:label "RealItalianPizza"@en.
+    ns1:RealItalianPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:RealItalianPizza skos:prefLabel "Real Italian Pizza"@en.
+    ns1:RealItalianPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:RealItalianPizza skos:definition "Any Pizza that has the country of origin, Italy.  RealItalianPizzas must also only have ThinAndCrispy bases."@en.
+    ns1:AmericanHot rdfs:subClassOf ns1:RealItalianPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:RealItalianPizza.
+    ns1:AmericanHot owl:allValuesFrom ns1:ThinAndCrispyBase.
+    ns1:RedOnionTopping a owl:Class.
+    ns1:RedOnionTopping rdfs:label "CoberturaDeCebolaVermelha"@pt.
+    ns1:RedOnionTopping rdfs:label "RedOnionTopping"@en.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:OnionTopping.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:RedOnionTopping skos:prefLabel "Red Onion"@en.
+    ns1:RocketTopping a owl:Class.
+    ns1:RocketTopping rdfs:label "CoberturaRocket"@pt.
+    ns1:RocketTopping rdfs:label "RocketTopping"@en.
+    ns1:RocketTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:RocketTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:RocketTopping skos:prefLabel "Rocket"@en.
+    ns1:Rosa a owl:Class.
+    ns1:Rosa rdfs:label "Rosa"@en.
+    ns1:Rosa rdfs:label "Rosa"@pt.
+    ns1:Rosa rdfs:subClassOf ns1:NamedPizza.
+    ns1:Rosa rdfs:subClassOf ns1:AmericanHot.
+    ns1:Rosa skos:altLabel "Rosa"@en.
+    ns1:Rosa skos:altLabel "Rosa Pizza"@en.
+    ns1:Rosa skos:prefLabel "Rosa"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:GorgonzolaTopping.
+    ns1:AmericanHot owl:unionOf (ns1:GorgonzolaTopping ns1:MozzarellaTopping ns1:TomatoTopping).
+    ns1:RosemaryTopping a owl:Class.
+    ns1:RosemaryTopping rdfs:label "CoberturaRosemary"@pt.
+    ns1:RosemaryTopping rdfs:label "RosemaryTopping"@en.
+    ns1:RosemaryTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:RosemaryTopping skos:prefLabel "Rosemary"@en.
+    ns1:SauceTopping a owl:Class.
+    ns1:SauceTopping rdfs:label "CoberturaEmMolho"@pt.
+    ns1:SauceTopping rdfs:label "SauceTopping"@en.
+    ns1:SauceTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:SauceTopping skos:prefLabel "Sauce"@en.
+    ns1:Siciliana a owl:Class.
+    ns1:Siciliana rdfs:label "Siciliana"@en.
+    ns1:Siciliana rdfs:label "Siciliana"@pt.
+    ns1:Siciliana rdfs:subClassOf ns1:NamedPizza.
+    ns1:Siciliana rdfs:subClassOf ns1:AmericanHot.
+    ns1:Siciliana skos:altLabel "Siciliana"@en.
+    ns1:Siciliana skos:altLabel "Siciliana Pizza"@en.
+    ns1:Siciliana skos:prefLabel "Siciliana"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:ArtichokeTopping.
+    ns1:AmericanHot owl:unionOf (ns1:AnchoviesTopping ns1:ArtichokeTopping ns1:GarlicTopping ns1:HamTopping ns1:MozzarellaTopping ns1:OliveTopping ns1:TomatoTopping).
+    ns1:SlicedTomatoTopping a owl:Class.
+    ns1:SlicedTomatoTopping rdfs:label "CoberturaDeTomateFatiado"@pt.
+    ns1:SlicedTomatoTopping rdfs:label "SlicedTomatoTopping"@en.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:TomatoTopping.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:SlicedTomatoTopping skos:prefLabel "Sliced Tomato"@en.
+    ns1:SlicedTomatoTopping owl:disjointWith ns1:SundriedTomatoTopping.
+    ns1:SloppyGiuseppe a owl:Class.
+    ns1:SloppyGiuseppe rdfs:label "SloppyGiuseppe"@en.
+    ns1:SloppyGiuseppe rdfs:label "SloppyGiuseppe"@pt.
+    ns1:SloppyGiuseppe rdfs:subClassOf ns1:NamedPizza.
+    ns1:SloppyGiuseppe rdfs:subClassOf ns1:AmericanHot.
+    ns1:SloppyGiuseppe skos:altLabel "Sloppy Giuseppe"@en.
+    ns1:SloppyGiuseppe skos:altLabel "Sloppy Giuseppe Pizza"@en.
+    ns1:SloppyGiuseppe skos:prefLabel "Sloppy Giuseppe"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:GreenPepperTopping.
+    ns1:AmericanHot owl:someValuesFrom ns1:HotSpicedBeefTopping.
+    ns1:AmericanHot owl:unionOf (ns1:GreenPepperTopping ns1:HotSpicedBeefTopping ns1:MozzarellaTopping ns1:OnionTopping ns1:TomatoTopping).
+    ns1:Soho a owl:Class.
+    ns1:Soho rdfs:label "Soho"@en.
+    ns1:Soho rdfs:label "Soho"@pt.
+    ns1:Soho rdfs:subClassOf ns1:NamedPizza.
+    ns1:Soho rdfs:subClassOf ns1:AmericanHot.
+    ns1:Soho skos:altLabel "Soho"@en.
+    ns1:Soho skos:altLabel "Soho Pizza"@en.
+    ns1:Soho skos:prefLabel "Soho"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:RocketTopping.
+    ns1:AmericanHot owl:unionOf (ns1:GarlicTopping ns1:MozzarellaTopping ns1:OliveTopping ns1:ParmesanTopping ns1:RocketTopping ns1:TomatoTopping).
+    ns1:Spiciness a owl:Class.
+    ns1:Spiciness rdfs:label "Spiciness"@en.
+    ns1:Spiciness rdfs:label "Tempero"@pt.
+    ns1:Spiciness rdfs:comment "A ValuePartition that describes only values from Hot, Medium or Mild. NB Subclasses can themselves be divided up into further partitions."@en.
+    ns1:Spiciness rdfs:subClassOf ns1:ValuePartition.
+    ns1:Spiciness rdfs:subClassOf ns1:AmericanHot.
+    ns1:Spiciness skos:prefLabel "Spiciness"@en.
+    ns1:Spiciness owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot owl:unionOf (ns1:Hot ns1:Medium ns1:Mild).
+    ns1:AmericanHot owl:equivalentClass ns1:Spiciness.
+    ns1:SpicyPizza a owl:Class.
+    ns1:SpicyPizza rdfs:label "PizzaTemperada"@pt.
+    ns1:SpicyPizza rdfs:label "SpicyPizza"@en.
+    ns1:SpicyPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:SpicyPizza skos:prefLabel "Spicy Pizza"@en.
+    ns1:SpicyPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:SpicyPizza skos:definition "Any pizza that has a spicy topping is a SpicyPizza"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:SpicyTopping.
+    ns1:AmericanHot owl:equivalentClass ns1:SpicyPizza.
+    ns1:SpicyPizzaEquivalent a owl:Class.
+    ns1:SpicyPizzaEquivalent rdfs:label "PizzaTemperadaEquivalente"@pt.
+    ns1:SpicyPizzaEquivalent rdfs:label "SpicyPizzaEquivalent"@en.
+    ns1:SpicyPizzaEquivalent rdfs:comment "An alternative definition for the SpicyPizza which does away with needing a definition of SpicyTopping and uses a slightly more complicated restriction: Pizzas that have at least one topping that is both a PizzaTopping and has spiciness hot are members of this class."@en.
+    ns1:SpicyPizzaEquivalent rdfs:subClassOf ns1:AmericanHot.
+    ns1:SpicyPizzaEquivalent skos:prefLabel "Spicy Pizza Equivalent"@en.
+    ns1:SpicyPizzaEquivalent owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot owl:someValuesFrom ns1:AmericanHot.
+    ns1:AmericanHot owl:intersectionOf (ns1:PizzaTopping ns1:AmericanHot).
+    ns1:AmericanHot rdfs:subClassOf ns1:SpicyPizzaEquivalent.
+    ns1:AmericanHot owl:equivalentClass ns1:SpicyPizzaEquivalent.
+    ns1:SpicyTopping a owl:Class.
+    ns1:SpicyTopping rdfs:label "CoberturaTemperada"@pt.
+    ns1:SpicyTopping rdfs:label "SpicyTopping"@en.
+    ns1:SpicyTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:SpicyTopping skos:prefLabel "Spicy"@en.
+    ns1:SpicyTopping owl:equivalentClass ns1:AmericanHot.
+    ns1:SpicyTopping skos:definition "Any pizza topping that has spiciness Hot"@en.
+    ns1:AmericanHot rdfs:subClassOf ns1:SpicyTopping.
+    ns1:AmericanHot owl:equivalentClass ns1:SpicyTopping.
+    ns1:SpinachTopping a owl:Class.
+    ns1:SpinachTopping rdfs:label "CoberturaDeEspinafre"@pt.
+    ns1:SpinachTopping rdfs:label "SpinachTopping"@en.
+    ns1:SpinachTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:SpinachTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:SpinachTopping skos:prefLabel "Spinach"@en.
+    ns1:SultanaTopping a owl:Class.
+    ns1:SultanaTopping rdfs:label "CoberturaSultana"@pt.
+    ns1:SultanaTopping rdfs:label "SultanaTopping"@en.
+    ns1:SultanaTopping rdfs:subClassOf ns1:FruitTopping.
+    ns1:SultanaTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:SultanaTopping skos:prefLabel "Sultana"@en.
+    ns1:SundriedTomatoTopping a owl:Class.
+    ns1:SundriedTomatoTopping rdfs:label "CoberturaDeTomateRessecadoAoSol"@pt.
+    ns1:SundriedTomatoTopping rdfs:label "SundriedTomatoTopping"@en.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:TomatoTopping.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:SundriedTomatoTopping skos:prefLabel "Sundried Tomato"@en.
+    ns1:SweetPepperTopping a owl:Class.
+    ns1:SweetPepperTopping rdfs:label "CoberturaDePimentaoDoce"@pt.
+    ns1:SweetPepperTopping rdfs:label "SweetPepperTopping"@en.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:PepperTopping.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:SweetPepperTopping skos:prefLabel "Sweet Pepper"@en.
+    ns1:ThinAndCrispyBase a owl:Class.
+    ns1:ThinAndCrispyBase rdfs:label "BaseFinaEQuebradica"@pt.
+    ns1:ThinAndCrispyBase rdfs:label "ThinAndCrispyBase"@en.
+    ns1:ThinAndCrispyBase rdfs:subClassOf ns1:PizzaBase.
+    ns1:ThinAndCrispyBase skos:prefLabel "Thin And Crispy Base"@en.
+    ns1:ThinAndCrispyPizza a owl:Class.
+    ns1:ThinAndCrispyPizza rdfs:label "ThinAndCrispyPizza"@en.
+    ns1:ThinAndCrispyPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:ThinAndCrispyPizza skos:prefLabel "Thin And Crispy Pizza"@en.
+    ns1:ThinAndCrispyPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot rdfs:subClassOf ns1:ThinAndCrispyPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:ThinAndCrispyPizza.
+    ns1:TobascoPepperSauce a owl:Class.
+    ns1:TobascoPepperSauce rdfs:label "MolhoTobascoPepper"@pt.
+    ns1:TobascoPepperSauce rdfs:label "TobascoPepperSauceTopping"@en.
+    ns1:TobascoPepperSauce rdfs:subClassOf ns1:SauceTopping.
+    ns1:TobascoPepperSauce rdfs:subClassOf ns1:AmericanHot.
+    ns1:TobascoPepperSauce skos:prefLabel "Tobasco Pepper Sauce"@en.
+    ns1:TomatoTopping a owl:Class.
+    ns1:TomatoTopping rdfs:label "CoberturaDeTomate"@pt.
+    ns1:TomatoTopping rdfs:label "TomatoTopping"@en.
+    ns1:TomatoTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:TomatoTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:TomatoTopping skos:prefLabel "Tomato"@en.
+    ns1:UnclosedPizza a owl:Class.
+    ns1:UnclosedPizza rdfs:label "PizzaAberta"@pt.
+    ns1:UnclosedPizza rdfs:label "UnclosedPizza"@en.
+    ns1:UnclosedPizza rdfs:comment "An unclosed Pizza cannot be inferred to be either a VegetarianPizza or a NonVegetarianPizza, because it might have other toppings.".
+    ns1:UnclosedPizza rdfs:subClassOf ns1:Pizza.
+    ns1:UnclosedPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:UnclosedPizza skos:prefLabel "Unclosed Pizza"@en.
+    ns1:ValuePartition a owl:Class.
+    ns1:ValuePartition rdfs:label "ValorDaParticao"@pt.
+    ns1:ValuePartition rdfs:label "ValuePartition"@en.
+    ns1:ValuePartition rdfs:comment "A ValuePartition is a pattern that describes a restricted set of classes from which a property can be associated. The parent class is used in restrictions, and the covering axiom means that only members of the subclasses may be used as values. The possible subclasses cannot be extended without updating the ValuePartition class.".
+    ns1:ValuePartition skos:prefLabel "Value Partition"@en.
+    ns1:VegetableTopping a owl:Class.
+    ns1:VegetableTopping rdfs:label "CoberturaDeVegetais"@pt.
+    ns1:VegetableTopping rdfs:label "VegetableTopping"@en.
+    ns1:VegetableTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:VegetableTopping skos:prefLabel "Vegetable Topping"@en.
+    ns1:VegetarianPizza a owl:Class.
+    ns1:VegetarianPizza rdfs:label "PizzaVegetariana"@pt.
+    ns1:VegetarianPizza rdfs:label "VegetarianPizza"@en.
+    ns1:VegetarianPizza rdfs:subClassOf ns1:AmericanHot.
+    ns1:VegetarianPizza skos:prefLabel "Vegetarian Pizza"@en.
+    ns1:VegetarianPizza owl:equivalentClass ns1:AmericanHot.
+    ns1:VegetarianPizza skos:definition "Any pizza that does not have fish topping and does not have meat topping is a VegetarianPizza. Note that instances of this class do not need to have any toppings at all."@en.
+    ns1:AmericanHot owl:complementOf ns1:AmericanHot.
+    ns1:AmericanHot owl:someValuesFrom ns1:FishTopping.
+    ns1:AmericanHot rdfs:subClassOf ns1:VegetarianPizza.
+    ns1:AmericanHot owl:equivalentClass ns1:VegetarianPizza.
+    ns1:AmericanHot owl:intersectionOf (ns1:Pizza ns1:AmericanHot ns1:AmericanHot).
+    ns1:VegetarianPizzaEquivalent1 a owl:Class.
+    ns1:VegetarianPizzaEquivalent1 rdfs:label "PizzaVegetarianaEquivalente1"@pt.
+    ns1:VegetarianPizzaEquivalent1 rdfs:label "VegetarianPizza1"@en.
+    ns1:VegetarianPizzaEquivalent1 rdfs:comment "Any pizza that only has vegetarian toppings or no toppings is a VegetarianPizzaEquiv1. Should be inferred to be equivalent to VegetarianPizzaEquiv2.  Not equivalent to VegetarianPizza because PizzaTopping is not covering"@en.
+    ns1:VegetarianPizzaEquivalent1 rdfs:subClassOf ns1:AmericanHot.
+    ns1:VegetarianPizzaEquivalent1 skos:prefLabel "Vegetarian Pizza1"@en.
+    ns1:VegetarianPizzaEquivalent1 owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot owl:allValuesFrom ns1:VegetarianTopping.
+    ns1:AmericanHot rdfs:subClassOf ns1:VegetarianPizzaEquivalent1.
+    ns1:AmericanHot owl:equivalentClass ns1:VegetarianPizzaEquivalent1.
+    ns1:VegetarianPizzaEquivalent2 a owl:Class.
+    ns1:VegetarianPizzaEquivalent2 rdfs:label "PizzaVegetarianaEquivalente2"@pt.
+    ns1:VegetarianPizzaEquivalent2 rdfs:label "VegetarianPizza2"@en.
+    ns1:VegetarianPizzaEquivalent2 rdfs:comment "An alternative to VegetarianPizzaEquiv1 that does not require a definition of VegetarianTopping. Perhaps more difficult to maintain. Not equivalent to VegetarianPizza"@en.
+    ns1:VegetarianPizzaEquivalent2 rdfs:subClassOf ns1:AmericanHot.
+    ns1:VegetarianPizzaEquivalent2 skos:prefLabel "Vegetarian Pizza2"@en.
+    ns1:VegetarianPizzaEquivalent2 owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot owl:unionOf (ns1:CheeseTopping ns1:FruitTopping ns1:HerbSpiceTopping ns1:NutTopping ns1:SauceTopping ns1:VegetableTopping).
+    ns1:AmericanHot rdfs:subClassOf ns1:VegetarianPizzaEquivalent2.
+    ns1:AmericanHot owl:equivalentClass ns1:VegetarianPizzaEquivalent2.
+    ns1:VegetarianTopping a owl:Class.
+    ns1:VegetarianTopping rdfs:label "CoberturaVegetariana"@pt.
+    ns1:VegetarianTopping rdfs:label "VegetarianTopping"@en.
+    ns1:VegetarianTopping rdfs:comment "An example of a covering axiom. VegetarianTopping is equivalent to the union of all toppings in the given axiom. VegetarianToppings can only be Cheese or Vegetable or....etc."@en.
+    ns1:VegetarianTopping rdfs:subClassOf ns1:AmericanHot.
+    ns1:VegetarianTopping skos:prefLabel "Vegetarian Topping"@en.
+    ns1:VegetarianTopping owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot rdfs:subClassOf ns1:VegetarianTopping.
+    ns1:AmericanHot owl:equivalentClass ns1:VegetarianTopping.
+    ns1:Veneziana a owl:Class.
+    ns1:Veneziana rdfs:label "Veneziana"@en.
+    ns1:Veneziana rdfs:label "Veneziana"@pt.
+    ns1:Veneziana rdfs:subClassOf ns1:NamedPizza.
+    ns1:Veneziana rdfs:subClassOf ns1:AmericanHot.
+    ns1:Veneziana skos:altLabel "Veneziana"@en.
+    ns1:Veneziana skos:altLabel "Veneziana Pizza"@en.
+    ns1:Veneziana skos:prefLabel "Veneziana"@en.
+    ns1:AmericanHot owl:someValuesFrom ns1:PineKernels.
+    ns1:AmericanHot owl:someValuesFrom ns1:SultanaTopping.
+    ns1:AmericanHot owl:unionOf (ns1:CaperTopping ns1:MozzarellaTopping ns1:OliveTopping ns1:OnionTopping ns1:PineKernels ns1:SultanaTopping ns1:TomatoTopping).
+    ns1:America a owl:NamedIndividual.
+    ns1:America a ns1:Country.
+    ns1:America a owl:Thing.
+    ns1:America a ns1:AmericanHot.
+    ns1:England a owl:NamedIndividual.
+    ns1:England a ns1:Country.
+    ns1:England a owl:Thing.
+    ns1:England a ns1:AmericanHot.
+    ns1:France a owl:NamedIndividual.
+    ns1:France a ns1:Country.
+    ns1:France a owl:Thing.
+    ns1:France a ns1:AmericanHot.
+    ns1:Germany a owl:NamedIndividual.
+    ns1:Germany a ns1:Country.
+    ns1:Germany a owl:Thing.
+    ns1:Germany a ns1:AmericanHot.
+    ns1:Italy a owl:NamedIndividual.
+    ns1:Italy a ns1:Country.
+    ns1:Italy a owl:Thing.
+    ns1:Italy a ns1:AmericanHot.
+    ns1:AmericanHot a owl:AllDisjointClasses.
+    ns1:AmericanHot owl:members (ns1:American ns1:AmericanHot ns1:Cajun ns1:Capricciosa ns1:Caprina ns1:Fiorentina ns1:FourSeasons ns1:FruttiDiMare ns1:Giardiniera ns1:LaReine ns1:Margherita ns1:Mushroom ns1:Napoletana ns1:Parmense ns1:PolloAdAstra ns1:PrinceCarlo ns1:QuattroFormaggi ns1:Rosa ns1:Siciliana ns1:SloppyGiuseppe ns1:Soho ns1:UnclosedPizza ns1:Veneziana).
+    ns1:AmericanHot owl:members (ns1:AnchoviesTopping ns1:MixedSeafoodTopping ns1:PrawnsTopping).
+    ns1:AmericanHot owl:members (ns1:ArtichokeTopping ns1:AsparagusTopping ns1:CaperTopping ns1:GarlicTopping ns1:LeekTopping ns1:MushroomTopping ns1:OliveTopping ns1:OnionTopping ns1:PepperTopping ns1:PetitPoisTopping ns1:RocketTopping ns1:SpinachTopping ns1:TomatoTopping).
+    ns1:AmericanHot owl:members (ns1:CheeseTopping ns1:FishTopping ns1:FruitTopping ns1:HerbSpiceTopping ns1:MeatTopping ns1:NutTopping ns1:SauceTopping ns1:VegetableTopping).
+    ns1:AmericanHot owl:members (ns1:ChickenTopping ns1:HamTopping ns1:HotSpicedBeefTopping ns1:PeperoniSausageTopping).
+    ns1:AmericanHot owl:members (ns1:FourCheesesTopping ns1:GoatsCheeseTopping ns1:GorgonzolaTopping ns1:MozzarellaTopping ns1:ParmesanTopping).
+    ns1:AmericanHot owl:members (ns1:GreenPepperTopping ns1:JalapenoPepperTopping ns1:PeperonataTopping ns1:SweetPepperTopping).
+    ns1:AmericanHot owl:members (ns1:Hot ns1:Medium ns1:Mild).
+    ns1:AmericanHot owl:members (ns1:IceCream ns1:Pizza ns1:PizzaBase ns1:PizzaTopping).
+    ns1:AmericanHot a owl:AllDifferent.
+    ns1:AmericanHot owl:distinctMembers (ns1:America ns1:England ns1:France ns1:Germany ns1:Italy).
+    ns1:Hot rdfs:subClassOf ns1:AmericanHot.
+    ns1:Medium rdfs:subClassOf ns1:AmericanHot.
+    ns1:Mild rdfs:subClassOf ns1:AmericanHot.
+    ns1:AmericanHot rdfs:subClassOf ns1:ValuePartition.
+}.
+"triples in sin3 result but not in spin result" aux:number 846 .
+"in spin but not in sin3" aux:result {
+    owl:Nothing owl:equivalentClass ns1:NonVegetarianPizza.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:Napoletana.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:MeatTopping.
+    owl:Nothing owl:equivalentClass ns1:InterestingPizza.
+    ns1:MeatTopping rdfs:subClassOf ns1:GarlicTopping.
+    ns1:MeatTopping owl:equivalentClass ns1:GarlicTopping.
+    owl:Nothing owl:equivalentClass ns1:CheeseyPizza.
+    ns1:NonVegetarianPizza rdfs:subClassOf owl:Nothing.
+    ns1:GarlicTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:GarlicTopping owl:equivalentClass ns1:MeatTopping.
+    ns1:CheeseyPizza rdfs:subClassOf owl:Nothing.
+    ns1:OnionTopping rdfs:subClassOf ns1:GarlicTopping.
+    ns1:OnionTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:SultanaTopping rdfs:subClassOf ns1:GarlicTopping.
+    ns1:SultanaTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:GarlicTopping.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:InterestingPizza rdfs:subClassOf owl:Nothing.
+    ns1:RocketTopping rdfs:subClassOf ns1:GarlicTopping.
+    ns1:RocketTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:Italy a owl:Restriction.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Mild.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Medium.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:TomatoTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:RocketTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:ParmesanTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:MozzarellaTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PeperoniSausageTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PeperonataTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:OliveTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SundriedTomatoTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PrawnsTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:MixedSeafoodTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:MushroomTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Mushroom.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Soho.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Siciliana.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PolloAdAstra.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Giardiniera.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Fiorentina.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:UnclosedPizza.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:LaReine.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:QuattroFormaggi.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Parmense.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PrinceCarlo.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Napoletana.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:FruttiDiMare.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:FourSeasons.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Margherita.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Veneziana.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SloppyGiuseppe.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Rosa.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:VegetableTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SauceTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:NutTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:HerbSpiceTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> <http://www.co-ode.org/ontologies/pizza>.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Pizza.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:RealItalianPizza.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Italy.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Germany.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SlicedTomatoTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PetitPoisTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> owl:Nothing.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PizzaTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Hot.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SpinachTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PepperTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:OnionTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:CaperTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:AnchoviesTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SweetPepperTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:JalapenoPepperTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:MeatTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:RedOnionTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:GarlicTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:ChickenTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:CajunSpiceTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:DomainConcept.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:SultanaTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PineKernels.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:RosemaryTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:LeekTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:PizzaBase.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Capricciosa.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Caprina.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:GorgonzolaTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:GoatsCheeseTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:FruitTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:FishTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:TobascoPepperSauce.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:CheeseTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:HotGreenPepperTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:HamTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:HotSpicedBeefTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:France.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:England.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:America.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:American.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:FourCheesesTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:AmericanHot.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:ArtichokeTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:Cajun.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:GreenPepperTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:AsparagusTopping.
+    <http://www.co-ode.org/ontologies/pizza> <http://niche.cs.dal.ca/owl/list#hasMember> ns1:IceCream.
+}.
+"in spin but not in sin3" aux:number 106 .
+"common triples" aux:result {
+    ns1:AmericanHot rdfs:subClassOf ns1:Pizza.
+    ns1:AmericanHot rdfs:subClassOf ns1:DomainConcept.
+    ns1:AmericanHot rdfs:subClassOf owl:Thing.
+    ns1:AmericanHot rdfs:subClassOf ns1:AmericanHot.
+    ns1:AmericanHot rdfs:subClassOf ns1:Food.
+    ns1:AmericanHot owl:equivalentClass ns1:AmericanHot.
+    ns1:AmericanHot owl:sameAs ns1:AmericanHot.
+    owl:allValuesFrom owl:sameAs owl:allValuesFrom.
+    owl:disjointWith owl:sameAs owl:disjointWith.
+    ns1:HamTopping rdfs:subClassOf ns1:Food.
+    ns1:HamTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:HamTopping rdfs:subClassOf ns1:HamTopping.
+    ns1:HamTopping rdfs:subClassOf owl:Thing.
+    ns1:HamTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:HamTopping owl:equivalentClass ns1:HamTopping.
+    ns1:HamTopping owl:sameAs ns1:HamTopping.
+    ns1:FruitTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:FruitTopping rdfs:subClassOf ns1:FruitTopping.
+    ns1:FruitTopping rdfs:subClassOf owl:Thing.
+    ns1:FruitTopping rdfs:subClassOf ns1:Food.
+    ns1:FruitTopping owl:equivalentClass ns1:FruitTopping.
+    ns1:FruitTopping owl:sameAs ns1:FruitTopping.
+    owl:equivalentProperty owl:sameAs owl:equivalentProperty.
+    ns1:RealItalianPizza rdfs:subClassOf owl:Thing.
+    ns1:RealItalianPizza rdfs:subClassOf ns1:RealItalianPizza.
+    ns1:RealItalianPizza owl:equivalentClass ns1:RealItalianPizza.
+    ns1:RealItalianPizza owl:sameAs ns1:RealItalianPizza.
+    ns1:MeatTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:MeatTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:MeatTopping rdfs:subClassOf owl:Thing.
+    ns1:MeatTopping rdfs:subClassOf ns1:Food.
+    ns1:MeatTopping owl:equivalentClass ns1:MeatTopping.
+    ns1:MeatTopping owl:sameAs ns1:MeatTopping.
+    ns1:isToppingOf rdfs:subPropertyOf ns1:isToppingOf.
+    ns1:isToppingOf owl:equivalentProperty ns1:isToppingOf.
+    ns1:isToppingOf owl:sameAs ns1:isToppingOf.
+    rdfs:domain owl:sameAs rdfs:domain.
+    ns1:NamedPizza rdfs:subClassOf ns1:DomainConcept.
+    ns1:NamedPizza rdfs:subClassOf ns1:NamedPizza.
+    ns1:NamedPizza rdfs:subClassOf owl:Thing.
+    ns1:NamedPizza rdfs:subClassOf ns1:Food.
+    ns1:NamedPizza owl:equivalentClass ns1:NamedPizza.
+    ns1:NamedPizza owl:sameAs ns1:NamedPizza.
+    ns1:GarlicTopping rdfs:subClassOf ns1:Food.
+    ns1:GarlicTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:GarlicTopping rdfs:subClassOf ns1:GarlicTopping.
+    ns1:GarlicTopping rdfs:subClassOf owl:Thing.
+    ns1:GarlicTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:GarlicTopping owl:equivalentClass ns1:GarlicTopping.
+    ns1:GarlicTopping owl:sameAs ns1:GarlicTopping.
+    ns1:DomainConcept rdfs:subClassOf ns1:DomainConcept.
+    ns1:DomainConcept rdfs:subClassOf owl:Thing.
+    ns1:DomainConcept owl:equivalentClass ns1:DomainConcept.
+    ns1:DomainConcept owl:sameAs ns1:DomainConcept.
+    ns1:LaReine rdfs:subClassOf owl:Thing.
+    ns1:LaReine rdfs:subClassOf ns1:Food.
+    ns1:LaReine rdfs:subClassOf ns1:Pizza.
+    ns1:LaReine rdfs:subClassOf ns1:LaReine.
+    ns1:LaReine rdfs:subClassOf ns1:DomainConcept.
+    ns1:LaReine owl:equivalentClass ns1:LaReine.
+    ns1:LaReine owl:sameAs ns1:LaReine.
+    ns1:OliveTopping rdfs:subClassOf ns1:OliveTopping.
+    ns1:OliveTopping rdfs:subClassOf owl:Thing.
+    ns1:OliveTopping rdfs:subClassOf ns1:Food.
+    ns1:OliveTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:OliveTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:OliveTopping owl:equivalentClass ns1:OliveTopping.
+    ns1:OliveTopping owl:sameAs ns1:OliveTopping.
+    ns1:PizzaBase rdfs:subClassOf ns1:PizzaBase.
+    ns1:PizzaBase rdfs:subClassOf owl:Thing.
+    ns1:PizzaBase rdfs:subClassOf ns1:DomainConcept.
+    ns1:PizzaBase owl:equivalentClass ns1:PizzaBase.
+    ns1:PizzaBase owl:sameAs ns1:PizzaBase.
+    owl:AnnotationProperty owl:sameAs owl:AnnotationProperty.
+    ns1:AnchoviesTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:AnchoviesTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:AnchoviesTopping rdfs:subClassOf ns1:Food.
+    ns1:AnchoviesTopping rdfs:subClassOf owl:Thing.
+    ns1:AnchoviesTopping rdfs:subClassOf ns1:AnchoviesTopping.
+    ns1:AnchoviesTopping owl:equivalentClass ns1:AnchoviesTopping.
+    ns1:AnchoviesTopping owl:sameAs ns1:AnchoviesTopping.
+    ns1:France owl:sameAs ns1:France.
+    owl:Class owl:sameAs owl:Class.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:Food.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:SlicedTomatoTopping.
+    ns1:SlicedTomatoTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:SlicedTomatoTopping rdfs:subClassOf owl:Thing.
+    ns1:SlicedTomatoTopping owl:equivalentClass ns1:SlicedTomatoTopping.
+    ns1:SlicedTomatoTopping owl:sameAs ns1:SlicedTomatoTopping.
+    owl:AllDisjointClasses owl:sameAs owl:AllDisjointClasses.
+    owl:equivalentClass owl:sameAs owl:equivalentClass.
+    ns1:Rosa rdfs:subClassOf owl:Thing.
+    ns1:Rosa rdfs:subClassOf ns1:Rosa.
+    ns1:Rosa rdfs:subClassOf ns1:Pizza.
+    ns1:Rosa rdfs:subClassOf ns1:DomainConcept.
+    ns1:Rosa rdfs:subClassOf ns1:Food.
+    ns1:Rosa owl:equivalentClass ns1:Rosa.
+    ns1:Rosa owl:sameAs ns1:Rosa.
+    ns1:Napoletana rdfs:subClassOf owl:Thing.
+    ns1:Napoletana rdfs:subClassOf ns1:Pizza.
+    ns1:Napoletana rdfs:subClassOf ns1:Napoletana.
+    ns1:Napoletana rdfs:subClassOf ns1:DomainConcept.
+    ns1:Napoletana rdfs:subClassOf ns1:Food.
+    ns1:Napoletana owl:equivalentClass ns1:Napoletana.
+    ns1:Napoletana owl:sameAs ns1:Napoletana.
+    ns1:SauceTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:SauceTopping rdfs:subClassOf ns1:SauceTopping.
+    ns1:SauceTopping rdfs:subClassOf owl:Thing.
+    ns1:SauceTopping rdfs:subClassOf ns1:Food.
+    ns1:SauceTopping owl:equivalentClass ns1:SauceTopping.
+    ns1:SauceTopping owl:sameAs ns1:SauceTopping.
+    ns1:UnclosedPizza rdfs:subClassOf owl:Thing.
+    ns1:UnclosedPizza rdfs:subClassOf ns1:DomainConcept.
+    ns1:UnclosedPizza rdfs:subClassOf ns1:Food.
+    ns1:UnclosedPizza rdfs:subClassOf ns1:UnclosedPizza.
+    ns1:UnclosedPizza owl:equivalentClass ns1:UnclosedPizza.
+    ns1:UnclosedPizza owl:sameAs ns1:UnclosedPizza.
+    ns1:SpicyPizzaEquivalent rdfs:subClassOf owl:Thing.
+    ns1:SpicyPizzaEquivalent rdfs:subClassOf ns1:SpicyPizzaEquivalent.
+    ns1:SpicyPizzaEquivalent owl:equivalentClass ns1:SpicyPizzaEquivalent.
+    ns1:SpicyPizzaEquivalent owl:sameAs ns1:SpicyPizzaEquivalent.
+    ns1:Siciliana rdfs:subClassOf ns1:Food.
+    ns1:Siciliana rdfs:subClassOf ns1:Siciliana.
+    ns1:Siciliana rdfs:subClassOf ns1:DomainConcept.
+    ns1:Siciliana rdfs:subClassOf ns1:Pizza.
+    ns1:Siciliana rdfs:subClassOf owl:Thing.
+    ns1:Siciliana owl:equivalentClass ns1:Siciliana.
+    ns1:Siciliana owl:sameAs ns1:Siciliana.
+    rdf:type owl:sameAs rdf:type.
+    ns1:ParmesanTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:ParmesanTopping rdfs:subClassOf ns1:Food.
+    ns1:ParmesanTopping rdfs:subClassOf owl:Thing.
+    ns1:ParmesanTopping rdfs:subClassOf ns1:ParmesanTopping.
+    ns1:ParmesanTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:ParmesanTopping owl:equivalentClass ns1:ParmesanTopping.
+    ns1:ParmesanTopping owl:sameAs ns1:ParmesanTopping.
+    ns1:CaperTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:CaperTopping rdfs:subClassOf ns1:Food.
+    ns1:CaperTopping rdfs:subClassOf owl:Thing.
+    ns1:CaperTopping rdfs:subClassOf ns1:CaperTopping.
+    ns1:CaperTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:CaperTopping owl:equivalentClass ns1:CaperTopping.
+    ns1:CaperTopping owl:sameAs ns1:CaperTopping.
+    owl:versionIRI owl:sameAs owl:versionIRI.
+    ns1:CheeseTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:CheeseTopping rdfs:subClassOf ns1:CheeseTopping.
+    ns1:CheeseTopping rdfs:subClassOf owl:Thing.
+    ns1:CheeseTopping rdfs:subClassOf ns1:Food.
+    ns1:CheeseTopping owl:equivalentClass ns1:CheeseTopping.
+    ns1:CheeseTopping owl:sameAs ns1:CheeseTopping.
+    ns1:ArtichokeTopping rdfs:subClassOf ns1:Food.
+    ns1:ArtichokeTopping rdfs:subClassOf owl:Thing.
+    ns1:ArtichokeTopping rdfs:subClassOf ns1:ArtichokeTopping.
+    ns1:ArtichokeTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:ArtichokeTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:ArtichokeTopping owl:equivalentClass ns1:ArtichokeTopping.
+    ns1:ArtichokeTopping owl:sameAs ns1:ArtichokeTopping.
+    ns1:ThinAndCrispyPizza rdfs:subClassOf owl:Thing.
+    ns1:ThinAndCrispyPizza rdfs:subClassOf ns1:ThinAndCrispyPizza.
+    ns1:ThinAndCrispyPizza owl:equivalentClass ns1:ThinAndCrispyPizza.
+    ns1:ThinAndCrispyPizza owl:sameAs ns1:ThinAndCrispyPizza.
+    ns1:VegetarianPizzaEquivalent1 rdfs:subClassOf owl:Thing.
+    ns1:VegetarianPizzaEquivalent1 rdfs:subClassOf ns1:VegetarianPizzaEquivalent1.
+    ns1:VegetarianPizzaEquivalent1 owl:equivalentClass ns1:VegetarianPizzaEquivalent1.
+    ns1:VegetarianPizzaEquivalent1 owl:sameAs ns1:VegetarianPizzaEquivalent1.
+    owl:unionOf owl:sameAs owl:unionOf.
+    rdfs:seeAlso owl:sameAs rdfs:seeAlso.
+    ns1:VegetarianPizza rdfs:subClassOf owl:Thing.
+    ns1:VegetarianPizza rdfs:subClassOf ns1:VegetarianPizza.
+    ns1:VegetarianPizza owl:equivalentClass ns1:VegetarianPizza.
+    ns1:VegetarianPizza owl:sameAs ns1:VegetarianPizza.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:SweetPepperTopping.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:SweetPepperTopping rdfs:subClassOf owl:Thing.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:SweetPepperTopping rdfs:subClassOf ns1:Food.
+    ns1:SweetPepperTopping owl:equivalentClass ns1:SweetPepperTopping.
+    ns1:SweetPepperTopping owl:sameAs ns1:SweetPepperTopping.
+    ns1:hasBase rdfs:domain owl:Thing.
+    ns1:hasBase rdfs:domain ns1:DomainConcept.
+    ns1:hasBase rdfs:domain ns1:Food.
+    ns1:hasBase rdfs:range owl:Thing.
+    ns1:hasBase rdfs:range ns1:Food.
+    ns1:hasBase rdfs:range ns1:DomainConcept.
+    ns1:hasBase rdfs:subPropertyOf ns1:hasBase.
+    ns1:hasBase owl:equivalentProperty ns1:hasBase.
+    ns1:hasBase owl:sameAs ns1:hasBase.
+    <http://www.co-ode.org/ontologies/pizza> owl:sameAs <http://www.co-ode.org/ontologies/pizza>.
+    ns1:PineKernels rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PineKernels rdfs:subClassOf ns1:DomainConcept.
+    ns1:PineKernels rdfs:subClassOf owl:Thing.
+    ns1:PineKernels rdfs:subClassOf ns1:PineKernels.
+    ns1:PineKernels rdfs:subClassOf ns1:Food.
+    ns1:PineKernels owl:equivalentClass ns1:PineKernels.
+    ns1:PineKernels owl:sameAs ns1:PineKernels.
+    ns1:PolloAdAstra rdfs:subClassOf ns1:Food.
+    ns1:PolloAdAstra rdfs:subClassOf ns1:Pizza.
+    ns1:PolloAdAstra rdfs:subClassOf ns1:PolloAdAstra.
+    ns1:PolloAdAstra rdfs:subClassOf owl:Thing.
+    ns1:PolloAdAstra rdfs:subClassOf ns1:DomainConcept.
+    ns1:PolloAdAstra owl:equivalentClass ns1:PolloAdAstra.
+    ns1:PolloAdAstra owl:sameAs ns1:PolloAdAstra.
+    ns1:VegetarianTopping rdfs:subClassOf owl:Thing.
+    ns1:VegetarianTopping rdfs:subClassOf ns1:VegetarianTopping.
+    ns1:VegetarianTopping owl:equivalentClass ns1:VegetarianTopping.
+    ns1:VegetarianTopping owl:sameAs ns1:VegetarianTopping.
+    rdfs:subPropertyOf owl:sameAs rdfs:subPropertyOf.
+    ns1:PeperoniSausageTopping rdfs:subClassOf owl:Thing.
+    ns1:PeperoniSausageTopping rdfs:subClassOf ns1:Food.
+    ns1:PeperoniSausageTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:PeperoniSausageTopping rdfs:subClassOf ns1:PeperoniSausageTopping.
+    ns1:PeperoniSausageTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PeperoniSausageTopping owl:equivalentClass ns1:PeperoniSausageTopping.
+    ns1:PeperoniSausageTopping owl:sameAs ns1:PeperoniSausageTopping.
+    ns1:MeatyPizza rdfs:subClassOf owl:Thing.
+    ns1:MeatyPizza rdfs:subClassOf ns1:MeatyPizza.
+    ns1:MeatyPizza owl:equivalentClass ns1:MeatyPizza.
+    ns1:MeatyPizza owl:sameAs ns1:MeatyPizza.
+    ns1:Pizza rdfs:subClassOf ns1:Pizza.
+    ns1:Pizza rdfs:subClassOf owl:Thing.
+    ns1:Pizza rdfs:subClassOf ns1:DomainConcept.
+    ns1:Pizza owl:equivalentClass ns1:Pizza.
+    ns1:Pizza owl:sameAs ns1:Pizza.
+    ns1:American rdfs:subClassOf ns1:DomainConcept.
+    ns1:American rdfs:subClassOf owl:Thing.
+    ns1:American rdfs:subClassOf ns1:Food.
+    ns1:American rdfs:subClassOf ns1:Pizza.
+    ns1:American rdfs:subClassOf ns1:American.
+    ns1:American owl:equivalentClass ns1:American.
+    ns1:American owl:sameAs ns1:American.
+    ns1:GoatsCheeseTopping rdfs:subClassOf ns1:GoatsCheeseTopping.
+    ns1:GoatsCheeseTopping rdfs:subClassOf owl:Thing.
+    ns1:GoatsCheeseTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:GoatsCheeseTopping rdfs:subClassOf ns1:Food.
+    ns1:GoatsCheeseTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:GoatsCheeseTopping owl:equivalentClass ns1:GoatsCheeseTopping.
+    ns1:GoatsCheeseTopping owl:sameAs ns1:GoatsCheeseTopping.
+    owl:Ontology owl:sameAs owl:Ontology.
+    owl:Nothing rdfs:subClassOf ns1:SpinachTopping.
+    owl:Nothing rdfs:subClassOf ns1:PineKernels.
+    owl:Nothing rdfs:subClassOf ns1:RosemaryTopping.
+    owl:Nothing rdfs:subClassOf owl:Thing.
+    owl:Nothing rdfs:subClassOf ns1:SpicyTopping.
+    owl:Nothing rdfs:subClassOf ns1:PeperonataTopping.
+    owl:Nothing rdfs:subClassOf ns1:VegetableTopping.
+    owl:Nothing rdfs:subClassOf ns1:SlicedTomatoTopping.
+    owl:Nothing rdfs:subClassOf ns1:SundriedTomatoTopping.
+    owl:Nothing rdfs:subClassOf ns1:DeepPanBase.
+    owl:Nothing rdfs:subClassOf ns1:Medium.
+    owl:Nothing rdfs:subClassOf ns1:GorgonzolaTopping.
+    owl:Nothing rdfs:subClassOf ns1:MeatTopping.
+    owl:Nothing rdfs:subClassOf ns1:Caprina.
+    owl:Nothing rdfs:subClassOf ns1:SpicyPizza.
+    owl:Nothing rdfs:subClassOf ns1:MeatyPizza.
+    owl:Nothing rdfs:subClassOf ns1:Veneziana.
+    owl:Nothing rdfs:subClassOf ns1:HamTopping.
+    owl:Nothing rdfs:subClassOf ns1:QuattroFormaggi.
+    owl:Nothing rdfs:subClassOf ns1:LaReine.
+    owl:Nothing rdfs:subClassOf ns1:Mushroom.
+    owl:Nothing rdfs:subClassOf ns1:Mild.
+    owl:Nothing rdfs:subClassOf ns1:HotGreenPepperTopping.
+    owl:Nothing rdfs:subClassOf ns1:ValuePartition.
+    owl:Nothing rdfs:subClassOf ns1:ArtichokeTopping.
+    owl:Nothing rdfs:subClassOf ns1:VegetarianTopping.
+    owl:Nothing rdfs:subClassOf ns1:FruttiDiMare.
+    owl:Nothing rdfs:subClassOf ns1:NonVegetarianPizza.
+    owl:Nothing rdfs:subClassOf ns1:Fiorentina.
+    owl:Nothing rdfs:subClassOf ns1:GoatsCheeseTopping.
+    owl:Nothing rdfs:subClassOf ns1:OnionTopping.
+    owl:Nothing rdfs:subClassOf ns1:Capricciosa.
+    owl:Nothing rdfs:subClassOf ns1:RocketTopping.
+    owl:Nothing rdfs:subClassOf ns1:MozzarellaTopping.
+    owl:Nothing rdfs:subClassOf ns1:Giardiniera.
+    owl:Nothing rdfs:subClassOf ns1:AnchoviesTopping.
+    owl:Nothing rdfs:subClassOf ns1:CheeseyPizza.
+    owl:Nothing rdfs:subClassOf ns1:FruitTopping.
+    owl:Nothing rdfs:subClassOf ns1:IceCream.
+    owl:Nothing rdfs:subClassOf ns1:Napoletana.
+    owl:Nothing rdfs:subClassOf ns1:Pizza.
+    owl:Nothing rdfs:subClassOf ns1:GarlicTopping.
+    owl:Nothing rdfs:subClassOf ns1:TomatoTopping.
+    owl:Nothing rdfs:subClassOf ns1:AmericanHot.
+    owl:Nothing rdfs:subClassOf ns1:Food.
+    owl:Nothing rdfs:subClassOf ns1:PepperTopping.
+    owl:Nothing rdfs:subClassOf ns1:PizzaBase.
+    owl:Nothing rdfs:subClassOf ns1:RealItalianPizza.
+    owl:Nothing rdfs:subClassOf ns1:Soho.
+    owl:Nothing rdfs:subClassOf ns1:SpicyPizzaEquivalent.
+    owl:Nothing rdfs:subClassOf ns1:Siciliana.
+    owl:Nothing rdfs:subClassOf ns1:Hot.
+    owl:Nothing rdfs:subClassOf ns1:FourSeasons.
+    owl:Nothing rdfs:subClassOf ns1:ParmaHamTopping.
+    owl:Nothing rdfs:subClassOf ns1:CheeseTopping.
+    owl:Nothing rdfs:subClassOf ns1:PeperoniSausageTopping.
+    owl:Nothing rdfs:subClassOf ns1:NutTopping.
+    owl:Nothing rdfs:subClassOf ns1:Parmense.
+    owl:Nothing rdfs:subClassOf ns1:ThinAndCrispyPizza.
+    owl:Nothing rdfs:subClassOf ns1:CheeseyVegetableTopping.
+    owl:Nothing rdfs:subClassOf ns1:HotSpicedBeefTopping.
+    owl:Nothing rdfs:subClassOf ns1:ParmesanTopping.
+    owl:Nothing rdfs:subClassOf ns1:Country.
+    owl:Nothing rdfs:subClassOf ns1:PizzaTopping.
+    owl:Nothing rdfs:subClassOf ns1:HerbSpiceTopping.
+    owl:Nothing rdfs:subClassOf ns1:CajunSpiceTopping.
+    owl:Nothing rdfs:subClassOf ns1:ThinAndCrispyBase.
+    owl:Nothing rdfs:subClassOf ns1:CaperTopping.
+    owl:Nothing rdfs:subClassOf ns1:PolloAdAstra.
+    owl:Nothing rdfs:subClassOf ns1:SauceTopping.
+    owl:Nothing rdfs:subClassOf ns1:PrinceCarlo.
+    owl:Nothing rdfs:subClassOf ns1:DomainConcept.
+    owl:Nothing rdfs:subClassOf ns1:NamedPizza.
+    owl:Nothing rdfs:subClassOf ns1:ChickenTopping.
+    owl:Nothing rdfs:subClassOf ns1:JalapenoPepperTopping.
+    owl:Nothing rdfs:subClassOf ns1:MushroomTopping.
+    owl:Nothing rdfs:subClassOf ns1:SweetPepperTopping.
+    owl:Nothing rdfs:subClassOf ns1:InterestingPizza.
+    owl:Nothing rdfs:subClassOf ns1:SultanaTopping.
+    owl:Nothing rdfs:subClassOf ns1:PrawnsTopping.
+    owl:Nothing rdfs:subClassOf ns1:Spiciness.
+    owl:Nothing rdfs:subClassOf ns1:American.
+    owl:Nothing rdfs:subClassOf ns1:GreenPepperTopping.
+    owl:Nothing rdfs:subClassOf ns1:UnclosedPizza.
+    owl:Nothing rdfs:subClassOf ns1:Cajun.
+    owl:Nothing rdfs:subClassOf ns1:FourCheesesTopping.
+    owl:Nothing rdfs:subClassOf ns1:SloppyGiuseppe.
+    owl:Nothing rdfs:subClassOf ns1:VegetarianPizzaEquivalent1.
+    owl:Nothing rdfs:subClassOf ns1:AsparagusTopping.
+    owl:Nothing rdfs:subClassOf ns1:MixedSeafoodTopping.
+    owl:Nothing rdfs:subClassOf ns1:FishTopping.
+    owl:Nothing rdfs:subClassOf ns1:VegetarianPizza.
+    owl:Nothing rdfs:subClassOf ns1:VegetarianPizzaEquivalent2.
+    owl:Nothing rdfs:subClassOf ns1:Margherita.
+    owl:Nothing rdfs:subClassOf ns1:RedOnionTopping.
+    owl:Nothing rdfs:subClassOf ns1:Rosa.
+    owl:Nothing rdfs:subClassOf ns1:PetitPoisTopping.
+    owl:Nothing rdfs:subClassOf ns1:LeekTopping.
+    owl:Nothing rdfs:subClassOf ns1:OliveTopping.
+    owl:Nothing rdfs:subClassOf ns1:TobascoPepperSauce.
+    owl:Nothing owl:sameAs owl:Nothing.
+    ns1:HerbSpiceTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:HerbSpiceTopping rdfs:subClassOf ns1:HerbSpiceTopping.
+    ns1:HerbSpiceTopping rdfs:subClassOf owl:Thing.
+    ns1:HerbSpiceTopping rdfs:subClassOf ns1:Food.
+    ns1:HerbSpiceTopping owl:equivalentClass ns1:HerbSpiceTopping.
+    ns1:HerbSpiceTopping owl:sameAs ns1:HerbSpiceTopping.
+    owl:members owl:sameAs owl:members.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:Food.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:Pizza.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:FruttiDiMare.
+    ns1:FruttiDiMare rdfs:subClassOf owl:Thing.
+    ns1:FruttiDiMare rdfs:subClassOf ns1:DomainConcept.
+    ns1:FruttiDiMare owl:equivalentClass ns1:FruttiDiMare.
+    ns1:FruttiDiMare owl:sameAs ns1:FruttiDiMare.
+    ns1:hasIngredient rdfs:domain owl:Thing.
+    ns1:hasIngredient rdfs:domain ns1:DomainConcept.
+    ns1:hasIngredient rdfs:range owl:Thing.
+    ns1:hasIngredient rdfs:range ns1:DomainConcept.
+    ns1:hasIngredient rdfs:subPropertyOf ns1:hasIngredient.
+    ns1:hasIngredient owl:equivalentProperty ns1:hasIngredient.
+    ns1:hasIngredient owl:sameAs ns1:hasIngredient.
+    rdfs:subClassOf owl:sameAs rdfs:subClassOf.
+    skos:altLabel owl:sameAs skos:altLabel.
+    ns1:FourSeasons rdfs:subClassOf ns1:Food.
+    ns1:FourSeasons rdfs:subClassOf ns1:Pizza.
+    ns1:FourSeasons rdfs:subClassOf ns1:DomainConcept.
+    ns1:FourSeasons rdfs:subClassOf owl:Thing.
+    ns1:FourSeasons rdfs:subClassOf ns1:FourSeasons.
+    ns1:FourSeasons owl:equivalentClass ns1:FourSeasons.
+    ns1:FourSeasons owl:sameAs ns1:FourSeasons.
+    ns1:MozzarellaTopping rdfs:subClassOf owl:Thing.
+    ns1:MozzarellaTopping rdfs:subClassOf ns1:Food.
+    ns1:MozzarellaTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:MozzarellaTopping rdfs:subClassOf ns1:MozzarellaTopping.
+    ns1:MozzarellaTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:MozzarellaTopping owl:equivalentClass ns1:MozzarellaTopping.
+    ns1:MozzarellaTopping owl:sameAs ns1:MozzarellaTopping.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:Food.
+    ns1:PeperonataTopping rdfs:subClassOf ns1:PeperonataTopping.
+    ns1:PeperonataTopping rdfs:subClassOf owl:Thing.
+    ns1:PeperonataTopping owl:equivalentClass ns1:PeperonataTopping.
+    ns1:PeperonataTopping owl:sameAs ns1:PeperonataTopping.
+    ns1:isBaseOf rdfs:subPropertyOf ns1:isBaseOf.
+    ns1:isBaseOf owl:equivalentProperty ns1:isBaseOf.
+    ns1:isBaseOf owl:sameAs ns1:isBaseOf.
+    ns1:VegetableTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:VegetableTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:VegetableTopping rdfs:subClassOf owl:Thing.
+    ns1:VegetableTopping rdfs:subClassOf ns1:Food.
+    ns1:VegetableTopping owl:equivalentClass ns1:VegetableTopping.
+    ns1:VegetableTopping owl:sameAs ns1:VegetableTopping.
+    ns1:CajunSpiceTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:CajunSpiceTopping rdfs:subClassOf ns1:Food.
+    ns1:CajunSpiceTopping rdfs:subClassOf owl:Thing.
+    ns1:CajunSpiceTopping rdfs:subClassOf ns1:CajunSpiceTopping.
+    ns1:CajunSpiceTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:CajunSpiceTopping owl:equivalentClass ns1:CajunSpiceTopping.
+    ns1:CajunSpiceTopping owl:sameAs ns1:CajunSpiceTopping.
+    owl:TransitiveProperty owl:sameAs owl:TransitiveProperty.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:Food.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:SundriedTomatoTopping rdfs:subClassOf owl:Thing.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:SundriedTomatoTopping.
+    ns1:SundriedTomatoTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:SundriedTomatoTopping owl:equivalentClass ns1:SundriedTomatoTopping.
+    ns1:SundriedTomatoTopping owl:sameAs ns1:SundriedTomatoTopping.
+    owl:InverseFunctionalProperty owl:sameAs owl:InverseFunctionalProperty.
+    skos:definition owl:sameAs skos:definition.
+    ns1:AsparagusTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:AsparagusTopping rdfs:subClassOf ns1:Food.
+    ns1:AsparagusTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:AsparagusTopping rdfs:subClassOf ns1:AsparagusTopping.
+    ns1:AsparagusTopping rdfs:subClassOf owl:Thing.
+    ns1:AsparagusTopping owl:equivalentClass ns1:AsparagusTopping.
+    ns1:AsparagusTopping owl:sameAs ns1:AsparagusTopping.
+    ns1:Cajun rdfs:subClassOf ns1:Pizza.
+    ns1:Cajun rdfs:subClassOf ns1:Cajun.
+    ns1:Cajun rdfs:subClassOf ns1:DomainConcept.
+    ns1:Cajun rdfs:subClassOf owl:Thing.
+    ns1:Cajun rdfs:subClassOf ns1:Food.
+    ns1:Cajun owl:equivalentClass ns1:Cajun.
+    ns1:Cajun owl:sameAs ns1:Cajun.
+    ns1:ThinAndCrispyBase rdfs:subClassOf ns1:DomainConcept.
+    ns1:ThinAndCrispyBase rdfs:subClassOf ns1:ThinAndCrispyBase.
+    ns1:ThinAndCrispyBase rdfs:subClassOf owl:Thing.
+    ns1:ThinAndCrispyBase rdfs:subClassOf ns1:Food.
+    ns1:ThinAndCrispyBase owl:equivalentClass ns1:ThinAndCrispyBase.
+    ns1:ThinAndCrispyBase owl:sameAs ns1:ThinAndCrispyBase.
+    ns1:Food rdfs:subClassOf ns1:Food.
+    ns1:Food rdfs:subClassOf owl:Thing.
+    ns1:Food owl:equivalentClass ns1:Food.
+    ns1:Food owl:sameAs ns1:Food.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf owl:Thing.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf ns1:Food.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:HotSpicedBeefTopping rdfs:subClassOf ns1:HotSpicedBeefTopping.
+    ns1:HotSpicedBeefTopping owl:equivalentClass ns1:HotSpicedBeefTopping.
+    ns1:HotSpicedBeefTopping owl:sameAs ns1:HotSpicedBeefTopping.
+    owl:intersectionOf owl:sameAs owl:intersectionOf.
+    ns1:QuattroFormaggi rdfs:subClassOf ns1:Food.
+    ns1:QuattroFormaggi rdfs:subClassOf owl:Thing.
+    ns1:QuattroFormaggi rdfs:subClassOf ns1:QuattroFormaggi.
+    ns1:QuattroFormaggi rdfs:subClassOf ns1:DomainConcept.
+    ns1:QuattroFormaggi rdfs:subClassOf ns1:Pizza.
+    ns1:QuattroFormaggi owl:equivalentClass ns1:QuattroFormaggi.
+    ns1:QuattroFormaggi owl:sameAs ns1:QuattroFormaggi.
+    ns1:MushroomTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:MushroomTopping rdfs:subClassOf ns1:Food.
+    ns1:MushroomTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:MushroomTopping rdfs:subClassOf ns1:MushroomTopping.
+    ns1:MushroomTopping rdfs:subClassOf owl:Thing.
+    ns1:MushroomTopping owl:equivalentClass ns1:MushroomTopping.
+    ns1:MushroomTopping owl:sameAs ns1:MushroomTopping.
+    dc:title owl:sameAs dc:title.
+    ns1:England owl:sameAs ns1:England.
+    owl:Restriction owl:sameAs owl:Restriction.
+    skos:prefLabel owl:sameAs skos:prefLabel.
+    owl:AllDifferent owl:sameAs owl:AllDifferent.
+    owl:minCardinality owl:sameAs owl:minCardinality.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:JalapenoPepperTopping.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:JalapenoPepperTopping rdfs:subClassOf owl:Thing.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:JalapenoPepperTopping rdfs:subClassOf ns1:Food.
+    ns1:JalapenoPepperTopping owl:equivalentClass ns1:JalapenoPepperTopping.
+    ns1:JalapenoPepperTopping owl:sameAs ns1:JalapenoPepperTopping.
+    ns1:Spiciness rdfs:subClassOf owl:Thing.
+    ns1:Spiciness rdfs:subClassOf ns1:Spiciness.
+    ns1:Spiciness owl:equivalentClass ns1:Spiciness.
+    ns1:Spiciness owl:sameAs ns1:Spiciness.
+    terms:contributor owl:sameAs terms:contributor.
+    ns1:TobascoPepperSauce rdfs:subClassOf ns1:DomainConcept.
+    ns1:TobascoPepperSauce rdfs:subClassOf ns1:Food.
+    ns1:TobascoPepperSauce rdfs:subClassOf owl:Thing.
+    ns1:TobascoPepperSauce rdfs:subClassOf ns1:PizzaTopping.
+    ns1:TobascoPepperSauce rdfs:subClassOf ns1:TobascoPepperSauce.
+    ns1:TobascoPepperSauce owl:equivalentClass ns1:TobascoPepperSauce.
+    ns1:TobascoPepperSauce owl:sameAs ns1:TobascoPepperSauce.
+    rdfs:label owl:sameAs rdfs:label.
+    ns1:PetitPoisTopping rdfs:subClassOf owl:Thing.
+    ns1:PetitPoisTopping rdfs:subClassOf ns1:PetitPoisTopping.
+    ns1:PetitPoisTopping rdfs:subClassOf ns1:Food.
+    ns1:PetitPoisTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PetitPoisTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:PetitPoisTopping owl:equivalentClass ns1:PetitPoisTopping.
+    ns1:PetitPoisTopping owl:sameAs ns1:PetitPoisTopping.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:Food.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:PepperTopping.
+    ns1:HotGreenPepperTopping rdfs:subClassOf owl:Thing.
+    ns1:HotGreenPepperTopping rdfs:subClassOf ns1:HotGreenPepperTopping.
+    ns1:HotGreenPepperTopping owl:equivalentClass ns1:HotGreenPepperTopping.
+    ns1:HotGreenPepperTopping owl:sameAs ns1:HotGreenPepperTopping.
+    ns1:Giardiniera rdfs:subClassOf ns1:DomainConcept.
+    ns1:Giardiniera rdfs:subClassOf ns1:Giardiniera.
+    ns1:Giardiniera rdfs:subClassOf ns1:Pizza.
+    ns1:Giardiniera rdfs:subClassOf owl:Thing.
+    ns1:Giardiniera rdfs:subClassOf ns1:Food.
+    ns1:Giardiniera owl:equivalentClass ns1:Giardiniera.
+    ns1:Giardiniera owl:sameAs ns1:Giardiniera.
+    ns1:Mushroom rdfs:subClassOf ns1:Pizza.
+    ns1:Mushroom rdfs:subClassOf ns1:Mushroom.
+    ns1:Mushroom rdfs:subClassOf ns1:Food.
+    ns1:Mushroom rdfs:subClassOf owl:Thing.
+    ns1:Mushroom rdfs:subClassOf ns1:DomainConcept.
+    ns1:Mushroom owl:equivalentClass ns1:Mushroom.
+    ns1:Mushroom owl:sameAs ns1:Mushroom.
+    ns1:America owl:sameAs ns1:America.
+    ns1:PrawnsTopping rdfs:subClassOf ns1:Food.
+    ns1:PrawnsTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PrawnsTopping rdfs:subClassOf ns1:PrawnsTopping.
+    ns1:PrawnsTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:PrawnsTopping rdfs:subClassOf owl:Thing.
+    ns1:PrawnsTopping owl:equivalentClass ns1:PrawnsTopping.
+    ns1:PrawnsTopping owl:sameAs ns1:PrawnsTopping.
+    ns1:NonVegetarianPizza rdfs:subClassOf owl:Thing.
+    ns1:NonVegetarianPizza rdfs:subClassOf ns1:NonVegetarianPizza.
+    ns1:NonVegetarianPizza owl:equivalentClass ns1:NonVegetarianPizza.
+    ns1:NonVegetarianPizza owl:sameAs ns1:NonVegetarianPizza.
+    ns1:Germany owl:sameAs ns1:Germany.
+    dc:description owl:sameAs dc:description.
+    owl:oneOf owl:sameAs owl:oneOf.
+    ns1:ValuePartition rdfs:subClassOf ns1:ValuePartition.
+    ns1:ValuePartition rdfs:subClassOf owl:Thing.
+    ns1:ValuePartition owl:equivalentClass ns1:ValuePartition.
+    ns1:ValuePartition owl:sameAs ns1:ValuePartition.
+    ns1:FourCheesesTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:FourCheesesTopping rdfs:subClassOf ns1:FourCheesesTopping.
+    ns1:FourCheesesTopping rdfs:subClassOf ns1:Food.
+    ns1:FourCheesesTopping rdfs:subClassOf owl:Thing.
+    ns1:FourCheesesTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:FourCheesesTopping owl:equivalentClass ns1:FourCheesesTopping.
+    ns1:FourCheesesTopping owl:sameAs ns1:FourCheesesTopping.
+    ns1:Medium rdfs:subClassOf ns1:Medium.
+    ns1:Medium rdfs:subClassOf owl:Thing.
+    ns1:Medium rdfs:subClassOf ns1:ValuePartition.
+    ns1:Medium owl:equivalentClass ns1:Medium.
+    ns1:Medium owl:sameAs ns1:Medium.
+    owl:versionInfo owl:sameAs owl:versionInfo.
+    ns1:hasSpiciness rdfs:range owl:Thing.
+    ns1:hasSpiciness rdfs:range ns1:ValuePartition.
+    ns1:hasSpiciness rdfs:subPropertyOf ns1:hasSpiciness.
+    ns1:hasSpiciness owl:equivalentProperty ns1:hasSpiciness.
+    ns1:hasSpiciness owl:sameAs ns1:hasSpiciness.
+    ns1:Hot rdfs:subClassOf ns1:Hot.
+    ns1:Hot rdfs:subClassOf owl:Thing.
+    ns1:Hot rdfs:subClassOf ns1:ValuePartition.
+    ns1:Hot owl:equivalentClass ns1:Hot.
+    ns1:Hot owl:sameAs ns1:Hot.
+    ns1:IceCream rdfs:subClassOf ns1:IceCream.
+    ns1:IceCream rdfs:subClassOf owl:Thing.
+    ns1:IceCream rdfs:subClassOf ns1:DomainConcept.
+    ns1:IceCream owl:equivalentClass ns1:IceCream.
+    ns1:IceCream owl:sameAs ns1:IceCream.
+    ns1:TomatoTopping rdfs:subClassOf ns1:Food.
+    ns1:TomatoTopping rdfs:subClassOf owl:Thing.
+    ns1:TomatoTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:TomatoTopping rdfs:subClassOf ns1:TomatoTopping.
+    ns1:TomatoTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:TomatoTopping owl:equivalentClass ns1:TomatoTopping.
+    ns1:TomatoTopping owl:sameAs ns1:TomatoTopping.
+    ns1:PizzaTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PizzaTopping rdfs:subClassOf owl:Thing.
+    ns1:PizzaTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:PizzaTopping owl:equivalentClass ns1:PizzaTopping.
+    ns1:PizzaTopping owl:sameAs ns1:PizzaTopping.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf ns1:Food.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf ns1:CheeseyVegetableTopping.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf owl:Thing.
+    ns1:CheeseyVegetableTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:CheeseyVegetableTopping owl:equivalentClass ns1:CheeseyVegetableTopping.
+    ns1:CheeseyVegetableTopping owl:sameAs ns1:CheeseyVegetableTopping.
+    ns1:PepperTopping rdfs:subClassOf ns1:Food.
+    ns1:PepperTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:PepperTopping rdfs:subClassOf ns1:PepperTopping.
+    ns1:PepperTopping rdfs:subClassOf owl:Thing.
+    ns1:PepperTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:PepperTopping owl:equivalentClass ns1:PepperTopping.
+    ns1:PepperTopping owl:sameAs ns1:PepperTopping.
+    ns1:ChickenTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:ChickenTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:ChickenTopping rdfs:subClassOf ns1:ChickenTopping.
+    ns1:ChickenTopping rdfs:subClassOf ns1:Food.
+    ns1:ChickenTopping rdfs:subClassOf owl:Thing.
+    ns1:ChickenTopping owl:equivalentClass ns1:ChickenTopping.
+    ns1:ChickenTopping owl:sameAs ns1:ChickenTopping.
+    terms:provenance owl:sameAs terms:provenance.
+    ns1:GorgonzolaTopping rdfs:subClassOf ns1:GorgonzolaTopping.
+    ns1:GorgonzolaTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:GorgonzolaTopping rdfs:subClassOf ns1:Food.
+    ns1:GorgonzolaTopping rdfs:subClassOf owl:Thing.
+    ns1:GorgonzolaTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:GorgonzolaTopping owl:equivalentClass ns1:GorgonzolaTopping.
+    ns1:GorgonzolaTopping owl:sameAs ns1:GorgonzolaTopping.
+    ns1:SpinachTopping rdfs:subClassOf ns1:SpinachTopping.
+    ns1:SpinachTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:SpinachTopping rdfs:subClassOf ns1:Food.
+    ns1:SpinachTopping rdfs:subClassOf owl:Thing.
+    ns1:SpinachTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:SpinachTopping owl:equivalentClass ns1:SpinachTopping.
+    ns1:SpinachTopping owl:sameAs ns1:SpinachTopping.
+    owl:distinctMembers owl:sameAs owl:distinctMembers.
+    ns1:Margherita rdfs:subClassOf ns1:Food.
+    ns1:Margherita rdfs:subClassOf ns1:Pizza.
+    ns1:Margherita rdfs:subClassOf ns1:Margherita.
+    ns1:Margherita rdfs:subClassOf owl:Thing.
+    ns1:Margherita rdfs:subClassOf ns1:DomainConcept.
+    ns1:Margherita owl:equivalentClass ns1:Margherita.
+    ns1:Margherita owl:sameAs ns1:Margherita.
+    ns1:DeepPanBase rdfs:subClassOf ns1:DomainConcept.
+    ns1:DeepPanBase rdfs:subClassOf ns1:DeepPanBase.
+    ns1:DeepPanBase rdfs:subClassOf owl:Thing.
+    ns1:DeepPanBase rdfs:subClassOf ns1:Food.
+    ns1:DeepPanBase owl:equivalentClass ns1:DeepPanBase.
+    ns1:DeepPanBase owl:sameAs ns1:DeepPanBase.
+    ns1:RosemaryTopping rdfs:subClassOf owl:Thing.
+    ns1:RosemaryTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:RosemaryTopping rdfs:subClassOf ns1:Food.
+    ns1:RosemaryTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:RosemaryTopping rdfs:subClassOf ns1:RosemaryTopping.
+    ns1:RosemaryTopping owl:equivalentClass ns1:RosemaryTopping.
+    ns1:RosemaryTopping owl:sameAs ns1:RosemaryTopping.
+    ns1:CheeseyPizza rdfs:subClassOf owl:Thing.
+    ns1:CheeseyPizza rdfs:subClassOf ns1:CheeseyPizza.
+    ns1:CheeseyPizza owl:equivalentClass ns1:CheeseyPizza.
+    ns1:CheeseyPizza owl:sameAs ns1:CheeseyPizza.
+    ns1:hasTopping rdfs:domain ns1:DomainConcept.
+    ns1:hasTopping rdfs:domain ns1:Food.
+    ns1:hasTopping rdfs:domain owl:Thing.
+    ns1:hasTopping rdfs:range ns1:DomainConcept.
+    ns1:hasTopping rdfs:range ns1:Food.
+    ns1:hasTopping rdfs:range owl:Thing.
+    ns1:hasTopping rdfs:subPropertyOf ns1:hasTopping.
+    ns1:hasTopping owl:equivalentProperty ns1:hasTopping.
+    ns1:hasTopping owl:sameAs ns1:hasTopping.
+    owl:complementOf owl:sameAs owl:complementOf.
+    ns1:OnionTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:OnionTopping rdfs:subClassOf ns1:Food.
+    ns1:OnionTopping rdfs:subClassOf ns1:OnionTopping.
+    ns1:OnionTopping rdfs:subClassOf owl:Thing.
+    ns1:OnionTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:OnionTopping owl:equivalentClass ns1:OnionTopping.
+    ns1:OnionTopping owl:sameAs ns1:OnionTopping.
+    ns1:Veneziana rdfs:subClassOf ns1:Pizza.
+    ns1:Veneziana rdfs:subClassOf ns1:Food.
+    ns1:Veneziana rdfs:subClassOf ns1:Veneziana.
+    ns1:Veneziana rdfs:subClassOf ns1:DomainConcept.
+    ns1:Veneziana rdfs:subClassOf owl:Thing.
+    ns1:Veneziana owl:equivalentClass ns1:Veneziana.
+    ns1:Veneziana owl:sameAs ns1:Veneziana.
+    ns1:Parmense rdfs:subClassOf ns1:Pizza.
+    ns1:Parmense rdfs:subClassOf ns1:DomainConcept.
+    ns1:Parmense rdfs:subClassOf owl:Thing.
+    ns1:Parmense rdfs:subClassOf ns1:Food.
+    ns1:Parmense rdfs:subClassOf ns1:Parmense.
+    ns1:Parmense owl:equivalentClass ns1:Parmense.
+    ns1:Parmense owl:sameAs ns1:Parmense.
+    ns1:SultanaTopping rdfs:subClassOf ns1:SultanaTopping.
+    ns1:SultanaTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:SultanaTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:SultanaTopping rdfs:subClassOf owl:Thing.
+    ns1:SultanaTopping rdfs:subClassOf ns1:Food.
+    ns1:SultanaTopping owl:equivalentClass ns1:SultanaTopping.
+    ns1:SultanaTopping owl:sameAs ns1:SultanaTopping.
+    <https://en.wikipedia.org/wiki/Pizza> owl:sameAs <https://en.wikipedia.org/wiki/Pizza>.
+    rdfs:range owl:sameAs rdfs:range.
+    ns1:VegetarianPizzaEquivalent2 rdfs:subClassOf owl:Thing.
+    ns1:VegetarianPizzaEquivalent2 rdfs:subClassOf ns1:VegetarianPizzaEquivalent2.
+    ns1:VegetarianPizzaEquivalent2 owl:equivalentClass ns1:VegetarianPizzaEquivalent2.
+    ns1:VegetarianPizzaEquivalent2 owl:sameAs ns1:VegetarianPizzaEquivalent2.
+    ns1:Capricciosa rdfs:subClassOf ns1:Food.
+    ns1:Capricciosa rdfs:subClassOf ns1:Pizza.
+    ns1:Capricciosa rdfs:subClassOf ns1:Capricciosa.
+    ns1:Capricciosa rdfs:subClassOf owl:Thing.
+    ns1:Capricciosa rdfs:subClassOf ns1:DomainConcept.
+    ns1:Capricciosa owl:equivalentClass ns1:Capricciosa.
+    ns1:Capricciosa owl:sameAs ns1:Capricciosa.
+    ns1:SpicyTopping rdfs:subClassOf owl:Thing.
+    ns1:SpicyTopping rdfs:subClassOf ns1:SpicyTopping.
+    ns1:SpicyTopping owl:equivalentClass ns1:SpicyTopping.
+    ns1:SpicyTopping owl:sameAs ns1:SpicyTopping.
+    ns1:Fiorentina rdfs:subClassOf ns1:DomainConcept.
+    ns1:Fiorentina rdfs:subClassOf ns1:Food.
+    ns1:Fiorentina rdfs:subClassOf owl:Thing.
+    ns1:Fiorentina rdfs:subClassOf ns1:Fiorentina.
+    ns1:Fiorentina rdfs:subClassOf ns1:Pizza.
+    ns1:Fiorentina owl:equivalentClass ns1:Fiorentina.
+    ns1:Fiorentina owl:sameAs ns1:Fiorentina.
+    ns1:RedOnionTopping rdfs:subClassOf owl:Thing.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:Food.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:RedOnionTopping rdfs:subClassOf ns1:RedOnionTopping.
+    ns1:RedOnionTopping owl:equivalentClass ns1:RedOnionTopping.
+    ns1:RedOnionTopping owl:sameAs ns1:RedOnionTopping.
+    ns1:InterestingPizza rdfs:subClassOf owl:Thing.
+    ns1:InterestingPizza rdfs:subClassOf ns1:InterestingPizza.
+    ns1:InterestingPizza owl:equivalentClass ns1:InterestingPizza.
+    ns1:InterestingPizza owl:sameAs ns1:InterestingPizza.
+    owl:someValuesFrom owl:sameAs owl:someValuesFrom.
+    ns1:RocketTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:RocketTopping rdfs:subClassOf ns1:Food.
+    ns1:RocketTopping rdfs:subClassOf ns1:RocketTopping.
+    ns1:RocketTopping rdfs:subClassOf owl:Thing.
+    ns1:RocketTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:RocketTopping owl:equivalentClass ns1:RocketTopping.
+    ns1:RocketTopping owl:sameAs ns1:RocketTopping.
+    owl:inverseOf owl:sameAs owl:inverseOf.
+    owl:Thing owl:sameAs owl:Thing.
+    ns1:SloppyGiuseppe rdfs:subClassOf owl:Thing.
+    ns1:SloppyGiuseppe rdfs:subClassOf ns1:SloppyGiuseppe.
+    ns1:SloppyGiuseppe rdfs:subClassOf ns1:Pizza.
+    ns1:SloppyGiuseppe rdfs:subClassOf ns1:DomainConcept.
+    ns1:SloppyGiuseppe rdfs:subClassOf ns1:Food.
+    ns1:SloppyGiuseppe owl:equivalentClass ns1:SloppyGiuseppe.
+    ns1:SloppyGiuseppe owl:sameAs ns1:SloppyGiuseppe.
+    ns1:isIngredientOf rdfs:subPropertyOf ns1:isIngredientOf.
+    ns1:isIngredientOf owl:equivalentProperty ns1:isIngredientOf.
+    ns1:isIngredientOf owl:sameAs ns1:isIngredientOf.
+    ns1:Soho rdfs:subClassOf ns1:Pizza.
+    ns1:Soho rdfs:subClassOf ns1:DomainConcept.
+    ns1:Soho rdfs:subClassOf ns1:Soho.
+    ns1:Soho rdfs:subClassOf owl:Thing.
+    ns1:Soho rdfs:subClassOf ns1:Food.
+    ns1:Soho owl:equivalentClass ns1:Soho.
+    ns1:Soho owl:sameAs ns1:Soho.
+    <http://www.co-ode.org/ontologies/pizza/2.0.0> owl:sameAs <http://www.co-ode.org/ontologies/pizza/2.0.0>.
+    owl:FunctionalProperty owl:sameAs owl:FunctionalProperty.
+    ns1:Country rdfs:subClassOf owl:Thing.
+    ns1:Country rdfs:subClassOf ns1:Country.
+    ns1:Country owl:equivalentClass ns1:Country.
+    ns1:Country owl:sameAs ns1:Country.
+    owl:ObjectProperty owl:sameAs owl:ObjectProperty.
+    ns1:SpicyPizza rdfs:subClassOf owl:Thing.
+    ns1:SpicyPizza rdfs:subClassOf ns1:SpicyPizza.
+    ns1:SpicyPizza owl:equivalentClass ns1:SpicyPizza.
+    ns1:SpicyPizza owl:sameAs ns1:SpicyPizza.
+    ns1:hasCountryOfOrigin rdfs:subPropertyOf ns1:hasCountryOfOrigin.
+    ns1:hasCountryOfOrigin owl:equivalentProperty ns1:hasCountryOfOrigin.
+    ns1:hasCountryOfOrigin owl:sameAs ns1:hasCountryOfOrigin.
+    terms:license owl:sameAs terms:license.
+    ns1:Caprina rdfs:subClassOf ns1:Pizza.
+    ns1:Caprina rdfs:subClassOf ns1:Caprina.
+    ns1:Caprina rdfs:subClassOf ns1:DomainConcept.
+    ns1:Caprina rdfs:subClassOf ns1:Food.
+    ns1:Caprina rdfs:subClassOf owl:Thing.
+    ns1:Caprina owl:equivalentClass ns1:Caprina.
+    ns1:Caprina owl:sameAs ns1:Caprina.
+    ns1:GreenPepperTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:GreenPepperTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:GreenPepperTopping rdfs:subClassOf ns1:Food.
+    ns1:GreenPepperTopping rdfs:subClassOf ns1:GreenPepperTopping.
+    ns1:GreenPepperTopping rdfs:subClassOf owl:Thing.
+    ns1:GreenPepperTopping rdfs:subClassOf ns1:VegetableTopping.
+    ns1:GreenPepperTopping owl:equivalentClass ns1:GreenPepperTopping.
+    ns1:GreenPepperTopping owl:sameAs ns1:GreenPepperTopping.
+    owl:NamedIndividual owl:sameAs owl:NamedIndividual.
+    ns1:Mild rdfs:subClassOf ns1:Mild.
+    ns1:Mild rdfs:subClassOf owl:Thing.
+    ns1:Mild rdfs:subClassOf ns1:ValuePartition.
+    ns1:Mild owl:equivalentClass ns1:Mild.
+    ns1:Mild owl:sameAs ns1:Mild.
+    ns1:Italy owl:sameAs ns1:Italy.
+    ns1:NutTopping rdfs:subClassOf owl:Thing.
+    ns1:NutTopping rdfs:subClassOf ns1:Food.
+    ns1:NutTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:NutTopping rdfs:subClassOf ns1:NutTopping.
+    ns1:NutTopping owl:equivalentClass ns1:NutTopping.
+    ns1:NutTopping owl:sameAs ns1:NutTopping.
+    ns1:FishTopping rdfs:subClassOf ns1:FishTopping.
+    ns1:FishTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:FishTopping rdfs:subClassOf owl:Thing.
+    ns1:FishTopping rdfs:subClassOf ns1:Food.
+    ns1:FishTopping owl:equivalentClass ns1:FishTopping.
+    ns1:FishTopping owl:sameAs ns1:FishTopping.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:Food.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:MeatTopping.
+    ns1:ParmaHamTopping rdfs:subClassOf ns1:ParmaHamTopping.
+    ns1:ParmaHamTopping rdfs:subClassOf owl:Thing.
+    ns1:ParmaHamTopping owl:equivalentClass ns1:ParmaHamTopping.
+    ns1:ParmaHamTopping owl:sameAs ns1:ParmaHamTopping.
+    owl:sameAs owl:sameAs owl:sameAs.
+    owl:onProperty owl:sameAs owl:onProperty.
+    rdfs:comment owl:sameAs rdfs:comment.
+    ns1:PrinceCarlo rdfs:subClassOf ns1:DomainConcept.
+    ns1:PrinceCarlo rdfs:subClassOf owl:Thing.
+    ns1:PrinceCarlo rdfs:subClassOf ns1:Pizza.
+    ns1:PrinceCarlo rdfs:subClassOf ns1:PrinceCarlo.
+    ns1:PrinceCarlo rdfs:subClassOf ns1:Food.
+    ns1:PrinceCarlo owl:equivalentClass ns1:PrinceCarlo.
+    ns1:PrinceCarlo owl:sameAs ns1:PrinceCarlo.
+    owl:hasValue owl:sameAs owl:hasValue.
+    ns1:LeekTopping rdfs:subClassOf ns1:Food.
+    ns1:LeekTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:LeekTopping rdfs:subClassOf owl:Thing.
+    ns1:LeekTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:LeekTopping rdfs:subClassOf ns1:LeekTopping.
+    ns1:LeekTopping owl:equivalentClass ns1:LeekTopping.
+    ns1:LeekTopping owl:sameAs ns1:LeekTopping.
+    ns1:MixedSeafoodTopping rdfs:subClassOf owl:Thing.
+    ns1:MixedSeafoodTopping rdfs:subClassOf ns1:Food.
+    ns1:MixedSeafoodTopping rdfs:subClassOf ns1:MixedSeafoodTopping.
+    ns1:MixedSeafoodTopping rdfs:subClassOf ns1:PizzaTopping.
+    ns1:MixedSeafoodTopping rdfs:subClassOf ns1:DomainConcept.
+    ns1:MixedSeafoodTopping owl:equivalentClass ns1:MixedSeafoodTopping.
+    ns1:MixedSeafoodTopping owl:sameAs ns1:MixedSeafoodTopping.
+}.
+"common triples" aux:number 820 .
+# 2023-08-18T11:54:59.662Z in=16894 out=6 ent=6 step=3 brake=1 inf=1194261429 sec=64.179 inf/sec=18608290
+# ENDS
+
