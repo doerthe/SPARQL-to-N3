@@ -1,0 +1,46 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix : <http://example.org/aux#>.
+
+
+{
+<../results/spin3_inf_results.ttl> log:semantics ?n3results.
+ <../results/spintb_inf_results.ttl> log:semantics ?spinresults.
+(?n3results ?spinresults ) e:graphDifference ?diff.
+?diff e:graphList ?list.
+?list list:length ?n.
+
+}=>{"triples in sin3 result but not in spin result" :graph ?diff;
+                :number ?n.
+}.
+
+{
+<../results/spin3_inf_results.ttl> log:semantics ?n3results.
+ <../results/spintb_inf_results.ttl> log:semantics ?spinresults.
+(?spinresults  ?n3results ) e:graphDifference ?diff.
+?diff e:graphList ?list.
+?list list:length ?n.
+
+}=>{"in spin but not in sin3" :result ?diff; :number ?n}.
+
+{
+<../results/spin3_inf_results.ttl> log:semantics ?n3results.
+ <../results/spintb_inf_results.ttl> log:semantics ?spinresults.
+(?spinresults  ?n3results ) e:graphIntersection ?common.
+?common e:graphList ?list.
+?list list:length ?n.
+
+}=>{"common triples" :result ?common; :number ?n}.
