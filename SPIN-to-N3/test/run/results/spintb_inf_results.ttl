@@ -1,0 +1,2041 @@
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HotSpicedBeefTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourCheesesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b0    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b1 , _:b2 , _:b3 , _:b0 , _:b4 , _:b5 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b0 , _:b5 , _:b4 , _:b1 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b6 , _:b7 , _:b8 , _:b9 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b2 , _:b10 , _:b11 , _:b12 , _:b13 , _:b14 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b15 , _:b16 , _:b17 , _:b18 , _:b19 , _:b3 , _:b20 , _:b21 , _:b22 , _:b23 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b24 , _:b25 , _:b26 , _:b27 , _:b28 , _:b29 , _:b30 , _:b31 , _:b32 , _:b33 , _:b34 , _:b35 , _:b36 , _:b37 , _:b38 , _:b39 , _:b40 , _:b41 , _:b42 , _:b43 , _:b44 , _:b45 , _:b46 , _:b47 , _:b48 , _:b49 , _:b50 , _:b51 , _:b52 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+_:b30   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b20 , _:b36 , _:b7 , _:b12 , _:b29 , _:b53 , _:b8 , _:b26 , _:b42 , _:b17 , _:b30 , _:b31 , _:b22 , _:b10 , _:b13 , _:b28 , _:b45 , _:b11 , _:b34 , _:b46 , _:b25 , _:b23 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b11 , _:b34 , _:b28 , _:b25 , _:b7 , _:b23 , _:b22 , _:b45 , _:b36 , _:b29 , _:b53 , _:b13 , _:b10 , _:b30 , _:b42 , _:b17 , _:b31 , _:b26 , _:b46 , _:b20 , _:b12 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ArtichokeTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b2 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b43 , _:b47 , _:b11 , _:b54 , _:b28 , _:b48 , _:b23 , _:b55 , _:b0 , _:b56 , _:b8 , _:b57 , _:b58 , _:b59 , _:b2 , _:b38 , _:b5 , _:b16 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b9 , _:b26 , _:b15 , _:b60 , _:b3 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b29 , _:b10 , _:b17 , _:b34 , _:b21 , _:b37 , _:b41 , _:b13 , _:b33 , _:b20 , _:b35 , _:b61 , _:b19 , _:b42 , _:b30 , _:b22 , _:b40 , _:b62 , _:b31 , _:b63 , _:b64 , _:b52 , _:b49 , _:b32 , _:b36 , _:b39 , _:b65 , _:b66 , _:b46 , _:b45 , _:b53 , _:b67 , _:b27 , _:b68 , _:b1 , _:b51 , _:b24 , _:b25 , _:b69 , _:b70 , _:b7 .
+
+_:b11   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b17 , _:b42 , _:b12 , _:b45 , _:b28 , _:b10 , _:b22 , _:b23 , _:b7 , _:b8 , _:b26 , _:b34 , _:b20 , _:b25 , _:b53 , _:b11 , _:b29 , _:b36 , _:b46 , _:b30 , _:b31 , _:b13 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b42 , _:b45 , _:b31 , _:b13 , _:b53 , _:b28 , _:b46 , _:b22 , _:b34 , _:b23 , _:b7 , _:b26 , _:b17 , _:b11 , _:b20 , _:b29 , _:b10 , _:b36 , _:b12 , _:b25 , _:b30 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#JalapenoPepperTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b71 , _:b72 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b73 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b74 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> , _:b75 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b76 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b36   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b8 , _:b45 , _:b42 , _:b20 , _:b25 , _:b31 , _:b29 , _:b17 , _:b22 , _:b46 , _:b23 , _:b12 , _:b7 , _:b53 , _:b34 , _:b26 , _:b28 , _:b36 , _:b30 , _:b11 , _:b10 , _:b13 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b10 , _:b53 , _:b45 , _:b13 , _:b25 , _:b28 , _:b12 , _:b11 , _:b46 , _:b7 , _:b31 , _:b26 , _:b34 , _:b20 , _:b30 , _:b29 , _:b23 , _:b22 , _:b42 , _:b17 , _:b36 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b77 , _:b78 , _:b79 , _:b80 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b81 , _:b82 , _:b83 , _:b84 , _:b85 , _:b86 , _:b87 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b88 , _:b89 , _:b90 , _:b91 , _:b92 , _:b93 , _:b94 , _:b95 , _:b96 , _:b97 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping>
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b43 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasTopping> .
+
+_:b53   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b25 , _:b36 , _:b30 , _:b13 , _:b22 , _:b31 , _:b12 , _:b26 , _:b45 , _:b17 , _:b53 , _:b34 , _:b42 , _:b28 , _:b20 , _:b23 , _:b8 , _:b10 , _:b7 , _:b11 , _:b46 , _:b29 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b13 , _:b28 , _:b31 , _:b30 , _:b29 , _:b22 , _:b46 , _:b45 , _:b53 , _:b10 , _:b23 , _:b25 , _:b20 , _:b17 , _:b42 , _:b7 , _:b26 , _:b36 , _:b11 , _:b12 , _:b34 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b98 , _:b99 , _:b100 , _:b101 , _:b102 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+_:b97   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b91 , _:b93 , _:b97 , _:b92 , _:b82 , _:b78 , _:b87 , _:b80 , _:b86 , _:b95 , _:b77 , _:b85 , _:b94 , _:b79 , _:b84 , _:b83 , _:b96 , _:b103 , _:b90 , _:b88 , _:b81 , _:b89 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b103 , _:b79 , _:b83 , _:b97 , _:b82 , _:b91 , _:b96 , _:b81 , _:b90 , _:b88 , _:b78 , _:b77 , _:b87 , _:b80 , _:b92 , _:b85 , _:b95 , _:b94 , _:b86 , _:b84 , _:b93 , _:b89 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#FourCheesesTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b103 , _:b87 , _:b88 , _:b91 , _:b94 , _:b86 , _:b77 , _:b90 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b81 , _:b97 , _:b84 , _:b80 , _:b83 , _:b89 , _:b82 , _:b93 , _:b92 , _:b95 , _:b79 , _:b96 , _:b78 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+_:b19   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b33 , _:b57 , _:b37 , _:b39 , _:b47 , _:b41 , _:b40 , _:b49 , _:b24 , _:b18 , _:b27 , _:b21 , _:b51 , _:b19 , _:b52 , _:b32 , _:b16 , _:b15 , _:b9 , _:b48 , _:b35 , _:b38 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b24 , _:b40 , _:b39 , _:b18 , _:b57 , _:b38 , _:b27 , _:b37 , _:b35 , _:b49 , _:b47 , _:b32 , _:b41 , _:b51 , _:b19 , _:b52 , _:b16 , _:b15 , _:b33 , _:b21 , _:b48 , _:b9 .
+
+_:b104  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b104 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b104 .
+
+_:b70   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b105 , _:b64 , _:b66 , _:b65 , _:b55 , _:b69 , _:b63 , _:b61 , _:b70 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b66 , _:b65 , _:b105 , _:b70 , _:b63 , _:b61 , _:b55 , _:b64 , _:b69 .
+
+_:b106  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b106 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b106 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b33 , _:b39 , _:b21 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b49 , _:b35 , _:b40 , _:b54 , _:b41 , _:b24 , _:b38 , _:b57 , _:b68 , _:b48 , _:b32 , _:b67 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b37 , _:b15 , _:b47 , _:b52 , _:b59 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b16 , _:b19 , _:b9 , _:b43 , _:b51 , _:b107 , _:b18 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Hot>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#ValuePartition> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#AsparagusTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b108 ] .
+
+_:b107  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b59 , _:b68 , _:b62 , _:b107 , _:b67 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b59 , _:b107 , _:b67 , _:b62 , _:b68 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Hot> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Medium> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b72 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#GorgonzolaTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b79 , _:b91 , _:b96 , _:b88 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b84 , _:b97 , _:b93 , _:b81 , _:b85 , _:b92 , _:b83 , _:b90 , _:b95 , _:b82 , _:b94 , _:b78 , _:b103 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b89 , _:b80 , _:b87 , _:b86 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b51 , _:b37 , _:b32 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b52 , _:b42 , _:b9 , _:b10 , _:b109 , _:b40 , _:b57 , _:b13 , _:b11 , _:b7 , _:b12 , _:b39 , _:b24 , _:b110 , _:b29 , _:b8 , _:b46 , _:b16 , _:b23 , _:b34 , _:b30 , _:b38 , _:b27 , _:b20 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b17 , _:b15 , _:b111 , _:b21 , _:b43 , _:b36 , _:b47 , _:b25 , _:b19 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b41 , _:b31 , _:b112 , _:b35 , _:b22 , _:b33 , _:b53 , _:b49 , _:b18 , _:b45 , _:b28 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#France>
+        a       _:b113 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HotSpicedBeefTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b55   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b61 , _:b70 , _:b63 , _:b55 , _:b66 , _:b105 , _:b64 , _:b65 , _:b69 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b61 , _:b55 , _:b70 , _:b66 , _:b69 , _:b63 , _:b65 , _:b64 , _:b105 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+_:b114  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b114 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b114 .
+
+_:b72   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b74 , _:b75 , _:b71 , _:b73 , _:b76 , _:b72 , _:b115 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b73 , _:b72 , _:b115 , _:b71 , _:b76 , _:b74 , _:b75 .
+
+_:b116  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b116 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b116 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b51 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b8 , _:b37 , _:b43 , _:b49 , _:b39 , _:b38 , _:b24 , _:b21 , _:b35 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b16 , _:b33 , _:b27 , _:b57 , _:b18 , _:b9 , _:b15 , _:b47 , _:b32 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b41 , _:b48 , _:b52 , _:b19 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+_:b117  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b117 , _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b117 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b99 , _:b118 , _:b98 , _:b102 , _:b101 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+_:b119  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b119 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b119 .
+
+_:b120  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b120 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b120 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ArtichokeTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b121  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b121 , _:b122 , _:b123 , _:b124 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b122 , _:b123 , _:b121 , _:b124 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b46 , _:b30 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b40 , _:b55 , _:b29 , _:b12 , _:b57 , _:b60 , _:b56 , _:b65 , _:b70 , _:b42 , _:b125 , _:b54 , _:b7 , _:b17 , _:b21 , _:b126 , _:b26 , _:b43 , _:b24 , _:b33 , _:b34 , _:b127 , _:b45 , _:b31 , _:b19 , _:b53 , _:b51 , _:b18 , _:b44 , _:b61 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b23 , _:b39 , _:b32 , _:b47 , _:b22 , _:b8 , _:b2 , _:b128 , _:b35 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b49 , _:b27 , _:b38 , _:b16 , _:b15 , _:b69 , _:b13 , _:b25 , _:b20 , _:b129 , _:b130 , _:b36 , _:b37 , _:b63 , _:b48 , _:b105 , _:b10 , _:b9 , _:b131 , _:b11 , _:b132 , _:b66 , _:b41 , _:b3 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b80 , _:b84 , _:b89 , _:b86 , _:b91 , _:b103 , _:b94 , _:b83 , _:b78 , _:b93 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b96 , _:b82 , _:b85 , _:b81 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b77 , _:b87 , _:b95 , _:b92 , _:b79 , _:b90 , _:b88 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b83 , _:b90 , _:b88 , _:b82 , _:b89 , _:b94 , _:b93 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b86 , _:b80 , _:b84 , _:b78 , _:b97 , _:b85 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b92 , _:b91 , _:b121 , _:b77 , _:b95 , _:b87 , _:b123 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b103 , _:b81 , _:b122 , _:b96 .
+
+_:b133  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b133 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b133 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b134  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b128 , _:b130 , _:b134 , _:b125 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b128 , _:b134 , _:b125 , _:b130 .
+
+_:b135  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b135 , _:b14 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b135 , _:b14 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CheeseTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#DeepPanBase>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b122 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b136 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RosemaryTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b137  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b138 , _:b139 , _:b137 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b139 , _:b138 , _:b137 .
+
+_:b94   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b85 , _:b88 , _:b79 , _:b78 , _:b81 , _:b89 , _:b84 , _:b103 , _:b90 , _:b86 , _:b94 , _:b83 , _:b92 , _:b95 , _:b87 , _:b80 , _:b97 , _:b91 , _:b96 , _:b77 , _:b82 , _:b93 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b87 , _:b88 , _:b79 , _:b95 , _:b82 , _:b90 , _:b97 , _:b83 , _:b103 , _:b86 , _:b89 , _:b93 , _:b92 , _:b96 , _:b81 , _:b80 , _:b94 , _:b78 , _:b85 , _:b91 , _:b77 , _:b84 .
+
+_:b22   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b11 , _:b12 , _:b53 , _:b31 , _:b17 , _:b29 , _:b23 , _:b36 , _:b30 , _:b10 , _:b22 , _:b7 , _:b13 , _:b26 , _:b42 , _:b25 , _:b20 , _:b34 , _:b45 , _:b46 , _:b8 , _:b28 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b7 , _:b22 , _:b20 , _:b46 , _:b34 , _:b36 , _:b30 , _:b26 , _:b45 , _:b29 , _:b25 , _:b31 , _:b13 , _:b42 , _:b11 , _:b28 , _:b23 , _:b12 , _:b10 , _:b17 , _:b53 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b103 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b96 , _:b93 , _:b78 , _:b87 , _:b89 , _:b80 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b94 , _:b90 , _:b85 , _:b81 , _:b88 , _:b77 , _:b86 , _:b92 , _:b83 , _:b95 , _:b91 , _:b82 , _:b79 , _:b84 , _:b97 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> ] .
+
+_:b140  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b140 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b140 .
+
+_:b136  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b136 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b136 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b83 , _:b96 , _:b87 , _:b92 , _:b94 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b77 , _:b93 , _:b80 , _:b86 , _:b103 , _:b88 , _:b79 , _:b90 , _:b82 , _:b91 , _:b84 , _:b95 , _:b81 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b78 , _:b85 , _:b97 .
+
+_:b13   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b20 , _:b29 , _:b12 , _:b46 , _:b31 , _:b25 , _:b42 , _:b11 , _:b7 , _:b17 , _:b34 , _:b26 , _:b8 , _:b23 , _:b53 , _:b10 , _:b13 , _:b45 , _:b22 , _:b28 , _:b30 , _:b36 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b22 , _:b26 , _:b45 , _:b10 , _:b28 , _:b46 , _:b7 , _:b34 , _:b53 , _:b42 , _:b31 , _:b17 , _:b36 , _:b12 , _:b25 , _:b11 , _:b23 , _:b13 , _:b30 , _:b29 , _:b20 .
+
+_:b138  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b138 , _:b139 , _:b137 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b137 , _:b138 , _:b139 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b100 , _:b102 , _:b98 , _:b101 , _:b118 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b86 , _:b77 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b79 , _:b83 , _:b92 , _:b80 , _:b84 , _:b87 , _:b88 , _:b90 , _:b82 , _:b93 , _:b94 , _:b78 , _:b89 , _:b97 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b95 , _:b91 , _:b85 , _:b81 , _:b103 .
+
+_:b141  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b141 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b141 .
+
+_:b142  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b142 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b142 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GoatsCheeseTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GorgonzolaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#CheeseyVegetableTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+_:b56   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b131 , _:b60 , _:b58 , _:b56 , _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b56 , _:b60 , _:b131 , _:b58 .
+
+_:b79   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b80 , _:b79 , _:b90 , _:b89 , _:b88 , _:b94 , _:b95 , _:b86 , _:b87 , _:b93 , _:b82 , _:b78 , _:b96 , _:b81 , _:b91 , _:b83 , _:b97 , _:b103 , _:b77 , _:b84 , _:b92 , _:b85 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b96 , _:b78 , _:b97 , _:b80 , _:b84 , _:b87 , _:b95 , _:b77 , _:b79 , _:b90 , _:b92 , _:b85 , _:b91 , _:b93 , _:b81 , _:b94 , _:b89 , _:b83 , _:b86 , _:b103 , _:b82 , _:b88 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SundriedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b28   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b34 , _:b46 , _:b20 , _:b13 , _:b45 , _:b30 , _:b10 , _:b36 , _:b11 , _:b8 , _:b31 , _:b29 , _:b12 , _:b26 , _:b53 , _:b42 , _:b23 , _:b25 , _:b7 , _:b22 , _:b28 , _:b17 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b30 , _:b46 , _:b34 , _:b42 , _:b53 , _:b12 , _:b20 , _:b26 , _:b45 , _:b10 , _:b31 , _:b7 , _:b25 , _:b22 , _:b13 , _:b11 , _:b28 , _:b36 , _:b23 , _:b17 , _:b29 .
+
+_:b52   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b32 , _:b37 , _:b51 , _:b24 , _:b19 , _:b27 , _:b47 , _:b16 , _:b40 , _:b18 , _:b52 , _:b39 , _:b9 , _:b33 , _:b21 , _:b38 , _:b57 , _:b48 , _:b15 , _:b49 , _:b35 , _:b41 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b38 , _:b24 , _:b15 , _:b39 , _:b18 , _:b40 , _:b49 , _:b35 , _:b21 , _:b41 , _:b51 , _:b47 , _:b27 , _:b57 , _:b16 , _:b32 , _:b19 , _:b33 , _:b52 , _:b48 , _:b37 , _:b9 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Capricciosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Caprina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b74 ] .
+
+_:b143  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b143 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b143 .
+
+_:b37   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b21 , _:b37 , _:b16 , _:b38 , _:b57 , _:b40 , _:b48 , _:b47 , _:b51 , _:b52 , _:b9 , _:b33 , _:b15 , _:b24 , _:b41 , _:b39 , _:b27 , _:b49 , _:b19 , _:b18 , _:b32 , _:b35 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b19 , _:b39 , _:b15 , _:b37 , _:b35 , _:b41 , _:b40 , _:b47 , _:b24 , _:b33 , _:b18 , _:b48 , _:b16 , _:b52 , _:b49 , _:b51 , _:b57 , _:b21 , _:b9 , _:b38 , _:b32 , _:b27 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b22 , _:b26 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b24 , _:b49 , _:b34 , _:b111 , _:b25 , _:b16 , _:b23 , _:b35 , _:b4 , _:b29 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b53 , _:b30 , _:b28 , _:b18 , _:b1 , _:b52 , _:b37 , _:b47 , _:b27 , _:b11 , _:b32 , _:b40 , _:b36 , _:b48 , _:b12 , _:b15 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b41 , _:b57 , _:b7 , _:b144 , _:b38 , _:b112 , _:b3 , _:b2 , _:b51 , _:b19 , _:b9 , _:b13 , _:b46 , _:b10 , _:b31 , _:b43 , _:b17 , _:b42 , _:b33 , _:b39 , _:b8 , _:b5 , _:b45 .
+
+_:b125  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b128 , _:b130 , _:b134 , _:b125 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b128 , _:b130 , _:b134 , _:b125 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#America> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#England> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#France> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b145 ] .
+
+_:b146  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b146 , _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b146 .
+
+_:b147  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b147 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b147 .
+
+_:b43   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b43 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b43 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#GoatsCheeseTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b80 , _:b96 , _:b83 , _:b81 , _:b92 , _:b88 , _:b77 , _:b93 , _:b94 , _:b84 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b79 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b78 , _:b85 , _:b103 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b82 , _:b90 , _:b91 , _:b95 , _:b97 , _:b87 , _:b89 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GoatsCheeseTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SundriedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#isBaseOf>
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#isBaseOf> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#isBaseOf> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#RosemaryTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GorgonzolaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b148 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#ChickenTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b97 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b86 , _:b85 , _:b94 , _:b78 , _:b90 , _:b91 , _:b83 , _:b89 , _:b77 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b87 , _:b96 , _:b82 , _:b92 , _:b95 , _:b103 , _:b79 , _:b84 , _:b88 , _:b93 , _:b80 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b84 , _:b87 , _:b81 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b83 , _:b103 , _:b77 , _:b89 , _:b80 , _:b93 , _:b94 , _:b82 , _:b86 , _:b79 , _:b92 , _:b78 , _:b96 , _:b85 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b91 , _:b90 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b88 , _:b97 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#HotGreenPepperTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b76 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> , _:b72 , _:b115 , _:b75 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b73 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , _:b74 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b149 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+_:b99   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b100 , _:b102 , _:b99 , _:b98 , _:b101 , _:b118 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b100 , _:b118 , _:b101 , _:b98 , _:b99 , _:b102 .
+
+_:b102  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b118 , _:b99 , _:b100 , _:b102 , _:b101 , _:b98 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b118 , _:b100 , _:b99 , _:b98 , _:b101 , _:b102 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+_:b150  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b150 , _:b151 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b151 , _:b150 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b72 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b29 , _:b13 , _:b125 , _:b20 , _:b21 , _:b48 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b40 , _:b17 , _:b27 , _:b36 , _:b32 , _:b16 , _:b69 , _:b38 , _:b57 , _:b28 , _:b31 , _:b42 , _:b52 , _:b131 , _:b10 , _:b56 , _:b58 , _:b65 , _:b11 , _:b18 , _:b70 , _:b15 , _:b55 , _:b34 , _:b43 , _:b41 , _:b9 , _:b54 , _:b30 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b8 , _:b19 , _:b47 , _:b24 , _:b124 , _:b53 , _:b105 , _:b46 , _:b22 , _:b12 , _:b45 , _:b128 , _:b134 , _:b39 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b7 , _:b64 , _:b49 , _:b33 , _:b121 , _:b122 , _:b25 , _:b61 , _:b51 , _:b63 , _:b26 , _:b37 .
+
+_:b16   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b57 , _:b16 , _:b21 , _:b9 , _:b41 , _:b51 , _:b39 , _:b32 , _:b24 , _:b52 , _:b47 , _:b18 , _:b19 , _:b38 , _:b15 , _:b33 , _:b48 , _:b49 , _:b27 , _:b40 , _:b37 , _:b35 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b16 , _:b38 , _:b24 , _:b32 , _:b21 , _:b57 , _:b51 , _:b27 , _:b40 , _:b18 , _:b47 , _:b49 , _:b37 , _:b35 , _:b9 , _:b52 , _:b19 , _:b15 , _:b41 , _:b33 , _:b48 , _:b39 .
+
+_:b123  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b121 , _:b122 , _:b123 , _:b124 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b121 , _:b122 , _:b124 , _:b123 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaBase>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+_:b95   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b90 , _:b81 , _:b80 , _:b83 , _:b97 , _:b89 , _:b84 , _:b86 , _:b85 , _:b93 , _:b77 , _:b91 , _:b78 , _:b95 , _:b92 , _:b79 , _:b103 , _:b94 , _:b96 , _:b87 , _:b88 , _:b82 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b80 , _:b78 , _:b82 , _:b84 , _:b92 , _:b89 , _:b97 , _:b83 , _:b103 , _:b93 , _:b87 , _:b88 , _:b77 , _:b86 , _:b81 , _:b79 , _:b85 , _:b91 , _:b94 , _:b96 , _:b95 , _:b90 .
+
+_:b85   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b77 , _:b84 , _:b83 , _:b96 , _:b91 , _:b95 , _:b87 , _:b79 , _:b103 , _:b82 , _:b89 , _:b94 , _:b97 , _:b90 , _:b85 , _:b93 , _:b86 , _:b78 , _:b80 , _:b92 , _:b88 , _:b81 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b85 , _:b81 , _:b83 , _:b96 , _:b82 , _:b89 , _:b103 , _:b92 , _:b88 , _:b94 , _:b77 , _:b84 , _:b90 , _:b86 , _:b93 , _:b97 , _:b91 , _:b79 , _:b80 , _:b78 , _:b87 , _:b95 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b109  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b112 , _:b144 , _:b109 , _:b111 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b109 , _:b144 , _:b112 , _:b111 .
+
+_:b10   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b31 , _:b26 , _:b25 , _:b36 , _:b12 , _:b13 , _:b53 , _:b17 , _:b23 , _:b10 , _:b42 , _:b28 , _:b29 , _:b11 , _:b34 , _:b7 , _:b45 , _:b30 , _:b22 , _:b46 , _:b20 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b23 , _:b34 , _:b10 , _:b53 , _:b13 , _:b46 , _:b22 , _:b42 , _:b45 , _:b7 , _:b20 , _:b30 , _:b26 , _:b11 , _:b28 , _:b12 , _:b17 , _:b25 , _:b29 , _:b31 , _:b36 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Capricciosa>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b24 , _:b130 , _:b137 , _:b21 , _:b49 , _:b16 , _:b57 , _:b26 , _:b69 , _:b25 , _:b11 , _:b63 , _:b46 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b8 , _:b30 , _:b3 , _:b33 , _:b36 , _:b13 , _:b38 , _:b9 , _:b138 , _:b58 , _:b60 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b37 , _:b18 , _:b47 , _:b1 , _:b40 , _:b17 , _:b4 , _:b64 , _:b0 , _:b19 , _:b22 , _:b70 , _:b61 , _:b48 , _:b10 , _:b131 , _:b7 , _:b51 , _:b41 , _:b66 , _:b15 , _:b31 , _:b35 , _:b42 , _:b23 , _:b27 , _:b54 , _:b105 , _:b128 , _:b134 , _:b34 , _:b28 , _:b45 , _:b12 , _:b43 , _:b53 , _:b39 , _:b52 , _:b65 , _:b2 , _:b20 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> ] .
+
+_:b152  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b152 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b152 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b153  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b153 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b153 .
+
+_:b40   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b37 , _:b38 , _:b48 , _:b39 , _:b21 , _:b9 , _:b32 , _:b33 , _:b16 , _:b49 , _:b57 , _:b24 , _:b40 , _:b15 , _:b52 , _:b18 , _:b19 , _:b41 , _:b47 , _:b35 , _:b51 , _:b27 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b47 , _:b57 , _:b24 , _:b48 , _:b9 , _:b52 , _:b40 , _:b18 , _:b33 , _:b27 , _:b37 , _:b39 , _:b21 , _:b51 , _:b38 , _:b16 , _:b19 , _:b35 , _:b41 , _:b32 , _:b15 , _:b49 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Capricciosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Caprina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> ] .
+
+_:b154  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b154 , _:b6 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b154 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RosemaryTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b14   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b135 , _:b14 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b14 , _:b135 .
+
+_:b61   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b63 , _:b70 , _:b61 , _:b66 , _:b65 , _:b55 , _:b64 , _:b105 , _:b69 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b105 , _:b66 , _:b63 , _:b65 , _:b70 , _:b69 , _:b55 , _:b64 , _:b61 .
+
+_:b87   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b84 , _:b88 , _:b80 , _:b87 , _:b82 , _:b92 , _:b90 , _:b83 , _:b103 , _:b96 , _:b94 , _:b97 , _:b93 , _:b95 , _:b81 , _:b78 , _:b86 , _:b79 , _:b91 , _:b89 , _:b77 , _:b85 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b91 , _:b78 , _:b83 , _:b84 , _:b93 , _:b103 , _:b88 , _:b92 , _:b85 , _:b82 , _:b79 , _:b86 , _:b90 , _:b89 , _:b95 , _:b97 , _:b87 , _:b77 , _:b80 , _:b94 , _:b96 , _:b81 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourCheesesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GoatsCheeseTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GorgonzolaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b151 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b96   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b92 , _:b80 , _:b97 , _:b89 , _:b87 , _:b84 , _:b77 , _:b81 , _:b90 , _:b85 , _:b83 , _:b94 , _:b79 , _:b95 , _:b86 , _:b88 , _:b78 , _:b103 , _:b96 , _:b93 , _:b91 , _:b82 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b81 , _:b78 , _:b82 , _:b95 , _:b90 , _:b89 , _:b87 , _:b86 , _:b84 , _:b88 , _:b96 , _:b97 , _:b103 , _:b83 , _:b79 , _:b94 , _:b91 , _:b80 , _:b77 , _:b93 , _:b92 , _:b85 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#isToppingOf>
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#isToppingOf> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#isToppingOf> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b149  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b149 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b149 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b80 , _:b88 , _:b94 , _:b79 , _:b96 , _:b89 , _:b81 , _:b77 , _:b83 , _:b91 , _:b92 , _:b87 , _:b84 , _:b103 , _:b95 , _:b85 , _:b82 , _:b86 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b90 , _:b97 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b78 .
+
+_:b44   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b50 , _:b129 , _:b44 , _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b129 , _:b44 , _:b50 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b144  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b112 , _:b144 , _:b109 , _:b111 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b109 , _:b112 , _:b111 , _:b144 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b74 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b38 , _:b51 , _:b17 , _:b23 , _:b39 , _:b8 , _:b40 , _:b37 , _:b12 , _:b9 , _:b7 , _:b25 , _:b15 , _:b42 , _:b16 , _:b52 , _:b21 , _:b28 , _:b34 , _:b22 , _:b57 , _:b24 , _:b48 , _:b32 , _:b11 , _:b53 , _:b29 , _:b35 , _:b19 , _:b49 , _:b41 , _:b30 , _:b27 , _:b26 , _:b18 , _:b33 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b20 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b46 , _:b31 , _:b43 , _:b13 , _:b36 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b45 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RedOnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b142 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+_:b3    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b2 , _:b3 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b33 , _:b24 , _:b38 , _:b12 , _:b15 , _:b45 , _:b10 , _:b25 , _:b13 , _:b7 , _:b31 , _:b3 , _:b40 , _:b36 , _:b53 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b46 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b42 , _:b41 , _:b22 , _:b155 , _:b26 , _:b32 , _:b11 , _:b23 , _:b52 , _:b43 , _:b27 , _:b34 , _:b29 , _:b18 , _:b9 , _:b156 , _:b35 , _:b2 , _:b28 , _:b47 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b21 , _:b51 , _:b49 , _:b20 , _:b57 , _:b19 , _:b48 , _:b8 , _:b17 , _:b16 , _:b39 .
+
+_:b42   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b28 , _:b8 , _:b34 , _:b29 , _:b22 , _:b30 , _:b25 , _:b7 , _:b20 , _:b26 , _:b53 , _:b36 , _:b45 , _:b12 , _:b17 , _:b13 , _:b10 , _:b31 , _:b11 , _:b46 , _:b23 , _:b42 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b29 , _:b25 , _:b36 , _:b13 , _:b23 , _:b10 , _:b45 , _:b42 , _:b17 , _:b7 , _:b31 , _:b53 , _:b22 , _:b26 , _:b30 , _:b28 , _:b46 , _:b20 , _:b12 , _:b11 , _:b34 .
+
+_:b93   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b103 , _:b79 , _:b77 , _:b89 , _:b78 , _:b87 , _:b82 , _:b92 , _:b86 , _:b83 , _:b97 , _:b94 , _:b84 , _:b96 , _:b90 , _:b91 , _:b95 , _:b85 , _:b81 , _:b80 , _:b93 , _:b88 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b97 , _:b90 , _:b95 , _:b89 , _:b84 , _:b103 , _:b80 , _:b88 , _:b79 , _:b92 , _:b87 , _:b85 , _:b81 , _:b78 , _:b86 , _:b93 , _:b94 , _:b96 , _:b83 , _:b82 , _:b91 , _:b77 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#AsparagusTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b52 , _:b3 , _:b31 , _:b28 , _:b27 , _:b47 , _:b65 , _:b66 , _:b13 , _:b157 , _:b8 , _:b19 , _:b32 , _:b49 , _:b10 , _:b11 , _:b21 , _:b48 , _:b43 , _:b63 , _:b64 , _:b16 , _:b53 , _:b23 , _:b15 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b61 , _:b12 , _:b25 , _:b33 , _:b5 , _:b29 , _:b38 , _:b127 , _:b9 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b35 , _:b0 , _:b26 , _:b46 , _:b17 , _:b37 , _:b18 , _:b2 , _:b45 , _:b22 , _:b36 , _:b105 , _:b55 , _:b34 , _:b4 , _:b126 , _:b42 , _:b20 , _:b39 , _:b57 , _:b70 , _:b30 , _:b40 , _:b41 , _:b51 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b75   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b73 , _:b72 , _:b74 , _:b75 , _:b71 , _:b76 , _:b115 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b76 , _:b71 , _:b73 , _:b72 , _:b75 , _:b115 , _:b74 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Medium>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#ValuePartition> .
+
+_:b155  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b155 , _:b158 , _:b156 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b155 , _:b156 , _:b158 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#RedOnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b159  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b159 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b159 .
+
+_:b127  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b127 , _:b132 , _:b126 , _:b157 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b157 , _:b126 , _:b127 , _:b132 .
+
+_:b160  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b160 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b160 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaBase> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> ] .
+
+_:b62   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b59 , _:b67 , _:b62 , _:b68 , _:b107 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b59 , _:b62 , _:b67 , _:b68 , _:b107 .
+
+_:b112  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b112 , _:b144 , _:b109 , _:b111 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b112 , _:b144 , _:b109 , _:b111 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#HotSpicedBeefTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b73 , _:b115 , _:b75 , _:b72 , _:b74 , _:b71 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+_:b69   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b64 , _:b65 , _:b70 , _:b69 , _:b105 , _:b66 , _:b63 , _:b55 , _:b61 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b63 , _:b65 , _:b55 , _:b66 , _:b61 , _:b70 , _:b69 , _:b105 , _:b64 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#JalapenoPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> ] .
+
+_:b63   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b105 , _:b66 , _:b69 , _:b61 , _:b64 , _:b55 , _:b70 , _:b63 , _:b65 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b61 , _:b65 , _:b55 , _:b69 , _:b64 , _:b70 , _:b66 , _:b105 , _:b63 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SundriedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b110  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b161 , _:b110 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b161 , _:b110 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b53 , _:b62 , _:b12 , _:b49 , _:b55 , _:b28 , _:b32 , _:b23 , _:b43 , _:b16 , _:b27 , _:b7 , _:b47 , _:b111 , _:b22 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b9 , _:b19 , _:b48 , _:b11 , _:b17 , _:b41 , _:b67 , _:b105 , _:b8 , _:b57 , _:b29 , _:b35 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b26 , _:b39 , _:b107 , _:b68 , _:b30 , _:b31 , _:b45 , _:b24 , _:b66 , _:b63 , _:b21 , _:b13 , _:b65 , _:b52 , _:b15 , _:b61 , _:b10 , _:b36 , _:b18 , _:b40 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b46 , _:b64 , _:b20 , _:b34 , _:b69 , _:b109 , _:b33 , _:b42 , _:b37 , _:b51 , _:b144 .
+
+_:b51   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b35 , _:b41 , _:b48 , _:b24 , _:b32 , _:b18 , _:b33 , _:b9 , _:b57 , _:b40 , _:b38 , _:b15 , _:b51 , _:b16 , _:b19 , _:b49 , _:b39 , _:b47 , _:b37 , _:b52 , _:b27 , _:b21 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b40 , _:b19 , _:b32 , _:b9 , _:b18 , _:b39 , _:b15 , _:b51 , _:b52 , _:b35 , _:b57 , _:b27 , _:b41 , _:b37 , _:b48 , _:b16 , _:b38 , _:b49 , _:b24 , _:b33 , _:b21 , _:b47 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CheeseTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HotGreenPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#JalapenoPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b24   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b49 , _:b16 , _:b47 , _:b18 , _:b37 , _:b21 , _:b15 , _:b32 , _:b27 , _:b57 , _:b48 , _:b51 , _:b33 , _:b40 , _:b41 , _:b38 , _:b39 , _:b52 , _:b35 , _:b9 , _:b19 , _:b24 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b39 , _:b27 , _:b41 , _:b24 , _:b35 , _:b33 , _:b9 , _:b32 , _:b19 , _:b40 , _:b47 , _:b16 , _:b15 , _:b49 , _:b52 , _:b18 , _:b51 , _:b21 , _:b57 , _:b38 , _:b37 , _:b48 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b68   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b62 , _:b107 , _:b67 , _:b68 , _:b59 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b62 , _:b68 , _:b67 , _:b59 , _:b107 .
+
+_:b91   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b103 , _:b83 , _:b80 , _:b92 , _:b78 , _:b89 , _:b85 , _:b86 , _:b84 , _:b90 , _:b82 , _:b95 , _:b91 , _:b94 , _:b81 , _:b88 , _:b96 , _:b87 , _:b77 , _:b93 , _:b97 , _:b79 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b89 , _:b79 , _:b91 , _:b77 , _:b97 , _:b95 , _:b94 , _:b80 , _:b78 , _:b92 , _:b82 , _:b81 , _:b87 , _:b83 , _:b85 , _:b90 , _:b84 , _:b88 , _:b93 , _:b96 , _:b86 , _:b103 .
+
+_:b27   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b48 , _:b15 , _:b47 , _:b9 , _:b51 , _:b33 , _:b19 , _:b57 , _:b21 , _:b27 , _:b37 , _:b38 , _:b40 , _:b18 , _:b39 , _:b52 , _:b49 , _:b41 , _:b16 , _:b35 , _:b24 , _:b32 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b9 , _:b40 , _:b38 , _:b37 , _:b21 , _:b32 , _:b51 , _:b16 , _:b35 , _:b49 , _:b52 , _:b41 , _:b15 , _:b57 , _:b48 , _:b18 , _:b24 , _:b39 , _:b33 , _:b27 , _:b19 , _:b47 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#American>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b9 , _:b51 , _:b11 , _:b26 , _:b2 , _:b52 , _:b32 , _:b18 , _:b41 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b3 , _:b31 , _:b49 , _:b34 , _:b29 , _:b39 , _:b13 , _:b47 , _:b28 , _:b57 , _:b19 , _:b24 , _:b43 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b23 , _:b42 , _:b30 , _:b27 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b37 , _:b7 , _:b46 , _:b21 , _:b12 , _:b48 , _:b135 , _:b10 , _:b8 , _:b40 , _:b129 , _:b22 , _:b25 , _:b17 , _:b38 , _:b16 , _:b53 , _:b50 , _:b36 , _:b20 , _:b35 , _:b15 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#IceCream>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Capricciosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Caprina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#American> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> ] .
+
+_:b162  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b162 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b162 .
+
+_:b78   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b80 , _:b81 , _:b97 , _:b90 , _:b89 , _:b95 , _:b82 , _:b96 , _:b103 , _:b93 , _:b94 , _:b92 , _:b85 , _:b79 , _:b78 , _:b87 , _:b77 , _:b83 , _:b91 , _:b84 , _:b86 , _:b88 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b89 , _:b88 , _:b95 , _:b96 , _:b80 , _:b91 , _:b93 , _:b92 , _:b86 , _:b85 , _:b78 , _:b90 , _:b82 , _:b87 , _:b77 , _:b83 , _:b94 , _:b79 , _:b97 , _:b84 , _:b103 , _:b81 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b58   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b131 , _:b60 , _:b58 , _:b56 , _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b131 , _:b60 , _:b56 , _:b58 .
+
+_:b161  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b161 , _:b110 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b110 , _:b161 .
+
+_:b157  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b127 , _:b132 , _:b126 , _:b157 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b132 , _:b127 , _:b126 , _:b157 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b45   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b20 , _:b53 , _:b13 , _:b11 , _:b10 , _:b31 , _:b30 , _:b23 , _:b7 , _:b45 , _:b46 , _:b17 , _:b22 , _:b36 , _:b29 , _:b8 , _:b26 , _:b34 , _:b25 , _:b12 , _:b28 , _:b42 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b12 , _:b26 , _:b45 , _:b10 , _:b46 , _:b23 , _:b11 , _:b36 , _:b29 , _:b34 , _:b30 , _:b53 , _:b42 , _:b28 , _:b20 , _:b17 , _:b7 , _:b22 , _:b13 , _:b25 , _:b31 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Medium> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmaHamTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b97 , _:b103 , _:b93 , _:b90 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b96 , _:b94 , _:b95 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping> , _:b91 , _:b79 , _:b81 , _:b78 , _:b92 , _:b82 , _:b83 , _:b89 , _:b77 , _:b87 , _:b80 , _:b85 , _:b84 , _:b86 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GreenPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HotSpicedBeefTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b37 , _:b47 , _:b48 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b28 , _:b157 , _:b12 , _:b20 , _:b27 , _:b19 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b53 , _:b35 , _:b42 , _:b43 , _:b18 , _:b24 , _:b51 , _:b52 , _:b45 , _:b126 , _:b40 , _:b26 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b132 , _:b25 , _:b33 , _:b17 , _:b31 , _:b38 , _:b29 , _:b16 , _:b30 , _:b46 , _:b13 , _:b8 , _:b23 , _:b34 , _:b10 , _:b32 , _:b57 , _:b41 , _:b11 , _:b9 , _:b21 , _:b7 , _:b15 , _:b49 , _:b36 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#ArtichokeTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b81 , _:b91 , _:b78 , _:b89 , _:b97 , _:b95 , _:b86 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b94 , _:b87 , _:b85 , _:b83 , _:b77 , _:b88 , _:b96 , _:b103 , _:b84 , _:b82 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b93 , _:b79 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b80 , _:b90 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+_:b163  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b163 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b163 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b164  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b164 , _:b155 , _:b158 , _:b156 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b164 .
+
+_:b59   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b62 , _:b59 , _:b68 , _:b107 , _:b67 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b107 , _:b68 , _:b62 , _:b59 , _:b67 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> ] .
+
+_:b25   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b23 , _:b26 , _:b7 , _:b22 , _:b8 , _:b10 , _:b30 , _:b28 , _:b34 , _:b31 , _:b42 , _:b12 , _:b11 , _:b36 , _:b53 , _:b45 , _:b46 , _:b13 , _:b25 , _:b17 , _:b29 , _:b20 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b31 , _:b45 , _:b22 , _:b7 , _:b17 , _:b29 , _:b42 , _:b34 , _:b53 , _:b25 , _:b36 , _:b28 , _:b46 , _:b20 , _:b12 , _:b11 , _:b30 , _:b23 , _:b26 , _:b13 , _:b10 .
+
+_:b4    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b3 , _:b1 , _:b5 , _:b4 , _:b0 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b1 , _:b0 , _:b5 , _:b4 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> ] .
+
+_:b38   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b41 , _:b21 , _:b9 , _:b49 , _:b47 , _:b18 , _:b32 , _:b57 , _:b33 , _:b52 , _:b27 , _:b39 , _:b15 , _:b16 , _:b38 , _:b48 , _:b51 , _:b35 , _:b24 , _:b40 , _:b37 , _:b19 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b52 , _:b24 , _:b32 , _:b15 , _:b21 , _:b33 , _:b51 , _:b18 , _:b57 , _:b47 , _:b49 , _:b19 , _:b9 , _:b40 , _:b41 , _:b35 , _:b39 , _:b37 , _:b38 , _:b48 , _:b16 , _:b27 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#France> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+_:b165  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b165 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b165 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> ] .
+
+_:b50   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b50 , _:b129 , _:b44 , _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b129 , _:b50 , _:b44 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TobascoPepperSauce> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b156  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b155 , _:b158 , _:b156 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b155 , _:b156 , _:b158 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GreenPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#JalapenoPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> ] .
+
+_:b166  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b166 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b166 .
+
+_:b41   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b38 , _:b52 , _:b40 , _:b18 , _:b57 , _:b35 , _:b41 , _:b37 , _:b24 , _:b48 , _:b33 , _:b27 , _:b21 , _:b15 , _:b49 , _:b9 , _:b39 , _:b19 , _:b16 , _:b51 , _:b47 , _:b32 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b38 , _:b15 , _:b39 , _:b41 , _:b52 , _:b18 , _:b21 , _:b33 , _:b9 , _:b19 , _:b47 , _:b35 , _:b24 , _:b48 , _:b16 , _:b40 , _:b37 , _:b49 , _:b32 , _:b27 , _:b51 , _:b57 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RosemaryTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b23   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b8 , _:b10 , _:b30 , _:b53 , _:b22 , _:b23 , _:b13 , _:b7 , _:b45 , _:b36 , _:b20 , _:b31 , _:b29 , _:b34 , _:b26 , _:b28 , _:b17 , _:b12 , _:b42 , _:b11 , _:b25 , _:b46 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b13 , _:b26 , _:b17 , _:b25 , _:b45 , _:b42 , _:b31 , _:b11 , _:b28 , _:b23 , _:b22 , _:b53 , _:b29 , _:b30 , _:b10 , _:b46 , _:b7 , _:b20 , _:b36 , _:b34 , _:b12 .
+
+_:b12   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b31 , _:b46 , _:b20 , _:b45 , _:b23 , _:b8 , _:b34 , _:b17 , _:b12 , _:b22 , _:b30 , _:b7 , _:b53 , _:b42 , _:b29 , _:b11 , _:b28 , _:b10 , _:b26 , _:b13 , _:b25 , _:b36 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b13 , _:b7 , _:b20 , _:b12 , _:b30 , _:b34 , _:b42 , _:b45 , _:b26 , _:b46 , _:b25 , _:b22 , _:b36 , _:b10 , _:b11 , _:b53 , _:b28 , _:b23 , _:b31 , _:b17 , _:b29 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> ] .
+
+_:b83   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b91 , _:b93 , _:b81 , _:b95 , _:b79 , _:b87 , _:b90 , _:b94 , _:b97 , _:b78 , _:b92 , _:b96 , _:b86 , _:b85 , _:b82 , _:b103 , _:b84 , _:b77 , _:b80 , _:b88 , _:b89 , _:b83 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b103 , _:b95 , _:b94 , _:b78 , _:b97 , _:b88 , _:b91 , _:b77 , _:b84 , _:b93 , _:b80 , _:b87 , _:b96 , _:b92 , _:b82 , _:b85 , _:b86 , _:b81 , _:b83 , _:b90 , _:b79 , _:b89 .
+
+_:b47   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b15 , _:b38 , _:b35 , _:b51 , _:b40 , _:b16 , _:b19 , _:b52 , _:b48 , _:b33 , _:b47 , _:b57 , _:b32 , _:b24 , _:b27 , _:b39 , _:b9 , _:b21 , _:b37 , _:b18 , _:b41 , _:b49 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b16 , _:b41 , _:b49 , _:b21 , _:b32 , _:b27 , _:b19 , _:b51 , _:b33 , _:b48 , _:b39 , _:b52 , _:b18 , _:b47 , _:b9 , _:b38 , _:b15 , _:b35 , _:b37 , _:b40 , _:b24 , _:b57 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b167 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b168  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b168 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b168 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> ] .
+
+_:b57   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b27 , _:b32 , _:b18 , _:b9 , _:b35 , _:b38 , _:b41 , _:b37 , _:b57 , _:b49 , _:b19 , _:b15 , _:b40 , _:b48 , _:b47 , _:b24 , _:b39 , _:b33 , _:b52 , _:b21 , _:b16 , _:b51 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b24 , _:b41 , _:b47 , _:b16 , _:b39 , _:b37 , _:b18 , _:b15 , _:b57 , _:b38 , _:b35 , _:b52 , _:b27 , _:b21 , _:b51 , _:b33 , _:b49 , _:b32 , _:b40 , _:b19 , _:b9 , _:b48 .
+
+_:b103  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b80 , _:b91 , _:b87 , _:b89 , _:b93 , _:b82 , _:b86 , _:b78 , _:b92 , _:b84 , _:b85 , _:b83 , _:b94 , _:b77 , _:b81 , _:b103 , _:b79 , _:b96 , _:b90 , _:b88 , _:b97 , _:b95 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b79 , _:b78 , _:b97 , _:b84 , _:b85 , _:b92 , _:b87 , _:b88 , _:b90 , _:b81 , _:b83 , _:b82 , _:b86 , _:b89 , _:b77 , _:b95 , _:b80 , _:b93 , _:b91 , _:b96 , _:b94 , _:b103 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TobascoPepperSauce> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> ] .
+
+_:b169  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b169 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b169 .
+
+_:b139  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b138 , _:b139 , _:b137 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b137 , _:b138 , _:b139 .
+
+_:b170  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b170 , _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b170 .
+
+_:b151  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b150 , _:b151 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b151 , _:b150 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TobascoPepperSauce> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ArtichokeTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#AsparagusTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> ] .
+
+_:b171  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b171 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b171 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b31 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b26 , _:b42 , _:b46 , _:b27 , _:b18 , _:b2 , _:b158 , _:b16 , _:b51 , _:b41 , _:b45 , _:b24 , _:b8 , _:b59 , _:b40 , _:b156 , _:b29 , _:b47 , _:b36 , _:b11 , _:b57 , _:b52 , _:b20 , _:b48 , _:b62 , _:b107 , _:b28 , _:b23 , _:b21 , _:b32 , _:b37 , _:b25 , _:b155 , _:b7 , _:b22 , _:b30 , _:b53 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b38 , _:b13 , _:b17 , _:b12 , _:b3 , _:b19 , _:b39 , _:b35 , _:b9 , _:b49 , _:b33 , _:b10 , _:b68 , _:b43 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#IceCream> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaBase> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> ] .
+
+_:b31   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b42 , _:b31 , _:b11 , _:b23 , _:b46 , _:b34 , _:b45 , _:b7 , _:b17 , _:b26 , _:b20 , _:b8 , _:b25 , _:b36 , _:b29 , _:b22 , _:b10 , _:b53 , _:b12 , _:b28 , _:b13 , _:b30 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b13 , _:b46 , _:b12 , _:b30 , _:b10 , _:b11 , _:b28 , _:b22 , _:b26 , _:b53 , _:b29 , _:b20 , _:b7 , _:b23 , _:b45 , _:b25 , _:b31 , _:b17 , _:b42 , _:b36 , _:b34 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#AsparagusTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b91 , _:b92 , _:b90 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b97 , _:b88 , _:b86 , _:b89 , _:b81 , _:b79 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b96 , _:b93 , _:b87 , _:b80 , _:b85 , _:b78 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b94 , _:b83 , _:b95 , _:b103 , _:b84 , _:b77 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#France> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#NamedPizza>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b43 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b155 , _:b30 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b33 , _:b46 , _:b15 , _:b7 , _:b18 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b29 , _:b139 , _:b22 , _:b10 , _:b47 , _:b13 , _:b8 , _:b25 , _:b38 , _:b48 , _:b9 , _:b45 , _:b21 , _:b28 , _:b24 , _:b26 , _:b17 , _:b53 , _:b39 , _:b158 , _:b42 , _:b35 , _:b20 , _:b52 , _:b11 , _:b12 , _:b34 , _:b32 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b57 , _:b51 , _:b19 , _:b23 , _:b27 , _:b40 , _:b54 , _:b43 , _:b138 , _:b41 , _:b49 , _:b36 , _:b37 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b172  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b172 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b172 .
+
+_:b173  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b173 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b173 .
+
+_:b158  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b155 , _:b158 , _:b156 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b156 , _:b158 , _:b155 .
+
+_:b129  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b50 , _:b129 , _:b44 , _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b129 , _:b44 , _:b50 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#America>
+        a       _:b113 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b89   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b78 , _:b91 , _:b90 , _:b79 , _:b96 , _:b88 , _:b103 , _:b84 , _:b94 , _:b81 , _:b87 , _:b80 , _:b83 , _:b89 , _:b92 , _:b85 , _:b97 , _:b93 , _:b95 , _:b82 , _:b77 , _:b86 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b88 , _:b78 , _:b93 , _:b90 , _:b97 , _:b95 , _:b89 , _:b87 , _:b79 , _:b77 , _:b85 , _:b80 , _:b81 , _:b103 , _:b96 , _:b82 , _:b92 , _:b94 , _:b84 , _:b86 , _:b91 , _:b83 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b108 ] .
+
+_:b174  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b174 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b174 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#ThinAndCrispyBase>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+_:b9    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b19 , _:b32 , _:b18 , _:b33 , _:b49 , _:b51 , _:b39 , _:b48 , _:b37 , _:b57 , _:b27 , _:b35 , _:b24 , _:b47 , _:b21 , _:b41 , _:b52 , _:b9 , _:b40 , _:b15 , _:b16 , _:b38 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b16 , _:b41 , _:b39 , _:b40 , _:b27 , _:b57 , _:b9 , _:b51 , _:b32 , _:b37 , _:b35 , _:b47 , _:b48 , _:b15 , _:b19 , _:b18 , _:b24 , _:b33 , _:b38 , _:b49 , _:b21 , _:b52 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b175 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#CheeseTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PineKernels>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b87 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b81 , _:b77 , _:b91 , _:b78 , _:b95 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b103 , _:b83 , _:b90 , _:b89 , _:b86 , _:b96 , _:b92 , _:b88 , _:b84 , _:b79 , _:b85 , _:b82 , _:b80 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b93 , _:b97 , _:b94 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b176  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b176 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b176 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+_:b101  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b100 , _:b98 , _:b101 , _:b99 , _:b102 , _:b118 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b100 , _:b99 , _:b101 , _:b118 , _:b98 , _:b102 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+_:b86   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b96 , _:b81 , _:b79 , _:b78 , _:b88 , _:b85 , _:b103 , _:b91 , _:b83 , _:b95 , _:b97 , _:b82 , _:b93 , _:b86 , _:b89 , _:b92 , _:b80 , _:b94 , _:b87 , _:b77 , _:b84 , _:b90 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b88 , _:b92 , _:b86 , _:b89 , _:b81 , _:b82 , _:b78 , _:b96 , _:b91 , _:b103 , _:b94 , _:b84 , _:b97 , _:b87 , _:b85 , _:b83 , _:b95 , _:b90 , _:b80 , _:b93 , _:b79 , _:b77 .
+
+_:b177  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b177 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b177 .
+
+_:b90   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b77 , _:b103 , _:b88 , _:b87 , _:b93 , _:b94 , _:b97 , _:b86 , _:b96 , _:b80 , _:b84 , _:b82 , _:b79 , _:b83 , _:b81 , _:b90 , _:b85 , _:b91 , _:b92 , _:b89 , _:b95 , _:b78 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b82 , _:b89 , _:b95 , _:b92 , _:b77 , _:b80 , _:b78 , _:b91 , _:b93 , _:b103 , _:b81 , _:b88 , _:b84 , _:b90 , _:b83 , _:b85 , _:b96 , _:b86 , _:b87 , _:b79 , _:b94 , _:b97 .
+
+_:b35   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b32 , _:b27 , _:b38 , _:b49 , _:b51 , _:b41 , _:b9 , _:b57 , _:b24 , _:b33 , _:b15 , _:b35 , _:b37 , _:b39 , _:b16 , _:b19 , _:b18 , _:b47 , _:b52 , _:b48 , _:b21 , _:b40 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b57 , _:b52 , _:b27 , _:b18 , _:b16 , _:b41 , _:b47 , _:b51 , _:b21 , _:b33 , _:b35 , _:b32 , _:b9 , _:b49 , _:b39 , _:b15 , _:b19 , _:b37 , _:b24 , _:b38 , _:b40 , _:b48 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b144 , _:b7 , _:b20 , _:b105 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b46 , _:b43 , _:b69 , _:b37 , _:b67 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b48 , _:b19 , _:b47 , _:b42 , _:b66 , _:b16 , _:b39 , _:b24 , _:b15 , _:b23 , _:b26 , _:b112 , _:b30 , _:b52 , _:b55 , _:b63 , _:b62 , _:b34 , _:b64 , _:b107 , _:b32 , _:b13 , _:b21 , _:b59 , _:b18 , _:b65 , _:b51 , _:b29 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b38 , _:b12 , _:b57 , _:b33 , _:b35 , _:b41 , _:b25 , _:b109 , _:b40 , _:b11 , _:b22 , _:b10 , _:b27 , _:b31 , _:b28 , _:b45 , _:b8 , _:b49 , _:b70 , _:b53 , _:b17 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ChickenTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RedOnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b32   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b48 , _:b37 , _:b41 , _:b57 , _:b51 , _:b33 , _:b40 , _:b49 , _:b47 , _:b16 , _:b15 , _:b32 , _:b21 , _:b9 , _:b19 , _:b38 , _:b35 , _:b27 , _:b18 , _:b52 , _:b24 , _:b39 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b38 , _:b21 , _:b33 , _:b51 , _:b48 , _:b39 , _:b16 , _:b24 , _:b35 , _:b37 , _:b9 , _:b40 , _:b49 , _:b27 , _:b52 , _:b15 , _:b19 , _:b32 , _:b47 , _:b41 , _:b57 , _:b18 .
+
+_:b15   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b40 , _:b39 , _:b27 , _:b24 , _:b51 , _:b9 , _:b19 , _:b35 , _:b32 , _:b15 , _:b52 , _:b41 , _:b16 , _:b37 , _:b21 , _:b49 , _:b18 , _:b38 , _:b33 , _:b48 , _:b57 , _:b47 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b35 , _:b51 , _:b48 , _:b24 , _:b39 , _:b41 , _:b32 , _:b9 , _:b37 , _:b49 , _:b16 , _:b57 , _:b52 , _:b40 , _:b18 , _:b47 , _:b15 , _:b38 , _:b21 , _:b27 , _:b33 , _:b19 .
+
+_:b88   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b85 , _:b82 , _:b86 , _:b94 , _:b92 , _:b89 , _:b79 , _:b90 , _:b77 , _:b83 , _:b78 , _:b91 , _:b87 , _:b84 , _:b96 , _:b103 , _:b93 , _:b95 , _:b97 , _:b81 , _:b80 , _:b88 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b82 , _:b93 , _:b85 , _:b89 , _:b90 , _:b83 , _:b103 , _:b91 , _:b80 , _:b77 , _:b94 , _:b78 , _:b92 , _:b81 , _:b84 , _:b96 , _:b86 , _:b87 , _:b97 , _:b95 , _:b88 , _:b79 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b100 , _:b98 , _:b99 , _:b102 , _:b118 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Hot> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Medium> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild> ] .
+
+_:b7    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b30 , _:b22 , _:b13 , _:b53 , _:b26 , _:b29 , _:b23 , _:b36 , _:b42 , _:b17 , _:b8 , _:b46 , _:b12 , _:b34 , _:b45 , _:b31 , _:b7 , _:b10 , _:b20 , _:b25 , _:b11 , _:b28 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b45 , _:b34 , _:b36 , _:b46 , _:b22 , _:b31 , _:b13 , _:b53 , _:b25 , _:b17 , _:b28 , _:b23 , _:b10 , _:b30 , _:b11 , _:b29 , _:b12 , _:b20 , _:b42 , _:b7 , _:b26 .
+
+_:b132  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b127 , _:b132 , _:b126 , _:b157 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b126 , _:b132 , _:b157 , _:b127 .
+
+_:b48   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b9 , _:b19 , _:b33 , _:b27 , _:b32 , _:b40 , _:b52 , _:b37 , _:b51 , _:b15 , _:b49 , _:b39 , _:b38 , _:b47 , _:b21 , _:b18 , _:b16 , _:b35 , _:b48 , _:b57 , _:b24 , _:b41 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b37 , _:b33 , _:b39 , _:b57 , _:b35 , _:b49 , _:b32 , _:b47 , _:b9 , _:b24 , _:b16 , _:b15 , _:b52 , _:b41 , _:b27 , _:b48 , _:b18 , _:b19 , _:b40 , _:b21 , _:b38 , _:b51 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#RosemaryTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b103 , _:b96 , _:b95 , _:b93 , _:b79 , _:b94 , _:b83 , _:b87 , _:b81 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b82 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b90 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b97 , _:b86 , _:b84 , _:b77 , _:b89 , _:b92 , _:b78 , _:b88 , _:b85 , _:b80 .
+
+_:b178  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b178 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b178 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#ValuePartition> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b148 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+_:b115  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b115 , _:b74 , _:b73 , _:b72 , _:b71 , _:b76 , _:b75 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b76 , _:b71 , _:b75 , _:b115 , _:b73 , _:b72 , _:b74 .
+
+_:b39   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b9 , _:b33 , _:b27 , _:b19 , _:b47 , _:b18 , _:b24 , _:b35 , _:b57 , _:b52 , _:b32 , _:b16 , _:b48 , _:b40 , _:b15 , _:b38 , _:b39 , _:b51 , _:b41 , _:b37 , _:b49 , _:b21 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b9 , _:b51 , _:b57 , _:b32 , _:b47 , _:b16 , _:b49 , _:b41 , _:b38 , _:b21 , _:b24 , _:b35 , _:b40 , _:b18 , _:b52 , _:b48 , _:b39 , _:b33 , _:b19 , _:b37 , _:b15 , _:b27 .
+
+_:b179  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b179 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b179 .
+
+_:b82   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b86 , _:b90 , _:b84 , _:b89 , _:b88 , _:b96 , _:b81 , _:b82 , _:b83 , _:b85 , _:b93 , _:b97 , _:b87 , _:b80 , _:b77 , _:b95 , _:b103 , _:b94 , _:b78 , _:b79 , _:b92 , _:b91 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b96 , _:b77 , _:b84 , _:b80 , _:b91 , _:b97 , _:b94 , _:b85 , _:b83 , _:b81 , _:b82 , _:b89 , _:b92 , _:b88 , _:b90 , _:b93 , _:b87 , _:b78 , _:b86 , _:b95 , _:b79 , _:b103 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HotSpicedBeefTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#England>
+        a       _:b113 .
+
+_:b5    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b1 , _:b2 , _:b5 , _:b3 , _:b0 , _:b4 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b1 , _:b0 , _:b4 , _:b5 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#hasBase>
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b43 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasBase> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasBase> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#hasIngredient>
+        <http://www.w3.org/2000/01/rdf-schema#domain>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasIngredient> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasIngredient> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+_:b54   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b54 .
+
+_:b180  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b180 , _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b180 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b93 , _:b89 , _:b87 , _:b94 , _:b91 , _:b79 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> , _:b84 , _:b82 , _:b96 , _:b85 , _:b78 , _:b88 , _:b86 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b77 , _:b103 , _:b83 , _:b92 , _:b90 , _:b95 , _:b97 , _:b81 .
+
+_:b17   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b28 , _:b17 , _:b36 , _:b25 , _:b11 , _:b46 , _:b23 , _:b20 , _:b22 , _:b7 , _:b26 , _:b29 , _:b13 , _:b30 , _:b10 , _:b8 , _:b53 , _:b34 , _:b12 , _:b42 , _:b31 , _:b45 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b25 , _:b45 , _:b11 , _:b29 , _:b12 , _:b20 , _:b42 , _:b13 , _:b31 , _:b22 , _:b26 , _:b28 , _:b17 , _:b36 , _:b34 , _:b7 , _:b46 , _:b23 , _:b30 , _:b10 , _:b53 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b49 , _:b33 , _:b57 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b11 , _:b25 , _:b36 , _:b17 , _:b9 , _:b35 , _:b20 , _:b15 , _:b46 , _:b39 , _:b23 , _:b12 , _:b52 , _:b42 , _:b16 , _:b18 , _:b26 , _:b43 , _:b47 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b30 , _:b10 , _:b53 , _:b32 , _:b37 , _:b27 , _:b40 , _:b48 , _:b29 , _:b8 , _:b45 , _:b38 , _:b28 , _:b51 , _:b21 , _:b22 , _:b7 , _:b24 , _:b19 , _:b31 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b34 .
+
+_:b33   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b9 , _:b32 , _:b37 , _:b19 , _:b47 , _:b18 , _:b38 , _:b15 , _:b52 , _:b24 , _:b57 , _:b40 , _:b21 , _:b16 , _:b35 , _:b27 , _:b33 , _:b41 , _:b49 , _:b51 , _:b48 , _:b39 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b16 , _:b38 , _:b48 , _:b9 , _:b27 , _:b51 , _:b37 , _:b47 , _:b39 , _:b21 , _:b41 , _:b18 , _:b52 , _:b57 , _:b19 , _:b24 , _:b15 , _:b33 , _:b40 , _:b32 , _:b49 , _:b35 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Medium> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TobascoPepperSauce> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b149 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b87 , _:b95 , _:b77 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b86 , _:b88 , _:b91 , _:b89 , _:b79 , _:b97 , _:b84 , _:b83 , _:b80 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b82 , _:b92 , _:b90 , _:b85 , _:b78 , _:b93 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b103 , _:b96 , _:b81 .
+
+_:b34   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b30 , _:b42 , _:b10 , _:b31 , _:b53 , _:b36 , _:b28 , _:b26 , _:b34 , _:b17 , _:b29 , _:b11 , _:b8 , _:b20 , _:b45 , _:b7 , _:b13 , _:b12 , _:b25 , _:b23 , _:b22 , _:b46 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b17 , _:b34 , _:b42 , _:b23 , _:b7 , _:b10 , _:b12 , _:b25 , _:b20 , _:b31 , _:b36 , _:b11 , _:b46 , _:b30 , _:b45 , _:b26 , _:b29 , _:b22 , _:b28 , _:b13 , _:b53 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> ] .
+
+_:b66   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b70 , _:b66 , _:b65 , _:b61 , _:b69 , _:b63 , _:b105 , _:b64 , _:b55 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b55 , _:b65 , _:b63 , _:b64 , _:b69 , _:b66 , _:b61 , _:b70 , _:b105 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#CajunSpiceTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b74 , _:b76 , _:b71 , _:b115 , _:b72 , _:b75 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild> ] .
+
+_:b128  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b128 , _:b130 , _:b134 , _:b125 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b125 , _:b130 , _:b128 , _:b134 .
+
+_:b181  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b181 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b181 .
+
+_:b6    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b6 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b6 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CheeseTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FishTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MeatTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b64   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b64 , _:b70 , _:b69 , _:b55 , _:b61 , _:b105 , _:b65 , _:b63 , _:b66 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b64 , _:b61 , _:b70 , _:b63 , _:b69 , _:b65 , _:b105 , _:b66 , _:b55 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b182  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b21 , _:b38 , _:b32 , _:b18 , _:b24 , _:b40 , _:b37 , _:b9 , _:b35 , _:b51 , _:b39 , _:b19 , _:b52 , _:b33 , _:b49 , _:b47 , _:b16 , _:b15 , _:b27 , _:b41 , _:b57 , _:b182 , _:b48 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b182 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> ] .
+
+_:b60   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b131 , _:b60 , _:b58 , _:b56 , _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b60 , _:b58 , _:b131 , _:b56 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> ] .
+
+_:b183  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b183 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b183 .
+
+_:b73   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b72 , _:b75 , _:b74 , _:b115 , _:b73 , _:b76 , _:b71 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b72 , _:b115 , _:b76 , _:b71 , _:b75 , _:b74 , _:b73 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b77 , _:b80 , _:b89 , _:b83 , _:b86 , _:b91 , _:b97 , _:b96 , _:b103 , _:b88 , _:b82 , _:b95 , _:b85 , _:b87 , _:b79 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b93 , _:b90 , _:b84 , _:b94 , _:b92 , _:b81 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mild> ] .
+
+_:b105  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b69 , _:b105 , _:b65 , _:b61 , _:b55 , _:b64 , _:b66 , _:b63 , _:b70 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b105 , _:b63 , _:b55 , _:b70 , _:b66 , _:b61 , _:b64 , _:b69 , _:b65 .
+
+_:b124  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b121 , _:b122 , _:b123 , _:b124 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b122 , _:b124 , _:b121 , _:b123 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SundriedTomatoTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b82 , _:b78 , _:b93 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b96 , _:b91 , _:b86 , _:b87 , _:b80 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> , _:b103 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b79 , _:b85 , _:b77 , _:b97 , _:b92 , _:b88 , _:b94 , _:b95 , _:b84 , _:b89 , _:b90 , _:b81 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GorgonzolaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Caprina>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b35 , _:b48 , _:b13 , _:b28 , _:b52 , _:b37 , _:b41 , _:b27 , _:b49 , _:b34 , _:b43 , _:b8 , _:b36 , _:b45 , _:b57 , _:b7 , _:b18 , _:b40 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b25 , _:b12 , _:b21 , _:b32 , _:b16 , _:b33 , _:b15 , _:b39 , _:b31 , _:b20 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b17 , _:b23 , _:b29 , _:b51 , _:b30 , _:b22 , _:b11 , _:b26 , _:b38 , _:b46 , _:b24 , _:b53 , _:b47 , _:b10 , _:b9 .
+
+_:b184  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b184 , _:b174 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b184 .
+
+_:b111  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b112 , _:b144 , _:b109 , _:b111 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b111 , _:b109 , _:b144 , _:b112 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#AnchoviesTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+_:b76   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b76 , _:b73 , _:b75 , _:b74 , _:b71 , _:b72 , _:b115 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b72 , _:b74 , _:b76 , _:b73 , _:b115 , _:b75 , _:b71 .
+
+_:b84   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b97 , _:b85 , _:b89 , _:b93 , _:b77 , _:b91 , _:b87 , _:b103 , _:b92 , _:b79 , _:b95 , _:b86 , _:b83 , _:b88 , _:b81 , _:b84 , _:b94 , _:b96 , _:b78 , _:b90 , _:b82 , _:b80 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b89 , _:b83 , _:b96 , _:b94 , _:b85 , _:b77 , _:b84 , _:b79 , _:b95 , _:b103 , _:b81 , _:b78 , _:b97 , _:b82 , _:b88 , _:b80 , _:b91 , _:b87 , _:b92 , _:b90 , _:b93 , _:b86 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#GreenPepperTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> .
+
+_:b67   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b107 , _:b62 , _:b59 , _:b67 , _:b68 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b67 , _:b59 , _:b107 , _:b68 , _:b62 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#ChickenTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HotSpicedBeefTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b12 , _:b13 , _:b23 , _:b29 , _:b30 , _:b53 , _:b45 , _:b22 , _:b10 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b46 , _:b31 , _:b7 , _:b28 , _:b25 , _:b17 , _:b42 , _:b34 , _:b43 , _:b36 , _:b26 , _:b20 , _:b8 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#MixedSeafoodTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b91 , _:b78 , _:b90 , _:b83 , _:b82 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b95 , _:b86 , _:b103 , _:b97 , _:b92 , _:b79 , _:b93 , _:b96 , _:b89 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b81 , _:b94 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b84 , _:b87 , _:b77 , _:b80 , _:b85 , _:b88 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b151 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#TobascoPepperSauce>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b72 , _:b71 , _:b73 , _:b76 , _:b115 , _:b74 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b2    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b3 , _:b2 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b3 , _:b2 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b185 , _:b175 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b186  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b186 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b186 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b122 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness>
+        <http://www.w3.org/2000/01/rdf-schema#range>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#ValuePartition> ;
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasSpiciness> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#America> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#England> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#France> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b167 ] .
+
+_:b71   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b73 , _:b72 , _:b71 , _:b76 , _:b74 , _:b75 , _:b115 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b71 , _:b72 , _:b73 , _:b75 , _:b76 , _:b115 , _:b74 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b2 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#England> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#France> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Caprina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b8 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b136 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b8 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy>
+        a       _:b113 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RedOnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b118  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b98 , _:b99 , _:b100 , _:b101 , _:b102 , _:b118 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b98 , _:b118 , _:b100 , _:b99 , _:b102 , _:b101 .
+
+_:b29   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b45 , _:b34 , _:b29 , _:b28 , _:b11 , _:b12 , _:b20 , _:b31 , _:b42 , _:b23 , _:b7 , _:b36 , _:b26 , _:b22 , _:b25 , _:b30 , _:b46 , _:b13 , _:b10 , _:b17 , _:b8 , _:b53 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b42 , _:b12 , _:b10 , _:b29 , _:b7 , _:b28 , _:b36 , _:b25 , _:b31 , _:b13 , _:b26 , _:b20 , _:b45 , _:b30 , _:b17 , _:b23 , _:b53 , _:b34 , _:b22 , _:b11 , _:b46 .
+
+_:b1    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b1 , _:b2 , _:b3 , _:b5 , _:b0 , _:b4 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b5 , _:b1 , _:b0 , _:b4 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b185 , _:b175 ] .
+
+_:b187  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b27 , _:b47 , _:b49 , _:b37 , _:b35 , _:b57 , _:b33 , _:b32 , _:b21 , _:b18 , _:b51 , _:b39 , _:b24 , _:b187 , _:b40 , _:b9 , _:b48 , _:b38 , _:b16 , _:b52 , _:b15 , _:b19 , _:b41 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b187 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaBase> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> ] .
+
+_:b188  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b188 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b188 .
+
+_:b189  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b189 , _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b189 .
+
+_:b26   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b12 , _:b30 , _:b34 , _:b45 , _:b46 , _:b23 , _:b53 , _:b13 , _:b29 , _:b31 , _:b26 , _:b17 , _:b10 , _:b25 , _:b8 , _:b7 , _:b11 , _:b20 , _:b42 , _:b36 , _:b22 , _:b28 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b53 , _:b30 , _:b42 , _:b11 , _:b22 , _:b13 , _:b26 , _:b10 , _:b25 , _:b23 , _:b28 , _:b46 , _:b12 , _:b36 , _:b29 , _:b45 , _:b31 , _:b17 , _:b7 , _:b34 , _:b20 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruitTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HerbSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b101 , _:b118 , _:b99 , _:b100 , _:b102 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#RedOnionTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b98 , _:b102 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b101 , _:b99 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b100 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> , _:b118 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SlicedTomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b190  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b190 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b190 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LeekTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PetitPoisTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b80   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b88 , _:b81 , _:b82 , _:b80 , _:b89 , _:b91 , _:b86 , _:b95 , _:b96 , _:b85 , _:b79 , _:b78 , _:b90 , _:b94 , _:b93 , _:b103 , _:b83 , _:b84 , _:b92 , _:b97 , _:b77 , _:b87 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b96 , _:b94 , _:b81 , _:b87 , _:b77 , _:b86 , _:b88 , _:b79 , _:b91 , _:b83 , _:b93 , _:b78 , _:b92 , _:b90 , _:b84 , _:b97 , _:b85 , _:b82 , _:b103 , _:b89 , _:b95 , _:b80 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b98   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b101 , _:b118 , _:b98 , _:b99 , _:b100 , _:b102 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b101 , _:b99 , _:b98 , _:b102 , _:b100 , _:b118 .
+
+_:b65   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b61 , _:b70 , _:b105 , _:b64 , _:b65 , _:b55 , _:b63 , _:b66 , _:b69 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b69 , _:b70 , _:b61 , _:b64 , _:b105 , _:b66 , _:b55 , _:b63 , _:b65 .
+
+_:b100  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b99 , _:b118 , _:b98 , _:b100 , _:b102 , _:b101 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b100 , _:b102 , _:b118 , _:b99 , _:b98 , _:b101 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b191  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b191 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b191 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany>
+        a       _:b113 .
+
+_:b20   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b42 , _:b13 , _:b12 , _:b30 , _:b7 , _:b31 , _:b34 , _:b11 , _:b46 , _:b36 , _:b23 , _:b28 , _:b17 , _:b22 , _:b25 , _:b29 , _:b10 , _:b20 , _:b8 , _:b53 , _:b45 , _:b26 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b42 , _:b46 , _:b28 , _:b26 , _:b29 , _:b31 , _:b23 , _:b7 , _:b25 , _:b10 , _:b30 , _:b45 , _:b53 , _:b36 , _:b20 , _:b11 , _:b12 , _:b34 , _:b13 , _:b17 , _:b22 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CajunSpiceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#ChickenTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#RedOnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SweetPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b145 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#isIngredientOf>
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#isIngredientOf> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#isIngredientOf> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b192 ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b91 , _:b89 , _:b81 , _:b78 , _:b90 , _:b96 , _:b94 , _:b87 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b95 , _:b97 , _:b92 , _:b83 , _:b93 , _:b85 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b103 , _:b80 , _:b82 , _:b88 , _:b79 , _:b84 , _:b77 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b86 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          _:b142 ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#RocketTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b47 , _:b69 , _:b37 , _:b18 , _:b25 , _:b33 , _:b161 , _:b26 , _:b29 , _:b52 , _:b19 , _:b132 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b36 , _:b24 , _:b35 , _:b21 , _:b157 , _:b9 , _:b139 , _:b30 , _:b61 , _:b46 , _:b49 , _:b7 , _:b57 , _:b66 , _:b45 , _:b48 , _:b22 , _:b11 , _:b39 , _:b32 , _:b10 , _:b31 , _:b8 , _:b12 , _:b41 , _:b42 , _:b23 , _:b105 , _:b53 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b43 , _:b16 , _:b127 , _:b13 , _:b38 , _:b34 , _:b64 , _:b27 , _:b63 , _:b70 , _:b28 , _:b40 , _:b15 , _:b137 , _:b20 , _:b55 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b101 , _:b99 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b100 , _:b118 , _:b98 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> .
+
+_:b21   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b39 , _:b9 , _:b37 , _:b35 , _:b16 , _:b57 , _:b15 , _:b27 , _:b21 , _:b48 , _:b47 , _:b18 , _:b32 , _:b24 , _:b19 , _:b38 , _:b40 , _:b41 , _:b51 , _:b49 , _:b52 , _:b33 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b19 , _:b27 , _:b40 , _:b48 , _:b24 , _:b9 , _:b51 , _:b38 , _:b16 , _:b49 , _:b39 , _:b35 , _:b47 , _:b37 , _:b57 , _:b15 , _:b21 , _:b18 , _:b32 , _:b33 , _:b41 , _:b52 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Fiorentina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Caprina> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Cajun> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Capricciosa> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b8 , _:b29 , _:b124 , _:b18 , _:b55 , _:b10 , _:b37 , _:b21 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b9 , _:b48 , _:b15 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b134 , _:b34 , _:b28 , _:b70 , _:b57 , _:b30 , _:b16 , _:b51 , _:b122 , _:b64 , _:b35 , _:b53 , _:b123 , _:b174 , _:b156 , _:b31 , _:b125 , _:b7 , _:b33 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b47 , _:b20 , _:b24 , _:b65 , _:b66 , _:b32 , _:b22 , _:b52 , _:b61 , _:b25 , _:b130 , _:b17 , _:b11 , _:b13 , _:b69 , _:b45 , _:b27 , _:b40 , _:b105 , _:b36 , _:b23 , _:b26 , _:b19 , _:b158 , _:b43 , _:b12 , _:b38 , _:b41 , _:b42 , _:b39 .
+
+_:b193  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b193 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b193 .
+
+_:b131  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b131 , _:b60 , _:b58 , _:b56 , _:b54 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b60 , _:b56 , _:b131 , _:b58 .
+
+_:b18   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b39 , _:b41 , _:b37 , _:b33 , _:b40 , _:b49 , _:b19 , _:b21 , _:b38 , _:b9 , _:b48 , _:b15 , _:b51 , _:b18 , _:b16 , _:b24 , _:b35 , _:b27 , _:b57 , _:b47 , _:b32 , _:b52 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b35 , _:b49 , _:b40 , _:b21 , _:b15 , _:b57 , _:b18 , _:b16 , _:b24 , _:b32 , _:b41 , _:b19 , _:b47 , _:b51 , _:b37 , _:b52 , _:b38 , _:b27 , _:b39 , _:b9 , _:b33 , _:b48 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#GarlicTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b81   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b84 , _:b94 , _:b89 , _:b88 , _:b96 , _:b81 , _:b86 , _:b90 , _:b80 , _:b92 , _:b93 , _:b83 , _:b79 , _:b103 , _:b87 , _:b78 , _:b77 , _:b82 , _:b97 , _:b95 , _:b85 , _:b91 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b103 , _:b77 , _:b79 , _:b91 , _:b87 , _:b96 , _:b81 , _:b80 , _:b90 , _:b78 , _:b92 , _:b88 , _:b89 , _:b82 , _:b83 , _:b84 , _:b97 , _:b86 , _:b93 , _:b94 , _:b95 , _:b85 .
+
+_:b49   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b47 , _:b33 , _:b52 , _:b37 , _:b49 , _:b24 , _:b16 , _:b32 , _:b39 , _:b35 , _:b19 , _:b51 , _:b38 , _:b41 , _:b57 , _:b27 , _:b15 , _:b48 , _:b9 , _:b40 , _:b21 , _:b18 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b9 , _:b18 , _:b39 , _:b49 , _:b57 , _:b40 , _:b33 , _:b38 , _:b48 , _:b35 , _:b27 , _:b21 , _:b19 , _:b15 , _:b47 , _:b32 , _:b52 , _:b24 , _:b37 , _:b51 , _:b41 , _:b16 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Pizza> , _:b192 ] .
+
+_:b46   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b42 , _:b34 , _:b25 , _:b23 , _:b7 , _:b31 , _:b20 , _:b46 , _:b29 , _:b45 , _:b26 , _:b11 , _:b28 , _:b22 , _:b53 , _:b30 , _:b13 , _:b17 , _:b12 , _:b8 , _:b36 , _:b10 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b45 , _:b17 , _:b31 , _:b36 , _:b46 , _:b10 , _:b12 , _:b28 , _:b22 , _:b23 , _:b42 , _:b34 , _:b29 , _:b13 , _:b25 , _:b7 , _:b26 , _:b11 , _:b53 , _:b20 , _:b30 .
+
+_:b130  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b128 , _:b130 , _:b134 , _:b125 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b134 , _:b128 , _:b125 , _:b130 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#SpinachTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b95 , _:b81 , _:b92 , _:b91 , _:b94 , _:b82 , _:b77 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b86 , _:b79 , _:b83 , _:b78 , _:b88 , _:b89 , _:b93 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b96 , _:b87 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b97 , _:b85 , _:b103 , _:b84 , _:b80 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#JalapenoPepperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperoniSausageTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#England> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#France> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Germany> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Italy> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#hasCountryOfOrigin>
+        <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasCountryOfOrigin> ;
+        <http://www.w3.org/2002/07/owl#equivalentProperty>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#hasCountryOfOrigin> .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#Rosa> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#UnclosedPizza> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FourSeasons> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Napoletana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Soho> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Parmense> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PolloAdAstra> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Siciliana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#LaReine> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Mushroom> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrinceCarlo> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Giardiniera> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Margherita> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#QuattroFormaggi> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Veneziana> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#FruttiDiMare> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SloppyGiuseppe> ] .
+
+_:b192  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b192 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b192 .
+
+_:b8    <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b8 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b8 .
+
+_:b74   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b115 , _:b76 , _:b75 , _:b71 , _:b73 , _:b72 , _:b74 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b74 , _:b71 , _:b72 , _:b75 , _:b73 , _:b115 , _:b76 .
+
+_:b77   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b84 , _:b94 , _:b88 , _:b86 , _:b80 , _:b92 , _:b79 , _:b81 , _:b82 , _:b83 , _:b93 , _:b103 , _:b95 , _:b96 , _:b97 , _:b85 , _:b77 , _:b78 , _:b90 , _:b91 , _:b89 , _:b87 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b91 , _:b87 , _:b83 , _:b79 , _:b84 , _:b94 , _:b78 , _:b77 , _:b95 , _:b86 , _:b89 , _:b103 , _:b81 , _:b80 , _:b93 , _:b92 , _:b85 , _:b90 , _:b97 , _:b88 , _:b96 , _:b82 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#OnionTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PrawnsTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TobascoPepperSauce> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#SultanaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
+
+_:b122  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b121 , _:b122 , _:b123 , _:b124 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b123 , _:b122 , _:b121 , _:b124 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#ParmesanTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b85 , _:b87 , _:b77 , _:b90 , _:b92 , _:b103 , _:b93 , _:b97 , _:b81 , _:b82 , _:b89 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , _:b86 , _:b94 , _:b80 , _:b79 , _:b88 , _:b95 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b83 , _:b78 , _:b96 , _:b91 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> .
+
+_:b126  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b127 , _:b132 , _:b126 , _:b157 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b126 , _:b157 , _:b127 , _:b132 .
+
+_:b92   <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b88 , _:b86 , _:b82 , _:b89 , _:b84 , _:b103 , _:b94 , _:b92 , _:b78 , _:b87 , _:b90 , _:b91 , _:b95 , _:b96 , _:b85 , _:b77 , _:b79 , _:b93 , _:b83 , _:b80 , _:b81 , _:b97 ;
+        <http://www.w3.org/2002/07/owl#equivalentClass>
+                _:b77 , _:b96 , _:b93 , _:b88 , _:b94 , _:b84 , _:b81 , _:b86 , _:b80 , _:b78 , _:b95 , _:b82 , _:b89 , _:b91 , _:b92 , _:b83 , _:b87 , _:b97 , _:b79 , _:b90 , _:b103 , _:b85 .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#RealItalianPizza>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                _:b151 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#NutTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#SauceTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#VegetableTopping> ] .
+
+<http://www.co-ode.org/ontologies/pizza/pizza.owl#MushroomTopping>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://www.co-ode.org/ontologies/pizza/pizza.owl#DomainConcept> , _:b92 , _:b79 , _:b89 , _:b103 , _:b96 , _:b94 , _:b95 , _:b86 , _:b80 , _:b78 , _:b82 , _:b77 , _:b84 , _:b93 , _:b81 , _:b83 , _:b97 , _:b91 , _:b85 , <http://www.co-ode.org/ontologies/pizza/pizza.owl#Food> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping> , _:b88 , _:b90 .
+
+[ <http://niche.cs.dal.ca/owl/list#hasMember>
+          <http://www.co-ode.org/ontologies/pizza/pizza.owl#CaperTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#HamTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#MozzarellaTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#OliveTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#PeperonataTopping> , <http://www.co-ode.org/ontologies/pizza/pizza.owl#TomatoTopping> ] .
