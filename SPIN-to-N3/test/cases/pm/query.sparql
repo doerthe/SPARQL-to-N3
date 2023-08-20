@@ -1,0 +1,43 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tr: <http://example.org/trace#>
+PREFIX : <http://example.org#>
+
+# CONSTRUCT { ?t tr:activityOccurs :a5 } 
+# WHERE { 
+#     ?t tr:activityOccurs :a5
+# }
+
+# CONSTRUCT { 
+#     ?t tr:activityOccursNTimes ?b .
+#     ?b tr:activity :a1 ; tr:count ?count . 
+# } 
+# WHERE { 
+#     ?t tr:activityOccursNTimes ?b .
+#     ?b tr:activity :a1 ; tr:count ?count .
+# }
+
+# CONSTRUCT { ?t tr:activityDoesNotOccur :a5 } 
+# WHERE { ?t tr:activityDoesNotOccur :a5 }
+
+# CONSTRUCT { ?t tr:activitiesDoNotCoOccur ( :a4 :a5 ) } 
+# WHERE { 
+#     ?t tr:activitiesDoNotCoOccur ( :a4 :a5 )
+# }
+
+# CONSTRUCT { :trace0 tr:occursAsStartPertrace ?start } 
+# WHERE { :trace0 tr:occursAsStartPertrace ?start }
+
+# CONSTRUCT { ?t tr:occursAsEndPerTrace ?end } 
+# WHERE { 
+#     ?t tr:occursAsEndPerTrace ?end
+# }
+
+# CONSTRUCT { ?actor1 tr:pairsWithHandOver ?actor2 }
+# WHERE { ?actor1 tr:pairsWithHandOver ?actor2 }
+
+# CONSTRUCT { ?actor tr:handOverCount ?count }
+# WHERE { ?actor tr:handOverCount ?count }
+
+# CONSTRUCT { ?t tr:totalDuration ?total_dur }
+# WHERE { ?t tr:totalDuration ?total_dur }

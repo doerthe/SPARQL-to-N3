@@ -1,0 +1,130 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tr: <http://example.org/trace#>
+PREFIX : <http://example.org#>
+
+# (use log-bnodes.rdf)
+
+# TODO in general: 
+# seem to need backward "queries" in some cases (e.g., activityDoesNotOccur)
+# need to pass lists in construct clause (e.g., activityOccursNTimes, activitiesDoNotCoOccur)
+
+# there exists a given activity
+
+# trace:activityOccurs
+# CONSTRUCT { ?t tr:activityOccurs ?a } 
+# WHERE { 
+#     [ tr:from ?a ] tr:in ?t .
+# }
+
+# there exists multiple occurrences of a given activity
+# TODO no results if activity filled in
+
+# trace:activityOccursNTimes
+# CONSTRUCT { 
+#     ?t tr:activityOccursNTimes [ tr:activity ?a ; tr:count ?count ] 
+# }
+# WHERE { 
+#     {
+#         SELECT ?t (COUNT(?e) as ?count)
+#         WHERE { 
+#             ?e tr:from ?a ; tr:in ?t .
+#         }
+#         GROUP BY ?t
+#     }
+# }
+
+# there does not exist a given activity
+# TODO works if sparql.n3 rule is turned int backward rule
+
+# trace:activityDoesNotOccur
+# CONSTRUCT {
+#     ?t tr:activityDoesNotOccur ?a
+# }
+# WHERE { 
+#     ?e tr:in ?t
+#     FILTER NOT EXISTS { ?x tr:from ?a ; tr:in ?t }
+# }
+
+# two activities don't co-occur
+# (i.e., possible one of them occurs, or none of them occur)
+# aka "conflict"
+# TODO
+
+# trace:activitiesDoNotCoOccur
+# CONSTRUCT { ?t tr:activitiesDoNotCoOccur ( ?a1 ?a2 ) }
+# WHERE { 
+#     ?a tr:in ?t
+#     FILTER NOT EXISTS  { 
+#         [ tr:from ?a1 ] tr:in ?t . 
+#         [ tr:from ?a2 ] tr:in ?t . 
+#     }
+# }
+
+# there does not exist a certain sequence
+# TODO unsure how to do this ...
+
+# trace:sequenceDoesNotOccur
+# CONSTRUCT { ?t tr:sequenceDoesNotOccur () }
+# WHERE {
+#     ?x tr:in ?t .
+#     FILTER NOT EXISTS  { [ tr:from :a2 ; tr:to :a3 ] tr:in ?t . }
+# }
+
+# get start activities per trace
+# (could also have trace start with [ tr:from rdf:nil ; tr:to ?start ])
+# TODO thought it would work if sparql.n3 rule is turned int backward rule, but doesn't
+
+# activity:occursAsStartPertrace
+# CONSTRUCT { ?t tr:occursAsStartPerTrace ?start }
+# WHERE {
+#     [ tr:from ?start ; tr:to ?next ] tr:in ?t .
+#     FILTER NOT EXISTS { [ tr:from ?prior ; tr:to ?start ] tr:in ?t . }
+# }
+
+# get end activities per trace
+
+# activity:occursAsEndPertrace
+# CONSTRUCT { ?t tr:occursAsEndPerTrace ?end }
+# WHERE {
+#     [ tr:from ?end ; tr:to rdf:nil ] tr:in ?t .
+# }
+
+# (use log-bnodes-exp.rdf)
+
+# get pairs of actors working together
+
+# actor:pairsWithHandOver
+# CONSTRUCT { ?actor1 tr:pairsWithHandOver ?actor2 }
+# WHERE {
+#     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
+#     FILTER ( !sameTerm(?actor1, ?actor2)  )
+# }
+
+# get actors with counts of outgoing edges (possibly to same actor)
+
+# actor:handOverCount
+# CONSTRUCT { ?actor tr:handOverCount ?count }
+# WHERE {
+#     {
+#         SELECT ?actor (COUNT(?t) as ?count)
+#         WHERE {
+#             [ tr:from [ tr:actor ?actor ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
+#         }
+#         GROUP BY ?actor
+#         ORDER BY DESC(?count)
+#     }
+# }
+
+# get total duration of traces
+
+# trace:totalDuration
+# CONSTRUCT { ?t tr:totalDuration ?total_dur }
+# WHERE {
+#     SELECT ?t (SUM(?d) as ?total_dur)
+#     WHERE {
+#         [ tr:from [ tr:duration ?d ] ] tr:in ?t .
+#     }
+#     GROUP BY ?t
+#     ORDER BY DESC(?total_dur)
+# }
