@@ -9,7 +9,9 @@
 @prefix sp: <http://spinrdf.org/sp#> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 
-
+#########################
+#Property paths
+########################
 # - sequenceOfSteps
 
 #
@@ -25,7 +27,7 @@
    ?steps!list:last log:rawType rdf:List .
    # "sequenceOfSteps" log:trace ?step .
    ( ?start ?interm ) aux:stepThroughPath ?step .
-   (?start ?interm) aux:fullyIntsantiated true.
+   (?start ?interm) aux:fullyInstantiated true.
    #
    ( ?interm ?end ) aux:stepThroughPath ?rest 
 } .
@@ -76,7 +78,7 @@
 {
    ( ?start ?o ) aux:stepThroughPath ?nested .
    #make sure that the last step is really "done"
-   (?start ?o) aux:fullyIntsantiated true.
+   (?start ?o) aux:fullyInstantiated true.
    ( ?o ?end ) aux:stepThroughPath ( ?nested 1 -2 ) .
 } .
 
@@ -201,4 +203,15 @@
 } .
 
 
-{(?a ?b) aux:fullyIntsantiated true}<={?a log:rawType ?t1. ?t1 log:notEqualTo log:ForAll. ?b log:rawType ?t2. ?t2 log:notEqualTo log:ForAll.}.
+# help function
+{(?a ?b) aux:fullyInstantiated true}<={?a log:rawType ?t1. ?t1 log:notEqualTo log:ForAll. ?b log:rawType ?t2. ?t2 log:notEqualTo log:ForAll.}.
+
+######################################
+# OPTIONAL
+#####################################
+{?pattern aux:optionalQ ?opt }<={   ?scope e:call ?opt. ?scope e:call ?pattern.  }. 
+{?pattern aux:optionalQ ?opt }<={  ?scope e:call ?pattern. ?scope e:fail ?opt.  }. 
+
+
+{(?a1 ?a2) aux:oneBound true}<={?a1 log:bound true.}.
+{(?a1 ?a2) aux:oneBound true}<={?a2 log:bound true.}.

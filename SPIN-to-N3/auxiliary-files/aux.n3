@@ -26,6 +26,7 @@
  ?s log:skolem ?s1.
  true log:callWithCut true.
  }.
+
 {?s aux:gets ?s1}<={ ?s  sp:varName ?name . ?name log:skolem ?s1. true log:callWithCut true. 
   }.
 {?s aux:gets ?s1}<={  ?s  sp:arg1 ?arg . ?s log:skolem ?s1. true log:callWithCut true. 
@@ -51,17 +52,27 @@
 #4 e:trace {(?vars ?list2) aux:handleUnion ?graph3.}.
 (?vars ?list2) aux:handleBind ?graph4.
 #5 e:trace {(?vars ?list2) aux:handleBind ?graph4.}.
-(?vars ?list2) aux:handleOptional ?graph5.
-# 6 e:trace {(?vars ?list2) aux:handleOptional ?graph5.}.
+(?vars ?list2) aux:handleOptional ?optlist.
+#6 e:trace {(?vars ?list2) aux:handleOptional ?optlist.}.
 (?vars ?list2) aux:handleMinus ?graph6.
 #7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
 (?vars ?list2) aux:handleSubquery ?graph7.
 #8 e:trace {(?vars ?list2) aux:handleSubquery ?graph7.}.
 
-(?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph5 ?graph6 ?graph7
-) log:conjunction ?graph
+(?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph6 ?graph7
+) log:conjunction ?graph5.
+
+
+
+### check for optional and make patterns if needed ###
+(?graph5 ?optlist) aux:makeOptionalPatterns ?graph.
+
 
 }.
+
+
+
+
 
 
 
@@ -233,23 +244,31 @@
 ##########################################
 # optional
 ###########################################
-{(?vars ?list) aux:handleOptional ?graph}<={
+{(?vars ?list) aux:handleOptional ?optlist}<={
   (?t {?t list:in ?list. ?t a  sp:Optional .} ?oList) log:collectAllIn ?scope.
-  (?vars ?oList {}) aux:createOGraph ?graph.
+  (?vars ?oList ()) aux:createOList ?optlist.
 
   }.
 
-{ (?vars () ?graph) aux:createOGraph ?graph.}<={}.
+{ (?vars () ?optlist ) aux:createOList ?optlist.}<={}.
 
-{(?vars ?oList ?ingraph ) aux:createOGraph ?graph.}<={
+{(?vars ?oList ?ilist) aux:createOList ?optlist.}<={
   ?oList rdf:first ?t.
   ?oList rdf:rest ?rest.
   ?t sp:elements ?elist.
   (?vars ?elist) aux:createGraph ?gr.
-  ({true log:callWithOptional ?gr } ?ingraph ) log:conjunction ?newgraph.
-(?vars ?rest ?newgraph ) aux:createOGraph ?graph
+  (?ilist (?gr)) list:append ?newIlist.
+(?vars ?rest ?newIlist) aux:createOList ?optlist
  
   }.
+
+#pattern construction
+{(?graph ()) aux:makeOptionalPatterns ?graph.}<={true log:callWithCut ?true}.
+{(?graph5 ?optList) aux:makeOptionalPatterns ?graph.}<={
+    ({?graph5 aux:optionalQ ?optpattern} {?optpattern list:in ?optList} ?out) log:collectAllIn ?scope. 
+    (?out ({})) list:append ?ol.
+    ?ol log:conjunction ?graph
+    }.
 
 ##############################################
 # minus
@@ -518,13 +537,23 @@ true log:callWithCut true.
 
   ?x sp:where ?where.
   (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var.  } ?vars1) log:collectAllIn _:x.
+
+  #subqueries
   (?var2 {?t list:in ?where.  ?t sp:query ?q.
    ?q aux:getResultVariables ?var2.
    } ?vars2) log:collectAllIn _:x.
    (?vars2 ()) aux:flatten ?vars22.
    (?vars22 ()) aux:makePairs ?pairs.
+
+   # support for optional
+
+    (?var3 {?t list:in ?where.  ?t a sp:Optional; sp:elements ?opt. ?triple list:in ?opt. ?triple aux:bgpOrBindVars ?var3.  } ?vars3) log:collectAllIn _:x.
+
+
+
+
    
- (?vars1 ?pairs) list:append ?vars.
+ (?vars1 ?pairs ?vars3) list:append ?vars.
   ?vars list:removeDuplicates ?outvars.}.
 
 
@@ -776,7 +805,8 @@ aux:value log:skolem ?value.
 {{(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
 {{(?a1 ?a2) sp:gt  ?o} aux:funcTranslation {?a2 math:lessThan ?a1}.}<={}.
 {{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
-{{(?a1 ?a2) sp:eq ?o} aux:funcTranslation { ?a1 log:bound true. ?a2 log:bound true. ?a1 log:equalTo ?a2. }. }<={}.
+{{(?a1 ?a2) sp:eq ?o} aux:funcTranslation { (?a1 ?a2) aux:oneBound true.  ?a1 log:equalTo ?a2. 
+ }. }<={}.
 {{(?a) sp:lcase ?o} aux:funcTranslation {?a string:lowerCase ?o}}<={}.
 {{(?a) sp:ucase ?o} aux:funcTranslation {?a string:upperCase ?o}}<={}.
 {{(?a) sp:uri ?o} aux:funcTranslation {?o log:uri ?a}}<={}.
