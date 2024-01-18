@@ -17,6 +17,7 @@
         <#minus3>
         <#not-exists4>
         <#minus4>
+        <#minus-union>
        
    
     ) .
@@ -75,3 +76,9 @@
          mf:action
             [ qt:query  <minus4.sparql> ;
               qt:data   <data-neg4.ttl> ] .
+      
+<#minus-union> rdf:type mf:QueryEvaluationTest ;
+         mf:name    "Minus union" ;
+         mf:action
+            [ qt:query  <minus5.sparql> ;
+              qt:data   <data-neg2.ttl> ] .
