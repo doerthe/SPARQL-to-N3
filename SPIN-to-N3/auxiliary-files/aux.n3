@@ -41,23 +41,23 @@
 ##################################################
 { (?vars ?list) aux:createGraph ?graph}<={
 (?list ()) aux:flatten ?list2.
-#1 e:trace {(?vars ?list) aux:createGraph ?graph}.
+1 e:trace {(?vars ?list) aux:createGraph ?graph}.
 (?vars ?list2) aux:handleTriples ?graph1.
-#2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
+2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
 (?vars ?list2) aux:handlePropertyPath ?graph11.
-#21 e:trace {(?vars ?list2) aux:handlePropertyPath ?graph11 .}.
+21 e:trace {(?vars ?list2) aux:handlePropertyPath ?graph11 .}.
 (?vars ?list2) aux:handleFilter ?graph2.
-#3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
+3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
 (?vars ?list2) aux:handleUnion ?graph3.
-#4 e:trace {(?vars ?list2) aux:handleUnion ?graph3.}.
+4 e:trace {(?vars ?list2) aux:handleUnion ?graph3.}.
 (?vars ?list2) aux:handleBind ?graph4.
-#5 e:trace {(?vars ?list2) aux:handleBind ?graph4.}.
+5 e:trace {(?vars ?list2) aux:handleBind ?graph4.}.
 (?vars ?list2) aux:handleOptional ?optlist.
-#6 e:trace {(?vars ?list2) aux:handleOptional ?optlist.}.
+6 e:trace {(?vars ?list2) aux:handleOptional ?optlist.}.
 (?vars ?list2) aux:handleMinus ?graph6.
-#7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
+7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
 (?vars ?list2) aux:handleSubquery ?graph7.
-#8 e:trace {(?vars ?list2) aux:handleSubquery ?graph7.}.
+8 e:trace {(?vars ?list2) aux:handleSubquery ?graph7.}.
 
 (?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph6 ?graph7
 ) log:conjunction ?graph5.
@@ -65,7 +65,8 @@
 
 
 ### check for optional and make patterns if needed ###
-(?graph5 ?optlist) aux:makeOptionalPatterns ?graph.
+(?graph5 ?optlist ) aux:makeOptionalPatterns ?graph.
+1 e:trace ?optlist
 
 
 }.
@@ -263,11 +264,15 @@
   }.
 
 #pattern construction
-{(?graph ()) aux:makeOptionalPatterns ?graph.}<={true log:callWithCut ?true}.
+{(?graph () ) aux:makeOptionalPatterns ?graph.}<={true log:callWithCut ?true}.
 {(?graph5 ?optList) aux:makeOptionalPatterns ?graph.}<={
-    ({?graph5 aux:optionalQ ?optpattern} {?optpattern list:in ?optList} ?out) log:collectAllIn ?scope. 
-    (?out ({})) list:append ?ol.
-    ?ol log:conjunction ?graph
+    ?optList rdf:first ?first.
+    ?optList rdf:rest ?rest.
+    ({?graph5 aux:optionalQ ?first} ?rest) aux:makeOptionalPatterns ?graph
+
+    #({?graph5 aux:optionalQ ?optpattern} {?optpattern list:in ?optList} ?out) log:collectAllIn ?scope. 
+    #(?out ({})) list:append ?ol.
+    #?ol log:conjunction ?graph
     }.
 
 ##############################################
@@ -278,10 +283,11 @@
 {(?inVars ?list) aux:handleMinus ?graph}<={
   ?t list:in ?list. ?t a  sp:Minus .
   true log:callWithCut true.
-
+  "I found a minus" e:trace true.
   ?list aux:getVars ?vars.
-
+  111 e:trace 5.
   (?e {?t2 list:in ?list. ?t2 a  sp:Minus . (?t2 ?vars) aux:createMinusExpression ?e   } ?eList) log:collectAllIn ?scope.
+  111 e:trace 6.
   ?eList log:conjunction ?graph.
   }.
 
@@ -798,6 +804,17 @@ aux:value log:skolem ?value.
  (?m ?nlist) aux:makeArgList ?out
   }.
 
+#######################
+# Functions for variables
+########################
+# get variables out of lists which represent graphs (can be in minus or in where)
+{
+  ?list aux:getVars ?outvars
+}<=
+{
+(?var {?t list:in ?list.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
+  ?vars list:removeDuplicates ?outvars.
+}.
 
 #####################################################################################
 # sparql-functions and their translations

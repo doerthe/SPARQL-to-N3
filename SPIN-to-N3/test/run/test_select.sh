@@ -5,6 +5,7 @@ data=$2
 engine=$3
 ordered=$4
 
+
 echo -e "(executing sparql using $engine)"
 sp_res_csv="results/sparql_results.csv"
 if [[ $engine == "rdflib" ]]; then
@@ -20,7 +21,7 @@ echo -e "(executing N3 queries)"
 n3_res_nt0="results/spin3_results_init.nt"
 n3_res_csv="results/spin3_results.csv"
 # (get rdf output)
-./run_spin3.sh $query $data false $n3_res_nt0
+./run_spin3.sh $query $data false $n3_res_nt0 false
 # (convert rdf output to csv)
 eye $n3_res_nt0 --nope ../../auxiliary-files/csv-convert.n3 --strings > $n3_res_csv 2>/dev/null
 
