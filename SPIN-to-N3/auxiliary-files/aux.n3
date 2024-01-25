@@ -41,23 +41,23 @@
 ##################################################
 { (?vars ?list) aux:createGraph ?graph}<={
 (?list ()) aux:flatten ?list2.
-1 e:trace {(?vars ?list) aux:createGraph ?graph}.
+#1 e:trace {(?vars ?list) aux:createGraph ?graph}.
 (?vars ?list2) aux:handleTriples ?graph1.
-2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
+#2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
 (?vars ?list2) aux:handlePropertyPath ?graph11.
-21 e:trace {(?vars ?list2) aux:handlePropertyPath ?graph11 .}.
+#21 e:trace {(?vars ?list2) aux:handlePropertyPath ?graph11 .}.
 (?vars ?list2) aux:handleFilter ?graph2.
-3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
+#3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
 (?vars ?list2) aux:handleUnion ?graph3.
-4 e:trace {(?vars ?list2) aux:handleUnion ?graph3.}.
+#4 e:trace {(?vars ?list2) aux:handleUnion ?graph3.}.
 (?vars ?list2) aux:handleBind ?graph4.
-5 e:trace {(?vars ?list2) aux:handleBind ?graph4.}.
+#5 e:trace {(?vars ?list2) aux:handleBind ?graph4.}.
 (?vars ?list2) aux:handleOptional ?optlist.
-6 e:trace {(?vars ?list2) aux:handleOptional ?optlist.}.
+#6 e:trace {(?vars ?list2) aux:handleOptional ?optlist.}.
 (?vars ?list2) aux:handleMinus ?graph6.
-7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
+#7 e:trace {(?vars ?list2) aux:handleMinus ?graph6.}.
 (?vars ?list2) aux:handleSubquery ?graph7.
-8 e:trace {(?vars ?list2) aux:handleSubquery ?graph7.}.
+#8 e:trace {(?vars ?list2) aux:handleSubquery ?graph7.}.
 
 (?graph1 ?graph11 ?graph2 ?graph3 ?graph4 ?graph6 ?graph7
 ) log:conjunction ?graph5.
@@ -66,7 +66,7 @@
 
 ### check for optional and make patterns if needed ###
 (?graph5 ?optlist ) aux:makeOptionalPatterns ?graph.
-1 e:trace ?optlist
+
 
 
 }.
@@ -283,33 +283,37 @@
 {(?inVars ?list) aux:handleMinus ?graph}<={
   ?t list:in ?list. ?t a  sp:Minus .
   true log:callWithCut true.
-  "I found a minus" e:trace true.
   ?list aux:getVars ?vars.
-  111 e:trace 5.
   (?e {?t2 list:in ?list. ?t2 a  sp:Minus . (?t2 ?vars) aux:createMinusExpression ?e   } ?eList) log:collectAllIn ?scope.
-  111 e:trace 6.
   ?eList log:conjunction ?graph.
   }.
 
  # case: no minus
  {(?vars ?list) aux:handleMinus {}}<={ }.
 
+#create minus expression
  {(?t ?vars) aux:createMinusExpression ?e}<={
   ?t sp:elements ?list.
-  ?list aux:getVars ?v2.
+  "we have a minus" e:trace (?t ?vars ?list).
+  ?list aux:getVars ?v2.   #the problem is here, the getVars function needs to be changed
+  "vars 2" e:trace (?v2 ?t ?vars ?list).
   (?vars ?v2) aux:listIntersection ?intv.
+  88 e:trace {(?intv ?t) aux:minExpr ?e.}.
   (?intv ?t) aux:minExpr ?e.
  }.
- # TODO: multiple minus?
+
 
  {(() ?t) aux:minExpr {}.}<={true log:callWithCut true.}.
 
 { (?list ?t) aux:minExpr {?scope log:notIncludes ?g}.}<={
   ?t sp:elements ?e.
+  2 e:trace 33.
   (?list ?e) aux:createGraph ?g1.
+  1 e:trace ?g1.
   (?list ?g1 ?t) aux:relabelGraph ?g.
   :scope log:skolem ?scope.
 }.
+
 #relabel-function for ?g 
 {(false ?graph ?x) aux:relabelGraph ?graph}<={true log:callWithCut true}.
 {(?list {} ?x) aux:relabelGraph {}}<={true log:callWithCut true}.
@@ -542,27 +546,8 @@ true log:callWithCut true.
 {
 
   ?x sp:where ?where.
-  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var.  } ?vars1) log:collectAllIn _:x.
-
-  #subqueries
-  (?var2 {?t list:in ?where.  ?t sp:query ?q.
-   ?q aux:getResultVariables ?var2.
-   } ?vars2) log:collectAllIn _:x.
-   (?vars2 ()) aux:flatten ?vars22.
-   (?vars22 ()) aux:makePairs ?pairs.
-
-   # support for optional
-
-    (?var3 {?t list:in ?where.  ?t a sp:Optional; sp:elements ?opt. ?triple list:in ?opt. ?triple aux:bgpOrBindVars ?var3.  } ?vars3) log:collectAllIn _:x.
-
-
-
-
-   
- (?vars1 ?pairs ?vars3) list:append ?vars.
-  ?vars list:removeDuplicates ?outvars.}.
-
-
+  ?where aux:getVars ?outvars
+}.
 
 
  {?t aux:bgpOrBindVars (?name ?s1).}<=
@@ -809,12 +794,36 @@ aux:value log:skolem ?value.
 ########################
 # get variables out of lists which represent graphs (can be in minus or in where)
 {
-  ?list aux:getVars ?outvars
+  ?where aux:getVars ?outvars
 }<=
-{
-(?var {?t list:in ?list.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
-  ?vars list:removeDuplicates ?outvars.
-}.
+#{
+#(?var {?t list:in ?list.  ?t aux:bgpOrBindVars ?var. } ?vars) log:collectAllIn _:x.
+#  ?vars list:removeDuplicates ?outvars1.
+#  (?outvars1 ?list) aux:textForNesting ?outvars
+#}.
+{  (?var {?t list:in ?where.  ?t aux:bgpOrBindVars ?var.  } ?vars1) log:collectAllIn _:x.
+
+  #subqueries
+  (?var2 {?t list:in ?where.  ?t sp:query ?q.
+   ?q aux:getResultVariables ?var2.
+   } ?vars2) log:collectAllIn _:x.
+   (?vars2 ()) aux:flatten ?vars22.
+   (?vars22 ()) aux:makePairs ?pairs.
+
+   # support for optional 
+    (?var3 {?t list:in ?where.  ?t a sp:Optional ; sp:elements ?opt. ?triple list:in ?opt. ?triple aux:bgpOrBindVars ?var3.  } ?vars3) log:collectAllIn _:x.  
+
+
+   # support for union
+   (?var4 {?t list:in ?where.  ?t a sp:Union ; sp:elements ?unpair. ?list list:in ?unpair. ?triple list:in ?list.
+  ?triple aux:bgpOrBindVars ?var4.  } ?vars4) log:collectAllIn _:x. 
+   (?vars1 ?pairs ?vars3 ?vars4) list:append ?vars.
+
+
+
+  ?vars list:removeDuplicates ?outvars.}.
+
+
 
 #####################################################################################
 # sparql-functions and their translations

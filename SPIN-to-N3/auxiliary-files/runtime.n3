@@ -162,8 +162,7 @@
 <= 
 {
    ( ?options sp:LinkPath ) aux:collectLinkRegex ?regex .
-   #
-   "tryNeg (1)" log:trace ( ?start ?end ?regex ) .
+   #"tryNeg (1)" log:trace ( ?start ?end ?regex ) .
    ?start ?pred ?end .
    ?pred!log:uri string:notMatches ?regex 
 } .
@@ -176,8 +175,7 @@
 <= 
 {
    ( ?options sp:ReverseLinkPath ) aux:collectLinkRegex ?regex .
-   #
-   "tryNeg (2)" log:trace ( ?start ?end ?regex ) .
+   #"tryNeg (2)" log:trace ( ?start ?end ?regex ) .
    ?end ?pred ?start .
    ?pred!log:uri string:notMatches ?regex 
 } .
@@ -211,19 +209,22 @@
 #####################################
 
 # predicate returns bindings in out and pattern which matched with ?call
-{?pattern aux:optionalQ ?opt }<={  (?pattern ?opt)  aux:getCallPattern (?out ?call). ?call log:includes ?out. }.
+{?pattern aux:optionalQ ?opt }<={   (?pattern ?opt)  aux:getCallPattern (?out ?call).
+ ?call log:includes ?out. }.
 
 {(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ?optional aux:variableCheck true.
+   ?pattern aux:variableCheck true.
    ?optional log:equalTo {?p1 aux:optionalQ ?o1}. 
    ?pattern log:equalTo {?p2 aux:optionalQ ?o2}.
    true log:callWithCut true.
-   
    (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
    (?p2 ?o2)  aux:getCallPattern (?out2 ?call2).
    (?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call).
    }.
 
 {(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ?optional aux:variableCheck true.
    ?optional log:equalTo {?p1 aux:optionalQ ?o1}. 
    true log:callWithCut true.
    (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
@@ -231,6 +232,7 @@
    }.
 
 {(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ?pattern aux:variableCheck true.
    ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
    true log:callWithCut true.
    (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
@@ -249,7 +251,6 @@
    ?call log:copy ?out.
    true log:call ?out.
    ?out log:includes ?out1, ?out2.
-   
 }.
 
 {(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out3 ?call2).}
@@ -261,7 +262,6 @@
    ?con2 log:copy ?con3.
    ?con3 log:includes ?out3.
    ?con3 aux:fails true.
-
 }.
 
 # test whether a call fails
@@ -271,6 +271,12 @@
  }.
  {?con22 aux:fails true.}<={ }.
 
+#test whether something is a universal variable
+{?p aux:variableCheck true}<={
+   ?p log:equalTo {?a ?b ?c}.
+   ?b log:rawType ?type.
+   ?type log:notEqualTo log:ForAll
+ }.
 
 
 
