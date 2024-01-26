@@ -1,0 +1,16 @@
+PREFIX :       <http://example/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+
+#this is a variant of a spec example
+SELECT DISTINCT ?s
+WHERE {
+   ?s ?p ?o .
+   MINUS {
+      ?o foaf:familyName "Jones" .
+      {?s foaf:givenName "Bob" .} UNION {?s foaf:givenName "Alice" .}
+   }
+   MINUS {
+      ?s foaf:familyName "Jones" .
+   }
+   OPTIONAL {?s ?p ?o}
+}
