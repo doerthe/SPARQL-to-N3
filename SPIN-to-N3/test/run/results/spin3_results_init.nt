@@ -1,0 +1,3 @@
+# Processed by EYE v9.11.4 (2024-03-04)
+# eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl --query tmp/n3query.n3 --nope
+

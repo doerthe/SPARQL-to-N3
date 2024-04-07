@@ -1,0 +1,110 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://example.org/> .
+
+# # A. example where opt doesn't work
+# { :x1 :p ?v } :opt { :x3 :q ?w } . # (change x3 to x2 to have optional working)
+
+# :x1 :p 1 .
+# :x2 :q 2 .
+
+
+# # B. example where nested opt doesn't work
+# { :x1 :p ?v } :opt { { :x2 :q ?w } :opt { :x4 :p ?x } } . # (change x4 to x3 to have nested opt working)
+
+# :x1 :p 1 .
+# :x2 :q 2 .
+# :x3 :p 3 .
+
+
+# # C. outer optional block is ruled out due to conflicting binding in deeper optional
+# # (although highest-up optional works)
+
+# { :x1 :p ?v } :opt { { :x2 :q ?w } :opt { :x3 :p ?v } } .
+
+# :x1 :p 1 . # won't work
+# # :x1 :p 3 . # works
+# :x2 :q 2 .
+# :x3 :p 3 .
+
+
+# D. example illustrating per-query vs. per-binding issue
+# { ?x :p ?v } :opt { ?x :q ?w } .
+{ ?x :p ?v } :opt { { ?x :p ?v } :opt { ?x :q ?w } } .
+
+:x1 :p 1 .
+:x1 :q 3 .
+:x3 :p 3 .
+
+{ 
+    ?x :opt ?y .
+    "opt" log:trace "opt" .
+    ( ?x ?y ) :bubble ?z .
+    true log:call ?z .
+    "opt (2)" log:trace ( ?z ) .
+}
+=> { <> :out ?z }.
+
+{ ( ?x ?y ) :bubble ?z }
+<= { 
+    ?y log:equalTo { ?o1 :opt ?o2 } .
+    "bubble1" log:trace ( ?o1 ?o2 ) .
+    ( ?o1 ?o2 ) :bubble ?o_w .
+    ( ?x ?o_w ) :oneOrBoth ?z .
+    "bubble1 (2)" log:trace ( ?z ) .
+} .
+
+{ ( ?x ?y ) :bubble ?z }
+<= { 
+    ?y log:notIncludes { ?k :opt ?l } . # (log:notEqualTo was not working)
+    "bubble2" log:trace ( ?y ) .
+    ( ?x ?y ) :oneOrBoth ?z .
+    "bubble2 (2)" log:trace ( ?z ) .
+} .
+
+{ ( ?x ?y ) :oneOrBoth ?conj }
+<= {
+    ( ?x ?y ) log:conjunction ?conj .
+    ?conj log:copy ?cout .
+    true log:call ?cout .
+    "oneOrBoth" log:trace ?conj, ?cout .
+} .
+
+# # first version: won't include { :x3 :p 3 } as solution
+# { ( ?x ?y ) :oneOrBoth ?z }
+# <= {
+#     ( ?x ?y ) log:conjunction ?c .
+# #     "oneOrBoth2" log:trace ?c .
+#     _:t log:notIncludes ?c .
+#     ?x log:copy ?copy .
+#     true log:call ?copy .
+#     ?z log:equalTo ?x .
+# #     "oneOrBoth2 (2)" log:trace ?copy .
+# } .
+
+# second version: would still show partial { :x1 :p 1 } solution
+# crux of the issue ...
+{ ( ?x ?y ) :oneOrBoth ?z }
+<= {
+    ?x log:copy ?xout .
+    true log:call ?xout .
+    "oneOrBoth2" log:trace ?xout .
+
+    # (option 1)
+    ( ?x ?y ) log:conjunction ?conj .
+    ?conj log:copy ?cout .
+    ?cout log:includes ?xout .
+    _:t log:notIncludes ?cout .
+
+    # (option 2)
+    # (?cout {
+    #     ( ?x ?y ) log:conjunction ?conj .
+    #     ?conj log:copy ?cout .
+    #     true log:call ?cout .
+    #     "oneOrBoth2-1" log:trace ?cout .
+    #     ?cout log:includes ?xout .
+
+    # } ()) log:collectAllIn _:t .
+
+    "oneOrBoth2" log:trace ?x, ?xout .
+    ?z log:equalTo ?x .
+} .

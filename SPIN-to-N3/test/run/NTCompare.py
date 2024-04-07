@@ -22,15 +22,14 @@ def compare_rdf_graphs(file1, format1, file2, format2):
         print("Results are identical")
     else:
         print("Results are different")
+        in_both, in_first, in_second = compare.graph_diff(graph1, graph2)
 
-    in_both, in_first, in_second = compare.graph_diff(graph1, graph2)
-
-    print("\nThe same triples in both files:")
-    dump_nt_sorted(in_both)
-    print(f"\nDifferent in {file1}:")
-    dump_nt_sorted(in_first)
-    print(f"\nDifferent in {file2}:")
-    dump_nt_sorted(in_second)
+        print("\nThe same triples in both files:")
+        dump_nt_sorted(in_both)
+        print(f"\nDifferent in {file1}:")
+        dump_nt_sorted(in_first)
+        print(f"\nDifferent in {file2}:")
+        dump_nt_sorted(in_second)
 
 
 if __name__ == '__main__':

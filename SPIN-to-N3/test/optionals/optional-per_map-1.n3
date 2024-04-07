@@ -1,0 +1,118 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://example.org/> .
+
+# # A. example where opt doesn't work
+# { :x1 :p ?v } :opt { :x3 :q ?w } . # (change x3 to x2 to have optional working)
+
+# :x1 :p 1 .
+# :x2 :q 2 .
+
+
+# # B. example where nested opt doesn't work
+# { :x1 :p ?v } :opt { { :x2 :q ?w } :opt { :x4 :p ?x } } . # (change x4 to x3 to have nested opt working)
+
+# :x1 :p 1 .
+# :x2 :q 2 .
+# :x3 :p 3 .
+
+
+# # C. outer optional block is ruled out due to conflicting binding in deeper optional
+# # (although highest-up optional works)
+
+# { :x1 :p ?v } :opt { { :x2 :q ?w } :opt { :x3 :p ?v } } .
+
+# :x1 :p 1 . # won't work
+# # :x1 :p 3 . # works
+# :x2 :q 2 .
+# :x3 :p 3 .
+
+
+# D. example illustrating per-query vs. per-binding issue
+# { ?x :p ?v } :opt { ?x :q ?w } .
+{ ?x :p ?v } :opt { { ?x :q ?v } :opt { ?x :r ?w } } .
+
+:x1 :p 1 .
+:x1 :q 1 .
+:x1 :r 3 .
+:x3 :p 4 .
+# :x3 :q 4 .
+
+{
+    ?x :opt ?y .
+    "opt" log:trace ( ?x ?y ) .
+    ( ?x ?y {} ) :bubble ( ?z ?out ) .
+    "opt (2)" log:trace ?out .
+}
+=> { <> :out ?out }.
+
+{ ( ?x ?y ?curout ) :bubble ( ?z ?out ) }
+<= { 
+    ?y log:equalTo { ?o1 :opt ?o2 } .
+    "bubble1 (0)" log:trace ?y .
+    ?x log:copy ?xout . true log:call ?xout .
+    "bubble1 (xout)" log:trace ?xout .
+    ( ?o1 ?o2 ?curout ) :try_bubble ( ?o ?oout )  .
+    "bubble1 (1)" log:trace ( ?xout ?oout ) .
+    ( ?x ?xout ?o ?oout ) :check ( ?z ?out ) .
+    "bubble1 (end)" log:trace ( ?xout ?out ) .
+} .
+
+{ ( ?o1 ?o2 ?curout ) :try_bubble ( ?o ?oout )  } 
+<= {
+    ( ?o1 ?o2 ?curout ) :bubble ( ?o ?oout )  .
+    true log:callWithCut true .
+} .
+
+{ ( ?o1 ?o2 ?curout ) :try_bubble ( {} {} ) } 
+<= { true log:callWithCut true } .
+
+{ ( ?x ?y ?curout ) :bubble ( ?z ?out ) }
+<= { 
+    ?y log:notIncludes { ?k :opt ?l } . # (log:notEqualTo was not working)
+    "bubble2 (0)" log:trace ( ?x ?y ) .
+    ?x log:copy ?xout . true log:call ?xout .
+    "bubble2 (xout)" log:trace ?xout .
+    ( ?x ?xout ?y ?curout ) :check ( ?z ?out ) .
+    "bubble2 (end)" log:trace ( ?x ?y ?z ) .
+} .
+
+{ ( ?x ?xout ?y ?curout ) :check ( ?conj ?cout ) }
+<= {
+    ( ?x ?y ) log:conjunction ?conj .
+    ?conj log:copy ?cout .
+    "check1 (0)" log:trace ( ?cout ?curout ) .
+    # enforce consistency w/ prior bindings (curout)
+    ?cout log:includes ?curout, ?xout .
+    "check1 (1)" log:trace ?cout .
+    true log:call ?cout .
+    "check1 (end)" log:trace ?cout .
+} .
+
+{ ( ?x ?xout ?y ?curout ) :check ( ?x ?xout ) }
+<= {
+    ( ?x ?y ) log:conjunction ?conj .
+    ?conj log:copy ?cout .
+    "check2 (0)" log:trace ( ?xout ?cout ?curout ) .
+    # enforce consistency w/ prior bindings (curout) & x's bindings (xout)
+    ?cout log:includes ?curout , ?xout .
+    "check2 (1)" log:trace ?cout .
+    (1 {
+        _:t log:includes ?cout .
+        "check2 (1.5)" log:trace ?cout .
+    } ()) log:collectAllIn _:t .
+    # _:t log:notIncludes ?cout .f
+    "check2 (end)" log:trace "not includes" .
+} .
+
+# { ( ?x ?y ?curout ) :check ( {} {} ) }
+# <= {
+#     ?x log:copy ?xout .
+#     "check3 (1)" log:trace ?xout .
+#     (1 {
+#         _:t log:includes ?xout .
+#         "check3 (1.5)" log:trace ?xout .
+#     } ()) log:collectAllIn _:t .
+#     # _:t log:notIncludes ?xout .
+#     "check3 (2)" log:trace "not includes" .
+# } .

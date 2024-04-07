@@ -1,0 +1,95 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix : <http://example.org/> .
+
+# # A. example where opt doesn't work
+# { :x1 :p ?v } :opt { :x3 :q ?w } . # (change x3 to x2 to have optional working)
+
+# :x1 :p 1 .
+# :x2 :q 2 .
+
+
+# # B. example where nested opt doesn't work
+# { :x1 :p ?v } :opt { { :x2 :q ?w } :opt { :x4 :p ?x } } . # (change x4 to x3 to have nested opt working)
+
+# :x1 :p 1 .
+# :x2 :q 2 .
+# :x3 :p 3 .
+
+
+# # C. outer optional block is ruled out due to conflicting binding in deeper optional
+# # (although highest-up optional works)
+
+# { :x1 :p ?v } :opt { { :x2 :q ?w } :opt { :x3 :p ?v } } .
+
+# :x1 :p 1 . # won't work
+# # :x1 :p 3 . # works
+# :x2 :q 2 .
+# :x3 :p 3 .
+
+
+# D. example illustrating per-query vs. per-binding issue
+{ ?x :p ?v } :opt { { ?x :q ?v } :opt { ?x :r ?w } } .
+
+:x1 :p 1 .
+:x1 :q 2 .
+:x1 :r 3 .
+:x3 :p 4 .
+# :x3 :q 3 . # won't work
+:x3 :q 4 .
+# :x3 :r 4 .
+
+{
+    ?m :opt ?o .
+    "opt (0)" log:trace ( ?m ?o ) .
+    ( ?m ?o ) :leftJoin ( ?r ?r_map ) .
+    "opt (1)" log:trace ?r_map .
+}
+=> { <> :out ?r_map }.
+
+{ ( ?m ?o ) :leftJoin ( ?r ?r_map ) }
+<= { 
+    "leftJoin (0)" log:trace ( ?m ?o ) .
+    ?m log:copy ?m_map . true log:call ?m_map .
+    "leftJoin (m_map)" log:trace ( ?m ?m_map ) .
+    ( ( ?m ?m_map ) ?o ) :optionalMappings ?o_maps  .
+    "leftJoin (o_maps)" log:trace ( ?m_map ?o_maps ) .
+    ( ( ?m ?m_map ) ?o_maps ) :resultMapping ( ?r ?r_map ) .
+} .
+
+{ ( ( ?m ?m_map ) ?o ) :optionalMappings ?o_maps }
+<= {
+    ( ( ?r ?r_map ) {
+        ?o :optionalMapping ( ?or ?or_map ) .
+        "optionalMappings (0)" log:trace ( ( ?m ?o ) ( ?m ?or ) ) .
+        ( ( ?m ?m_map ) ( ?or ?or_map ) ) :consistentMapping ( ?r ?r_map ) .
+        "optionalMappings (1)" log:trace ( ?m_map ?r_map ) .
+    } ?o_maps ) log:collectAllIn _:t .
+} .
+
+{ { ?o1 :opt ?o2 } :optionalMapping ( ?or ?or_map ) }
+<= { ( ?o1 ?o2 ) :leftJoin ( ?or ?or_map )  } .
+
+{ ?o :optionalMapping ( ?o ?o_map ) }
+<= {
+    ?o log:notIncludes { ?k :opt ?l } .
+    ?o log:copy ?o_map . true log:call ?o_map .
+} .
+
+{ ( ( ?m ?m_map ) ( ?o ?o_map ) ) :consistentMapping ( ?conj ?conj_map ) }
+<= {
+    ( ?m ?o ) log:conjunction ?conj . ?conj log:copy ?conj_map .
+    "consistentMapping (0)" log:trace ( ?m ?m_map ?o ?o_map ?conj_map ) .
+    ?conj_map log:includes ?m_map , ?o_map .
+    "consistentMapping (end)" log:trace "includes" .
+} .
+
+{ ( ( ?m ?m_map ) ?o_maps ) :resultMapping ( ?m ?m_map ) }
+<= {
+    ?o_maps list:length 0
+} .
+
+{ ( ( ?m ?m_map ) ?o_maps ) :resultMapping ( ?r ?r_map ) }
+<= {
+    ?o_maps list:member ( ?r ?r_map ) .
+} .
