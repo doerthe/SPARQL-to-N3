@@ -1,8 +1,0 @@
-@prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix aux: <http://example.org/aux#>.
-@prefix : <http://example/>.
-@prefix ex: <http://example.org/spin#>.
-
-_:sk_0 ex:result (("s" :alice)).
-_:sk_1 ex:result (("s" :carol)).

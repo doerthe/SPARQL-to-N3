@@ -1,0 +1,85 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix aux: <http://example.org/aux#> .
+
+{ ?x :p ?v } aux:optionalQ { { ?x :q ?v } aux:optionalQ { ?x :r ?w } } .
+
+# doesn't seem to work when none of the optionals work (?)
+
+:x1 :p 1 .
+# :x1 :q 1 .
+# :x1 :r 3 .
+
+:x3 :p 4 .
+# :x3 :q 4 .
+
+{   ?pattern aux:optionalQ ?opt .
+    (?pattern ?opt)  aux:getCallPattern (?out ?call).
+    ?call log:includes ?out. 
+}=>{   
+    <> :out ?out .
+ }.
+
+# predicate returns bindings in out and pattern which matched with ?call
+# {?pattern aux:optionalQ ?opt }<={   (?pattern ?opt)  aux:getCallPattern (?out ?call).
+#  ?call log:includes ?out. }.
+
+{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ?optional aux:variableCheck true.
+   ?pattern aux:variableCheck true.
+ ?optional log:equalTo {?p2 aux:optionalQ ?o2}.
+  ?pattern log:equalTo {?p1 aux:optionalQ ?o1}.
+
+   true log:callWithCut true.
+   (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+   (?p2 ?o2)  aux:getCallPattern (?out2 ?call2).
+  (?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call).
+   }.
+
+{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ?optional aux:variableCheck true.
+  ?optional log:equalTo {?p2 aux:optionalQ ?o2}. 
+   true log:callWithCut true.
+   (?p2 ?o2)  aux:getCallPattern (?out2 ?call2).
+    "got here" log:trace ( ?out2 ?call2 ) .
+  ({} ?pattern ?out2 ?call2) aux:tryOptional (?out ?call).
+   }.
+
+{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ?pattern aux:variableCheck true.
+   ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
+   true log:callWithCut true.
+   (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+   ( ?out1 ?call1 {} ?optional) aux:tryOptional (?out ?call).
+   }.
+
+{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+   ( {} ?pattern {} ?optional) aux:tryOptional (?out ?call).
+   }.
+
+# try optional
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call)}
+<=
+{   
+   (?call2 ?call1) log:conjunction ?call.
+   ?call log:copy ?out.
+   true log:call ?out.
+   ?out log:includes ?out1, ?out2.
+}.
+
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out3 ?call1).}
+<=
+{  
+   ?call1 log:copy ?out3. #here
+   true log:call ?out3.
+   (?call1 ?call2) log:conjunction ?con2.
+   ?con2 log:copy ?con3.
+   ?con3 log:includes ?out3.
+   _:x log:notIncludes ?con3
+}.
+
+#test whether something is a universal variable
+{?p aux:variableCheck true}<={
+   ?p log:equalTo {?a ?b ?c}.
+   ?b log:rawType ?type.
+   ?type log:notEqualTo log:ForAll
+ }.

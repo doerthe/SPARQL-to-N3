@@ -64,3 +64,16 @@ For instance:
 ./test_select.sh ../cases/ARQ/GroupBy/group-03.rq ../cases/ARQ/GroupBy/data-1.ttl jena
 ```
 Will run the listed test and compare results with `jena` where result ordering is not retained.
+
+
+## Run individual query on engine
+
+Using Jena:
+```
+java -jar sparql.jar -n3 <data> -query <query>
+```
+
+For instance:
+```
+java -jar sparql.jar -n3 ../cases/test/data.n3 -query ../cases/test/optional.sparql
+```
