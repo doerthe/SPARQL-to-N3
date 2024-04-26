@@ -2,10 +2,14 @@ PREFIX :    <http://example/>
 
 SELECT *
 { 
-    :x1 :p ?v .
-    OPTIONAL
+    :x1 :p ?v . # v=1
+    OPTIONAL # fails
     {
-      :x3 :q ?w .
-      OPTIONAL { :x2 :p ?v }
+      :x3 :q ?w . # w = 3 or 4
+      OPTIONAL { :x2 :p ?v } # v=2 # succeeds
     }
 }
+
+
+
+

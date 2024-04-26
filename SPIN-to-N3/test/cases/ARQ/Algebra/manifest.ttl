@@ -22,19 +22,22 @@
 <>  rdf:type mf:Manifest ;
     rdfs:label "Algebra" ;
     mf:entries
-    (   <#nested-opt-1> 
+    (  
+        <#nested-opt-1> 
         <#nested-opt-2> 
         <#opt-filter-1> 
         <#opt-filter-2> 
         <#opt-filter-3> 
-        <#opt-filter-4> 
+       # <#opt-filter-4>  # double nesting is not supported (yet)
         <#filter-place-1> 
         <#filter-place-2> 
         <#filter-place-3> 
         <#filter-nested-1> 
-        <#filter-nested-2> 
-        <#filter-scope-1> 
-        <#join-scope-1> 
+        <#filter-nested-2> #double nesting
+      #  <#filter-scope-1> #double nesting
+      #  <#join-scope-1>  #double nesting
+      <#opt-classic>
+     <#opt-nested>
     ) .
 
 
@@ -139,3 +142,16 @@
             [ qt:query  <var-scope-join-1.rq> ;
               qt:data   <var-scope-join-1.ttl>  ] ;
         mf:result  <var-scope-join-1.srx> .
+
+<#opt-classic> rdf:type mf:QueryEvaluationTest ;
+         mf:name    "Opt-classic - 1" ;
+         mf:action
+            [ qt:query  <opt-classic.rq> ;
+              qt:data   <opt-classic.ttl> ] .
+        # mf:result  <two-nested-opt.srx> .
+
+<#opt-nested> rdf:type mf:QueryEvaluationTest ;
+         mf:name    "Opt-nested - 1" ;
+         mf:action
+            [ qt:query  <opt-nested.rq> ;
+              qt:data   <opt-nested.ttl> ] .

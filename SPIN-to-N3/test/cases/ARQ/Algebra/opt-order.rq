@@ -1,0 +1,14 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vCard: <http://www.w3.org/2001/vcard-rdf/3.0#>
+PREFIX   :         <http://example/> 
+
+SELECT ?name
+WHERE
+{
+  ?x a foaf:Person .
+  OPTIONAL { ?x vCard:FN  ?name }
+  OPTIONAL { ?x foaf:name ?name }
+  #?name :p :o.
+}
+
+

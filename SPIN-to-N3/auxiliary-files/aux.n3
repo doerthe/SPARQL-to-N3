@@ -217,7 +217,6 @@
                } ?filterList) log:collectAllIn ?scope.
                (?filterList ({})) list:append ?fl.
             ?fl  log:conjunction ?graph. 
-           # (?vars ?graph1) aux:relabelGraph ?graph.
 }.
 
 
@@ -276,7 +275,7 @@
     }.
 
 ##############################################
-# minus
+# ƒ
 ##############################################  
 #test: is there a minus?
 #yes
@@ -294,11 +293,8 @@
 #create minus expression
  {(?t ?vars) aux:createMinusExpression ?e}<={
   ?t sp:elements ?list.
-  "we have a minus" e:trace (?t ?vars ?list).
-  ?list aux:getVars ?v2.   #the problem is here, the getVars function needs to be changed
-  "vars 2" e:trace (?v2 ?t ?vars ?list).
+  ?list aux:getVars ?v2.   
   (?vars ?v2) aux:listIntersection ?intv.
-  88 e:trace {(?intv ?t) aux:minExpr ?e.}.
   (?intv ?t) aux:minExpr ?e.
  }.
 
@@ -307,9 +303,7 @@
 
 { (?list ?t) aux:minExpr {?scope log:notIncludes ?g}.}<={
   ?t sp:elements ?e.
-  2 e:trace 33.
   (?list ?e) aux:createGraph ?g1.
-  1 e:trace ?g1.
   (?list ?g1 ?t) aux:relabelGraph ?g.
   :scope log:skolem ?scope.
 }.
@@ -727,9 +721,6 @@ aux:value log:skolem ?value.
   } ?gs) log:collectAllIn ?scope. 
 
 
- # (?gr {(?oin ?gin) list:in ?gs.  (?oin ?gin) aux:relabelGraph ?gr } ?grs) log:collectAllIn ?scope.
-
-
   (?gs ({})) list:append ?g2.
 
   ?g2 log:conjunction ?graph7.
@@ -811,13 +802,14 @@ aux:value log:skolem ?value.
    (?vars22 ()) aux:makePairs ?pairs.
 
    # support for optional 
-    (?var3 {?t list:in ?where.  ?t a sp:Optional ; sp:elements ?opt. ?triple list:in ?opt. ?triple aux:bgpOrBindVars ?var3.  } ?vars3) log:collectAllIn _:x.  
-
+    (?var3 {?t list:in ?where.  ?t a sp:Optional ; sp:elements ?opt. ?opt aux:getVars ?var3.  } ?vars3) log:collectAllIn _:x.  
+ (?vars3 ()) aux:flatten ?vars33.
+   (?vars33 ()) aux:makePairs ?pairs3.
 
    # support for union
    (?var4 {?t list:in ?where.  ?t a sp:Union ; sp:elements ?unpair. ?list list:in ?unpair. ?triple list:in ?list.
   ?triple aux:bgpOrBindVars ?var4.  } ?vars4) log:collectAllIn _:x. 
-   (?vars1 ?pairs ?vars3 ?vars4) list:append ?vars.
+   (?vars1 ?pairs ?pairs3 ?vars4) list:append ?vars.
 
 
 
@@ -890,3 +882,6 @@ aux:value log:skolem ?value.
 {{?values sp:Max ?result } aux:aggTranslation {?values math:max ?result }}<={}.
 {{?values sp:Min ?result } aux:aggTranslation {?values math:min ?result }}<={}.
 {{?values sp:Count ?result } aux:aggTranslation {?values list:length ?result . }}<={}.
+
+
+# todo: proper scoping for minus

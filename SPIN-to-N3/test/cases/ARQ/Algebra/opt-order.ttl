@@ -1,0 +1,26 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns0: <http://www.w3.org/2001/vcard-rdf/3.0#> .
+@prefix   :         <http://example/> .
+
+<http://somewhere/JohnSmith>
+  a foaf:Person ;
+  ns0:FN "John Smith" ;
+  foaf:name "John Smith" .
+
+<http://somewhere/RebeccaSmith>
+  a foaf:Person ;
+  ns0:FN :Becky_Smith ;
+  foaf:name :Rebecca_Smith .
+
+:Rebecca_Smith :p :o.
+
+
+<http://somewhere/SarahJones>
+  a foaf:Person ;
+  ns0:FN "Sarah Jones" .
+
+<http://somewhere/MattJones>
+  a foaf:Person ;
+  foaf:name "Matthew Jones" .
+
+<http://somewhere/AdamJones> a foaf:Person .
