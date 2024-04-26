@@ -210,7 +210,7 @@
 
 # predicate returns bindings in out and pattern which matched with ?call
 {?pattern aux:optionalQ ?opt }<={   (?pattern ?opt)  aux:getCallPattern (?out ?call).
- ?call log:includes ?out. }.
+ ?call log:includes ?out.   }.
 
 {(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
    ?optional aux:variableCheck true.
@@ -262,16 +262,16 @@
    (?call1 ?call2) log:conjunction ?con2.
    ?con2 log:copy ?con3.
    ?con3 log:includes ?out3.
-   _:x log:notIncludes ?con3
+   _:x log:notIncludes ?con3.
 }.
 
 
-{(?out1 ?call1 ?out2 ?call2) aux:tryOptional ({} {}).}
-<=
-{  
-   ?call1 log:copy ?out3.
-   _:x log:notIncludes ?out3
-}.
+#{(?out1 ?call1 ?out2 ?call2) aux:tryOptional ({} {}).}
+#<=
+#{  
+#   ?call1 log:copy ?out3.
+#   _:x log:notIncludes ?out3
+#}.
 
 
 
@@ -287,3 +287,4 @@
 #########################################################
 {(?a1 ?a2) aux:oneBound true}<={?a1 log:bound true. }.
 {(?a1 ?a2) aux:oneBound true}<={?a2 log:bound true.}.
+
