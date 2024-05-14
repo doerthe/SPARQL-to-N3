@@ -208,41 +208,44 @@
 # OPTIONAL
 #####################################
 
+
 # predicate returns bindings in out and pattern which matched with ?call
-{?pattern aux:optionalQ ?opt }<={   (?pattern ?opt)  aux:getCallPattern (?out ?call).
- ?call log:includes ?out.   }.
+{?pattern aux:optionalQ ?opt }<={ 
+(?pattern ?opt)  aux:getCallPattern (?out ?call).
+
+ ?call log:includes ?out.    
+ }.
 
 {(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
-   ?optional aux:variableCheck true.
-   ?pattern aux:variableCheck true.
- ?optional log:equalTo {?p2 aux:optionalQ ?o2}.
-  ?pattern log:equalTo {?p1 aux:optionalQ ?o1}.
 
-   true log:callWithCut true.
-   (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
-   (?p2 ?o2)  aux:getCallPattern (?out2 ?call2).
-  (?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call).
+  # ?pattern aux:variableCheck true.
+  # ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
+  # true log:callWithCut true.
+  # (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+  ?pattern aux:unnest (?out1 ?call1).
+
+  ?optional aux:unnest (?out2 ?call2).
+
+   ( ?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call).
+
    }.
 
-{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
-   ?optional aux:variableCheck true.
-  ?optional log:equalTo {?p2 aux:optionalQ ?o2}. 
-   true log:callWithCut true.
-   (?p2 ?o2)  aux:getCallPattern (?out2 ?call2).
-  ({} ?pattern ?out2 ?call2) aux:tryOptional (?out ?call).
-   }.
 
-{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+
+# un-nest 
+{?pattern aux:unnest (?out1 ?call1)}<=
+{  
    ?pattern aux:variableCheck true.
    ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
    true log:callWithCut true.
    (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
-   ( ?out1 ?call1 {} ?optional) aux:tryOptional (?out ?call).
    }.
 
-{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
-   ( {} ?pattern {} ?optional) aux:tryOptional (?out ?call).
-   }.
+{?pattern aux:unnest ({} ?pattern)}<=
+{ 
+#  ?pattern log:notEqualTo {?p1 aux:optionalQ ?o1}. 
+#  true log:callWithCut true.
+}.
 
 # try optional
 {(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call)}
@@ -251,6 +254,7 @@
    (?call2 ?call1) log:conjunction ?call.
    ?call log:copy ?out.
    true log:call ?out.
+   9 log:trace ?out.
    ?out log:includes ?out1, ?out2.
 }.
 
@@ -262,15 +266,15 @@
    (?call1 ?call2) log:conjunction ?con2.
    ?con2 log:copy ?con3.
    ?con3 log:includes ?out3.
-   _:x log:notIncludes ?con3.
+   ?xx log:notIncludes ?con3.
 }.
 
 
 {(?out1 ?call1 ?out2 ?call2) aux:tryOptional ({} {}).}
 <=
 {  
-   ?call1 log:copy ?out3.
-   _:x log:notIncludes ?out3
+ #  ?call1 log:copy ?out3.
+   _:x log:notIncludes ?call1
 }.
 
 
