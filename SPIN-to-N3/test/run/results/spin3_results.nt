@@ -1,2 +1,6 @@
-_:N8865a400768347f288f7609d19e6c07d <http://example.org/s> <http://example/alice> .
-_:Nca3590ef30784d999abd58652eab0998 <http://example.org/s> <http://example/carol> .
+# Processed by EYE v9.11.4 (2024-03-04)
+# eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/empty.ttl --query tmp/n3query.n3 --nope
+
+# 2024-06-19T20:29:46.058Z in=29 out=0 ent=0 step=0 brake=2 inf=128584 sec=0.027 inf/sec=4762370
+# ENDS
+

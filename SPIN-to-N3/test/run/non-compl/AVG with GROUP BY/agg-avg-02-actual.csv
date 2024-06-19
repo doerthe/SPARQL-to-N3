@@ -1,0 +1,6 @@
+s,avg
+http://www.example.org/ints,2
+http://www.example.org/mixed1,1.6
+http://www.example.org/decimals,2.2333333333333334
+http://www.example.org/mixed2,0.2
+http://www.example.org/doubles,10700.0

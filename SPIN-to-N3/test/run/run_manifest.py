@@ -26,7 +26,7 @@ def get_name(path):
 def to_path(el):
     return str(el)[len("file://"):]
 
-def run_manifest(path, engine):
+def run_manifest(path, test, compl, engine):
     print(f">> loading manifest: {get_name(path)}<<")
     g = Graph()
     g.parse(path, format='turtle')
@@ -37,35 +37,59 @@ def run_manifest(path, engine):
         if lst is not None:
             for el in Collection(g=g, list=lst):
                 path = str(el)
-                run_manifest(path, engine)
+                run_manifest(path, test, compl, engine)
         # test entries
         lst = g.value(mf, MF.entries)
         if lst is not None:
             for el in Collection(g=g, list=lst):
-                run_test(g, el, engine)
+                if test is not None:
+                    name = str(g.value(el, MF.name))
+                    if name != test: continue
+                run_test(g, el, compl, engine)
 
-def run_test(g, test, engine):   
-    # if (g.value(test, RDF.type) == MF.QueryEvaluationTest):
+def rel_path(path):
+    return path[path.rfind("/", 0, path.rfind("/")-1)+1:]
+
+def run_test(g, test, compl, engine):   
+    if (g.value(test, RDF.type) != MF.QueryEvaluationTest):
+        return
+    
     name = str(g.value(test, MF.name))
     action = g.value(test, MF.action)
     query = to_path(g.value(action, QT.query))
     data = to_path(g.value(action, QT.data))
     ordered = str(g.value(action, QT.ordered))
-    # result = to_path(g.value(test, MF.result))
     
     print(f">> running test: {name}")
-    subprocess.run(['./test_select.sh', query, data, engine, ordered])
-    print("\n")
+    print(f"(query: {rel_path(query)}, data: {rel_path(data)})")
+    if compl:
+        result = g.value(test, MF.result)
+        if result is not None:
+            subprocess.run(['./test_select_compl.sh', name, query, data, to_path(result)])
+        else:
+            print("no normative results found")
+    else:
+        subprocess.run(['./test_select.sh', query, data, engine, ordered])
+    print()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run test manifest.")
     parser.add_argument('--manifest', help="Path to the test manifest file.", required=True)
-    parser.add_argument('--engine', help="SPARQL execution engine to compare results to.", choices=["rdflib", "jena"], required=True)
+    parser.add_argument('--test', help="Label of test to be run", required=False)
+    parser.add_argument('--compliance', help="Check compliance with result files from manifest", required=False, action=argparse.BooleanOptionalAction)
+    parser.add_argument('--engine', help="SPARQL execution engine to compare results to.", choices=["rdflib", "jena"], required=False)
     #parser.add_argument('--ordered', help='Consider result ordering during comparison', action="store_true")
 
     args = parser.parse_args()
     path = args.manifest
+    test = args.test
+    compl = args.compliance
     engine = args.engine
-
-    run_manifest(path, engine)
+    
+    if compl is None and engine is None:
+        print("error: require '--engine' if not checking compliance")
+    elif engine is not None and compl is not None:
+        print("error: either provide '--engine' or check for '--compliance'")
+    else:
+        run_manifest(path, test, compl, engine)
 

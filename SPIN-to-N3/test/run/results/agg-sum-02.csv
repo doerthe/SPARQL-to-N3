@@ -1,0 +1,6 @@
+s,sum
+http://www.example.org/ints,6
+http://www.example.org/decimals,6.7
+http://www.example.org/doubles,32100.0
+http://www.example.org/mixed1,3.2
+http://www.example.org/mixed2,0.4

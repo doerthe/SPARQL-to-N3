@@ -53,7 +53,9 @@ if [[ $verbose == "true" ]]; then
     echo -e "(stored results at $result_file)"
 fi
 
-echo -e "\ngenerate spin: $time_gen_spin\ngenerate n3: $time_gen_n3\nexec n3: $time_exec_n3"
+if [[ $verbose == "true" ]]; then
+    echo -e "\ngenerate spin: $time_gen_spin\ngenerate n3: $time_gen_n3\nexec n3: $time_exec_n3"
+fi
 
 sed -i'' -e 's|rdf:f7rst|rdf:first|g'  $n3_file
 sed -i'' -e 's|rdf:r4st|rdf:rest|g'  $n3_file

@@ -1,0 +1,16 @@
+to run an individual case, use:
+python3 run_manifest.py --manifest ../cases/sparql11-test-suite/aggregates/manifest.ttl --test '<case label>' --compliance
+
+(lookup <case label> of a given query in manifest file)
+
+COUNT 3: sin3 actually seems to be right here
+AVG with GROUP BY: having clause not applied in sin3?
+agg empty group: normative always lists a column, even if no results
+COUNT 4-7, 'Protect from error in AVG', 'Error in AVG', 'GROUP_CONCAT 2': bugs in sin3?
+    maybe, some of them because we missed the following: 
+    "Aggregates apply expressions over groups of solutions. By default a solution set consists of a single group, containing all solutions."
+    https://www.w3.org/TR/sparql11-query/#aggregates
+COUNT 8b: not even sure what that group-by does XD (by expression??)
+
+
+SUM: rounding difference in sin3
