@@ -1,0 +1,53 @@
+INFO:__main__:>> loading manifest: negation/manifest.ttl <<
+INFO:__main__:>> running test: Subsets by exclusion (NOT EXISTS)
+INFO:__main__:(query: negation/subsetByExcl01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/subsetByExcl.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Subsets by exclusion (MINUS)
+INFO:__main__:(query: negation/subsetByExcl02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/subsetByExcl.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'animal': 'http://www.w3.org/2009/sparql/docs/tests/data-sparql11/negation#lifeForm1'}]
+
+INFO:__main__:>> running test: Medical, temporal proximity by exclusion (NOT EXISTS)
+INFO:__main__:(query: negation/temporalProximity01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/temporalProximity01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Calculate which sets are subsets of others (include A subsetOf A)
+INFO:__main__:(query: negation/subset-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/set-data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'subset': 'http://eyereasoner.github.io/.well-known/genid/f7efee0a-089a-409f-bc7e-5d5de1557ba9#e_sk_9_1', 'superset': 'http://eyereasoner.github.io/.well-known/genid/f7efee0a-089a-409f-bc7e-5d5de1557ba9#e_sk_10_1'}], 'removed': [{'subset': 'http://example/empty', 'superset': 'http://example/e'}, {'subset': 'http://example/c', 'superset': 'http://example/e'}, {'subset': 'http://example/empty', 'superset': 'http://example/d'}, {'subset': 'http://example/b', 'superset': 'http://example/d'}, {'subset': 'http://example/empty', 'superset': 'http://example/c'}, {'subset': 'http://example/e', 'superset': 'http://example/c'}, {'subset': 'http://example/empty', 'superset': 'http://example/b'}, {'subset': 'http://example/d', 'superset': 'http://example/b'}, {'subset': 'http://example/empty', 'superset': 'http://example/a'}, {'subset': 'http://example/e', 'superset': 'http://example/a'}, {'subset': 'http://example/c', 'superset': 'http://example/a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Calculate which sets are subsets of others (exclude A subsetOf A)
+INFO:__main__:(query: negation/subset-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/set-data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'subset': 'http://eyereasoner.github.io/.well-known/genid/fba111d7-7873-41a1-bb5a-376496f1de5f#e_sk_11_1', 'superset': 'http://eyereasoner.github.io/.well-known/genid/fba111d7-7873-41a1-bb5a-376496f1de5f#e_sk_12_1'}], 'removed': [{'subset': 'http://example/empty', 'superset': 'http://example/e'}, {'subset': 'http://example/c', 'superset': 'http://example/e'}, {'subset': 'http://example/empty', 'superset': 'http://example/d'}, {'subset': 'http://example/b', 'superset': 'http://example/d'}, {'subset': 'http://example/empty', 'superset': 'http://example/c'}, {'subset': 'http://example/e', 'superset': 'http://example/c'}, {'subset': 'http://example/empty', 'superset': 'http://example/b'}, {'subset': 'http://example/d', 'superset': 'http://example/b'}, {'subset': 'http://example/empty', 'superset': 'http://example/a'}, {'subset': 'http://example/e', 'superset': 'http://example/a'}, {'subset': 'http://example/c', 'superset': 'http://example/a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Calculate which sets have the same elements
+INFO:__main__:(query: negation/set-equals-1.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/set-data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s1': 'http://example/c', 's2': 'http://example/e'}, {'s1': 'http://example/b', 's2': 'http://example/d'}]
+
+INFO:__main__:>> running test: Calculate proper subset
+INFO:__main__:(query: negation/subset-03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/set-data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'subset': 'http://eyereasoner.github.io/.well-known/genid/bc3147c2-5c68-4f97-93ae-907f63575a27#e_sk_16_1', 'superset': 'http://eyereasoner.github.io/.well-known/genid/bc3147c2-5c68-4f97-93ae-907f63575a27#e_sk_17_1'}], 'removed': [{'subset': 'http://example/empty', 'superset': 'http://example/e'}, {'subset': 'http://example/empty', 'superset': 'http://example/d'}, {'subset': 'http://example/empty', 'superset': 'http://example/c'}, {'subset': 'http://example/empty', 'superset': 'http://example/b'}, {'subset': 'http://example/empty', 'superset': 'http://example/a'}, {'subset': 'http://example/e', 'superset': 'http://example/a'}, {'subset': 'http://example/c', 'superset': 'http://example/a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Positive EXISTS 1
+INFO:__main__:(query: negation/exists-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/set-data.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Positive EXISTS 2
+INFO:__main__:(query: negation/exists-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/set-data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: []
+
+INFO:__main__:>> running test: Subtraction with MINUS from a fully bound minuend
+INFO:__main__:(query: negation/full-minuend.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/full-minuend.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'a': 'http://example/a0', 'b': 'http://example/b0', 'c': 'http://example/c0'}, {'a': 'http://example/a3', 'b': 'http://example/b3', 'c': 'http://example/c3'}]
+
+INFO:__main__:>> running test: Subtraction with MINUS from a partially bound minuend
+INFO:__main__:(query: negation/part-minuend.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/negation/part-minuend.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'a': 'http://eyereasoner.github.io/.well-known/genid/5a0efaa7-82a3-4c2e-bc2f-c426c5086036#e_sk_0_1', 'b': 'http://eyereasoner.github.io/.well-known/genid/5a0efaa7-82a3-4c2e-bc2f-c426c5086036#e_sk_3_1', 'c': 'http://eyereasoner.github.io/.well-known/genid/5a0efaa7-82a3-4c2e-bc2f-c426c5086036#e_sk_4_1'}], 'removed': [{'a': 'http://example/a2', 'b': 'http://example/b2', 'c': ''}, {'a': 'http://example/a4', 'b': '', 'c': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+

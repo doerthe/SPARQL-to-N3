@@ -1,4 +1,4 @@
-import sys, os, argparse, subprocess
+import sys, os, argparse, subprocess, logging
 from rdflib import Graph, Literal, URIRef, RDF, Namespace
 
 MF = Namespace("http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#")
@@ -23,11 +23,29 @@ def get_name(path):
     cmps = os.path.normpath(path).split(os.sep)
     return cmps[-2] + os.sep + cmps[-1]
 
+def get_category(path):
+    cmps = os.path.normpath(path).split(os.sep)
+    return cmps[-2]
+
 def to_path(el):
     return str(el)[len("file://"):]
 
-def run_manifest(path, test, compl, engine):
-    print(f">> loading manifest: {get_name(path)}<<")
+def get_logger(path):
+    logpath = f'non-compl/{get_category(path)}'
+    os.makedirs(logpath, exist_ok=True)
+    logpath += "/output.log"
+    
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(filename=logpath, encoding='utf-8', level=logging.INFO)
+    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+    
+    return logger
+
+def run_manifest(path, test, check_compl, engine):
+    total_num = 0; noncompl_num = 0
+    global logger; logger = get_logger(path)
+    
+    logger.info(f">> loading manifest: {get_name(path)} <<")
     g = Graph()
     g.parse(path, format='turtle')
 
@@ -37,7 +55,7 @@ def run_manifest(path, test, compl, engine):
         if lst is not None:
             for el in Collection(g=g, list=lst):
                 path = str(el)
-                run_manifest(path, test, compl, engine)
+                run_manifest(path, test, check_compl, engine)
         # test entries
         lst = g.value(mf, MF.entries)
         if lst is not None:
@@ -45,32 +63,41 @@ def run_manifest(path, test, compl, engine):
                 if test is not None:
                     name = str(g.value(el, MF.name))
                     if name != test: continue
-                run_test(g, el, compl, engine)
-
-def rel_path(path):
-    return path[path.rfind("/", 0, path.rfind("/")-1)+1:]
+                is_compl = run_test(g, el, check_compl, engine)
+                if not is_compl: noncompl_num += 1
+                total_num += 1
+    
+    print(f"# total: {total_num}; # non-compliant: {noncompl_num}")
 
 def run_test(g, test, compl, engine):   
     if (g.value(test, RDF.type) != MF.QueryEvaluationTest):
-        return
+        return True
     
     name = str(g.value(test, MF.name))
     action = g.value(test, MF.action)
     query = to_path(g.value(action, QT.query))
-    data = to_path(g.value(action, QT.data))
+    data = to_path(g.value(action, QT.data) if g.value(action, QT.data) is not None else g.value(action, QT.graphData))
     ordered = str(g.value(action, QT.ordered))
     
-    print(f">> running test: {name}")
-    print(f"(query: {rel_path(query)}, data: {rel_path(data)})")
+    category = get_category(query)
+    logger.info(f">> running test: {name}")
+    logger.info(f"(query: {get_name(query)}, data: {data})")
     if compl:
         result = g.value(test, MF.result)
         if result is not None:
-            subprocess.run(['./test_select_compl.sh', name, query, data, to_path(result)])
+            cmd = ['./test_select_compl.sh', name, category, query, data, to_path(result)]
+            process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            out, error = [ b.decode('UTF-8') for b in process.communicate() ]
+            logger.info(out)
+            if error.strip() != "": logger.error(error)
+            return ("non compliant" not in out)
         else:
-            print("no normative results found")
+            logger.info("no normative results found")
     else:
         subprocess.run(['./test_select.sh', query, data, engine, ordered])
-    print()
+    logger.info("")
+    
+    return True
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run test manifest.")
@@ -92,4 +119,3 @@ if __name__ == '__main__':
         print("error: either provide '--engine' or check for '--compliance'")
     else:
         run_manifest(path, test, compl, engine)
-

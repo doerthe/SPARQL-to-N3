@@ -1,0 +1,5 @@
+s1,s2,b1,b2
+BAZ,BAZ,_:b0,_:b0
+foo,foo,_:b1,_:b1
+foo,BAZ,_:b2,_:b3
+BAZ,foo,_:b4,_:b5

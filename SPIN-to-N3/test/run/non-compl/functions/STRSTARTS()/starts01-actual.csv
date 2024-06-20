@@ -1,0 +1,17 @@
+s,str
+http://example.org/n4,-2
+http://example.org/n1,-1
+http://example.org/n2,-1.6
+http://example.org/n3,1.1
+http://example.org/n5,2.5
+http://example.org/s1,foo
+http://example.org/s2,bar
+http://example.org/s3,BAZ
+http://example.org/s4,食べ物
+http://example.org/s5,100%
+http://example.org/s6,abc
+http://example.org/s7,DEF
+http://example.org/d1,2010-06-21T11:28:01Z
+http://example.org/d2,2010-12-21T15:38:02-08:00
+http://example.org/d3,2008-06-20T23:59:00Z
+http://example.org/d4,2011-02-01T01:02:03

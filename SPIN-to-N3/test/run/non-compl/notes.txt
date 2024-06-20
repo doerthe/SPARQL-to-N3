@@ -1,16 +1,86 @@
+- https://www.w3.org/2009/sparql/docs/tests/
+
+to a given run manifest:
+python3 run_manifest.py --manifest ../cases/sparql11-test-suite/bind/manifest.ttl --compliance
+
 to run an individual case, use:
-python3 run_manifest.py --manifest ../cases/sparql11-test-suite/aggregates/manifest.ttl --test '<case label>' --compliance
+python3 run_manifest.py --manifest ../cases/sparql11-test-suite/bind/manifest.ttl --test 'bind01 - BIND' --compliance
 
-(lookup <case label> of a given query in manifest file)
 
+-- aggregates
 COUNT 3: sin3 actually seems to be right here
 AVG with GROUP BY: having clause not applied in sin3?
-agg empty group: normative always lists a column, even if no results
+agg empty group: ok (normative lists columns even if no results)
 COUNT 4-7, 'Protect from error in AVG', 'Error in AVG', 'GROUP_CONCAT 2': bugs in sin3?
     maybe, some of them because we missed the following: 
     "Aggregates apply expressions over groups of solutions. By default a solution set consists of a single group, containing all solutions."
     https://www.w3.org/TR/sparql11-query/#aggregates
-COUNT 8b: not even sure what that group-by does XD (by expression??)
-
-
+COUNT 8b: not even sure what that group-by does here XD (by expression??)
 SUM: rounding difference in sin3
+
+
+-- property paths
+do not finish (commented out for now)
+(pp16) Duplicate paths and cycles through foaf:knows*
+(pp25) Diamond, with loop -- :p+
+(pp36) Arbitrary path with bound endpoints
+(pp37) Nested (*)*
+
+extra universal outputted; do we support named graphs?..
+(pp06) Path with two graphs
+(pp07) Path with one graph
+(pp34) Named Graph 1
+(pp35) Named Graph 2
+
+results for x path* y should also include x:
+(pp14) Star path over foaf:knows
+
+bug in sin3 (precedence?)
+(pp31) Operator precedence 2
+(pp33) Operator precedence 4
+
+
+-- bind
+all bugs in sin3 (9/10)
+no support for expression in bind?
+
+
+X bindings - don't think we support this?
+
+
+X entailment
+
+
+-- exists
+named graphs:
+Exists within graph pattern
+Nested negative exists in positive exists: ok (normative lists columns even if no results)
+
+
+-- functions
+none of them work :-(
+
+
+-- grouping
+grouping on variables from optional
+Group-3, Group-4, Group-5
+
+
+-- negation
+mostly bugs in sin3
+Positive EXISTS 2: ok (normative lists columns even if no results)
+
+
+-- project-expression
+none of them work :-( do we support expressions in select clause?
+
+some of them seem evil, though (undefined variables, ...)
+
+
+-- subquery
+none of them work :-(
+
+sq01 - sq07: graph patterns (which we don't support?)
+but, e.g., sq08: n3Query.n3 seems solid ...
+
+sq11: looks like sin3 doesn't apply LIMIT in subquery

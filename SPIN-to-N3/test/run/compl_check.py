@@ -11,7 +11,7 @@ def query_type(query):
     
     return None
 
-def check(name, query_path, data_path, norm_path, actual_path):
+def check(name, category, query_path, data_path, norm_path, actual_path):
     qtype = query_type(query_path)
     if qtype != 'SelectQuery':
         print(f"skipping non-select query ({qtype})")
@@ -31,6 +31,9 @@ def check(name, query_path, data_path, norm_path, actual_path):
     if len(actual_results_csv) == 0:
         diff = "missing rows: " + str([ row for row in norm_results_csv.values() ])
         compl = False
+    elif len(norm_results_csv) == 0:
+        diff = "extra rows: " + str([ row for row in actual_results_csv.values() ])
+        compl = False
     else:
         diff = csv_diff.compare(norm_results_csv, actual_results_csv)
         compl = all(len(values) == 0 for values in diff.values())
@@ -39,7 +42,7 @@ def check(name, query_path, data_path, norm_path, actual_path):
         print("compliant!")
     else:
         print("non compliant :-("); print(diff);
-        fldr = f"./non-compl/{name}/"; os.makedirs(fldr, exist_ok=True)
+        fldr = f"./non-compl/{category}/{name}/"; os.makedirs(fldr, exist_ok=True)
         shutil.copyfile(query_path, f'{fldr}/{os.path.split(query_path)[1]}')
         shutil.copyfile(data_path, f'{fldr}/{os.path.split(data_path)[1]}')
         shutil.copyfile(norm_path, f'{fldr}/{norm_name}-norm.csv')
@@ -48,6 +51,7 @@ def check(name, query_path, data_path, norm_path, actual_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Check compliance.")
     parser.add_argument('--label', help="The label of the test case.", required=True)
+    parser.add_argument('--category', help="The category of the test case.", required=True)
     parser.add_argument('--query', help="The SPARQL query.", required=True)
     parser.add_argument('--data', help="Path to the data file.", required=True)
     parser.add_argument('--norm', help="Path to the normative results file.", required=True)
@@ -55,9 +59,10 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     name = args.label
+    category = args.category
     query_path = args.query
     data_path = args.data
     norm_path = args.norm
     actual_path = args.actual
     
-    check(name, query_path, data_path, norm_path, actual_path)
+    check(name, category, query_path, data_path, norm_path, actual_path)

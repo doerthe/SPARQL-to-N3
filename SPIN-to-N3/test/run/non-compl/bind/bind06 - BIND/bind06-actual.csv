@@ -1,0 +1,5 @@
+o,p,s,z
+1,http://example.org/p,http://example.org/s1,http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_1_1
+2,http://example.org/p,http://example.org/s2,http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_3_1
+3,http://example.org/p,http://example.org/s3,http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_5_1
+4,http://example.org/p,http://example.org/s4,http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_7_1

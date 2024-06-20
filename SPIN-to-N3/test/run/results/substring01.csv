@@ -1,0 +1,8 @@
+s,str,substr
+http://example.org/s2,bar,b
+http://example.org/s4,食べ物,食
+http://example.org/s7,DEF,D
+http://example.org/s3,BAZ,B
+http://example.org/s5,100%,1
+http://example.org/s6,abc,a
+http://example.org/s1,foo,f

@@ -1,0 +1,3 @@
+x,y,z,sum
+http://www.example.org/instance#a,1,1,2
+http://www.example.org/instance#a,1,foobar,

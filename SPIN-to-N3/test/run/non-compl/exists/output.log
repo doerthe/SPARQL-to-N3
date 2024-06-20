@@ -1,0 +1,23 @@
+INFO:__main__:>> loading manifest: exists/manifest.ttl <<
+INFO:__main__:>> running test: Exists with one constant
+INFO:__main__:(query: exists/exists01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/exists/exists01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Exists with ground triple
+INFO:__main__:(query: exists/exists02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/exists/exists01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Exists within graph pattern
+INFO:__main__:(query: exists/exists03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/exists/exists01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{}], 'removed': [{'s': 'http://www.example.org/b', 'p': 'http://www.example.org/p'}], 'changed': [], 'columns_added': [], 'columns_removed': ['p', 's']}
+
+INFO:__main__:>> running test: Nested positive exists
+INFO:__main__:(query: exists/exists04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/exists/exists01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Nested negative exists in positive exists
+INFO:__main__:(query: exists/exists05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/exists/exists01.ttl)
+INFO:__main__:non compliant :-(
+missing rows: []
+

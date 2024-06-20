@@ -1,0 +1,53 @@
+INFO:__main__:>> loading manifest: fromSpec/manifest.ttl <<
+INFO:__main__:>> running test: Union 1
+INFO:__main__:(query: fromSpec/union1.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-union1.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Union 1 a
+INFO:__main__:(query: fromSpec/union1a.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-union1.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Not exists 1
+INFO:__main__:(query: fromSpec/notExists1.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg1.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Exists 1
+INFO:__main__:(query: fromSpec/filterExists1.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg1.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Minus 1
+INFO:__main__:(query: fromSpec/minus.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg2.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: not exists 2
+INFO:__main__:(query: fromSpec/notExists2.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg3.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Minus 2
+INFO:__main__:(query: fromSpec/minus2.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg3.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: not exists 3
+INFO:__main__:(query: fromSpec/notExists3.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg3.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Minus 3
+INFO:__main__:(query: fromSpec/minus3.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg3.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: not exists 4
+INFO:__main__:(query: fromSpec/notExists4.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg4.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Minus 4
+INFO:__main__:(query: fromSpec/minus4.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg4.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Minus union
+INFO:__main__:(query: fromSpec/minus5.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg2.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:
+INFO:__main__:>> running test: Minus union
+INFO:__main__:(query: fromSpec/minus6.sparql, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/fromSpec/data-neg2.ttl)
+INFO:__main__:no normative results found
+INFO:__main__:

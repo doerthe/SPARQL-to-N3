@@ -1,0 +1,8 @@
+s,str,encoded
+http://example.org/s1,foo,foo
+http://example.org/s2,bar,bar
+http://example.org/s3,BAZ,BAZ
+http://example.org/s4,食べ物,%E9%A3%9F%E3%81%B9%E7%89%A9
+http://example.org/s5,100%,100%25
+http://example.org/s6,abc,abc
+http://example.org/s7,DEF,DEF

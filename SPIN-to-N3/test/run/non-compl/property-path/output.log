@@ -1,0 +1,88 @@
+INFO:__main__:>> loading manifest: property-path/manifest.ttl <<
+INFO:__main__:>> running test: (pp01) Simple path
+INFO:__main__:(query: property-path/pp01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp02) Star path
+INFO:__main__:(query: property-path/pp02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp03) Simple path with loop
+INFO:__main__:(query: property-path/pp03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp03.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp06) Path with two graphs
+INFO:__main__:(query: property-path/pp06.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp061.ttl)
+INFO:__main__:non compliant :-(
+extra rows: [{'x': 'http://eyereasoner.github.io/.well-known/genid/b0937678-b1f4-4750-8100-10636a91f452#e_sk_1_1'}]
+
+INFO:__main__:>> running test: (pp07) Path with one graph
+INFO:__main__:(query: property-path/pp06.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp07.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/57b0a98e-101a-43c2-945f-e4b54a3bd061#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: (pp08) Reverse path
+INFO:__main__:(query: property-path/pp08.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp08.ttl)
+INFO:__main__:skipping non-select query (AskQuery)
+
+INFO:__main__:>> running test: (pp09) Reverse sequence path
+INFO:__main__:(query: property-path/pp09.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp09.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp10) Path with negation
+INFO:__main__:(query: property-path/pp10.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp10.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp11) Simple path and two paths to same target node
+INFO:__main__:(query: property-path/pp11.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp11.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp12) Variable length path and two paths to same target node
+INFO:__main__:(query: property-path/pp12.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp11.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp14) Star path over foaf:knows
+INFO:__main__:(query: property-path/pp14.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/pp14.ttl)
+INFO:__main__:non compliant :-(
+{'added': [], 'removed': [{'X': 'http://example.org/a', 'Y': 'http://example.org/a'}, {'X': 'http://example.org/b', 'Y': 'http://example.org/b'}, {'X': 'http://example.org/c', 'Y': 'http://example.org/c'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: (pp21) Diamond -- :p+
+INFO:__main__:(query: property-path/path-2-2.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/data-diamond.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp23) Diamond, with tail -- :p+
+INFO:__main__:(query: property-path/path-2-2.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/data-diamond-tail.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp28a) Diamond, with loop -- (:p/:p)?
+INFO:__main__:(query: property-path/path-3-3.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/data-diamond-loop.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp30) Operator precedence 1
+INFO:__main__:(query: property-path/path-p1.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/path-p1.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp31) Operator precedence 2
+INFO:__main__:(query: property-path/path-p2.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/path-p1.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'t': 'http://www.example.org/c'}]
+
+INFO:__main__:>> running test: (pp32) Operator precedence 3
+INFO:__main__:(query: property-path/path-p3.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/path-p3.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: (pp33) Operator precedence 4
+INFO:__main__:(query: property-path/path-p4.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/path-p3.ttl)
+INFO:__main__:non compliant :-(
+{'added': [], 'removed': [{'t': 'http://www.example.org/e'}, {'t': 'http://www.example.org/f'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: (pp34) Named Graph 1
+INFO:__main__:(query: property-path/path-ng-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/ng-01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'t': 'http://eyereasoner.github.io/.well-known/genid/b154a7d6-bb87-47bc-a150-63aea1d762df#e_sk_1_1'}], 'removed': [{'t': 'http://www.example.org/a'}, {'t': 'http://www.example.org/b'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: (pp35) Named Graph 2
+INFO:__main__:(query: property-path/path-ng-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/property-path/ng-01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'t': 'http://eyereasoner.github.io/.well-known/genid/06963565-f8ab-4444-ad32-5323a43ffc62#e_sk_1_1'}], 'removed': [{'t': 'http://www.example.org/a'}, {'t': 'http://www.example.org/b'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+

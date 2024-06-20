@@ -1,0 +1,36 @@
+INFO:__main__:>> loading manifest: project-expression/manifest.ttl <<
+INFO:__main__:>> running test: Expression is equality
+INFO:__main__:(query: project-expression/projexp01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp01.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'x': 'http://www.example.org/instance#a', 'y': '1', 'z': '1', 'eq': 'true'}, {'x': 'http://www.example.org/instance#a', 'y': '1', 'z': '2', 'eq': 'false'}]
+
+INFO:__main__:>> running test: Expression raise an error
+INFO:__main__:(query: project-expression/projexp02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp02.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/8fcaf47c-2a48-45e8-a772-834ea4632be6#e_sk_1_1', 'y': 'http://eyereasoner.github.io/.well-known/genid/8fcaf47c-2a48-45e8-a772-834ea4632be6#e_sk_0_1', 'z': 'http://eyereasoner.github.io/.well-known/genid/8fcaf47c-2a48-45e8-a772-834ea4632be6#e_sk_2_1', 'sum': 'http://eyereasoner.github.io/.well-known/genid/8fcaf47c-2a48-45e8-a772-834ea4632be6#e_sk_6_1'}], 'removed': [{'x': 'http://www.example.org/instance#a', 'y': '1', 'z': '1', 'sum': '2'}, {'x': 'http://www.example.org/instance#a', 'y': '1', 'z': 'foobar', 'sum': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Reuse a project expression variable in select
+INFO:__main__:(query: project-expression/projexp03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp03.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'x': 'http://www.example.org/instance#a', 'y': '1', 'z': '2', 'sum': '3', 'twice': '6'}]
+
+INFO:__main__:>> running test: Reuse a project expression variable in order by
+INFO:__main__:(query: project-expression/projexp04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp04.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/4c8543ac-667d-4a53-99fe-b6df927eefec#e_sk_1_1', 'y': 'http://eyereasoner.github.io/.well-known/genid/4c8543ac-667d-4a53-99fe-b6df927eefec#e_sk_0_1', 'sum': 'http://eyereasoner.github.io/.well-known/genid/4c8543ac-667d-4a53-99fe-b6df927eefec#e_sk_5_1'}], 'removed': [{'x': 'http://www.example.org/instance#a', 'y': '1', 'sum': '2'}, {'x': 'http://www.example.org/instance#a', 'y': '2', 'sum': '4'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Expression may return no value
+INFO:__main__:(query: project-expression/projexp05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp05.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'x': 'http://www.example.org/instance#a', 'l': '1', 'dt': 'http://www.w3.org/2001/XMLSchema#integer'}, {'x': 'http://www.example.org/instance#a', 'l': 'http://www.example.org/schema#a', 'dt': ''}]
+
+INFO:__main__:>> running test: Expression has undefined variable
+INFO:__main__:(query: project-expression/projexp06.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp06.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'x': 'http://www.example.org/instance#a', 'l': '1', 'dt': ''}]
+
+INFO:__main__:>> running test: Expression has variable that may be unbound
+INFO:__main__:(query: project-expression/projexp07.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/project-expression/projexp07.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'x': 'http://www.example.org/instance#b', 'dt': ''}, {'x': 'http://www.example.org/instance#a', 'dt': 'http://www.w3.org/2001/XMLSchema#integer'}]
+

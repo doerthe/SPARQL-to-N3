@@ -1,0 +1,6 @@
+s,num,floor
+http://example.org/n1,-1,-1
+http://example.org/n5,2.5,2
+http://example.org/n4,-2,-2
+http://example.org/n3,1.1,1
+http://example.org/n2,-1.6,-2

@@ -1,0 +1,105 @@
+INFO:__main__:>> loading manifest: aggregates/manifest.ttl <<
+INFO:__main__:>> running test: COUNT 1
+INFO:__main__:(query: aggregates/agg01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: COUNT 2
+INFO:__main__:(query: aggregates/agg02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: COUNT 3
+INFO:__main__:(query: aggregates/agg03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'P': 'http://www.example.org/p2', 'C': '2'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: COUNT 4
+INFO:__main__:(query: aggregates/agg04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'C': 'http://eyereasoner.github.io/.well-known/genid/7d886b53-4160-421e-a6a6-fb174c4e0166#e_sk_4_1'}], 'removed': [{'C': '5'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: COUNT 5
+INFO:__main__:(query: aggregates/agg05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'P': 'http://www.example.org/p1', 'C': 'http://eyereasoner.github.io/.well-known/genid/96ca274c-2851-4569-8f2c-67ce57a41f4c#e_sk_3_1'}, {'P': 'http://www.example.org/p2', 'C': 'http://eyereasoner.github.io/.well-known/genid/96ca274c-2851-4569-8f2c-67ce57a41f4c#e_sk_7_1'}], 'removed': [{'P': 'http://www.example.org/p1', 'C': '3'}, {'P': 'http://www.example.org/p2', 'C': '2'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: COUNT 6
+INFO:__main__:(query: aggregates/agg06.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'C': 'http://eyereasoner.github.io/.well-known/genid/cf7172ba-cc1a-4bd5-af17-0d188d44bd45#e_sk_4_1'}], 'removed': [{'C': '5'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: COUNT 7
+INFO:__main__:(query: aggregates/agg07.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'P': 'http://www.example.org/p1', 'C': 'http://eyereasoner.github.io/.well-known/genid/29a968ae-435d-4e41-93be-0ecafc22d867#e_sk_3_1'}, {'P': 'http://www.example.org/p2', 'C': 'http://eyereasoner.github.io/.well-known/genid/29a968ae-435d-4e41-93be-0ecafc22d867#e_sk_7_1'}], 'removed': [{'P': 'http://www.example.org/p1', 'C': '3'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: COUNT 8b
+INFO:__main__:(query: aggregates/agg08b.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg08.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'O12': '0', 'C': '1'}, {'O12': '1', 'C': '2'}, {'O12': '2', 'C': '3'}, {'O12': '3', 'C': '2'}, {'O12': '4', 'C': '1'}]
+
+INFO:__main__:>> running test: GROUP_CONCAT 1
+INFO:__main__:(query: aggregates/agg-groupconcat-1.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-groupconcat-1.ttl)
+INFO:__main__:skipping non-select query (AskQuery)
+
+INFO:__main__:>> running test: GROUP_CONCAT 2
+INFO:__main__:(query: aggregates/agg-groupconcat-2.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-groupconcat-1.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'c': 'http://eyereasoner.github.io/.well-known/genid/7d8064aa-8924-4a66-b2bb-2a458d81b02c#e_sk_17_1'}], 'removed': [{'c': '2'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: GROUP_CONCAT with SEPARATOR
+INFO:__main__:(query: aggregates/agg-groupconcat-3.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-groupconcat-1.ttl)
+INFO:__main__:skipping non-select query (AskQuery)
+
+INFO:__main__:>> running test: SUM
+INFO:__main__:(query: aggregates/agg-sum-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'sum': '11.100000000000001'}], 'removed': [{'sum': '11.1'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: SUM with GROUP BY
+INFO:__main__:(query: aggregates/agg-sum-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric2.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: AVG
+INFO:__main__:(query: aggregates/agg-avg-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: AVG with GROUP BY
+INFO:__main__:(query: aggregates/agg-avg-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric2.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'s': 'http://www.example.org/ints', 'avg': '2'}, {'s': 'http://www.example.org/decimals', 'avg': '2.2333333333333334'}, {'s': 'http://www.example.org/doubles', 'avg': '10700.0'}], 'removed': [{'s': 'http://www.example.org/ints', 'avg': '2.0'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: MIN
+INFO:__main__:(query: aggregates/agg-min-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: MIN with GROUP BY
+INFO:__main__:(query: aggregates/agg-min-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: MAX
+INFO:__main__:(query: aggregates/agg-max-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: MAX with GROUP BY
+INFO:__main__:(query: aggregates/agg-max-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: SAMPLE
+INFO:__main__:(query: aggregates/agg-sample-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-numeric.ttl)
+INFO:__main__:skipping non-select query (AskQuery)
+
+INFO:__main__:>> running test: Error in AVG
+INFO:__main__:(query: aggregates/agg-err-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-err-01.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'g': 'http://example.com/data/#x', 'avg': '2.5', 'c': 'http://eyereasoner.github.io/.well-known/genid/c2f2c1a5-7a7c-48f0-a9b3-7e9a42f038a0#e_sk_4_1'}, {'g': 'http://example.com/data/#z', 'avg': '2.5', 'c': 'http://eyereasoner.github.io/.well-known/genid/c2f2c1a5-7a7c-48f0-a9b3-7e9a42f038a0#e_sk_9_1'}], 'removed': [{'g': 'http://example.com/data/#x', 'avg': '2.5', 'c': '2.5'}, {'g': 'http://example.com/data/#y', 'avg': '', 'c': ''}, {'g': 'http://example.com/data/#z', 'avg': '2.5', 'c': '2.5'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Protect from error in AVG
+INFO:__main__:(query: aggregates/agg-err-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg-err-02.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'g': 'http://example.com/data/#x', 'avg': 'http://eyereasoner.github.io/.well-known/genid/01b3ee24-3023-4054-b128-ac02642083bd#e_sk_4_1'}, {'g': 'http://example.com/data/#y', 'avg': 'http://eyereasoner.github.io/.well-known/genid/01b3ee24-3023-4054-b128-ac02642083bd#e_sk_9_1'}, {'g': 'http://example.com/data/#z', 'avg': 'http://eyereasoner.github.io/.well-known/genid/01b3ee24-3023-4054-b128-ac02642083bd#e_sk_14_1'}], 'removed': [{'g': 'http://example.com/data/#x', 'avg': '2.5'}, {'g': 'http://example.com/data/#y', 'avg': '2.0'}, {'g': 'http://example.com/data/#z', 'avg': '2.5'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: agg empty group
+INFO:__main__:(query: aggregates/agg-empty-group.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/empty.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'max': ''}]
+

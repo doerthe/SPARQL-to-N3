@@ -1,6 +1,26 @@
 # Processed by EYE v9.11.4 (2024-03-04)
-# eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/empty.ttl --query tmp/n3query.n3 --nope
+# eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq14.ttl --query tmp/n3query.n3 --nope
 
-# 2024-06-19T20:29:46.058Z in=29 out=0 ent=0 step=0 brake=2 inf=128584 sec=0.027 inf/sec=4762370
+@prefix : <http://example.org/ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+:b a foaf:Person.
+:b foaf:name "Ben".
+:b foaf:homepage <http://example.org/ben>.
+:b foaf:mbox <mailto:ben@example.org>.
+:b foaf:homepage <http://example.com/ben>.
+:a a foaf:Person.
+:a foaf:name "Alan".
+:a foaf:homepage <http://example.org/alan>.
+:a foaf:mbox _:sk_0.
+:c a foaf:Person.
+:c foaf:name "Chris".
+:c foaf:homepage <http://example.org/chris>.
+:c foaf:mbox _:sk_1.
+:d a foaf:Person.
+:d foaf:name "Dan".
+:d foaf:homepage <http://example.org/dan>.
+:d foaf:mbox _:sk_2.
+# 2024-06-20T14:35:10.644Z in=46 out=17 ent=20 step=7 brake=2 inf=145817 sec=0.030 inf/sec=4860567
 # ENDS
 

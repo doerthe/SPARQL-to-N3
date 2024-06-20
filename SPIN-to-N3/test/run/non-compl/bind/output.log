@@ -1,0 +1,49 @@
+INFO:__main__:>> loading manifest: bind/manifest.ttl <<
+INFO:__main__:>> running test: bind01 - BIND
+INFO:__main__:(query: bind/bind01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'z': 'http://eyereasoner.github.io/.well-known/genid/616ffd86-5d34-4964-8e3d-ee329b62141b#e_sk_1_1'}], 'removed': [{'z': '14'}, {'z': '13'}, {'z': '12'}, {'z': '11'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind02 - BIND
+INFO:__main__:(query: bind/bind02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'o': '1', 'z': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_1_1', 'z2': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_2_1'}, {'o': '2', 'z': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_4_1', 'z2': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_5_1'}, {'o': '3', 'z': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_7_1', 'z2': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_8_1'}, {'o': '4', 'z': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_10_1', 'z2': 'http://eyereasoner.github.io/.well-known/genid/0a2147a1-5c5d-4242-bb49-46631b1fdc29#e_sk_11_1'}], 'removed': [{'o': '4', 'z': '14', 'z2': '104'}, {'o': '3', 'z': '13', 'z2': '103'}, {'o': '2', 'z': '12', 'z2': '102'}, {'o': '1', 'z': '11', 'z2': '101'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind03 - BIND
+INFO:__main__:(query: bind/bind03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'z': '1', 's1': 'http://example.org/s1'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind04 - BIND
+INFO:__main__:(query: bind/bind04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'o': '1', 'p': 'http://example.org/p', 's': 'http://example.org/s1', 'z': 'http://eyereasoner.github.io/.well-known/genid/3713a5e9-71bd-4361-8768-7e588e10a704#e_sk_0_1'}, {'o': '2', 'p': 'http://example.org/p', 's': 'http://example.org/s2', 'z': 'http://eyereasoner.github.io/.well-known/genid/3713a5e9-71bd-4361-8768-7e588e10a704#e_sk_2_1'}, {'o': '3', 'p': 'http://example.org/p', 's': 'http://example.org/s3', 'z': 'http://eyereasoner.github.io/.well-known/genid/3713a5e9-71bd-4361-8768-7e588e10a704#e_sk_4_1'}, {'o': '4', 'p': 'http://example.org/p', 's': 'http://example.org/s4', 'z': 'http://eyereasoner.github.io/.well-known/genid/3713a5e9-71bd-4361-8768-7e588e10a704#e_sk_6_1'}], 'removed': [{'s': 'http://example.org/s4', 'p': 'http://example.org/p', 'o': '4', 'z': ''}, {'s': 'http://example.org/s3', 'p': 'http://example.org/p', 'o': '3', 'z': ''}, {'s': 'http://example.org/s2', 'p': 'http://example.org/p', 'o': '2', 'z': ''}, {'s': 'http://example.org/s1', 'p': 'http://example.org/p', 'o': '1', 'z': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind05 - BIND
+INFO:__main__:(query: bind/bind05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'s': 'http://example.org/s1', 'p': 'http://example.org/p', 'o': '1', 'z': '3'}, {'s': 'http://example.org/s3', 'p': 'http://example.org/p', 'o': '3', 'z': '3'}, {'s': 'http://example.org/s4', 'p': 'http://example.org/p', 'o': '4', 'z': '3'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind06 - BIND
+INFO:__main__:(query: bind/bind06.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'o': '1', 'p': 'http://example.org/p', 's': 'http://example.org/s1', 'z': 'http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_1_1'}, {'o': '2', 'p': 'http://example.org/p', 's': 'http://example.org/s2', 'z': 'http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_3_1'}, {'o': '3', 'p': 'http://example.org/p', 's': 'http://example.org/s3', 'z': 'http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_5_1'}, {'o': '4', 'p': 'http://example.org/p', 's': 'http://example.org/s4', 'z': 'http://eyereasoner.github.io/.well-known/genid/91fbdb2f-f23a-4c6b-9aed-e19da08fe50c#e_sk_7_1'}], 'removed': [{'s': 'http://example.org/s4', 'p': 'http://example.org/p', 'o': '4', 'z': '14'}, {'s': 'http://example.org/s3', 'p': 'http://example.org/p', 'o': '3', 'z': '13'}, {'s': 'http://example.org/s2', 'p': 'http://example.org/p', 'o': '2', 'z': '12'}, {'s': 'http://example.org/s1', 'p': 'http://example.org/p', 'o': '1', 'z': '11'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind07 - BIND
+INFO:__main__:(query: bind/bind07.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'s': 'http://example.org/s1', 'p': 'http://example.org/p', 'o': '1', 'z': 'http://eyereasoner.github.io/.well-known/genid/944f1a62-5c0c-4abd-9815-1260ede4f593#e_sk_1_1'}, {'s': 'http://example.org/s2', 'p': 'http://example.org/p', 'o': '2', 'z': 'http://eyereasoner.github.io/.well-known/genid/944f1a62-5c0c-4abd-9815-1260ede4f593#e_sk_3_1'}, {'s': 'http://example.org/s3', 'p': 'http://example.org/p', 'o': '3', 'z': 'http://eyereasoner.github.io/.well-known/genid/944f1a62-5c0c-4abd-9815-1260ede4f593#e_sk_5_1'}, {'s': 'http://example.org/s4', 'p': 'http://example.org/p', 'o': '4', 'z': 'http://eyereasoner.github.io/.well-known/genid/944f1a62-5c0c-4abd-9815-1260ede4f593#e_sk_7_1'}], 'removed': [{'s': 'http://example.org/s4', 'p': 'http://example.org/p', 'o': '4', 'z': ''}, {'s': 'http://example.org/s3', 'p': 'http://example.org/p', 'o': '3', 'z': ''}, {'s': 'http://example.org/s2', 'p': 'http://example.org/p', 'o': '2', 'z': ''}, {'s': 'http://example.org/s1', 'p': 'http://example.org/p', 'o': '1', 'z': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind08 - BIND
+INFO:__main__:(query: bind/bind08.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'s': 'http://example.org/s1', 'p': 'http://example.org/p', 'o': '1', 'z': '3'}, {'s': 'http://example.org/s3', 'p': 'http://example.org/p', 'o': '3', 'z': '3'}, {'s': 'http://example.org/s4', 'p': 'http://example.org/p', 'o': '4', 'z': '3'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: bind10 - BIND scoping - Variable in filter not in scope
+INFO:__main__:(query: bind/bind10.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:non compliant :-(
+extra rows: [{'s': 'http://example.org/s4', 'v': '4', 'z': '4'}]
+
+INFO:__main__:>> running test: bind11 - BIND scoping - Variable in filter in scope
+INFO:__main__:(query: bind/bind11.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:compliant!

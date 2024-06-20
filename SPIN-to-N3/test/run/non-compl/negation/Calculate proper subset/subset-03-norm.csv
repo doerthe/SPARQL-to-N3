@@ -1,0 +1,8 @@
+subset,superset
+http://example/empty,http://example/e
+http://example/empty,http://example/d
+http://example/empty,http://example/c
+http://example/empty,http://example/b
+http://example/empty,http://example/a
+http://example/e,http://example/a
+http://example/c,http://example/a

@@ -1,0 +1,20 @@
+INFO:__main__:>> loading manifest: grouping/manifest.ttl <<
+INFO:__main__:>> running test: Group-1
+INFO:__main__:(query: grouping/group01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/grouping/group-data-1.ttl)
+INFO:__main__:compliant!
+
+INFO:__main__:>> running test: Group-3
+INFO:__main__:(query: grouping/group03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/grouping/group-data-1.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'w': '9', 'S': 'http://eyereasoner.github.io/.well-known/genid/1d69e77a-e3db-452a-b07a-e39c0ce58c82#e_sk_6_1'}], 'removed': [{'w': '9', 'S': '1'}, {'w': '', 'S': '2'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> running test: Group-4
+INFO:__main__:(query: grouping/group04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/grouping/group-data-1.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'X': '1605-11-05', 'S': '2'}, {'X': '9', 'S': '1'}]
+
+INFO:__main__:>> running test: Group-5
+INFO:__main__:(query: grouping/group05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/grouping/group-data-2.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'s': 'http://example/s3', 'w': 'http://eyereasoner.github.io/.well-known/genid/45ee7d2a-1742-42d7-973c-cdc4f649df6e#e_sk_1_1'}, {'s': 'http://example/s2', 'w': 'http://eyereasoner.github.io/.well-known/genid/45ee7d2a-1742-42d7-973c-cdc4f649df6e#e_sk_3_1'}], 'removed': [{'s': 'http://example/s2', 'w': ''}, {'s': 'http://example/s3', 'w': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
