@@ -23,7 +23,7 @@ n3_stderr="tmp/n3query-output.txt"
 if [[ $verbose == "true" ]]; then
     echo -e "\n> getting n3 <"
 fi
-time_gen_n3=$( TIMEFORMAT="%R"; { time { eye $spin_file ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/ > $n3_file 2>$n3_stderr; } } 2>&1 )
+time_gen_n3=$( TIMEFORMAT="%R"; { time { eye $spin_file ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/ > $n3_file 2>$n3_stderr; } } 2>&1 )
 if [[ $verbose == "true" ]]; then
     echo -e "(stored at $n3_file)"
 fi
