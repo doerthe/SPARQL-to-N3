@@ -1,0 +1,10 @@
+@prefix : <http://example.org/> .
+@prefix aux: <http://example.org/aux#> .
+
+<> :num 2.00001 .
+
+{   <> :num ?o ;.
+    ?o aux:ceil ?c .
+} => {
+    ?o :result ?c 
+} .

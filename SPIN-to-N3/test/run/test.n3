@@ -1,0 +1,20 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix : <http://example.org/> .
+@prefix aux: <http://example.org/aux#> .
+
+{ ?n aux:ceil ?r2 } 
+<= {
+   "ceil" log:trace (?n ?r2) .
+    ?n math:rounded ?r .
+    ?r math:lessThan ?n . # didn't round up
+    ( ?n 1 ) math:sum ?n2 .
+    ?n2 math:rounded ?r2 .
+} .
+
+{ ?n aux:ceil ?r } 
+<= {
+   "ceil" log:trace (?n ?r2) .
+    ?n math:rounded ?r .
+    ?r math:notLessThan ?n
+} .

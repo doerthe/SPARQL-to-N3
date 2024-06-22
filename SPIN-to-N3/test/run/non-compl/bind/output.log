@@ -47,3 +47,31 @@ extra rows: [{'s': 'http://example.org/s4', 'v': '4', 'z': '4'}]
 INFO:__main__:>> running test: bind11 - BIND scoping - Variable in filter in scope
 INFO:__main__:(query: bind/bind11.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
 INFO:__main__:compliant!
+INFO:__main__:>> loading manifest: bind/manifest.ttl <<
+INFO:__main__:>> running test: bind01 - BIND
+INFO:__main__:(query: bind/bind01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'z': 'https://eyereasoner.github.io/.well-known/genid/80d0e22d-f9bd-4587-8887-6c08d68c7074#e_sk_1_1'}], 'removed': [{'z': '14'}, {'z': '13'}, {'z': '12'}, {'z': '11'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> loading manifest: bind/manifest.ttl <<
+INFO:__main__:>> running test: bind01 - BIND
+INFO:__main__:(query: bind/bind01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'z': '1'}, {'z': '2'}, {'z': '3'}, {'z': '4'}], 'removed': [{'z': '14'}, {'z': '13'}, {'z': '12'}, {'z': '11'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> loading manifest: bind/manifest.ttl <<
+INFO:__main__:>> running test: bind01 - BIND
+INFO:__main__:(query: bind/bind01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'z': '1'}, {'z': '2'}, {'z': '3'}, {'z': '4'}], 'removed': [{'z': '14'}, {'z': '13'}, {'z': '12'}, {'z': '11'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> loading manifest: bind/manifest.ttl <<
+INFO:__main__:>> running test: bind01 - BIND
+INFO:__main__:(query: bind/bind01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/bind/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'z': 'https://eyereasoner.github.io/.well-known/genid/734870e3-c1d5-43b6-bfb7-c28e497a2790#e_sk_1_1'}], 'removed': [{'z': '14'}, {'z': '13'}, {'z': '12'}, {'z': '11'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+

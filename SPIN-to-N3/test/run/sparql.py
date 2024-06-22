@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 data_graph = Graph()
 with open(args.data, 'r') as f:
-    data_graph.parse(f, format='turtle')
+    data_graph.parse(f)#, format='turtle')
 
 with open(args.query, 'r') as f:
     query_str = f.read()

@@ -1,68 +1,93 @@
 INFO:__main__:>> loading manifest: subquery/manifest.ttl <<
 INFO:__main__:>> running test: sq01 - Subquery within graph pattern
 INFO:__main__:(query: subquery/sq01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq01.rdf)
-INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/46814777-479e-4941-a2cf-0ad95f10d269#e_sk_1_1', 'p': 'http://eyereasoner.github.io/.well-known/genid/46814777-479e-4941-a2cf-0ad95f10d269#e_sk_2_1'}], 'removed': [{'x': 'http://www.example.org/instance#c', 'p': 'http://www.example.org/schema#p'}, {'x': 'http://www.example.org/instance#a', 'p': 'http://www.example.org/schema#p'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq01.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/37839000-6101-43aa-98a8-6c249f7a7b25#e_sk_1_1', 'p': 'https://eyereasoner.github.io/.well-known/genid/37839000-6101-43aa-98a8-6c249f7a7b25#e_sk_2_1'}], 'removed': [{'x': 'http://www.example.org/instance#c', 'p': 'http://www.example.org/schema#p'}, {'x': 'http://www.example.org/instance#a', 'p': 'http://www.example.org/schema#p'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq02 - Subquery within graph pattern, graph variable is bound
 INFO:__main__:(query: subquery/sq02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq01.rdf)
-INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/326ebe0d-46e4-429b-bd63-3ed052df50bc#e_sk_1_1', 'p': 'http://eyereasoner.github.io/.well-known/genid/326ebe0d-46e4-429b-bd63-3ed052df50bc#e_sk_2_1'}], 'removed': [{'x': 'http://www.example.org/instance#c', 'p': 'http://www.example.org/schema#p'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq01.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/2892ef07-a392-4d7d-9129-5cca7adc9d48#e_sk_1_1', 'p': 'https://eyereasoner.github.io/.well-known/genid/2892ef07-a392-4d7d-9129-5cca7adc9d48#e_sk_2_1'}], 'removed': [{'x': 'http://www.example.org/instance#c', 'p': 'http://www.example.org/schema#p'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq03 - Subquery within graph pattern, graph variable is not bound
 INFO:__main__:(query: subquery/sq03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq01.rdf)
-INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/4be16c5e-893c-4f40-97a2-672280802337#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq01.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/d429c26a-2ae2-4bb5-9f19-199e9e9d3165#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq04 - Subquery within graph pattern, default graph does not apply
 INFO:__main__:(query: subquery/sq04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq04.rdf)
-INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/9347fffd-7e69-4102-95d4-65027f5f49f9#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq04.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/4ec931fc-6896-4904-a571-407034a78071#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq05 - Subquery within graph pattern, from named applies
 INFO:__main__:(query: subquery/sq05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf)
-INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/ea40bf5d-63d8-48fe-a077-f85ca6af75c6#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/dd896f9c-c10c-499c-b359-e425eb889e00#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq06 - Subquery with graph pattern, from named applies
 INFO:__main__:(query: subquery/sq06.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf)
-INFO:__main__:non compliant :-(
-missing rows: [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}]
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf --query tmp/n3query.n3 --nope 
+compliant!
 
 INFO:__main__:>> running test: sq07 - Subquery with from 
 INFO:__main__:(query: subquery/sq07.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf)
-INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/3cc2652e-f322-4bcd-bbf3-b594a367c005#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/3e5ef3b4-aaf3-4fb6-b672-b66ca31e5201#e_sk_1_1'}], 'removed': [{'x': 'http://www.example.org/instance#c'}, {'x': 'http://www.example.org/instance#a'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq08 - Subquery with aggregate
 INFO:__main__:(query: subquery/sq08.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq08.rdf)
-INFO:__main__:non compliant :-(
-missing rows: [{'x': 'http://www.example.org/instance#b', 'max': '3'}]
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq08.rdf --query tmp/n3query.n3 --nope 
+compliant!
 
 INFO:__main__:>> running test: sq09 - Nested Subqueries
 INFO:__main__:(query: subquery/sq09.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq09.rdf)
-INFO:__main__:non compliant :-(
-missing rows: [{'x': 'http://www.example.org/instance#a', 'y': 'http://www.example.org/instance#b'}]
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq09.rdf --query tmp/n3query.n3 --nope 
+compliant!
 
 INFO:__main__:>> running test: sq10 - Subquery with exists
 INFO:__main__:(query: subquery/sq10.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq10.rdf)
-INFO:__main__:non compliant :-(
-missing rows: []
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq10.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+extra rows: [{'x': 'http://www.example.org/instance#a'}]
 
 INFO:__main__:>> running test: sq11 - Subquery limit per resource
 INFO:__main__:(query: subquery/sq11.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq11.ttl)
-INFO:__main__:non compliant :-(
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq11.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
 {'added': [{'L': 'Sandwich'}, {'L': 'Bagel'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: sq12 - Subquery in CONSTRUCT with built-ins
 INFO:__main__:(query: subquery/sq12.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq12.ttl)
-INFO:__main__:skipping non-select query (ConstructQuery)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq12.ttl --query tmp/n3query.n3 --nope 
+skipping non-select query (ConstructQuery)
 
 INFO:__main__:>> running test: sq13 - Subqueries don't inject bindings
 INFO:__main__:(query: subquery/sq13.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq13.ttl)
-INFO:__main__:compliant!
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq13.ttl --query tmp/n3query.n3 --nope 
+compliant!
 
 INFO:__main__:>> running test: sq14 - limit by resource
 INFO:__main__:(query: subquery/sq14.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq14.ttl)
-INFO:__main__:skipping non-select query (ConstructQuery)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq14.ttl --query tmp/n3query.n3 --nope 
+skipping non-select query (ConstructQuery)
+
+INFO:__main__:>> loading manifest: subquery/manifest.ttl <<
+INFO:__main__:>> running test: sq10 - Subquery with exists
+INFO:__main__:(query: subquery/sq10.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq10.rdf)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq10.rdf --query tmp/n3query.n3 --nope 
+non compliant :-(
+extra rows: [{'x': 'http://www.example.org/instance#a'}]
+
+INFO:__main__:>> loading manifest: subquery/manifest.ttl <<
+INFO:__main__:>> running test: sq11 - Subquery limit per resource
+INFO:__main__:(query: subquery/sq11.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq11.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq11.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'L': 'Sandwich'}, {'L': 'Bagel'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
 

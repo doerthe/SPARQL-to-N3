@@ -1,15 +1,29 @@
 - https://www.w3.org/2009/sparql/docs/tests/
 
-to a given run manifest:
-python3 run_manifest.py --manifest ../cases/sparql11-test-suite/bind/manifest.ttl --compliance
+e.g., to a given run manifest:
+python3 run_manifest.py --manifest ../cases/sparql11-test-suite/functions/manifest.ttl --compliance
 
-to run an individual case, use:
-python3 run_manifest.py --manifest ../cases/sparql11-test-suite/bind/manifest.ttl --test 'bind01 - BIND' --compliance
+e.g., to run an individual case:
+python3 run_manifest.py --manifest ../cases/sparql11-test-suite/functions/manifest.ttl --test 'CEIL()' --compliance
+
+e.g., to run a generated query, check log output:
+eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq10.rdf --query tmp/n3query.n3 --nope 
+
+
+-- general
+'having' clause not supported in sin3?
+     (cannot find it in aux.n3)
+no support for named graphs?
+bind does not seem to support expressions 
+    (e.g., BIND(?o+10 AS ?z); code works if +10 is dropped)
+no support for operations in the SELECT clause?
+    e.g., SELECT ?s ?num (ROUND(?num) AS ?round)
+no support for limit in subquery?
 
 
 -- aggregates
-COUNT 3: sin3 actually seems to be right here
-AVG with GROUP BY: having clause not applied in sin3?
+COUNT 3: having not applied by sin3
+AVG with GROUP BY: having clause not applied by sin3
 agg empty group: ok (normative lists columns even if no results)
 COUNT 4-7, 'Protect from error in AVG', 'Error in AVG', 'GROUP_CONCAT 2': bugs in sin3?
     maybe, some of them because we missed the following: 
@@ -58,12 +72,13 @@ Nested negative exists in positive exists: ok (normative lists columns even if n
 
 
 -- functions
-none of them work :-(
+most of the tests apply operations in SELECT clause; 
+doesn't seem like this is supported (e.g., SELECT ?s ?num (ROUND(?num) AS ?round))
+n3Query.n3 always ends up referring to wrong variable
 
 
 -- grouping
-grouping on variables from optional
-Group-3, Group-4, Group-5
+Group-3, Group-4, Group-5: grouping on variables from optional
 
 
 -- negation
@@ -78,9 +93,7 @@ some of them seem evil, though (undefined variables, ...)
 
 
 -- subquery
-none of them work :-(
-
 sq01 - sq07: graph patterns (which we don't support?)
-but, e.g., sq08: n3Query.n3 seems solid ...
-
-sq11: looks like sin3 doesn't apply LIMIT in subquery
+sq10: sin3 actually seems to be right here. (rdflib also seems to give the wrong answer.)
+    https://www.w3.org/TR/sparql11-query/#func-filter-exists - "No additional binding of variables occurs."
+sq11: sin3 doesn't apply LIMIT in subquery

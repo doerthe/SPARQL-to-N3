@@ -46,6 +46,7 @@ if [[ $recursion == "true" ]];
     # including query as data ( new ):
     time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/runtime.n3 $data $n3_file --pass-only-new --nope   > $result_file 2>/dev/null; } } 2>&1 )
     else
+    echo -e "eye ../../auxiliary-files/runtime.n3 $data --query $n3_file --nope "
     # not including query as data (before):
     time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/runtime.n3 $data --query $n3_file --nope > $result_file 2>/dev/null; } } 2>&1 )
 fi

@@ -1,18 +1,7 @@
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:in="http://www.example.org/instance#"
-    xmlns:ex="http://www.example.org/schema#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
-  <rdf:Description rdf:about="http://www.example.org/instance#a">
-    <ex:p rdf:resource="http://www.example.org/instance#b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.example.org/instance#c">
-    <ex:p rdf:resource=""/>
-  </rdf:Description>
-</rdf:RDF>
+@prefix ex: <http://www.example.org/schema#> .
+@prefix in: <http://www.example.org/instance#> .
 
+in:a ex:p in:b .
 
-
-
-
+in:c ex:p <file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf> .
 

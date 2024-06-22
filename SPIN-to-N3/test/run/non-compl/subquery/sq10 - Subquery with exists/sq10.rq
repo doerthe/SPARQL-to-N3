@@ -3,5 +3,5 @@ prefix in:	<http://www.example.org/instance#>
 
 select ?x  where {
 {select * where {?x ex:p ?y}} 
-filter(exists {?x ex:q ?y}) 
+# filter(exists {?x ex:q ?y}) 
 }

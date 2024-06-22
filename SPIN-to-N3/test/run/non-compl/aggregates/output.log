@@ -103,3 +103,10 @@ INFO:__main__:(query: aggregates/agg-empty-group.rq, data: /Users/wvw/git/n3/spa
 INFO:__main__:non compliant :-(
 missing rows: [{'max': ''}]
 
+INFO:__main__:>> loading manifest: aggregates/manifest.ttl <<
+INFO:__main__:>> running test: COUNT 3
+INFO:__main__:(query: aggregates/agg03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/aggregates/agg01.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+{'added': [{'P': 'http://www.example.org/p2', 'C': '2'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+

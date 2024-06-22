@@ -17,7 +17,7 @@ missing rows: [{'s': 'http://example.org/n1', 'str1': ''}, {'s': 'http://example
 INFO:__main__:>> running test: STRLANG()
 INFO:__main__:(query: functions/strlang01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/0f9316e5-abce-4da0-95d7-0fbd5ba66e10#e_sk_1_1', 's2': 'some0'}], 'removed': [{'s': 'http://example.org/s2', 's2': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/7b6ee072-0349-4e6c-8132-92b01ac1d6a9#e_sk_1_1', 's2': 'some0'}], 'removed': [{'s': 'http://example.org/s2', 's2': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: STRLANG(STR())
 INFO:__main__:(query: functions/strlang02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -27,7 +27,7 @@ missing rows: [{'s': 'http://example.org/s2', 's2': 'bar'}]
 INFO:__main__:>> running test: STRLANG() TypeErrors
 INFO:__main__:(query: functions/strlang03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/9dcf8215-8e11-4289-bf16-4aa8a4a0fc15#e_sk_2_1', 'str1': 'some0'}], 'removed': [{'s': 'http://example.org/n1', 'str1': ''}, {'s': 'http://example.org/n2', 'str1': ''}, {'s': 'http://example.org/n3', 'str1': ''}, {'s': 'http://example.org/n4', 'str1': ''}, {'s': 'http://example.org/n5', 'str1': ''}, {'s': 'http://example.org/s1', 'str1': 'foo'}, {'s': 'http://example.org/s2', 'str1': ''}, {'s': 'http://example.org/s3', 'str1': 'BAZ'}, {'s': 'http://example.org/s4', 'str1': '食べ物'}, {'s': 'http://example.org/s5', 'str1': '100%'}, {'s': 'http://example.org/s6', 'str1': ''}, {'s': 'http://example.org/s7', 'str1': ''}, {'s': 'http://example.org/d1', 'str1': ''}, {'s': 'http://example.org/d2', 'str1': ''}, {'s': 'http://example.org/d3', 'str1': ''}, {'s': 'http://example.org/d4', 'str1': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/08777148-86ef-44a5-b318-43688cfbaa2a#e_sk_2_1', 'str1': 'some0'}], 'removed': [{'s': 'http://example.org/n1', 'str1': ''}, {'s': 'http://example.org/n2', 'str1': ''}, {'s': 'http://example.org/n3', 'str1': ''}, {'s': 'http://example.org/n4', 'str1': ''}, {'s': 'http://example.org/n5', 'str1': ''}, {'s': 'http://example.org/s1', 'str1': 'foo'}, {'s': 'http://example.org/s2', 'str1': ''}, {'s': 'http://example.org/s3', 'str1': 'BAZ'}, {'s': 'http://example.org/s4', 'str1': '食べ物'}, {'s': 'http://example.org/s5', 'str1': '100%'}, {'s': 'http://example.org/s6', 'str1': ''}, {'s': 'http://example.org/s7', 'str1': ''}, {'s': 'http://example.org/d1', 'str1': ''}, {'s': 'http://example.org/d2', 'str1': ''}, {'s': 'http://example.org/d3', 'str1': ''}, {'s': 'http://example.org/d4', 'str1': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: isNumeric()
 INFO:__main__:(query: functions/isnumeric01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -36,18 +36,17 @@ INFO:__main__:non compliant :-(
 
 INFO:__main__:>> running test: ABS()
 INFO:__main__:(query: functions/abs01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
-INFO:__main__:non compliant :-(
-{'added': [{'num': '-1', 's': 'http://example.org/n1'}, {'num': '-1.6', 's': 'http://example.org/n2'}, {'num': '1.1', 's': 'http://example.org/n3'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+INFO:__main__:compliant!
 
 INFO:__main__:>> running test: CEIL()
 INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/f2ae1d9d-a6ce-4890-b9e5-7fe2c7f336e5#e_sk_1_1', 'num': 'http://eyereasoner.github.io/.well-known/genid/f2ae1d9d-a6ce-4890-b9e5-7fe2c7f336e5#e_sk_0_1', 'ceil': 'http://eyereasoner.github.io/.well-known/genid/f2ae1d9d-a6ce-4890-b9e5-7fe2c7f336e5#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/a27aeafc-37f8-46c2-a417-c261e4345b32#e_sk_1_1', 'num': 'https://eyereasoner.github.io/.well-known/genid/a27aeafc-37f8-46c2-a417-c261e4345b32#e_sk_0_1', 'ceil': 'https://eyereasoner.github.io/.well-known/genid/a27aeafc-37f8-46c2-a417-c261e4345b32#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: FLOOR()
 INFO:__main__:(query: functions/floor01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/424c53a5-63ad-49d5-8787-39e5808b688c#e_sk_1_1', 'num': 'http://eyereasoner.github.io/.well-known/genid/424c53a5-63ad-49d5-8787-39e5808b688c#e_sk_0_1', 'floor': 'http://eyereasoner.github.io/.well-known/genid/424c53a5-63ad-49d5-8787-39e5808b688c#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/n1', 'num': '-1', 'floor': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'floor': '2'}, {'s': 'http://example.org/n4', 'num': '-2', 'floor': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'floor': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'floor': '-2'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/9191eb40-c7f9-457f-a6ed-cd8aa9fadb64#e_sk_1_1', 'num': 'https://eyereasoner.github.io/.well-known/genid/9191eb40-c7f9-457f-a6ed-cd8aa9fadb64#e_sk_0_1', 'floor': 'https://eyereasoner.github.io/.well-known/genid/9191eb40-c7f9-457f-a6ed-cd8aa9fadb64#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/n1', 'num': '-1', 'floor': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'floor': '2'}, {'s': 'http://example.org/n4', 'num': '-2', 'floor': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'floor': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'floor': '-2'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: ROUND()
 INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -92,7 +91,7 @@ missing rows: [{'s': 'http://example.org/s2', 'lstr': 'bar'}, {'s': 'http://exam
 INFO:__main__:>> running test: ENCODE_FOR_URI()
 INFO:__main__:(query: functions/encode01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/e5c35742-16ce-479b-9c4a-76c7c4066bab#e_sk_1_1', 'str': 'http://eyereasoner.github.io/.well-known/genid/e5c35742-16ce-479b-9c4a-76c7c4066bab#e_sk_0_1', 'encoded': 'http://eyereasoner.github.io/.well-known/genid/e5c35742-16ce-479b-9c4a-76c7c4066bab#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/s1', 'str': 'foo', 'encoded': 'foo'}, {'s': 'http://example.org/s2', 'str': 'bar', 'encoded': 'bar'}, {'s': 'http://example.org/s3', 'str': 'BAZ', 'encoded': 'BAZ'}, {'s': 'http://example.org/s4', 'str': '食べ物', 'encoded': '%E9%A3%9F%E3%81%B9%E7%89%A9'}, {'s': 'http://example.org/s5', 'str': '100%', 'encoded': '100%25'}, {'s': 'http://example.org/s6', 'str': 'abc', 'encoded': 'abc'}, {'s': 'http://example.org/s7', 'str': 'DEF', 'encoded': 'DEF'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/135a0050-1822-4965-b6bf-80f30ea12a0e#e_sk_1_1', 'str': 'https://eyereasoner.github.io/.well-known/genid/135a0050-1822-4965-b6bf-80f30ea12a0e#e_sk_0_1', 'encoded': 'https://eyereasoner.github.io/.well-known/genid/135a0050-1822-4965-b6bf-80f30ea12a0e#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/s1', 'str': 'foo', 'encoded': 'foo'}, {'s': 'http://example.org/s2', 'str': 'bar', 'encoded': 'bar'}, {'s': 'http://example.org/s3', 'str': 'BAZ', 'encoded': 'BAZ'}, {'s': 'http://example.org/s4', 'str': '食べ物', 'encoded': '%E9%A3%9F%E3%81%B9%E7%89%A9'}, {'s': 'http://example.org/s5', 'str': '100%', 'encoded': '100%25'}, {'s': 'http://example.org/s6', 'str': 'abc', 'encoded': 'abc'}, {'s': 'http://example.org/s7', 'str': 'DEF', 'encoded': 'DEF'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: CONTAINS()
 INFO:__main__:(query: functions/contains01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -112,22 +111,22 @@ INFO:__main__:non compliant :-(
 INFO:__main__:>> running test: plus-1
 INFO:__main__:(query: functions/plus-1.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data-builtin-3.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/d724307a-3887-4f9e-82fa-3052d675ad55#e_sk_0_1', 'y': 'http://eyereasoner.github.io/.well-known/genid/d724307a-3887-4f9e-82fa-3052d675ad55#e_sk_2_1', 'sum': 'http://eyereasoner.github.io/.well-known/genid/d724307a-3887-4f9e-82fa-3052d675ad55#e_sk_6_1'}], 'removed': [{'x': '_:b0', 'y': '1', 'sum': ''}, {'x': 'http://example/a', 'y': '1', 'sum': ''}, {'x': '1', 'y': '2', 'sum': ''}, {'x': '1', 'y': '2', 'sum': '3'}, {'x': '1.0', 'y': '2', 'sum': '3.0'}, {'x': 'a', 'y': '1', 'sum': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/e23ea0cf-8942-4586-ade2-ab482604558e#e_sk_0_1', 'y': 'https://eyereasoner.github.io/.well-known/genid/e23ea0cf-8942-4586-ade2-ab482604558e#e_sk_2_1', 'sum': 'https://eyereasoner.github.io/.well-known/genid/e23ea0cf-8942-4586-ade2-ab482604558e#e_sk_6_1'}], 'removed': [{'x': '_:b0', 'y': '1', 'sum': ''}, {'x': 'http://example/a', 'y': '1', 'sum': ''}, {'x': '1', 'y': '2', 'sum': ''}, {'x': '1', 'y': '2', 'sum': '3'}, {'x': '1.0', 'y': '2', 'sum': '3.0'}, {'x': 'a', 'y': '1', 'sum': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: plus-2
 INFO:__main__:(query: functions/plus-2.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data-builtin-3.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'x': 'http://eyereasoner.github.io/.well-known/genid/c27397a3-395f-46f0-97b9-1df07eb7bb49#e_sk_0_1', 'y': 'http://eyereasoner.github.io/.well-known/genid/c27397a3-395f-46f0-97b9-1df07eb7bb49#e_sk_2_1', 'sum': 'http://eyereasoner.github.io/.well-known/genid/c27397a3-395f-46f0-97b9-1df07eb7bb49#e_sk_6_1'}], 'removed': [{'x': '_:b0', 'y': '1', 'sum': ''}, {'x': 'http://example/a', 'y': '1', 'sum': ''}, {'x': '1', 'y': '2', 'sum': ''}, {'x': '1.0', 'y': '2', 'sum': ''}, {'x': 'a', 'y': '1', 'sum': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'x': 'https://eyereasoner.github.io/.well-known/genid/60668950-324e-4d8c-ab1a-f24fe2406bb3#e_sk_0_1', 'y': 'https://eyereasoner.github.io/.well-known/genid/60668950-324e-4d8c-ab1a-f24fe2406bb3#e_sk_2_1', 'sum': 'https://eyereasoner.github.io/.well-known/genid/60668950-324e-4d8c-ab1a-f24fe2406bb3#e_sk_6_1'}], 'removed': [{'x': '_:b0', 'y': '1', 'sum': ''}, {'x': 'http://example/a', 'y': '1', 'sum': ''}, {'x': '1', 'y': '2', 'sum': ''}, {'x': '1.0', 'y': '2', 'sum': ''}, {'x': 'a', 'y': '1', 'sum': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: MD5()
 INFO:__main__:(query: functions/md5-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'hash': 'http://eyereasoner.github.io/.well-known/genid/e4db4c05-5248-4699-8783-6503beb192ed#e_sk_4_1'}], 'removed': [{'hash': 'acbd18db4cc2f85cedef654fccc4a4d8'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'hash': 'https://eyereasoner.github.io/.well-known/genid/a9da49dd-6940-434f-93ce-669ce562c36c#e_sk_4_1'}], 'removed': [{'hash': 'acbd18db4cc2f85cedef654fccc4a4d8'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: MD5() over Unicode data
 INFO:__main__:(query: functions/md5-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'hash': 'http://eyereasoner.github.io/.well-known/genid/4c6e9bea-4437-440f-adb2-236cbecf5918#e_sk_4_1'}], 'removed': [{'hash': 'e7ada485d13b1decf628c9211bc3a97b'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'hash': 'https://eyereasoner.github.io/.well-known/genid/5d497e18-403f-4167-8660-d69c829380f6#e_sk_4_1'}], 'removed': [{'hash': 'e7ada485d13b1decf628c9211bc3a97b'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: SHA1()
 INFO:__main__:(query: functions/sha1-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -142,22 +141,22 @@ missing rows: [{'hash': 'd46696735b6a09ff407bfc1a9407e008840db9c9'}]
 INFO:__main__:>> running test: SHA256()
 INFO:__main__:(query: functions/sha256-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'hash': 'http://eyereasoner.github.io/.well-known/genid/deed4cc0-85fb-4915-8b88-ed040c990d47#e_sk_4_1'}], 'removed': [{'hash': '2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'hash': 'https://eyereasoner.github.io/.well-known/genid/31e20f6a-0d00-4e88-8d83-20a3962eab26#e_sk_4_1'}], 'removed': [{'hash': '2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: SHA256() on Unicode data
 INFO:__main__:(query: functions/sha256-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/hash-unicode.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'hash': 'http://eyereasoner.github.io/.well-known/genid/6d94d301-e560-4df1-8e67-846cb22e6402#e_sk_4_1'}], 'removed': [{'hash': '0fbe868d1df356ca9df7ebff346da3a56280e059a7ea81186ef885b140d254ee'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'hash': 'https://eyereasoner.github.io/.well-known/genid/568bf64f-e467-4880-bf43-e3c18bd064b2#e_sk_4_1'}], 'removed': [{'hash': '0fbe868d1df356ca9df7ebff346da3a56280e059a7ea81186ef885b140d254ee'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: SHA512()
 INFO:__main__:(query: functions/sha512-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'hash': 'http://eyereasoner.github.io/.well-known/genid/400870bc-4f98-4743-84c4-d2586803bf71#e_sk_4_1'}], 'removed': [{'hash': 'f7fbba6e0636f890e56fbbf3283e524c6fa3204ae298382d624741d0dc6638326e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'hash': 'https://eyereasoner.github.io/.well-known/genid/2f724d0d-09d6-46e5-88c4-c67f3ba8e852#e_sk_4_1'}], 'removed': [{'hash': 'f7fbba6e0636f890e56fbbf3283e524c6fa3204ae298382d624741d0dc6638326e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: SHA512() on Unicode data
 INFO:__main__:(query: functions/sha512-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/hash-unicode.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'hash': 'http://eyereasoner.github.io/.well-known/genid/f275f931-f8d3-409e-928e-41c50f7c2cdb#e_sk_4_1'}], 'removed': [{'hash': 'b433ed0e60c818bea72d3aa1a43db89b3ed2b624597407b7912bbb7685f2e45ae5500e092da5f938391d282b26bc43e4035b12460c93ab5e2e1a05d582331d85'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'hash': 'https://eyereasoner.github.io/.well-known/genid/8c178f73-550f-4a27-a371-d9b943c034f1#e_sk_4_1'}], 'removed': [{'hash': 'b433ed0e60c818bea72d3aa1a43db89b3ed2b624597407b7912bbb7685f2e45ae5500e092da5f938391d282b26bc43e4035b12460c93ab5e2e1a05d582331d85'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: MINUTES()
 INFO:__main__:(query: functions/minutes-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -192,12 +191,12 @@ missing rows: [{'s': 'http://example.org/d1', 'x': '21'}, {'s': 'http://example.
 INFO:__main__:>> running test: TIMEZONE()
 INFO:__main__:(query: functions/timezone-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/d040f8f1-fb57-4db6-aafe-4f38a35259bb#e_sk_1_1', 'x': 'http://eyereasoner.github.io/.well-known/genid/d040f8f1-fb57-4db6-aafe-4f38a35259bb#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/d1', 'x': 'P0D'}, {'s': 'http://example.org/d2', 'x': '-PT8H'}, {'s': 'http://example.org/d3', 'x': 'P0D'}, {'s': 'http://example.org/d4', 'x': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/5ea0477a-6ba7-4edb-b220-ff60852a62d4#e_sk_1_1', 'x': 'https://eyereasoner.github.io/.well-known/genid/5ea0477a-6ba7-4edb-b220-ff60852a62d4#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/d1', 'x': 'P0D'}, {'s': 'http://example.org/d2', 'x': '-PT8H'}, {'s': 'http://example.org/d3', 'x': 'P0D'}, {'s': 'http://example.org/d4', 'x': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: TZ()
 INFO:__main__:(query: functions/tz-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'s': 'http://eyereasoner.github.io/.well-known/genid/7fd7c2be-2a0b-4b31-8e94-a213eac9da4f#e_sk_1_1', 'x': 'http://eyereasoner.github.io/.well-known/genid/7fd7c2be-2a0b-4b31-8e94-a213eac9da4f#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/d1', 'x': 'Z'}, {'s': 'http://example.org/d2', 'x': '-08:00'}, {'s': 'http://example.org/d3', 'x': 'Z'}, {'s': 'http://example.org/d4', 'x': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/b714642f-6086-4f17-9fba-7085194df590#e_sk_1_1', 'x': 'https://eyereasoner.github.io/.well-known/genid/b714642f-6086-4f17-9fba-7085194df590#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/d1', 'x': 'Z'}, {'s': 'http://example.org/d2', 'x': '-08:00'}, {'s': 'http://example.org/d3', 'x': 'Z'}, {'s': 'http://example.org/d4', 'x': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: BNODE(str)
 INFO:__main__:(query: functions/bnode01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -207,7 +206,7 @@ missing rows: [{'s1': 'BAZ', 's2': 'BAZ', 'b1': '_:b0', 'b2': '_:b0'}, {'s1': 'f
 INFO:__main__:>> running test: BNODE()
 INFO:__main__:(query: functions/bnode02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'b1': 'http://eyereasoner.github.io/.well-known/genid/dc561bd8-75dd-4253-9e07-03e994a4f02d#e_sk_1_1', 'b2': 'http://eyereasoner.github.io/.well-known/genid/dc561bd8-75dd-4253-9e07-03e994a4f02d#e_sk_2_1'}], 'removed': [{'b1': '_:b0', 'b2': '_:b1'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'b1': 'https://eyereasoner.github.io/.well-known/genid/1957a80f-ac1b-442d-9a3e-b7857da037c1#e_sk_1_1', 'b2': 'https://eyereasoner.github.io/.well-known/genid/1957a80f-ac1b-442d-9a3e-b7857da037c1#e_sk_2_1'}], 'removed': [{'b1': '_:b0', 'b2': '_:b1'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: IN 1
 INFO:__main__:(query: functions/in01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
@@ -241,17 +240,17 @@ INFO:__main__:non compliant :-(
 INFO:__main__:>> running test: IF()
 INFO:__main__:(query: functions/if01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data2.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'o': 'http://eyereasoner.github.io/.well-known/genid/a9d8c786-cb0e-47b0-ba61-cfd24e585d65#e_sk_0_1', 'integer': 'http://eyereasoner.github.io/.well-known/genid/a9d8c786-cb0e-47b0-ba61-cfd24e585d65#e_sk_6_1'}], 'removed': [{'o': '123', 'integer': 'false'}, {'o': 'def', 'integer': 'false'}, {'o': 'français', 'integer': 'false'}, {'o': '日本語', 'integer': 'true'}, {'o': '7', 'integer': 'false'}, {'o': 'abc', 'integer': 'false'}, {'o': 'english', 'integer': 'false'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'o': 'https://eyereasoner.github.io/.well-known/genid/5eb2722a-2b3e-4302-a2f9-3311f25119c4#e_sk_0_1', 'integer': 'https://eyereasoner.github.io/.well-known/genid/5eb2722a-2b3e-4302-a2f9-3311f25119c4#e_sk_6_1'}], 'removed': [{'o': '123', 'integer': 'false'}, {'o': 'def', 'integer': 'false'}, {'o': 'français', 'integer': 'false'}, {'o': '日本語', 'integer': 'true'}, {'o': '7', 'integer': 'false'}, {'o': 'abc', 'integer': 'false'}, {'o': 'english', 'integer': 'false'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: IF() error propogation
 INFO:__main__:(query: functions/if02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data2.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'error': 'http://eyereasoner.github.io/.well-known/genid/2d553e3c-efab-4eb3-bc80-c867638f798c#e_sk_1_1'}], 'removed': [{'error': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'error': 'https://eyereasoner.github.io/.well-known/genid/f2dcfede-e3d5-421f-9071-13712e2cdc01#e_sk_1_1'}], 'removed': [{'error': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: COALESCE()
 INFO:__main__:(query: functions/coalesce01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data-coalesce.ttl)
 INFO:__main__:non compliant :-(
-{'added': [{'cx': 'http://eyereasoner.github.io/.well-known/genid/8702d9bd-6f86-4e71-bed9-0a2452316cc9#e_sk_8_1', 'div': 'http://eyereasoner.github.io/.well-known/genid/8702d9bd-6f86-4e71-bed9-0a2452316cc9#e_sk_9_1', 'def': 'http://eyereasoner.github.io/.well-known/genid/8702d9bd-6f86-4e71-bed9-0a2452316cc9#e_sk_10_1', 'err': 'http://eyereasoner.github.io/.well-known/genid/8702d9bd-6f86-4e71-bed9-0a2452316cc9#e_sk_11_1'}], 'removed': [{'cx': '-1', 'div': '-2', 'def': '-3', 'err': ''}, {'cx': '0', 'div': '-2', 'def': '-3', 'err': ''}, {'cx': '2', 'div': '0.0', 'def': '-3', 'err': ''}, {'cx': '2', 'div': '2.0', 'def': '-3', 'err': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+{'added': [{'cx': 'https://eyereasoner.github.io/.well-known/genid/10a75970-46fe-4c08-8f2e-aa8accbc5291#e_sk_8_1', 'div': 'https://eyereasoner.github.io/.well-known/genid/10a75970-46fe-4c08-8f2e-aa8accbc5291#e_sk_9_1', 'def': 'https://eyereasoner.github.io/.well-known/genid/10a75970-46fe-4c08-8f2e-aa8accbc5291#e_sk_10_1', 'err': 'https://eyereasoner.github.io/.well-known/genid/10a75970-46fe-4c08-8f2e-aa8accbc5291#e_sk_11_1'}], 'removed': [{'cx': '-1', 'div': '-2', 'def': '-3', 'err': ''}, {'cx': '0', 'div': '-2', 'def': '-3', 'err': ''}, {'cx': '2', 'div': '0.0', 'def': '-3', 'err': ''}, {'cx': '2', 'div': '2.0', 'def': '-3', 'err': ''}], 'changed': [], 'columns_added': [], 'columns_removed': []}
 
 INFO:__main__:>> running test: STRBEFORE()
 INFO:__main__:(query: functions/strbefore01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data2.ttl)
@@ -297,3 +296,139 @@ INFO:__main__:>> running test: STRUUID() pattern match
 INFO:__main__:(query: functions/struuid01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data-empty.nt)
 INFO:__main__:non compliant :-(
 missing rows: [{'length': '36'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+{'added': [{'s': 'https://eyereasoner.github.io/.well-known/genid/9aa9f5a9-dd7c-4329-8b90-5dfd57db194c#e_sk_1_1', 'num': 'https://eyereasoner.github.io/.well-known/genid/9aa9f5a9-dd7c-4329-8b90-5dfd57db194c#e_sk_0_1', 'ceil': 'https://eyereasoner.github.io/.well-known/genid/9aa9f5a9-dd7c-4329-8b90-5dfd57db194c#e_sk_5_1'}], 'removed': [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: CEIL()
+INFO:__main__:(query: functions/ceil01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'ceil': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'ceil': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'ceil': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'ceil': '2'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'ceil': '-1'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: ROUND()
+INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'round': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'round': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'round': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'round': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'round': '-2'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: ROUND()
+INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'round': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'round': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'round': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'round': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'round': '-2'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: ROUND()
+INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'round': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'round': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'round': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'round': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'round': '-2'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: ROUND()
+INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'round': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'round': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'round': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'round': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'round': '-2'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: ROUND()
+INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'round': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'round': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'round': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'round': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'round': '-2'}]
+
+INFO:__main__:>> loading manifest: functions/manifest.ttl <<
+INFO:__main__:>> running test: ROUND()
+INFO:__main__:(query: functions/round01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl)
+INFO:__main__:eye ../../auxiliary-files/runtime.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/functions/data.ttl --query tmp/n3query.n3 --nope 
+non compliant :-(
+missing rows: [{'s': 'http://example.org/n1', 'num': '-1', 'round': '-1'}, {'s': 'http://example.org/n5', 'num': '2.5', 'round': '3'}, {'s': 'http://example.org/n4', 'num': '-2', 'round': '-2'}, {'s': 'http://example.org/n3', 'num': '1.1', 'round': '1'}, {'s': 'http://example.org/n2', 'num': '-1.6', 'round': '-2'}]
+
