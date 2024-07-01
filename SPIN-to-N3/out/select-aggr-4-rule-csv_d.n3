@@ -17,20 +17,38 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix var: <http://eyereasoner.github.io/.well-known/genid/2027968987138822089#>.
 
+# SELECT (SUM(?lprice) AS ?totalPrice)
+# WHERE {
+#   ?org :affiliates ?auth .
+#   ?auth :writesBook ?book .
+#   ?book :price ?lprice .
+# }
+# GROUP BY ?org
+
 {
     ("org" "totalPrice") e:csvTuple (?t_14 ?t_15).
 } <= {
+    # each nested list = solution (collection of variable bindings)
     (((("org" ?t_14)) (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))) {
         ?t_14 <http://books.example/affiliates> ?t_16.
         ?t_16 <http://books.example/writesBook> ?t_17.
         ?t_17 <http://books.example/price> ?t_18.
     } ?t_19) log:collectAllIn ?t_20.
+
+    # t21: (("org" ?t_14))
+    # t22: (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))
     (?t_21 ?t_22) list:in ?t_19.
+
     (?t_23 {
+        # get all solutions with t21 value (do grouping)
         (?t_21 ?t_24) list:in ?t_19.
+        # get aggregate variable value from solution
         ("lprice" ?t_23) list:in ?t_24.
     } ?t_25) log:collectAllIn ?t_20.
+
+    # get grouping value
     ("org" ?t_14) list:in ?t_21.
+    # apply aggregate on collected aggregate variable values
     ?t_25 math:sum ?t_15.
 }.
 

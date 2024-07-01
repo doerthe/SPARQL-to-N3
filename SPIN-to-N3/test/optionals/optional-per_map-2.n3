@@ -28,16 +28,25 @@
 # :x3 :p 3 .
 
 
-# D. example illustrating per-query vs. per-binding issue
-{ ?x :p ?v } :opt { { ?x :q ?v } :opt { ?x :r ?w } } .
+# # D. example illustrating per-query vs. per-binding issue
+# { ?x :p ?v } :opt { { ?x :q ?v } :opt { ?x :r ?w } } .
+
+# :x1 :p 1 .
+# :x1 :q 1 .
+# # :x1 :r 3 .
+# :x3 :p 4 .
+# # :x3 :q 3 . # won't work
+# :x3 :q 4 .
+# :x3 :r 4 .
+
+# E. example in paper
+{ ?x :p ?v } :opt { { ?x :q ?w } :opt { ?x :r ?v } } .
 
 :x1 :p 1 .
-:x1 :q 1 .
-# :x1 :r 3 .
-:x3 :p 4 .
-# :x3 :q 3 . # won't work
-:x3 :q 4 .
-:x3 :r 4 .
+:x1 :q 2 .
+:x1 :r 3 .
+:x3 :p 1 .
+:x3 :q 2 .
 
 {
     ?m :opt ?o .

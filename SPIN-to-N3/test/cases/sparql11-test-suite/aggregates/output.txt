@@ -1,0 +1,45 @@
+compliant!
+compliant!
+non compliant :-(
+{'added': [{'P': 'http://www.example.org/p2', 'C': '2'}], 'removed': [], 'changed': [], 'columns_added': [], 'columns_removed': []}
+non compliant :-(
+{'added': [{'C': 'http://eyereasoner.github.io/.well-known/genid/270fbb35-798b-47c3-b2aa-bc1c5e0ea446#e_sk_4_1'}], 'removed': [{'C': '5'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+non compliant :-(
+{'added': [{'P': 'http://www.example.org/p1', 'C': 'http://eyereasoner.github.io/.well-known/genid/170cebc4-cb03-46eb-a6a0-fa0f14ec5aea#e_sk_3_1'}, {'P': 'http://www.example.org/p2', 'C': 'http://eyereasoner.github.io/.well-known/genid/170cebc4-cb03-46eb-a6a0-fa0f14ec5aea#e_sk_7_1'}], 'removed': [{'P': 'http://www.example.org/p1', 'C': '3'}, {'P': 'http://www.example.org/p2', 'C': '2'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+non compliant :-(
+{'added': [{'C': 'http://eyereasoner.github.io/.well-known/genid/d8f533c4-69ae-4d33-8872-5314255438c8#e_sk_4_1'}], 'removed': [{'C': '5'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+non compliant :-(
+{'added': [{'P': 'http://www.example.org/p1', 'C': 'http://eyereasoner.github.io/.well-known/genid/42deb9bc-23bf-4205-80bd-672182e37788#e_sk_3_1'}, {'P': 'http://www.example.org/p2', 'C': 'http://eyereasoner.github.io/.well-known/genid/42deb9bc-23bf-4205-80bd-672182e37788#e_sk_7_1'}], 'removed': [{'P': 'http://www.example.org/p1', 'C': '3'}], 'changed': [], 'columns_added': [], 'columns_removed': []}
+non compliant :-(
+missing rows: [{'O12': '0', 'C': '1'}, {'O12': '1', 'C': '2'}, {'O12': '2', 'C': '3'}, {'O12': '3', 'C': '2'}, {'O12': '4', 'C': '1'}]
+skipping non-select query (AskQuery)
+>> loading manifest: aggregates/manifest.ttl <<
+>> running test: COUNT 1
+(query: aggregates/agg01.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 2
+(query: aggregates/agg02.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 3
+(query: aggregates/agg03.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 4
+(query: aggregates/agg04.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 5
+(query: aggregates/agg05.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 6
+(query: aggregates/agg06.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 7
+(query: aggregates/agg07.rq, data: aggregates/agg01.ttl)
+
+>> running test: COUNT 8b
+(query: aggregates/agg08b.rq, data: aggregates/agg08.ttl)
+
+>> running test: GROUP_CONCAT 1
+(query: aggregates/agg-groupconcat-1.rq, data: aggregates/agg-groupconcat-1.ttl)
+
+>> running test: GROUP_CONCAT 2
+(query: aggregates/agg-groupconcat-2.rq, data: aggregates/agg-groupconcat-1.ttl)

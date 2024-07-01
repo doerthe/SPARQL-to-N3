@@ -1,0 +1,95 @@
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+{
+   ( ?x ?g ) aux:makeGroups ?graph .
+}
+<= 
+{
+#  ?x sp:groupBy ?vars.
+#  true log:callWithCut true.
+    # create all new variables needed
+   aux:scope log:skolem ?scope .
+   aux:pairs log:skolem ?pairs .
+   aux:aggVal log:skolem ?aggVal .
+   aux:f log:skolem ?f .
+   aux:g3 log:skolem ?g3 .
+   aux:g2 log:skolem ?g2 .
+   aux:ilist log:skolem ?ilist .
+   aux:value log:skolem ?value .
+
+   #get group variables
+   (
+       ( ?groupVarName ?groupVar )
+       {
+           ?x!sp:groupBy!list:member sp:varName ?groupVarName .
+           ?groupVarName log:skolem ?groupVar .
+       }
+       ?groupVars
+   ) log:collectAllIn _:t .
+
+   #get agg variables
+   ?x aux:getGraphVariables ?outvars2 .
+   ( ?outvars2 ?groupVars ) aux:listDifference ?outvars .
+
+   #get aggregation variables needed in the query
+   ?x aux:getQueryVariables ?qvars .
+   ( ?qvars ?outvars ) aux:listIntersection ?aggvars .
+
+   #get list of only aggvarsnames
+   (
+       ?name
+       {
+           ( ?name ?var ) list:in ?aggvars 
+       }
+       ?aggvarNames
+   ) log:collectAllIn _:t .
+
+   #create one collectAllIn expression per aggregate variable name
+   (
+   #what we produce
+       {
+           (
+               ?value
+               {
+                   ( ?f ?ilist ) list:in ?pairs .
+                   ( ?name ?value ) list:in ?ilist 
+               }
+               ?args
+           ) log:collectAllIn ?scope .
+       } 
+    #based on
+       {
+           ( ?name ?var ) list:in ?aggvars .
+           ( aux:aggregationInput ?name ) log:skolem ?args .
+       }
+       ?tripleList
+   ) log:collectAllIn _:t .
+ 
+   #group variables needed in the output
+   ( ?outvars2 ?groupVars ) aux:listIntersection ?outList .
+   (
+       {
+           ?ell list:in ?f 
+       }
+       {
+           ?ell list:in ?outList 
+       }
+       ?unificationTriples
+   ) log:collectAllIn _:t .
+   (
+       (
+           {  
+      # get values
+               ( ( ?groupVars ?outvars ) ?g ?pairs ) log:collectAllIn ?scope .
+      # get lists for one groupVar Value
+               ( ?f ?g3 ) list:in ?pairs .
+           }
+       )
+       ?tripleList
+       ?unificationTriples
+   ) list:append ?graphList .
+   ?graphList log:conjunction ?graph .
+} .

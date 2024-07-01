@@ -292,3 +292,21 @@
 {(?a1 ?a2) aux:oneBound true}<={?a1 log:bound true. }.
 {(?a1 ?a2) aux:oneBound true}<={?a2 log:bound true.}.
 
+
+######################################
+# BUILTINS
+#####################################
+
+{ ?n aux:ceil ?r2 } 
+<= {
+    ?n math:rounded ?r .
+    ?r math:lessThan ?n . # didn't round up
+    ( ?n 1 ) math:sum ?n2 .
+    ?n2 math:rounded ?r2 .
+} .
+
+{ ?n aux:ceil ?r } 
+<= {
+    ?n math:rounded ?r .
+    ?r math:notLessThan ?n
+} .

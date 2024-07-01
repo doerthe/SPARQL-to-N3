@@ -1,0 +1,7 @@
+@prefix ex: <http://www.example.org/schema#> .
+@prefix in: <http://www.example.org/instance#> .
+
+in:a ex:p in:b .
+
+in:c ex:p <file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/sparql11-test-suite/subquery/sq05.rdf> .
+

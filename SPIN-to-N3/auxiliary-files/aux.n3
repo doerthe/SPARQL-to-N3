@@ -403,6 +403,7 @@
   ?t  a ?f.
   ?t aux:gets ?e1. 
 {?arguments ?f ?e1 } log:equalTo ?in.
+"fn" e:trace ?in .
  ?in  aux:funcTranslation ?tr1.
 
 # check for arguments of arguments
@@ -504,7 +505,6 @@ true log:callWithCut true.
 (({?e1 log:equalTo ?v1} ?tr) {?b list:in ?bList. ?b sp:expression ?e. ?b sp:variable ?v. ?v aux:gets ?v1. ?e aux:gets ?e1.
  ?e aux:getFunctionTriples ?tr.
   } ?gList) log:collectAllIn ?scope.
-
 ?gList  list:append ?oList.
 (?oList ({})) list:append ?pList.
 ?pList log:conjunction ?graph.
@@ -821,7 +821,9 @@ aux:value log:skolem ?value.
 # sparql-functions and their translations
 #####################################################################################
 {{(?a1 ?a2) sp:lt  ?o} aux:funcTranslation {?a1 math:lessThan ?a2}.}<={}.
+{{(?a1 ?a2) sp:le  ?o} aux:funcTranslation {?a1 math:notGreaterThan ?a2}.}<={}.
 {{(?a1 ?a2) sp:gt  ?o} aux:funcTranslation {?a2 math:lessThan ?a1}.}<={}.
+{{(?a1 ?a2) sp:ge  ?o} aux:funcTranslation {?a1 math:notLessThan ?a2}.}<={}.
 {{?list sp:concat ?o} aux:funcTranslation { ?list string:concatenation ?o. }. }<={}.
 {{(?a1 ?a2) sp:eq ?o} aux:funcTranslation { (?a1 ?a2) aux:oneBound true.  ?a1 log:equalTo ?a2. 
  }. }<={}.
@@ -861,6 +863,7 @@ aux:value log:skolem ?value.
 # MISSING: uuid, struuid
 {{(?a) sp:abs ?o} aux:funcTranslation {?a math:absoluteValue ?o}}<={}.
 {{(?a) sp:round ?o} aux:funcTranslation {?a math:rounded ?o}}<={}.
+{{(?a) sp:ceil ?o} aux:funcTranslation {?a aux:ceil ?o}}<={}.
 {{(?a) sp:year ?o} aux:funcTranslation {?a time:year ?o}}<={}.
 {{(?a) sp:month ?o} aux:funcTranslation {?a time:month ?o}}<={}.
 {{(?a) sp:day ?o} aux:funcTranslation {?a time:day ?o}}<={}.

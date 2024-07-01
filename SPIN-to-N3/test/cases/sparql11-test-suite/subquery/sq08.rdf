@@ -1,0 +1,9 @@
+@prefix ex: <http://www.example.org/schema#> .
+@prefix in: <http://www.example.org/instance#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+in:a ex:p 1,
+        2 .
+
+in:b ex:p 3 .
+
