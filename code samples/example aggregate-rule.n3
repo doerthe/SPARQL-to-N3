@@ -1,0 +1,57 @@
+# Processed by EYE v3.25.2 (2023-05-23)
+# eye examples/select-aggr-4.spin auxiliary-files/aux.n3 --query queries/query_csv_direct.n3 --nope --quantify http://eyereasoner.github.io/.well-known/genid/
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2027968987138822089#>.
+
+# SELECT (SUM(?lprice) AS ?totalPrice)
+# WHERE {
+#   ?org :affiliates ?auth .
+#   ?auth :writesBook ?book .
+#   ?book :price ?lprice .
+# }
+# GROUP BY ?org
+
+{
+    ("org" "totalPrice") e:csvTuple (?t_14 ?t_15).
+} <= {
+    # each nested list = solution (collection of variable bindings)
+    (((("org" ?t_14)) (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))) {
+        ?t_14 <http://books.example/affiliates> ?t_16.
+        ?t_16 <http://books.example/writesBook> ?t_17.
+        ?t_17 <http://books.example/price> ?t_18.
+    } ?t_19) log:collectAllIn ?t_20.
+
+    # t21: (("org" ?t_14))
+    # t22: (("auth" ?t_16) ("book" ?t_17) ("lprice" ?t_18))
+    (?t_21 ?t_22) list:in ?t_19.
+
+    (?t_23 {
+        # get all solutions with t21 value (do grouping)
+        (?t_21 ?t_24) list:in ?t_19.
+        # get aggregate variable value from solution
+        ("lprice" ?t_23) list:in ?t_24.
+    } ?t_25) log:collectAllIn ?t_20.
+
+    # get grouping value
+    ("org" ?t_14) list:in ?t_21.
+    # apply aggregate on collected aggregate variable values
+    ?t_25 math:sum ?t_15.
+}.
+
+# 2023-05-23T13:34:24.908Z in=123 out=1 ent=1 step=1 brake=2 inf=308728 sec=0.069 inf/sec=4474319
+# ENDS
+

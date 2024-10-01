@@ -126,6 +126,7 @@ CONSTRUCT {
     }
 } .
 
+# (comment this out for SPIN (TopBraid))
 # @filter
 CONSTRUCT {
     [ a fh:ServiceRequest ;

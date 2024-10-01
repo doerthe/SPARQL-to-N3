@@ -1,0 +1,3 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet tmp/query.spin ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/
+

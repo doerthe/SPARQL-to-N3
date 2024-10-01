@@ -1,0 +1,6 @@
+eye --quiet tmp/query.spin ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/
+EYE v10.17.3 (2024-08-07)
+SWI-Prolog version 9.0.4
+starting 27 [msec cputime] 29 [msec walltime]
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/tmp/query.spin SC=0
+GET file:///Users/wvw/git/n3/sparql2n3/auxiliary-files/aux.n3 ** ERROR ** gre ** error(existence_error(source_sink,/Users/wvw/git/n3/sparql2n3/auxiliary-files/aux.n3),context(system:open/4,No such file or directory))

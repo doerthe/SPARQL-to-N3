@@ -20,8 +20,14 @@ Run only _SPIN (TopBraid)_:
 
 Run only _spin3_:
 ```
-./run_spin3.sh <sparql> <data> <verbose> <result_file>
+./run_spin3.sh <sparql> <data> <verbose> <recursion> (<result_file>)
 ```
+
+For instance:
+```
+./run_spin3.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3 true true
+```
+(by default, the results will appear under `tmp/results.n3`)
 
 Directly run the `spin.jar` file (_SPIN (TopBraid)_) - this can be useful for debugging (the `verbose` option prints the number of rules and inferences):
 ```
