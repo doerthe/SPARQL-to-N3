@@ -20,14 +20,21 @@ Run only _SPIN (TopBraid)_:
 
 Run only _spin3_:
 ```
-./run_spin3.sh <sparql> <data> <verbose> <recursion> (<result_file>)
+./run_spin3.sh <sparql> <data> <verbose> <recursion> <preprocess> (<result_file>)
 ```
+`<preprocess>`: whether `<data>` needs to be preprocessed first (convert first/rest pairs into harmless properties)
 
 For instance:
 ```
-./run_spin3.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3 true true
+./run_spin3.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3 true true true results/zika-queries.nt
 ```
 (by default, the results will appear under `tmp/results.n3`)
+
+To run recSPARQL tests:
+```
+./run_spin3.sh ../cases/recSPARQL/yago1.sparql /Users/wvw/git/n3/sparql2n3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
+```
+(preprocess the data first as it takes a while for large files)
 
 Directly run the `spin.jar` file (_SPIN (TopBraid)_) - this can be useful for debugging (the `verbose` option prints the number of rules and inferences):
 ```
@@ -36,7 +43,7 @@ java -jar spin.jar -spin <spin> -data <data> -verbose
 
 To convert a particular file with SPARQL queries to SPIN:
 ```
-java -jar sparql2spin.jar -sparql <sparql> -multi > <spin>
+java -jar sparql2spin.jar -sparql <sparql> -multi <spin>
 ```
 
 
