@@ -1,0 +1,20 @@
+CONSTRUCT {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act
+} 
+WHERE {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+    ?dir <http://yago-knowledge.org/resource/actedIn> ?mov2
+} .
+
+CONSTRUCT {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act2
+}
+WHERE {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act .
+    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+    ?dir <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov
+} .

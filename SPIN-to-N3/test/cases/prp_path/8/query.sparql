@@ -3,5 +3,5 @@ PREFIX : <http://example.org/>
 
 SELECT * WHERE
 #{ ?x ^foaf:knows :alice }
-#{ ?x foaf:knows/^foaf:knows :alice }
-{ ?x ^(foaf:knows+) :alice }
+{ ?x foaf:knows/^foaf:knows :alice }
+# { ?x ^(foaf:knows+) :alice }

@@ -1,0 +1,18 @@
+CONSTRUCT {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> ?dir ?act
+}
+WHERE {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+    ?dir <http://yago-knowledge.org/resource/directed> ?mov
+} .
+
+CONSTRUCT {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> ?dir ?act2
+}
+WHERE {
+    <http://yago-knowledge.org/resource/Kevin_Bacon> ?dir ?act .
+    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov .
+} .

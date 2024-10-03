@@ -80,4 +80,21 @@
               qt:ordered false
             ]
       ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 10" ;
+        mf:action
+            [ qt:query  <10/query.sparql> ;
+              qt:data   <10/data.n3> ;
+              qt:ordered false
+            ]
+      ]
+      [ rdf:type mf:QueryEvaluationTest ;
+        mf:name    "Case 11" ;
+        rdfs:comment "loop due to inverse paths" ;
+        mf:action
+            [ qt:query  <11/query.sparql> ;
+              qt:data   <11/data.n3> ;
+              qt:ordered false
+            ]
+      ]
     ).

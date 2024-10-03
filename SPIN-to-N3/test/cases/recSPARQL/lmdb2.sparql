@@ -1,0 +1,18 @@
+CONSTRUCT {
+    <http://data.linkedmdb.org/resource/actor/29539> ?dir ?act
+}
+WHERE {
+    ?mov <http://data.linkedmdb.org/resource/movie/actor> <http://data.linkedmdb.org/resource/actor/29539> .
+	?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+	?mov <http://data.linkedmdb.org/resource/movie/director> ?dir
+} .
+
+CONSTRUCT {
+    <http://data.linkedmdb.org/resource/actor/29539> ?dir ?act2
+}
+WHERE {
+    <http://data.linkedmdb.org/resource/actor/29539> ?dir ?act .
+    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+	?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+	?mov <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+} .
