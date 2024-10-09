@@ -1,0 +1,1001 @@
+#-------------------------------------------------------
+Query No: 1
+Query Type: SELECT
+Results Size: 20
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 6
+Join Vertices: 4
+Mean Join Vertices Degree: 2.5
+Mean triple patterns selectivity: 0.00662304885657167
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 30
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++geo%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo%2Fwgs84_pos%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fsubject+%3Flabel+%3Flat+%3Flong+%3Fprop+%3Fvalue%0AWHERE%0A++%7B+%3ABrandenburg_Gate+%3Fprop+%3Fvalue+.%0A++++%3ABrandenburg_Gate+geo%3Alat+%3FbrandenburgLat+.%0A++++%3ABrandenburg_Gate+geo%3Along+%3FbrandenburgLong+.%0A++++%3Fsubject+geo%3Alat+%3Flat+.%0A++++%3Fsubject+geo%3Along+%3Flong+.%0A++++%3Fsubject+rdfs%3Alabel+%3Flabel%0A++++FILTER+%28+%28+%28+%28+%28+%28+xsd%3Adouble%28%3Flat%29+-+xsd%3Adouble%28%3FbrandenburgLat%29+%29+%3C%3D+0.05+%29+%26%26+%28+%28+xsd%3Adouble%28%3FbrandenburgLat%29+-+xsd%3Adouble%28%3Flat%29+%29+%3C%3D+0.05+%29+%29+%26%26+%28+%28+xsd%3Adouble%28%3Flong%29+-+xsd%3Adouble%28%3FbrandenburgLong%29+%29+%3C%3D+0.05+%29+%29+%26%26+%28+%28+xsd%3Adouble%28%3FbrandenburgLong%29+-+xsd%3Adouble%28%3Flong%29+%29+%3C%3D+0.05+%29+%29+%26%26+%28+lang%28%3Flabel%29+%3D+%22en%22+%29+%29%0A++%7D%0ALIMIT+++20
+#-------------------------------------------------------
+Query No: 2
+Query Type: SELECT
+Results Size: 1
+Basic Graph Patterns (BGPs): 3
+Triple Patterns: 4
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.0017435122338423329
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 352
+Query String: PREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++prop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A%0ASELECT++%3Fs+%3Fnome+%3Fnascimento+%3Flugar%0AWHERE%0A++%7B+%3Fs+foaf%3Aname+%3Fnome+.%0A++++%3Fs+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+foaf%3APerson%0A++++OPTIONAL%0A++++++%7B+%3Fs+prop%3Abirthdate+%3Fnascimento+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fs+prop%3Abirthplace+%3Flugar+%7D%0A++++FILTER+%28+regex%28str%28%3Fnome%29%2C+%22Mel+Gibson%22%2C+%22i%22%29+%26%26+isLiteral%28%3Fnome%29+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 3
+Query Type: SELECT
+Results Size: 20
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 3
+Join Vertices: 1
+Mean Join Vertices Degree: 3.0
+Mean triple patterns selectivity: 0.015880465394444942
+UNION: No 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 530
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fsubject+%3Flabel+%3Freleased+%3Fabstract%0AWHERE%0A++%7B+%3Fsubject+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FCity%3E+.%0A++++%3Fsubject+rdfs%3Acomment+%3Fabstract+.%0A++++%3Fsubject+rdfs%3Alabel+%3Flabel%0A++++FILTER+%28+%28+lang%28%3Fabstract%29+%3D+%22en%22+%29+%26%26+%28+lang%28%3Flabel%29+%3D+%22en%22+%29+%29%0A++%7D%0AORDER+BY+%3Flabel%0ALIMIT+++20
+#-------------------------------------------------------
+Query No: 4
+Query Type: SELECT
+Results Size: 82858
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.5000286772171819
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 6940
+Query String: PREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Ffilm+%3Fx+%3Fy%0AWHERE%0A++%7B+%3Ffilm+skos%3Asubject+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCategory%3AAmerican_films%3E+.%0A++++%3Ffilm+%3Fx+%3Fy%0A++%7D
+#-------------------------------------------------------
+Query No: 5
+Query Type: SELECT
+Results Size: 20
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 3
+Join Vertices: 1
+Mean Join Vertices Degree: 3.0
+Mean triple patterns selectivity: 0.01324591852981137
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 792
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++geo%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo%2Fwgs84_pos%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fsubject+%3Flabel+%3Flat+%3Flong%0AWHERE%0A++%7B+%3Fsubject+geo%3Alat+%3Flat+.%0A++++%3Fsubject+geo%3Along+%3Flong+.%0A++++%3Fsubject+rdfs%3Alabel+%3Flabel%0A++++FILTER+%28+%28+%28+%28+%28+%28+xsd%3Afloat%28%3Flat%29+-+39.993333+%29+%3C%3D+0.05+%29+%26%26+%28+%28+39.993333+-+xsd%3Afloat%28%3Flat%29+%29+%3C%3D+0.05+%29+%29+%26%26+%28+%28+xsd%3Afloat%28%3Flong%29+-+116.337778+%29+%3C%3D+0.05+%29+%29+%26%26+%28+%28+116.337778+-+xsd%3Afloat%28%3Flong%29+%29+%3C%3D+0.05+%29+%29+%26%26+%28+lang%28%3Flabel%29+%3D+%22en%22+%29+%29%0A++%7D%0ALIMIT+++20
+#-------------------------------------------------------
+Query No: 6
+Query Type: SELECT
+Results Size: 100
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.04053705803015621
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 8
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Ft%0AWHERE%0A++%7B+%3Fepisode+skos%3Asubject+%3Fseason+.%0A++++%3Fseason+rdfs%3Alabel+%3Ft%0A++%7D%0ALIMIT+++100
+#-------------------------------------------------------
+Query No: 7
+Query Type: SELECT
+Results Size: 3
+Basic Graph Patterns (BGPs): 12
+Triple Patterns: 15
+Join Vertices: 3
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.012838611880775197
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 219
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT+DISTINCT++%3Fmovie+%3Ftitle+%3ForiginalTitle+%3Fnationality+%3Fnationality2+%3FreleaseDate+%3Fsummary+%3FstudioName+%3Fduration+%3Furl+%3Fwebsite+%3FdirectorName%0AWHERE%0A++%7B+%3Fmovie+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+dbpedia%3AFilm+.%0A++++%3Fmovie+foaf%3Aname+%3Ftitle%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+rdfs%3Alabel+%3ForiginalTitle+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Acountry+%3Fcountry+.%0A++++++++%3Fcountry+rdfs%3Alabel+%3Fnationality%0A++++++++FILTER+%28+lang%28%3Fnationality%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Acountry+%3Fnationality2%0A++++++++FILTER+%28+lang%28%3Fnationality2%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbpedia%3AreleaseDate+%3FreleaseDate+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbpedia%3Aabstract+%3Fsummary%0A++++++++FILTER+%28+lang%28%3Fsummary%29+%3D+%22fr%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Adistributor+%3Fstudio+.%0A++++++++%3Fstudio+rdfs%3Alabel+%3FstudioName%0A++++++++FILTER+%28+lang%28%3FstudioName%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FWork%2Fruntime%3E+%3Fduration+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+foaf%3Ahomepage+%3Furl+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+foaf%3Apage+%3Fwebsite+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbpedia%3Adirector+%3Fdirector+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fdirector+rdfs%3Alabel+%3FdirectorName%0A++++++++FILTER+%28+lang%28%3FdirectorName%29+%3D+%22en%22+%29%0A++++++%7D%0A++++FILTER+regex%28%3Ftitle%2C+%22I%2C+Robot%22%2C+%22i%22%29%0A++++FILTER+regex%28%3FdirectorName%2C+%22Alex+Proyas%22%2C+%22i%22%29%0A++++FILTER+%28+lang%28%3ForiginalTitle%29+%3D+%22en%22+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 8
+Query Type: SELECT
+Results Size: 200
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 9.357670328844273E-6
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 57
+Query String: SELECT+DISTINCT++%3Fsubject+%3Fpredicate+%3Fobject%0AWHERE%0A++%7B+++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FJohn_Lennon%3E+%3Fpredicate+%3Fobject+%7D%0A++++UNION%0A++++++%7B+%3Fsubject+%3Fpredicate+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FJohn_Lennon%3E+%7D%0A++++FILTER+%28+%28+lang%28%3Fobject%29+%3D+%22en%22+%29+%7C%7C+%28+lang%28%3Fobject%29+%3D+%22%22+%29+%29%0A++%7D%0AORDER+BY+%3Fpredicate+%3Fsubject%0AOFFSET++400%0ALIMIT+++200
+#-------------------------------------------------------
+Query No: 9
+Query Type: SELECT
+Results Size: 100
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 7
+Join Vertices: 1
+Mean Join Vertices Degree: 6.0
+Mean triple patterns selectivity: 0.0011634707537815398
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 96
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbo%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT+DISTINCT++%3FName+%3FBirth+%3FDeath+%3FBirthPlace+%3FField+%3FPrizes%0AWHERE%0A++%7B+%3Fperson+rdf%3Atype+dbo%3AScientist+.%0A++++%3Fperson+foaf%3Aname+%3FName+.%0A++++%3Fperson+dbo%3AbirthDate+%3FBirth+.%0A++++%3Fperson+dbo%3AdeathDate+%3FDeath+.%0A++++%3Fperson+dbpedia2%3AbirthPlace+%3FBirthPlace+.%0A++++%3Fperson+dbpedia2%3Afield+%3FField%0A++++OPTIONAL%0A++++++%7B+%3Fperson+dbpedia2%3Aprizes+%3FPrizes+%7D%0A++++FILTER+%28+%3FDeath+%3C+%221950-01-01%22%5E%5Exsd%3Adate+%29%0A++%7D%0AORDER+BY+%3FName%0ALIMIT+++100
+#-------------------------------------------------------
+Query No: 10
+Query Type: SELECT
+Results Size: 73
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 3.117789976292325E-7
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 9
+Query String: SELECT+DISTINCT++%3Fsubject+%3Fpredicate+%3Fobject%0AWHERE%0A++%7B+++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FBarnaby_Rudge%3E+%3Fpredicate+%3Fobject+%7D%0A++++UNION%0A++++++%7B+%3Fsubject+%3Fpredicate+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FBarnaby_Rudge%3E+%7D%0A++++FILTER+%28+%28+lang%28%3Fobject%29+%3D+%22en%22+%29+%7C%7C+%28+lang%28%3Fobject%29+%3D+%22%22+%29+%29%0A++%7D%0AORDER+BY+%3Fpredicate+%3Fsubject%0AOFFSET++0%0ALIMIT+++200
+#-------------------------------------------------------
+Query No: 11
+Query Type: SELECT
+Results Size: 8
+Basic Graph Patterns (BGPs): 9
+Triple Patterns: 9
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 4.77822218588862E-9
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 9
+Query String: PREFIX++dbpp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A%0ASELECT+DISTINCT++%3FcontainedIn%0AWHERE%0A++%7B+++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Awriter+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3AexecutiveProducer+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Acreator+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Astarring+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3AexecutiveProducer+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Aguest+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Adirector+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Aproducer+%3FcontainedIn+%7D%0A++++UNION%0A++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Forgotten_%2528TV_series%2529%3E+dbpp%3Aseries+%3FcontainedIn+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 12
+Query Type: SELECT
+Results Size: 9118
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 1.96055234509196E-5
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 417
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fproperty+%3FhasValue+%3FisValueOf%0AWHERE%0A++%7B+++%7B+%3AOslo+%3Fproperty+%3FhasValue+%7D%0A++++UNION%0A++++++%7B+%3FisValueOf+%3Fproperty+%3AOslo+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 13
+Query Type: SELECT
+Results Size: 4
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.017745929445659954
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 805
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT+DISTINCT++%3Fartist%0AWHERE%0A++%7B+%3Fartist+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+dbpedia%3APerson+.%0A++++%3Fartist+rdfs%3Alabel+%3FartistName%0A++++FILTER+regex%28%3FartistName%2C+%22Depardieu%24%22%2C+%22i%22%29%0A++%7D
+#-------------------------------------------------------
+Query No: 14
+Query Type: SELECT
+Results Size: 4
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 3
+Join Vertices: 1
+Mean Join Vertices Degree: 3.0
+Mean triple patterns selectivity: 0.0012736637929817273
+UNION: No 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 57
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbo%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fdescrizione+%3Fsport+%3Ftitolo%0AWHERE%0A++%7B+%3FHistoricBuilding+dbo%3Asport+%3Fsport+.%0A++++%3FHistoricBuilding+dbo%3Athumbnail+%3Ftitolo+.%0A++++%3FHistoricBuilding+dc%3Adescription+%3Fdescrizione%0A++%7D%0AORDER+BY+%3Fdescrizione
+#-------------------------------------------------------
+Query No: 15
+Query Type: SELECT
+Results Size: 34
+Basic Graph Patterns (BGPs): 4
+Triple Patterns: 4
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 1.0
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 10
+Query String: PREFIX++p%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A%0ACONSTRUCT+%0A++%7B+%3Fa+%3Fp+%3Fb+.%0A++++%3Fc+%3Fq+%3Fa+.%0A++++%3Fx+%3Fr1+%3Fr+.%0A++++%3Fr+%3Fr2+%3Fy+.%7D%0AWHERE%0A++%7B+++%7B+%3Fa+%3Fp+%3Fb+%7D%0A++++UNION%0A++++++%7B+%3Fc+%3Fq+%3Fa+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fa+p%3Aredirect+%3Fr%0A++++++++++%7B+%3Fx+%3Fr1+%3Fr+%7D%0A++++++++UNION%0A++++++++++%7B+%3Fr+%3Fr2+%3Fy+%7D%0A++++++%7D%0A++++FILTER+%28+%3Fa+%3D+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCornelia_Supera%3E+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 16
+Query Type: SELECT
+Results Size: 2
+Basic Graph Patterns (BGPs): 4
+Triple Patterns: 5
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.007241914828772481
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 283
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT+DISTINCT++%3Fartist+%3FartistName+%3Foccupation+%3FshortDescription+%3Fbirthdate%0AWHERE%0A++%7B+%3Fartist+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+dbpedia%3AArtist+.%0A++++%3Fartist+rdfs%3Alabel+%3FartistName%0A++++OPTIONAL%0A++++++%7B+%3Fartist+dbpedia%3AbirthDate+%3Fbirthdate+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fartist+dbprop%3Aoccupation+%3Foccupation%0A++++++++FILTER+isLiteral%28%3Foccupation%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fartist+dbprop%3AshortDescription+%3FshortDescription+%7D%0A++++FILTER+regex%28%3FartistName%2C+%22coen%22%2C+%22i%22%29%0A++++FILTER+%28+lang%28%3FartistName%29+%3D+%22en%22+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 17
+Query Type: SELECT
+Results Size: 3317
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 1
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 5.654165877005723E-5
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 159
+Query String: SELECT+DISTINCT++%3Ffield%0AWHERE%0A++%7B+%3Fs+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2Ffield%3E+%3Ffield+%7D
+#-------------------------------------------------------
+Query No: 18
+Query Type: SELECT
+Results Size: 3
+Basic Graph Patterns (BGPs): 3
+Triple Patterns: 3
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 4.3003999672997585E-9
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 8
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++*%0AWHERE%0A++%7B+++%7B+%3AEindhoven+rdfs%3Acomment+%3Fabstract%0A++++++++FILTER+%28+lang%28%3Fabstract%29+%3D+%22en%22+%29%0A++++++%7D%0A++++UNION%0A++++++%7B+%3AEindhoven+foaf%3Adepiction+%3Fdepiction+%7D%0A++++UNION%0A++++++%7B+%3AEindhoven+foaf%3Ahomepage+%3Fhomepage+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 19
+Query Type: SELECT
+Results Size: 268
+Basic Graph Patterns (BGPs): 4
+Triple Patterns: 8
+Join Vertices: 6
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.0023937165823981793
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 18
+Query String: SELECT++%3Fnx+%3Fn%0AWHERE%0A++%7B+++%7B+++%7B+%3Fn+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23broader%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCategory%3APorsche%3E+%7D%0A++++++++UNION%0A++++++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPorsche%3E+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23subject%3E+%3Fsub+.%0A++++++++++++%3Fn+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23broader%3E+%3Fsub%0A++++++++++%7D%0A++++++%7D%0A++++UNION%0A++++++%7B+++%7B+%3Fnx+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23broader%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCategory%3APorsche%3E+.%0A++++++++++++%3Fn+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23broader%3E+%3Fnx%0A++++++++++%7D%0A++++++++UNION%0A++++++++++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPorsche%3E+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23subject%3E+%3Fsub+.%0A++++++++++++%3Fnx+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23broader%3E+%3Fsub+.%0A++++++++++++%3Fn+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23broader%3E+%3Fnx%0A++++++++++%7D%0A++++++%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 20
+Query Type: SELECT
+Results Size: 2
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 9.162131142331155E-4
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 4
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbpediaontology%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3FWhere%0AWHERE%0A++%7B+%3AFred_Durst+dbpedia2%3Aborn+%3FWhere+.%0A++++%3AFred_Durst+dbpediaontology%3AbirthPlace+%3FWhere%0A++++++%7B+%3FWhere+rdf%3Atype+dbpediaontology%3APlace+%7D%0A++++UNION%0A++++++%7B+%3FWhere+rdf%3Atype+dbpediaontology%3ACity+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 21
+Query Type: SELECT
+Results Size: 2
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 3
+Join Vertices: 1
+Mean Join Vertices Degree: 3.0
+Mean triple patterns selectivity: 0.3603580386867708
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 4
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT+DISTINCT++%3Fprop%0AWHERE%0A++%7B+%3Fepisode+skos%3Asubject+%3Fseason+.%0A++++%3Fseason+rdfs%3Alabel+%3Fseason_title+.%0A++++%3Fseason+%3Fprop+_%3Ab0%0A++%7D%0ALIMIT+++2
+#-------------------------------------------------------
+Query No: 22
+Query Type: SELECT
+Results Size: 4561
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.023472890343112143
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 176
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++category%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCategory%3A%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbo%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++resource%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++property%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT+DISTINCT++%3Fid%0AWHERE%0A++%7B+%3Fid+skos%3Asubject+%3Fusr%0A++++%7B+%3Fusr+skos%3Abroader+category%3ARivers_of_the_United_States_by_state+%7D%0A++%7D%0AORDER+BY+%3Fid
+#-------------------------------------------------------
+Query No: 23
+Query Type: SELECT
+Results Size: 200
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 9.97692792413544E-7
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 16
+Query String: SELECT+DISTINCT++%3Fsubject+%3Fpredicate+%3Fobject%0AWHERE%0A++%7B+++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FOliver_Twist%3E+%3Fpredicate+%3Fobject+%7D%0A++++UNION%0A++++++%7B+%3Fsubject+%3Fpredicate+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FOliver_Twist%3E+%7D%0A++++FILTER+%28+%28+lang%28%3Fobject%29+%3D+%22en%22+%29+%7C%7C+%28+lang%28%3Fobject%29+%3D+%22%22+%29+%29%0A++%7D%0AORDER+BY+%3Fpredicate+%3Fsubject%0AOFFSET++0%0ALIMIT+++200
+#-------------------------------------------------------
+Query No: 24
+Query Type: SELECT
+Results Size: 7
+Basic Graph Patterns (BGPs): 12
+Triple Patterns: 12
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 0.006894565359507059
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 33
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbp%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fresource+%3Furi+%3Fwtitle+%3Fcomment+%3Fimage%0AWHERE%0A++%7B+%7B+++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMazda_Premacy%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFeeder%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHigh_%28Feeder_song%29%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMazda%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMinivan%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTwitter%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FUp_to%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNews%3E+%7D%0A++++%7D%0A++++%3Fresource+foaf%3Apage+%3Furi+.%0A++++%3Fresource+rdfs%3Alabel+%3Fwtitle%0A++++FILTER+langMatches%28lang%28%3Fwtitle%29%2C+%22en%22%29%0A++++OPTIONAL%0A++++++%7B+%3Fresource+rdfs%3Acomment+%3Fcomment%0A++++++++FILTER+langMatches%28lang%28%3Fcomment%29%2C+%22en%22%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fresource+foaf%3Adepiction+%3Fimage+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 25
+Query Type: SELECT
+Results Size: 21
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 7
+Join Vertices: 5
+Mean Join Vertices Degree: 2.4
+Mean triple patterns selectivity: 0.008300329760198578
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 6
+Query String: PREFIX++dbpp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fitem+%3Ftype%0AWHERE%0A++%7B+++%7B+%3Fitem+dbpp%3Aseries+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FBurn_Notice%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FTelevisionEpisode%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Ftype%0A++++++%7D%0A++++UNION%0A++++++%7B+%3Fitem+dbpp%3Aseries+%3Fbrand+.%0A++++++++%3Fbrand+dbpp%3Aredirect+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FBurn_Notice%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FTelevisionEpisode%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Ftype%0A++++++%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 26
+Query Type: SELECT
+Results Size: 2
+Basic Graph Patterns (BGPs): 7
+Triple Patterns: 7
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 0.011819251830297837
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 17
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbp%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fresource+%3Furi+%3Fwtitle+%3Fcomment+%3Fimage%0AWHERE%0A++%7B+%7B+++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMizukami%2C_Kumamoto%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMobile_phone%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTwitter%3E+%7D%0A++++%7D%0A++++%3Fresource+foaf%3Apage+%3Furi+.%0A++++%3Fresource+rdfs%3Alabel+%3Fwtitle%0A++++FILTER+langMatches%28lang%28%3Fwtitle%29%2C+%22en%22%29%0A++++OPTIONAL%0A++++++%7B+%3Fresource+rdfs%3Acomment+%3Fcomment%0A++++++++FILTER+langMatches%28lang%28%3Fcomment%29%2C+%22en%22%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fresource+foaf%3Adepiction+%3Fimage+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 27
+Query Type: SELECT
+Results Size: 10
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 0.0030240326562052558
+UNION: No 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: Yes 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 1036
+Query String: PREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0A%0ASELECT++%3Fname+%3Femail%0AWHERE%0A++%7B+%3Fperson+foaf%3Aname+%3Fname%0A++++OPTIONAL%0A++++++%7B+%3Fperson+foaf%3Ambox+%3Femail+%7D%0A++%7D%0AORDER+BY+%3Fname%0AOFFSET++10%0ALIMIT+++10
+#-------------------------------------------------------
+Query No: 28
+Query Type: SELECT
+Results Size: 12
+Basic Graph Patterns (BGPs): 12
+Triple Patterns: 18
+Join Vertices: 6
+Mean Join Vertices Degree: 2.1666666666666665
+Mean triple patterns selectivity: 0.012421742814589513
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 188
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT+DISTINCT++%3Fartist+%3FartistName+%3Fmovie+%3Ftitle+%3ForiginalTitle+%3Fnationality+%3Fnationality2+%3FreleaseDate+%3Fsummary+%3FstudioName+%3Fduration+%3Furl+%3Fwebsite%0AWHERE%0A++%7B+%3Fartist+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+dbpedia%3AArtist+.%0A++++%3Fartist+rdfs%3Alabel+%3FartistName+.%0A++++%3Fmovie+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+dbpedia%3AFilm+.%0A++++%3Fmovie+dbpedia%3Adirector+%3Fartist%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+rdfs%3Alabel+%3ForiginalTitle%0A++++++++FILTER+%28+lang%28%3ForiginalTitle%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Atitle+%3Ftitle%0A++++++++FILTER+%28+lang%28%3Ftitle%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbpedia%3Adirector+%3Fdirector+.%0A++++++++%3Fdirector+rdfs%3Alabel+%3FdirectorName%0A++++++++FILTER+%28+lang%28%3FdirectorName%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Acountry+%3Fcountry+.%0A++++++++%3Fcountry+rdfs%3Alabel+%3Fnationality%0A++++++++FILTER+%28+lang%28%3Fnationality%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Acountry+%3Fnationality2%0A++++++++FILTER+%28+lang%28%3Fnationality2%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbpedia%3AreleaseDate+%3FreleaseDate+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbpedia%3Aabstract+%3Fsummary%0A++++++++FILTER+%28+lang%28%3Fsummary%29+%3D+%22fr%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+dbprop%3Adistributor+%3Fstudio+.%0A++++++++%3Fstudio+rdfs%3Alabel+%3FstudioName%0A++++++++FILTER+%28+lang%28%3FstudioName%29+%3D+%22en%22+%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FWork%2Fruntime%3E+%3Fduration+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+foaf%3Ahomepage+%3Furl+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fmovie+foaf%3Apage+%3Fwebsite+%7D%0A++++FILTER+regex%28%3FartistName%2C+%22david+fincher%22%2C+%22i%22%29%0A++++FILTER+%28+lang%28%3FartistName%29+%3D+%22en%22+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 29
+Query Type: SELECT
+Results Size: 230
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 1.0
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 15
+Query String: PREFIX++r%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++p%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++o%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ACONSTRUCT+%0A++%7B+%3Fa+p%3Aredirect+%3Fr+.%0A++++%3Fx+%3Fp+%3Fr+.%0A++++%3Fr+%3Fq+%3Fy+.%7D%0AWHERE%0A++%7B+FILTER+%28+%3Fa+%3D+r%3AMessalina+%29%0A++++OPTIONAL%0A++++++%7B+%3Fa+p%3Aredirect+%3Fr%0A++++++++++%7B+%3Fx+%3Fp+%3Fr+%7D%0A++++++++UNION%0A++++++++++%7B+%3Fr+%3Fq+%3Fy+%7D%0A++++++%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 30
+Query Type: SELECT
+Results Size: 290137
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.01879030522991852
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 19709
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fpage+%3Fname%0AWHERE%0A++%7B+%3Fx+foaf%3Apage+%3Fpage+.%0A++++%3Fx+foaf%3Aname+%3Fname%0A++%7D
+#-------------------------------------------------------
+Query No: 31
+Query Type: SELECT
+Results Size: 3003
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 4
+Join Vertices: 4
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 4.767294391749494E-4
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 117
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia-owl%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++dbpprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Factor1+%3Factor2+%3Fplace1+%3Fplace2%0AWHERE%0A++%7B+%3Factor1+rdf%3Atype+dbpedia-owl%3AActor+.%0A++++%3Factor2+rdf%3Atype+dbpedia-owl%3AActor%0A++++++%7B+%3Factor1+dbpedia-owl%3Apartner+%3Factor2+.%0A++++++++%3Fpelicula1+dbpedia2%3Astarring+%3Factor1+.%0A++++++++%3Fpelicula1+dbpedia2%3Astarring+%3Factor2%0A++++++%7D%0A++++UNION%0A++++++%7B+%3Factor1+dbpedia-owl%3Aspouse+%3Factor2+%7D%0A++%7D%0AORDER+BY+%3Factor1
+#-------------------------------------------------------
+Query No: 32
+Query Type: SELECT
+Results Size: 7
+Basic Graph Patterns (BGPs): 4
+Triple Patterns: 4
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 0.0016266080109312727
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 212
+Query String: PREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbont%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++dbp%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT++%3Fname+%3Flink+%3Falba%0AWHERE%0A++%7B+++%7B+%3Flink+rdf%3Atype+dbont%3AMusicalArtist+%7D%0A++++UNION%0A++++++%7B+%3Flink+rdf%3Atype+dbont%3ABand+%7D%0A++++%3Flink+dbp%3Aname+%3Fname%0A++++FILTER+regex%28%3Fname%2C+%22beatles%22%2C+%22i%22%29%0A++++%3Flink+dbp%3Aorigin+%3Falba%0A++%7D
+#-------------------------------------------------------
+Query No: 33
+Query Type: SELECT
+Results Size: 309
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 7
+Join Vertices: 5
+Mean Join Vertices Degree: 2.4
+Mean triple patterns selectivity: 0.008300416382540777
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 16
+Query String: PREFIX++dbpp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fitem+%3Ftype%0AWHERE%0A++%7B+++%7B+%3Fitem+dbpp%3Aseries+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FLost_%2528TV_series%2529%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FTelevisionEpisode%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Ftype%0A++++++%7D%0A++++UNION%0A++++++%7B+%3Fitem+dbpp%3Aseries+%3Fbrand+.%0A++++++++%3Fbrand+dbpp%3Aredirect+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FLost_%2528TV_series%2529%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FTelevisionEpisode%3E+.%0A++++++++%3Fitem+rdf%3Atype+%3Ftype%0A++++++%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 34
+Query Type: SELECT
+Results Size: 3
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.017064290248443137
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 22
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia-owl%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++p%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT+DISTINCT++%3Fcat+%3Flabel%0AWHERE%0A++%7B+%3Fcat+skos%3Abroader+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCategory%3ACyberpunk_films%3E+.%0A++++%3Fcat+rdfs%3Alabel+%3Flabel%0A++++FILTER+%28+lang%28%3Flabel%29+%3D+%22en%22+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 35
+Query Type: SELECT
+Results Size: 144
+Basic Graph Patterns (BGPs): 3
+Triple Patterns: 3
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 0.022752741064188158
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 18
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++geo%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo%2Fwgs84_pos%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++vcard%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2Fvcard-rdf%2F3.0%23%3E%0APREFIX++dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX++sioc%3A+%3Chttp%3A%2F%2Frdfs.org%2Fsioc%2Fns%23%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++co%3A+++%3Chttp%3A%2F%2Fwww.geonames.org%2Fcountries%2F%23%3E%0APREFIX++category%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FCategory%3A%3E%0APREFIX++time%3A+%3Chttp%3A%2F%2Fpervasive.semanticweb.org%2Font%2F2004%2F06%2Ftime%23%3E%0APREFIX++p%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++swrc%3A+%3Chttp%3A%2F%2Fswrc.ontoware.org%2Fontology%23%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++rss%3A++%3Chttp%3A%2F%2Fpurl.org%2Frss%2F1.0%2F%3E%0APREFIX++cyc%3A++%3Chttp%3A%2F%2Fwww.cyc.com%2F2004%2F06%2F04%2Fcyc%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Flabel+%3Fproperty+%3FhasValue+%3Fitemlabel%0AWHERE%0A++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FBoone%252C_North_Carolina%3E+%3Fproperty+%3FhasValue%0A++++OPTIONAL%0A++++++%7B+%3FhasValue+rdfs%3Alabel+%3Fitemlabel+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fproperty+rdfs%3Alabel+%3Flabel+%7D%0A++++FILTER+%28+%28+%28+langMatches%28lang%28%3Flabel%29%2C+%22en%22%29+%7C%7C+%28+%21+langMatches%28lang%28%3Flabel%29%2C+%22*%22%29+%29+%29+%26%26+%28+langMatches%28lang%28%3FhasValue%29%2C+%22en%22%29+%7C%7C+%28+%21+langMatches%28lang%28%3FhasValue%29%2C+%22*%22%29+%29+%29+%29+%26%26+%28+langMatches%28lang%28%3Fitemlabel%29%2C+%22en%22%29+%7C%7C+%28+%21+langMatches%28lang%28%3Fitemlabel%29%2C+%22*%22%29+%29+%29+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 36
+Query Type: SELECT
+Results Size: 1
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 1
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 4.3003999672997585E-9
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 7
+Query String: SELECT++%3Fabstract%0AWHERE%0A++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FRebecca_Rush%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fabstract%3E+%3Fabstract%0A++++FILTER+langMatches%28lang%28%3Fabstract%29%2C+%22en%22%29%0A++%7D
+#-------------------------------------------------------
+Query No: 37
+Query Type: SELECT
+Results Size: 1000
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 1
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 2.6976408994871388E-5
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 90
+Query String: PREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fcompound+%3Finchi%0AWHERE%0A++%7B+%3Fcompound+rdf%3Atype+dbpedia%3AChemicalCompound+%7D%0AORDER+BY+%3Fcompound%0AOFFSET++0%0ALIMIT+++1000
+#-------------------------------------------------------
+Query No: 38
+Query Type: SELECT
+Results Size: 1
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 1
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 2.534053684731056E-4
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 13
+Query String: PREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fplayer%0AWHERE%0A++%7B+%3Fs+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FSoccerPlayer%3E+%7D%0ALIMIT+++1000
+#-------------------------------------------------------
+Query No: 39
+Query Type: SELECT
+Results Size: 1704
+Basic Graph Patterns (BGPs): 6
+Triple Patterns: 6
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 6.253311935116483E-4
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 222
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia-owl%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++dbpprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Factor1+%3Factor2+%3Fpelicula1+%3Fpelicula2%0AWHERE%0A++%7B+%3Factor1+rdf%3Atype+dbpedia-owl%3AActor+.%0A++++%3Factor2+rdf%3Atype+dbpedia-owl%3AActor%0A++++++%7B+%3Factor1+dbpedia-owl%3Apartner+%3Factor2+%7D%0A++++UNION%0A++++++%7B+%3Factor1+dbpedia-owl%3Aspouse+%3Factor2+%7D%0A++++%3Fpelicula1+dbpedia2%3Astarring+%3Factor1+.%0A++++%3Fpelicula1+dbpedia2%3Astarring+%3Factor2+.%0A++++%3Fpelicula2+dbpedia2%3Astarring+%3Factor1+.%0A++++%3Fpelicula2+dbpedia2%3Astarring+%3Factor2%0A++++FILTER+%28+%3Fpelicula1+%21%3D+%3Fpelicula2+%29%0A++%7D%0AORDER+BY+%3Factor1
+#-------------------------------------------------------
+Query No: 40
+Query Type: SELECT
+Results Size: 16
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 1.0
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: Yes 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 5
+Query String: PREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++dbo%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++dbp%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A%0ASELECT+DISTINCT++%3Fs+%3Fp+%3Fo%0AWHERE%0A++%7B+++%7B+%7B+%3Fs+%3Fp+%3Fo+%7D%0A++++++++FILTER+%28+%28+%28+%3Fs+%3D+%3AVirginia_Wolf+%29+%26%26+regex%28%3Fp%2C+%22%28http%3A%2F%2Fdbpedia.org%2Fproperty%2F%7Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%29%22%29+%29+%26%26+regex%28%3Fo%2C+%22http%3A%2F%2Fdbpedia.org%2Fresource%2F%22%29+%29%0A++++++%7D%0A++++UNION%0A++++++%7B+%7B+%3Fs+%3Fp+%3Fo+%7D%0A++++++++FILTER+%28+%28+%28+%3Fo+%3D+%3AVirginia_Wolf+%29+%26%26+regex%28%3Fp%2C+%22%28http%3A%2F%2Fdbpedia.org%2Fproperty%2F%7Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%29%22%29+%29+%26%26+regex%28%3Fs%2C+%22http%3A%2F%2Fdbpedia.org%2Fresource%2F%22%29+%29%0A++++++%7D%0A++%7D%0AORDER+BY+%3Fs+%3Fp+%3Fo%0ALIMIT+++16
+#-------------------------------------------------------
+Query No: 41
+Query Type: SELECT
+Results Size: 183
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 3
+Join Vertices: 1
+Mean Join Vertices Degree: 3.0
+Mean triple patterns selectivity: 0.0038574387021347027
+UNION: No 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 69
+Query String: PREFIX++geo%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo%2Fwgs84_pos%23%3E%0APREFIX++p%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A%0ASELECT++%3Fs+%3Fname+%3Flat+%3Flong%0AWHERE%0A++%7B+%3Fs+geo%3Alat+%3Flat+.%0A++++%3Fs+geo%3Along+%3Flong+.%0A++++%3Fs+p%3Aname+%3Fname%0A++++FILTER+%28+%28+%28+%28+%3Flat+%3C%3D+%28+34.174471+%2B+%22.1%22%5E%5E%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23decimal%3E+%29+%29+%26%26+%28+%3Flong+%3E%3D+%28+-118.297552+-+%22.1%22%5E%5E%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23decimal%3E+%29+%29+%29+%26%26+%28+%3Flat+%3E%3D+%28+34.174471+-+%22.1%22%5E%5E%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23decimal%3E+%29+%29+%29+%26%26+%28+%3Flong+%3C%3D+%28+-118.297552+%2B+%22.1%22%5E%5E%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23decimal%3E+%29+%29+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 42
+Query Type: SELECT
+Results Size: 20
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.017745929445659954
+UNION: No 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 604
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++%3Fresult_instance+%3Fresult_label%0AWHERE%0A++%7B+%7B+%7B+%3Fresult_instance+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FPerson%3E+%7D+%7D%0A++++%7B+%3Fresult_instance+rdfs%3Alabel+%3Fresult_label+%7D%0A++%7D%0AORDER+BY+%3Fresult_label%0ALIMIT+++20
+#-------------------------------------------------------
+Query No: 43
+Query Type: SELECT
+Results Size: 1
+Basic Graph Patterns (BGPs): 3
+Triple Patterns: 5
+Join Vertices: 2
+Mean Join Vertices Degree: 2.5
+Mean triple patterns selectivity: 0.016546951702336977
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 12
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbp%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fresource+%3Furi+%3Fwtitle+%3Fcomment+%3Fimage%0AWHERE%0A++%7B+%7B+%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPortable_Document_Format%3E+%7D+%7D%0A++++%3Fresource+foaf%3Apage+%3Furi+.%0A++++%3Fresource+rdfs%3Alabel+%3Fwtitle%0A++++FILTER+langMatches%28lang%28%3Fwtitle%29%2C+%22en%22%29%0A++++OPTIONAL%0A++++++%7B+%3Fresource+rdfs%3Acomment+%3Fcomment%0A++++++++FILTER+langMatches%28lang%28%3Fcomment%29%2C+%22en%22%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fresource+foaf%3Adepiction+%3Fimage+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 44
+Query Type: SELECT
+Results Size: 10
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 2
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 8.91558921220586E-5
+UNION: No 
+DISTINCT: No 
+ORDER BY: Yes 
+REGEX: Yes 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 99
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT++*%0AWHERE%0A++%7B+%3Fartist+rdf%3Atype+dbpo%3AMusicalArtist+.%0A++++%3Fartist+foaf%3AgivenName+%3Fname%0A++++FILTER+regex%28%3Fname%2C+%22%5EA%22%29%0A++%7D%0AORDER+BY+%3Fartist%0AOFFSET++0%0ALIMIT+++10
+#-------------------------------------------------------
+Query No: 45
+Query Type: SELECT
+Results Size: 200
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 2
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 7.095659946044601E-7
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 252
+Query String: SELECT+DISTINCT++%3Fsubject+%3Fpredicate+%3Fobject%0AWHERE%0A++%7B+++%7B+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FDamon_Lindelof%3E+%3Fpredicate+%3Fobject+%7D%0A++++UNION%0A++++++%7B+%3Fsubject+%3Fpredicate+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FDamon_Lindelof%3E+%7D%0A++++FILTER+%28+%28+lang%28%3Fobject%29+%3D+%22en%22+%29+%7C%7C+%28+lang%28%3Fobject%29+%3D+%22%22+%29+%29%0A++%7D%0AORDER+BY+%3Fpredicate+%3Fsubject%0AOFFSET++0%0ALIMIT+++200
+#-------------------------------------------------------
+Query No: 46
+Query Type: SELECT
+Results Size: 1000
+Basic Graph Patterns (BGPs): 1
+Triple Patterns: 1
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 2.6976408994871388E-5
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: Yes 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: Yes 
+OPTIONAL: No 
+FILTER: No 
+GROUP BY: No 
+Query Execution Time (ms): 63
+Query String: PREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fcompound%0AWHERE%0A++%7B+%3Fcompound+rdf%3Atype+dbpedia%3AChemicalCompound+%7D%0AORDER+BY+%3Fcompound%0AOFFSET++0%0ALIMIT+++1000
+#-------------------------------------------------------
+Query No: 47
+Query Type: SELECT
+Results Size: 8
+Basic Graph Patterns (BGPs): 14
+Triple Patterns: 14
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 0.005909627758177475
+UNION: Yes 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 550
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbp%3A++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0ASELECT+DISTINCT++%3Fresource+%3Furi+%3Fwtitle+%3Fcomment+%3Fimage%0AWHERE%0A++%7B+%7B+++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSellafield%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAMEC%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FConstruction%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPage%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPosition_%28team_sports%29%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FEngineering%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FLiquid_%28The_Rasmus_song%29%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FScouting%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHell_of_a_Tester%3E+%7D%0A++++++UNION%0A++++++++%7B+%3Fresource+foaf%3Apage+%3Chttp%3A%2F%2Fen.wikipedia.org%2Fwiki%2FScout_Leader%3E+%7D%0A++++%7D%0A++++%3Fresource+foaf%3Apage+%3Furi+.%0A++++%3Fresource+rdfs%3Alabel+%3Fwtitle%0A++++FILTER+langMatches%28lang%28%3Fwtitle%29%2C+%22en%22%29%0A++++OPTIONAL%0A++++++%7B+%3Fresource+rdfs%3Acomment+%3Fcomment%0A++++++++FILTER+langMatches%28lang%28%3Fcomment%29%2C+%22en%22%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fresource+foaf%3Adepiction+%3Fimage+%7D%0A++%7D
+#-------------------------------------------------------
+Query No: 48
+Query Type: SELECT
+Results Size: 54
+Basic Graph Patterns (BGPs): 4
+Triple Patterns: 4
+Join Vertices: 0
+Mean Join Vertices Degree: 0 
+Mean triple patterns selectivity: 1.0
+UNION: Yes 
+DISTINCT: No 
+ORDER BY: No 
+REGEX: No 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 79
+Query String: PREFIX++p%3A++++%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A%0ACONSTRUCT+%0A++%7B+%3Fa+%3Fp+%3Fb+.%0A++++%3Fc+%3Fq+%3Fa+.%0A++++%3Fx+%3Fr1+%3Fr+.%0A++++%3Fr+%3Fr2+%3Fy+.%7D%0AWHERE%0A++%7B+++%7B+%3Fa+%3Fp+%3Fb+%7D%0A++++UNION%0A++++++%7B+%3Fc+%3Fq+%3Fa+%7D%0A++++OPTIONAL%0A++++++%7B+%3Fa+p%3Aredirect+%3Fr%0A++++++++++%7B+%3Fx+%3Fr1+%3Fr+%7D%0A++++++++UNION%0A++++++++++%7B+%3Fr+%3Fr2+%3Fy+%7D%0A++++++%7D%0A++++FILTER+%28+%3Fa+%3D+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FUlpia_Severina%3E+%29%0A++%7D
+#-------------------------------------------------------
+Query No: 49
+Query Type: SELECT
+Results Size: 1000
+Basic Graph Patterns (BGPs): 2
+Triple Patterns: 8
+Join Vertices: 3
+Mean Join Vertices Degree: 3.0
+Mean triple patterns selectivity: 0.1293724477932519
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: No 
+LIMIT: Yes 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 235
+Query String: PREFIX++dc%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX++%3A+++++%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++dbpedia2%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++owl%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX++xsd%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2F%3E%0APREFIX++rdf%3A++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX++skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT+DISTINCT++%3Fplayer%0AWHERE%0A++%7B+%3Fs+foaf%3Apage+%3Fplayer+.%0A++++%3Fs+rdf%3Atype+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FSoccerPlayer%3E+.%0A++++%3Fs+dbpedia2%3Aposition+%3Fposition+.%0A++++%3Fs+dbpedia2%3Aclubs+%3Fclub+.%0A++++%3Fclub+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fcapacity%3E+%3Fcap+.%0A++++%3Fs+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FbirthPlace%3E+%3Fplace+.%0A++++%3Fplace+%3Fpopulation+%3Fpop%0A++++OPTIONAL%0A++++++%7B+%3Fs+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fnumber%3E+%3Ftricot+%7D%0A++++FILTER+%28+%3Fpopulation+IN+%28dbpedia2%3ApopulationEstimate%2C+dbpedia2%3ApopulationCensus%2C+dbpedia2%3AstatPop%29+%29%0A++++FILTER+%28+xsd%3Aint%28%3Fpop%29+%3E+10000000+%29%0A++++FILTER+%28+xsd%3Aint%28%3Fcap%29+%3C+40000+%29%0A++++FILTER+%28+%28+%28+%3Fposition+%3D+%22Goalkeeper%22%40en+%29+%7C%7C+%28+%3Fposition+%3D+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FGoalkeeper_%2528association_football%2529%3E+%29+%29+%7C%7C+%28+%3Fposition+%3D+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FGoalkeeper_%2528football%2529%3E+%29+%29%0A++%7D%0ALIMIT+++1000
+#-------------------------------------------------------
+Query No: 50
+Query Type: SELECT
+Results Size: 6
+Basic Graph Patterns (BGPs): 3
+Triple Patterns: 4
+Join Vertices: 1
+Mean Join Vertices Degree: 2.0
+Mean triple patterns selectivity: 0.009082770486234614
+UNION: No 
+DISTINCT: Yes 
+ORDER BY: No 
+REGEX: Yes 
+LIMIT: No 
+OFFSET: No 
+OPTIONAL: Yes 
+FILTER: Yes 
+GROUP BY: No 
+Query Execution Time (ms): 878
+Query String: PREFIX++rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX++foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX++dbprop%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0APREFIX++dbpedia%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT+DISTINCT++%3Fartist+%3FartistName+%3Foccupation+%3Foccupation2%0AWHERE%0A++%7B+%3Fartist+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E+dbpedia%3APerson+.%0A++++%3Fartist+rdfs%3Alabel+%3FartistName%0A++++OPTIONAL%0A++++++%7B+%3Fartist+dbprop%3Aoccupation+%3Foccupation%0A++++++++FILTER+regex%28%3Foccupation%2C+%22director%22%2C+%22i%22%29%0A++++++%7D%0A++++OPTIONAL%0A++++++%7B+%3Fartist+dbpedia%3Aoccupation+%3Foccupation2+%7D%0A++++FILTER+regex%28%3FartistName%2C+%22coen%24%22%2C+%22i%22%29%0A++++FILTER+%28+lang%28%3FartistName%29+%3D+%22en%22+%29%0A++%7D
+#--end---

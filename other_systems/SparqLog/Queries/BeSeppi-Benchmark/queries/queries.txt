@@ -1,0 +1,473 @@
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v2> ^<http://www.ppbenchmark.com/e1> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> ^<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting> ^<http://www.ppbenchmark.com/e1> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> ^<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting1> ^<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> ^<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v3>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>/<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v3>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting1>/<http://www.ppbenchmark.com/notExisting2> <http://www.ppbenchmark.com/v3>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>|<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>? <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>? <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/notExisting2>? <http://www.ppbenchmark.com/notExisting3>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/notExisting2>? <http://www.ppbenchmark.com/notExisting1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/eSelf>? <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>? <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/e2>? <http://www.ppbenchmark.com/notExisting3>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting2>? <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting2>? <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>+ <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>+ <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+>+ <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e+>+ <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+>+ <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/e+>+ <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting>+ <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>+ <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+1>+ <http://www.ppbenchmark.com/v+3>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+2>+ <http://www.ppbenchmark.com/v+6>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+>+ <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+2>+ <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>* <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisiting> <http://www.ppbenchmark.com/eSelf>* <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>* <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/eSelf>* <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting>* <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e7>* <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>* <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+1>* <http://www.ppbenchmark.com/v+3>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+2>* <http://www.ppbenchmark.com/v+6>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+>* <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+2>* <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting> !(<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> !(<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting1> !(<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e3>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting> !(^<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting1> !(^<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e3>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v+1> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/notExisting1> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>|^<(http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e5>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e4>|^<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>|<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e6>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+ASK WHERE {<http://www.ppbenchmark.com/v3> !(^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e3>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?o WHERE {<http://www.ppbenchmark.com/v2> ^<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> ^<http://www.ppbenchmark.com/e2> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE {<http://www.ppbenchmark.com/v1> ^<http://www.ppbenchmark.com/eSelf> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> ^<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> ^<http://www.ppbenchmark.com/notExisting> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v3> <http://www.ppbenchmark.com/e2>/<http://www.ppbenchmark.com/e4> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>/<http://www.ppbenchmark.com/eSelf> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e5> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e2> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting>/<http://www.ppbenchmark.com/e3> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> <http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/eSelf> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/e1>? ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> <http://www.ppbenchmark.com/e3>? ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>? ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e1>? ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting>? ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting1> <http://www.ppbenchmark.com/notExisting2>? ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v3> <http://www.ppbenchmark.com/e2>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> <http://www.ppbenchmark.com/e3>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e3>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> <http://www.ppbenchmark.com/notExisting>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+1>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+3>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+2>+ ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> <http://www.ppbenchmark.com/e3>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/e1>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/notExisting>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+1>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+3>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE {<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v+1> <http://www.ppbenchmark.com/e+2>* ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) ?o} 
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> !(<http://www.ppbenchmark.com/v1>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> (!<http://www.ppbenchmark.com/e1>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> (!<http://www.ppbenchmark.com/notExisting>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> !(^<http://www.ppbenchmark.com/eSelf>) ?o} 
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>) ?o} 
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e2>) ?o} 
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>) ?o} 
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/notExisting1>|^<http://www.ppbenchmark.com/notExisting2>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> !(<http://www.ppbenchmark.com/eSelf>|^<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/notExisting> !(<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e3>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>|<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e6>) ?o}
+#-------------------------------------------------------
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e4>|^<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e1>) ?o}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s ^<http://www.ppbenchmark.com/e1> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s ^<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s ^<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s ^<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s ^<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v3>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e2>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v4>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/eSelf>/<http://www.ppbenchmark.com/eSelf> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/notExisting1>/<http://www.ppbenchmark.com/notExisting> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e5> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e7>|<http://www.ppbenchmark.com/e6> <http://www.ppbenchmark.com/v7>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/eSelf>|<http://www.ppbenchmark.com/e1> <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2> <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e1> <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>? <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e2>? <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/eSelf>? <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e2>? <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/notExisting>? <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/notExisting1>? <http://www.ppbenchmark.com/notExisting2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e1>+ <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e2>+ <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/eSelf>+ <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+2>+ <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/notExisting>+ <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+1>+ <http://www.ppbenchmark.com/v+3>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+3>+ <http://www.ppbenchmark.com/v+6>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+>+ <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+2>+ <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e2>* <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/eSelf>* <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+2>* <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/notExisting>* <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+1>* <http://www.ppbenchmark.com/v+3>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+3>* <http://www.ppbenchmark.com/v+6>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+>* <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/e+2>* <http://www.ppbenchmark.com/v+1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/eSelf>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE {?s !(<http://www.ppbenchmark.com/notExisting>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/eSelf>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/notExisting>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/eSelf>|^<http://www.ppbenchmark.com/eSelf>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/notExisting>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2>) <http://www.ppbenchmark.com/v1>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>|<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e6>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s WHERE{?s !(<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e4>|^<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e1>) <http://www.ppbenchmark.com/v2>}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s ^<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s ^<http://www.ppbenchmark.com/e3> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s ^<http://www.ppbenchmark.com/eSelf> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s ^<http://www.ppbenchmark.com/notExisting> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e4> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e3> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/eSelf>/<http://www.ppbenchmark.com/eSelf> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>/<http://www.ppbenchmark.com/e5> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/notExisting1>/<http://www.ppbenchmark.com/notExisting2> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e6>|<http://www.ppbenchmark.com/e7> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/eSelf>|<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e1> ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>? ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/notExisting>? ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/eSelf>? ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e3>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/eSelf>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/notExisting>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+1>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+3>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+2>+ ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e6>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/eSelf>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/notExisting>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+1>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+3>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e+2>* ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/notExisting1>|<http://www.ppbenchmark.com/notExisting2>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>|<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e6>|<http://www.ppbenchmark.com/e7>|<http://www.ppbenchmark.com/e+>|<http://www.ppbenchmark.com/e+1>|<http://www.ppbenchmark.com/e+2>|<http://www.ppbenchmark.com/e+3>|<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(^<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(^<http://www.ppbenchmark.com/e6>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(^<http://www.ppbenchmark.com/e6>|^<http://www.ppbenchmark.com/e7>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(^<http://www.ppbenchmark.com/notExisting1>|^<http://www.ppbenchmark.com/notExisting2>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e4>|^<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e6>|^<http://www.ppbenchmark.com/e7>|^<http://www.ppbenchmark.com/e+>|^<http://www.ppbenchmark.com/e+1>|^<http://www.ppbenchmark.com/e+2>|^<http://www.ppbenchmark.com/e+3>|^<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/eSelf>|^<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e4>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/notExisting1>|^<http://www.ppbenchmark.com/notExisting2>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(^<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>|<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e6>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e4>|^<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e6>) ?o}
+#-------------------------------------------------------
+SELECT ?s ?o WHERE{?s !(<http://www.ppbenchmark.com/e1>|<http://www.ppbenchmark.com/e2>|<http://www.ppbenchmark.com/e3>|<http://www.ppbenchmark.com/e4>|<http://www.ppbenchmark.com/e5>|<http://www.ppbenchmark.com/e6>|<http://www.ppbenchmark.com/e7>|<http://www.ppbenchmark.com/e+>|<http://www.ppbenchmark.com/e+1>|<http://www.ppbenchmark.com/e+2>|<http://www.ppbenchmark.com/e+3>|<http://www.ppbenchmark.com/eSelf>|^<http://www.ppbenchmark.com/e1>|^<http://www.ppbenchmark.com/e2>|^<http://www.ppbenchmark.com/e3>|^<http://www.ppbenchmark.com/e4>|^<http://www.ppbenchmark.com/e5>|^<http://www.ppbenchmark.com/e6>|^<http://www.ppbenchmark.com/e7>|^<http://www.ppbenchmark.com/e+>|^<http://www.ppbenchmark.com/e+1>|^<http://www.ppbenchmark.com/e+2>|^<http://www.ppbenchmark.com/e+3>|^<http://www.ppbenchmark.com/eSelf>) ?o}
+#-------------------------------------------------------

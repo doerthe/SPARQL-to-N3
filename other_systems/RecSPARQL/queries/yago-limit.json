@@ -1,0 +1,118 @@
+{
+  "queries": [
+    {
+        "id": 1,
+        "query": "SELECT DISTINCT ?act FROM <http://localhost:8890/yago> WHERE {
+                 {
+                   <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act <http://yago-knowledge.org/resource/actedIn> ?mov
+                 }
+                 UNION {
+                   <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                 }
+                 UNION {
+                   <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                   ?act <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                 }
+                 UNION {
+                   <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act4 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act4 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov4 .
+                   ?act <http://yago-knowledge.org/resource/actedIn> ?mov4 .
+                 }
+                 UNION {
+                   <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act5 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                   ?act5 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act4 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                   ?act4 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                   ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                   ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov4 .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov4 .
+                   ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov5 .
+                   ?act <http://yago-knowledge.org/resource/actedIn> ?mov5 .
+                 }
+                 }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 2,
+        "query": "SELECT DISTINCT ?act FROM <http://localhost:8890/yago> WHERE
+                	{
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                	  <http://data.linkedmdb.org/resource/actor/29539> .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                	}",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 3,
+        "query": "SELECT DISTINCT ?act FROM <http://localhost:8890/yago> WHERE
+                	{
+                	{
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/actedIn> ?mov1
+                  }
+                  UNION {
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/actedIn> ?movd1 .
+                    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                    ?act <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                    ?dir2 <http://yago-knowledge.org/resource/directed> ?mov2 .
+                    ?dir2 <http://yago-knowledge.org/resource/actedIn> ?movd2 .
+                  }
+                  UNION {
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/actedIn> ?movd1 .
+                    ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                    ?dir2 <http://yago-knowledge.org/resource/directed> ?mov2 .
+                    ?dir2 <http://yago-knowledge.org/resource/actedIn> ?movd2 .
+                    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                    ?act <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                    ?dir3 <http://yago-knowledge.org/resource/directed> ?mov3 .
+                    ?dir3 <http://yago-knowledge.org/resource/actedIn> ?movd3 .
+                  }
+                  UNION {
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?act4 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/actedIn> ?movd1 .
+                    ?act4 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                    ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov2 .
+                    ?dir2 <http://yago-knowledge.org/resource/directed> ?mov2 .
+                    ?dir2 <http://yago-knowledge.org/resource/actedIn> ?movd2 .
+                    ?act3 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov3 .
+                    ?dir3 <http://yago-knowledge.org/resource/directed> ?mov3 .
+                    ?dir3 <http://yago-knowledge.org/resource/actedIn> ?movd3 .
+                    ?act2 <http://yago-knowledge.org/resource/actedIn> ?mov4 .
+                    ?act <http://yago-knowledge.org/resource/actedIn> ?mov4 .
+                    ?dir4 <http://yago-knowledge.org/resource/directed> ?mov4 .
+                    ?dir4 <http://yago-knowledge.org/resource/actedIn> ?movd4 .
+                  }
+                	}",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    }
+  ]
+}

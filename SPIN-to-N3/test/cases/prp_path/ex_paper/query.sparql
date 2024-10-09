@@ -1,0 +1,5 @@
+PREFIX : <http://example.com/>
+SELECT ?x
+WHERE  {
+    ?x :inRegion+/:inCountry ?y .
+}

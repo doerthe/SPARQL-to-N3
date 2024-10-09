@@ -1,0 +1,1 @@
+SELECT ?s WHERE{?s <http://www.ppbenchmark.com/eSelf>+ <http://www.ppbenchmark.com/v1>}

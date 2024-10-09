@@ -1,0 +1,133 @@
+% Query 0:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(ID1, L_s, DType_s, LTag_s, "default") :- triple(L_s, DType_s, LTag_s, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", "URI", "", "<http://xmlns.com/foaf/0.1/Document>", "URI", "", "default"), ID1 = ["f1", L_s, DType_s, LTag_s, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", "URI", "", "<http://xmlns.com/foaf/0.1/Document>", "URI", ""].
+@include("RDF Triples").
+@output("ans1").
+
+% Query 1:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(ID1, L_o, DType_o, LTag_o, L_s, DType_s, LTag_s, "default") :- triple(L_s, DType_s, LTag_s, "<http://purl.org/dc/elements/1.1/description>", "URI", "", L_o, DType_o, LTag_o, "default"), ID1 = ["f1", L_s, DType_s, LTag_s, "<http://purl.org/dc/elements/1.1/description>", "URI", "", L_o, DType_o, LTag_o].
+@include("RDF Triples").
+@output("ans1").
+
+% Query 2:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_o, DType_o, LTag_o, "default") :- ans2(L_X, DType_X, LTag_X, L_o, DType_o, LTag_o, "default"), L_X = "<http://xmlns.com/foaf/0.1/Document>", DType_X = "URI", LTag_X = "".
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans5(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans5(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/description>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+
+% Query 3:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(ID1, L_o, DType_o, LTag_o, "default") :- ans2(ID2, L_X, DType_X, LTag_X, L_o, DType_o, LTag_o, "default"), L_X = "<http://xmlns.com/foaf/0.1/Document>", DType_X = "URI", LTag_X = "", ID1 = ["f1", L_X, DType_X, LTag_X, L_o, DType_o, LTag_o, ID2].
+ans2(ID2, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(ID4, L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans5(ID5, L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W), ID2 = ["f2", L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, L_W, DType_W, LTag_W, L_Z, DType_Z, LTag_Z, ID4, ID5].
+ans4(ID4, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(ID8, L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(ID9, L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W), ID4 = ["f4", L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, L_W, DType_W, LTag_W, L_Z, DType_Z, LTag_Z, ID8, ID9].
+ans8(ID8, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(ID16, L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default"), ID8 = ["f8", L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, ID16].
+ans16(ID16, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", "URI", "", L_Y, DType_Y, LTag_Y, "default"), ID16 = ["f16", L_X, DType_X, LTag_X, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", "URI", "", L_Y, DType_Y, LTag_Y].
+ans9(ID9, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default"), ID9 = ["f9", L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y].
+ans5(ID5, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/description>", "URI", "", L_Y, DType_Y, LTag_Y, "default"), ID5 = ["f5", L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/description>", "URI", "", L_Y, DType_Y, LTag_Y].
+@include("RDF Triples").
+@output("ans1").
+
+% Query 4:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_s, DType_s, LTag_s, "default") :- ans2(L_s, DType_s, LTag_s, L_Y, DType_Y, LTag_Y, "default"), L_Y = "<http://localhost/persons/Paul_Erdoes>", DType_Y = "URI", LTag_Y = "".
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default").
+ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default"), ans2(L_Y, DType_Y, LTag_Y, L_Z, DType_Z, LTag_Z, "default"), not ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default").
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+
+% Query 5:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_s, DType_s, LTag_s, "default") :- ans2(L_s, DType_s, LTag_s, L_Y, DType_Y, LTag_Y, "default"), L_Y = "<http://localhost/persons/Paul_Erdoes>", DType_Y = "URI", LTag_Y = "".
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default").
+ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default"), ans2(L_Y, DType_Y, LTag_Y, L_Z, DType_Z, LTag_Z, "default"), not ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default").
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans17(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans32(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans33(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans32(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans64(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans64(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans33(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans17(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans34(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans34(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+
+% Query 6:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_o, DType_o, LTag_o, "default") :- ans2(L_X, DType_X, LTag_X, L_o, DType_o, LTag_o, "default"), L_X = "<http://localhost/persons/Paul_Erdoes>", DType_X = "URI", LTag_X = "".
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default").
+ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default"), ans2(L_Y, DType_Y, LTag_Y, L_Z, DType_Z, LTag_Z, "default"), not ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default").
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+
+% Query 7:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_o, DType_o, LTag_o, "default") :- ans2(L_X, DType_X, LTag_X, L_o, DType_o, LTag_o, "default"), L_X = "<http://localhost/persons/Paul_Erdoes>", DType_X = "URI", LTag_X = "".
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default").
+ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default"), ans2(L_Y, DType_Y, LTag_Y, L_Z, DType_Z, LTag_Z, "default"), not ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default").
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans17(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans32(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans33(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans32(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans64(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans64(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans33(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans17(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans34(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans34(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+
+% Query 8:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_o, DType_o, LTag_o, L_s, DType_s, LTag_s, "default") :- ans2(L_s, DType_s, LTag_s, L_o, DType_o, LTag_o, "default").
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default").
+ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default"), ans2(L_Y, DType_Y, LTag_Y, L_Z, DType_Z, LTag_Z, "default"), not ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default").
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+
+% Query 9:
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+ans1(L_o, DType_o, LTag_o, L_s, DType_s, LTag_s, "default") :- ans2(L_s, DType_s, LTag_s, L_o, DType_o, LTag_o, "default").
+ans2(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default").
+ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default") :- ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default"), ans2(L_Y, DType_Y, LTag_Y, L_Z, DType_Z, LTag_Z, "default"), not ans2(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default").
+ans4(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans8(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans9(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans8(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans16(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans17(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans16(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans32(L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans33(L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W).
+ans32(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans64(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans64(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans33(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans17(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans34(L_Y, DType_Y, LTag_Y, L_X, DType_X, LTag_X, "default").
+ans34(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://swrc.ontoware.org/ontology#journal>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+ans9(L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://purl.org/dc/elements/1.1/creator>", "URI", "", L_Y, DType_Y, LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
+

@@ -1,0 +1,123 @@
+{
+  "queries": [
+    {
+        "id": 1,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS{
+                 CONSTRUCT {
+                   <http://data.linkedmdb.org/resource/actor/29539>
+                   <http://relationship.com/collab> ?act
+                 }
+                 FROM NAMED <http://db.ing.puc.cl/temp>
+                 FROM <urn:x-arq:DefaultGraph>
+                 WHERE {
+                 {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                   <http://data.linkedmdb.org/resource/actor/29539> .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act
+                 }
+                 UNION {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act1 .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                   GRAPH <http://db.ing.puc.cl/temp>
+                   {
+                     <http://data.linkedmdb.org/resource/actor/29539>
+                     <http://relationship.com/collab> ?act1
+                   }
+                 }
+                 }
+                 }
+                 SELECT ?z FROM NAMED <http://db.ing.puc.cl/temp>
+                 WHERE {
+                   GRAPH <http://db.ing.puc.cl/temp>
+                   {
+                     <http://data.linkedmdb.org/resource/actor/29539>
+                     <http://relationship.com/collab> ?z
+                   }
+                 }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 2,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+                	{
+                	CONSTRUCT {
+                    <http://data.linkedmdb.org/resource/actor/29539> ?dir ?act
+                  }
+                	FROM NAMED <http://db.ing.puc.cl/temp>
+                	FROM <urn:x-arq:DefaultGraph>
+                	WHERE
+                	{
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                	  <http://data.linkedmdb.org/resource/actor/29539> .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                	UNION
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act1 .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                  GRAPH <http://db.ing.puc.cl/temp>
+                	{
+                    <http://data.linkedmdb.org/resource/actor/29539> ?dir ?act1
+                  }
+                  }
+                  }
+                	}
+                	SELECT ?y ?z FROM NAMED <http://db.ing.puc.cl/temp>
+                	WHERE {
+                    GRAPH <http://db.ing.puc.cl/temp>
+                	  {
+                      <http://data.linkedmdb.org/resource/actor/29539> ?y ?z
+                    }
+                  }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 3,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+                	{
+                	CONSTRUCT {
+                    <http://data.linkedmdb.org/resource/actor/29539>
+                	  <http://relationship.com/collab> ?act
+                  }
+                	FROM NAMED <http://db.ing.puc.cl/temp>
+                	FROM <urn:x-arq:DefaultGraph>
+                	WHERE
+                	{
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                	  <http://data.linkedmdb.org/resource/actor/29539> .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                	  ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?y <http://data.linkedmdb.org/resource/movie/actor_name> ?x
+                  }
+                	UNION
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                	  ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?y <http://data.linkedmdb.org/resource/movie/actor_name> ?x .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act1 .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                	GRAPH <http://db.ing.puc.cl/temp>
+                	{
+                    <http://data.linkedmdb.org/resource/actor/29539>
+                	  <http://relationship.com/collab> ?act1
+                  }
+                  }
+                	}
+                	}
+                	SELECT ?z FROM NAMED <http://db.ing.puc.cl/temp>
+                	WHERE {
+                    GRAPH <http://db.ing.puc.cl/temp>
+                	  {
+                      <http://data.linkedmdb.org/resource/actor/29539> 
+                	    <http://relationship.com/collab> ?z
+                    }
+                  }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    }
+  ]
+}

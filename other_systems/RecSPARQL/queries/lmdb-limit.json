@@ -1,0 +1,240 @@
+{
+  "queries": [
+    {
+        "id": 1,
+        "query": "SELECT DISTINCT ?act FROM <http://localhost:8890/lmdb> WHERE {
+                 {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                   <http://data.linkedmdb.org/resource/actor/29539> .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act
+                 }
+                 UNION {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                   <http://data.linkedmdb.org/resource/actor/29539> .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act
+                 }
+                 UNION {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                   <http://data.linkedmdb.org/resource/actor/29539> .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act
+                 }
+                 UNION {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                   <http://data.linkedmdb.org/resource/actor/29539> .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                   ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                   ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act
+                 }
+                 UNION {
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                   <http://data.linkedmdb.org/resource/actor/29539> .
+                   ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                   ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                   ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                   ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                   ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                   ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                   ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act
+                 }
+                 }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 2,
+        "query": "SELECT DISTINCT ?act FROM <http://localhost:8890/lmdb> WHERE
+                	{
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                	  <http://data.linkedmdb.org/resource/actor/29539> .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act6 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act6 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov6 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov6 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov6 <http://data.linkedmdb.org/resource/movie/director> ?dir
+                  }
+                	}",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 3,
+        "query": "SELECT DISTINCT ?act FROM <http://localhost:8890/lmdb> WHERE
+                	{
+                	{
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                	  <http://data.linkedmdb.org/resource/actor/29539> .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                	  ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                	  ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?dir <http://data.linkedmdb.org/resource/movie/actor_name> ?x
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir2 .
+                    ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?y <http://data.linkedmdb.org/resource/movie/actor_name> ?x .
+                    ?dir2 <http://data.linkedmdb.org/resource/movie/director_name> ?x2 .
+                	  ?y2 <http://data.linkedmdb.org/resource/movie/actor_name> ?x2
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir3 .
+                    ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?y <http://data.linkedmdb.org/resource/movie/actor_name> ?x .
+                    ?dir2 <http://data.linkedmdb.org/resource/movie/director_name> ?x2 .
+                	  ?y2 <http://data.linkedmdb.org/resource/movie/actor_name> ?x2 .
+                    ?dir3 <http://data.linkedmdb.org/resource/movie/director_name> ?x3 .
+                	  ?y3 <http://data.linkedmdb.org/resource/movie/actor_name> ?x3
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir3 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/director> ?dir4 .
+                    ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?y <http://data.linkedmdb.org/resource/movie/actor_name> ?x .
+                    ?dir2 <http://data.linkedmdb.org/resource/movie/director_name> ?x2 .
+                	  ?y3 <http://data.linkedmdb.org/resource/movie/actor_name> ?x2 .
+                    ?dir3 <http://data.linkedmdb.org/resource/movie/director_name> ?x3 .
+                	  ?y4 <http://data.linkedmdb.org/resource/movie/actor_name> ?x3 .
+                    ?dir4 <http://data.linkedmdb.org/resource/movie/director_name> ?x4 .
+                	  ?y4 <http://data.linkedmdb.org/resource/movie/actor_name> ?x4
+                  }
+                  UNION {
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor>
+                    <http://data.linkedmdb.org/resource/actor/29539> .
+                    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act5 .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act4 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act3 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act2 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/actor> ?act .
+                    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+                    ?mov2 <http://data.linkedmdb.org/resource/movie/director> ?dir2 .
+                    ?mov3 <http://data.linkedmdb.org/resource/movie/director> ?dir3 .
+                    ?mov4 <http://data.linkedmdb.org/resource/movie/director> ?dir4 .
+                    ?mov5 <http://data.linkedmdb.org/resource/movie/director> ?dir5 .
+                    ?dir <http://data.linkedmdb.org/resource/movie/director_name> ?x .
+                	  ?y <http://data.linkedmdb.org/resource/movie/actor_name> ?x .
+                    ?dir2 <http://data.linkedmdb.org/resource/movie/director_name> ?x2 .
+                	  ?y2 <http://data.linkedmdb.org/resource/movie/actor_name> ?x2 .
+                    ?dir3 <http://data.linkedmdb.org/resource/movie/director_name> ?x3 .
+                	  ?y3 <http://data.linkedmdb.org/resource/movie/actor_name> ?x3 .
+                    ?dir4 <http://data.linkedmdb.org/resource/movie/director_name> ?x4 .
+                	  ?y4 <http://data.linkedmdb.org/resource/movie/actor_name> ?x4 .
+                    ?dir5 <http://data.linkedmdb.org/resource/movie/director_name> ?x5 .
+                	  ?y5 <http://data.linkedmdb.org/resource/movie/actor_name> ?x5
+                  }
+                	}",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    }
+  ]
+}

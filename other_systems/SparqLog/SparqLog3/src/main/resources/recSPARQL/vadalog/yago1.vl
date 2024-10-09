@@ -1,0 +1,17 @@
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+
+ans1(ID1, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default") :- ans2(ID2, L_mov, DType_mov, LTag_mov, "default"), ans3(ID3, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default"), ID1 = ["f1", L_mov, DType_mov, LTag_mov, L_act, DType_act, LTag_act, ID2, ID3].
+ans2(ID2, L_mov, DType_mov, LTag_mov, "default") :- triple("<http://yago-knowledge.org/resource/Kevin_Bacon>", "URI", "", "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov, "default"), ID2 = ["f2", "<http://yago-knowledge.org/resource/Kevin_Bacon>", "URI", "", "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov].
+ans3(ID3, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default") :- triple(L_act, DType_act, LTag_act, "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov, "default"), ID3 = ["f3", L_act, DType_act, LTag_act, "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov].
+@include("RDF Triples").
+@output("ans1").
+
+ans1(ID1, L_act, DType_act, LTag_act, L_act2, DType_act2, LTag_act2, L_mov, DType_mov, LTag_mov, "default") :- ans2(ID2, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default"), ans3(ID3, L_act2, DType_act2, LTag_act2, L_mov, DType_mov, LTag_mov, "default"), ID1 = ["f1", L_mov, DType_mov, LTag_mov, L_act, DType_act, LTag_act, L_act2, DType_act2, LTag_act2, ID2, ID3].
+ans2(ID2, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default") :- ans4(ID4, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default"), ans5(ID5, L_act, DType_act, LTag_act, "default"), ID2 = ["f2", L_mov, DType_mov, LTag_mov, L_act, DType_act, LTag_act, ID4, ID5].
+ans4(ID4, L_act, DType_act, LTag_act, L_mov, DType_mov, LTag_mov, "default") :- triple(L_act, DType_act, LTag_act, "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov, "default"), ID4 = ["f4", L_act, DType_act, LTag_act, "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov].
+ans5(ID5, L_act, DType_act, LTag_act, "default") :- triple("<http://yago-knowledge.org/resource/Kevin_Bacon>", "URI", "", "<http://relationship.com/collab>", "URI", "", L_act, DType_act, LTag_act, "default"), ID5 = ["f5", "<http://yago-knowledge.org/resource/Kevin_Bacon>", "URI", "", "<http://relationship.com/collab>", "URI", "", L_act, DType_act, LTag_act].
+ans3(ID3, L_act2, DType_act2, LTag_act2, L_mov, DType_mov, LTag_mov, "default") :- triple(L_act2, DType_act2, LTag_act2, "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov, "default"), ID3 = ["f3", L_act2, DType_act2, LTag_act2, "<http://yago-knowledge.org/resource/actedIn>", "URI", "", L_mov, DType_mov, LTag_mov].
+@include("RDF Triples").
+@output("ans1").
+
