@@ -27,7 +27,7 @@ Run only _spin3_:
 For instance:
 ```
 ./run_spin3.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3 true true true results/zika-queries.nt
-./run_spin3.sh ../cases/prp_path/11/query.sparql ../cases/prp_path/11/data.n3 true false false
+./run_spin3.sh ../cases/prp_path/1/query.sparql ../cases/prp_path/1/data.nt true false false
 ```
 (by default, the results will appear under `tmp/results.n3`)
 
