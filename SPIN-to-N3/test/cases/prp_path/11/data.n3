@@ -1,0 +1,7 @@
+# <http://example.org/gmark/1> <http://example.org/gmark/p16> <http://example.org/gmark/1> .
+
+# <http://example.org/gmark/1> <http://example.org/gmark/p16> <http://example.org/gmark/2> .
+# <http://example.org/gmark/2> <http://example.org/gmark/p16> <http://example.org/gmark/3> . 
+# <http://example.org/gmark/3> <http://example.org/gmark/p16> <http://example.org/gmark/1> .
+
+<http://example.org/gmark/1> <http://example.org/gmark/p16> <http://example.org/gmark/2> .
