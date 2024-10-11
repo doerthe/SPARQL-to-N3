@@ -84,9 +84,9 @@
    ( ?start ?o ?visited ) aux:stepThroughPath ?nested .
    #make sure that the last step is really "done"
    (?start ?o) aux:fullyInstantiated true.
-   ( ( ?start ) ?visited )!list:append list:unique ?visited2 .
+   ( ( ?start ) ?visited ) list:append ?visited2 .
    # "visited:" log:trace ( ?start ?o ?visited2 ) .
-   ?o list:notIn ?visited2 .
+   _:x e:fail {?o list:in ?visited2} .
    ( ?o ?end ?visited2 ) aux:stepThroughPath ( ?nested 1 -2 ) .
 } .
 
@@ -212,8 +212,7 @@
 # help functions
 {(?a ?b) aux:fullyInstantiated true}<={?a log:rawType ?t1. ?t1 log:notEqualTo log:ForAll. ?b log:rawType ?t2. ?t2 log:notEqualTo log:ForAll.}.
 
-{ ?m list:notIn ?lst } 
-<= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .
+
 
 ######################################
 # OPTIONAL
@@ -265,7 +264,7 @@
    (?call2 ?call1) log:conjunction ?call.
    ?call log:copy ?out.
    true log:call ?out.
-   9 log:trace ?out.
+  # 9 log:trace ?out.
    ?out log:includes ?out1, ?out2.
 }.
 
