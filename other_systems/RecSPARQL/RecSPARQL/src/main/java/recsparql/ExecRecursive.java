@@ -29,11 +29,11 @@ public class ExecRecursive {
 
 	public static final String root = "/Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/";
 	
-//	public static final String tdbPath = root + "datasets/GMark/gmark3";
-//	public static final String queryPath = root + "queries/gmark.json";
+	public static final String tdbPath = root + "datasets/GMark/gmark3";
+	public static final String queryPath = root + "queries/gmark.json";
 
-	public static final String tdbPath = root + "datasets/lmdb";
-	public static final String queryPath = root + "queries/lmdb.json";
+//	public static final String tdbPath = root + "datasets/lmdb";
+//	public static final String queryPath = root + "queries/lmdb.json";
 	
 //	public static final String tdbPath = root + "datasets/yagoFacts";
 //	public static final String queryPath = root + "queries/yago-facts.json";

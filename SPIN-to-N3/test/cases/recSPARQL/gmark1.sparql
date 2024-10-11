@@ -2,5 +2,6 @@ PREFIX : <http://example.org/gmark/>
 
 SELECT * 
 WHERE { 
-    ?x0 (:p16/^:p16) ?x1 . ?x1 (:p16/^:p16)* ?x2 
+    ?x0 (:p16/^:p16) ?x1 . 
+    ?x1 (:p16/^:p16)* ?x2 
 }

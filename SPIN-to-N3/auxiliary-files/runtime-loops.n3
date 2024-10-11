@@ -86,7 +86,9 @@
    (?start ?o) aux:fullyInstantiated true.
    ( ( ?start ) ?visited ) list:append ?visited2 .
    # "visited:" log:trace ( ?start ?o ?visited2 ) .
+
    _:x e:fail {?o list:in ?visited2} .
+
    ( ?o ?end ?visited2 ) aux:stepThroughPath ( ?nested 1 -2 ) .
 } .
 
@@ -213,6 +215,9 @@
 {(?a ?b) aux:fullyInstantiated true}<={?a log:rawType ?t1. ?t1 log:notEqualTo log:ForAll. ?b log:rawType ?t2. ?t2 log:notEqualTo log:ForAll.}.
 
 
+# { ?m aux:notInList ?lst } 
+# # <= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .
+# <= { _:x e:fail { ?m list:in ?lst } } .
 
 ######################################
 # OPTIONAL
