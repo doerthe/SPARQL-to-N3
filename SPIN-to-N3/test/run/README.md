@@ -54,6 +54,7 @@ To run recSPARQL tests:
 ./run_spin3.sh ../cases/recSPARQL/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-preproc.nt true true false results/lmdb1.nt
 ```
 
+GMark (property path tests from recSPARQL)
 ```
 ./run_spin3.sh ../cases/recSPARQL/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt true false false results/gmark1.nt
 ```
