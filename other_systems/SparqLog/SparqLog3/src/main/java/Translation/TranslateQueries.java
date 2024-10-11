@@ -13,6 +13,82 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TranslateQueries {
+
+	public static void main(String[] args) throws Exception {
+//		translateSparqlBenchmarks();
+		translateRecSparql();
+	}
+
+	public static void translateSparqlBenchmarks() {
+		for (String schema : Arrays.asList("beseppi", "swdfmygraph", "sp2bench50k", "sp2benchPropertyPath",
+				"sp2benchOntology")) {
+			System.out.println("Benchmark " + schema + ":");
+
+			String queryDeliminator = "#---";
+			String filePath = getQueryPathForSchema(schema);
+			List<String> queries = loadQueries(filePath, queryDeliminator);
+
+			SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
+
+			int i = 0;
+			try (FileWriter myWriter = new FileWriter(
+					"src/main/resources/SPARQL_Benchmarks/Vadalog Translation of Benchmark Queries/" + schema
+							+ ".txt");) {
+
+				for (String query : queries) {
+					System.out.println("Translating query " + i + " to SparqLog.");
+
+					myWriter.write("% Query " + i++ + ":\n");
+					insertPreamble(myWriter);
+					translateQuery(sparqlTranslator, query, myWriter);
+					myWriter.write("\n\n");
+				}
+
+				myWriter.flush();
+				myWriter.close();
+
+			} catch (IOException e) {
+				e.printStackTrace();
+				return;
+			}
+		}
+	}
+
+	public static void translateRecSparql() throws IOException {
+		SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
+
+		String queryDeliminator = "#---";
+
+		String path = "src/main/resources/recSPARQL/";
+
+		for (File file : new File(path).listFiles()) {
+			if (file.isDirectory())
+				continue;
+
+			System.out.println("Translating " + file.getName());
+
+			String vlName = file.getName().substring(0, file.getName().lastIndexOf(".")) + ".vl";
+			File vlFile = new File(path + "vadalog", vlName);
+			FileWriter w = new FileWriter(vlFile, false);
+
+			insertPreamble(w);
+
+			List<String> queries = loadQueries(file.getPath(), queryDeliminator);
+			int i = 0;
+			for (String query : queries) {
+				System.out.println("translating query " + i++ + " to SparqLog.");
+
+				translateQuery(sparqlTranslator, query, w);
+				w.write("\n\n");
+			}
+
+			System.out.println("");
+
+			w.flush();
+			w.close();
+		}
+	}
+
 	public static List<String> loadQueries(String filePath, String queryDeliminator) {
 		File file = new File(filePath);
 		List<String> queries = new ArrayList<>();
@@ -91,80 +167,5 @@ public class TranslateQueries {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void translateSparqlBenchmarks() {
-		for (String schema : Arrays.asList("beseppi", "swdfmygraph", "sp2bench50k", "sp2benchPropertyPath",
-				"sp2benchOntology")) {
-			System.out.println("Benchmark " + schema + ":");
-
-			String queryDeliminator = "#---";
-			String filePath = getQueryPathForSchema(schema);
-			List<String> queries = loadQueries(filePath, queryDeliminator);
-
-			SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
-
-			int i = 0;
-			try (FileWriter myWriter = new FileWriter(
-					"src/main/resources/SPARQL_Benchmarks/Vadalog Translation of Benchmark Queries/" + schema
-							+ ".txt");) {
-
-				for (String query : queries) {
-					System.out.println("Translating query " + i + " to SparqLog.");
-
-					myWriter.write("% Query " + i++ + ":\n");
-					insertPreamble(myWriter);
-					translateQuery(sparqlTranslator, query, myWriter);
-					myWriter.write("\n\n");
-				}
-
-				myWriter.flush();
-				myWriter.close();
-
-			} catch (IOException e) {
-				e.printStackTrace();
-				return;
-			}
-		}
-	}
-
-	public static void translateRecSparql() throws IOException {
-		SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
-
-		String queryDeliminator = "#---";
-
-		String path = "src/main/resources/recSPARQL/";
-
-		for (File file : new File(path).listFiles()) {
-			if (file.isDirectory())
-				continue;
-
-			System.out.println("Translating " + file.getName());
-
-			String vlName = file.getName().substring(0, file.getName().lastIndexOf(".")) + ".vl";
-			File vlFile = new File(path + "vadalog", vlName);
-			FileWriter w = new FileWriter(vlFile, false);
-
-			insertPreamble(w);
-
-			List<String> queries = loadQueries(file.getPath(), queryDeliminator);
-			int i = 0;
-			for (String query : queries) {
-				System.out.println("translating query " + i++ + " to SparqLog.");
-
-				translateQuery(sparqlTranslator, query, w);
-				w.write("\n\n");
-			}
-
-			System.out.println("");
-
-			w.flush();
-			w.close();
-		}
-	}
-
-	public static void main(String[] args) throws Exception {
-//		translateSparqlBenchmarks();
-		translateRecSparql();
 	}
 }
