@@ -875,6 +875,6 @@ _:sk_868 ex:result (("x1" <http://example.org/gmark/43844>) ("x0" <http://exampl
 _:sk_869 ex:result (("x1" <http://example.org/gmark/43844>) ("x0" <http://example.org/gmark/43844>) ("x2" <http://example.org/gmark/43354>)).
 _:sk_870 ex:result (("x1" <http://example.org/gmark/43845>) ("x0" <http://example.org/gmark/43845>) ("x2" <http://example.org/gmark/43845>)).
 _:sk_871 ex:result (("x1" <http://example.org/gmark/43846>) ("x0" <http://example.org/gmark/43846>) ("x2" <http://example.org/gmark/43846>)).
-# 2024-10-11T10:54:57.063Z in=533 out=872 ent=872 step=13160 brake=2 inf=260004256 sec=19.696 inf/sec=13200866
+# 2024-10-11T11:24:08.670Z in=532 out=872 ent=872 step=13160 brake=2 inf=259552961 sec=19.883 inf/sec=13054014
 # ENDS
 
