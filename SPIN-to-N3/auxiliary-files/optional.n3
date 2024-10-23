@@ -1,0 +1,115 @@
+@prefix aux: <http://example.org/aux#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+
+######################################
+# OPTIONAL
+#####################################
+
+
+# predicate returns bindings in out and pattern which matched with ?call
+{?pattern aux:optionalQ ?opt }<={ 
+(?pattern ?opt)  aux:getCallPattern (?out ?call).
+
+ ?call log:includes ?out.    
+ }.
+
+{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+
+  # ?pattern aux:variableCheck true.
+  # ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
+  # true log:callWithCut true.
+  # (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+  ?pattern aux:unnest (?out1 ?call1).
+
+  ?optional aux:unnest (?out2 ?call2).
+
+   ( ?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call).
+
+   }.
+
+
+
+# un-nest 
+{?pattern aux:unnest (?out1 ?call1)}<=
+{  
+   ?pattern aux:variableCheck true.
+   ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
+   true log:callWithCut true.
+   (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+   }.
+
+{?pattern aux:unnest ({} ?pattern)}<=
+{ 
+#  ?pattern log:notEqualTo {?p1 aux:optionalQ ?o1}. 
+#  true log:callWithCut true.
+}.
+
+# try optional
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call)}
+<=
+{   
+   (?call2 ?call1) log:conjunction ?call.
+   ?call log:copy ?out.
+   true log:call ?out.
+   ?out log:includes ?out1, ?out2.
+}.
+
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out3 ?call1).}
+<=
+{  
+   ?call1 log:copy ?out3. #here
+   true log:call ?out3.
+   (?call1 ?call2) log:conjunction ?con2.
+   ?con2 log:copy ?con3.
+   ?con3 log:includes ?out3.
+   ?xx log:notIncludes ?con3.
+}.
+
+
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional ({} {}).}
+<=
+{  
+ #  ?call1 log:copy ?out3.
+   _:x log:notIncludes ?call1
+}.
+
+
+
+#test whether something is a universal variable
+{?p aux:variableCheck true}<={
+   ?p log:equalTo {?a ?b ?c}.
+   ?b log:rawType ?type.
+   ?type log:notEqualTo log:ForAll
+ }.
+
+
+
+#########################################################
+{(?a1 ?a2) aux:oneBound true}<={?a1 log:bound true. }.
+{(?a1 ?a2) aux:oneBound true}<={?a2 log:bound true.}.
+
+
+######################################
+# BUILTINS
+#####################################
+
+{ ?n aux:ceil ?r2 } 
+<= {
+    ?n math:rounded ?r .
+    ?r math:lessThan ?n . # didn't round up
+    ( ?n 1 ) math:sum ?n2 .
+    ?n2 math:rounded ?r2 .
+} .
+
+{ ?n aux:ceil ?r } 
+<= {
+    ?n math:rounded ?r .
+    ?r math:notLessThan ?n
+} .
