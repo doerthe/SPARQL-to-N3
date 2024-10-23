@@ -758,7 +758,7 @@ aux:value log:skolem ?value.
 #many
 {(?path ?s ?o) aux:pathTranslatesTo { ?s ?string  ?o  } .}
 <={ 
-0 e:trace (?path  ).
+
    ?path a sp:ModPath;
         sp:modMax -2;
         sp:subPath ?p.
@@ -766,9 +766,9 @@ aux:value log:skolem ?value.
     ?sk log:uri ?string.
 
    
-1 e:trace (?path ?p ).
+
  (?p ?o ?s) aux:pathTranslatesTo ?pattern.
-2 e:trace (?p ?pattern).
+
    {} log:becomes {?pattern => { ?s ?string  ?o  } . { ?s ?string  ?x. ?x ?string  ?o  }=>{ ?s ?string ?o  } }.
 
 }.
