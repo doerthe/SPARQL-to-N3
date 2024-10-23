@@ -879,6 +879,8 @@ aux:value log:skolem ?value.
 <=
 {
     ?p log:rawType log:Other.
+    ?p log:uri ?uri.
+    ?uri string:notMatches ".*bn_.*"
 }.
 
 
