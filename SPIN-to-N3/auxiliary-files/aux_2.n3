@@ -765,10 +765,13 @@ aux:value log:skolem ?value.
 
 
    
+?s log:skolem ?s1.
+?o log:skolem ?o1.
 
- (?p ?s ?o) aux:pathTranslatesTo ?pattern.
+ (?p ?s1 ?o1) aux:pathTranslatesTo ?pattern.
 
-   {} log:becomes {?pattern => { ?s ?path ?o  } . { ?s ?path ?x. ?x ?path ?o  }=>{ ?s ?path ?o  } }.
+
+   {} log:becomes {?pattern => { ?s1 ?path ?o1  } . { ?s1 ?path ?x. ?x ?path ?o1  }=>{ ?s1 ?path ?o1  } }.
 
 }.
 
