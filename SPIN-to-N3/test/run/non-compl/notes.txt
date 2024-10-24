@@ -45,6 +45,7 @@ extra universal outputted; do we support named graphs?..
 (pp07) Path with one graph
 (pp34) Named Graph 1
 (pp35) Named Graph 2
+-> no support for named graphs
 
 results for x path* y should also include x:
 (pp14) Star path over foaf:knows
