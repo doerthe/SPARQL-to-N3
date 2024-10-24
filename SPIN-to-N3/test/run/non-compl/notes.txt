@@ -35,8 +35,8 @@ SUM: rounding difference in sin3
 
 -- property paths
 do not finish (commented out for now)
-(pp16) Duplicate paths and cycles through foaf:knows*
-(pp25) Diamond, with loop -- :p+
+(pp16) Duplicate paths and cycles through foaf:knows* -> works with fw-chaining
+(pp25) Diamond, with loop -- :p+ -> works with fw-chaining
 (pp36) Arbitrary path with bound endpoints
 (pp37) Nested (*)*
 
@@ -45,6 +45,7 @@ extra universal outputted; do we support named graphs?..
 (pp07) Path with one graph
 (pp34) Named Graph 1
 (pp35) Named Graph 2
+-> no support for named graphs
 
 results for x path* y should also include x:
 (pp14) Star path over foaf:knows
