@@ -36,7 +36,7 @@ SUM: rounding difference in sin3
 -- property paths
 do not finish (commented out for now)
 (pp16) Duplicate paths and cycles through foaf:knows* -> works with fw-chaining
-(pp25) Diamond, with loop -- :p+
+(pp25) Diamond, with loop -- :p+ -> works with fw-chaining
 (pp36) Arbitrary path with bound endpoints
 (pp37) Nested (*)*
 
