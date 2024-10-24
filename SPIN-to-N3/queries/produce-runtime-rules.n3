@@ -12,3 +12,9 @@
   {?x =>{ ?s ?p ?o }.
   ?p string:startsWith "https"
   }=>{?x =>{ ?s ?p ?o }}.
+
+
+    {?x =>{ ?s ?p ?o }.
+  ?p log:uri ?uri.
+  ?uri string:contains "bn_"
+  }=>{?x =>{ ?s ?p ?o }}.

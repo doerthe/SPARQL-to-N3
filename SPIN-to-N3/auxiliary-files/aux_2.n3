@@ -756,20 +756,19 @@ aux:value log:skolem ?value.
 
 
 #many
-{(?path ?s ?o) aux:pathTranslatesTo { ?s ?string  ?o  } .}
+{(?path ?s ?o) aux:pathTranslatesTo { ?s ?path ?o  } .}
 <={ 
 
    ?path a sp:ModPath;
         sp:modMax -2;
         sp:subPath ?p.
-    ?path log:skolem ?sk.
-    ?sk log:uri ?string.
+
 
    
 
- (?p ?o ?s) aux:pathTranslatesTo ?pattern.
+ (?p ?s ?o) aux:pathTranslatesTo ?pattern.
 
-   {} log:becomes {?pattern => { ?s ?string  ?o  } . { ?s ?string  ?x. ?x ?string  ?o  }=>{ ?s ?string ?o  } }.
+   {} log:becomes {?pattern => { ?s ?path ?o  } . { ?s ?path ?x. ?x ?path ?o  }=>{ ?s ?path ?o  } }.
 
 }.
 
@@ -795,9 +794,9 @@ aux:value log:skolem ?value.
    ?path a sp:ModPath;
         sp:modMax -1;
         sp:subPath ?p.
-    ?path log:skolem ?sk.
+  
 
- (?p ?o ?s) aux:pathTranslatesTo ?pattern.
+ (?p ?s ?o) aux:pathTranslatesTo ?pattern.
 }.
 
 #negation
@@ -856,8 +855,7 @@ aux:value log:skolem ?value.
 {(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
 <={ 
    ?path a sp:AltPath;
-        sp:path1 ?p1;
-        sp:path2 ?p2.
+        sp:path1 ?p1.
 
 
 (?p1 ?s ?o) aux:pathTranslatesTo ?pattern.
@@ -865,7 +863,6 @@ aux:value log:skolem ?value.
 {(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
 <={ 
    ?path a sp:AltPath;
-        sp:path1 ?p1;
         sp:path2 ?p2.
 
 

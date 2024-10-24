@@ -103,3 +103,12 @@ For instance:
 ```
 java -jar sparql.jar -n3 ../cases/test/data.n3 -query ../cases/test/optional.sparql
 ```
+
+# forward-chaining alternatives
+For all the scirpts mentioned above which use Sin3, we there exist new forward chaing versions which are most likely more performant. These are:
+
+run_spin3_forward.sh
+run_manifest_fw.py
+test_select_fw.sh   
+
+These can be used as described above.

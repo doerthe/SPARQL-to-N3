@@ -30,6 +30,7 @@ if [[ $preproc == "true" ]]; then
     sed -i'' -e 's|<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>|<http://www.w3.org/1999/02/22-rdf-syntax-ns#r3st>|g' $nt_file
 fi
 
+
 spin_file="tmp/query.spin"
 new_spin_file="tmp/query_ground.spin"
 if [[ $verbose == "true" ]]; then
