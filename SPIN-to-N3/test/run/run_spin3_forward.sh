@@ -78,7 +78,7 @@ if [[ $recursion == "true" ]]; then
     eye ../../auxiliary-files/optional.n3 $n3_file $n3_run --turtle $nt_file --query $n3_file --nope > $result_file
 else
     # not including query as data (before):
-    eye ../../auxiliary-files/optional.n3  $n3_run --turtle $nt_file --query $n3_file --nope > $result_file
+    eye ../../auxiliary-files/optional_2.n3  $n3_run --turtle $nt_file --query $n3_file --nope > $result_file
 fi
 
 if [[ $verbose == "true" ]]; then
