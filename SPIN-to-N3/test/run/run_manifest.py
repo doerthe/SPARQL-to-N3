@@ -70,8 +70,8 @@ def run_manifest(path, test, check_compl, engine):
     print(f"# total: {total_num}; # non-compliant: {noncompl_num}")
 
 def run_test(g, test, compl, engine):   
-    if (g.value(test, RDF.type) != MF.QueryEvaluationTest):
-        return True
+    # if (g.value(test, RDF.type) != MF.QueryEvaluationTest):
+    #     return True
     
     name = str(g.value(test, MF.name))
     action = g.value(test, MF.action)

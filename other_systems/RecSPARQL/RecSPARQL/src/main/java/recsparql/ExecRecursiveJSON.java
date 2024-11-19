@@ -34,7 +34,15 @@ public class ExecRecursiveJSON {
 		JSONArray queries_list = (JSONArray) queries_object.get("queries");
 
 //		for (int i = 0; i < queries_list.size(); i++) {
+
+		// START parameters
+		
+		// try different query
 		int i = 0;
+		
+		// END parameters
+		
+		
 		System.out.println("### Query " + i + " ###");
 
 		for (int j = 0; j < REPETITIONS; j++) {

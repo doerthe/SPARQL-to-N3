@@ -26,8 +26,11 @@ if [[ $preproc == "true" ]]; then
     if [[ $verbose == "true" ]]; then
         echo -e "> preprocessing n-triples <"
     fi
+    start=$(gdate +%s%N)
     sed -i'' -e 's|<http://www.w3.org/1999/02/22-rdf-syntax-ns#first>|<http://www.w3.org/1999/02/22-rdf-syntax-ns#f1rst>|g' $nt_file
     sed -i'' -e 's|<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>|<http://www.w3.org/1999/02/22-rdf-syntax-ns#r3st>|g' $nt_file
+    end=$(gdate +%s%N)
+    time_preproc=$(bc -l <<< "scale = 2; ($end-$start)/1000000000")
 fi
 
 spin_file="tmp/query.spin"
@@ -72,5 +75,8 @@ if [[ $verbose == "true" ]]; then
 fi
 
 if [[ $verbose == "true" ]]; then
-    echo -e "\ngenerate nt: $time_gen_nt\ngenerate spin: $time_gen_spin\ngenerate n3: $time_gen_n3\nexec n3: $time_exec_n3"
+    if [[ $preproc == "true" ]]; then
+        echo -e "\ngenerate nt: $time_gen_nt s\npreproc: $time_preproc s"
+    fi
+    echo -e "\ngenerate spin: $time_gen_spin s\ngenerate n3: $time_gen_n3 s\nexec n3: $time_exec_n3 s"
 fi

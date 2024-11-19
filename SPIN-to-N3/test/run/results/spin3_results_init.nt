@@ -1,0 +1,11 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime.n3 --turtle /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl --query tmp/n3query.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_1 ex:result (("p" 4) ("c" _:sk_2) ("cd" _:sk_3)).
+_:sk_5 ex:result (("p" 2) ("c" _:sk_6) ("cd" _:sk_7)).
+_:sk_9 ex:result (("p" 5) ("c" _:sk_10) ("cd" _:sk_11)).
+# 2024-11-19T21:40:41.581Z in=58 out=3 ent=3 step=5 brake=2 inf=147152 sec=0.031 inf/sec=4746839
+# ENDS
+

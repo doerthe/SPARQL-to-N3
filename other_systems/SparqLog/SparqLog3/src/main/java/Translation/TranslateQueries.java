@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Writer;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -14,9 +15,38 @@ import java.util.List;
 
 public class TranslateQueries {
 
+	// help with converting into nemo:
+	// (remove ID args):
+	// ID\d, -> 
+	// (remove ID creation)
+	// , ID\d = .*\. -> .
+	// (?'s for variables)
+	// (case-sensitive) (\(|,)(\s*)[A-Z] -> $1$2?$3
+	
 	public static void main(String[] args) throws Exception {
 //		translateSparqlBenchmarks();
-		translateRecSparql();
+//		translateRecSparql();
+		
+		translateSingleQuery();
+	}
+	
+	public static void translateSingleQuery() throws Exception {
+		String query = 
+				"PREFIX :  <http://example/>\n"
+				+ "PREFIX : <>  \n"
+				+ "SELECT *\n"
+				+ "    { :x1 :p ?v . 	\n"
+//				+ "      OPTIONAL { :x2 :q ?w . \n"
+//				+ "        OPTIONAL { :x3 :p ?v } \n"
+//				+ "      } \n"
+				+ "    }";
+		
+		SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
+		Writer w = new PrintWriter(System.out);
+		insertPreamble(w);
+		translateQuery(sparqlTranslator, query, w);
+		
+		w.flush();
 	}
 
 	public static void translateSparqlBenchmarks() {

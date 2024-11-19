@@ -43,8 +43,30 @@ java -jar sparql2spin.jar -sparql <sparql> -multi <spin>
 
 # Experiments
 
-To run recSPARQL tests:
-(preprocess the data first as it takes a while for large files)
+Currently, SiN3 also involves preprocessing the data (converting into n-triples, and then replacing first/rest pairs).
+This step only has to take place once.
+
+To pre-process files:  
+__Note__: create a copy of the file first as it will be updated by the script.  
+__Note__: if turtle has to be translated first, the result will show up under `tmp/ntriples.nt`
+
+(attributes: data)  
+```
+./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt
+```
+
+```
+./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt
+```
+
+```
+./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt
+```
+
+
+To run recSPARQL tests:  
+__Note__: you can still do pre-processing as part of the run, by setting the attribute to true (same note as above applies).
+(attributes: query, data, verbose, recursion, preproc, result_file)
 
 ```
 ./run_spin3.sh ../cases/recSPARQL/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
@@ -57,6 +79,11 @@ To run recSPARQL tests:
 GMark (property path tests from recSPARQL)
 ```
 ./run_spin3.sh ../cases/recSPARQL/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt true false false results/gmark1.nt
+```
+
+For now, to try out a recursive property path query with loops:
+```
+./run_spin3_loops.sh ../cases/custom/query.sparql ../cases/custom/data.n3 true true true
 ```
 
 
@@ -72,7 +99,7 @@ Where `<manifest>` is the path to the manifest file, `<engine>` is the SPARQL en
 
 For instance:
 ```
-python3 run_manifest.py --manifest ../cases/ARQ/GroupBy/manifest.ttl --engine rdflib --ordered
+python3 run_manifest.py --manifest ../cases/ARQ/GroupBy/manifest.ttl --engine rdflib
 ```
 Will run all tests in the listed `manifest` file and compare results with `rdflib` where result ordering is retained.
 

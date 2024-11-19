@@ -29332,6 +29332,6 @@
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Sakari_Jurkka>.
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Kunto_Karapää>.
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Ritva_Arvelo>.
-# 2024-10-02T19:19:34.632Z in=6215382 out=58660 ent=29330 step=5628724 brake=16 inf=529641561 sec=28.643 inf/sec=18491134
+# 2024-11-19T20:48:02.883Z in=6215382 out=58660 ent=29330 step=5628724 brake=16 inf=529641658 sec=25.293 inf/sec=20940247
 # ENDS
 
