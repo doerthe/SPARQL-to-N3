@@ -51,14 +51,18 @@ __Note__: create a copy of the file first as it will be updated by the script.
 __Note__: if turtle has to be translated first, the result will show up under `tmp/ntriples.nt`
 
 (attributes: data)  
+
+- **yago**  
 ```
 ./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt
 ```
 
+- **lmdb**  
 ```
 ./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt
 ```
 
+- **gmark**  
 ```
 ./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt
 ```
@@ -68,17 +72,19 @@ To run recSPARQL tests:
 __Note__: you can still do pre-processing as part of the run, by setting the attribute to true (same note as above applies).
 (attributes: query, data, verbose, recursion, preproc, result_file)
 
+- **yago**  
 ```
-./run_spin3.sh ../cases/recSPARQL/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
-```
-
-```
-./run_spin3.sh ../cases/recSPARQL/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-preproc.nt true true false results/lmdb1.nt
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
 ```
 
-GMark (property path tests from recSPARQL)
+- **lmdb**  
 ```
-./run_spin3.sh ../cases/recSPARQL/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt true false false results/gmark1.nt
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-preproc.nt true true false results/lmdb1.nt
+```
+
+- **gmark**  
+```
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt true false false results/gmark1.nt
 ```
 
 For now, to try out a recursive property path query with loops:

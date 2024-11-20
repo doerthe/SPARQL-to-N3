@@ -1,0 +1,4 @@
+z=http://example.org/gmark/278415,y=http://example.org/propaux,x=http://example.org/gmark/252315,w=http://example.org/gmark/252315,v=http://example.org/propaux,u=http://example.org/gmark/242612,t=http://example.org/propaux
+z=http://example.org/gmark/253147,y=http://example.org/propaux,x=http://example.org/gmark/240916,w=http://example.org/gmark/240916,v=http://example.org/propaux,u=http://example.org/gmark/251992,t=http://example.org/propaux
+z=http://example.org/gmark/257733,y=http://example.org/propaux,x=http://example.org/gmark/240916,w=http://example.org/gmark/240916,v=http://example.org/propaux,u=http://example.org/gmark/251992,t=http://example.org/propaux
+z=http://example.org/gmark/241110,y=http://example.org/propaux,x=http://example.org/gmark/255000,w=http://example.org/gmark/255000,v=http://example.org/propaux,u=http://example.org/gmark/254055,t=http://example.org/propaux

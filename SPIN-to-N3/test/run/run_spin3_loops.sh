@@ -37,16 +37,19 @@ spin_file="tmp/query.spin"
 if [[ $verbose == "true" ]]; then
     echo -e "\n> getting spin <"
 fi
-java -jar sparql2spin.jar -sparql $query  > $spin_file
+# java -jar sparql2spin.jar -sparql $query  > $spin_file
+time_gen_spin=$( TIMEFORMAT="%R"; { time { java -jar sparql2spin.jar -sparql $query  > $spin_file; } } 2>&1 )
 if [[ $verbose == "true" ]]; then
     echo -e "(stored at $spin_file)"
 fi
 
 n3_file="tmp/n3query.n3"
+n3_stderr="tmp/n3query-output.txt"
 if [[ $verbose == "true" ]]; then
     echo -e "\n> getting n3 rules <"
 fi
-eye $spin_file ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/ > $n3_file
+# eye $spin_file ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/ > $n3_file
+time_gen_n3=$( TIMEFORMAT="%R"; { time { eye $spin_file ../../auxiliary-files/aux.n3 --query ../../queries/query_general.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/ > $n3_file 2>$n3_stderr; } } 2>&1 )
 if [[ $verbose == "true" ]]; then
     echo -e "(stored at $n3_file)"
 fi

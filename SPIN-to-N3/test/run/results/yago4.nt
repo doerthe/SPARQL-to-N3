@@ -11,6 +11,6 @@ _:sk_3 ex:result (("z" <http://yago-knowledge.org/resource/Germany>) ("v" <http:
 _:sk_4 ex:result (("z" <http://yago-knowledge.org/resource/Germany>) ("v" <http://yago-knowledge.org/resource/Belgium>)).
 _:sk_5 ex:result (("z" <http://yago-knowledge.org/resource/Germany>) ("v" <http://yago-knowledge.org/resource/China>)).
 _:sk_6 ex:result (("z" <http://yago-knowledge.org/resource/Germany>) ("v" <http://yago-knowledge.org/resource/United_Kingdom>)).
-# 2024-10-03T14:39:09.577Z in=6215382 out=16 ent=8 step=16 brake=2 inf=167969621 sec=15.766 inf/sec=10653915
+# 2024-11-20T15:34:50.860Z in=6215382 out=16 ent=8 step=16 brake=2 inf=167969720 sec=17.432 inf/sec=9635711
 # ENDS
 

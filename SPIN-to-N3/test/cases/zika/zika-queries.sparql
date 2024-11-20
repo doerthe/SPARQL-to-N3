@@ -126,30 +126,30 @@ CONSTRUCT {
     }
 } .
 
-# (comment this out for SPIN (TopBraid))
+# (comment this out for SPIN (TopBraid); will go into infinite loop due to bnode)
 # @filter
-CONSTRUCT {
-    [ a fh:ServiceRequest ;
-        fh:code [
-            fh:concept [
-            fh:coding ( [
-                fh:system [ fh:v "http://snomed.org/sct"^^xsd:anyURI ] ;
-                fh:code [ fh:v "69363007" ]
-            ] ) ;
-            fh:text [ fh:v "Zika virus NAAT on serum" ]
-            ]
-        ]
-    ] .
+# CONSTRUCT {
+#     [ a fh:ServiceRequest ;
+#         fh:code [
+#             fh:concept [
+#             fh:coding ( [
+#                 fh:system [ fh:v "http://snomed.org/sct"^^xsd:anyURI ] ;
+#                 fh:code [ fh:v "69363007" ]
+#             ] ) ;
+#             fh:text [ fh:v "Zika virus NAAT on serum" ]
+#             ]
+#         ]
+#     ] .
 
-} WHERE {
-    ?p zk:isPregnant true .
-    ?p zk:hasZikaSymptom ?symptom .
+# } WHERE {
+#     ?p zk:isPregnant true .
+#     ?p zk:hasZikaSymptom ?symptom .
 
-    ?p zk:possibleZikaExposure true .
+#     ?p zk:possibleZikaExposure true .
     
-    ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince .
-    FILTER (?timeSince < 7257600000) # 12 weeks
-} .
+#     ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince .
+#     FILTER (?timeSince < 7257600000) # 12 weeks
+# } .
 
 
 # utilities
