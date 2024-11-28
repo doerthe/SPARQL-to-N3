@@ -26,7 +26,7 @@ Run only _spin3_:
 
 For instance:
 ```
-./run_spin3.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3 true true true results/zika-queries.nt
+./run_spin3.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/zika-data.n3 true true true results/zika.nt
 ./run_spin3.sh ../cases/prp_path/1/query.sparql ../cases/prp_path/1/data.n3 true false false
 ```
 (by default, the results will appear under `tmp/results.n3`)
@@ -103,19 +103,24 @@ nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/gmark_50-qu
 
 - **gmark**
 ```
-python run_exp.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "gmark_50-eye.csv"
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "times/gmark_50-eye.csv"
 
-python run_exp.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "gmark_50-eye-forward.csv"
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "times/gmark_50-eye-forward.csv"
 ```
 
 - **lmdb**
 ```
-python run_exp.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/lmdb --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "lmdb-eye.csv"
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/lmdb --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
 ```
 
 - **yago**
 ```
-python run_exp.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/yago --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "yago-eye.csv"
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/yago --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
+```
+
+- **zika**
+```
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-data.n3 --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "zika.n3" --times_file "times/zika-eye.csv"
 ```
 
 ### SiN3 - nmo
@@ -127,7 +132,7 @@ see `SPIN/spinrdf/SPINExperiment` class for **SPIN** experiments.
 
 
 ### RecSPARQL:
-See ``
+See `RecSPARQL/Experiment` class for **RecSPARQL** experiments.
 
 
 ## Compare results:

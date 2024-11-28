@@ -1,0 +1,31 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-data.n3 --pass-only-new --nope
+
+@prefix zk: <http://example.org/zika#>.
+@prefix ut: <http://example.org/utils#>.
+
+zk:world zk:hasZikaArea "Brazil".
+<http://example.org/p0> ut:has <http://example.org/p0_pregn>.
+<http://example.org/p0> ut:has <http://example.org/p0_cond0>.
+<http://example.org/p0> ut:has <http://example.org/p0_cond1>.
+<http://example.org/p0> ut:has <http://example.org/p0_travel0>.
+<http://example.org/p0> ut:has <http://example.org/p0_p1_sex0>.
+_:node_2_1 ut:refersTo <http://example.org/p0>.
+_:node_19_1 ut:refersTo <http://example.org/p0>.
+_:node_37_1 ut:refersTo <http://example.org/p0>.
+_:node_55_1 ut:refersTo <http://example.org/p0>.
+_:node_80_1 ut:refersTo <http://example.org/p0>.
+_:node_90_1 ut:refersTo <http://example.org/p1>.
+<http://example.org/p0_travel0> ut:timeSinceObsEnd 1814400000 .
+<http://example.org/p0_p1_sex0> ut:timeSinceObsEnd 1814400000 .
+<http://example.org/p0_cond0> ut:timeSinceCondOnset 604800000 .
+<http://example.org/p0_cond1> ut:timeSinceCondOnset 1814400000 .
+<http://example.org/p1> zk:residentOfZikaArea true.
+<http://example.org/p0> ut:hasCondition <http://example.org/p0_pregn>.
+<http://example.org/p0> ut:hasCondition <http://example.org/p0_cond0>.
+<http://example.org/p0> ut:hasCondition <http://example.org/p0_cond1>.
+<http://example.org/p0> ut:hasObservation <http://example.org/p0_travel0>.
+<http://example.org/p0> ut:hasObservation <http://example.org/p0_p1_sex0>.
+# 2024-11-28T21:15:24.542Z in=206 out=44 ent=22 step=86 brake=4 inf=480955 sec=0.050 inf/sec=9619100
+# ENDS
+
