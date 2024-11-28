@@ -1,0 +1,4 @@
+query,result_file,exec_time
+lmdb1,lmdb-lmdb1-recsparql.txt,50.638331375
+lmdb2,lmdb-lmdb2-recsparql.txt,17.295624833
+lmdb3,lmdb-lmdb3-recsparql.txt,21.477140292

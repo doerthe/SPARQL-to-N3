@@ -1,6 +1,0 @@
-# Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtime.n3 --turtle /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --query tmp/n3query.n3 --nope
-
-# 2024-11-28T15:34:04.910Z in=83 out=0 ent=0 step=0 brake=1 inf=390638 sec=0.044 inf/sec=8878136
-# ENDS
-

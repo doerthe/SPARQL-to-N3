@@ -1,0 +1,6 @@
+query,result_file,exec_time
+yago1,yago-yago1-recsparql.txt,49.494626333
+yago2,yago-yago2-recsparql.txt,4.566931
+yago3,yago-yago3-recsparql.txt,20.252720667
+yago4,yago-yago4-recsparql.txt,12.913591291
+yago5,yago-yago5-recsparql.txt,73.257941167

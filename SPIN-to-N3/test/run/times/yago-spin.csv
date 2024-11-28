@@ -1,0 +1,6 @@
+query,result_file,convert_time,exec_time
+yago1,yago-yago1-spin.nt,42,0.103277416,9.909104875
+yago2,yago-yago2-spin.nt,41,0.00433425,0.017939041
+yago3,yago-yago3-spin.nt,40,0.004222917,6.506470417
+yago4,yago-yago4-spin.nt,42,0.007463208,0.007979958
+yago5,yago-yago5-spin.nt,42,0.003880667,4.750244625

@@ -1,0 +1,4 @@
+query,result_file,convert_time,exec_time
+lmdb1,lmdb-lmdb1-spin.nt,23,101.0,12.720
+lmdb2,lmdb-lmdb2-spin.nt,23,4.0,3.719
+lmdb3,lmdb-lmdb3-spin.nt,23,3.0,15.162

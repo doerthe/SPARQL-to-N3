@@ -1,6 +1,6 @@
 import os, argparse, subprocess
 
-def run_exp(query_folder, data_file, script, result_folder, result_tmpl, times_file):
+def run_exp(query_folder, data_file, script, recursive, result_folder, result_tmpl, times_file):
     data_name = data_file[data_file.rindex("/")+1:data_file.rindex(".")]
     
     fd = open(times_file, 'w')
@@ -29,7 +29,7 @@ def run_exp(query_folder, data_file, script, result_folder, result_tmpl, times_f
         
         query_file = os.path.join(query_folder, query_file)
         
-        cmd = [f'./{script}', query_file, data_file, "false", "false", "false", result_file ]
+        cmd = [f'./{script}', query_file, data_file, "false", recursive + "", "false", result_file ]
         # print(cmd)
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, error = [ b.decode('UTF-8') for b in process.communicate() ]
@@ -52,6 +52,7 @@ if __name__ == '__main__':
     parser.add_argument('--query_folder', help="Folder with experiment queries.", required=True)
     parser.add_argument('--data', help="Data file.", required=True)
     parser.add_argument('--script', help="Shell script to be run", required=False)
+    parser.add_argument('--recursive', help="Whether CONSTRUCT queries are being tested", required=False)
     parser.add_argument('--result_folder', help="Folder for results.", required=True)
     parser.add_argument('--result_tmpl', help="Template for result files.", required=True)
     parser.add_argument('--times_file', help="File to store times.", required=True)
@@ -60,8 +61,9 @@ if __name__ == '__main__':
     query_folder = args.query_folder
     data_file = args.data
     script = args.script
+    recursive = args.recursive
     result_folder = args.result_folder
     result_tmpl = args.result_tmpl
     times_file = args.times_file
     
-    run_exp(query_folder, data_file, script, result_folder, result_tmpl, times_file)
+    run_exp(query_folder, data_file, script, recursive, result_folder, result_tmpl, times_file)
