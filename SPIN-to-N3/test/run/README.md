@@ -84,12 +84,31 @@ __Note__: you can still do pre-processing as part of the run, by setting the att
 
 - **gmark**  
 ```
-./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt true false false results/gmark1.nt
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2.nt
+
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1.nt
+
+`./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2-forward.nt
+
+./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1-forward.nt
+
+nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/sin3-gmark1_subset2.nmo --export-dir results --overwrite-results
+
+nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/gmark_50-query-1.nmo --export-dir results --overwrite-results
 ```
 
-For now, to try out a recursive property path query with loops:
+- **automate experiments**
 ```
-./run_spin3_loops.sh ../cases/custom/query.sparql ../cases/custom/data.n3 true true true
+python run_exp.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "gmark_50-eye.csv"
+
+python run_exp.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "gmark_50-eye-forward.csv"
+
+(see n32nmo for nmo experiments)
+```
+
+Compare results:
+```
+python cmp_results.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --result_folder results --result_tmpls "gmark_{0}-{1}.n3","gmark_{0}-{1}-forward.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
 ```
 
 

@@ -78,6 +78,8 @@ if [[ $verbose == "true" ]]; then
     echo -e "(stored results at $result_file)"
 fi
 
+echo -e "$time_gen_spin,$time_gen_n3,$time_exec_n3"
+
 if [[ $verbose == "true" ]]; then
     if [[ $preproc == "true" ]]; then
         echo -e "\ngenerate nt: $time_gen_nt s\npreproc: $time_preproc s"

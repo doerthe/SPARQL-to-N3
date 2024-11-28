@@ -1,0 +1,32 @@
+> query-16:
+gmark_50-query-16.n3: 1600 <> gmark_50-query-16-forward.n3: 0
+gmark_50-query-16.nmo: didn't finish
+
+> query-2:
+gmark_50-query-2.nmo: didn't finish
+
+> query-24:
+gmark_50-query-24.n3: 1276 <> gmark_50-query-24-forward.n3: 0
+gmark_50-query-24.nmo: didn't finish
+
+> query-27:
+gmark_50-query-27.nmo: didn't finish
+
+> query-38:
+gmark_50-query-38.nmo: didn't finish
+
+> query-40:
+gmark_50-query-40.nmo: didn't finish
+
+> query-45:
+gmark_50-query-45.nmo: didn't finish
+
+> query-6:
+gmark_50-query-6.nmo: didn't finish
+
+> query-7:
+gmark_50-query-7.nmo: didn't finish
+
+> query-8:
+gmark_50-query-8.nmo: didn't finish
+
