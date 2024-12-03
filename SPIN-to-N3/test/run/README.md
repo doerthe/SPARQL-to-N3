@@ -54,17 +54,17 @@ __Note__: if turtle has to be translated first, the result will show up under `t
 
 - **yago**  
 ```
-./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt
+./preproc_data.sh ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt
 ```
 
 - **lmdb**  
 ```
-./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt
+./preproc_data.sh ../../../other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt
 ```
 
 - **gmark**  
 ```
-./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt
+./preproc_data.sh ../../../other_systems/RecSPARQL/datasets/GMark/graph3.nt
 ```
 
 
@@ -74,50 +74,50 @@ __Note__: you can still do pre-processing as part of the run, by setting the att
 
 - **yago**  
 ```
-./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/yago/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
+./run_spin3.sh ../../../other_systems/RecSPARQL/queries/sparql/yago/yago1.sparql ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
 ```
 
 - **lmdb**  
 ```
-./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/lmdb/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt true true false results/lmdb1.nt
+./run_spin3.sh ../../../other_systems/RecSPARQL/queries/sparql/lmdb/lmdb1.sparql ../../../other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt true true false results/lmdb1.nt
 ```
 
 - **gmark**  
 ```
-./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/gmark/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2.nt
+./run_spin3_loops.sh ../../../other_systems/RecSPARQL/queries/sparql/gmark/gmark1.sparql ../../../other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2.nt
 
-./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1.nt
+./run_spin3_loops.sh ../../../other_systems/gmark-dominik/50/query-1.sparql ../../../other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1.nt
 
-`./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2-forward.nt
+`./run_spin3_forward.sh ../../../other_systems/RecSPARQL/queries/gmark/gmark1.sparql ../../../other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2-forward.nt
 
-./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1-forward.nt
+./run_spin3_forward.sh ../../../other_systems/gmark-dominik/50/query-1.sparql ../../../other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1-forward.nt
 
-nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/sin3-gmark1_subset2.nmo --export-dir results --overwrite-results
+nmo ./tmp/sin3-gmark1_subset2.nmo --export-dir results --overwrite-results
 
-nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/gmark_50-query-1.nmo --export-dir results --overwrite-results
+nmo ./tmp/gmark_50-query-1.nmo --export-dir results --overwrite-results
 ```
 
 - **zika**
 
 default vs. forward
 ```
-./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen1.n3 true true true results/zika-eye.n3
+./run_spin3_loops.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen1.n3 true true true results/zika-eye.n3
 
-./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen1.n3 true true true results/zika-eye-forward.n3
+./run_spin3_forward.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen1.n3 true true true results/zika-eye-forward.n3
 ```
 
 forward vs. forward-noDuplicates:
 ```
-./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward.n3
+./run_spin3_forward.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward.n3
 
-./run_spin3_forward-noDuplicates.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward-noDupl.n3
+./run_spin3_forward-noDuplicates.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward-noDupl.n3
 ```
 
 - **covid-19**
 ```
-./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
+./run_spin3_loops.sh ../cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
 
-./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
+./run_spin3_forward.sh ../cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
 ```
 
 ## Automate experiments
@@ -126,24 +126,24 @@ forward vs. forward-noDuplicates:
 
 - **gmark**
 ```
-python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "times/gmark_50-eye.csv"
+python run_exp.py --query ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "times/gmark_50-eye.csv"
 
-python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "times/gmark_50-eye-forward.csv"
+python run_exp.py --query ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "times/gmark_50-eye-forward.csv"
 ```
 
 - **lmdb**
 ```
-python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/lmdb --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
 ```
 
 - **yago**
 ```
-python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/yago --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
 ```
 
 - **zika**
 ```
-python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-data.n3 --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "zika.n3" --times_file "times/zika-eye.csv"
+python run_exp.py --query ../cases/zika/zika-queries-all.sparql --data ../cases/zika/zika-data.n3 --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "zika.n3" --times_file "times/zika-eye.csv"
 ```
 
 ### SiN3 - nmo
@@ -160,7 +160,7 @@ See `RecSPARQL/Experiment` class for **RecSPARQL** experiments.
 
 ## Compare results:
 ```
-python cmp_results.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --result_folder results --result_tmpls "gmark_{0}-{1}.n3","gmark_{0}-{1}-forward.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
+python cmp_results.py --query_folder ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --result_folder results --result_tmpls "gmark_{0}-{1}.n3","gmark_{0}-{1}-forward.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
 ```
 
 
