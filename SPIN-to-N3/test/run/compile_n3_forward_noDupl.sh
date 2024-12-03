@@ -1,7 +1,7 @@
 #!/bin/bash
 
 query=$1
-verbose=$3
+verbose=$2
 
 mkdir -p results
 mkdir -p tmp
