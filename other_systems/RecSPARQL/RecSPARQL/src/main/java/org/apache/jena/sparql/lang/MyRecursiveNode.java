@@ -21,6 +21,8 @@ import recsparql.ExecRecursive;
 
 public class MyRecursiveNode implements IRecursiveNode {
 
+	public static boolean verbose = false;
+	
 	static public final String LINE_SEPARATOR = System.getProperty("line.separator");
 	public ArrayList<String> InnerQueries;
 	public ArrayList<String[]> QueriesConstruct;
@@ -329,7 +331,9 @@ public class MyRecursiveNode implements IRecursiveNode {
 
 			QueryExecution qexec;
 			while (true) {
-				System.out.println("(iteration " + count_limit + ")");
+				if (verbose) {
+					System.out.println("(iteration " + count_limit + ")");
+				}
 				qexec = QueryExecutionFactory.create(rec_query[0], ds);
 				Model aux = qexec.execConstruct();
 				countNow = aux.getGraph().size();
@@ -364,7 +368,9 @@ public class MyRecursiveNode implements IRecursiveNode {
 			int count_limit = 0;
 
 			while (true) {
-				System.out.println("(iteration " + count_limit + ")");
+				if (verbose) {
+					System.out.println("(iteration " + count_limit + ")");
+				}
 				qexecRec = QueryExecutionFactory.create(rec_query[1], ds);
 				Model recModel = qexecRec.execConstruct();
 				returnGraph.add(recModel);

@@ -26,7 +26,7 @@ Run only _spin3_:
 
 For instance:
 ```
-./run_spin3.sh ../cases/zika/zika-queries.sparql ../cases/zika/zika-data.n3 true true true results/zika-queries.nt
+./run_spin3.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/zika-data.n3 true true true results/zika.nt
 ./run_spin3.sh ../cases/prp_path/1/query.sparql ../cases/prp_path/1/data.n3 true false false
 ```
 (by default, the results will appear under `tmp/results.n3`)
@@ -43,20 +43,101 @@ java -jar sparql2spin.jar -sparql <sparql> -multi <spin>
 
 # Experiments
 
-To run recSPARQL tests:
-(preprocess the data first as it takes a while for large files)
+Currently, SiN3 also involves preprocessing the data (converting into n-triples, and then replacing first/rest pairs).
+This step only has to take place once.
 
+To pre-process files:  
+__Note__: create a copy of the file first as it will be updated by the script.  
+__Note__: if turtle has to be translated first, the result will show up under `tmp/ntriples.nt`
+
+(attributes: data)  
+
+- **yago**  
 ```
-./run_spin3.sh ../cases/recSPARQL/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
+./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt
 ```
 
+- **lmdb**  
 ```
-./run_spin3.sh ../cases/recSPARQL/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-preproc.nt true true false results/lmdb1.nt
+./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt
 ```
 
-GMark (property path tests from recSPARQL)
+- **gmark**  
 ```
-./run_spin3.sh ../cases/recSPARQL/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt true false false results/gmark1.nt
+./preproc_data.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph3.nt
+```
+
+
+To run recSPARQL tests:  
+__Note__: you can still do pre-processing as part of the run, by setting the attribute to true (same note as above applies).
+(attributes: query, data, verbose, recursion, preproc, result_file)
+
+- **yago**  
+```
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/yago/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
+```
+
+- **lmdb**  
+```
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/lmdb/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-preproc.nt true true false results/lmdb1.nt
+```
+
+- **gmark**  
+```
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2.nt
+
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1.nt
+
+`./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2-forward.nt
+
+./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1-forward.nt
+
+nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/sin3-gmark1_subset2.nmo --export-dir results --overwrite-results
+
+nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/gmark_50-query-1.nmo --export-dir results --overwrite-results
+```
+
+## Automate experiments
+
+### SiN3 - eye
+
+- **gmark**
+```
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "times/gmark_50-eye.csv"
+
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "times/gmark_50-eye-forward.csv"
+```
+
+- **lmdb**
+```
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/lmdb --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
+```
+
+- **yago**
+```
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/yago --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
+```
+
+- **zika**
+```
+python run_exp.py --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-data.n3 --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "zika.n3" --times_file "times/zika-eye.csv"
+```
+
+### SiN3 - nmo
+See `n3/n32nmo/N32MO` class for **nmo** experiments.
+
+
+### SPIN:
+see `SPIN/spinrdf/SPINExperiment` class for **SPIN** experiments.
+
+
+### RecSPARQL:
+See `RecSPARQL/Experiment` class for **RecSPARQL** experiments.
+
+
+## Compare results:
+```
+python cmp_results.py --query_folder /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50 --data /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --result_folder results --result_tmpls "gmark_{0}-{1}.n3","gmark_{0}-{1}-forward.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
 ```
 
 
@@ -72,7 +153,7 @@ Where `<manifest>` is the path to the manifest file, `<engine>` is the SPARQL en
 
 For instance:
 ```
-python3 run_manifest.py --manifest ../cases/ARQ/GroupBy/manifest.ttl --engine rdflib --ordered
+python3 run_manifest.py --manifest ../cases/ARQ/GroupBy/manifest.ttl --engine rdflib
 ```
 Will run all tests in the listed `manifest` file and compare results with `rdflib` where result ordering is retained.
 

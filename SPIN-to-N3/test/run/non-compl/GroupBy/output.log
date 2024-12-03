@@ -1,4 +1,46 @@
 INFO:__main__:>> loading manifest: GroupBy/manifest.ttl <<
-INFO:__main__:>> loading manifest: GroupBy/manifest.ttl <<
-INFO:__main__:>> loading manifest: GroupBy/manifest.ttl <<
-INFO:__main__:>> loading manifest: GroupBy/manifest.ttl <<
+
+INFO:__main__:>> running test: Group By - 1
+INFO:__main__:(query: GroupBy/group-01.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 2
+INFO:__main__:(query: GroupBy/group-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 3 (Group var does not occur)
+INFO:__main__:(query: GroupBy/group-03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 4 (Group expression)
+INFO:__main__:(query: GroupBy/group-04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 5 (Named group expression)
+INFO:__main__:(query: GroupBy/group-05.arq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 6 (Named group expression)
+INFO:__main__:(query: GroupBy/group-06.arq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 10
+INFO:__main__:(query: GroupBy/group-10.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-2.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 11
+INFO:__main__:(query: GroupBy/group-11.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-2.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 12
+INFO:__main__:(query: GroupBy/group-12.arq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-2.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Group By - 20 / Zero data
+INFO:__main__:(query: GroupBy/group-20.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-0.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Count - 1 - No Group
+INFO:__main__:(query: GroupBy/count-01.arq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Count - 2 - No Group
+INFO:__main__:(query: GroupBy/count-02.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Count - 3
+INFO:__main__:(query: GroupBy/count-03.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Count - 4
+INFO:__main__:(query: GroupBy/count-04.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)
+INFO:__main__:
+INFO:__main__:>> running test: Count - 5 - count(*) / count(distinct *)
+INFO:__main__:(query: GroupBy/count-05.rq, data: /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/ARQ/GroupBy/data-1.ttl)

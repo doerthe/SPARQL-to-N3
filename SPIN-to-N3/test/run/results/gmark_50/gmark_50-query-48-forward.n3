@@ -1,0 +1,23 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtime.n3 --turtle /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --query tmp/n3query.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_0 ex:result _:sk_1.
+_:sk_1 ex:label "x0".
+_:sk_1 ex:value <http://example.org/gmark/139>.
+_:sk_2 ex:result _:sk_3.
+_:sk_3 ex:label "x0".
+_:sk_3 ex:value <http://example.org/gmark/55>.
+_:sk_4 ex:result _:sk_5.
+_:sk_5 ex:label "x0".
+_:sk_5 ex:value <http://example.org/gmark/90>.
+_:sk_6 ex:result _:sk_7.
+_:sk_7 ex:label "x0".
+_:sk_7 ex:value <http://example.org/gmark/147>.
+_:sk_8 ex:result _:sk_9.
+_:sk_9 ex:label "x0".
+_:sk_9 ex:value <http://example.org/gmark/128>.
+# 2024-11-27T22:23:29.617Z in=71 out=15 ent=15 step=116 brake=1 inf=153110 sec=0.031 inf/sec=4939032
+# ENDS
+

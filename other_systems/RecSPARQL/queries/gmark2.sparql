@@ -1,0 +1,7 @@
+PREFIX : <http://example.org/gmark/> 
+
+SELECT * 
+WHERE { 
+    ?x0 ((:p23/^:p23)|(:p25/^:p23)) ?x1 . 
+    ?x1 ((:p23/^:p23)|(:p25/^:p23))* ?x2 
+}

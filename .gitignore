@@ -1,3 +1,8 @@
 .DS_Store
 **/test/run/tmp
 #**/test/run/results
+.plugins
+.settings
+.metadata
+other_systems/SparqLog/SparqLog3/src/main/resources/recSPARQL/vadalog/data/
+other_systems/RecSPARQL/datasets/

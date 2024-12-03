@@ -1,0 +1,6 @@
+query,result_file,time_gen_spin,time_gen_n3,time_exec_n3
+yago1,yago_yagoFacts-yago1.n3,0.557,0.078,48.352
+yago2,yago_yagoFacts-yago2.n3,0.624,0.082,35.567
+yago3,yago_yagoFacts-yago3.n3,0.622,0.079,39.338
+yago4,yago_yagoFacts-yago4.n3,0.586,0.075,34.633
+yago5,yago_yagoFacts-yago5.n3,0.587,0.088,57.900
