@@ -68,10 +68,10 @@ if [[ $verbose == "true" ]]; then
 fi
 
 
-sed -i'' -e 's|rdf:first|rdf:f1rst|g' $n3_file
-sed -i'' -e 's|rdf:rest|rdf:r3st|g' $n3_file
-sed -i'' -e 's|rdf:first|rdf:f1rst|g' $n3_run
-sed -i'' -e 's|rdf:rest|rdf:r3st|g' $n3_run
+sed -i'' -e 's|rdf:first|rdf:f1rst|g' $n3_file_new
+sed -i'' -e 's|rdf:rest|rdf:r3st|g' $n3_file_new
+sed -i'' -e 's|rdf:first|rdf:f1rst|g' $n3_run_new
+sed -i'' -e 's|rdf:rest|rdf:r3st|g' $n3_run_new
 
 
 if [[ -z $result_file ]]; then
@@ -84,11 +84,11 @@ fi
 if [[ $recursion == "true" ]]; then
     # including query as data (new):
     # eye ../../auxiliary-files/optional.n3 $n3_file $n3_run --turtle $nt_file --query $n3_file --nope > $result_file
-    time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/optional.n3 $n3_file $n3_run_new --turtle $nt_file --query $n3_file_new --nope > $result_file 2>/dev/null; } } 2>&1 )
+    time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/optional.n3 $n3_file_new $n3_run_new --turtle $nt_file --query $n3_file_new --nope > $result_file 2>/dev/null; } } 2>&1 )
 else
     # not including query as data (before):
     # eye ../../auxiliary-files/optional_2.n3  $n3_run --turtle $nt_file --query $n3_file --nope > $result_file
-    time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/optional_2.n3  $n3_run_new --turtle $nt_file --query $n3_file-new --nope > $result_file 2>/dev/null; } } 2>&1 )
+    time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/optional_2.n3  $n3_run_new --turtle $nt_file --query $n3_file_new --nope > $result_file 2>/dev/null; } } 2>&1 )
 fi
 
 if [[ $verbose == "true" ]]; then
