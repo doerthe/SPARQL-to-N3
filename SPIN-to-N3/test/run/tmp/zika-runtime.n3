@@ -1,0 +1,54 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet tmp/query_ground.spin ../../auxiliary-files/aux_2.n3 --query ../../queries/produce-runtime-rules.n3 ../../queries/query_general_2.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skolem: <https://example.org/0f3ec7bc-b017-458c-b7f9-f8fde115e386#>.
+@prefix ns2: <https://eyereasoner.github.io/.well-known/genid/34574f05-1f69-43d1-83cb-8ed3551395a1#>.
+
+{
+    ?U_1 ?U_0 ?U_2.
+} => {
+    ?U_2 "https:equal" ?U_2.
+}.
+{
+    ?U_4 ?U_3 ?U_5.
+} => {
+    ?U_4 "https:equal" ?U_4.
+}.
+{
+    ?t_90 rdf:r3st ?t_91.
+} => {
+    ?t_90 skolem:bn_910 ?t_91.
+}.
+{
+    ?t_90 skolem:bn_910 ?U_6.
+    ?U_6 skolem:bn_910 ?t_91.
+} => {
+    ?t_90 skolem:bn_910 ?t_91.
+}.
+{
+    ?t_92 rdf:r3st ?t_93.
+} => {
+    ?t_92 skolem:bn_1046 ?t_93.
+}.
+{
+    ?t_92 skolem:bn_1046 ?U_7.
+    ?U_7 skolem:bn_1046 ?t_93.
+} => {
+    ?t_92 skolem:bn_1046 ?t_93.
+}.
+{
+    ?t_94 rdf:r3st ?t_95.
+} => {
+    ?t_94 skolem:bn_2384 ?t_95.
+}.
+{
+    ?t_94 skolem:bn_2384 ?U_8.
+    ?U_8 skolem:bn_2384 ?t_95.
+} => {
+    ?t_94 skolem:bn_2384 ?t_95.
+}.
+# 2024-12-03T18:46:32.407Z in=803 out=8 ent=592 step=30001 brake=5 inf=3599703 sec=0.232 inf/sec=15515961
+# ENDS
+
