@@ -15,8 +15,8 @@ CONSTRUCT {
     ?p a fh:Patient .
     ?p ut:hasCondition ?c .    
     ?c fh:code/ut:hasCodeValue 77386006 . # (SNOMED) pregnancy
-    ?c fh:clinicalStatus/ut:hasCodeValue 'active' .
-    ?c fh:verificationStatus/ut:hasCodeValue 'confirmed' .
+    ?c fh:clinicalStatus/ut:hasCodeValue "active" .
+    ?c fh:verificationStatus/ut:hasCodeValue "confirmed" .
 } .
 
 
@@ -26,8 +26,8 @@ CONSTRUCT {
 } WHERE {
    ?p a fh:Patient .
    ?p ut:hasCondition ?c .
-   ?c fh:clinicalStatus/ut:hasCodeValue 'active' .
-   ?c fh:verificationStatus/ut:hasCodeValue 'confirmed' .
+   ?c fh:clinicalStatus/ut:hasCodeValue "active" .
+   ?c fh:verificationStatus/ut:hasCodeValue "confirmed" .
    
    ?c fh:code/ut:hasCodeValue ?code .
 
@@ -41,7 +41,7 @@ CONSTRUCT {
 
 } WHERE {
     ?p a fh:Patient .
-    ?p fh:address/fh:country/fh:v ?country .
+    ?p fh:address/fh:country ?country .
     zk:world zk:hasZikaArea ?country .
 } .
 
@@ -56,13 +56,11 @@ CONSTRUCT {
     ?p ut:hasObservation ?o . 
     ?o fh:code/ut:hasCodeValue 420008001 . # (SNOMED) Travel
    
-   ?o fh:component/rdf:rest*/rdf:first ?cmp .
-   ?cmp fh:code/ut:hasCodeValue "LOC" .
-   ?cmp fh:extension/rdf:rest*/rdf:first/fh:value/fh:country/fh:v ?country .
+   ?o fh:country ?country .
    zk:world zk:hasZikaArea ?country .
 
-   ?cmp ut:timeSinceObsEnd ?timeSince .
-   FILTER (?timeSince < 2678400000) # 1 month
+   ?o ut:timeSinceObsEnd ?timeSince .
+#    FILTER (?timeSince < 2678400000) # 1 month
 } .
 
 
@@ -70,8 +68,8 @@ CONSTRUCT {
     zk:world zk:hasZikaArea ?country .
 
 } WHERE {
-    ?x fh:country/fh:v ?country .
-    FILTER (?country in ( 'American Samoa', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Aruba', 'Bahamas', 'Bangladesh', 'Barbados', 'Belize', 'Bolivia', 'Bonaire', 'Brazil', 'British Virgin Islands', 'Burkina Faso', 'Burma', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Colombia', 'Cook Islands', 'Costa Rica', 'Cuba', 'Curacao', 'Dominica', 'Dominican Republic', 'Easter Island', 'Ecuador', 'El Salvador', 'Ethiopia', 'Federated States of Micronesia', 'Fiji', 'France', 'French Guiana', 'French Polynesia', 'Gabon', 'Grenada', 'Guadeloupe', 'Guatemala', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'India', 'Indonesia', 'Ivory Coast', 'Jamaica', 'Kenya', 'Kiribati', 'Laos', 'Malaysia', 'Maldives', 'Marshall Islands', 'Martinique', 'Mexico', 'Montserrat', 'New Caledonia', 'Nicaragua', 'Nigeria', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Puerto Rico', 'Saba', 'Saint Barthelemy', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Vincent and the Grenadines', 'Samoa', 'Senegal', 'Singapore', 'Sint Eustatius', 'Sint Maarten', 'Solomon Islands', 'Suriname', 'Thailand', 'Tonga', 'Trinidad and Tobago', 'Turks and Caicos', 'Uganda', 'United States (Continental US)', 'United States Virgin Islands', 'Vanuatu', 'Venezuela', 'Vietnam' ) ) .
+    ?x fh:country ?country .
+    FILTER (?country in ( "American Samoa", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Aruba", "Bahamas", "Bangladesh", "Barbados", "Belize", "Bolivia", "Bonaire", "Brazil", "British Virgin Islands", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Cape Verde", "Cayman Islands", "Central African Republic", "Colombia", "Cook Islands", "Costa Rica", "Cuba", "Curacao", "Dominica", "Dominican Republic", "Easter Island", "Ecuador", "El Salvador", "Ethiopia", "Federated States of Micronesia", "Fiji", "France", "French Guiana", "French Polynesia", "Gabon", "Grenada", "Guadeloupe", "Guatemala", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "India", "Indonesia", "Ivory Coast", "Jamaica", "Kenya", "Kiribati", "Laos", "Malaysia", "Maldives", "Marshall Islands", "Martinique", "Mexico", "Montserrat", "New Caledonia", "Nicaragua", "Nigeria", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Puerto Rico", "Saba", "Saint Barthelemy", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Vincent and the Grenadines", "Samoa", "Senegal", "Singapore", "Sint Eustatius", "Sint Maarten", "Solomon Islands", "Suriname", "Thailand", "Tonga", "Trinidad and Tobago", "Turks and Caicos", "Uganda", "United States (Continental US)", "United States Virgin Islands", "Vanuatu", "Venezuela", "Vietnam" ) ) .
 } .
 
 
@@ -90,7 +88,8 @@ CONSTRUCT {
     }
 
     ?o fh:code/ut:hasCodeValue 225517006 . # (SNOMED) Sexual partners
-    ?o fh:value/ut:refersTo ?p2 .
+    ?p2 ut:referredBy ?o .
+    # ?o fh:value/ut:refersTo ?p2 .
 
     ?o ut:timeSinceObsEnd ?timeSince .
     FILTER (?timeSince < 2678400000) # 1 month
@@ -126,30 +125,21 @@ CONSTRUCT {
     }
 } .
 
-# (comment this out for SPIN (TopBraid); will go into infinite loop due to bnode)
-# @filter
-# CONSTRUCT {
-#     [ a fh:ServiceRequest ;
-#         fh:code [
-#             fh:concept [
-#             fh:coding ( [
-#                 fh:system [ fh:v "http://snomed.org/sct"^^xsd:anyURI ] ;
-#                 fh:code [ fh:v "69363007" ]
-#             ] ) ;
-#             fh:text [ fh:v "Zika virus NAAT on serum" ]
-#             ]
-#         ]
-#     ] .
+@filter
+CONSTRUCT {
+    ?p zk:testForZika true
 
-# } WHERE {
-#     ?p zk:isPregnant true .
-#     ?p zk:hasZikaSymptom ?symptom .
+} WHERE {
+    ?p zk:isPregnant true .
+    ?p zk:hasZikaSymptom ?symptom .
 
-#     ?p zk:possibleZikaExposure true .
+    ?p zk:possibleZikaExposure true .
     
-#     ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince .
-#     FILTER (?timeSince < 7257600000) # 12 weeks
-# } .
+    ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince .
+    FILTER (?timeSince < 7257600000) . # 12 weeks
+
+    ?p fh:id ?id
+} .
 
 
 # utilities
@@ -176,8 +166,8 @@ CONSTRUCT {
     ?p ut:has ?r
 
 } WHERE {
-    ?p fh:id/fh:v ?id .
-    ?r fh:subject/fh:reference/fh:v ?id .
+    ?p fh:id ?id .
+    ?r fh:subject ?id .
 } .
 
 
@@ -185,16 +175,16 @@ CONSTRUCT {
     ?r ut:hasCodeValue ?c
 
 } WHERE {
-    ?r fh:coding/rdf:rest*/rdf:first/fh:code/fh:v ?c
+    ?r fh:coding/fh:code ?c
 } .
 
 
 CONSTRUCT {
-    ?r ut:refersTo ?p
+    ?p ut:referredBy ?r
 
 } WHERE {
-    ?p fh:id/fh:v ?id .
-    ?r fh:reference/fh:v ?id
+    ?p fh:id ?id .
+    ?r fh:value ?id
 } .
 
 
@@ -203,7 +193,7 @@ CONSTRUCT {
 
 } WHERE {
    ?o fh:effective ?period . 
-   ?period fh:start/fh:v ?start ; fh:end/fh:v ?end . 
+   ?period fh:start ?start ; fh:end ?end . 
    # BIND (now() as ?now ) .
    ut:now rdf:value ?now .
    BIND ((?now - ?end) AS ?timeSince) .
@@ -214,7 +204,7 @@ CONSTRUCT {
     ?c ut:timeSinceCondOnset ?timeSince
 
 } WHERE {
-   ?c fh:onset/fh:v ?onset . 
+   ?c fh:onset ?onset . 
    # BIND (now() as ?now ) .
    ut:now rdf:value ?now .
    BIND ((?now - ?onset) AS ?timeSince) .

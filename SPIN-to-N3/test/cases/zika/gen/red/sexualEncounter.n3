@@ -1,0 +1,24 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ut: <http://example.org/utils#> .
+@prefix fh: <http://hl7.org/fhir/> .
+@prefix zk: <http://example.org/zika#> .
+@prefix : <http://example.org/> .
+
+[ 
+    fh:subject "{pat}" ;
+    fh:code [
+        fh:coding [
+            fh:system "http://snomed.org/sct" ;
+            fh:code 225517006 # (SNOMED) Sexual partners
+        ]
+    ] ;
+    fh:effective [
+        a fh:Period ;
+        fh:start 1687268855140 ; # 3 weeks ago
+        fh:end 1687268855140 # 3 weeks ago
+    ] ;
+    fh:value "{other_pat}"
+] a fh:Observation .
