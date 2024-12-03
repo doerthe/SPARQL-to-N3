@@ -74,17 +74,17 @@ __Note__: you can still do pre-processing as part of the run, by setting the att
 
 - **yago**  
 ```
-./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/yago/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/yago/yago1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt true true false results/yago1.nt
 ```
 
 - **lmdb**  
 ```
-./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/lmdb/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-preproc.nt true true false results/lmdb1.nt
+./run_spin3.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/lmdb/lmdb1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt true true false results/lmdb1.nt
 ```
 
 - **gmark**  
 ```
-./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/gmark/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2.nt
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/queries/sparql/gmark/gmark1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2.nt
 
 ./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/query-1.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1.nt
 
@@ -95,6 +95,29 @@ __Note__: you can still do pre-processing as part of the run, by setting the att
 nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/sin3-gmark1_subset2.nmo --export-dir results --overwrite-results
 
 nmo /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/run/tmp/gmark_50-query-1.nmo --export-dir results --overwrite-results
+```
+
+- **zika**
+
+default vs. forward
+```
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen1.n3 true true true results/zika-eye.n3
+
+./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen1.n3 true true true results/zika-eye-forward.n3
+```
+
+forward vs. forward-noDuplicates:
+```
+./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward.n3
+
+./run_spin3_forward-noDuplicates.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/zika-queries-all.sparql /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward-noDupl.n3
+```
+
+- **covid-19**
+```
+./run_spin3_loops.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
+
+./run_spin3_forward.sh /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/SPIN-to-N3/test/cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
 ```
 
 ## Automate experiments
