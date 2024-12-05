@@ -1,0 +1,78 @@
+> query-0
+consistent!
+> query-1
+consistent!
+> query-11
+consistent!
+> query-12
+consistent!
+> query-13
+consistent!
+> query-14
+consistent!
+> query-15
+consistent!
+> query-16
+consistent!
+> query-17
+consistent!
+> query-18
+consistent!
+> query-19
+consistent!
+> query-2
+consistent!
+> query-20
+consistent!
+> query-21
+consistent!
+> query-22
+consistent!
+> query-23
+consistent!
+> query-24
+consistent!
+> query-25
+consistent!
+> query-26
+consistent!
+> query-27
+consistent!
+> query-28
+consistent!
+> query-3
+consistent!
+> query-31
+consistent!
+> query-36
+consistent!
+> query-37
+consistent!
+> query-38
+consistent!
+> query-39
+consistent!
+> query-4
+consistent!
+> query-40
+consistent!
+> query-41
+consistent!
+> query-43
+consistent!
+> query-44
+consistent!
+> query-46
+consistent!
+> query-47
+consistent!
+> query-49
+consistent!
+> query-5
+consistent!
+> query-7
+consistent!
+> query-8
+consistent!
+> query-9
+consistent!

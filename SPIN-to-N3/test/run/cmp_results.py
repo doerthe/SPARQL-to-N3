@@ -25,12 +25,14 @@ def cmp_results(query_folder, data_file, result_folder, result_tmpls):
                 elif result_metrics[i] != result_metrics[j]:
                     inconsists.append(f"{result_files[i]}: {result_metrics[i]} <> {result_files[j]}: {result_metrics[j]}")
         
-        # print(f"> {query_name}")
+        print(f"> {query_name}")
         if len(inconsists) > 0:
-            print(f"> {query_name}:")
+            # print(f"> {query_name}:")
             for inconsist in inconsists:
                 print(inconsist)
             print()
+        else:
+            print("consistent!")
             
 def get_metrics(result_folder, result_file):
     path = os.path.join(result_folder, result_file)
@@ -38,11 +40,15 @@ def get_metrics(result_folder, result_file):
         return -1
     
     fd = open(path, 'r')
-    results = fd.read()
+    if result_file.endswith(".nmo"):
+        num = len(fd.readlines())
+    else:
+        results = fd.read()
+        # yeah yeah ...
+        num = results.count("ex:result") + results.count("http://example.org/spin#result")
     fd.close()
     
-    # yeah yeah ...
-    return results.count("ex:result") + results.count("http://example.org/spin#result")
+    return num
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run test manifest.")

@@ -1,0 +1,34 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/100.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_0 ex:result (("x0" <http://example.org/gmark/47>)).
+_:sk_1 ex:result (("x0" <http://example.org/gmark/41>)).
+_:sk_2 ex:result (("x0" <http://example.org/gmark/18>)).
+_:sk_3 ex:result (("x0" <http://example.org/gmark/30>)).
+_:sk_4 ex:result (("x0" <http://example.org/gmark/10>)).
+_:sk_5 ex:result (("x0" <http://example.org/gmark/37>)).
+_:sk_6 ex:result (("x0" <http://example.org/gmark/31>)).
+_:sk_7 ex:result (("x0" <http://example.org/gmark/19>)).
+_:sk_8 ex:result (("x0" <http://example.org/gmark/6>)).
+_:sk_9 ex:result (("x0" <http://example.org/gmark/43>)).
+_:sk_10 ex:result (("x0" <http://example.org/gmark/23>)).
+_:sk_11 ex:result (("x0" <http://example.org/gmark/8>)).
+_:sk_12 ex:result (("x0" <http://example.org/gmark/29>)).
+_:sk_13 ex:result (("x0" <http://example.org/gmark/7>)).
+_:sk_14 ex:result (("x0" <http://example.org/gmark/27>)).
+_:sk_15 ex:result (("x0" <http://example.org/gmark/25>)).
+_:sk_16 ex:result (("x0" <http://example.org/gmark/35>)).
+_:sk_17 ex:result (("x0" <http://example.org/gmark/11>)).
+_:sk_18 ex:result (("x0" <http://example.org/gmark/34>)).
+_:sk_19 ex:result (("x0" <http://example.org/gmark/21>)).
+_:sk_20 ex:result (("x0" <http://example.org/gmark/39>)).
+_:sk_21 ex:result (("x0" <http://example.org/gmark/38>)).
+_:sk_22 ex:result (("x0" <http://example.org/gmark/28>)).
+_:sk_23 ex:result (("x0" <http://example.org/gmark/44>)).
+_:sk_24 ex:result (("x0" <http://example.org/gmark/16>)).
+_:sk_25 ex:result (("x0" <http://example.org/gmark/17>)).
+# 2024-12-04T15:39:30.139Z in=136 out=26 ent=26 step=42080 brake=1 inf=2519128 sec=0.141 inf/sec=17866156
+# ENDS
+

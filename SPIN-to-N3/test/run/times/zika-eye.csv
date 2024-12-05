@@ -1,2 +1,0 @@
-query,result_file,time_gen_spin,time_gen_n3,time_exec_n3
-zika-queries-all,zika.n3,0.662,0.196,0.061

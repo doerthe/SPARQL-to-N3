@@ -1,6 +1,6 @@
-query,result_file,time_gen_spin,time_gen_n3,time_exec_n3
-yago1,yago_yagoFacts-yago1.n3,0.557,0.078,48.352
-yago2,yago_yagoFacts-yago2.n3,0.624,0.082,35.567
-yago3,yago_yagoFacts-yago3.n3,0.622,0.079,39.338
-yago4,yago_yagoFacts-yago4.n3,0.586,0.075,34.633
-yago5,yago_yagoFacts-yago5.n3,0.587,0.088,57.900
+query,result_file,time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total,py_total_time
+yago1,yago_yagoFacts-yago1.n3,0.619,0.076,.02,33.75,13.95,47.99
+yago2,yago_yagoFacts-yago2.n3,0.621,0.079,.02,33.38,1.42,34.87
+yago3,yago_yagoFacts-yago3.n3,0.623,0.078,.02,33.33,4.95,38.36
+yago4,yago_yagoFacts-yago4.n3,0.625,0.074,.02,33.68,.40,34.15
+yago5,yago_yagoFacts-yago5.n3,0.634,0.083,.02,33.37,22.53,55.98

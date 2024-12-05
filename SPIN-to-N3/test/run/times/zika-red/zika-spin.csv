@@ -1,0 +1,7 @@
+gen100:
+query,result_file,load_time,convert_time,exec_time
+zika-queries-all-red,zika-spin.nt,0.363059292,0.176338875,0.471061584
+
+gen1000:
+query,result_file,load_time,convert_time,exec_time
+zika-queries-all-red,zika-spin.nt,0.51765725,0.188648792,23.834942084

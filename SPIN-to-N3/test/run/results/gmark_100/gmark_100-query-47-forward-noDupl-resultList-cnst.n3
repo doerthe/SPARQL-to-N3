@@ -1,0 +1,15 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/100.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/120>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/132>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/137>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/115>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/147>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/139>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/134>)).
+# 2024-12-04T16:09:22.817Z in=136 out=7 ent=7 step=86560 brake=1 inf=4814921 sec=0.210 inf/sec=22928195
+# ENDS
+

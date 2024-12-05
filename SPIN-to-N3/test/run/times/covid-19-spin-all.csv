@@ -1,0 +1,2 @@
+query,result_file,load_time,convert_time,exec_time
+owl2rl-reduced,covid-19-spin.nt,0.539466334,0.165680041,4.191339042

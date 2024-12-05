@@ -1,0 +1,4 @@
+query,result_file,time_gen_spin,time_gen_spin2,time_gen_n3,time_n3_run,time_exec_n3
+lmdb1,lmdb_lmdb-lmdb1.n3,0.714,0.135,0.075,0.082,53.177
+lmdb2,lmdb_lmdb-lmdb2.n3,0.638,0.044,0.075,0.076,34.600
+lmdb3,lmdb_lmdb-lmdb3.n3,0.634,0.047,0.077,0.077,42.010

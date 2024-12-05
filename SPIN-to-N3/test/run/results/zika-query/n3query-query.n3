@@ -1,0 +1,123 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet tmp/query_ground.spin ../../auxiliary-files/aux_2.n3 --query ../../queries/query_general_2.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/
+
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix skolem: <https://example.org/0f3ec7bc-b017-458c-b7f9-f8fde115e386#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix ns2: <https://eyereasoner.github.io/.well-known/genid/a52c1e81-bdaa-4b91-aba9-4f97606f17ea#>.
+
+{
+    ?t_85 <http://example.org/zika#isPregnant> true.
+} => {
+    ?t_85 <http://example.org/zika#isPregnant> true.
+}.
+{
+    ?t_85 <http://example.org/zika#hasZikaSymptom> ?t_86.
+} => {
+    ?t_85 <http://example.org/zika#hasZikaSymptom> ?t_86.
+}.
+{
+    ?t_85 <http://example.org/zika#residentOfZikaArea> true.
+} => {
+    ?t_85 <http://example.org/zika#residentOfZikaArea> true.
+}.
+{
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+} => {
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+}.
+{
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+} => {
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+}.
+{
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+} => {
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+}.
+{
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+} => {
+    ?t_85 <http://example.org/zika#recentTravelToZikaArea> true.
+}.
+{
+    <http://example.org/zika#world> <http://example.org/zika#hasZikaArea> ?t_94.
+} => {
+    <http://example.org/zika#world> <http://example.org/zika#hasZikaArea> ?t_94.
+}.
+{
+    ?t_85 <http://example.org/zika#recentSexualEncounterWithZikaResidentOrTraveler> true.
+} => {
+    ?t_85 <http://example.org/zika#recentSexualEncounterWithZikaResidentOrTraveler> true.
+}.
+{
+    ?t_85 <http://example.org/zika#recentSexualEncounterWithZikaResidentOrTraveler> true.
+} => {
+    ?t_85 <http://example.org/zika#recentSexualEncounterWithZikaResidentOrTraveler> true.
+}.
+{
+    ?t_85 <http://example.org/zika#possibleZikaExposure> true.
+} => {
+    ?t_85 <http://example.org/zika#possibleZikaExposure> true.
+}.
+{
+    ?t_85 <http://example.org/zika#possibleZikaExposure> true.
+} => {
+    ?t_85 <http://example.org/zika#possibleZikaExposure> true.
+}.
+{
+    ?t_85 <http://example.org/zika#avgTimeSinceZikaSymptomsOnset> ?t_125.
+} => {
+    ?t_85 <http://example.org/zika#avgTimeSinceZikaSymptomsOnset> ?t_125.
+}.
+{
+    ?t_85 <http://example.org/zika#testForZika> true.
+} => {
+    ?t_85 <http://example.org/zika#testForZika> true.
+}.
+{
+    ?t_85 <http://example.org/utils#hasCondition> ?t_86.
+} => {
+    ?t_85 <http://example.org/utils#hasCondition> ?t_86.
+}.
+{
+    ?t_85 <http://example.org/utils#hasObservation> ?t_97.
+} => {
+    ?t_85 <http://example.org/utils#hasObservation> ?t_97.
+}.
+{
+    ?t_85 <http://example.org/utils#has> ?t_130.
+} => {
+    ?t_85 <http://example.org/utils#has> ?t_130.
+}.
+{
+    ?t_130 <http://example.org/utils#hasCodeValue> ?t_86.
+} => {
+    ?t_130 <http://example.org/utils#hasCodeValue> ?t_86.
+}.
+{
+    ?t_130 <http://example.org/utils#hasCodeValue> ?t_86.
+} => {
+    ?t_130 <http://example.org/utils#hasCodeValue> ?t_86.
+}.
+{
+    ?t_130 <http://example.org/utils#refersTo> ?t_85.
+} => {
+    ?t_130 <http://example.org/utils#refersTo> ?t_85.
+}.
+{
+    ?t_97 <http://example.org/utils#timeSinceObsEnd> ?t_98.
+} => {
+    ?t_97 <http://example.org/utils#timeSinceObsEnd> ?t_98.
+}.
+{
+    ?t_86 <http://example.org/utils#timeSinceCondOnset> ?t_98.
+} => {
+    ?t_86 <http://example.org/utils#timeSinceCondOnset> ?t_98.
+}.
+# 2024-12-03T18:46:32.078Z in=799 out=22 ent=22 step=22 brake=2 inf=1653823 sec=0.120 inf/sec=13781858
+# ENDS
+
