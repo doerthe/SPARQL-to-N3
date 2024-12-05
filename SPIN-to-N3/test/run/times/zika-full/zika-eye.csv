@@ -1,0 +1,11 @@
+gen1:
+time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total
+0.662,0.206,.02,.01,.02,.08
+
+gen10:
+time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total
+0.639,0.198,.02,.02,.49,.56
+
+gen100:
+time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total
+0.634,0.205,.02,.12,35.76,35.92

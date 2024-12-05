@@ -1,0 +1,69 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/50.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_0 ex:result (("x2" <http://example.org/gmark/25>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/25>) ("x0" <http://example.org/gmark/45>)).
+_:sk_1 ex:result (("x2" <http://example.org/gmark/25>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/31>) ("x0" <http://example.org/gmark/45>)).
+_:sk_2 ex:result (("x2" <http://example.org/gmark/25>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/27>) ("x0" <http://example.org/gmark/45>)).
+_:sk_3 ex:result (("x2" <http://example.org/gmark/25>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/35>) ("x0" <http://example.org/gmark/45>)).
+_:sk_4 ex:result (("x2" <http://example.org/gmark/25>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/37>) ("x0" <http://example.org/gmark/45>)).
+_:sk_5 ex:result (("x2" <http://example.org/gmark/25>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/32>) ("x0" <http://example.org/gmark/45>)).
+_:sk_6 ex:result (("x2" <http://example.org/gmark/31>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/25>) ("x0" <http://example.org/gmark/45>)).
+_:sk_7 ex:result (("x2" <http://example.org/gmark/31>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/31>) ("x0" <http://example.org/gmark/45>)).
+_:sk_8 ex:result (("x2" <http://example.org/gmark/31>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/27>) ("x0" <http://example.org/gmark/45>)).
+_:sk_9 ex:result (("x2" <http://example.org/gmark/31>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/35>) ("x0" <http://example.org/gmark/45>)).
+_:sk_10 ex:result (("x2" <http://example.org/gmark/31>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/37>) ("x0" <http://example.org/gmark/45>)).
+_:sk_11 ex:result (("x2" <http://example.org/gmark/31>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/32>) ("x0" <http://example.org/gmark/45>)).
+_:sk_12 ex:result (("x2" <http://example.org/gmark/27>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/25>) ("x0" <http://example.org/gmark/45>)).
+_:sk_13 ex:result (("x2" <http://example.org/gmark/27>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/31>) ("x0" <http://example.org/gmark/45>)).
+_:sk_14 ex:result (("x2" <http://example.org/gmark/27>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/27>) ("x0" <http://example.org/gmark/45>)).
+_:sk_15 ex:result (("x2" <http://example.org/gmark/27>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/35>) ("x0" <http://example.org/gmark/45>)).
+_:sk_16 ex:result (("x2" <http://example.org/gmark/27>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/37>) ("x0" <http://example.org/gmark/45>)).
+_:sk_17 ex:result (("x2" <http://example.org/gmark/27>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/32>) ("x0" <http://example.org/gmark/45>)).
+_:sk_18 ex:result (("x2" <http://example.org/gmark/35>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/25>) ("x0" <http://example.org/gmark/45>)).
+_:sk_19 ex:result (("x2" <http://example.org/gmark/35>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/31>) ("x0" <http://example.org/gmark/45>)).
+_:sk_20 ex:result (("x2" <http://example.org/gmark/35>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/27>) ("x0" <http://example.org/gmark/45>)).
+_:sk_21 ex:result (("x2" <http://example.org/gmark/35>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/35>) ("x0" <http://example.org/gmark/45>)).
+_:sk_22 ex:result (("x2" <http://example.org/gmark/35>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/37>) ("x0" <http://example.org/gmark/45>)).
+_:sk_23 ex:result (("x2" <http://example.org/gmark/35>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/32>) ("x0" <http://example.org/gmark/45>)).
+_:sk_24 ex:result (("x2" <http://example.org/gmark/37>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/25>) ("x0" <http://example.org/gmark/45>)).
+_:sk_25 ex:result (("x2" <http://example.org/gmark/37>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/31>) ("x0" <http://example.org/gmark/45>)).
+_:sk_26 ex:result (("x2" <http://example.org/gmark/37>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/27>) ("x0" <http://example.org/gmark/45>)).
+_:sk_27 ex:result (("x2" <http://example.org/gmark/37>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/35>) ("x0" <http://example.org/gmark/45>)).
+_:sk_28 ex:result (("x2" <http://example.org/gmark/37>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/37>) ("x0" <http://example.org/gmark/45>)).
+_:sk_29 ex:result (("x2" <http://example.org/gmark/37>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/32>) ("x0" <http://example.org/gmark/45>)).
+_:sk_30 ex:result (("x2" <http://example.org/gmark/32>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/25>) ("x0" <http://example.org/gmark/45>)).
+_:sk_31 ex:result (("x2" <http://example.org/gmark/32>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/31>) ("x0" <http://example.org/gmark/45>)).
+_:sk_32 ex:result (("x2" <http://example.org/gmark/32>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/27>) ("x0" <http://example.org/gmark/45>)).
+_:sk_33 ex:result (("x2" <http://example.org/gmark/32>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/35>) ("x0" <http://example.org/gmark/45>)).
+_:sk_34 ex:result (("x2" <http://example.org/gmark/32>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/37>) ("x0" <http://example.org/gmark/45>)).
+_:sk_35 ex:result (("x2" <http://example.org/gmark/32>) ("x1" <http://example.org/gmark/45>) ("x3" <http://example.org/gmark/32>) ("x0" <http://example.org/gmark/45>)).
+_:sk_36 ex:result (("x2" <http://example.org/gmark/29>) ("x1" <http://example.org/gmark/46>) ("x3" <http://example.org/gmark/29>) ("x0" <http://example.org/gmark/46>)).
+_:sk_37 ex:result (("x2" <http://example.org/gmark/29>) ("x1" <http://example.org/gmark/46>) ("x3" <http://example.org/gmark/39>) ("x0" <http://example.org/gmark/46>)).
+_:sk_38 ex:result (("x2" <http://example.org/gmark/39>) ("x1" <http://example.org/gmark/46>) ("x3" <http://example.org/gmark/29>) ("x0" <http://example.org/gmark/46>)).
+_:sk_39 ex:result (("x2" <http://example.org/gmark/39>) ("x1" <http://example.org/gmark/46>) ("x3" <http://example.org/gmark/39>) ("x0" <http://example.org/gmark/46>)).
+_:sk_40 ex:result (("x2" <http://example.org/gmark/33>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/33>) ("x0" <http://example.org/gmark/48>)).
+_:sk_41 ex:result (("x2" <http://example.org/gmark/33>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/26>) ("x0" <http://example.org/gmark/48>)).
+_:sk_42 ex:result (("x2" <http://example.org/gmark/33>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/34>) ("x0" <http://example.org/gmark/48>)).
+_:sk_43 ex:result (("x2" <http://example.org/gmark/33>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/38>) ("x0" <http://example.org/gmark/48>)).
+_:sk_44 ex:result (("x2" <http://example.org/gmark/26>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/33>) ("x0" <http://example.org/gmark/48>)).
+_:sk_45 ex:result (("x2" <http://example.org/gmark/26>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/26>) ("x0" <http://example.org/gmark/48>)).
+_:sk_46 ex:result (("x2" <http://example.org/gmark/26>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/34>) ("x0" <http://example.org/gmark/48>)).
+_:sk_47 ex:result (("x2" <http://example.org/gmark/26>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/38>) ("x0" <http://example.org/gmark/48>)).
+_:sk_48 ex:result (("x2" <http://example.org/gmark/34>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/33>) ("x0" <http://example.org/gmark/48>)).
+_:sk_49 ex:result (("x2" <http://example.org/gmark/34>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/26>) ("x0" <http://example.org/gmark/48>)).
+_:sk_50 ex:result (("x2" <http://example.org/gmark/34>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/34>) ("x0" <http://example.org/gmark/48>)).
+_:sk_51 ex:result (("x2" <http://example.org/gmark/34>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/38>) ("x0" <http://example.org/gmark/48>)).
+_:sk_52 ex:result (("x2" <http://example.org/gmark/38>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/33>) ("x0" <http://example.org/gmark/48>)).
+_:sk_53 ex:result (("x2" <http://example.org/gmark/38>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/26>) ("x0" <http://example.org/gmark/48>)).
+_:sk_54 ex:result (("x2" <http://example.org/gmark/38>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/34>) ("x0" <http://example.org/gmark/48>)).
+_:sk_55 ex:result (("x2" <http://example.org/gmark/38>) ("x1" <http://example.org/gmark/48>) ("x3" <http://example.org/gmark/38>) ("x0" <http://example.org/gmark/48>)).
+_:sk_56 ex:result (("x2" <http://example.org/gmark/28>) ("x1" <http://example.org/gmark/47>) ("x3" <http://example.org/gmark/28>) ("x0" <http://example.org/gmark/47>)).
+_:sk_57 ex:result (("x2" <http://example.org/gmark/36>) ("x1" <http://example.org/gmark/49>) ("x3" <http://example.org/gmark/36>) ("x0" <http://example.org/gmark/49>)).
+_:sk_58 ex:result (("x2" <http://example.org/gmark/36>) ("x1" <http://example.org/gmark/49>) ("x3" <http://example.org/gmark/30>) ("x0" <http://example.org/gmark/49>)).
+_:sk_59 ex:result (("x2" <http://example.org/gmark/30>) ("x1" <http://example.org/gmark/49>) ("x3" <http://example.org/gmark/36>) ("x0" <http://example.org/gmark/49>)).
+_:sk_60 ex:result (("x2" <http://example.org/gmark/30>) ("x1" <http://example.org/gmark/49>) ("x3" <http://example.org/gmark/30>) ("x0" <http://example.org/gmark/49>)).
+# 2024-12-04T14:59:03.649Z in=66 out=61 ent=61 step=8865 brake=1 inf=536606 sec=0.062 inf/sec=8654935
+# ENDS
+

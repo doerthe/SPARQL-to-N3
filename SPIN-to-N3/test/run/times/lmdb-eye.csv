@@ -1,4 +1,4 @@
-query,result_file,time_gen_spin,time_gen_n3,time_exec_n3
-lmdb1,lmdb_lmdb-lmdb1.n3,0.561,0.075,50.962
-lmdb2,lmdb_lmdb-lmdb2.n3,0.599,0.079,32.462
-lmdb3,lmdb_lmdb-lmdb3.n3,0.567,0.079,38.902
+query,result_file,time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total,py_total_time
+lmdb1,lmdb_lmdb-lmdb1.n3,0.614,0.077,.02,31.06,19.58,50.71,51.42158484458923
+lmdb2,lmdb_lmdb-lmdb2.n3,0.617,0.078,.02,30.87,2.15,33.09,33.81319284439087
+lmdb3,lmdb_lmdb-lmdb3.n3,0.662,0.083,.02,30.98,8.57,39.62,40.38651704788208

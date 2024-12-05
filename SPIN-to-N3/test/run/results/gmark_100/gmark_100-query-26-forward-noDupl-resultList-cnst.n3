@@ -1,0 +1,34 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/100.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/47>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/41>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/18>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/30>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/10>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/37>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/31>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/19>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/6>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/43>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/23>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/8>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/29>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/7>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/27>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/25>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/35>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/11>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/34>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/21>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/39>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/38>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/28>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/44>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/16>)).
+ex:SingleResult ex:result (("x0" <http://example.org/gmark/17>)).
+# 2024-12-04T16:08:31.823Z in=136 out=26 ent=26 step=42080 brake=1 inf=2519619 sec=0.139 inf/sec=18126755
+# ENDS
+

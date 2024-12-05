@@ -1,0 +1,2 @@
+query,result_file,load_time,convert_time,exec_time
+query-0,gmark_100-query-0-spin.nt,0.239311458,0.127570125,0.072494417

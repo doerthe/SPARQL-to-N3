@@ -1,0 +1,38 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 --turtle /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50.nt --query tmp/n3query.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_0 ex:result _:sk_1.
+_:sk_1 ex:label "x0".
+_:sk_1 ex:value <http://example.org/gmark/45>.
+_:sk_0 ex:result _:sk_2.
+_:sk_2 ex:label "x3".
+_:sk_2 ex:value <http://example.org/gmark/45>.
+_:sk_3 ex:result _:sk_4.
+_:sk_4 ex:label "x0".
+_:sk_4 ex:value <http://example.org/gmark/46>.
+_:sk_3 ex:result _:sk_5.
+_:sk_5 ex:label "x3".
+_:sk_5 ex:value <http://example.org/gmark/46>.
+_:sk_6 ex:result _:sk_7.
+_:sk_7 ex:label "x0".
+_:sk_7 ex:value <http://example.org/gmark/48>.
+_:sk_6 ex:result _:sk_8.
+_:sk_8 ex:label "x3".
+_:sk_8 ex:value <http://example.org/gmark/48>.
+_:sk_9 ex:result _:sk_10.
+_:sk_10 ex:label "x0".
+_:sk_10 ex:value <http://example.org/gmark/47>.
+_:sk_9 ex:result _:sk_11.
+_:sk_11 ex:label "x3".
+_:sk_11 ex:value <http://example.org/gmark/47>.
+_:sk_12 ex:result _:sk_13.
+_:sk_13 ex:label "x0".
+_:sk_13 ex:value <http://example.org/gmark/49>.
+_:sk_12 ex:result _:sk_14.
+_:sk_14 ex:label "x3".
+_:sk_14 ex:value <http://example.org/gmark/49>.
+# 2024-12-02T18:09:30.120Z in=87 out=30 ent=30 step=82528 brake=1 inf=40731191 sec=3.107 inf/sec=13109492
+# ENDS
+

@@ -1,0 +1,11 @@
+gen100:
+time_gen_spin,time_gen_spin2,time_gen_n3,time_n3_run,time_exec_n3
+0.676,0.150,0.126,0.168,0.957
+
+gen1000:
+time_gen_spin,time_gen_spin2,time_gen_n3,time_n3_run,time_exec_n3
+0.628,0.146,0.121,0.162,46.722
+
+gen1000-sepquery:
+time_exec_n3
+25.476

@@ -1,0 +1,15 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet tmp/query_ground.spin ../../auxiliary-files/aux_2.n3 --query ../../queries/query_general_2.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/
+
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix skolem: <https://example.org/0f3ec7bc-b017-458c-b7f9-f8fde115e386#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix ns2: <https://eyereasoner.github.io/.well-known/genid/a52c1e81-bdaa-4b91-aba9-4f97606f17ea#>.
+
+{
+    ?t_85 <http://example.org/zika#testForZika> true.
+} => {
+    ?t_85 <http://example.org/zika#testForZika> true.
+}.

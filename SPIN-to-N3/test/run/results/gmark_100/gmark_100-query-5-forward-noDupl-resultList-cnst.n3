@@ -1,0 +1,18 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/100.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/120>) ("x2" <http://example.org/gmark/120>) ("x3" <http://example.org/gmark/120>) ("x0" <http://example.org/gmark/120>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/188>) ("x2" <http://example.org/gmark/188>) ("x3" <http://example.org/gmark/188>) ("x0" <http://example.org/gmark/188>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/132>) ("x2" <http://example.org/gmark/132>) ("x3" <http://example.org/gmark/132>) ("x0" <http://example.org/gmark/132>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/137>) ("x2" <http://example.org/gmark/137>) ("x3" <http://example.org/gmark/137>) ("x0" <http://example.org/gmark/137>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/115>) ("x2" <http://example.org/gmark/115>) ("x3" <http://example.org/gmark/115>) ("x0" <http://example.org/gmark/115>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/145>) ("x2" <http://example.org/gmark/145>) ("x3" <http://example.org/gmark/145>) ("x0" <http://example.org/gmark/145>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/147>) ("x2" <http://example.org/gmark/147>) ("x3" <http://example.org/gmark/147>) ("x0" <http://example.org/gmark/147>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/139>) ("x2" <http://example.org/gmark/139>) ("x3" <http://example.org/gmark/139>) ("x0" <http://example.org/gmark/139>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/143>) ("x2" <http://example.org/gmark/143>) ("x3" <http://example.org/gmark/143>) ("x0" <http://example.org/gmark/143>)).
+ex:SingleResult ex:result (("x1" <http://example.org/gmark/134>) ("x2" <http://example.org/gmark/134>) ("x3" <http://example.org/gmark/134>) ("x0" <http://example.org/gmark/134>)).
+# 2024-12-04T16:09:29.367Z in=139 out=10 ent=10 step=198 brake=1 inf=177631 sec=0.032 inf/sec=5550969
+# ENDS
+

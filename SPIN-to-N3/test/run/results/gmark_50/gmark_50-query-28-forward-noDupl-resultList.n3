@@ -1,0 +1,6 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/50.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+# 2024-12-04T14:59:21.984Z in=69 out=0 ent=0 step=0 brake=1 inf=9679380 sec=0.318 inf/sec=30438302
+# ENDS
+

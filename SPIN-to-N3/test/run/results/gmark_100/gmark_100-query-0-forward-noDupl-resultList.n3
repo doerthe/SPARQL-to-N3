@@ -1,0 +1,17 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/100.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_0 ex:result (("x1" <http://example.org/gmark/99>) ("x2" <http://example.org/gmark/99>) ("x0" <http://example.org/gmark/99>)).
+_:sk_1 ex:result (("x1" <http://example.org/gmark/97>) ("x2" <http://example.org/gmark/97>) ("x0" <http://example.org/gmark/97>)).
+_:sk_2 ex:result (("x1" <http://example.org/gmark/92>) ("x2" <http://example.org/gmark/92>) ("x0" <http://example.org/gmark/92>)).
+_:sk_3 ex:result (("x1" <http://example.org/gmark/91>) ("x2" <http://example.org/gmark/91>) ("x0" <http://example.org/gmark/91>)).
+_:sk_4 ex:result (("x1" <http://example.org/gmark/90>) ("x2" <http://example.org/gmark/90>) ("x0" <http://example.org/gmark/90>)).
+_:sk_5 ex:result (("x1" <http://example.org/gmark/96>) ("x2" <http://example.org/gmark/96>) ("x0" <http://example.org/gmark/96>)).
+_:sk_6 ex:result (("x1" <http://example.org/gmark/94>) ("x2" <http://example.org/gmark/94>) ("x0" <http://example.org/gmark/94>)).
+_:sk_7 ex:result (("x1" <http://example.org/gmark/93>) ("x2" <http://example.org/gmark/93>) ("x0" <http://example.org/gmark/93>)).
+_:sk_8 ex:result (("x1" <http://example.org/gmark/95>) ("x2" <http://example.org/gmark/95>) ("x0" <http://example.org/gmark/95>)).
+# 2024-12-04T15:38:14.740Z in=137 out=9 ent=9 step=4316 brake=1 inf=378897 sec=0.043 inf/sec=8811558
+# ENDS
+

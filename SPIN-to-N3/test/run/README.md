@@ -90,7 +90,9 @@ __Note__: you can still do pre-processing as part of the run, by setting the att
 
 `./run_spin3_forward.sh ../../../other_systems/RecSPARQL/queries/gmark/gmark1.sparql ../../../other_systems/RecSPARQL/datasets/GMark/graph1-subset2.nt true false false results/gmark1-subset2-forward.nt
 
-./run_spin3_forward.sh ../../../other_systems/gmark-dominik/50/query-1.sparql ../../../other_systems/gmark-dominik/50.nt true false false results/gmark_50-q1-forward.nt
+./run_spin3_forward.sh ../../../other_systems/gmark-dominik/50/query-40.sparql ../../../other_systems/gmark-dominik/50.nt true false false results/gmark_50-q40-forward.nt
+
+./run_spin3_forward-noDuplicates.sh ../../../other_systems/gmark-dominik/50/query-40.sparql ../../../other_systems/gmark-dominik/50.nt true false false results/gmark_50-q40-forward-noDupl.nt
 
 nmo ./tmp/sin3-gmark1_subset2.nmo --export-dir results --overwrite-results
 
@@ -103,7 +105,9 @@ default vs. forward
 ```
 ./run_spin3_loops.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen1.n3 true true true results/zika-eye.n3
 
-./run_spin3_forward.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen1.n3 true true true results/zika-eye-forward.n3
+./run_spin3_forward.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward-sepquery.n3
+
+./run_spin3_forward.sh ../cases/zika/zika-queries-all-red.sparql ../cases/zika/gen/red/gen1000.n3 true true true results/zika-eye-forward-sepquery-red.n3
 ```
 
 forward vs. forward-noDuplicates:
@@ -111,6 +115,11 @@ forward vs. forward-noDuplicates:
 ./run_spin3_forward.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward.n3
 
 ./run_spin3_forward-noDuplicates.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen100.n3 true true true results/zika-eye-forward-noDupl.n3
+```
+
+try out different queries:
+```
+./query_spin3_forward.sh results/zika-query/n3query.n3 results/zika-query/runtime.n3 results/zika-query/ntriples.nt results/zika-query/n3query-query.n3 results/zika-eye-forward-query.n3
 ```
 
 - **covid-19**
@@ -129,21 +138,27 @@ forward vs. forward-noDuplicates:
 python run_exp.py --query ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --script run_spin3_loops.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}.n3" --times_file "times/gmark_50-eye.csv"
 
 python run_exp.py --query ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --script run_spin3_forward.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward.n3" --times_file "times/gmark_50-eye-forward.csv"
+
+python run_exp.py --query ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --script run_spin3_forward-noDuplicates.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward-noDupl-resultList.n3" --times_file "times/gmark_50-eye-forward-noDupl-resultList.csv"
+
+python run_exp.py --query ../../../other_systems/gmark-dominik/100 --data ../../../other_systems/gmark-dominik/100.nt --script run_spin3_forward-noDuplicates.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward-noDupl-resultList.n3" --times_file "times/gmark_100-eye-forward-noDupl-resultList.csv"
+
+python run_exp.py --query ../../../other_systems/gmark-dominik/500 --data ../../../other_systems/gmark-dominik/500.nt --script run_spin3_forward-noDuplicates.sh --recursive false --result_folder results --result_tmpl "gmark_{0}-{1}-forward-noDupl-resultList.n3" --times_file "times/gmark_500-eye-forward-noDupl-resultList.csv"
 ```
 
 - **lmdb**
 ```
-python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye-sepquery.csv"
 ```
 
 - **yago**
 ```
-python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye-sepquery.csv"
 ```
 
 - **zika**
 ```
-python run_exp.py --query ../cases/zika/zika-queries-all.sparql --data ../cases/zika/zika-data.n3 --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "zika.n3" --times_file "times/zika-eye.csv"
+python run_exp.py --query ../cases/zika/zika-queries-all.sparql --data ../cases/zika/zika-data.n3 --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "zika.n3" --times_file "times/zika-eye-sepquery.csv"
 ```
 
 ### SiN3 - nmo
@@ -160,7 +175,9 @@ See `RecSPARQL/Experiment` class for **RecSPARQL** experiments.
 
 ## Compare results:
 ```
-python cmp_results.py --query_folder ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --result_folder results --result_tmpls "gmark_{0}-{1}.n3","gmark_{0}-{1}-forward.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
+python cmp_results.py --query_folder ../../../other_systems/gmark-dominik/50 --data ../../../other_systems/gmark-dominik/50.nt --result_folder results/gmark_50 --result_tmpls "gmark_{0}-{1}-forward-noDupl-resultList.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
+
+python cmp_results.py --query_folder ../../../other_systems/gmark-dominik/100 --data ../../../other_systems/gmark-dominik/100.nt --result_folder results/gmark_100 --result_tmpls "gmark_{0}-{1}-forward-noDupl-resultList.n3","gmark_{0}-{1}.nmo" > cmp_results.txt
 ```
 
 

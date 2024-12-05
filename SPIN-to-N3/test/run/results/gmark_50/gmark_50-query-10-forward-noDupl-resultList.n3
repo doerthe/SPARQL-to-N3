@@ -1,0 +1,13 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/gmark-dominik/50.nt --query tmp/n3OptimisedQuery.n3 --nope
+
+@prefix ex: <http://example.org/spin#>.
+
+_:sk_0 ex:result (("x0" <http://example.org/gmark/139>) ("x1" <http://example.org/gmark/46>) ("x2" <http://example.org/gmark/139>)).
+_:sk_1 ex:result (("x0" <http://example.org/gmark/55>) ("x1" <http://example.org/gmark/45>) ("x2" <http://example.org/gmark/55>)).
+_:sk_2 ex:result (("x0" <http://example.org/gmark/90>) ("x1" <http://example.org/gmark/49>) ("x2" <http://example.org/gmark/90>)).
+_:sk_3 ex:result (("x0" <http://example.org/gmark/147>) ("x1" <http://example.org/gmark/47>) ("x2" <http://example.org/gmark/147>)).
+_:sk_4 ex:result (("x0" <http://example.org/gmark/128>) ("x1" <http://example.org/gmark/48>) ("x2" <http://example.org/gmark/128>)).
+# 2024-12-04T14:58:59.377Z in=69 out=5 ent=5 step=96 brake=1 inf=144194 sec=0.032 inf/sec=4506063
+# ENDS
+
