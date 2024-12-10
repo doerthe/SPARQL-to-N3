@@ -1,0 +1,1 @@
+removed all occurrences of \{\d?,\d?\} (non-standard property path feature)

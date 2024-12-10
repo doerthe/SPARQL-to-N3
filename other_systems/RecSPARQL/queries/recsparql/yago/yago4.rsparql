@@ -1,0 +1,19 @@
+WITH RECURSIVE http://db.ing.puc.cl/temp AS
+{
+CONSTRUCT {<http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?x1}
+FROM NAMED <http://db.ing.puc.cl/temp>
+FROM <urn:x-arq:DefaultGraph>
+WHERE {
+{ <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?x1 }
+UNION
+{ ?y <http://yago-knowledge.org/resource/isLocatedIn> ?x1 .
+    GRAPH <http://db.ing.puc.cl/temp> { <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?y }
+}
+}
+}
+SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+FROM <urn:x-arq:DefaultGraph>
+WHERE {
+    ?z <http://yago-knowledge.org/resource/dealsWith> ?v .
+    GRAPH <http://db.ing.puc.cl/temp> { ?x ?y ?z }
+}
