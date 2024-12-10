@@ -65,11 +65,13 @@
 
 #"optlist" log:trace ?optlist.
 ### check for optional and make patterns if needed ###
+"optlist" e:trace ?optlist.
 (?graph5 ?optlist ) aux:makeOptionalPatterns ?graph8.
 
 #"optOut" log:trace {(?graph5 ?optlist ) aux:makeOptionalPatterns ?graph.}.
 
 ?graph8 log:equalTo ?graph.
+{} log:becomes {?graph aux:makeOptRules true.}
 
 }.
 
@@ -151,35 +153,12 @@
   }.
 
 #pattern construction
-{(?graph () ) aux:makeOptionalPatterns ?graph.}<={
- # 3 log:trace ("graph" ?graph). 
-  true log:callWithCut ?true.
-  ?graph aux:flatOpt ?g5.
-   {} log:becomes {?graph aux:makeRule ?g5. }.
-  }.
+{(?graph () ) aux:makeOptionalPatterns ?graph.}<={true log:callWithCut ?true}.
 {(?graph5 ?optList) aux:makeOptionalPatterns ?graph.}<={
     ?optList rdf:first ?first.
     ?optList rdf:rest ?rest.
-    (?graph5 ?first) log:skolem ?out.
-  
-   # :x log:skolem ?x.
-   # :y log:skolem ?y.
-   # "ho" log:trace (?graph5 ?optList ?first).
 
-   # ?graph5 aux:makeRule ?gr.
-   # ?first aux:makeRule ?gr2.
-?graph5 aux:flatOpt ?g5.
-?first aux:flatOpt ?f5.
-
-    {} log:becomes {?graph5 aux:makeRule ?g5. ?first aux:makeRule ?f5}.
-   #  {} log:becomes ?gr2.
- 
-    #1 e:trace (?graph5 ?gr).
-    #2 e:trace  { ({ ?graph5 aux:optionalQ ?first} ?rest) aux:makeOptionalPatterns ?graph.}.
-
-   # ({ (?o ?graph5 ?o2 ?first) aux:optionalQ (?out ?call)} ?rest) aux:makeOptionalPatterns ?graph.
-    ({ (?graph5 ?first) aux:optResult ?out} ?rest) aux:makeOptionalPatterns ?graph.
- # 4 log:trace ("graph" ?graph). 
+    ({?graph5 aux:optionalQ ?first} ?rest) aux:makeOptionalPatterns ?graph.
 
     #({?graph5 aux:optionalQ ?optpattern} {?optpattern list:in ?optList} ?out) log:collectAllIn ?scope. 
     #(?out ({})) list:append ?ol.
@@ -915,24 +894,6 @@ aux:value log:skolem ?value.
     ?uri string:notMatches ".*bn_.*"
 }.
 
-#creation of unification step for optional
-{ ?g aux:addOptionalEvaluation ?x }<=
-{?g log:equalTo {(?s1 ?s2) ?p ?o }.
-
-  ?p log:rawType log:Other.
-  ?p log:equalTo aux:optResult.
-  true log:callWithCut true.
-
-  ?g aux:flatOpt ?g5.
-
-  (?g 5) aux:copy ?gc.
-
-  (?o 5) aux:copy ?oc.
-
-  (?gc {?g5 log:includes ?oc}) log:conjunction ?x.
-
-  }.
-{ ?x aux:addOptionalEvaluation ?x }<={}.
 
 
 
@@ -1017,157 +978,46 @@ aux:value log:skolem ?value.
 
 
 #local graph copy
-# 1: what do I want to copy
-# 2: a number to make sure to get different copies (all variables for 1 whill be the same, no matter which rule instantiated the copy, same for 2,3,4,...)
 {
- (?x ?n) aux:copy ?y 
+ ?x aux:copy ?y 
 }<={
   ?x log:rawType log:Formula.
-  ?x log:notEqualTo true.
-
    true log:callWithCut true.
    ?x e:graphList ?list.
-
-   (?list () ?n) aux:copyGraphList ?listCopy.
-    true log:callWithCut true.
+   (?list ()) aux:copyGraphList ?listCopy.
    ?listCopy log:conjunction ?y.
-
 }.
 
 
-{(?x ?n) aux:copy ?y}<={
-  ?x log:rawType log:SkolemIRI.
+{?x aux:copy ?y}<={
+  ?x log:uri ?uri.
+  ?uri string:startsWith "https://eyereasoner.github.io/.well-known/genid/".
 
   true log:callWithCut true.
-  (?x ?n) log:skolem ?y.  
+  (?x 1) log:skolem ?y.  
 }.
-{(?x ?n) aux:copy ?xc}<={
-  ?x log:rawType rdf:List.
-  true log:callWithCut true.
-  (?x () ?n) aux:copyList ?xc.
+{?x aux:copy ?x}<={
+  ?x log:notEqualTo aux:optionalQ.
 }.
 
-{(?x ?n) aux:copy ?x}<={
- 
-}.
-
-{(() ?xc ?n) aux:copyList ?xc.}<={}.
-{(?list ?copy ?n) aux:copyList ?xc.}<={
-?list rdf:first ?first.
-(?first ?n) aux:copy ?fc.
-?list rdf:rest ?rest.
-(?copy (?fc)) list:append ?copy2.
-(?rest ?copy2 ?n) aux:copyList ?xc.
-}.
-
-{(() ?list ?n)  aux:copyGraphList ?list}<={}.
-{(?l ?r ?n) aux:copyGraphList ?out}<={
+{(() ?list) aux:copyGraphList ?list}<={}.
+{(?l ?r) aux:copyGraphList ?out}<={
   ?l rdf:first ?f.
   ?f log:equalTo {?s ?p ?o}.
-  (?s ?n) aux:copy ?sc.
-  (?p ?n) aux:copy ?pc.
-  (?o ?n) aux:copy ?oc.
+  ?s aux:copy ?sc.
+  ?p aux:copy ?pc.
+  ?o aux:copy ?oc.
   (?r ({?sc ?pc ?oc})) list:append ?r2.
   ?l rdf:rest ?l2.
-  (?l2 ?r2 ?n) aux:copyGraphList ?out.
+  (?l2 ?r2) aux:copyGraphList ?out.
 }.
-
-#partial grounding for optional
-{{?s ?p ?o} aux:pGround (?sg ?p ?o)}<={
-  ?p log:rawType log:Other.
-  ?p log:equalTo aux:optionalQ.
-  true log:callWithCut true.
-  ?s aux:pGround ?sg.
-}.
-{?g aux:pGround ?gg}<={
-  ?g log:rawType log:Formula.
-  ?g log:notEqualTo {}.
-  true log:callWithCut true.
-  ?g e:graphList ?glist.
-  (?glist ()) aux:pGroundGraph ?gglist.
-  ?gglist log:conjunction ?gg.
-}.
-
-{?s aux:pGround ?sg}<={
-  ?s log:rawType rdf:List.
-  true log:callWithCut true.
-  (?s ()) aux:pGroundList ?sg
-}.
-
-{?s aux:pGround ?sg}<={
-  ?s log:rawType log:SkolemIRI.
-  ?s log:uri ?sg.
-  true log:callWithCut true.
-}.
-
-{?s aux:pGround ?s}<={
-}.
-
-{(() ?gg) aux:pGroundGraph ?gg.} <= {}.
-{(?glist ?g) aux:pGroundGraph ?gg.} <= {
-
- ?glist rdf:first ?f.
- ?f log:equalTo {?s ?p ?o}.
- #?p log:notEqualTo aux:optResult.
-#true log:callWithCut true.
-
- ?s aux:pGround ?sg.
- ?p aux:pGround ?pg.
- ?o aux:pGround ?og.
- (?g ({?sg ?pg ?og})) list:append ?g2.
- ?glist  rdf:rest ?grest.
- (?grest ?g2) aux:pGroundGraph ?gg.
-}.
-
-#todo: not sure that case is needed.
-#{(?glist ?g) aux:pGroundGraph ?gg.} <= {
-
- #?glist rdf:first  {?s aux:optResult ?o}.
-
-
- #?s aux:pGround ?sg.
-
- #(?g ({?sg aux:optResult ?o})) list:append ?g2.
- #?glist  rdf:rest ?grest.
- #   26 log:trace {(?grest ?g2) aux:pGroundGraph ?gg.}.
- #(?grest ?g2) aux:pGroundGraph ?gg.
-#}.
-
-{  (() ?x) aux:pGroundList ?x} <={}.
-{  (?list ?x) aux:pGroundList ?out} <={
-?list rdf:first ?first.
-?first aux:pGround ?fg.
-(?x (?fg)) list:append ?x2.
-?list rdf:rest ?rest.
-(?rest ?x2) aux:pGroundList ?out. 
-
-}.
-
-
-
 
 {?s aux:flatOpt ?sf.}<=
-{?s log:equalTo {(?s1 ?s2) ?p1 ?o1}. ?p1 log:rawType log:Other. ?p1 log:equalTo aux:optResult.
+{?s log:equalTo {?s1 ?p1 ?o1}. ?p1 log:rawType log:Other. ?p1 log:equalTo aux:optionalQ.
 true log:callWithCut true.
  ?s1 aux:flatOpt ?sf1.
-  ?s2 aux:flatOpt ?of1.
+  ?o1 aux:flatOpt ?of1.
   (?sf1 ?of1) log:conjunction ?sf.
 }.
 
 {?s aux:flatOpt ?s.} <= {}.
-
-#1 first argument to call
-#2 what to  call in case of not includes
-#3 argument (object) of log:includes
-#4 subject of not includes
-#5 object of not includes
-#6 possible second includes
-
-
-{(?g ?x ?n) aux:getArguments (?xc ?xc ?yc  ?g  ?yc {})}<={  ?x log:equalTo {(?a ?b) aux:optResult ?y }. true log:callWithCut true. 
-        (?x (2 ?n)) aux:copy ?xc. 
-      (?y (2 ?n)) aux:copy ?yc. 
-     # (?g (6 ?n)) aux:copy ?gc.
-      }.
-
-{(?g ?x ?n) aux:getArguments (?xc  { } ?xc  ?j ?xc {?g log:includes ?xc} ) }<={ (?x (2 ?n)) aux:copy ?xc.  :sss log:skolem ?sk1. :ppp log:skolem ?sk2. ?j log:equalTo (?sk1 ?sk2). }.
