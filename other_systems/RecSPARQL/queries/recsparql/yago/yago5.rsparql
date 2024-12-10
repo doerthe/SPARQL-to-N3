@@ -1,0 +1,34 @@
+WITH RECURSIVE http://db.ing.puc.cl/temp AS
+{
+CONSTRUCT {?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?x1}
+FROM NAMED <http://db.ing.puc.cl/temp>
+FROM <urn:x-arq:DefaultGraph>
+WHERE {
+{ ?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?x1 .
+    ?x1 <http://yago-knowledge.org/resource/owns> ?y }
+UNION
+{ ?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?y .
+    GRAPH <http://db.ing.puc.cl/temp> { ?y <http://yago-knowledge.org/resource/isMarriedTo> ?x1 }
+}
+}
+}
+WITH RECURSIVE http://db.ing.puc.cl/temp2 AS
+{
+CONSTRUCT {?x0 <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States>}
+FROM NAMED <http://db.ing.puc.cl/temp2>
+FROM <urn:x-arq:DefaultGraph>
+WHERE {
+{ ?x0 <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States> }
+UNION
+{ ?x0 <http://yago-knowledge.org/resource/isLocatedIn> ?y .
+    GRAPH <http://db.ing.puc.cl/temp2> { ?y <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States> }
+}
+}
+}
+SELECT * FROM NAMED <http://db.ing.puc.cl/temp> FROM NAMED <http://db.ing.puc.cl/temp2>
+FROM <urn:x-arq:DefaultGraph>
+WHERE {
+    ?z1 <http://yago-knowledge.org/resource/owns> ?x2 .
+    GRAPH <http://db.ing.puc.cl/temp> { ?x1 ?y1 ?z1 } .
+    GRAPH <http://db.ing.puc.cl/temp2> { ?x2 ?y2 ?z2 }
+}

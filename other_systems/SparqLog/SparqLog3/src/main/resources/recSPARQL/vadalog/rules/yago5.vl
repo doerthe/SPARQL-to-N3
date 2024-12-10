@@ -1,0 +1,29 @@
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+
+ans1(ID1, L_x0, DType_x0, LTag_x0, L_x1, DType_x1, LTag_x1, L_y, DType_y, LTag_y, "default") :- ans2(ID2, L_x0, DType_x0, LTag_x0, L_x1, DType_x1, LTag_x1, "default"), ans3(ID3, L_x1, DType_x1, LTag_x1, L_y, DType_y, LTag_y, "default"), ID1 = ["f1", L_x1, DType_x1, LTag_x1, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, ID2, ID3].
+ans2(ID2, L_x0, DType_x0, LTag_x0, L_x1, DType_x1, LTag_x1, "default") :- triple(L_x0, DType_x0, LTag_x0, "<http://yago-knowledge.org/resource/isMarriedTo>", "URI", "", L_x1, DType_x1, LTag_x1, "default"), ID2 = ["f2", L_x0, DType_x0, LTag_x0, "<http://yago-knowledge.org/resource/isMarriedTo>", "URI", "", L_x1, DType_x1, LTag_x1].
+ans3(ID3, L_x1, DType_x1, LTag_x1, L_y, DType_y, LTag_y, "default") :- triple(L_x1, DType_x1, LTag_x1, "<http://yago-knowledge.org/resource/owns>", "URI", "", L_y, DType_y, LTag_y, "default"), ID3 = ["f3", L_x1, DType_x1, LTag_x1, "<http://yago-knowledge.org/resource/owns>", "URI", "", L_y, DType_y, LTag_y].
+@include("RDF Triples").
+@output("ans1").
+
+ans1(ID1, L_x0, DType_x0, LTag_x0, L_x1, DType_x1, LTag_x1, L_y, DType_y, LTag_y, "default") :- ans2(ID2, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, "default"), ans3(ID3, L_x1, DType_x1, LTag_x1, L_y, DType_y, LTag_y, "default"), ID1 = ["f1", L_x1, DType_x1, LTag_x1, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, ID2, ID3].
+ans2(ID2, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, "default") :- triple(L_x0, DType_x0, LTag_x0, "<http://yago-knowledge.org/resource/isMarriedTo>", "URI", "", L_y, DType_y, LTag_y, "default"), ID2 = ["f2", L_x0, DType_x0, LTag_x0, "<http://yago-knowledge.org/resource/isMarriedTo>", "URI", "", L_y, DType_y, LTag_y].
+ans3(ID3, L_x1, DType_x1, LTag_x1, L_y, DType_y, LTag_y, "default") :- triple(L_y, DType_y, LTag_y, "<http://yago-knowledge.org/resource/isMarriedToOwnership>", "URI", "", L_x1, DType_x1, LTag_x1, "default"), ID3 = ["f3", L_y, DType_y, LTag_y, "<http://yago-knowledge.org/resource/isMarriedToOwnership>", "URI", "", L_x1, DType_x1, LTag_x1].
+@include("RDF Triples").
+@output("ans1").
+
+ans1(ID1, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, "default") :- ans2(ID2, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, "default"), ans3(ID3, L_y, DType_y, LTag_y, "default"), ID1 = ["f1", L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, ID2, ID3].
+ans2(ID2, L_x0, DType_x0, LTag_x0, L_y, DType_y, LTag_y, "default") :- triple(L_x0, DType_x0, LTag_x0, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_y, DType_y, LTag_y, "default"), ID2 = ["f2", L_x0, DType_x0, LTag_x0, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_y, DType_y, LTag_y].
+ans3(ID3, L_y, DType_y, LTag_y, "default") :- triple(L_y, DType_y, LTag_y, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", "<http://yago-knowledge.org/resource/United_States>", "URI", "", "default"), ID3 = ["f3", L_y, DType_y, LTag_y, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", "<http://yago-knowledge.org/resource/United_States>", "URI", ""].
+@include("RDF Triples").
+@output("ans1").
+
+ans1(ID1, L_x1, DType_x1, LTag_x1, L_x2, DType_x2, LTag_x2, L_z1, DType_z1, LTag_z1, "default") :- ans2(ID2, L_x1, DType_x1, LTag_x1, L_x2, DType_x2, LTag_x2, L_z1, DType_z1, LTag_z1, "default"), ans3(ID3, L_x2, DType_x2, LTag_x2, "default"), ID1 = ["f1", L_x2, DType_x2, LTag_x2, L_x1, DType_x1, LTag_x1, L_z1, DType_z1, LTag_z1, ID2, ID3].
+ans2(ID2, L_x1, DType_x1, LTag_x1, L_x2, DType_x2, LTag_x2, L_z1, DType_z1, LTag_z1, "default") :- ans4(ID4, L_x2, DType_x2, LTag_x2, L_z1, DType_z1, LTag_z1, "default"), ans5(ID5, L_x1, DType_x1, LTag_x1, L_z1, DType_z1, LTag_z1, "default"), ID2 = ["f2", L_x2, DType_x2, LTag_x2, L_x1, DType_x1, LTag_x1, L_z1, DType_z1, LTag_z1, ID4, ID5].
+ans4(ID4, L_x2, DType_x2, LTag_x2, L_z1, DType_z1, LTag_z1, "default") :- triple(L_z1, DType_z1, LTag_z1, "<http://yago-knowledge.org/resource/owns>", "URI", "", L_x2, DType_x2, LTag_x2, "default"), ID4 = ["f4", L_z1, DType_z1, LTag_z1, "<http://yago-knowledge.org/resource/owns>", "URI", "", L_x2, DType_x2, LTag_x2].
+ans5(ID5, L_x1, DType_x1, LTag_x1, L_z1, DType_z1, LTag_z1, "default") :- triple(L_x1, DType_x1, LTag_x1, "<http://yago-knowledge.org/resource/isMarriedToOwnership>", "URI", "", L_z1, DType_z1, LTag_z1, "default"), ID5 = ["f5", L_x1, DType_x1, LTag_x1, "<http://yago-knowledge.org/resource/isMarriedToOwnership>", "URI", "", L_z1, DType_z1, LTag_z1].
+ans3(ID3, L_x2, DType_x2, LTag_x2, "default") :- triple(L_x2, DType_x2, LTag_x2, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", "<http://yago-knowledge.org/resource/United_States>", "URI", "", "default"), ID3 = ["f3", L_x2, DType_x2, LTag_x2, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", "<http://yago-knowledge.org/resource/United_States>", "URI", ""].
+@include("RDF Triples").
+@output("ans1").
+

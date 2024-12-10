@@ -1,0 +1,63 @@
+*******************************************************************
+************ THE SP^2B SPARQL PERFORMANCE BENCHMARK ***************
+*******************************************************************
+SP^2B is a Performance Benchmark for the SPARQL query language.
+The project homepage at
+
+	http://dbis.informatik.uni-freiburg.de/index.php?project=SP2B
+
+provides more information on the benchmark.
+*******************************************************************
+
+=================================
+******* TABLE OF CONTENTS *******
+=================================
+=  1. The Binaries              =
+=  2. Command Line Options      =
+=  3. License                   =
+=================================
+
+1. The Binaries 
+---------------
+We deliver (depending on the archive type) two binaries, namely
+
+- ./sp2b_gen.exe    a precompiled version of the data generator for Windows
+- ./sp2b_gen        a precompiled version of the data generator for Linux
+
+In addition, this directory contains three text files familynames.txt,
+givennames.txt, and titleword.txt. These files contain random keywords
+and are used as a basis for data generation and are required. To run
+the data generator with standard options (50000 RDF triples will be
+generated), simply type
+
+> ./sp2b_gen (under Linux), or
+> sp2b_gen.exe (under Windows)
+
+from a shell. The output format is RDF in simple NTriples syntax.
+
+The data generator is platform-independent (in particular, files generated under
+Windows and Linux are identical modulo line break encoding) and does not use any
+external library, thus the binaries should work on any standard system. If you run
+into any problems with the binaries, you may consider compiling the generator
+from sources. More information on compilation can be found in the README
+file in the src directory (sp2b/src/README).
+
+
+2. Command Line Options 
+-----------------------
+Usage: ./sp2b_gen [BREAK_CONDITION] [OUTFILE], where
+
+BREAK_CONDITION (choose one of the following):
+-t n            -> produces n triples [DEFAULT, with n=50000 triples]
+-s n            -> produces n KB of data
+OUTFILE: name of the output file [DEFAULT='sp2b.n3']
+
+The current version number is plotted right at the beginning, before data
+generation starts. 
+
+
+3. License 
+----------
+The SP^2B data generator has been published under the Berkeley
+License and is open source. Detailed licensing information can
+be found in the attached COPYING file. 

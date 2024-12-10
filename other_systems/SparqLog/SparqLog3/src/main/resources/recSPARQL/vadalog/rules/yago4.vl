@@ -1,0 +1,15 @@
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+
+ans1(ID1, L_x, DType_x, LTag_x, L_y, DType_y, LTag_y, "default") :- ans2(ID2, L_x, DType_x, LTag_x, "default"), ans3(ID3, L_x, DType_x, LTag_x, L_y, DType_y, LTag_y, "default"), ID1 = ["f1", L_x, DType_x, LTag_x, L_y, DType_y, LTag_y, ID2, ID3].
+ans2(ID2, L_x, DType_x, LTag_x, "default") :- triple("<http://yago-knowledge.org/resource/Berlin>", "URI", "", "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_x, DType_x, LTag_x, "default"), ID2 = ["f2", "<http://yago-knowledge.org/resource/Berlin>", "URI", "", "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_x, DType_x, LTag_x].
+ans3(ID3, L_x, DType_x, LTag_x, L_y, DType_y, LTag_y, "default") :- triple(L_x, DType_x, LTag_x, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_y, DType_y, LTag_y, "default"), ID3 = ["f3", L_x, DType_x, LTag_x, "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_y, DType_y, LTag_y].
+@include("RDF Triples").
+@output("ans1").
+
+ans1(ID1, L_v, DType_v, LTag_v, L_z, DType_z, LTag_z, "default") :- ans2(ID2, L_z, DType_z, LTag_z, "default"), ans3(ID3, L_v, DType_v, LTag_v, L_z, DType_z, LTag_z, "default"), ID1 = ["f1", L_z, DType_z, LTag_z, L_v, DType_v, LTag_v, ID2, ID3].
+ans2(ID2, L_z, DType_z, LTag_z, "default") :- triple("<http://yago-knowledge.org/resource/Berlin>", "URI", "", "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_z, DType_z, LTag_z, "default"), ID2 = ["f2", "<http://yago-knowledge.org/resource/Berlin>", "URI", "", "<http://yago-knowledge.org/resource/isLocatedIn>", "URI", "", L_z, DType_z, LTag_z].
+ans3(ID3, L_v, DType_v, LTag_v, L_z, DType_z, LTag_z, "default") :- triple(L_z, DType_z, LTag_z, "<http://yago-knowledge.org/resource/dealsWith>", "URI", "", L_v, DType_v, LTag_v, "default"), ID3 = ["f3", L_z, DType_z, LTag_z, "<http://yago-knowledge.org/resource/dealsWith>", "URI", "", L_v, DType_v, LTag_v].
+@include("RDF Triples").
+@output("ans1").
+

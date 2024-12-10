@@ -1,0 +1,1364 @@
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?name ?homepage ?mbox_sha1sum ?page ?sameAs ?seeAlso
+WHERE
+  { <http://data.semanticweb.org/person/bruno-wassermann> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Person
+      { <http://data.semanticweb.org/person/bruno-wassermann> foaf:name ?name }
+    UNION
+      { <http://data.semanticweb.org/person/bruno-wassermann> rdfs:label ?name }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/bruno-wassermann> foaf:mbox_sha1sum ?mbox_sha1sum }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/bruno-wassermann> foaf:homepage ?homepage }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/bruno-wassermann> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/bruno-wassermann> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/bruno-wassermann> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?org_uri ?org_name ?latitude ?longitude
+WHERE
+  { ?org_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Organization
+      { ?org_uri skos:prefLabel ?org_name }
+    UNION
+      { ?org_uri foaf:name ?org_name
+        OPTIONAL
+          { ?org_uri skos:prefLabel ?prefLabel }
+        FILTER ( ! bound(?prefLabel) )
+      }
+    OPTIONAL
+      { ?org_uri foaf:based_near ?location .
+        ?location geo:lat ?latitude .
+        ?location geo:long ?longitude
+      }
+  }
+#-------------------------------------------------------
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT  *
+WHERE
+  {   { ?s ?p ?o }
+    UNION
+      { GRAPH ?g
+          { ?s ?p ?o }
+      }
+  }
+LIMIT   100
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  19000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?s ?type ?name ?prefLabel
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type
+    OPTIONAL
+      {   { ?s foaf:name ?name }
+        UNION
+          { ?s dc:title ?name }
+        UNION
+          { ?s dct:title ?name }
+        UNION
+          { ?s ical:summary ?name }
+        UNION
+          { ?s rdfs:label ?name }
+      }
+    OPTIONAL
+      { ?s skos:prefLabel ?prefLabel }
+    FILTER regex(str(?s), "^http://data.semanticweb.org")
+    FILTER ( ! regex(str(?s), "^http://data.semanticweb.org/ns") )
+  }
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?entity ?label1
+WHERE
+  { ?entity rdfs:label ?label1
+    FILTER regex(str(?label1), "google", "i")
+    ?entity rdf:type <http://xmlns.com/foaf/0.1/Organization>
+    FILTER isIRI(?entity)
+  }
+LIMIT   3
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  swrc: <http://swrc.ontoware.org/ontology#>
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  swrc-ext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?property ?hasValue ?isValueOf
+WHERE
+  {   { <http://data.semanticweb.org/person/hector-garcia-molina> ?property ?hasValue }
+    UNION
+      { ?isValueOf ?property <http://data.semanticweb.org/person/hector-garcia-molina> }
+  }
+ORDER BY ( ! bound(?hasValue) ) ?property ?hasValue ?isValueOf
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  3000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.semanticweb.org/ns/swc/ontology#TalkEvent> .
+    ?s ?p ?o
+    FILTER isLiteral(?o)
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  icaltzid: <http://www.w3.org/2002/12/cal/icaltzid#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+
+SELECT DISTINCT  ?name ?homepage ?type ?page ?sameAs ?seeAlso ?graph ?logo
+WHERE
+  { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> rdfs:label ?name
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> icaltzid:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> ical:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> foaf:homepage ?homepage }
+    <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type
+    OPTIONAL
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> swc:completeGraph ?graph }
+    OPTIONAL
+      {   { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> swc:hasLogo ?logo }
+        UNION
+          { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> foaf:logo ?logo }
+      }
+    OPTIONAL
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/conference/www/2008/workshop/csssia2008> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+PREFIX  prv:  <http://purl.org/net/provenance/ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  lodcu: <http://lodlinker.org#>
+PREFIX  dctype: <http://purl.org/dc/dcmitype/Dataset#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT  ?c ?label ?c_s ?c_e
+WHERE
+  {   { ?s rdf:type ?c
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+    UNION
+      { ?c rdf:type rdfs:Class
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+    UNION
+      { ?c rdf:type owl:Class
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+    UNION
+      { ?c rdfs:subClassOf ?c_s
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+    UNION
+      { ?c owl:equivalentClass ?c_e
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+    UNION
+      { ?s rdfs:subClassOf ?c
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+    UNION
+      { ?c_e owl:equivalentClass ?c
+        OPTIONAL
+          { ?c rdfs:label ?label }
+      }
+  }
+#-------------------------------------------------------
+SELECT DISTINCT  ?b ?attrType
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://swrc.ontoware.org/ontology#InProceedings> .
+    ?a ?b ?c
+    OPTIONAL
+      { ?b <http://www.w3.org/2000/01/rdf-schema#range> ?attrType }
+    OPTIONAL
+      { ?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?d }
+    FILTER ( ! bound(?d) )
+  }
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?s ?p ?o
+    FILTER ( ! isLiteral(?o) )
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  (count(distinct ?subject) AS ?contv)
+WHERE
+  {   { ?subject rdf:type rdf:Property }
+    UNION
+      { ?subject rdf:type rdfs:Class }
+  }
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?entity ?label1
+WHERE
+  { ?entity rdfs:label ?label1
+    FILTER regex(str(?label1), "amazon", "i")
+    ?entity rdf:type <http://swrc.ontoware.org/ontology#InProceedings>
+    FILTER isIRI(?entity)
+  }
+LIMIT   3
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?entity ?label1
+WHERE
+  { ?entity rdfs:label ?label1
+    FILTER regex(str(?label1), "amazon", "i")
+    ?entity rdf:type <http://xmlns.com/foaf/0.1/Organization>
+    FILTER isIRI(?entity)
+  }
+LIMIT   3
+#-------------------------------------------------------
+SELECT DISTINCT  ?b ?attrType
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.semanticweb.org/ns/swc/ontology#KeynoteTalk> .
+    ?a ?b ?c
+    OPTIONAL
+      { ?b <http://www.w3.org/2000/01/rdf-schema#range> ?attrType }
+    OPTIONAL
+      { ?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?d }
+    FILTER ( ! bound(?d) )
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?1Var1 <http://data.semanticweb.org/ns/swc/ontology#hasRelatedEvent> ?OBJECT }
+LIMIT   5
+#-------------------------------------------------------
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?property ?hasValue ?isValueOf
+WHERE
+  {   { <http://data.semanticweb.org/person/mathieu-daquin> ?property ?hasValue }
+    UNION
+      { ?isValueOf ?property <http://data.semanticweb.org/person/mathieu-daquin> }
+  }
+ORDER BY ( ! bound(?hasValue) ) ?property ?hasValue ?isValueOf
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  8000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  15000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?s ?p ?o
+    FILTER isLiteral(?o)
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT DISTINCT  ?label ?uri
+WHERE
+  {   { ?uri <http://www.w3.org/2000/01/rdf-schema#label> ?label }
+    UNION
+      { ?uri <http://data.semanticweb.org/ns/swc/ontology#hasAcronym> ?label }
+    FILTER regex(?label, "^sparql$", "i")
+  }
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/iswc/2012/proceedings-1/paper-08> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/iswc/2012/proceedings-1/paper-08> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/workshop/om/2007/papers/451> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/workshop/om/2007/papers/451> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  3000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/www/2012/poster/50> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/www/2012/poster/50> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+SELECT DISTINCT  ?property ?hasValue
+WHERE
+  { <http://data.semanticweb.org/conference/eswc/2014/author> ?property ?hasValue }
+ORDER BY ?hasValue
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://swrc.ontoware.org/ontology#InProceedings> .
+    ?s ?p ?o
+    FILTER isLiteral(?o)
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.semanticweb.org/ns/swc/ontology#SessionChair> .
+    ?s ?p ?o
+    FILTER ( ! isLiteral(?o) )
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT  ?val
+WHERE
+  { ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+    ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val
+  }
+LIMIT   10000
+#-------------------------------------------------------
+SELECT DISTINCT  ?s ?p2
+WHERE
+  { ?s ?p ?o
+    OPTIONAL
+      { ?s ?p2 <http://nonsensical-join.com/13> }
+  }
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+    ?s ?p ?o
+    FILTER isLiteral(?o)
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://swrc.ontoware.org/ontology#InProceedings> .
+    ?s ?p ?o
+    FILTER ( ! isLiteral(?o) )
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+#-------------------------------------------------------
+SELECT DISTINCT  ?b ?attrType
+WHERE
+  { ?a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?a ?b ?c
+    OPTIONAL
+      { ?b <http://www.w3.org/2000/01/rdf-schema#range> ?attrType }
+    OPTIONAL
+      { ?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?d }
+    FILTER ( ! bound(?d) )
+  }
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  9000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  *
+WHERE
+  { ?s rdf:type ?o }
+ORDER BY ASC(?s)
+LIMIT   100
+#-------------------------------------------------------
+SELECT  ?type ?prop ?val
+WHERE
+  { <http://data.semanticweb.org/organization/sri-international> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
+    <http://data.semanticweb.org/organization/sri-international> ?prop ?val
+  }
+#-------------------------------------------------------
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT  *
+WHERE
+  {   { ?s ?p ?o }
+    UNION
+      { GRAPH ?g
+          { ?s ?p ?o }
+      }
+  }
+LIMIT   100
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> .
+    ?s ?p ?o
+    FILTER ( ! isLiteral(?o) )
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  swrc: <http://swrc.ontoware.org/ontology#>
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  swrc-ext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?organization ?latitude ?longitude
+WHERE
+  { ?organization rdf:type foaf:Organization .
+    ?organization foaf:based_near ?location .
+    ?location geo:lat ?latitude .
+    ?location geo:long ?longitude
+  }
+#-------------------------------------------------------
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT  ?targetType
+WHERE
+  { ?obj rdf:type <http://swrc.ontoware.org/ontology#InProceedings> .
+    ?obj <http://data.semanticweb.org/ns/swc/ontology#isPartOf> ?targetObj .
+    ?targetObj rdf:type ?targetType
+  }
+LIMIT   1
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+
+SELECT DISTINCT  ?workshop_uri ?workshop_name ?workshop_acronym
+WHERE
+  { ?workshop_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> swc:WorkshopEvent .
+    ?workshop_uri rdfs:label ?workshop_name .
+    ?workshop_uri swc:hasAcronym ?workshop_acronym
+    OPTIONAL
+      { ?workshop_uri swc:completeGraph ?complete_graph }
+    FILTER ( ! bound(?complete_graph) )
+  }
+ORDER BY ?workshop_acronym
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/eswc/2014/paper/ws/SEPUBLICA/3> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/eswc/2014/paper/ws/SEPUBLICA/3> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  8000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?name ?homepage ?page ?sameAs ?seeAlso ?latitude ?longitude
+WHERE
+  {   { <http://data.semanticweb.org/organization/university-hohenheim> foaf:name ?name }
+    UNION
+      { <http://data.semanticweb.org/organization/university-hohenheim> rdfs:label ?name }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/university-hohenheim> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/university-hohenheim> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/university-hohenheim> rdfs:seeAlso ?seeAlso }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/university-hohenheim> foaf:homepage ?homepage }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/university-hohenheim> foaf:based_near ?location .
+        ?location geo:lat ?latitude .
+        ?location geo:long ?longitude
+      }
+  }
+#-------------------------------------------------------
+SELECT DISTINCT  ?p ?o
+WHERE
+  { <http://data.semanticweb.org/workshop/ldow/2012/programme-committee-member> ?p ?o }
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  7000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT DISTINCT  ?v151
+WHERE
+  { ?v151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person>
+      { ?v151 <http://www.w3.org/2000/01/rdf-schema#label> ?v152
+        FILTER contains(ucase(?v152), ucase("lohmann"))
+      }
+    UNION
+      { ?v151 <http://www.w3.org/2000/01/rdf-schema#label> ?v153
+        FILTER contains(ucase(?v153), ucase("haag"))
+      }
+  }
+#-------------------------------------------------------
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  icaltzid: <http://www.w3.org/2002/12/cal/icaltzid#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+
+SELECT DISTINCT  ?name ?homepage ?type ?page ?sameAs ?seeAlso ?graph ?logo
+WHERE
+  { <http://data.semanticweb.org/workshop/smr2/2010> rdfs:label ?name
+      { <http://data.semanticweb.org/workshop/smr2/2010> icaltzid:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/smr2/2010> ical:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/smr2/2010> foaf:homepage ?homepage }
+    <http://data.semanticweb.org/workshop/smr2/2010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/smr2/2010> swc:completeGraph ?graph }
+    OPTIONAL
+      {   { <http://data.semanticweb.org/workshop/smr2/2010> swc:hasLogo ?logo }
+        UNION
+          { <http://data.semanticweb.org/workshop/smr2/2010> foaf:logo ?logo }
+      }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/smr2/2010> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/smr2/2010> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/smr2/2010> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  *
+WHERE
+  {   { ?s rdf:type ?o }
+    UNION
+      { ?o rdf:type ?x }
+  }
+LIMIT   100
+#-------------------------------------------------------
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT  (datatype(?targetObj) AS ?type)
+WHERE
+  { ?obj rdf:type <http://ruleml.org/ontology#TrackPaper> .
+    ?obj dc:subject ?targetObj
+  }
+LIMIT   1
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  1000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  icaltzid: <http://www.w3.org/2002/12/cal/icaltzid#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+
+SELECT DISTINCT  ?name ?homepage ?type ?page ?sameAs ?seeAlso ?graph ?logo
+WHERE
+  { <http://data.semanticweb.org/workshop/sefi/2010> rdfs:label ?name
+      { <http://data.semanticweb.org/workshop/sefi/2010> icaltzid:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/sefi/2010> ical:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/sefi/2010> foaf:homepage ?homepage }
+    <http://data.semanticweb.org/workshop/sefi/2010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/sefi/2010> swc:completeGraph ?graph }
+    OPTIONAL
+      {   { <http://data.semanticweb.org/workshop/sefi/2010> swc:hasLogo ?logo }
+        UNION
+          { <http://data.semanticweb.org/workshop/sefi/2010> foaf:logo ?logo }
+      }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/sefi/2010> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/sefi/2010> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/sefi/2010> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?v
+WHERE
+  { ?s rdf:type ?v }
+ORDER BY ?v
+OFFSET  101
+LIMIT   100
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/iswc/2008/paper/research/237> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/iswc/2008/paper/research/237> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?name ?homepage ?mbox_sha1sum ?page ?sameAs ?seeAlso
+WHERE
+  { <http://data.semanticweb.org/person/aniket-mahanti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Person
+      { <http://data.semanticweb.org/person/aniket-mahanti> foaf:name ?name }
+    UNION
+      { <http://data.semanticweb.org/person/aniket-mahanti> rdfs:label ?name }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/aniket-mahanti> foaf:mbox_sha1sum ?mbox_sha1sum }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/aniket-mahanti> foaf:homepage ?homepage }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/aniket-mahanti> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/aniket-mahanti> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/aniket-mahanti> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+SELECT DISTINCT  ?property ?isValueOf
+WHERE
+  { ?isValueOf ?property <http://data.semanticweb.org/workshop/lisc/2011/pcmember> }
+ORDER BY ?isValueOf
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?name ?homepage ?mbox_sha1sum ?page ?sameAs ?seeAlso
+WHERE
+  { <http://data.semanticweb.org/person/joachim-kleb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Person
+      { <http://data.semanticweb.org/person/joachim-kleb> foaf:name ?name }
+    UNION
+      { <http://data.semanticweb.org/person/joachim-kleb> rdfs:label ?name }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/joachim-kleb> foaf:mbox_sha1sum ?mbox_sha1sum }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/joachim-kleb> foaf:homepage ?homepage }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/joachim-kleb> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/joachim-kleb> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/joachim-kleb> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/dc/2010/paper/main/A-1033> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/dc/2010/paper/main/A-1033> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  swrc: <http://swrc.ontoware.org/ontology#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?abstract ?keyword ?author_name
+WHERE
+  {   { <http://data.semanticweb.org/conference/eswc/2006/demo-papers/FD25-Villazon> swrc:author ?author }
+    UNION
+      { <http://data.semanticweb.org/conference/eswc/2006/demo-papers/FD25-Villazon> foaf:maker ?author }
+    ?author foaf:name ?author_name
+    OPTIONAL
+      { <http://data.semanticweb.org/conference/eswc/2006/demo-papers/FD25-Villazon> swrc:abstract ?abstract }
+    OPTIONAL
+      {   { <http://data.semanticweb.org/conference/eswc/2006/demo-papers/FD25-Villazon> swrc:keywords ?keyword }
+        UNION
+          { <http://data.semanticweb.org/conference/eswc/2006/demo-papers/FD25-Villazon> dc:subject ?keyword }
+        UNION
+          { <http://data.semanticweb.org/conference/eswc/2006/demo-papers/FD25-Villazon> swc:hasTopic ?topic .
+            ?topic rdfs:label ?keyword
+          }
+      }
+  }
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  0
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+    ?s ?p ?o
+    FILTER ( ! isLiteral(?o) )
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  25000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT  (datatype(?targetObj) AS ?type)
+WHERE
+  { ?obj rdf:type <http://data.semanticweb.org/ns/swc/ontology#TalkEvent> .
+    ?obj <http://www.w3.org/2002/12/cal/ical#dtstart> ?targetObj
+  }
+LIMIT   1
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  24000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  6000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  6000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  20000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  2000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  4000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?name ?homepage ?mbox_sha1sum ?page ?sameAs ?seeAlso
+WHERE
+  { <http://data.semanticweb.org/person/dan-stefanescu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Person
+      { <http://data.semanticweb.org/person/dan-stefanescu> foaf:name ?name }
+    UNION
+      { <http://data.semanticweb.org/person/dan-stefanescu> rdfs:label ?name }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/dan-stefanescu> foaf:mbox_sha1sum ?mbox_sha1sum }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/dan-stefanescu> foaf:homepage ?homepage }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/dan-stefanescu> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/dan-stefanescu> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/person/dan-stefanescu> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+SELECT DISTINCT  ?X ?X_display ?X_ont_affiliation ?X_foaf_status
+WHERE
+  { ?X <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?X <http://xmlns.com/foaf/0.1/name> ?X_display
+    OPTIONAL
+      { ?X <http://data.semanticweb.org/ns/swc/ontology#affiliation> ?X_ont_affiliation }
+    OPTIONAL
+      { ?X <http://xmlns.com/foaf/0.1/status> ?X_foaf_status }
+  }
+LIMIT   200
+#-------------------------------------------------------
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?prop
+WHERE
+  { ?obj rdf:type <http://swrc.ontoware.org/ontology#InProceedings> .
+    ?obj ?prop ?targetObj .
+    ?targetObj rdf:type ?targetType
+  }
+LIMIT   150
+#-------------------------------------------------------
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?a ?v0
+WHERE
+  { ?a rdf:type foaf:Person .
+    ?a foaf:name ?v0
+  }
+OFFSET  4000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  ?property ?value
+WHERE
+  { <http://data.semanticweb.org/conference/iswc/2003/pc-member> ?property ?value }
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  13000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  7000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  1000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT DISTINCT  ?instance ?p ?o
+WHERE
+  { ?instance <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+    ?instance ?p ?o
+  }
+ORDER BY ?instance ?p ?o
+OFFSET  5000
+LIMIT   1000
+#-------------------------------------------------------
+SELECT  (count(?p) AS ?no) ?p
+WHERE
+  { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.semanticweb.org/ns/swc/ontology#TutorialEvent> .
+    ?s ?p ?o
+    FILTER isLiteral(?o)
+  }
+GROUP BY ?p
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?person <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> }
+#-------------------------------------------------------
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+
+SELECT  ?year (count(?year) AS ?SPARQLPapers)
+WHERE
+  { ?paper <http://purl.org/dc/elements/1.1/title> ?title
+    FILTER contains(?title, "SPARQL")
+    ?paper <http://swrc.ontoware.org/ontology#year> ?year
+  }
+GROUP BY ?year
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  11000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  ?a ?c
+WHERE
+  { ?a rdf:type ?c
+    OPTIONAL
+      { ?c rdf:type ?e }
+    FILTER ( ! bound(?e) )
+  }
+LIMIT   100
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?entity ?label1
+WHERE
+  { ?entity rdfs:label ?label1
+    FILTER regex(str(?label1), "google", "i")
+    ?entity rdf:type <http://swrc.ontoware.org/ontology#InProceedings>
+    FILTER isIRI(?entity)
+  }
+LIMIT   3
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?name ?homepage ?page ?sameAs ?seeAlso ?latitude ?longitude
+WHERE
+  {   { <http://data.semanticweb.org/organization/uol-inc> foaf:name ?name }
+    UNION
+      { <http://data.semanticweb.org/organization/uol-inc> rdfs:label ?name }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/uol-inc> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/uol-inc> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/uol-inc> rdfs:seeAlso ?seeAlso }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/uol-inc> foaf:homepage ?homepage }
+    OPTIONAL
+      { <http://data.semanticweb.org/organization/uol-inc> foaf:based_near ?location .
+        ?location geo:lat ?latitude .
+        ?location geo:long ?longitude
+      }
+  }
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?entity ?label1
+WHERE
+  { ?entity rdfs:label ?label1
+    FILTER regex(str(?label1), "twitter", "i")
+    ?entity rdf:type <http://swrc.ontoware.org/ontology#InProceedings>
+    FILTER isIRI(?entity)
+  }
+LIMIT   3
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/eswc/2014/paper/ws/HSWI/4> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/eswc/2014/paper/ws/HSWI/4> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+SELECT  ?resource_uri (count(distinct ?property) AS ?datatype_properties)
+WHERE
+  { ?resource_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?concept .
+    ?resource_uri ?property ?value
+  }
+GROUP BY ?resource_uri
+OFFSET  21000
+LIMIT   1000
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?person_uri ?person_name
+WHERE
+  { ?person_uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> foaf:Person
+      { ?person_uri skos:prefLabel ?person_name }
+    UNION
+      { ?person_uri foaf:name ?person_name
+        OPTIONAL
+          { ?person_uri skos:prefLabel ?prefLabel }
+        FILTER ( ! bound(?prefLabel) )
+      }
+    FILTER regex(str(?person_uri), "^http://data.semanticweb.org")
+  }
+ORDER BY ?person_uri
+#-------------------------------------------------------
+SELECT DISTINCT  ?classuri ?classname
+WHERE
+  { ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?classuri
+    OPTIONAL
+      { ?classuri <http://www.w3.org/2000/01/rdf-schema#label> ?classname }
+  }
+#-------------------------------------------------------
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  icaltzid: <http://www.w3.org/2002/12/cal/icaltzid#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+
+SELECT DISTINCT  ?name ?homepage ?type ?page ?sameAs ?seeAlso ?graph ?logo
+WHERE
+  { <http://data.semanticweb.org/workshop/spbm/2010> rdfs:label ?name
+      { <http://data.semanticweb.org/workshop/spbm/2010> icaltzid:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/spbm/2010> ical:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/spbm/2010> foaf:homepage ?homepage }
+    <http://data.semanticweb.org/workshop/spbm/2010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/spbm/2010> swc:completeGraph ?graph }
+    OPTIONAL
+      {   { <http://data.semanticweb.org/workshop/spbm/2010> swc:hasLogo ?logo }
+        UNION
+          { <http://data.semanticweb.org/workshop/spbm/2010> foaf:logo ?logo }
+      }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/spbm/2010> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/spbm/2010> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/spbm/2010> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+SELECT  *
+WHERE
+  { ?SUBJECT ?PREDICATE "7" }
+LIMIT   5
+#-------------------------------------------------------
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  icaltzid: <http://www.w3.org/2002/12/cal/icaltzid#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+
+SELECT DISTINCT  ?name ?homepage ?type ?page ?sameAs ?seeAlso ?graph ?logo
+WHERE
+  { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> rdfs:label ?name
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> icaltzid:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> ical:url ?homepage }
+    UNION
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> foaf:homepage ?homepage }
+    <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> swc:completeGraph ?graph }
+    OPTIONAL
+      {   { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> swc:hasLogo ?logo }
+        UNION
+          { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> foaf:logo ?logo }
+      }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> foaf:page ?page }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> owl:sameAs ?sameAs }
+    OPTIONAL
+      { <http://data.semanticweb.org/workshop/semantic-web-egovernment/2006> rdfs:seeAlso ?seeAlso }
+  }
+#-------------------------------------------------------
+PREFIX  skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX  bibo: <http://purl.org/ontology/bibo/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swrcext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+
+SELECT DISTINCT  ?pred ?author_url ?author_name ?author_pref_label
+WHERE
+  { GRAPH ?graph
+      {   { <http://data.semanticweb.org/conference/iswc/2002/proceedings/paper-33> bibo:authorList ?authorList }
+        UNION
+          { <http://data.semanticweb.org/conference/iswc/2002/proceedings/paper-33> swrcext:authorList ?authorList }
+        ?authorList ?pred ?author_url
+          { ?author_url foaf:name ?author_name }
+        UNION
+          { ?author_url rdfs:label ?author_name }
+        OPTIONAL
+          { ?author_url skos:prefLabel ?author_pref_label }
+      }
+  }
+ORDER BY ?pred
+#-------------------------------------------------------
+SELECT DISTINCT  ?X ?foaf_name
+WHERE
+  {   { <http://data.semanticweb.org/person/abraham-bernstein> <http://data.semanticweb.org/ns/swc/ontology#affiliation> ?X }
+    UNION
+      { <http://data.semanticweb.org/person/abraham-bernstein> <http://swrc.ontoware.org/ontology#affiliation> ?X }
+    UNION
+      { ?X <http://xmlns.com/foaf/0.1/member> <http://data.semanticweb.org/person/abraham-bernstein> }
+    ?X <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+    ?X <http://xmlns.com/foaf/0.1/name> ?foaf_name
+  }
+LIMIT   50
+#-------------------------------------------------------
+PREFIX  geo:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  swrc: <http://swrc.ontoware.org/ontology#>
+PREFIX  ical: <http://www.w3.org/2002/12/cal/ical#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  swrc-ext: <http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#>
+PREFIX  dcterms: <http://purl.org/dc/terms/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX  swc:  <http://data.semanticweb.org/ns/swc/ontology#>
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT  ?property ?hasValue ?isValueOf
+WHERE
+  {   { <http://data.semanticweb.org/person/olaf-goerlitz> ?property ?hasValue }
+    UNION
+      { ?isValueOf ?property <http://data.semanticweb.org/person/olaf-goerlitz> }
+  }
+ORDER BY ( ! bound(?hasValue) ) ?property ?hasValue ?isValueOf
+#-------------------------------------------------------
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?entity ?label1
+WHERE
+  { ?entity rdfs:label ?label1
+    FILTER regex(str(?label1), "twitter", "i")
+    ?entity rdf:type <http://xmlns.com/foaf/0.1/Organization>
+    FILTER isIRI(?entity)
+  }
+LIMIT   3
+#-------------------------------------------------------

@@ -1,0 +1,173 @@
+{
+  "queries": [
+    {
+        "id": 1,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+            		{
+            		CONSTRUCT {
+                  <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act
+                }
+            		FROM NAMED <http://db.ing.puc.cl/temp>
+            		FROM <urn:x-arq:DefaultGraph>
+            		WHERE
+            		{
+            		{
+                  <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                  ?act <http://yago-knowledge.org/resource/actedIn> ?mov
+                }
+            		UNION
+                {
+                  ?act1 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                  ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+                  GRAPH <http://db.ing.puc.cl/temp>
+                  {
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act1
+                  }
+                }
+            		}
+            		}
+            		SELECT ?z FROM NAMED <http://db.ing.puc.cl/temp>
+            		WHERE {
+                  GRAPH <http://db.ing.puc.cl/temp>
+                  {
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?z
+                  }
+                }",
+    "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 2,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+              		{
+              		CONSTRUCT {
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> ?dir ?act
+                  }
+              		FROM NAMED <http://db.ing.puc.cl/temp>
+              		FROM <urn:x-arq:DefaultGraph>
+              		WHERE
+              		{
+              		{
+                    <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/directed> ?mov
+                  }
+              		UNION
+              		{
+                    ?act1 <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+                    ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+                    GRAPH <http://db.ing.puc.cl/temp> {
+                      <http://yago-knowledge.org/resource/Kevin_Bacon> ?dir ?act1
+                    }
+                  }
+              		}
+              		}
+              		SELECT ?y ?z FROM NAMED <http://db.ing.puc.cl/temp>
+              		WHERE {
+                    GRAPH <http://db.ing.puc.cl/temp>
+                    {
+                      <http://yago-knowledge.org/resource/Kevin_Bacon> ?y ?z
+                    }
+                  }",
+    "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 3,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+				{
+				CONSTRUCT {
+          <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act
+        }
+				FROM NAMED <http://db.ing.puc.cl/temp>
+				FROM <urn:x-arq:DefaultGraph>
+				WHERE
+				{
+				{
+          <http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+          ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+          ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+          ?dir <http://yago-knowledge.org/resource/actedIn> ?mov1}
+				UNION
+				{
+          ?act1 <http://yago-knowledge.org/resource/actedIn> ?mov .
+          ?dir <http://yago-knowledge.org/resource/directed> ?mov .
+          ?dir <http://yago-knowledge.org/resource/actedIn> ?mov1 .
+          ?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+          GRAPH <http://db.ing.puc.cl/temp> {
+            <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act1
+          }
+        }
+				}
+				}
+				SELECT ?y ?z FROM NAMED <http://db.ing.puc.cl/temp>
+				WHERE {
+          GRAPH <http://db.ing.puc.cl/temp>
+          {
+            <http://yago-knowledge.org/resource/Kevin_Bacon> ?y ?z
+          }
+        }",
+    "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 4,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {<http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?x1 }
+        UNION
+        { ?y <http://yago-knowledge.org/resource/isLocatedIn> ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?y }
+        }
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+          ?z <http://yago-knowledge.org/resource/dealsWith> ?v .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x ?y ?z }
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 5,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?x1 .
+          ?x1 <http://yago-knowledge.org/resource/owns> ?y }
+        UNION
+        { ?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?y .
+          GRAPH <http://db.ing.puc.cl/temp> { ?y <http://yago-knowledge.org/resource/isMarriedTo> ?x1 }
+        }
+        }
+        }
+        WITH RECURSIVE http://db.ing.puc.cl/temp2 AS
+        {
+        CONSTRUCT {?x0 <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States>}
+        FROM NAMED <http://db.ing.puc.cl/temp2>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States> }
+        UNION
+        { ?x0 <http://yago-knowledge.org/resource/isLocatedIn> ?y .
+          GRAPH <http://db.ing.puc.cl/temp2> { ?y <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States> }
+        }
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp> FROM NAMED <http://db.ing.puc.cl/temp2>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+          ?z1 <http://yago-knowledge.org/resource/owns> ?x2 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x1 ?y1 ?z1 } .
+          GRAPH <http://db.ing.puc.cl/temp2> { ?x2 ?y2 ?z2 }
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    }
+  ]
+}

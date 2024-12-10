@@ -1,0 +1,30 @@
+CONSTRUCT {
+    ?x0 <http://yago-knowledge.org/resource/isMarriedToOwnership> ?x1
+}
+WHERE {
+    ?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?x1 .
+    ?x1 <http://yago-knowledge.org/resource/owns> ?y 
+} . 
+
+CONSTRUCT {
+    ?x0 <http://yago-knowledge.org/resource/isMarriedToOwnership> ?x1
+}
+WHERE {
+    ?x0 <http://yago-knowledge.org/resource/isMarriedTo> ?y .
+    ?y <http://yago-knowledge.org/resource/isMarriedToOwnership> ?x1 .
+} .
+
+CONSTRUCT {
+    ?x0 <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States>}
+WHERE {
+    ?x0 <http://yago-knowledge.org/resource/isLocatedIn> ?y .
+    ?y <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States>
+} .
+
+# @filter
+SELECT *
+WHERE {
+    ?x1 <http://yago-knowledge.org/resource/isMarriedToOwnership> ?z1 .
+    ?z1 <http://yago-knowledge.org/resource/owns> ?x2 .
+    ?x2 <http://yago-knowledge.org/resource/isLocatedIn> <http://yago-knowledge.org/resource/United_States> .
+} .

@@ -1,0 +1,10 @@
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 (:p16/^:p16) ?x1 . ?x1 (:p16/^:p16)* ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 ((:p23/^:p23)|(:p25/^:p23)) ?x1 . ?x1 ((:p23/^:p23)|(:p25/^:p23))* ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 (:p25/^:p25) ?x1 . ?x1 (:p25/^:p25)* ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 (^:p22/:p16)* ?x1 . ?x1 (^:p19/:p20) ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 (:p0/:p22/^:p23) ?x1 . ?x1 (:p24/^:p24)* ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 ((:p23/^:p23)|(:p25/^:p23)) ?x1 . ?x1 ((:p23/^:p23)|(:p25/^:p23))* ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 ((^:p15/:p18)|(^:p18/:p15))* ?x1 . ?x1 ((^:p15/:p8/^:p13)|(^:p15/:p8/^:p14)) ?x2 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 ((:p21/^:p21)|(:p21/^:p22)) ?x1 . ?x1 ((:p21/^:p21)|(:p21/^:p22))* ?x2 . ?x2 (:p16/^:p21)* ?x3 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 (^:p23/:p24) ?x1 . ?x1 (^:p23/:p24)* ?x4 . ?x0 (^:p17/:p21)* ?x2 . ?x0 (^:p25/:p25)* ?x3 }
+PREFIX : <http://example.org/gmark/> SELECT * FROM <http://localhost:8890/GMark3> WHERE { ?x0 (:p16/^:p23) ?x1 . ?x1 (:p24/^:p24)* ?x2 . ?x2 (:p23/^:p23)* ?x3 }

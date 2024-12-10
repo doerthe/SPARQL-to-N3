@@ -1,0 +1,282 @@
+{
+  "queries": [
+    {
+        "id": 1,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (<http://example.org/gmark/p16>/^<http://example.org/gmark/p16>) ?x1 }
+        UNION
+        { ?y (<http://example.org/gmark/p16>/^<http://example.org/gmark/p16>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z}
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 2,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 ((<http://example.org/gmark/p23>/^<http://example.org/gmark/p23>)|(<http://example.org/gmark/p25>/^<http://example.org/gmark/p23>)) ?x1 }
+        UNION
+        { ?y ((<http://example.org/gmark/p23>/^<http://example.org/gmark/p23>)|(<http://example.org/gmark/p25>/^<http://example.org/gmark/p23>)) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z}
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 3,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (<http://example.org/gmark/p25>/^<http://example.org/gmark/p25>) ?x1 }
+        UNION
+        { ?y (<http://example.org/gmark/p25>/^<http://example.org/gmark/p25>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z}
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 4,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (^<http://example.org/gmark/p22>/<http://example.org/gmark/p16>) ?x1 .
+          ?x1 (^<http://example.org/gmark/p19>/<http://example.org/gmark/p20>) ?y }
+        UNION
+        { ?x0 (^<http://example.org/gmark/p22>/<http://example.org/gmark/p16>) ?y .
+          GRAPH <http://db.ing.puc.cl/temp> { ?y <http://example.org/propaux> ?x1 }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        ?z (^<http://example.org/gmark/p19>/<http://example.org/gmark/p20>) ?v .
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z} .
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 5,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?y (<http://example.org/gmark/p0>/<http://example.org/gmark/p22>/^<http://example.org/gmark/p23>) ?x0 .
+          ?x0 (<http://example.org/gmark/p24>/^<http://example.org/gmark/p24>) ?x1 }
+        UNION
+        { ?y (<http://example.org/gmark/p24>/^<http://example.org/gmark/p24>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z} .
+        ?v (<http://example.org/gmark/p0>/<http://example.org/gmark/p22>/^<http://example.org/gmark/p23>) ?x
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 6,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 ((<http://example.org/gmark/p23>/^<http://example.org/gmark/p23>)|(<http://example.org/gmark/p25>/^<http://example.org/gmark/p23>)) ?x1 }
+        UNION
+        { ?y ((<http://example.org/gmark/p23>/^<http://example.org/gmark/p23>)|(<http://example.org/gmark/p25>/^<http://example.org/gmark/p23>)) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z} .
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 7,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 ((^<http://example.org/gmark/p15>/<http://example.org/gmark/p18>)|(^<http://example.org/gmark/p18>/<http://example.org/gmark/p15>)) ?x1 .
+          ?x1 ((^<http://example.org/gmark/p15>/<http://example.org/gmark/p8>/^<http://example.org/gmark/p13>)|(^<http://example.org/gmark/p15>/<http://example.org/gmark/p8>/^<http://example.org/gmark/p14>)) ?y }
+        UNION
+        { ?x0 ((^<http://example.org/gmark/p15>/<http://example.org/gmark/p18>)|(^<http://example.org/gmark/p18>/<http://example.org/gmark/p15>)) ?y .
+          GRAPH <http://db.ing.puc.cl/temp> { ?y <http://example.org/propaux> ?x1 }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        ?z ((^<http://example.org/gmark/p15>/<http://example.org/gmark/p8>/^<http://example.org/gmark/p13>)|(^<http://example.org/gmark/p15>/<http://example.org/gmark/p8>/^<http://example.org/gmark/p14>)) ?v .
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z} .
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 8,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 ((<http://example.org/gmark/p21>/^<http://example.org/gmark/p21>)|(<http://example.org/gmark/p21>/^<http://example.org/gmark/p22>)) ?x1 .
+          ?x0 (<http://example.org/gmark/p16>/^<http://example.org/gmark/p21>) ?y }
+        UNION
+        { ?y ((<http://example.org/gmark/p21>/^<http://example.org/gmark/p21>)|(<http://example.org/gmark/p21>/^<http://example.org/gmark/p22>)) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        WITH RECURSIVE http://db.ing.puc.cl/temp2 AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp2>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (<http://example.org/gmark/p16>/^<http://example.org/gmark/p21>) ?x1 .
+          ?x0 ((<http://example.org/gmark/p21>/^<http://example.org/gmark/p21>)|(<http://example.org/gmark/p21>/^<http://example.org/gmark/p22>)) ?y }
+        UNION
+        { ?y (<http://example.org/gmark/p16>/^<http://example.org/gmark/p21>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp2> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT * FROM NAMED <http://db.ing.puc.cl/temp> FROM NAMED <http://db.ing.puc.cl/temp2>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z} .
+        GRAPH <http://db.ing.puc.cl/temp2> {?x ?v ?u}
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 9,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (^<http://example.org/gmark/p23>/<http://example.org/gmark/p24>) ?x1 .
+          ?x0 (^<http://example.org/gmark/p17>/<http://example.org/gmark/p21>) ?y1 .
+          ?x0 (^<http://example.org/gmark/p25>/<http://example.org/gmark/p25>) ?y2}
+        UNION
+        { ?y (^<http://example.org/gmark/p23>/<http://example.org/gmark/p24>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        WITH RECURSIVE http://db.ing.puc.cl/temp2 AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp2>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (^<http://example.org/gmark/p23>/<http://example.org/gmark/p24>) ?y1 .
+          ?x0 (^<http://example.org/gmark/p17>/<http://example.org/gmark/p21>) ?x1 .
+          ?x0 (^<http://example.org/gmark/p25>/<http://example.org/gmark/p25>) ?y2}
+        UNION
+        { ?y (^<http://example.org/gmark/p17>/<http://example.org/gmark/p21>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp2> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        WITH RECURSIVE http://db.ing.puc.cl/temp3 AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp3>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?x0 (^<http://example.org/gmark/p23>/<http://example.org/gmark/p24>) ?y1 .
+          ?x0 (^<http://example.org/gmark/p17>/<http://example.org/gmark/p21>) ?y2 .
+          ?x0 (^<http://example.org/gmark/p25>/<http://example.org/gmark/p25>) ?x1}
+        UNION
+        { ?y (^<http://example.org/gmark/p25>/<http://example.org/gmark/p25>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp3> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT *
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM NAMED <http://db.ing.puc.cl/temp2>
+        FROM NAMED <http://db.ing.puc.cl/temp3>
+        WHERE {
+        GRAPH <http://db.ing.puc.cl/temp> {?x ?y ?z} .
+        GRAPH <http://db.ing.puc.cl/temp2> {?x ?v ?u} .
+        GRAPH <http://db.ing.puc.cl/temp3> {?x ?t ?w}
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    },
+    {
+        "id": 10,
+        "query": "WITH RECURSIVE http://db.ing.puc.cl/temp AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?y (<http://example.org/gmark/p16>/^<http://example.org/gmark/p23>) ?x0 .
+          ?x0 (<http://example.org/gmark/p24>/^<http://example.org/gmark/p24>) ?x1 }
+        UNION
+        { ?y (<http://example.org/gmark/p24>/^<http://example.org/gmark/p24>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        WITH RECURSIVE http://db.ing.puc.cl/temp2 AS
+        {
+        CONSTRUCT {?x0 <http://example.org/propaux> ?x1}
+        FROM NAMED <http://db.ing.puc.cl/temp2>
+        FROM <urn:x-arq:DefaultGraph>
+        WHERE {
+        { ?y (<http://example.org/gmark/p24>/^<http://example.org/gmark/p24>) ?x0 .
+          ?x0 (<http://example.org/gmark/p23>/^<http://example.org/gmark/p23>) ?x1 }
+        UNION
+        { ?y (<http://example.org/gmark/p23>/^<http://example.org/gmark/p23>) ?x1 .
+          GRAPH <http://db.ing.puc.cl/temp2> { ?x0 <http://example.org/propaux> ?y }}
+        }
+        }
+        SELECT *
+        FROM <urn:x-arq:DefaultGraph>
+        FROM NAMED <http://db.ing.puc.cl/temp>
+        FROM NAMED <http://db.ing.puc.cl/temp2>
+        WHERE {
+        ?x (<http://example.org/gmark/p16>/^<http://example.org/gmark/p23>) ?y .
+        GRAPH <http://db.ing.puc.cl/temp> {?y ?z ?u} .
+        GRAPH <http://db.ing.puc.cl/temp2> {?u ?v ?w}
+        }",
+        "delete": ["http://db.ing.puc.cl/temp"]
+    }
+  ]
+}

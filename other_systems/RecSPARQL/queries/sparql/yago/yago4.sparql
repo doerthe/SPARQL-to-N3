@@ -1,0 +1,14 @@
+CONSTRUCT {
+    <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?y
+}
+WHERE {
+    <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?x .
+    ?x <http://yago-knowledge.org/resource/isLocatedIn> ?y
+} .
+
+# @filter
+SELECT *
+WHERE {
+    <http://yago-knowledge.org/resource/Berlin> <http://yago-knowledge.org/resource/isLocatedIn> ?z .
+    ?z <http://yago-knowledge.org/resource/dealsWith> ?v .
+} .

@@ -1,0 +1,32 @@
+###### --- Rule: bench:* rdfs:subClassOf foaf:Document. --- ######
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Journal>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Proceedings>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Inproceedings>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Article>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Www>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/MastersThesis>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/PhDThesis>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Incollection>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o2, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p, DType_p, LTag_p, L_o1, DType_o, LTag_o, "default"), L_p = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>", DType_p = "URI", LTag_p = "", L_o1 = "<http://localhost/vocabulary/bench/Book>", L_o2 = "<http://xmlns.com/foaf/0.1/Document>", DType_o = "URI", LTag_o = "".
+
+###### --- Rule: dc:title|swrc:volume|dcterms:issued rdfs:subPropertyOf dc:description. --- ######
+triple(L_s, DType_s, LTag_s, L_p2, DType_p, LTag_p, L_o, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p1, DType_p, LTag_p, L_o, DType_o, LTag_o, "default"), L_p1 = "<http://purl.org/dc/elements/1.1/title>", L_p2 = "<http://purl.org/dc/elements/1.1/description>", DType_p = "URI", LTag_p = "".
+triple(L_s, DType_s, LTag_s, L_p2, DType_p, LTag_p, L_o, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p1, DType_p, LTag_p, L_o, DType_o, LTag_o, "default"), L_p1 = "<http://swrc.ontoware.org/ontology#volume>", L_p2 = "<http://purl.org/dc/elements/1.1/description>", DType_p = "URI", LTag_p = "".
+triple(L_s, DType_s, LTag_s, L_p2, DType_p, LTag_p, L_o, DType_o, LTag_o, "default") :- triple(L_s, DType_s, LTag_s, L_p1, DType_p, LTag_p, L_o, DType_o, LTag_o, "default"), L_p1 = "<http://purl.org/dc/terms/issued>", L_p2 = "<http://purl.org/dc/elements/1.1/description>", DType_p = "URI", LTag_p = "".
+
+#-------------------------------
+###### Original ontologies #######
+bench:Journal rdfs:subClassOf foaf:Document.
+bench:Proceedings rdfs:subClassOf foaf:Document.
+bench:Inproceedings rdfs:subClassOf foaf:Document.
+bench:Article rdfs:subClassOf foaf:Document.
+bench:Www rdfs:subClassOf foaf:Document.
+bench:MastersThesis rdfs:subClassOf foaf:Document.
+bench:PhDThesis rdfs:subClassOf foaf:Document.
+bench:Incollection rdfs:subClassOf foaf:Document.
+bench:Book rdfs:subClassOf foaf:Document.
+dc:title rdfs:subPropertyOf dc:description.
+swrc:volume rdfs:subPropertyOf dc:description.
+dcterms:issued rdfs:subPropertyOf dc:description.
+
+

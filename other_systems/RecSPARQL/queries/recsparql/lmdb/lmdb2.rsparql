@@ -1,0 +1,34 @@
+WITH RECURSIVE http://db.ing.puc.cl/temp AS
+{
+CONSTRUCT {
+<http://data.linkedmdb.org/resource/actor/29539> ?dir ?act
+}
+FROM NAMED <http://db.ing.puc.cl/temp>
+FROM <urn:x-arq:DefaultGraph>
+WHERE
+{
+{
+?mov <http://data.linkedmdb.org/resource/movie/actor>
+    <http://data.linkedmdb.org/resource/actor/29539> .
+    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+    ?mov <http://data.linkedmdb.org/resource/movie/director> ?dir
+}
+UNION
+{
+?mov <http://data.linkedmdb.org/resource/movie/director> ?dir .
+    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act1 .
+    ?mov <http://data.linkedmdb.org/resource/movie/actor> ?act .
+GRAPH <http://db.ing.puc.cl/temp>
+{
+<http://data.linkedmdb.org/resource/actor/29539> ?dir ?act1
+}
+}
+}
+}
+SELECT ?y ?z FROM NAMED <http://db.ing.puc.cl/temp>
+WHERE {
+GRAPH <http://db.ing.puc.cl/temp>
+    {
+    <http://data.linkedmdb.org/resource/actor/29539> ?y ?z
+}
+}

@@ -1,0 +1,1 @@
+SELECT ?o WHERE{<http://www.ppbenchmark.com/v1> <http://www.ppbenchmark.com/eSelf>/<http://www.ppbenchmark.com/eSelf> ?o}

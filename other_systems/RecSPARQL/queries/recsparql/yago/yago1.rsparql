@@ -1,0 +1,31 @@
+WITH RECURSIVE http://db.ing.puc.cl/temp AS
+{
+CONSTRUCT {
+<http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act
+}
+FROM NAMED <http://db.ing.puc.cl/temp>
+FROM <urn:x-arq:DefaultGraph>
+WHERE
+{
+{
+<http://yago-knowledge.org/resource/Kevin_Bacon> <http://yago-knowledge.org/resource/actedIn> ?mov .
+?act <http://yago-knowledge.org/resource/actedIn> ?mov
+}
+UNION
+{
+?act1 <http://yago-knowledge.org/resource/actedIn> ?mov .
+?act <http://yago-knowledge.org/resource/actedIn> ?mov .
+GRAPH <http://db.ing.puc.cl/temp>
+{
+<http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?act1
+}
+}
+}
+}
+SELECT ?z FROM NAMED <http://db.ing.puc.cl/temp>
+WHERE {
+GRAPH <http://db.ing.puc.cl/temp>
+{
+<http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> ?z
+}
+}
