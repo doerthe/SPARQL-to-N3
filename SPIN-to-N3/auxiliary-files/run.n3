@@ -1,0 +1,17 @@
+@prefix aux: <http://example.org/aux#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+
+
+
+
+#########################################################
+{(?a1 ?a2) aux:oneBound true}<={?a1 log:bound true. }.
+{(?a1 ?a2) aux:oneBound true}<={?a2 log:bound true.}.
+

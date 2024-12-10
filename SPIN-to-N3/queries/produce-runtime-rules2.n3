@@ -1,0 +1,55 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix aux: <http://example.org/aux#>.
+
+  {?x =>{ ?s ?p ?o }.
+  ?p string:startsWith "https"
+  }=>{?x =>{ ?s ?p ?o }}.
+
+
+    {?x =>{ ?s ?p ?o }.
+  ?p log:uri ?uri.
+  ?uri string:contains "bn_"
+  }=>{?x =>{ ?s ?p ?o }}.
+
+
+
+{
+  ?g aux:makeRule ?g5.
+  ?g log:equalTo {(?s1 ?s2) ?p ?o }.
+  ?p log:rawType log:Other.
+  ?p log:equalTo aux:optResult.
+
+  #todo: proper relabling of ?g.
+(?g5 1) aux:copy ?g55.
+  (?g55 ?s1 1) aux:getArguments (?s10 ?s11 ?s12 ?s13 ?s14 ?s15).
+
+
+  (?g55 ?s2 2) aux:getArguments (?s20 ?s21 ?s22 ?s23 ?s24 ?s25).
+
+:s33 log:skolem ?s33.
+
+?s1 aux:pGround ?s1g.
+
+?s2 aux:pGround ?s2g.
+
+
+
+(?s10 ?s20 {?g55 log:includes ?s12, ?s22. (?s12 ?s22) log:conjunction ?s33.})  log:conjunction ?s.
+(?s10 ?s21 {?g55 log:includes ?s12.} ?s25 {?s23 log:notIncludes ?s24})  log:conjunction ?s44.
+
+
+}=>{
+  ?s =>{(?s1g ?s2g) aux:optResult ?s33}.
+  ?s44 =>{(?s1g ?s2g) aux:optResult ?s12}
+
+}.
+
+
