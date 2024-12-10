@@ -1,1 +1,0 @@
-SELECT ?o WHERE{<http://www.ppbenchmark.com/v2> !(^<http://www.ppbenchmark.com/notExisting1>|^<http://www.ppbenchmark.com/notExisting2>) ?o}

@@ -1,0 +1,73 @@
+triple("http://example.org/gmark/46", "http://example.org/gmark/p2", "http://example.org/gmark/139") .
+triple("http://example.org/gmark/25", "http://example.org/gmark/p1", "http://example.org/gmark/45") .
+triple("http://example.org/gmark/4", "http://example.org/gmark/p0", "http://example.org/gmark/25") .
+triple("http://example.org/gmark/19", "http://example.org/gmark/p0", "http://example.org/gmark/34") .
+triple("http://example.org/gmark/45", "http://example.org/gmark/p2", "http://example.org/gmark/55") .
+triple("http://example.org/gmark/11", "http://example.org/gmark/p0", "http://example.org/gmark/35") .
+triple("http://example.org/gmark/14", "http://example.org/gmark/p0", "http://example.org/gmark/33") .
+triple("http://example.org/gmark/16", "http://example.org/gmark/p0", "http://example.org/gmark/25") .
+triple("http://example.org/gmark/13", "http://example.org/gmark/p0", "http://example.org/gmark/35") .
+triple("http://example.org/gmark/24", "http://example.org/gmark/p0", "http://example.org/gmark/32") .
+triple("http://example.org/gmark/16", "http://example.org/gmark/p0", "http://example.org/gmark/28") .
+triple("http://example.org/gmark/20", "http://example.org/gmark/p0", "http://example.org/gmark/28") .
+triple("http://example.org/gmark/29", "http://example.org/gmark/p1", "http://example.org/gmark/46") .
+triple("http://example.org/gmark/10", "http://example.org/gmark/p0", "http://example.org/gmark/26") .
+triple("http://example.org/gmark/33", "http://example.org/gmark/p1", "http://example.org/gmark/48") .
+triple("http://example.org/gmark/26", "http://example.org/gmark/p1", "http://example.org/gmark/48") .
+triple("http://example.org/gmark/34", "http://example.org/gmark/p1", "http://example.org/gmark/48") .
+triple("http://example.org/gmark/31", "http://example.org/gmark/p1", "http://example.org/gmark/45") .
+triple("http://example.org/gmark/39", "http://example.org/gmark/p1", "http://example.org/gmark/46") .
+triple("http://example.org/gmark/14", "http://example.org/gmark/p0", "http://example.org/gmark/26") .
+triple("http://example.org/gmark/2", "http://example.org/gmark/p0", "http://example.org/gmark/30") .
+triple("http://example.org/gmark/14", "http://example.org/gmark/p0", "http://example.org/gmark/27") .
+triple("http://example.org/gmark/27", "http://example.org/gmark/p1", "http://example.org/gmark/45") .
+triple("http://example.org/gmark/23", "http://example.org/gmark/p0", "http://example.org/gmark/29") .
+triple("http://example.org/gmark/35", "http://example.org/gmark/p1", "http://example.org/gmark/45") .
+triple("http://example.org/gmark/37", "http://example.org/gmark/p1", "http://example.org/gmark/45") .
+triple("http://example.org/gmark/15", "http://example.org/gmark/p0", "http://example.org/gmark/33") .
+triple("http://example.org/gmark/49", "http://example.org/gmark/p2", "http://example.org/gmark/90") .
+triple("http://example.org/gmark/18", "http://example.org/gmark/p0", "http://example.org/gmark/28") .
+triple("http://example.org/gmark/38", "http://example.org/gmark/p1", "http://example.org/gmark/48") .
+triple("http://example.org/gmark/16", "http://example.org/gmark/p0", "http://example.org/gmark/36") .
+triple("http://example.org/gmark/17", "http://example.org/gmark/p0", "http://example.org/gmark/38") .
+triple("http://example.org/gmark/10", "http://example.org/gmark/p0", "http://example.org/gmark/37") .
+triple("http://example.org/gmark/28", "http://example.org/gmark/p1", "http://example.org/gmark/47") .
+triple("http://example.org/gmark/0", "http://example.org/gmark/p0", "http://example.org/gmark/31") .
+triple("http://example.org/gmark/36", "http://example.org/gmark/p1", "http://example.org/gmark/49") .
+triple("http://example.org/gmark/27", "http://example.org/gmark/p3", "http://example.org/gmark/41") .
+triple("http://example.org/gmark/47", "http://example.org/gmark/p2", "http://example.org/gmark/147") .
+triple("http://example.org/gmark/6", "http://example.org/gmark/p0", "http://example.org/gmark/37") .
+triple("http://example.org/gmark/22", "http://example.org/gmark/p0", "http://example.org/gmark/39") .
+triple("http://example.org/gmark/1", "http://example.org/gmark/p0", "http://example.org/gmark/38") .
+triple("http://example.org/gmark/23", "http://example.org/gmark/p0", "http://example.org/gmark/34") .
+triple("http://example.org/gmark/7", "http://example.org/gmark/p0", "http://example.org/gmark/35") .
+triple("http://example.org/gmark/32", "http://example.org/gmark/p1", "http://example.org/gmark/45") .
+triple("http://example.org/gmark/14", "http://example.org/gmark/p0", "http://example.org/gmark/29") .
+triple("http://example.org/gmark/22", "http://example.org/gmark/p0", "http://example.org/gmark/27") .
+triple("http://example.org/gmark/30", "http://example.org/gmark/p1", "http://example.org/gmark/49") .
+triple("http://example.org/gmark/48", "http://example.org/gmark/p2", "http://example.org/gmark/128") .
+triple("http://example.org/gmark/12", "http://example.org/gmark/p0", "http://example.org/gmark/39") .
+triple("http://example.org/gmark/5", "http://example.org/gmark/p0", "http://example.org/gmark/34") .
+triple("http://example.org/gmark/35", "http://example.org/gmark/p3", "http://example.org/gmark/40") .
+triple("http://example.org/gmark/26", "http://example.org/gmark/p3", "http://example.org/gmark/44") .
+triple("http://example.org/gmark/32", "http://example.org/gmark/p3", "http://example.org/gmark/43") .
+triple("http://example.org/gmark/14", "http://example.org/gmark/p0", "http://example.org/gmark/35") .
+triple("http://example.org/gmark/25", "http://example.org/gmark/p3", "http://example.org/gmark/42") .
+
+result(!A100088, "x0", ?U_1, "x1", ?U_4) :- triple(?U_0, "http://example.org/gmark/p3", ?U_1), triple(?U_0, "http://example.org/gmark/p1", ?U_2), triple(?U_2, "http://example.org/gmark/p2", ?U_3), triple(?U_4, "http://example.org/gmark/p2", ?U_3), triple(?U_5, "http://example.org/gmark/p3", ?U_1), triple(?U_6, "http://example.org/gmark/p0", ?U_5), triple(?U_6, "http://example.org/gmark/p0", ?U_7), triple(?U_7, "http://example.org/gmark/p1", ?U_8), triple(?U_9, "http://example.org/gmark/p3", ?U_1), triple(?U_10, "http://example.org/gmark/p0", ?U_9), triple(?U_10, "http://example.org/gmark/p0", ?U_11), triple(?U_11, "http://example.org/gmark/p1", ?U_12) .
+result(!A100089, "x0", ?U_15, "x1", ?U_18) :- triple(?U_14, "http://example.org/gmark/p3", ?U_15), triple(?U_14, "http://example.org/gmark/p1", ?U_16), triple(?U_16, "http://example.org/gmark/p2", ?U_17), triple(?U_18, "http://example.org/gmark/p2", ?U_17), triple(?U_19, "http://example.org/gmark/p3", ?U_15), triple(?U_20, "http://example.org/gmark/p0", ?U_19), triple(?U_20, "http://example.org/gmark/p0", ?U_21), triple(?U_21, "http://example.org/gmark/p1", ?U_22), triple(?U_23, "http://example.org/gmark/p3", ?U_15), triple(?U_23, "http://example.org/gmark/p1", ?U_24), triple(?U_24, "http://example.org/gmark/p2", ?U_25), triple(?U_26, "http://example.org/gmark/p2", ?U_25) .
+result(!A100090, "x0", ?U_29, "x1", ?U_32) :- triple(?U_28, "http://example.org/gmark/p3", ?U_29), triple(?U_28, "http://example.org/gmark/p1", ?U_30), triple(?U_30, "http://example.org/gmark/p2", ?U_31), triple(?U_32, "http://example.org/gmark/p2", ?U_31), triple(?U_33, "http://example.org/gmark/p3", ?U_29), triple(?U_34, "http://example.org/gmark/p0", ?U_33), triple(?U_34, "http://example.org/gmark/p0", ?U_35), triple(?U_35, "http://example.org/gmark/p1", ?U_36), triple(?U_37, "http://example.org/gmark/p3", ?U_29), triple(?U_37, "http://example.org/gmark/p3", ?U_38), triple(?U_39, "http://example.org/gmark/p3", ?U_38), triple(?U_39, "http://example.org/gmark/p1", ?U_40) .
+result(!A100091, "x0", ?U_43, "x1", ?U_46) :- triple(?U_42, "http://example.org/gmark/p3", ?U_43), triple(?U_42, "http://example.org/gmark/p1", ?U_44), triple(?U_44, "http://example.org/gmark/p2", ?U_45), triple(?U_46, "http://example.org/gmark/p2", ?U_45), triple(?U_47, "http://example.org/gmark/p3", ?U_43), triple(?U_47, "http://example.org/gmark/p3", ?U_48), triple(?U_49, "http://example.org/gmark/p3", ?U_48), triple(?U_49, "http://example.org/gmark/p1", ?U_50), triple(?U_51, "http://example.org/gmark/p3", ?U_43), triple(?U_52, "http://example.org/gmark/p0", ?U_51), triple(?U_52, "http://example.org/gmark/p0", ?U_53), triple(?U_53, "http://example.org/gmark/p1", ?U_54) .
+result(!A100092, "x0", ?U_57, "x1", ?U_60) :- triple(?U_56, "http://example.org/gmark/p3", ?U_57), triple(?U_56, "http://example.org/gmark/p1", ?U_58), triple(?U_58, "http://example.org/gmark/p2", ?U_59), triple(?U_60, "http://example.org/gmark/p2", ?U_59), triple(?U_61, "http://example.org/gmark/p3", ?U_57), triple(?U_61, "http://example.org/gmark/p3", ?U_62), triple(?U_63, "http://example.org/gmark/p3", ?U_62), triple(?U_63, "http://example.org/gmark/p1", ?U_64), triple(?U_65, "http://example.org/gmark/p3", ?U_57), triple(?U_65, "http://example.org/gmark/p1", ?U_66), triple(?U_66, "http://example.org/gmark/p2", ?U_67), triple(?U_68, "http://example.org/gmark/p2", ?U_67) .
+result(!A100093, "x0", ?U_71, "x1", ?U_74) :- triple(?U_70, "http://example.org/gmark/p3", ?U_71), triple(?U_70, "http://example.org/gmark/p1", ?U_72), triple(?U_72, "http://example.org/gmark/p2", ?U_73), triple(?U_74, "http://example.org/gmark/p2", ?U_73), triple(?U_75, "http://example.org/gmark/p3", ?U_71), triple(?U_75, "http://example.org/gmark/p3", ?U_76), triple(?U_77, "http://example.org/gmark/p3", ?U_76), triple(?U_77, "http://example.org/gmark/p1", ?U_78), triple(?U_79, "http://example.org/gmark/p3", ?U_71), triple(?U_79, "http://example.org/gmark/p3", ?U_80), triple(?U_81, "http://example.org/gmark/p3", ?U_80), triple(?U_81, "http://example.org/gmark/p1", ?U_82) .
+result(!A100094, "x0", ?U_85, "x1", ?U_88) :- triple(?U_84, "http://example.org/gmark/p3", ?U_85), triple(?U_86, "http://example.org/gmark/p0", ?U_84), triple(?U_86, "http://example.org/gmark/p0", ?U_87), triple(?U_87, "http://example.org/gmark/p1", ?U_88), triple(?U_89, "http://example.org/gmark/p3", ?U_85), triple(?U_90, "http://example.org/gmark/p0", ?U_89), triple(?U_90, "http://example.org/gmark/p0", ?U_91), triple(?U_91, "http://example.org/gmark/p1", ?U_92), triple(?U_93, "http://example.org/gmark/p3", ?U_85), triple(?U_94, "http://example.org/gmark/p0", ?U_93), triple(?U_94, "http://example.org/gmark/p0", ?U_95), triple(?U_95, "http://example.org/gmark/p1", ?U_96) .
+result(!A100095, "x0", ?U_99, "x1", ?U_102) :- triple(?U_98, "http://example.org/gmark/p3", ?U_99), triple(?U_100, "http://example.org/gmark/p0", ?U_98), triple(?U_100, "http://example.org/gmark/p0", ?U_101), triple(?U_101, "http://example.org/gmark/p1", ?U_102), triple(?U_103, "http://example.org/gmark/p3", ?U_99), triple(?U_104, "http://example.org/gmark/p0", ?U_103), triple(?U_104, "http://example.org/gmark/p0", ?U_105), triple(?U_105, "http://example.org/gmark/p1", ?U_106), triple(?U_107, "http://example.org/gmark/p3", ?U_99), triple(?U_107, "http://example.org/gmark/p1", ?U_108), triple(?U_108, "http://example.org/gmark/p2", ?U_109), triple(?U_110, "http://example.org/gmark/p2", ?U_109) .
+result(!A100096, "x0", ?U_113, "x1", ?U_116) :- triple(?U_112, "http://example.org/gmark/p3", ?U_113), triple(?U_114, "http://example.org/gmark/p0", ?U_112), triple(?U_114, "http://example.org/gmark/p0", ?U_115), triple(?U_115, "http://example.org/gmark/p1", ?U_116), triple(?U_117, "http://example.org/gmark/p3", ?U_113), triple(?U_118, "http://example.org/gmark/p0", ?U_117), triple(?U_118, "http://example.org/gmark/p0", ?U_119), triple(?U_119, "http://example.org/gmark/p1", ?U_120), triple(?U_121, "http://example.org/gmark/p3", ?U_113), triple(?U_121, "http://example.org/gmark/p3", ?U_122), triple(?U_123, "http://example.org/gmark/p3", ?U_122), triple(?U_123, "http://example.org/gmark/p1", ?U_124) .
+result(!A100097, "x0", ?U_127, "x1", ?U_130) :- triple(?U_126, "http://example.org/gmark/p3", ?U_127), triple(?U_128, "http://example.org/gmark/p0", ?U_126), triple(?U_128, "http://example.org/gmark/p0", ?U_129), triple(?U_129, "http://example.org/gmark/p1", ?U_130), triple(?U_131, "http://example.org/gmark/p3", ?U_127), triple(?U_131, "http://example.org/gmark/p3", ?U_132), triple(?U_133, "http://example.org/gmark/p3", ?U_132), triple(?U_133, "http://example.org/gmark/p1", ?U_134), triple(?U_135, "http://example.org/gmark/p3", ?U_127), triple(?U_136, "http://example.org/gmark/p0", ?U_135), triple(?U_136, "http://example.org/gmark/p0", ?U_137), triple(?U_137, "http://example.org/gmark/p1", ?U_138) .
+result(!A100098, "x0", ?U_141, "x1", ?U_144) :- triple(?U_140, "http://example.org/gmark/p3", ?U_141), triple(?U_142, "http://example.org/gmark/p0", ?U_140), triple(?U_142, "http://example.org/gmark/p0", ?U_143), triple(?U_143, "http://example.org/gmark/p1", ?U_144), triple(?U_145, "http://example.org/gmark/p3", ?U_141), triple(?U_145, "http://example.org/gmark/p3", ?U_146), triple(?U_147, "http://example.org/gmark/p3", ?U_146), triple(?U_147, "http://example.org/gmark/p1", ?U_148), triple(?U_149, "http://example.org/gmark/p3", ?U_141), triple(?U_149, "http://example.org/gmark/p1", ?U_150), triple(?U_150, "http://example.org/gmark/p2", ?U_151), triple(?U_152, "http://example.org/gmark/p2", ?U_151) .
+result(!A100099, "x0", ?U_155, "x1", ?U_158) :- triple(?U_154, "http://example.org/gmark/p3", ?U_155), triple(?U_156, "http://example.org/gmark/p0", ?U_154), triple(?U_156, "http://example.org/gmark/p0", ?U_157), triple(?U_157, "http://example.org/gmark/p1", ?U_158), triple(?U_159, "http://example.org/gmark/p3", ?U_155), triple(?U_159, "http://example.org/gmark/p3", ?U_160), triple(?U_161, "http://example.org/gmark/p3", ?U_160), triple(?U_161, "http://example.org/gmark/p1", ?U_162), triple(?U_163, "http://example.org/gmark/p3", ?U_155), triple(?U_163, "http://example.org/gmark/p3", ?U_164), triple(?U_165, "http://example.org/gmark/p3", ?U_164), triple(?U_165, "http://example.org/gmark/p1", ?U_166) .
+
+
+
+
+@export result :- csv{}.

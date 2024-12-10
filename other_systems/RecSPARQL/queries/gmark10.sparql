@@ -1,8 +1,0 @@
-PREFIX : <http://example.org/gmark/> 
-
-SELECT * 
-WHERE { 
-    ?x0 (:p16/^:p23) ?x1 . 
-    ?x1 (:p24/^:p24)* ?x2 . 
-    ?x2 (:p23/^:p23)* ?x3 
-}

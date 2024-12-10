@@ -1,1 +1,0 @@
-SELECT ?s ?o WHERE{?s <http://www.ppbenchmark.com/e1>+ ?o}
