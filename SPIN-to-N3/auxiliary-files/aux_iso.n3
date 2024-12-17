@@ -44,7 +44,7 @@
 #1 e:trace {(?vars ?list) aux:createGraph ?graph}.
 (?vars ?list2) aux:handleTriples ?graph1.
 #2 e:trace {(?vars ?list2) aux:handleTriples ?graph1.}.
-(?vars ?list2) aux:handlePropertyPath2 ?graph11.
+(?vars ?list2) aux:handlePropertyPath ?graph11.
 #21 e:trace {(?vars ?list2) aux:handlePropertyPath ?graph11 .}.
 (?vars ?list2) aux:handleFilter ?graph2.
 #3 e:trace {(?vars ?list2) aux:handleFilter ?graph2.}.
@@ -63,13 +63,11 @@
 ) log:conjunction ?graph5.
 
 
-#"optlist" log:trace ?optlist.
+
 ### check for optional and make patterns if needed ###
-(?graph5 ?optlist ) aux:makeOptionalPatterns ?graph8.
+(?graph5 ?optlist ) aux:makeOptionalPatterns ?graph.
 
-#"optOut" log:trace {(?graph5 ?optlist ) aux:makeOptionalPatterns ?graph.}.
 
-?graph8 log:equalTo ?graph.
 
 }.
 
@@ -93,6 +91,120 @@
                (?whereList ({})) list:append ?fl.
                ?fl  log:conjunction ?graph.
   }.
+
+#######################################
+# property paths
+#######################################
+{
+   (?vars ?list) aux:handlePropertyPath ?graph 
+}
+<= 
+{
+  ({( ?s ?o ) aux:stepThroughPath ?steps} { 
+        ?list list:member ?tp .
+        ?tp a sp:TriplePath ;
+          sp:path ?path .
+        ?tp sp:subject ?s1. ?s1 aux:gets ?s .
+        ?tp sp:object ?o1. ?o1 aux:gets ?o .
+        ?path aux:collectPathSteps ?steps .
+      } ?olist) log:collectAllIn ?scope.
+  (?olist ({})) list:append ?oolist. 
+  ?oolist log:conjunction ?graph.
+} .
+
+
+
+
+#
+{ ( ?s ?o ( ?pred 1 1 ) ) aux:propertyPathStep    {?s ?pred ?o}}<= {} .
+{ ( ?s ?o ( ?pred 0 -2 ) ) aux:propertyPathStep    {( ?s ?o ) aux:optionalChain ?pred } }<= {} .
+{ ( ?s ?o ( ?pred 1 -2 ) ) aux:propertyPathStep {( ?s ?o ) aux:chain ?pred}}<= {}.
+{ ( ?s ?o ( ?pred 0 -1 ) ) aux:propertyPathStep   {( ?s ?o ) aux:optional ?pred}}<= {} .
+
+# collect path steps for easier processing
+# (also, flatten seq, alt paths)
+
+#
+{
+   ?x aux:collectPathSteps ?paths 
+}
+<= 
+{
+   ?x a sp:SeqPath ;
+       sp:path1 ?p1 ;
+       sp:path2 ?p2 .
+   # - flatten seq paths
+   ?p1 aux:collectPathSteps ?p1s .
+   ?p2 aux:collectPathSteps ?p2s .
+   ( ?p1s ?p2s ) list:append ?paths .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?ps "rev" ) ) 
+}
+<= 
+{
+   ?x a sp:ReversePath ;
+       sp:subPath ?p .
+   ?p aux:collectPathSteps ?ps .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?p1s ?p2s ) "alt" ) 
+}
+<= 
+{
+   ?x a sp:AltPath ;
+       sp:path1 ?p1 ;
+       sp:path2 ?p2 .
+   # - flatten alt paths
+   ?p1 aux:collectPathSteps ?p1s .
+   ?p2 aux:collectPathSteps ?p2s .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?ps ?min ?max ) ) 
+}
+<= 
+{
+   ?x a sp:ModPath ;
+       sp:subPath ?p ;
+       sp:modMin ?min ;
+       sp:modMax ?max .
+   ?p aux:collectPathSteps ?ps .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ?cells "neg" )
+}
+<= 
+{
+   ?x a sp:NegatedPath ;
+       sp:subPath ?options .
+   (
+       ( ?node ?type )
+       {
+           ?option list:in ?options .
+           ?option a ?type ;
+               sp:node ?node 
+       }
+       ?cells
+   ) log:collectAllIn _:t .
+} .
+
+#
+{
+   ?x aux:collectPathSteps ( ( ?x 1 1 ) ) 
+}
+<= 
+{
+   ?x log:rawType log:Other .
+   ?x!log:uri string:notMatches "http://spinrdf.org/sp#(SeqPath|AltPath|ModPath|NegatedPath)" .
+} .
 
 
 ########################
@@ -121,11 +233,12 @@
 
 {(?uList ?ingraph ) aux:createUGraph ?graph.}<={
   ?uList rdf:first ?t.
-  ?t sp:elements ?elist.
-  ?et list:in ?elist.
-  (?vars ?et) aux:createGraph ?tr.
+  ?t sp:elements (?e1 ?e2).
+  
+  (?vars ?e1) aux:createGraph ?tr1.
+  (?vars ?e2) aux:createGraph ?tr2.
   ?uList rdf:rest ?rest.
-  (?ingraph ?tr) log:conjunction ?newgraph.
+  (?ingraph {?tr1 aux:union ?tr2}) log:conjunction ?newgraph.
   (?rest ?newgraph ) aux:createUGraph ?graph.
   }.
 
@@ -151,46 +264,16 @@
   }.
 
 #pattern construction
-{(?graph () ) aux:makeOptionalPatterns ?graph.}<={
- # 3 log:trace ("graph" ?graph). 
-  true log:callWithCut ?true.
-  ?graph aux:flatOpt ?g5.
-   {} log:becomes {?graph aux:makeRule ?g5. }.
-  }.
+{(?graph () ) aux:makeOptionalPatterns ?graph.}<={true log:callWithCut ?true}.
 {(?graph5 ?optList) aux:makeOptionalPatterns ?graph.}<={
     ?optList rdf:first ?first.
     ?optList rdf:rest ?rest.
-    (?graph5 ?first) log:skolem ?out.
-  
-   # :x log:skolem ?x.
-   # :y log:skolem ?y.
-   # "ho" log:trace (?graph5 ?optList ?first).
-
-   # ?graph5 aux:makeRule ?gr.
-   # ?first aux:makeRule ?gr2.
-?graph5 aux:flatOpt ?g5.
-?first aux:flatOpt ?f5.
-
-    {} log:becomes {?graph5 aux:makeRule ?g5. ?first aux:makeRule ?f5}.
-   #  {} log:becomes ?gr2.
- 
-    #1 e:trace (?graph5 ?gr).
-    #2 e:trace  { ({ ?graph5 aux:optionalQ ?first} ?rest) aux:makeOptionalPatterns ?graph.}.
-
-   # ({ (?o ?graph5 ?o2 ?first) aux:optionalQ (?out ?call)} ?rest) aux:makeOptionalPatterns ?graph.
-    ({ (?graph5 ?first) aux:optResult ?out} ?rest) aux:makeOptionalPatterns ?graph.
- # 4 log:trace ("graph" ?graph). 
+    ({?graph5 aux:optionalQ ?first} ?rest) aux:makeOptionalPatterns ?graph
 
     #({?graph5 aux:optionalQ ?optpattern} {?optpattern list:in ?optList} ?out) log:collectAllIn ?scope. 
     #(?out ({})) list:append ?ol.
     #?ol log:conjunction ?graph
     }.
-
-
-
-
-
-
 
 ##############################################
 # ƒ
@@ -321,7 +404,7 @@
   ?t  a ?f.
   ?t aux:gets ?e1. 
 {?arguments ?f ?e1 } log:equalTo ?in.
-#"fn" e:trace ?in .
+"fn" e:trace ?in .
  ?in  aux:funcTranslation ?tr1.
 
 # check for arguments of arguments
@@ -734,214 +817,6 @@ aux:value log:skolem ?value.
   ?vars list:removeDuplicates ?outvars.}.
 
 
-#########################################
-# new version for property paths
-#########################################
-
-{
-   (?vars ?list) aux:handlePropertyPath2 ?graph 
-}
-<= 
-{
-
-   (?list ({})) aux:getPathTripleList ?tlist.
-
-
-  ?tlist log:conjunction ?graph.
-} .
-
-{
-  (?list ?plist ) aux:getPathTripleList ?tlist 
-}<={
-   ?list rdf:first ?tp. 
-   ?tp a sp:TriplePath ;
-         sp:path ?path .
-        ?tp sp:subject ?s1. ?s1 aux:gets ?s .
-        ?tp sp:object ?o1. ?o1 aux:gets ?o .
-        (?path ?s ?o) aux:pathTranslatesTo ?pattern .
-  (?plist (?pattern)) list:append ?plist2.
-
-  ?list rdf:rest ?rest.
-    (?rest ?plist2 ) aux:getPathTripleList ?tlist      
-}.
-
-{
-  (?list ?plist ) aux:getPathTripleList ?tlist 
-}<={
-   ?list rdf:first ?tp. 
-   _:_x e:fail {?tp a sp:TriplePath ;
-         sp:path ?path .}.
-
-
-  ?list rdf:rest ?rest.
-    (?rest ?plist ) aux:getPathTripleList ?tlist      
-}.
-
-
-{
-  (() ?plist ) aux:getPathTripleList ?plist 
-}<={
-}.
-
-
-
-
-
-#many
-{(?path ?s ?o) aux:pathTranslatesTo { ?s ?path ?o  } .}
-<={ 
-
-   ?path a sp:ModPath;
-        sp:modMax -2;
-        sp:subPath ?p.
-
-
-   
-?s log:skolem ?s1.
-?o log:skolem ?o1.
-
- (?p ?s1 ?o1) aux:pathTranslatesTo ?pattern.
-
-
-   {} log:becomes {?pattern => { ?s1 ?path ?o1  } . { ?s1 ?path ?x. ?x ?path ?o1  }=>{ ?s1 ?path ?o1  } }.
-
-}.
-
-#zero 
-{(?path ?s ?o) aux:pathTranslatesTo { ?s "https:equal"  ?o  } .}
-<={ 
-   ?path a sp:ModPath;
-        sp:modMin 0;
-        sp:subPath ?p.
-
-
-# to be tested: is that too expensive?
-   {} log:becomes {
-    {?s1 ?p1 ?o1}=>{?o1 "https:equal" ?o1. }.
-    {?s1 ?p1 ?o1}=>{?s1 "https:equal" ?s1. }.
-    }.
-
-}.
-
-#one
-{(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
-<={ 
-   ?path a sp:ModPath;
-        sp:modMax -1;
-        sp:subPath ?p.
-  
-
- (?p ?s ?o) aux:pathTranslatesTo ?pattern.
-}.
-
-#negation
-{(?path ?s ?o) aux:pathTranslatesTo  ?patterns.}
-<={ 
-   ?path a sp:NegatedPath;
-        sp:subPath ?list.
-    aux:var log:skolem ?var. 
-    ({?var log:notEqualTo ?pr}{
-        ?p list:in ?list.
-        ?p sp:node ?pr;
-           a sp:LinkPath.
-    } ?plist) log:collectAllIn ?scope. 
-   (({?s ?var ?o} ) ?plist ) list:append ?p2list.
-   ?p2list log:conjunction ?patterns
-}.
-{(?path ?s ?o) aux:pathTranslatesTo  ?patterns.}
-<={ 
-   ?path a sp:NegatedPath;
-        sp:subPath ?list.
-    aux:var log:skolem ?var. 
-    ({?var log:notEqualTo ?pr}{
-        ?p list:in ?list.
-        ?p sp:node ?pr;
-           a sp:ReverseLinkPath.
-    } ?plist) log:collectAllIn ?scope. 
-   (({?o ?var ?s} ) ?plist ) list:append ?p2list.
-   ?p2list log:conjunction ?patterns
-}.
-
-
-
-
-
-{(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
-<={ 
-   ?path a sp:ReversePath;
-        sp:subPath ?p.
-    (?p ?o ?s) aux:pathTranslatesTo ?pattern.
-
-}.
-
-{(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
-<={ 
-   ?path a sp:SeqPath;
-        sp:path1 ?p1;
-        sp:path2 ?p2.
-   ?path log:skolem ?x.
-
-(?p1 ?s ?x) aux:pathTranslatesTo ?pattern1.
-(?p2 ?x ?o) aux:pathTranslatesTo ?pattern2.
-
-(?pattern1 ?pattern2) log:conjunction ?pattern.
-}.
-
-{(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
-<={ 
-   ?path a sp:AltPath;
-        sp:path1 ?p1.
-
-
-(?p1 ?s ?o) aux:pathTranslatesTo ?pattern.
-}.
-{(?path ?s ?o) aux:pathTranslatesTo ?pattern .}
-<={ 
-   ?path a sp:AltPath;
-        sp:path2 ?p2.
-
-
-(?p2 ?s ?o) aux:pathTranslatesTo ?pattern.
-}.
-
-
-
-
-{(?p ?s ?o) aux:pathTranslatesTo {?s ?p ?o}}
-<=
-{
-    ?p log:rawType log:Other.
-    ?p log:uri ?uri.
-    ?uri string:notMatches ".*bn_.*"
-}.
-
-#creation of unification step for optional
-{ ?g aux:addOptionalEvaluation ?x }<=
-{?g log:equalTo {(?s1 ?s2) ?p ?o }.
-
-  ?p log:rawType log:Other.
-  ?p log:equalTo aux:optResult.
-  true log:callWithCut true.
-
-  ?g aux:flatOpt ?g5.
-
-  (?g 5) aux:copy ?gc.
-
-  (?o 5) aux:copy ?oc.
-
-  (?gc {?g5 log:includes ?oc}) log:conjunction ?x.
-
-  }.
-{ ?x aux:addOptionalEvaluation ?x }<={}.
-
-
-
-
-
-
-
-
-
 
 #####################################################################################
 # sparql-functions and their translations
@@ -1014,160 +889,3 @@ aux:value log:skolem ?value.
 
 
 # todo: proper scoping for minus
-
-
-#local graph copy
-# 1: what do I want to copy
-# 2: a number to make sure to get different copies (all variables for 1 whill be the same, no matter which rule instantiated the copy, same for 2,3,4,...)
-{
- (?x ?n) aux:copy ?y 
-}<={
-  ?x log:rawType log:Formula.
-  ?x log:notEqualTo true.
-
-   true log:callWithCut true.
-   ?x e:graphList ?list.
-
-   (?list () ?n) aux:copyGraphList ?listCopy.
-    true log:callWithCut true.
-   ?listCopy log:conjunction ?y.
-
-}.
-
-
-{(?x ?n) aux:copy ?y}<={
-  ?x log:rawType log:SkolemIRI.
-
-  true log:callWithCut true.
-  (?x ?n) log:skolem ?y.  
-}.
-{(?x ?n) aux:copy ?xc}<={
-  ?x log:rawType rdf:List.
-  true log:callWithCut true.
-  (?x () ?n) aux:copyList ?xc.
-}.
-
-{(?x ?n) aux:copy ?x}<={
- 
-}.
-
-{(() ?xc ?n) aux:copyList ?xc.}<={}.
-{(?list ?copy ?n) aux:copyList ?xc.}<={
-?list rdf:first ?first.
-(?first ?n) aux:copy ?fc.
-?list rdf:rest ?rest.
-(?copy (?fc)) list:append ?copy2.
-(?rest ?copy2 ?n) aux:copyList ?xc.
-}.
-
-{(() ?list ?n)  aux:copyGraphList ?list}<={}.
-{(?l ?r ?n) aux:copyGraphList ?out}<={
-  ?l rdf:first ?f.
-  ?f log:equalTo {?s ?p ?o}.
-  (?s ?n) aux:copy ?sc.
-  (?p ?n) aux:copy ?pc.
-  (?o ?n) aux:copy ?oc.
-  (?r ({?sc ?pc ?oc})) list:append ?r2.
-  ?l rdf:rest ?l2.
-  (?l2 ?r2 ?n) aux:copyGraphList ?out.
-}.
-
-#partial grounding for optional
-{{?s ?p ?o} aux:pGround (?sg ?p ?o)}<={
-  ?p log:rawType log:Other.
-  ?p log:equalTo aux:optionalQ.
-  true log:callWithCut true.
-  ?s aux:pGround ?sg.
-}.
-{?g aux:pGround ?gg}<={
-  ?g log:rawType log:Formula.
-  ?g log:notEqualTo {}.
-  true log:callWithCut true.
-  ?g e:graphList ?glist.
-  (?glist ()) aux:pGroundGraph ?gglist.
-  ?gglist log:conjunction ?gg.
-}.
-
-{?s aux:pGround ?sg}<={
-  ?s log:rawType rdf:List.
-  true log:callWithCut true.
-  (?s ()) aux:pGroundList ?sg
-}.
-
-{?s aux:pGround ?sg}<={
-  ?s log:rawType log:SkolemIRI.
-  ?s log:uri ?sg.
-  true log:callWithCut true.
-}.
-
-{?s aux:pGround ?s}<={
-}.
-
-{(() ?gg) aux:pGroundGraph ?gg.} <= {}.
-{(?glist ?g) aux:pGroundGraph ?gg.} <= {
-
- ?glist rdf:first ?f.
- ?f log:equalTo {?s ?p ?o}.
- #?p log:notEqualTo aux:optResult.
-#true log:callWithCut true.
-
- ?s aux:pGround ?sg.
- ?p aux:pGround ?pg.
- ?o aux:pGround ?og.
- (?g ({?sg ?pg ?og})) list:append ?g2.
- ?glist  rdf:rest ?grest.
- (?grest ?g2) aux:pGroundGraph ?gg.
-}.
-
-#todo: not sure that case is needed.
-#{(?glist ?g) aux:pGroundGraph ?gg.} <= {
-
- #?glist rdf:first  {?s aux:optResult ?o}.
-
-
- #?s aux:pGround ?sg.
-
- #(?g ({?sg aux:optResult ?o})) list:append ?g2.
- #?glist  rdf:rest ?grest.
- #   26 log:trace {(?grest ?g2) aux:pGroundGraph ?gg.}.
- #(?grest ?g2) aux:pGroundGraph ?gg.
-#}.
-
-{  (() ?x) aux:pGroundList ?x} <={}.
-{  (?list ?x) aux:pGroundList ?out} <={
-?list rdf:first ?first.
-?first aux:pGround ?fg.
-(?x (?fg)) list:append ?x2.
-?list rdf:rest ?rest.
-(?rest ?x2) aux:pGroundList ?out. 
-
-}.
-
-
-
-
-{?s aux:flatOpt ?sf.}<=
-{?s log:equalTo {(?s1 ?s2) ?p1 ?o1}. ?p1 log:rawType log:Other. ?p1 log:equalTo aux:optResult.
-true log:callWithCut true.
- ?s1 aux:flatOpt ?sf1.
-  ?s2 aux:flatOpt ?of1.
-  (?sf1 ?of1) log:conjunction ?sf.
-}.
-
-{?s aux:flatOpt ?s.} <= {}.
-
-#1 first argument to call
-#2 what to  call in case of not includes
-#3 argument (object) of log:includes
-#4 subject of not includes
-#5 object of not includes
-#6 possible second includes
-
-
-{(?g ?x ?n) aux:getArguments (?xc ?xc ?yc  ?g  ?yc {})}<={  ?x log:equalTo {(?a ?b) aux:optResult ?y }. true log:callWithCut true. 
-        (?x (2 ?n)) aux:copy ?xc. 
-      (?y (2 ?n)) aux:copy ?yc. 
-     # (?g (6 ?n)) aux:copy ?gc.
-      }.
-
-{(?g ?x ?n) aux:getArguments (?xc  { } ?xc  ?j ?xc {?g log:includes ?xc} ) }<={ (?x (2 ?n)) aux:copy ?xc.  :sss log:skolem ?sk1. :ppp log:skolem ?sk2. ?j log:equalTo (?sk1 ?sk2). }.

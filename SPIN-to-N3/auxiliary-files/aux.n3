@@ -235,7 +235,7 @@
   ?uList rdf:first ?t.
   ?t sp:elements ?elist.
   ?et list:in ?elist.
-  (?vars ?et) aux:handleTriples ?tr.
+  (?vars ?et) aux:createGraph ?tr.
   ?uList rdf:rest ?rest.
   (?ingraph ?tr) log:conjunction ?newgraph.
   (?rest ?newgraph ) aux:createUGraph ?graph.

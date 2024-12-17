@@ -1,0 +1,317 @@
+#@prefix : <http://example.org/aux#> .
+@prefix aux: <http://example.org/aux#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+
+#########################
+#Property paths
+########################
+# - sequenceOfSteps
+
+#
+{
+   ( ?start ?end ) aux:stepThroughPath ?steps 
+}
+<= 
+{
+   ?steps list:firstRest ( ?step ?rest ) .
+
+   # steps = list with steps (again lists) as elements
+   # (individual steps would have numbers as last elements)
+   ?steps!list:last log:rawType rdf:List .
+   # "sequenceOfSteps" log:trace ?step .
+   ( ?start ?interm ) aux:stepThroughPath ?step .
+   (?start ?interm) aux:fullyInstantiated true.
+   #
+   ( ?interm ?end ) aux:stepThroughPath ?rest 
+} .
+
+# rest is empty: unify "start" with "end"
+{
+   ( ?start ?start ) aux:stepThroughPath ( ) 
+}
+<= {} .
+
+
+# - predicatePath
+{
+   ( ?s ?o ) aux:stepThroughPath ( ?pred 1 1 ) 
+}
+<= 
+{
+   #"singleStep" log:trace ( ?s ?o ?pred ) .
+   ?s ?pred ?o 
+} .
+
+
+# - reversePath
+{
+   ( ?s ?o ) aux:stepThroughPath ( ?nested "rev" ) 
+}
+<= 
+{
+   ( ?o ?s ) aux:stepThroughPath ?nested 
+} .
+
+
+# - oneOrMorePath
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?nested 1 -2 ) 
+}
+<= 
+{
+   #"oneOrMorePath" log:trace ( ?start ?end ?nested ) .
+   ( ?start ?end ) aux:stepThroughPath ?nested .
+} .
+
+#
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?nested 1 -2 ) 
+}
+<= 
+{
+   ( ?start ?o ) aux:stepThroughPath ?nested .
+   #make sure that the last step is really "done"
+   (?start ?o) aux:fullyInstantiated true.
+   ( ?o ?end ) aux:stepThroughPath ( ?nested 1 -2 ) .
+} .
+
+
+# - zeroOrMorePath
+{
+   ( ?start ?start ) aux:stepThroughPath ( ?nested 0 -2 ) 
+}
+<= {} .
+
+#
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?nested 0 -2 ) 
+}
+<= 
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?nested 1 -2 ) 
+} .
+
+
+# - zeroOrOnePath
+{
+   ( ?start ?start ) aux:stepThroughPath ( ?nested 0 -1 ) 
+}
+<= {} .
+
+#
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?nested 0 -1 ) 
+}
+<= 
+{
+   ( ?start ?end ) aux:stepThroughPath ?nested .
+} .
+
+# - altPath
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?options "alt" ) 
+}
+<= 
+{
+   # "altPath" log:trace ?options .
+   ( ?start ?end ) aux:tryAlts ?options .
+} .
+
+#
+{
+   ( ?start ?end ) aux:tryAlts ?options 
+}
+<= 
+{
+   ?options rdf:first ?first .
+   ( ?start ?end ) aux:stepThroughPath ?first 
+} .
+
+#
+{
+   ( ?start ?end ) aux:tryAlts ?options 
+}
+<= 
+{
+   ?options rdf:rest ?rest .
+   ( ?start ?end ) aux:tryAlts ?rest 
+} .
+
+
+# negatedPath
+{
+   ( ?start ?end ) aux:stepThroughPath ( ?options "neg" ) 
+}
+<= 
+{
+   ( ?start ?end ) aux:tryNeg ?options 
+} .
+
+
+#
+{
+   ( ?start ?end ) aux:tryNeg ?options .
+} 
+<= 
+{
+   ( ?options sp:LinkPath ) aux:collectLinkRegex ?regex .
+   #"tryNeg (1)" log:trace ( ?start ?end ?regex ) .
+   ?start ?pred ?end .
+   ?pred!log:uri string:notMatches ?regex 
+} .
+
+
+#
+{
+   ( ?start ?end ) aux:tryNeg ?options .
+} 
+<= 
+{
+   ( ?options sp:ReverseLinkPath ) aux:collectLinkRegex ?regex .
+   #"tryNeg (2)" log:trace ( ?start ?end ?regex ) .
+   ?end ?pred ?start .
+   ?pred!log:uri string:notMatches ?regex 
+} .
+
+
+#
+{
+   ( ?options ?type ) aux:collectLinkRegex ?regex 
+}
+<= 
+{
+   (
+       ?uriStr
+       {
+           ( ?option ?type ) list:in ?options .
+           ?option log:uri ?uriStr 
+       }
+       ?uriStrs
+   ) log:collectAllIn _:t .
+   #
+   ?uriStrs!list:length math:greaterThan 0 .
+   ( ?uriStrs "|" ) string:join ?regex .
+} .
+
+
+# help function
+{(?a ?b) aux:fullyInstantiated true}<={?a log:rawType ?t1. ?t1 log:notEqualTo log:ForAll. ?b log:rawType ?t2. ?t2 log:notEqualTo log:ForAll.}.
+
+######################################
+# OPTIONAL
+#####################################
+
+
+# predicate returns bindings in out and pattern which matched with ?call
+{?pattern aux:optionalQ ?opt }<={ 
+(?pattern ?opt)  aux:getCallPattern (?out ?call).
+
+ ?call log:includes ?out.    
+ }.
+
+{(?pattern ?optional)  aux:getCallPattern (?out ?call).}<={
+
+  # ?pattern aux:variableCheck true.
+  # ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
+  # true log:callWithCut true.
+  # (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+  ?pattern aux:unnest (?out1 ?call1).
+
+  ?optional aux:unnest (?out2 ?call2).
+
+   ( ?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call).
+
+   }.
+
+
+
+# un-nest 
+{?pattern aux:unnest (?out1 ?call1)}<=
+{  
+   ?pattern aux:variableCheck true.
+   ?pattern log:equalTo {?p1 aux:optionalQ ?o1}. 
+   true log:callWithCut true.
+   (?p1 ?o1)  aux:getCallPattern (?out1 ?call1).
+   }.
+
+{?pattern aux:unnest ({} ?pattern)}<=
+{ 
+#  ?pattern log:notEqualTo {?p1 aux:optionalQ ?o1}. 
+#  true log:callWithCut true.
+}.
+
+# try optional
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out ?call)}
+<=
+{   
+   (?call2 ?call1) log:conjunction ?call.
+   ?call log:copy ?out.
+   true log:call ?out.
+   9 log:trace ?out.
+   ?out log:includes ?out1, ?out2.
+}.
+
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional (?out3 ?call1).}
+<=
+{  
+   ?call1 log:copy ?out3. #here
+   true log:call ?out3.
+   (?call1 ?call2) log:conjunction ?con2.
+   ?con2 log:copy ?con3.
+   ?con3 log:includes ?out3.
+   ?xx log:notIncludes ?con3.
+}.
+
+
+{(?out1 ?call1 ?out2 ?call2) aux:tryOptional ({} {}).}
+<=
+{  
+ #  ?call1 log:copy ?out3.
+   _:x log:notIncludes ?call1
+}.
+
+
+
+#test whether something is a universal variable
+{?p aux:variableCheck true}<={
+   ?p log:equalTo {?a ?b ?c}.
+   ?b log:rawType ?type.
+   ?type log:notEqualTo log:ForAll
+ }.
+
+###################
+# Union
+#####################
+{?x aux:union ?y}<= {(?a ?b) log:includes ?x}.
+{?x aux:union ?y}<= {(?a ?b) log:includes ?y}.
+
+
+#########################################################
+{(?a1 ?a2) aux:oneBound true}<={?a1 log:bound true. }.
+{(?a1 ?a2) aux:oneBound true}<={?a2 log:bound true.}.
+
+
+######################################
+# BUILTINS
+#####################################
+
+{ ?n aux:ceil ?r2 } 
+<= {
+    ?n math:rounded ?r .
+    ?r math:lessThan ?n . # didn't round up
+    ( ?n 1 ) math:sum ?n2 .
+    ?n2 math:rounded ?r2 .
+} .
+
+{ ?n aux:ceil ?r } 
+<= {
+    ?n math:rounded ?r .
+    ?r math:notLessThan ?n
+} .
