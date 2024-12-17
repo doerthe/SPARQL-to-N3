@@ -41,9 +41,19 @@
     #handle aggregation
     (?x ?g1) aux:handleAggregation ?g.
 
+    # - list with variable values
     ?x log:skolem ?x2.
 
-  }=>{?g => {?x2 ex:result ?outvars}.
+    # - separate bnode per variable value
+    # ( { ?x2 ex:result [ ex:label ?var_label ; ex:value ?var_val ] }
+    # { ?outvars list:member ( ?var_label ?var_val ) }
+    # ?stmts ) log:collectAllIn _:t .
+    # ?stmts log:conjunction ?conseq .
+
+  }=>{
+    ?g => {?x2 ex:result ?outvars}.
+    # ?g => {ex:SingleResult ex:result ?outvars}.
+    # ?g => ?conseq .
   }.
 
 

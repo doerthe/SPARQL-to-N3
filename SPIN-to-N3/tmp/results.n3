@@ -1,3 +1,0 @@
-# Processed by EYE v10.17.3 (2024-08-07)
-# eye --quiet ../../auxiliary-files/runtime.n3 test/cases/zika/zika-data.n3 --query tmp/n3query.n3 --nope
-
