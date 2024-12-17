@@ -1,0 +1,7 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+
+# 2024-12-05T14:28:02.475Z in=96 out=0 ent=0 step=0 brake=2 inf=442553 sec=0.048 inf/sec=9219854
+# ENDS
+

@@ -1,0 +1,14 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query-zika-red-bw-optim-sympt.n3 --turtle ../cases/zika/gen/red/gen1000_pt1_sympt.n3 --turtle ../cases/snomed/ontology-2024-12-16_15-03-55--subclass.ttl --query tmp/n3query_query-zika-bw.n3 --nope
+
+_:node_170_1 <http://example.org/zika#testForZika> true.
+_:node_426_1 <http://example.org/zika#testForZika> true.
+_:node_1042_1 <http://example.org/zika#testForZika> true.
+_:node_1484_1 <http://example.org/zika#testForZika> true.
+_:node_1592_1 <http://example.org/zika#testForZika> true.
+_:node_2621_1 <http://example.org/zika#testForZika> true.
+_:node_3314_1 <http://example.org/zika#testForZika> true.
+_:node_3898_1 <http://example.org/zika#testForZika> true.
+# 2024-12-17T22:00:48.241Z in=285307 out=8 ent=8 step=1520 brake=2 inf=9523701 sec=1.241 inf/sec=7674215
+# ENDS
+

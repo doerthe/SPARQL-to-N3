@@ -1,0 +1,80 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://bmi.utah.edu/ontologies/peontology/C0117899> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0141449> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C1739768> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0032143> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C3159309> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0206461> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0206461> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0028351> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C1099665> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C1272716>.
+<http://bmi.utah.edu/ontologies/peontology/C1099665> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0591649> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019139>.
+<http://bmi.utah.edu/ontologies/peontology/C0591649> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0016018>.
+<http://bmi.utah.edu/ontologies/peontology/C0206460> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0206460> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0216278> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0216278> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0216278> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0031406> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0917726> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0016018>.
+<http://bmi.utah.edu/ontologies/peontology/C0917726> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0917726> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0003440> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0206232> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0206232> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C1098510> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0256103> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0032144>.
+<http://bmi.utah.edu/ontologies/peontology/C0256103> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0354566> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0016018>.
+<http://bmi.utah.edu/ontologies/peontology/C0354566> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0354566> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0190587> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0354604> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C1831808> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0872913> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0032144>.
+<http://bmi.utah.edu/ontologies/peontology/C0872913> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C1522670> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0043031> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0014563> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0297269> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0297269> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0019134> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0354565> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0004057> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0038418> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0000956> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0019139> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0019139> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0728963> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019139>.
+<http://bmi.utah.edu/ontologies/peontology/C0728963> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0016018>.
+<http://bmi.utah.edu/ontologies/peontology/C0728963> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0728963> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0254215> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0254215> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0254215> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C2348066> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0032144> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0031444> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0042071> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0016018>.
+<http://bmi.utah.edu/ontologies/peontology/C0042071> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0246904> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C1096489> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0206461> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0591649> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003280>.
+<http://bmi.utah.edu/ontologies/peontology/C0591649> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0019134>.
+<http://bmi.utah.edu/ontologies/peontology/C0591649> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/Treatment>.
+<http://bmi.utah.edu/ontologies/peontology/C0206460> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0216278> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0917726> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0206232> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0297269> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0728963> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+<http://bmi.utah.edu/ontologies/peontology/C0591649> rdfs:subClassOf <http://bmi.utah.edu/ontologies/peontology/C0003440>.
+# 2024-12-05T14:30:16.196Z in=647 out=144 ent=72 step=513 brake=3 inf=628332 sec=0.059 inf/sec=10649695
+# ENDS
+

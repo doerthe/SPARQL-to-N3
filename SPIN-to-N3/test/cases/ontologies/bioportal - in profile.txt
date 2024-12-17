@@ -1,0 +1,22 @@
+in profile:
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/ABA-AMB/1/ABA.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/ACVD_ONTOLOGY/4/acvd_20240818.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/AGROCYMAC/2/cultivos.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/AGROMOP/1/AgroMOP.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/AO/2/asthma_v1.3.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/ASSAYNODE/2/AssayNode.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/BCLION/1/BCLION.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/BCON/2/BCON.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/BIFO/1/biofilm1.5.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/BKO/1/BKO.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/BNO/2/bionutrition_cam9.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CARELEX/45/carelex.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CBO/25/CBO.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CEDARVS/4/CEDAR_Value_Sets.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CHD/5/chdwiki_ontology.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CMECS/2/cmecs.xml
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/COMODI/6/comodi.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/COVID19/3/covid19-ontology-20200805.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/COVID19-IBO/6/1.5 Covid19-IBO.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CPTAC/3/CPTAC_alpha2.owl
+/Users/wvw/git/n3/ontotools/kg-bioportal/data/raw/ontologies/CRYOEM/4/cryoem.owl

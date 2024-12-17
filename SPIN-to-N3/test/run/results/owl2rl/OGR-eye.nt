@@ -1,0 +1,32 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Africa_Eastern> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Africa_Central> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Yugoslavia> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#West_Germany> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#South_America> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#USSR> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Africa_Northern> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Middle_East> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#European_Union> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Asia_Western> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Commonwealth_of_Independent_States> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Ancient_Lands> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Czechoslovakia> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Central_America> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#North_America> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#New_Guinea> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Latin_America> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Caribbean_Region> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Far_East> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#East_Germany> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Asia_Central> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Africa_Western> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Africa_Southern> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+<http://www.owl-ontologies.com/GeographicalRegion.owl#Asia_Southeastern> rdfs:subClassOf <http://www.owl-ontologies.com/GeographicalRegion.owl#Geographical_Regions>.
+# 2024-12-05T14:30:06.165Z in=214 out=48 ent=24 step=48 brake=2 inf=495916 sec=0.052 inf/sec=9536846
+# ENDS
+

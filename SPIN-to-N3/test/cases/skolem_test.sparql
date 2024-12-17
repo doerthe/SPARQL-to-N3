@@ -1,0 +1,8 @@
+CONSTRUCT {
+    ?employment :hasEmployer ?employer ;
+                :hasEmployee ?employee .
+}
+WHERE {
+    ?employer :employs ?employee .
+    BIND(SKOLEM("employment", ?employer, ?employee) as ?employment)
+}

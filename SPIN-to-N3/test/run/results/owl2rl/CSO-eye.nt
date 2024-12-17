@@ -1,0 +1,39 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://webprotege.stanford.edu/R8XDDtVvXdIhIXLOnDEK0JK> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RVHMOVIC2Oted8YJNIuZi8> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RC2l5tG7aT2Dy9wbw6qyC4w> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RDsz9LofkHpZ7LoyQ3kaflX> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RDv8rUwfEnCRaPbmlu3omts> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RChIchSXORxy4cggun00tTQ> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R8MD7VkOUwCoNF6xx9Vcw5A> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RChrVVhs5fpnmw8cjUJEtqo> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R7LnKb8FEBLolvJNY0jpUeC> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R8JCl12AnqW5liIRSYj9NAz> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R8HzoDOkQKjEAvOqircXUAc> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R90E745NOZL4JI5ksXFQXQo> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RDuYKk8ue4cDYeimbzoxQH8> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RC9Fvm4lJjGk3Rsw3x76fl> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R9ebvcQhIVmPFecfV7KFoAD> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R7zYZ09VryhYhIsCxsApFz4> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RCFAlLs0apD5NgqzgHelRMa> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R9NKT9QTFldW9v3Qz6jpB2a> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R2mqSloObGQfHdTEgJBZGy> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RBKSndR0So4whekYPtLbQsO> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RChJqOUItJsb1icheikVWJR> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RCW2ekj1PPiSwMNutNcoRNh> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RBYH0U3oiAisKwXhxbhjLGT> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R8KvkdCIV0gPaJ4cpfZHT1S> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RifDg6mzvyWqFyITmYrEFQ> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RC2LTqLMphrfBxSy1X9SFbZ> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/RDIkRBVFoRYmawYnCmUTAfR> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R8kqUrv8Pwi6F7wuOLnC50n> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/ROjkbE0qUkO54h8Dp6i6A9> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/R7aw9ILaNRJefJDO2OOi1mu> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+<http://webprotege.stanford.edu/Rwdihhpc7xM8enS7jpWAdc> rdfs:subClassOf <http://webprotege.stanford.edu/RCLzqKLfZsKSjej7uyqDlUf>.
+# 2024-12-05T14:28:36.059Z in=207 out=62 ent=31 step=62 brake=2 inf=500699 sec=0.051 inf/sec=9817627
+# ENDS
+

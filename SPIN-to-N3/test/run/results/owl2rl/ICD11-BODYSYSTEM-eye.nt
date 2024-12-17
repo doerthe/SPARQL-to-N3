@@ -1,0 +1,23 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://who.int/bodysystem.owl#MotoricSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#ImmuneSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#SympatheticNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#NervousSystem>.
+<http://who.int/bodysystem.owl#MaleGenitalSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#FemaleGenitalSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#UrinarySystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#MuscularSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#PeripheralNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#SceletalSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#ParasympatheticNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#NervousSystem>.
+<http://who.int/bodysystem.owl#HaematopoieticSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#AutonomicNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#CentralNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#SympatheticNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+<http://who.int/bodysystem.owl#ParasympatheticNervousSystem> rdfs:subClassOf <http://who.int/bodysystem.owl#BodySystem>.
+# 2024-12-05T14:29:29.950Z in=184 out=30 ent=15 step=47 brake=3 inf=476745 sec=0.051 inf/sec=9347941
+# ENDS
+

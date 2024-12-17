@@ -1,0 +1,67 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://purl.obolibrary.org/obo/DDIEM_0000010> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000016> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000006> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000015> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000005> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000014> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000004> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000013> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000019> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000006>.
+<http://purl.obolibrary.org/obo/DDIEM_0000022> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000022> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000009> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000012> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000012> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000018> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000006>.
+<http://purl.obolibrary.org/obo/DDIEM_0000018> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000018> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000021> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000002> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000002> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000008> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000008> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000011> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000011> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000017> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000006>.
+<http://purl.obolibrary.org/obo/DDIEM_0000017> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000017> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000020> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000020> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000010> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000010> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000016> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000006> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000006> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000015> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000004> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000004> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000019> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000002>.
+<http://purl.obolibrary.org/obo/DDIEM_0000019> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000005>.
+<http://purl.obolibrary.org/obo/DDIEM_0000009> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000009> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000012> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000012> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000018> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000018> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000021> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000021> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000011> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000011> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000017> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000017> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000020> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000020> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000016> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000016> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000015> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000015> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+<http://purl.obolibrary.org/obo/DDIEM_0000019> rdfs:subClassOf <http://purl.obolibrary.org/obo/DDIEM_0000001>.
+<http://purl.obolibrary.org/obo/DDIEM_0000019> rdfs:subClassOf <http://purl.obolibrary.org/obo/OGMS_0000112>.
+# 2024-12-05T14:28:45.832Z in=235 out=118 ent=59 step=275 brake=3 inf=554951 sec=0.055 inf/sec=10090018
+# ENDS
+

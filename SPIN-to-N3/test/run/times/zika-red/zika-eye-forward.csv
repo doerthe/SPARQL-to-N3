@@ -1,3 +1,4 @@
+- everything all at once
 gen100:
 time_gen_spin,time_gen_spin2,time_gen_n3,time_n3_run,time_exec_n3
 0.676,0.150,0.126,0.168,0.957
@@ -9,3 +10,17 @@ time_gen_spin,time_gen_spin2,time_gen_n3,time_n3_run,time_exec_n3
 gen1000-sepquery:
 time_exec_n3
 25.476
+
+
+- 0.2 chance of zika rules triggering
+(not counting the utility rules)
+
+gen1000:
+ca. 3s
+
+
+- 0.5 chance of zika rules triggering
+(not counting the utility rules)
+
+gen1000:
+ca. 11s

@@ -1,2 +1,2 @@
 query,result_file,load_time,convert_time,exec_time
-zika-queries-all-red,zika-spin.nt,0.51765725,0.188648792,23.834942084
+zika-queries-all-red-optim-sympt,zika,1.798544167,0.135446708,3.564443542

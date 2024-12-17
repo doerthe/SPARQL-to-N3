@@ -1,0 +1,67 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://purl.obolibrary.org/obo/VO_0000555> rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027>.
+<http://purl.obolibrary.org/obo/VO_0000150> rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000109>.
+<http://purl.obolibrary.org/obo/VO_0000150> rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027>.
+<http://www.purl.org/decide#hasStatistics> rdfs:subPropertyOf <http://www.purl.org/decide#hasStatistics>.
+<http://www.purl.org/decide#hasStatistics> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasStatistics>.
+<http://purl.obolibrary.org/obo/IAO_0000136> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/IAO_0000136>.
+<http://purl.obolibrary.org/obo/IAO_0000136> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/IAO_0000136>.
+<http://www.purl.org/decide#conductedBy> rdfs:subPropertyOf <http://www.purl.org/decide#conductedBy>.
+<http://www.purl.org/decide#conductedBy> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#conductedBy>.
+<http://www.purl.org/decide#hasMeasurement> rdfs:subPropertyOf <http://www.purl.org/decide#hasMeasurement>.
+<http://www.purl.org/decide#hasMeasurement> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasMeasurement>.
+<http://www.purl.org/decide#hasResult> rdfs:subPropertyOf <http://www.purl.org/decide#hasResult>.
+<http://www.purl.org/decide#hasResult> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasResult>.
+<http://www.purl.org/decide#involves> rdfs:subPropertyOf <http://www.purl.org/decide#involves>.
+<http://www.purl.org/decide#involves> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#involves>.
+<http://www.purl.org/decide#hasEvent> rdfs:subPropertyOf <http://www.purl.org/decide#hasEvent>.
+<http://www.purl.org/decide#hasEvent> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasEvent>.
+<http://www.purl.org/decide#identifies> rdfs:subPropertyOf <http://www.purl.org/decide#identifies>.
+<http://www.purl.org/decide#identifies> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#identifies>.
+<http://www.purl.org/decide#hasMeasurementType> rdfs:subPropertyOf <http://www.purl.org/decide#hasMeasurementType>.
+<http://www.purl.org/decide#hasMeasurementType> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasMeasurementType>.
+<http://www.purl.org/decide#hasSample> rdfs:subPropertyOf <http://www.purl.org/decide#hasSample>.
+<http://www.purl.org/decide#hasSample> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasSample>.
+<http://www.purl.org/decide#hasSampleType> rdfs:subPropertyOf <http://www.purl.org/decide#hasSampleType>.
+<http://www.purl.org/decide#hasSampleType> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasSampleType>.
+<http://www.purl.org/decide#hasEventType> rdfs:subPropertyOf <http://www.purl.org/decide#hasEventType>.
+<http://www.purl.org/decide#hasEventType> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasEventType>.
+<http://www.purl.org/decide#hasUnit> rdfs:subPropertyOf <http://www.purl.org/decide#hasUnit>.
+<http://www.purl.org/decide#hasUnit> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#hasUnit>.
+<http://www.purl.org/decide#eventDate> rdfs:subPropertyOf <http://www.purl.org/decide#eventDate>.
+<http://www.purl.org/decide#eventDate> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#eventDate>.
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#lat>.
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.w3.org/2003/01/geo/wgs84_pos#lat>.
+<http://www.purl.org/decide#numberOfAnimals> rdfs:subPropertyOf <http://www.purl.org/decide#numberOfAnimals>.
+<http://www.purl.org/decide#numberOfAnimals> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#numberOfAnimals>.
+<http://www.purl.org/decide#localAuthority> rdfs:subPropertyOf <http://www.purl.org/decide#localAuthority>.
+<http://www.purl.org/decide#localAuthority> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#localAuthority>.
+<http://www.purl.org/decide#geoLocation> rdfs:subPropertyOf <http://www.purl.org/decide#geoLocation>.
+<http://www.purl.org/decide#geoLocation> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#geoLocation>.
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#long>.
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.w3.org/2003/01/geo/wgs84_pos#long>.
+<http://www.purl.org/decide#id> rdfs:subPropertyOf <http://www.purl.org/decide#id>.
+<http://www.purl.org/decide#id> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#id>.
+<http://www.purl.org/decide#birthDay> rdfs:subPropertyOf <http://www.purl.org/decide#birthDay>.
+<http://www.purl.org/decide#birthDay> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#birthDay>.
+<http://purl.obolibrary.org/obo/STATO_0000129> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/STATO_0000129>.
+<http://purl.obolibrary.org/obo/STATO_0000129> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/STATO_0000129>.
+<http://www.purl.org/decide#speciesType> rdfs:subPropertyOf <http://www.purl.org/decide#speciesType>.
+<http://www.purl.org/decide#speciesType> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#speciesType>.
+<http://www.purl.org/decide#postalCode> rdfs:subPropertyOf <http://www.purl.org/decide#postalCode>.
+<http://www.purl.org/decide#postalCode> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#postalCode>.
+<http://www.purl.org/decide#age> rdfs:subPropertyOf <http://www.purl.org/decide#age>.
+<http://www.purl.org/decide#age> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#age>.
+<http://www.purl.org/decide#name> rdfs:subPropertyOf <http://www.purl.org/decide#name>.
+<http://www.purl.org/decide#name> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#name>.
+<http://www.purl.org/decide#species> rdfs:subPropertyOf <http://www.purl.org/decide#species>.
+<http://www.purl.org/decide#species> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#species>.
+<http://www.purl.org/decide#result> rdfs:subPropertyOf <http://www.purl.org/decide#result>.
+<http://www.purl.org/decide#result> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.purl.org/decide#result>.
+# 2024-12-05T14:28:49.431Z in=286 out=118 ent=59 step=323 brake=2 inf=550967 sec=0.054 inf/sec=10203093
+# ENDS
+
