@@ -1,5 +1,5 @@
 # Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/RecSPARQL/datasets/yagoFacts.nt --pass-only-new --nope
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --pass-only-new --nope
 
 
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Kevin_Bacon>.
@@ -29332,6 +29332,6 @@
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Sakari_Jurkka>.
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Kunto_Karapää>.
 <http://yago-knowledge.org/resource/Kevin_Bacon> <http://relationship.com/collab> <http://yago-knowledge.org/resource/Ritva_Arvelo>.
-# 2024-12-02T18:23:48.888Z in=6215383 out=58660 ent=29330 step=5628724 brake=16 inf=529651130 sec=25.524 inf/sec=20751102
+# 2024-12-18T23:22:53.282Z in=6215383 out=58660 ent=29330 step=5628724 brake=16 inf=529651132 sec=25.878 inf/sec=20467236
 # ENDS
 

@@ -18,22 +18,22 @@ public class LoadTDB {
 
 		String root = "/Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/";
 
-		// -- yago
-//		String source = root + "RecSPARQL/datasets/yagoFacts.nt";
-//		String tdbPath = root + "RecSPARQL/datasets/yagoFacts";
-
-		// -- lmdb
+//		// -- lmdb
 //		String source = root + "RecSPARQL/datasets/linkedmdb-latest-dump-fixed.nt";
 //		String tdbPath = root + "RecSPARQL/datasets/lmdb";
+		
+		// -- yago
+		String source = root + "RecSPARQL/datasets/yagoFacts.nt";
+		String tdbPath = root + "RecSPARQL/datasets/yagoFacts";
 
 		// -- gmark
 //		String source = root + "RecSPARQL/datasets/GMark/graph1-subset2.nt"; // "datasets/GMark/graph3.nt";
 //		String tdbPath = root + "RecSPARQL/datasets/GMark/gmark1-subset2"; // "datasets/GMark/gmark3";
 
 		// -- gmark-dominik
-		String datasetNr = "50";
-		String source = root + "gmark-dominik/" + datasetNr + ".nt";
-		String tdbPath = root + "RecSPARQL/datasets/GMark/gmark_" + datasetNr;
+//		String datasetNr = "50";
+//		String source = root + "gmark-dominik/" + datasetNr + ".nt";
+//		String tdbPath = root + "RecSPARQL/datasets/GMark/gmark_" + datasetNr;
 
 		// END parameters
 

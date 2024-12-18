@@ -143,11 +143,6 @@ try out different queries:
 eye --turtle ../cases/dt/test-dl-100000.n3 --query tmp/n3query.n3 --nope
 ```
 
-- **SNOMED**
-```
-eye ../cases/snomed/test-rules.n3 --turtle ../cases/snomed/test-sn-ind.ttl ../cases/snomed/ontology-2024-12-16_15-03-55--subclass.ttl --query ../cases/snomed/test-sn-query.n3 --nope
-```
-
 ## Automate experiments
 
 ### SiN3 - eye
@@ -167,12 +162,12 @@ python run_exp.py --query ../../../other_systems/gmark-dominik/500 --data ../../
 
 - **lmdb**
 ```
-python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye-sepquery.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
 ```
 
 - **yago**
 ```
-python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye-sepquery.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
 ```
 
 - **zika**
