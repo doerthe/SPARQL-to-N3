@@ -37,6 +37,7 @@
     #get result variables 
     ?x aux:getResultVariables ?outvars.
     #handle graph
+
    (false ?where) aux:createGraph ?g1.
     #handle aggregation
     (?x ?g1) aux:handleAggregation ?g.
