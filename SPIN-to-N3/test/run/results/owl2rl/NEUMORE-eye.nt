@@ -1,0 +1,9 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://www.semanticweb.org/ontologies/2010/2/MiRNA-Ontology.owl#Disease> rdfs:subClassOf <http://neumore.cis.usouthal.edu/ontologies/NeuMORE-v0.1.owl#RealizableEntity>.
+# 2024-12-05T14:29:53.092Z in=155 out=2 ent=1 step=2 brake=2 inf=449947 sec=0.049 inf/sec=9182592
+# ENDS
+

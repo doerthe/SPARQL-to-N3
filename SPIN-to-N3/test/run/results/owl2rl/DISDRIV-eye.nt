@@ -1,0 +1,29 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://purl.obolibrary.org/obo/CHEBI_9513> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/DISDRIV_0000005> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/CHEBI_30879> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000006>.
+<http://purl.obolibrary.org/obo/NCIT_C163032> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/DISDRIV_0000004> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/CHEBI_25016> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/CHEBI_50904> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/FOODON_00001579> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/ExO_0000015> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/DISDRIV_0000007> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/ExO_0000014> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/ExO_0000013> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+<http://purl.obolibrary.org/obo/RO_0007000> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0007000>.
+<http://purl.obolibrary.org/obo/RO_0007000> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/RO_0007000>.
+<http://purl.obolibrary.org/obo/BFO_0000051> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051>.
+<http://purl.obolibrary.org/obo/BFO_0000051> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/BFO_0000051>.
+<http://purl.obolibrary.org/obo/BFO_0000050> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000050>.
+<http://purl.obolibrary.org/obo/BFO_0000050> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/BFO_0000050>.
+<http://purl.obolibrary.org/obo/RO_0000087> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0000087>.
+<http://purl.obolibrary.org/obo/RO_0000087> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/RO_0000087>.
+<http://purl.obolibrary.org/obo/CHEBI_30879> rdfs:subClassOf <http://purl.obolibrary.org/obo/DISDRIV_0000000>.
+# 2024-12-05T14:28:51.092Z in=338 out=42 ent=21 step=88 brake=3 inf=498200 sec=0.051 inf/sec=9768627
+# ENDS
+

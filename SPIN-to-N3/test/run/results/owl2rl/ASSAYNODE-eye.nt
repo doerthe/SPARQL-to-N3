@@ -1,0 +1,78 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://purl.obolibrary.org/obo/GENEPIO_0100143> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0002000> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001932> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100135> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001937> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100142> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0002012> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001931> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001929> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100134> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100106> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0000717> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001936> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001936> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100141> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001930> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0002024> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100139> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100139> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001928> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0000703> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100133> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100105> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0002003> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100140> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100138> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100138> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0000702> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0000702> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100145> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100137> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100137> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100109> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100109> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0002007> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0000689> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0000689> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100131> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100144> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001933> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0002027> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/OBI_0002027> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0000696> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0002021> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100136> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100136> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001938> rdfs:subClassOf <http://purl.obolibrary.org/obo/GENEPIO_0001921>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001938> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100130> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/NCIT_C171266> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C171266>.
+<http://purl.obolibrary.org/obo/NCIT_C171266> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C171266>.
+<http://purl.obolibrary.org/obo/NCIT_C68616> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C68616>.
+<http://purl.obolibrary.org/obo/NCIT_C68616> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C68616>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100143> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0002000> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001932> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100142> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001931> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001929> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100134> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100106> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100141> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001930> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0002024> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001928> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100133> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100145> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/OBI_0002007> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0100131> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+<http://purl.obolibrary.org/obo/GENEPIO_0001933> rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000832>.
+# 2024-12-05T14:28:07.645Z in=393 out=140 ent=70 step=259 brake=3 inf=587767 sec=0.057 inf/sec=10311702
+# ENDS
+

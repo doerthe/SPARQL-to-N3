@@ -1,0 +1,80 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<https://purl.org/samu#intoxicação_alcoolica> rdfs:subClassOf <https://purl.org/samu#Envenenamento>.
+<https://purl.org/samu#Neurológico_funcional> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Perda_de_líquido> rdfs:subClassOf <https://purl.org/samu#Evento_obstétrico>.
+<https://purl.org/samu#Picada_mordida> rdfs:subClassOf <https://purl.org/samu#Agente_mecanico>.
+<https://purl.org/samu#Crise_de_abstinência> rdfs:subClassOf <https://purl.org/samu#Transtorno_de_conduta>.
+<https://purl.org/samu#Febre> rdfs:subClassOf <https://purl.org/samu#Sinal_clínico>.
+<https://purl.org/samu#Convulsão> rdfs:subClassOf <https://purl.org/samu#Sinal_clínico>.
+<https://purl.org/samu#Dor> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Cefaleia> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Cefaleia> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Inconsciente> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Inconsciente> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Psiquiátrico> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Parada_cardio-respistória> rdfs:subClassOf <https://purl.org/samu#Condição_patologica>.
+<https://purl.org/samu#Transtorno_de_personalidade> rdfs:subClassOf <https://purl.org/samu#Evento_psiquiatrico>.
+<https://purl.org/samu#Hipoglicemia> rdfs:subClassOf <https://purl.org/samu#Sinal_clínico>.
+<https://purl.org/samu#FAB> rdfs:subClassOf <https://purl.org/samu#Agente_mecanico>.
+<https://purl.org/samu#Mal-estar> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Mal-estar> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Intoxicação> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Neurologica> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Dor_torácica> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Dor_torácica> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Imunologica> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Hipertensão> rdfs:subClassOf <https://purl.org/samu#Sinal_clínico>.
+<https://purl.org/samu#Síncope> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Síncope> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Trauma_por_dispositivo> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Intoxicação_medicamentosa> rdfs:subClassOf <https://purl.org/samu#Envenenamento>.
+<https://purl.org/samu#Intoxicação_medicamentosa> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Intoxicação_por_outras_drogas> rdfs:subClassOf <https://purl.org/samu#Transtorno_de_conduta>.
+<https://purl.org/samu#Dor_abdominal> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Dor_abdominal> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Cardiologica> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Desmaio> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Desmaio> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#FAF> rdfs:subClassOf <https://purl.org/samu#Agente_mecanico>.
+<https://purl.org/samu#FAF> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Respiratório> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Paresia_parestesia> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Paresia_parestesia> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Sangramento> rdfs:subClassOf <https://purl.org/samu#Evento_obstétrico>.
+<https://purl.org/samu#Êmese_vômitos> rdfs:subClassOf <https://purl.org/samu#Sinal_clínico>.
+<https://purl.org/samu#Sinais_clinicos_gerais> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Dor_lombar> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Dor_lombar> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#AVC> rdfs:subClassOf <https://purl.org/samu#Condição_patologica>.
+<https://purl.org/samu#AVC> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Depedência_química> rdfs:subClassOf <https://purl.org/samu#Evento_psiquiatrico>.
+<https://purl.org/samu#Dispneia> rdfs:subClassOf <https://purl.org/samu#Sinal_funcional>.
+<https://purl.org/samu#Dispneia> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Espancamento_violência> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Alergia_reações_alergicas> rdfs:subClassOf <https://purl.org/samu#Condição_patologica>.
+<https://purl.org/samu#Alergia_reações_alergicas> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Intoxicação_exogena> rdfs:subClassOf <https://purl.org/samu#Envenenamento>.
+<https://purl.org/samu#Intoxicação_exogena> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Aborto> rdfs:subClassOf <https://purl.org/samu#Evento_obstétrico>.
+<https://purl.org/samu#Alcoolismo> rdfs:subClassOf <https://purl.org/samu#Transtorno_de_conduta>.
+<https://purl.org/samu#Alcoolismo> rdfs:subClassOf <https://purl.org/samu#Evento_psiquiatrico>.
+<https://purl.org/samu#Neurológico_clinico> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Digestivos> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#intoxicação_alcoolica> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Picada_mordida> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Crise_de_abstinência> rdfs:subClassOf <https://purl.org/samu#Evento_psiquiatrico>.
+<https://purl.org/samu#Febre> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Convulsão> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Parada_cardio-respistória> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Hipoglicemia> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#FAB> rdfs:subClassOf <https://purl.org/samu#Causa_externa>.
+<https://purl.org/samu#Hipertensão> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+<https://purl.org/samu#Intoxicação_por_outras_drogas> rdfs:subClassOf <https://purl.org/samu#Evento_psiquiatrico>.
+<https://purl.org/samu#Êmese_vômitos> rdfs:subClassOf <https://purl.org/samu#Evento_clínico>.
+# 2024-12-05T14:30:40.570Z in=219 out=144 ent=72 step=259 brake=3 inf=559610 sec=0.054 inf/sec=10363148
+# ENDS
+

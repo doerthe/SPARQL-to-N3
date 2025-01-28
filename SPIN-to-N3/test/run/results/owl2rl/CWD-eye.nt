@@ -1,0 +1,40 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesLightlyActive> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesLightlyActive> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#activeTime> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#activeTime> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#calories> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#gps>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#calories> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#steps>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#calories> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#calories> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#calories> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#altimeter>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#activeTimeSeconds> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#activeTimeSeconds> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesFairlyActive> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesFairlyActive> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#elevation>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#activeTimeSeconds>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesLightlyActive>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#floors>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf _:node_5_1.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#activeTime>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf _:node_3_1.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesSedentary>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#gps>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#steps>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#basalMetabolicRate> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#altimeter>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesVeryActive> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesVeryActive> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesSedentary> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisGyroscope>.
+<http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesSedentary> rdfs:subClassOf <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#3axisAccelerometer>.
+_:node_2_1 <http://niche.cs.dal.ca/owl/list#hasMember> <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#minutesVeryActive>.
+_:node_4_1 <http://niche.cs.dal.ca/owl/list#hasMember> <http://www.semanticweb.org/jbagwell/ontologies/2017/9/untitled-ontology-6#distanceMiles>.
+# 2024-12-05T14:28:44.173Z in=243 out=64 ent=32 step=155 brake=3 inf=535245 sec=0.053 inf/sec=10098962
+# ENDS
+
