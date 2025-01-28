@@ -1,5 +1,6 @@
 # Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet ../../auxiliary-files/optional_2.n3 tmp/n3OptimisedQuery.n3 tmp/runtimeNoDuplicates.n3 --turtle ../../../other_systems/RecSPARQL/datasets/lmdb.nt --query tmp/n3query_query.n3 --nope
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle ../../../other_systems/RecSPARQL/datasets/lmdb.nt --pass-only-new --nope
+
 
 <http://data.linkedmdb.org/resource/actor/29539> <http://relationship.com/collab> <http://data.linkedmdb.org/resource/actor/29499>.
 <http://data.linkedmdb.org/resource/actor/29539> <http://relationship.com/collab> <http://data.linkedmdb.org/resource/actor/29539>.
@@ -14569,6 +14570,6 @@
 <http://data.linkedmdb.org/resource/actor/29539> <http://relationship.com/collab> <http://data.linkedmdb.org/resource/actor/61694>.
 <http://data.linkedmdb.org/resource/actor/29539> <http://relationship.com/collab> <http://data.linkedmdb.org/resource/actor/64566>.
 <http://data.linkedmdb.org/resource/actor/29539> <http://relationship.com/collab> <http://data.linkedmdb.org/resource/actor/64567>.
-# 2024-12-05T12:32:37.722Z in=6148134 out=14568 ent=29136 step=2846318 brake=10 inf=439621348 sec=26.461 inf/sec=16613936
+# 2024-12-18T23:13:37.863Z in=6148154 out=29136 ent=14568 step=2723591 brake=10 inf=435050787 sec=25.642 inf/sec=16966336
 # ENDS
 

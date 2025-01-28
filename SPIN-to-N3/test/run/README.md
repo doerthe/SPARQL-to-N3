@@ -122,11 +122,25 @@ try out different queries:
 ./query_spin3_forward.sh results/zika-query/n3query.n3 results/zika-query/runtime.n3 results/zika-query/ntriples.nt results/zika-query/n3query-query.n3 results/zika-eye-forward-query.n3
 ```
 
-- **covid-19**
+- **owl2 rl**
 ```
-./run_spin3_loops.sh ../cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
+./run_spin3_loops.sh ../cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/IFAR/5/V3.0FAOntology.rdf-xml.owl true true true results/owl2rl/IFAR.nt
 
-./run_spin3_forward.sh ../cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/COVID-19/4/COVID-release.nt true true false results/covid-19.nt
+./run_spin3_forward-noDuplicates.sh ../cases/owl2rl/owl2rl-reduced.sparql /Users/wvw/git/ontotools/kg-bioportal/data/raw/ontologies/IFAR/5/V3.0FAOntology.rdf-xml.owl true true true results/owl2rl/IFAR.nt
+```
+
+- **deep taxonomy (dt)**
+```
+# (stop before execution finishes; it will run them in forward way)
+./run_spin3_loops.sh ../cases/dt/test-rules.sparql ../cases/dt/test-dl-100000.n3 true true false results/dt-eye.n3 
+./run_spin3_loops.sh ../cases/zika/zika-queries-all.sparql ../cases/zika/gen/full/gen100_0pt5.n3 true true false results/zika-eye.n3 
+
+# manually change from forward to backward rule
+# \{([\s\S\r]+?)\} => \{([\s\S\r]+?)\}
+# ->
+# { $2 } <= { $1 }
+
+eye --turtle ../cases/dt/test-dl-100000.n3 --query tmp/n3query.n3 --nope
 ```
 
 ## Automate experiments
@@ -148,12 +162,12 @@ python run_exp.py --query ../../../other_systems/gmark-dominik/500 --data ../../
 
 - **lmdb**
 ```
-python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye-sepquery.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb --data ../../../other_systems/RecSPARQL/datasets/lmdb.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "lmdb_{0}-{1}.n3" --times_file "times/lmdb-eye.csv"
 ```
 
 - **yago**
 ```
-python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_forward-noDuplicates.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye-sepquery.csv"
+python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
 ```
 
 - **zika**

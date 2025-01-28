@@ -30,6 +30,7 @@ public class Experiment {
 	public static void main(String[] args) throws Exception {
 		// - START parameters
 
+		int nrRuns = 5;
 		String root = "/Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/";
 
 //		// -- lmdb
@@ -42,15 +43,15 @@ public class Experiment {
 //		String queryFolder = root + "other_systems/RecSPARQL/queries/recsparql/" + dataName;
 //		String dataPath = root + "other_systems/RecSPARQL/datasets/lmdb";
 
-//		// -- yago
-//
-//		// (these don't finish after 5 minutes or so)
-//		List<String> skipQueries = Arrays.asList();
-//		String skipUntil = null;
-//
-//		String dataName = "yago";
-//		String queryFolder = root + "other_systems/RecSPARQL/queries/recsparql/" + dataName;
-//		String dataPath = root + "other_systems/RecSPARQL/datasets/yagoFacts";
+		// -- yago
+
+		// (these don't finish after 5 minutes or so)
+		List<String> skipQueries = Arrays.asList();
+		String skipUntil = null;
+
+		String dataName = "yago";
+		String queryFolder = root + "other_systems/RecSPARQL/queries/recsparql/" + dataName;
+		String dataPath = root + "other_systems/RecSPARQL/datasets/yagoFacts";
 
 		// TODO these won't work - need to convert into specific RecSPARQL syntax ...
 
@@ -64,16 +65,16 @@ public class Experiment {
 //		String queryFolder = root + "other_systems/gmark-dominik/" + dataset + "/";
 //		String dataPath = root + "other_systems/RecSPARQL/datasets/GMark/gmark_" + dataset;
 
-		// -- zika
-
-		// (these don't finish after 5 minutes or so)
-		List<String> skipQueries = Arrays.asList();
-		String skipUntil = null;
-
-		String dataName = "zika";
-		String queryFolder = root + "SPIN-to-N3/test/cases/zika/zika-queries-all.rsparql";
-		String dataPath = root + "SPIN-to-N3/test/cases/zika/zika-data.n3";
-
+//		// -- zika
+//
+//		// (these don't finish after 5 minutes or so)
+//		List<String> skipQueries = Arrays.asList();
+//		String skipUntil = null;
+//
+//		String dataName = "zika";
+//		String queryFolder = root + "SPIN-to-N3/test/cases/zika/zika-queries-all.rsparql";
+//		String dataPath = root + "SPIN-to-N3/test/cases/zika/zika-data.n3";
+//
 		// (general)
 
 		String outFolder = root + "SPIN-to-N3/test/run/results";
@@ -82,15 +83,23 @@ public class Experiment {
 
 		// - END parameters
 
-		FileWriter fw = new FileWriter(new File(timesFile));
-		fw.write("query,result_file,exec_time\n");
+		File tf = new File(timesFile);
+		boolean exists = tf.exists();
+		FileWriter fw = new FileWriter(tf, true);
+		if (!exists) {
+			fw.write("query,result_file,exec_time\n");
+		}
 
 		// - run all queries in folder
 
 		File queryFile = new File(queryFolder);
 		if (!queryFile.isDirectory()) {
 			String queryPath = queryFile.getAbsolutePath();
-			experiment(queryPath, dataName, dataPath, outFolder, resultTmpl, fw);
+			for (int i = 0; i < nrRuns; i++) {
+				System.out.println("RUN " + i);
+				experiment(queryPath, dataName, dataPath, outFolder, resultTmpl, fw);
+				System.out.println();
+			}
 
 		} else {
 			boolean skip = (skipUntil != null);
@@ -110,7 +119,13 @@ public class Experiment {
 				}
 
 				String queryPath = f.getAbsolutePath();
-				experiment(queryPath, dataName, dataPath, outFolder, resultTmpl, fw);
+				for (int i = 0; i < nrRuns; i++) {
+					System.out.println("RUN " + i);
+					experiment(queryPath, dataName, dataPath, outFolder, resultTmpl, fw);
+					System.out.println();
+				}
+				
+				fw.flush();
 			}
 		}
 

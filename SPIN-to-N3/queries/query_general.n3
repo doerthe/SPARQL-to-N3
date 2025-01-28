@@ -8,6 +8,7 @@
 @prefix ex: <http://example.org/spin#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix aux: <http://example.org/aux#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
 
 ## construct
 {   ?x a       sp:Construct ;
@@ -40,7 +41,16 @@
     #handle aggregation
     (?x ?g1) aux:handleAggregation ?g.
 
-    
+  # - list with variable values
 
-  }=>{?g => {?x ex:result ?outvars}.
+  # - separate bnode per variable value
+  # ( { ?x ex:result [ ex:label ?var_label ; ex:value ?var_val ] }
+  #   { ?outvars list:member ( ?var_label ?var_val ) }
+  # ?stmts ) log:collectAllIn _:t .
+  # ?stmts log:conjunction ?conseq .
+
+  } => {
+    ?g => {?x ex:result ?outvars}.
+    # ?g => {ex:SingleResult ex:result ?outvars}.
+    # ?g => ?conseq.
   }.

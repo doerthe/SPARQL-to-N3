@@ -9,7 +9,7 @@ def run_exp(query, data_file, script, recursive, result_folder, result_tmpl, tim
         # get total time
         # fd.write("query,result_file,time_gen_spin,time_gen_n3,time_exec_n3\n")
         # get finegrained time
-        fd.write("query,result_file,time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total,py_total_time\n")
+        fd.write("query,result_file,time_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total\n")
     else:
         print(f"unknown script! {script}")
         return
@@ -18,14 +18,18 @@ def run_exp(query, data_file, script, recursive, result_folder, result_tmpl, tim
     
     if query.endswith(".sparql"):
         query_file = query[query.rindex("/")+1:]
-        run_query(query_file, query, data_file, script, recursive, result_folder, result_tmpl, times_file)
+        for i in range(0, 5):
+            print(f"run {i}")
+            run_query(query_file, query, data_file, script, recursive, result_folder, result_tmpl, times_file)
     else:
         for query_file in sorted(os.listdir(query)):
             if not query_file.endswith(".sparql"):
                 continue
             
             query_path = os.path.join(query, query_file)
-            run_query(query_file, query_path, data_file, script, recursive, result_folder, result_tmpl, times_file)
+            for i in range(0, 5):
+                print(f"run {i}")
+                run_query(query_file, query_path, data_file, script, recursive, result_folder, result_tmpl, times_file)
             
             # break
         

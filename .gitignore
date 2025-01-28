@@ -6,3 +6,8 @@
 .metadata
 other_systems/SparqLog/SparqLog3/src/main/resources/recSPARQL/vadalog/data/
 other_systems/RecSPARQL/datasets/
+snomed/
+dt/
+test/run/results/owl2rl
+other_systems/SparqLog/SparqLog/src/SPARQL_Benchmarks/
+other_systems/SparqLog/SparqLog/src/HowRepresentativeAreSPARQLBenchsQueries/

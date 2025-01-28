@@ -1,0 +1,20 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle tmp/ntriples.nt --pass-only-new --nope
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://purl.obolibrary.org/obo/NCIT_C78541> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C78541>.
+<http://purl.obolibrary.org/obo/NCIT_C78541> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C78541>.
+<http://purl.obolibrary.org/obo/NCIT_C83046> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C83046>.
+<http://purl.obolibrary.org/obo/NCIT_C83046> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C83046>.
+<http://purl.obolibrary.org/obo/NCIT_C78537> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C78537>.
+<http://purl.obolibrary.org/obo/NCIT_C78537> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C78537>.
+<http://purl.obolibrary.org/obo/NCIT_C78536> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C78536>.
+<http://purl.obolibrary.org/obo/NCIT_C78536> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C78536>.
+<http://purl.obolibrary.org/obo/OBI_0003071> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/OBI_0003071>.
+<http://purl.obolibrary.org/obo/OBI_0003071> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/OBI_0003071>.
+<http://purl.obolibrary.org/obo/NCIT_C78539> rdfs:subPropertyOf <http://purl.obolibrary.org/obo/NCIT_C78539>.
+<http://purl.obolibrary.org/obo/NCIT_C78539> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.obolibrary.org/obo/NCIT_C78539>.
+# 2024-12-05T14:32:33.914Z in=212 out=24 ent=12 step=48 brake=2 inf=471632 sec=0.049 inf/sec=9625143
+# ENDS
+

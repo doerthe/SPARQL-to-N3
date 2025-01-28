@@ -74,6 +74,7 @@ if [[ $recursion == "true" ]]; then
     # get total time
     # time_exec_n3=$( TIMEFORMAT="%R"; { time { eye ../../auxiliary-files/runtime-loops.n3 $n3_file --turtle $nt_file --pass-only-new --nope > $result_file 2>/dev/null; } } 2>&1 )
     # get finegrained time
+    echo "eye ../../auxiliary-files/runtime-loops.n3 $n3_file --turtle $nt_file --pass-only-new --nope"
     error=$( { eye ../../auxiliary-files/runtime-loops.n3 $n3_file --turtle $nt_file --pass-only-new --nope > $result_file; } 2>&1 )
 else
     # not including query as data (before):
