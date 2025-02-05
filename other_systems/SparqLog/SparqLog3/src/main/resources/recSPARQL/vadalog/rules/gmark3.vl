@@ -1,0 +1,9 @@
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+
+ans1(ID1, L_x1, DType_x1, LTag_x1, L_x2, DType_x2, LTag_x2, "default") :- ans2(ID2, L_x1, DType_x1, LTag_x1, L_x2, DType_x2, LTag_x2, "default"), ID1 = ["f1", L_x1, DType_x1, LTag_x1, L_x2, DType_x2, LTag_x2, ID2].
+ans2(ID2, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- ans4(ID4, L_X, DType_X, LTag_X, L_Z, DType_Z, LTag_Z, "default"), ans5(ID5, L_W, DType_W, LTag_W, L_Y, DType_Y, LTag_Y, "default"), comp(L_Z, L_W, L_W), compD(DType_Z, DType_W, DType_W), compL(LTag_Z, LTag_W, LTag_W), ID2 = ["f2", L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, L_W, DType_W, LTag_W, L_Z, DType_Z, LTag_Z, ID4, ID5].
+ans4(ID4, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://example.org/p16>", "URI", "", L_Y, DType_Y, LTag_Y, "default"), ID4 = ["f4", L_X, DType_X, LTag_X, "<http://example.org/p16>", "URI", "", L_Y, DType_Y, LTag_Y].
+ans5(ID5, L_X, DType_X, LTag_X, L_Y, DType_Y, LTag_Y, "default") :- triple(L_X, DType_X, LTag_X, "<http://example.org/p17>", "URI", "", L_Y, DType_Y, LTag_Y, "default"), ID5 = ["f5", L_X, DType_X, LTag_X, "<http://example.org/p17>", "URI", "", L_Y, DType_Y, LTag_Y].
+@include("RDF Triples").
+@output("ans1").
