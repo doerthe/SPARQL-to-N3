@@ -1,5 +1,5 @@
 # Processed by EYE v10.24.12 (2024-10-03)
-# eye --quiet gmark/50/query6a.n3 aux_list.n3 --no-qvars --pass-all --nope
+# eye --quiet gmark/50/query7a.n3 aux_list.n3 --no-qvars --pass-all --nope
 
 @prefix var: <http://www.w3.org/2000/10/swap/var#>.
 @prefix : <http://example.org/gmark/>.
@@ -9,12 +9,12 @@
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
 
 {
-    var:some_0 ((:p1 "/" "^" :p1) "|" (:p1 "/" "^" :p1 "/" :p1 "/" "^" :p1)) var:some_1.
-    var:some_1 (((:p1 "/" "^" :p1) "|" (:p1 "/" "^" :p1) "|" (:p1 "/" "^" :p1 "/" :p1 "/" "^" :p1))) var:some_2.
-    var:some_0 ((:p1 "/" "^" :p1 "/" :p1)) var:some_3.
-    var:some_2 ((:p1 "/" "^" :p1 "/" :p1) "|" (:p1 "/" "^" :p1 "/" :p1)) var:some_4.
+    var:some_0 (("^" :p2 "/" "^" :p1) "|" ("^" :p2 "/" "^" :p1 "/" "^" :p0 "/" :p0)) var:some_1.
+    var:some_1 (("^" :p0 "/" :p0 "/" :p3) "|" ("^" :p0 "/" :p0 "/" :p3) "|" (:p3 "/" "^" :p3 "/" :p3)) var:some_2.
+    var:some_2 (("^" :p3 "/" :p1 "/" "^" :p1 "/" "^" :p0)) var:some_3.
+    var:some_3 ((:p0 "/" :p1 "/" :p2) "|" (:p0 "/" :p1 "/" :p2) "|" (:p0 "/" :p1 "/" :p2)) var:some_4.
 } => {
-    var:some_5 :result (("x0" var:some_0) ("x1" var:some_1) ("x2" var:some_2)).
+    var:some_5 :result (("x2" var:some_2) ("x0" var:some_0) ("x1" var:some_1) ("x3" var:some_3)).
 }.
 {
     var:some_6 aux:sortBrackets var:some_6.
@@ -60,6 +60,6 @@
 {
     var:some_25 aux:lTranslate var:some_25.
 } <= true.
-# 2025-02-10T17:02:16.745Z in=8 out=8 ent=8 step=16 brake=2 inf=89658 sec=0.065 inf/sec=1379354
+# 2025-02-10T17:18:35.022Z in=8 out=8 ent=8 step=16 brake=2 inf=93636 sec=0.066 inf/sec=1418727
 # ENDS
 

@@ -1,0 +1,16 @@
+# Processed by EYE v10.24.12 (2024-10-03)
+# eye --quiet query-tmp.n3 aux_list.n3 --query list-predicate.n3 --quantify http://www.w3.org/2000/10/swap/var# --nope
+
+@prefix : <http://example.org/gmark/>.
+
+{
+    ?t_0 ((("^" :p2) "/" ("^" :p1)) "|" (("^" :p2) "/" (("^" :p1) "/" (("^" :p0) "/" :p0)))) ?t_1.
+    ?t_1 ((("^" :p0) "/" (:p0 "/" :p3)) "|" ((("^" :p0) "/" (:p0 "/" :p3)) "|" (:p3 "/" (("^" :p3) "/" :p3)))) ?t_2.
+    ?t_2 (("^" :p3) "/" (:p1 "/" (("^" :p1) "/" ("^" :p0)))) ?t_3.
+    ?t_3 ((:p0 "/" (:p1 "/" :p2)) "|" ((:p0 "/" (:p1 "/" :p2)) "|" (:p0 "/" (:p1 "/" :p2)))) ?t_4.
+} => {
+    _:t_5 :result (("x2" ?t_2) ("x0" ?t_0) ("x1" ?t_1) ("x3" ?t_3)).
+}.
+# 2025-02-10T17:18:58.830Z in=16 out=1 ent=1 step=2 brake=4 inf=127446 sec=0.068 inf/sec=1874206
+# ENDS
+
