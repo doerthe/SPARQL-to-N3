@@ -1,0 +1,53 @@
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#>.
+@prefix sp: <http://spinrdf.org/sp#>.
+@prefix ex: <http://example.org/spin#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix time: <http://www.w3.org/2000/10/swap/time#>.
+@prefix crypto: <http://www.w3.org/2000/10/swap/crypto#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+
+
+
+{?p aux:sortBrackets ?p}<={?p log:rawType ?type. ?type log:notEqualTo rdf:List}.
+{?p aux:sortBrackets ?p2}<={?p log:rawType  rdf:List. ?p aux:lTranslate ?p2}.
+
+
+{ (?list) aux:lTranslate ?lt }<={
+ true log:callWithCut true.
+ ?list aux:lTranslate ?lt.
+}.
+
+
+{ ?list aux:lTranslate (?ft "|" ?rt) }<={
+ (?f ("|") ?r) list:append ?list.
+ true log:callWithCut true.
+ ?f aux:lTranslate ?ft.
+ ?r aux:lTranslate ?rt.
+
+}.
+
+{ ?list aux:lTranslate (?ft "/" ?rt) }<={
+ (?f ("/") ?r) list:append ?list.
+ true log:callWithCut true.
+ ?f aux:lTranslate ?ft.
+ ?r aux:lTranslate ?rt.
+
+}.
+
+{ ?list aux:lTranslate ( "^" ?pt) }<={
+ ( ("^") ?r) list:append ?list.
+ true log:callWithCut true.
+ ?r aux:lTranslate ?pt.
+
+}.
+
+{ ?p aux:lTranslate ?p }<={
+
+}.

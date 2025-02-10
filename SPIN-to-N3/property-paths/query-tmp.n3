@@ -1,0 +1,65 @@
+# Processed by EYE v10.24.12 (2024-10-03)
+# eye --quiet gmark/50/query6a.n3 aux_list.n3 --no-qvars --pass-all --nope
+
+@prefix var: <http://www.w3.org/2000/10/swap/var#>.
+@prefix : <http://example.org/gmark/>.
+@prefix aux: <http://example.org/aux#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+
+{
+    var:some_0 ((:p1 "/" "^" :p1) "|" (:p1 "/" "^" :p1 "/" :p1 "/" "^" :p1)) var:some_1.
+    var:some_1 (((:p1 "/" "^" :p1) "|" (:p1 "/" "^" :p1) "|" (:p1 "/" "^" :p1 "/" :p1 "/" "^" :p1))) var:some_2.
+    var:some_0 ((:p1 "/" "^" :p1 "/" :p1)) var:some_3.
+    var:some_2 ((:p1 "/" "^" :p1 "/" :p1) "|" (:p1 "/" "^" :p1 "/" :p1)) var:some_4.
+} => {
+    var:some_5 :result (("x0" var:some_0) ("x1" var:some_1) ("x2" var:some_2)).
+}.
+{
+    var:some_6 aux:sortBrackets var:some_6.
+} <= {
+    var:some_6 log:rawType var:some_7.
+    var:some_7 log:notEqualTo rdf:List.
+}.
+{
+    var:some_8 aux:sortBrackets var:some_9.
+} <= {
+    var:some_8 log:rawType rdf:List.
+    var:some_8 aux:lTranslate var:some_9.
+}.
+{
+    (var:some_10) aux:lTranslate var:some_11.
+} <= {
+    true log:callWithCut true.
+    var:some_10 aux:lTranslate var:some_11.
+}.
+{
+    var:some_12 aux:lTranslate (var:some_13 "|" var:some_14).
+} <= {
+    (var:some_15 ("|") var:some_16) list:append var:some_12.
+    true log:callWithCut true.
+    var:some_15 aux:lTranslate var:some_13.
+    var:some_16 aux:lTranslate var:some_14.
+}.
+{
+    var:some_17 aux:lTranslate (var:some_18 "/" var:some_19).
+} <= {
+    (var:some_20 ("/") var:some_21) list:append var:some_17.
+    true log:callWithCut true.
+    var:some_20 aux:lTranslate var:some_18.
+    var:some_21 aux:lTranslate var:some_19.
+}.
+{
+    var:some_22 aux:lTranslate ("^" var:some_23).
+} <= {
+    (("^") var:some_24) list:append var:some_22.
+    true log:callWithCut true.
+    var:some_24 aux:lTranslate var:some_23.
+}.
+{
+    var:some_25 aux:lTranslate var:some_25.
+} <= true.
+# 2025-02-10T17:02:16.745Z in=8 out=8 ent=8 step=16 brake=2 inf=89658 sec=0.065 inf/sec=1379354
+# ENDS
+
