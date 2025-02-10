@@ -1,0 +1,55 @@
+# Processed by EYE v10.24.12 (2024-10-03)
+# eye --quiet --nope query.n3 rule-creation.n3 --query rule-creation.n3
+
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix : <http://example.org/book/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+{
+    ?U_11 dc:title "The Semantic Web".
+} => {
+    "The Semantic Web" ("^" dc:title) ?U_11.
+}.
+{
+    ?U_12 foaf:knows ?U_14.
+    ?U_14 foaf:name ?U_13.
+} => {
+    ?U_12 (foaf:knows "/" foaf:name) ?U_13.
+}.
+{
+    ?U_15 foaf:knows ?U_17.
+    ?U_17 (foaf:knows "/" foaf:name) ?U_16.
+} => {
+    ?U_15 (foaf:knows "/" (foaf:knows "/" foaf:name)) ?U_16.
+}.
+{
+    ?U_18 (foaf:knows "+") ?U_20.
+    ?U_20 foaf:name ?U_19.
+} => {
+    ?U_18 ((foaf:knows "+") "/" foaf:name) ?U_19.
+}.
+{
+    :book1 dc:title ?U_21.
+} => {
+    :book1 (dc:title "|" rdfs:label) ?U_21.
+}.
+{
+    :book1 rdfs:label ?U_21.
+} => {
+    :book1 (dc:title "|" rdfs:label) ?U_21.
+}.
+{
+    ?U_22 foaf:knows ?U_23.
+} => {
+    ?U_22 (foaf:knows "+") ?U_23.
+}.
+{
+    ?U_22 foaf:knows ?U_25.
+    ?U_25 (foaf:knows "+") ?U_23.
+} => {
+    ?U_22 (foaf:knows "+") ?U_23.
+}.
+# 2025-02-10T12:59:00.558Z in=25 out=8 ent=16 step=30 brake=2 inf=375349 sec=0.114 inf/sec=3292535
+# ENDS
+

@@ -1,3 +1,5 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 
 
@@ -21,6 +23,32 @@
  {?a =>?b.
  ?a log:includes {?s ( ?p "?") ?o}}=>{{?s ?p ?o}=>{?s ( ?p "?") ?o}.  {?s ( ?p "?") ?s}<={} }.
 
+ {?a =>?b.
+ ?a log:includes {?s ("!" ?list) ?o}.
+ ?list log:rawType rdf:List. 
+  (?p1 { ?p1 list:in ?list. ?p1 log:rawType log:Other} ?posList) log:collectAllIn ?scope.
+ ?posList log:notEqualTo ().
+ }=>{{?s ?p ?o. ?p log:rawType log:Other.
+?posList list:notMember ?p.}=>{?s ("!" ?list) ?o}.  }.
 
+
+ {?a =>?b.
+ ?a log:includes {?s ("!" ?list) ?o}.
+ ?list log:rawType rdf:List.  
+ (?p1 {("^" ?p1) list:in ?list} ?negList) log:collectAllIn ?scope.
+ ?negList log:notEqualTo ().
+ }=>{{?o ?p ?s. ?p log:rawType log:Other.
+?negList list:notMember ?p.}=>{?s ("!" ?list) ?o}.  }.
+
+{?a =>?b.
+ ?a log:includes {?s ("!" ?p) ?o}.
+ ?p log:rawType rdf:Other.  
+ }=>{{?s ?p2 ?o. ?p2 log:notEqualTo ?p.
+}=>{?s ("!" ?p) ?o}.  }.
+
+{?a =>?b.
+ ?a log:includes {?s ("!" ("^" ?p)) ?o}. 
+ }=>{{?o ?p2 ?s. ?p2 log:notEqualTo ?p.
+}=>{?s ("!" ("^" ?p)) ?o}.  }.
 
 
