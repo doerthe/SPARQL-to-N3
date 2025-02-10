@@ -1,0 +1,29 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix :     <http://example.org/book/> .
+@prefix ns:   <http://example.org/ns#> .
+
+
+ { :book1 (dc:title "|" rdfs:label) ?displayString }=>{:query1 :result ?displayString}.
+
+{
+    ?x foaf:mbox <mailto:alice@example.com> .
+   ?x (foaf:knows "/" foaf:name ) ?name .
+  }=>{:query2 :result ?name}.
+
+    { 
+    ?x foaf:mbox <mailto:alice@example.com> .
+    ?x (foaf:knows "/" (foaf:knows "/" foaf:name)) ?name .
+  }=>{:query3 :result ?name}.
+
+    {
+    ?x foaf:mbox <mailto:alice@example.com> .
+    ?x ( (foaf:knows "+") "/" foaf:name) ?name .
+  }=>{:query4 :result ?name}.
+
+    {
+
+    "The Semantic Web" ("^" dc:title )  ?name .
+  }=>{:query4 :result ?name}.
