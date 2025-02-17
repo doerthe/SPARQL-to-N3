@@ -140,7 +140,9 @@ try out different queries:
 # ->
 # { $2 } <= { $1 }
 
-eye --turtle ../cases/dt/test-dl-100000.n3 --query tmp/n3query.n3 --nope
+# (save n3query.n3 as n3query-dt.n3)
+
+eye --turtle ../cases/dt/test-dl-100000.n3 --query tmp/n3query-dt.n3 --nope
 ```
 
 ## Automate experiments
@@ -168,6 +170,10 @@ python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/lmdb -
 - **yago**
 ```
 python run_exp.py --query ../../../other_systems/RecSPARQL/queries/sparql/yago --data ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --script run_spin3_loops.sh --recursive true --result_folder results --result_tmpl "yago_{0}-{1}.n3" --times_file "times/yago-eye.csv"
+
+# and
+eye ../../auxiliary-files/runtime-loops.n3 tmp/n3query.n3 --turtle ../../../other_systems/RecSPARQL/datasets/yagoFacts.nt --query tmp/n3query_query-yago5.n3 --nope > resul
+ts/yago_yagoFacts-yago5.n3
 ```
 
 - **zika**

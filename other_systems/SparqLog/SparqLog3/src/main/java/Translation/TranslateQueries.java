@@ -32,14 +32,10 @@ public class TranslateQueries {
 	
 	public static void translateSingleQuery() throws Exception {
 		String query = 
-				"PREFIX :  <http://example/>\n"
+				"PREFIX : <http://example/>\n"
 				+ "PREFIX : <>  \n"
 				+ "SELECT *\n"
-				+ "    { :x1 :p ?v . 	\n"
-//				+ "      OPTIONAL { :x2 :q ?w . \n"
-//				+ "        OPTIONAL { :x3 :p ?v } \n"
-//				+ "      } \n"
-				+ "    }";
+				+ "    { ?x1 :p16/:p17 ?x2 }";
 		
 		SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
 		Writer w = new PrintWriter(System.out);

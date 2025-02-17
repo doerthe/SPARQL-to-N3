@@ -37,12 +37,14 @@ def init_graph():
 def gen_cases(num, chances, path):
     g = init_graph()
     
+    all_symptoms = open("all_symptoms.txt").read().split(",")
+    # print(all_symptoms)
     for _ in range(0, num):
-        gen_case(chances, path, g)
+        gen_case(chances, path, all_symptoms, g)
 
     return g
 
-def gen_symptom(path, params, g):
+def gen_symptom_zika(path, params, g):
     all_symptoms = [
         [1204160001, 1204158003, 441313008, 1144976006, 199102004, 723857007, 413587002, 235118001, 724428007, 32482005, 1204188007, 1204156004, 733175002, 1204191007], # 84387000 
         [271749004], # 271749004 
@@ -60,7 +62,15 @@ def gen_symptom(path, params, g):
     add_snippet(os.path.join(path, "hasZikaSymptom_snomed.n3"), params, g)
     
 
-def gen_case(chances, path, g=None):
+def gen_symptom_any(path, params, all_symptoms, g):
+    symptom = random.choice(all_symptoms)
+    
+    params['snomed'] = f"http://snomed.info/id/{symptom}"
+    
+    add_snippet(os.path.join(path, "hasZikaSymptom_snomed.n3"), params, g)
+    
+
+def gen_case(chances, path, all_symptoms, g=None):
     pat = new_pat()
 
     if g is None:
@@ -73,12 +83,23 @@ def gen_case(chances, path, g=None):
         add_snippet(os.path.join(path, "isPregnant.n3"), {'pat': pat}, g)
 
     if odds(chances['hasZikaSymptom']):
-        gen_symptom(path, {'pat': pat}, g)
+        gen_symptom_zika(path, {'pat': pat}, g)
         # add_snippet(os.path.join(path, "hasZikaSymptom1.n3"), {'pat': pat}, g)
 
     if odds(chances['hasZikaSymptom']):
-        gen_symptom(path, {'pat': pat}, g)
+        gen_symptom_zika(path, {'pat': pat}, g)
         # add_snippet(os.path.join(path, "hasZikaSymptom2.n3"), {'pat': pat}, g)
+        
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
 
     if odds(chances['recentTravelToZikaArea']):
         add_snippet(os.path.join(path, "recentTravelToZikaArea.n3"), {'pat': pat}, g)
