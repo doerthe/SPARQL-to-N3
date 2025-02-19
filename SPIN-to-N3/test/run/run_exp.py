@@ -18,7 +18,7 @@ def run_exp(query, data_file, script, recursive, result_folder, result_tmpl, tim
     
     if query.endswith(".sparql"):
         query_file = query[query.rindex("/")+1:]
-        for i in range(0, 5):
+        for i in range(0, 1):
             print(f"run {i}")
             run_query(query_file, query, data_file, script, recursive, result_folder, result_tmpl, times_file)
     else:
@@ -26,8 +26,11 @@ def run_exp(query, data_file, script, recursive, result_folder, result_tmpl, tim
             if not query_file.endswith(".sparql"):
                 continue
             
+            if not query_file.startswith("yago5"):
+                continue
+            
             query_path = os.path.join(query, query_file)
-            for i in range(0, 5):
+            for i in range(0, 1):
                 print(f"run {i}")
                 run_query(query_file, query_path, data_file, script, recursive, result_folder, result_tmpl, times_file)
             

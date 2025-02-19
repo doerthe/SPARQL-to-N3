@@ -1,2 +1,12 @@
 query,result_file,load_time,convert_time,exec_time
-zika-queries-all-red-optim-sympt,zika,1.798544167,0.135446708,3.564443542
+zika-queries-all-red-optim-sympt,zika,2.002326084,0.142380584,8.143587958
+zika-queries-all-red-optim-sympt,zika,1.377685833,0.017134416,7.725448291
+zika-queries-all-red-optim-sympt,zika,1.38061825,0.012453,7.7192425
+zika-queries-all-red-optim-sympt,zika,1.4006875,0.011336458,7.330033166
+zika-queries-all-red-optim-sympt,zika,1.398300875,0.011199166,7.576590333
+zika-queries-all-red-optim-sympt,zika,1.990139041,0.138862541,8.490222583
+zika-queries-all-red-optim-sympt,zika,1.934316458,0.128518667,7.106729
+zika-queries-all-red-optim-sympt,zika,1.989594,0.138018875,8.230521667
+zika-queries-all-red-optim-sympt,zika,2.0281045,0.129981917,9.691210834
+zika-queries-all-red-optim-sympt,zika,2.166970417,0.147552083,11.130007542
+zika-queries-all-red-optim-sympt,zika,2.17982025,0.183582791,11.906339209
