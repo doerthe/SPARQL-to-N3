@@ -1,0 +1,13 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/data.n3 tmp.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/n3/normalized/query-0.n3 --nope
+
+@prefix : <http://example.org/gmark/>.
+
+_:sk_0 :result (("x0" :45) ("x3" :45)).
+_:sk_1 :result (("x0" :46) ("x3" :46)).
+_:sk_2 :result (("x0" :48) ("x3" :48)).
+_:sk_3 :result (("x0" :47) ("x3" :47)).
+_:sk_4 :result (("x0" :49) ("x3" :49)).
+# 2025-02-19T14:50:58.152Z in=64 out=5 ent=55 step=245 brake=4 inf=166110 sec=0.035 inf/sec=4746000
+# ENDS
+
