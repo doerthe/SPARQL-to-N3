@@ -1,3 +1,4 @@
+
 # Processed by EYE v10.24.12 (2024-10-03)
 # eye --quiet gmark/50/query6.n3 rule-creation.n3 --query rule-creation.n3 --nope
 
@@ -64,5 +65,6 @@
     ?U_62 (("^" :p1) "/" (:p1 "/" ("^" :p1))) ?U_63.
 }.
 # 2025-02-19T12:58:25.794Z in=23 out=11 ent=24 step=102 brake=4 inf=689611 sec=0.159 inf/sec=4337176
+
 # ENDS
 
