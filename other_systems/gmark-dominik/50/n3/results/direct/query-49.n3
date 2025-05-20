@@ -1,0 +1,6 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/data.n3 property-paths-direct.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/n3/normalized/query-49.n3 --nope
+
+# 2025-05-20T13:50:04.340Z in=70 out=0 ent=0 step=0 brake=1 inf=7345364 sec=0.689 inf/sec=10660906
+# ENDS
+
