@@ -1,0 +1,5 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 property-paths-direct.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-32.n3 --nope
+
+# 2025-05-20T14:46:52.975Z in=70 out=0 ent=0 step=0 brake=1 inf=377436 sec=0.055 inf/sec=6862473
+# ENDS

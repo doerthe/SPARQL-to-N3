@@ -1,0 +1,8 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 tmp.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-34.n3 --nope
+
+@prefix : <http://example.org/gmark/>.
+
+:x :result true.
+# 2025-05-20T14:46:54.700Z in=71 out=1 ent=432 step=2687 brake=4 inf=403373 sec=0.051 inf/sec=7909275
+# ENDS
