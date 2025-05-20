@@ -1,5 +1,5 @@
 # Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 tmp.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-20.n3 --nope
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/gen/query-20_bwd.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-20.n3 --nope
 
-# 2025-05-20T14:45:59.670Z in=76 out=0 ent=0 step=0 brake=1 inf=1013313 sec=0.280 inf/sec=3618975
+# 2025-05-20T14:57:53.823Z in=76 out=0 ent=0 step=0 brake=1 inf=1013338 sec=0.282 inf/sec=3593397
 # ENDS

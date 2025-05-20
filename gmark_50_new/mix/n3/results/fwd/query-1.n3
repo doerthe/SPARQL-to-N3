@@ -1,5 +1,5 @@
 # Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 tmp.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-1.n3 --nope
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/gen/query-1_fwd.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-1.n3 --nope
 
 @prefix : <http://example.org/gmark/>.
 
@@ -8,5 +8,5 @@ _:sk_1 :result (("x0" :55) ("x1" :55)).
 _:sk_2 :result (("x0" :90) ("x1" :90)).
 _:sk_3 :result (("x0" :147) ("x1" :147)).
 _:sk_4 :result (("x0" :128) ("x1" :128)).
-# 2025-05-20T14:45:52.664Z in=74 out=5 ent=245 step=921 brake=4 inf=293961 sec=0.042 inf/sec=6999071
+# 2025-05-20T14:57:46.856Z in=74 out=5 ent=245 step=921 brake=4 inf=293975 sec=0.041 inf/sec=7170122
 # ENDS

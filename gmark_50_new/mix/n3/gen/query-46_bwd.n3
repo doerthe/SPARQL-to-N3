@@ -1,0 +1,41 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-46.n3 rule-creation.n3 --query rule-creation-backwards.n3 --nope
+
+@prefix : <http://example.org/gmark/>.
+
+{
+    ?U_8 (("^" :p2) "/" :p2) ?U_9.
+} <= {
+    ?U_8 ("^" :p2) ?U_10.
+    ?U_10 :p2 ?U_9.
+}.
+{
+    ?U_11 (("^" :p2) "/" (("^" :p1) "/" (:p1 "/" :p2))) ?U_12.
+} <= {
+    ?U_11 ("^" :p2) ?U_13.
+    ?U_13 (("^" :p1) "/" (:p1 "/" :p2)) ?U_12.
+}.
+{
+    ?U_20 ("^" :p2) ?U_21.
+} <= {
+    ?U_21 :p2 ?U_20.
+}.
+{
+    ?U_22 (("^" :p1) "/" (:p1 "/" :p2)) ?U_23.
+} <= {
+    ?U_22 ("^" :p1) ?U_24.
+    ?U_24 (:p1 "/" :p2) ?U_23.
+}.
+{
+    ?U_31 ("^" :p1) ?U_32.
+} <= {
+    ?U_32 :p1 ?U_31.
+}.
+{
+    ?U_33 (:p1 "/" :p2) ?U_34.
+} <= {
+    ?U_33 :p1 ?U_35.
+    ?U_35 :p2 ?U_34.
+}.
+# 2025-05-20T14:59:57.006Z in=13 out=6 ent=12 step=43 brake=4 inf=250174 sec=0.040 inf/sec=6254350
+# ENDS
