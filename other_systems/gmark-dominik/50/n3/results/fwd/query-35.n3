@@ -1,0 +1,6 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/data.n3 tmp.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/n3/normalized/query-35.n3 --nope
+
+# 2025-05-20T13:48:56.223Z in=74 out=0 ent=218 step=872 brake=5 inf=283813 sec=0.041 inf/sec=6922268
+# ENDS
+

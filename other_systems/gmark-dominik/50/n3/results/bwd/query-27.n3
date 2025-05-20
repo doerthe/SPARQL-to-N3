@@ -1,0 +1,59 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/data.n3 tmp.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/other_systems/gmark-dominik/50/n3/normalized/query-27.n3 --nope
+
+@prefix : <http://example.org/gmark/>.
+
+_:sk_0 :result (("x0" :25) ("x4" :42)).
+_:sk_1 :result (("x0" :25) ("x4" :41)).
+_:sk_2 :result (("x0" :25) ("x4" :44)).
+_:sk_3 :result (("x0" :25) ("x4" :40)).
+_:sk_4 :result (("x0" :25) ("x4" :43)).
+_:sk_5 :result (("x0" :29) ("x4" :44)).
+_:sk_6 :result (("x0" :29) ("x4" :41)).
+_:sk_7 :result (("x0" :29) ("x4" :40)).
+_:sk_8 :result (("x0" :33) ("x4" :44)).
+_:sk_9 :result (("x0" :33) ("x4" :41)).
+_:sk_10 :result (("x0" :33) ("x4" :40)).
+_:sk_11 :result (("x0" :26) ("x4" :44)).
+_:sk_12 :result (("x0" :26) ("x4" :41)).
+_:sk_13 :result (("x0" :26) ("x4" :40)).
+_:sk_14 :result (("x0" :34) ("x4" :44)).
+_:sk_15 :result (("x0" :34) ("x4" :41)).
+_:sk_16 :result (("x0" :34) ("x4" :40)).
+_:sk_17 :result (("x0" :31) ("x4" :42)).
+_:sk_18 :result (("x0" :31) ("x4" :41)).
+_:sk_19 :result (("x0" :31) ("x4" :44)).
+_:sk_20 :result (("x0" :31) ("x4" :40)).
+_:sk_21 :result (("x0" :31) ("x4" :43)).
+_:sk_22 :result (("x0" :39) ("x4" :44)).
+_:sk_23 :result (("x0" :39) ("x4" :41)).
+_:sk_24 :result (("x0" :39) ("x4" :40)).
+_:sk_25 :result (("x0" :27) ("x4" :42)).
+_:sk_26 :result (("x0" :27) ("x4" :41)).
+_:sk_27 :result (("x0" :27) ("x4" :44)).
+_:sk_28 :result (("x0" :27) ("x4" :40)).
+_:sk_29 :result (("x0" :27) ("x4" :43)).
+_:sk_30 :result (("x0" :35) ("x4" :42)).
+_:sk_31 :result (("x0" :35) ("x4" :41)).
+_:sk_32 :result (("x0" :35) ("x4" :44)).
+_:sk_33 :result (("x0" :35) ("x4" :40)).
+_:sk_34 :result (("x0" :35) ("x4" :43)).
+_:sk_35 :result (("x0" :37) ("x4" :42)).
+_:sk_36 :result (("x0" :37) ("x4" :41)).
+_:sk_37 :result (("x0" :37) ("x4" :44)).
+_:sk_38 :result (("x0" :37) ("x4" :40)).
+_:sk_39 :result (("x0" :37) ("x4" :43)).
+_:sk_40 :result (("x0" :38) ("x4" :44)).
+_:sk_41 :result (("x0" :38) ("x4" :41)).
+_:sk_42 :result (("x0" :38) ("x4" :40)).
+_:sk_43 :result (("x0" :28) ("x4" :42)).
+_:sk_44 :result (("x0" :36) ("x4" :42)).
+_:sk_45 :result (("x0" :32) ("x4" :42)).
+_:sk_46 :result (("x0" :32) ("x4" :41)).
+_:sk_47 :result (("x0" :32) ("x4" :44)).
+_:sk_48 :result (("x0" :32) ("x4" :40)).
+_:sk_49 :result (("x0" :32) ("x4" :43)).
+_:sk_50 :result (("x0" :30) ("x4" :42)).
+# 2025-05-20T13:48:43.601Z in=70 out=51 ent=51 step=872897 brake=1 inf=30955645 sec=3.754 inf/sec=8246043
+# ENDS
+
