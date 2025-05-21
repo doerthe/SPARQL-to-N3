@@ -1,0 +1,5 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/gen/query-43_fwd.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-43.n3 --nope
+
+# 2025-05-20T14:58:56.046Z in=62 out=0 ent=378 step=1317 brake=4 inf=390436 sec=0.049 inf/sec=7968082
+# ENDS
