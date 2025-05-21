@@ -13,11 +13,11 @@ PREFIX sin3: <https://notation3.org/sin3#>
 {?s (?p1 "|" ?p2) ?o}<={?p1 log:rawType ?t. ?t log:notEqualTo  log:ForAll. ?s ?p1 ?o}.
 {?s (?p1 "|" ?p2) ?o}<={?p1 log:rawType ?t. ?t log:notEqualTo  log:ForAll. ?s ?p2 ?o}.
 
-{?s (?p "*") ?s}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.}.
-{?s (?p "*") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll. ?o (?p "+") ?o}.
+{?s (?p "*") ?s}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll. }.
+{?s (?p "*") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.  ?o (?p "+") ?o}.
 
-{?s (?p "+") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll. ?s ?p ?o}.
-{?s (?p "+") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll. ?s ?p ?o1. ?o1 (?p "+") ?o. }.
+{?s (?p "+") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.  ?s ?p ?o}.
+{?s (?p "+") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.   ?s ?p ?o1. ?o1 log:rawType ?t. ?t log:notEqualTo  log:ForAll.   ?o1 (?p "+") ?o. }.
 
 {?s (?p "?") ?s}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll. }.
 {?s (?p "?") ?o}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll. ?o ?p ?o}.
