@@ -1,0 +1,16 @@
+# Processed by EYE v10.24.12 (2024-10-03)
+# eye --quiet ../../other_systems/gmark-dominik/50/n3/query-0.n3 --no-qvars --nope --pass-all
+
+@prefix var: <http://www.w3.org/2000/10/swap/var#>.
+@prefix : <http://example.org/gmark/>.
+
+{
+    var:some_0 ((("^" :p1) "/" :p1) "|" (("^" :p1) "/" :p1 "/" ("^" :p1) "/" :p1)) var:some_1.
+    var:some_1 ((("^" :p1) "/" :p1 "/" ("^" :p1) "/" :p1) "|" (("^" :p1) "/" :p1)) var:some_2.
+    var:some_2 ((("^" :p1) "/" :p1) "|" (("^" :p1) "/" :p1 "/" ("^" :p1) "/" :p1)) var:some_3.
+} => {
+    var:some_4 :result (("x0" var:some_0) ("x3" var:some_3)).
+}.
+# 2025-02-19T13:57:10.071Z in=1 out=1 ent=1 step=2 brake=2 inf=42555 sec=0.078 inf/sec=545577
+# ENDS
+
