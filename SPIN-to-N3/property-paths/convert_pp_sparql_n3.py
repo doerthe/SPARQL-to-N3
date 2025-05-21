@@ -66,32 +66,42 @@ class To_N3_Visitor:
             return self.leaf(ast)
         
     def node(self, ast):        
-        symbol = None; infix = False
+        # print(ast.name)
+        infix = None; tag = None        
         match(ast.name):
             case 'PathAlternative':
-                symbol = "|"; infix = True
+                infix = " '|' "; 
             case 'PathSequence':
-                symbol = "/"; infix = True
+                infix = " '/' "
             case 'PathNegatedPropertySet':
-                symbol = "!"; infix = False
+                infix = " '|' "; tag = ( " '!' ", "left" )
             case 'PathEltOrInverse':
-                symbol = "^"; infix = False
+                tag = ( " '^' ", "left" )
+            case 'InversePath':
+                tag = ( " '^' ", "left" )
                 
-        # kleene-star: represented using "mod" key
+        # print(ast.keys())
+        # recursion represented using "mod" key
+        if 'mod' in ast.keys():
+            tag = ( " '" + ast['mod'] + "' ", "right" )
         
         key = list(ast.keys())[0]
-        is_list = (type(ast[key]) == list)
+        is_list = (isinstance(ast[key], list))
         nodes = [ self.visit(j) for j in ast[key] ] if is_list else [ self.visit(ast[key]) ]
 
-        if symbol is not None:
-            symbol = f" '{symbol}' "
-            sep = symbol if infix else " "
-            nodes_str = "(" + sep.join(nodes) + ")" if len(nodes) > 1 else sep.join(nodes)
-            if not infix:
-                nodes_str = "(" + symbol + nodes_str + ")"
-            return nodes_str
+        if infix is not None:
+            nodes_str = "(" + infix.join(nodes) + ")" if len(nodes) > 1 else nodes[0]
         else:
-            return nodes[0]
+            nodes_str = nodes[0]
+        
+        if tag is not None:
+            match(tag[1]):
+                case 'left':
+                    nodes_str = "(" + tag[0] + nodes_str + ")"
+                case 'right':
+                    nodes_str = "(" + nodes_str + tag[0] + ")"
+        
+        return nodes_str
         
     def leaf(self, ast):
         if hasattr(ast, "n3") and ast.n3 is not None:
