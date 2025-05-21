@@ -1,10 +1,5 @@
-_:N2869209a1800420bb3c9c031fe579913 <http://example.org/x0> <http://example.org/gmark/47> .
-_:N2869209a1800420bb3c9c031fe579913 <http://example.org/x3> <http://example.org/gmark/47> .
-_:N7d6ea7a6a5094342a6b35b1ef1bfe74c <http://example.org/x0> <http://example.org/gmark/45> .
-_:N7d6ea7a6a5094342a6b35b1ef1bfe74c <http://example.org/x3> <http://example.org/gmark/45> .
-_:N53b0bae82423409a8e7180a5c1d8b2c7 <http://example.org/x0> <http://example.org/gmark/48> .
-_:N53b0bae82423409a8e7180a5c1d8b2c7 <http://example.org/x3> <http://example.org/gmark/48> .
-_:Nc1923e833d1843a9b55c01379528479c <http://example.org/x0> <http://example.org/gmark/46> .
-_:Nc1923e833d1843a9b55c01379528479c <http://example.org/x3> <http://example.org/gmark/46> .
-_:N9e871f7b0fad4609a6501efb52c74abc <http://example.org/x0> <http://example.org/gmark/49> .
-_:N9e871f7b0fad4609a6501efb52c74abc <http://example.org/x3> <http://example.org/gmark/49> .
+_:Neea8e17019f9418783e5bbb85ed2633f <http://example.org/gmark/result> ((x0 http://example.org/gmark/47 ) (x3 http://example.org/gmark/47 ) ) .
+_:Ne957d13864924f9e98020e43d3c736f1 <http://example.org/gmark/result> ((x0 http://example.org/gmark/45 ) (x3 http://example.org/gmark/45 ) ) .
+_:N0e2f3ed907274ee494d32b806484f224 <http://example.org/gmark/result> ((x0 http://example.org/gmark/48 ) (x3 http://example.org/gmark/48 ) ) .
+_:N4da979906c6e4a1d8012f4bc2f370acc <http://example.org/gmark/result> ((x0 http://example.org/gmark/46 ) (x3 http://example.org/gmark/46 ) ) .
+_:N9b82fe4d4db0464cab6f167c1946424f <http://example.org/gmark/result> ((x0 http://example.org/gmark/49 ) (x3 http://example.org/gmark/49 ) ) .
