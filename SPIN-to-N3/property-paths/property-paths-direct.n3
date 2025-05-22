@@ -4,7 +4,8 @@
 
 PREFIX sin3: <https://notation3.org/sin3#>
 
-#note: these  rules cannot deal with loops!
+
+
 
 {?s ("^" ?p) ?o }<={?p sin3:isVariable false.  ?o ?p ?s}.
 
@@ -14,13 +15,13 @@ PREFIX sin3: <https://notation3.org/sin3#>
 {?s (?p1 "|" ?p2) ?o}<={?p1 sin3:isVariable false. ?s ?p2 ?o}.
 
 {?s (?p "*") ?s}<={?p sin3:isVariable false. }.
-{?s (?p "*") ?o}<={?p sin3:isVariable false.  ?o (?p "+") ?o}.
+{?s (?p "*") ?o}<={?p sin3:isVariable false.  ?s (?p "+") ?o}.
 
 {?s (?p "+") ?o}<={?p sin3:isVariable false. ?s ?p ?o}.
 {?s (?p "+") ?o}<={ ?p sin3:isVariable false.  ?s ?p ?o1. ?s log:notEqualTo ?o1. ?o1 (?p "+") ?o. }.
 
 {?s (?p "?") ?s}<={ ?p sin3:isVariable false.}.
-{?s (?p "?") ?o}<={?p sin3:isVariable false. ?o ?p ?o}.
+{?s (?p "?") ?o}<={?p sin3:isVariable false. ?s ?p ?o}.
 
 # ("!" ?p) ("!" (?p1 ... ?pn)) ("!" (?p1 ... ("^"?pn))
 {?s ("!" ("^" ?p )) ?o}<={?p sin3:isVariable false. ?o ?p1 ?s. ?p log:notEqualTo ?p1}.
