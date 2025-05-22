@@ -41,7 +41,7 @@ PREFIX sin3: <https://notation3.org/sin3#>
  {?a =>?b.
  ?a log:includes {?s ("!" ?list) ?o}.
  ?list log:rawType rdf:List.  
- (?p1 {("^" ?p1) list:in ?list} ?negList) log:collectAllIn ?scope.
+ (?p1 {("^" ?p1) list:in ?list. ?p1 log:rawType log:Other.} ?negList) log:collectAllIn ?scope.
  ?negList log:notEqualTo ().
  }=>{{?o ?p ?s. ?p log:rawType log:Other.
 ?negList list:notMember ?p.}=>{?s ("!" ?list) ?o}.  }.
