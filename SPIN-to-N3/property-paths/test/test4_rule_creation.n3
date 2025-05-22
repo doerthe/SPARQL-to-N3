@@ -1,0 +1,22 @@
+# Processed by EYE v10.24.10 (2024-10-02)
+# eye --quiet test/test4_norm.n3 rule-creation.n3 --query rule-creation.n3 --nope
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix : <http://example.org/gmark/>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+
+{
+    ?U_6 ?U_9 ?U_7.
+    ?U_9 log:rawType log:Other.
+    (:p1 :p2) list:notMember ?U_9.
+} => {
+    ?U_6 ("!" (:p1 "|" :p2)) ?U_7.
+}.
+{
+    ?U_12 ?U_13 ?U_11.
+    ?U_13 log:notEqualTo ?U_10.
+} => {
+    ?U_11 ("!" ("^" ?U_10)) ?U_12.
+}.
+# 2025-05-22T15:40:57.629Z in=25 out=2 ent=4 step=11 brake=4 inf=521415 sec=0.064 inf/sec=8147109
+# ENDS

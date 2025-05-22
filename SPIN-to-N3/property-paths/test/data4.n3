@@ -1,0 +1,7 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://example.org/gmark/> .
+
+:x0 :p1 :x1 .
+:x0 :p2 :x1 .
+
+:x2 :p :x3 .
