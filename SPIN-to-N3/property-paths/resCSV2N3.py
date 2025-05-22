@@ -11,25 +11,26 @@ import warnings
 import argparse
 import rdflib
 
-def guess_term_type(string):
+def n3_term_type(string):
     if re.match(r'^[a-zA-Z]+://', string):
         return 'iri'
     elif string.startswith('_:'):
         return 'bnode'
     return 'literal'
 
-def term(str):
-    str = str.strip()
-    term_type = guess_term_type(str)
+def n3_term(string):
+    string = string.strip()
+    term_type = n3_term_type(string)
     match(term_type):
         case 'bnode':
-            return rdflib.BNode(str[2:])
+            term = rdflib.BNode(string[2:])
         case 'iri':
-            return rdflib.URIRef(str)
+            term = rdflib.URIRef(string)
         case _:
-            return rdflib.Literal(str)
+            term = rdflib.Literal(string)
+    return term
         
-def list(elements):
+def n3_list(elements):
     return "(" + " ".join([ element.n3() if isinstance(element, rdflib.term.Node) else element for element in elements ]) + " )"
 
 def csv_reader(csv_data, dialect=csv.excel, **kwargs):
@@ -47,7 +48,7 @@ class RESRDF:
         self.triples = 0
 
     def result(self, subj, cells):
-        o = list([list(cell) for cell in cells])
+        o = n3_list([n3_list(cell) for cell in cells])
         self.OUT.write("%s %s %s .\n" % (subj.n3(), self.RES_PROP.n3(), o))
         self.triples += 1
 
@@ -73,7 +74,7 @@ class RESRDF:
                     sys.stderr.write("unknown IDENT:", self.IDENT)
                     return
                 
-                cells = [(term(header_labels[i]), term(x)) for i, x in enumerate(l_)]
+                cells = [(n3_term(header_labels[i]), n3_term(x)) for i, x in enumerate(l_)]
                 self.result(subj, cells)
                 
                 rows += 1
