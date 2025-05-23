@@ -49,12 +49,19 @@ PREFIX sin3: <https://notation3.org/sin3#>
 {?a =>?b.
  ?a log:includes {?s ("!" ?p) ?o}.
  ?p log:rawType rdf:Other.  
- }=>{{?s ?p2 ?o. ?p2 log:notEqualTo ?p.
+ }=>{{?s ?p2 ?o.
+ ?p2 log:rawType rdf:Other.  
+  ?p2 log:notEqualTo ?p.
 }=>{?s ("!" ?p) ?o}.  }.
 
 {?a =>?b.
  ?a log:includes {?s ("!" ("^" ?p)) ?o}. 
- }=>{{?o ?p2 ?s. ?p2 log:notEqualTo ?p.
+  ?p log:rawType rdf:Other.  
+ }=>{{
+    
+    ?o ?p2 ?s. 
+    ?p2 log:rawType rdf:Other.  
+    ?p2 log:notEqualTo ?p.
 }=>{?s ("!" ("^" ?p)) ?o}.  }.
 
 # is variable
