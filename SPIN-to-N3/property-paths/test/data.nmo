@@ -1,0 +1,5 @@
+triple("http://example.org/gmark/A", "http://example.org/gmark/p1", "http://example.org/gmark/B") .
+triple("http://example.org/gmark/B", "http://example.org/gmark/p1", "http://example.org/gmark/C") .
+
+
+@export result :- csv{}.
