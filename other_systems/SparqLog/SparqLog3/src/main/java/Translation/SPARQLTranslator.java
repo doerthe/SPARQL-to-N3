@@ -1269,7 +1269,7 @@ public class SPARQLTranslator {
 
         // left-deep join:  ((e0 JOIN e1) JOIN e2) …
         Op combined = elements.get(0);
-        for (int i = 1; i < elements.size(); i) {
+        for (int i = 1; i < elements.size(); i++) {
             combined = OpJoin.create(combined, elements.get(i));
         }
 

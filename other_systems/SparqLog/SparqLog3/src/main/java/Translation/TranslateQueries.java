@@ -35,7 +35,7 @@ public class TranslateQueries {
 				"PREFIX : <http://example/>\n"
 				+ "PREFIX : <>  \n"
 				+ "SELECT *\n"
-				+ "    { ?x1 :p16/:p17 ?x2 }";
+				+ "    { ?x1 :p16/:p17 ?x2 . ?x2 :p18 ?x3 }";
 		
 		SPARQLTranslator sparqlTranslator = new SPARQLTranslator(new SkolemFunctionGenerator());
 		Writer w = new PrintWriter(System.out);
