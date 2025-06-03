@@ -269,7 +269,10 @@ public class SPARQLTranslator {
             return parse((OpExtend) op, distinct, graphName, ruleId);
         } else if (op instanceof OpGroup) {
             return parse((OpGroup) op, distinct, graphName, ruleId);
-        } else {
+        } else if (op instanceof OpSequence) {
+            return parse((OpSequence) op, distinct, graphName, ruleId);
+        }
+        else {
             throw new ParseException("MyException -> Operation " + op.getClass() + " unknown!", 1);
         }
     }
@@ -1255,6 +1258,22 @@ public class SPARQLTranslator {
 
         return new VariableQueryModel(sb.toString() + subResult.getQuery(), subResult.getVariableNames(), subResult.isNullsIntroduced());
 
+    }
+
+    public VariableQueryModel parse(OpSequence op, boolean distinct, String graphName, int ruleId) throws ParseException {
+
+        List<Op> elements = op.getElements();
+        if (elements.isEmpty()) {
+            throw new ParseException("MyException -> OpSequence with no elements!", 1);
+        }
+
+        // left-deep join:  ((e0 JOIN e1) JOIN e2) …
+        Op combined = elements.get(0);
+        for (int i = 1; i < elements.size(); i++) {
+            combined = OpJoin.create(combined, elements.get(i));
+        }
+
+        return parse(combined, distinct, graphName, ruleId);
     }
 
     public VariableQueryModel parsePath(P_Link path, MyNode s, MyNode o, boolean distinct, String graphName, int ruleId) throws ParseException {
