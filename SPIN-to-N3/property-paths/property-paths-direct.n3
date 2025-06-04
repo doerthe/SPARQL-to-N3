@@ -18,15 +18,18 @@ PREFIX sin3: <https://notation3.org/sin3#>
 {?s (?p "*") ?s}<={?p sin3:isVariable false.  ?o ?p1 ?s.  ?p1 log:rawType log:Other. }.
 {?s (?p "*") ?o}<={?p sin3:isVariable false.   ?s (?p "+") ?o}.
 
-{?s (?p "+") ?o}<={?p sin3:isVariable false.  ?s ?p ?o}.
-{?s (?p "+") ?o}<={ ?p sin3:isVariable false.   ?s ?p ?o1.  
-{?o1 (?p "+") ?o.} sin3:circ ().
+
+{?s (?p "+") ?o}<={ ?p sin3:isVariable false.  
+{?s (?p "+") ?o.} sin3:circ ().
 }.
-{{?o1 (?p "+") ?o.} sin3:circ ?list.}<={ ?p sin3:isVariable false.   ?s ?p ?o1. ?list list:notMember ?o1.
+
+{{?o1 (?p "+") ?o.} sin3:circ ?list.}<={?p sin3:isVariable false.  ?o1 ?p ?o. ?list list:notMember ?o.}.
+{{?o1 (?p "+") ?o.} sin3:circ ?list.}<={ ?p sin3:isVariable false.   
+?s ?p ?o1. ?list list:notMember ?o1.
 (?list (?o1)) list:append ?list2.
 {?o1 (?p "+") ?o.} sin3:circ ?list2.
 }.
-{{?o1 (?p "+") ?o.} sin3:circ ?list.}<={?p sin3:isVariable false.  ?o1 ?p ?o. ?list list:notMember ?o.}.
+
 
 
 {?s (?p "?") ?s}<={ ?p sin3:isVariable false. }.
