@@ -1,0 +1,9 @@
+@include("RDF Triples").
+@include("Auxiliary Predicates").
+
+ans1( ?L_t_0, ?DType_t_0, ?LTag_t_0, ?L_t_1, ?DType_t_1, ?LTag_t_1, "default") :- ans2( ?L_t_0, ?DType_t_0, ?LTag_t_0, ?L_t_1, ?DType_t_1, ?LTag_t_1, "default").
+ans2( ?L_X, ?DType_X, ?LTag_X, ?L_Y, ?DType_Y, ?LTag_Y, "default") :- ans4( ?L_Path, ?DType_Path, ?LTag_Path, ?L_X, ?DType_X, ?LTag_X, ?L_Y, ?DType_Y, ?LTag_Y, "default"), ?L_Path != "<http://example.org/gmark/p1>".
+ans2( ?L_Y, ?DType_Y, ?LTag_Y, ?L_X, ?DType_X, ?LTag_X, "default") :- ans4( ?L_Path, ?DType_Path, ?LTag_Path, ?L_X, ?DType_X, ?LTag_X, ?L_Y, ?DType_Y, ?LTag_Y, "default"), ?L_Path != "<http://example.org/gmark/p1>".
+ans4( ?L_Path, ?DType_Path, ?LTag_Path, ?L_X, ?DType_X, ?LTag_X, ?L_Y, ?DType_Y, ?LTag_Y, "default") :- triple(?L_X, ?DType_X, ?LTag_X, ?L_Path, ?DType_Path, ?LTag_Path, ?L_Y, ?DType_Y, ?LTag_Y, "default").
+@include("RDF Triples").
+@output("ans1").
