@@ -1,0 +1,5 @@
+<http://example.org/gmark/25> <http://example.org/gmark/p1> <http://example.org/gmark/45> .
+<http://example.org/gmark/45> <http://example.org/gmark/p2> <http://example.org/gmark/139> .
+
+<http://example.org/gmark/139> <http://example.org/gmark/p1> <http://example.org/gmark/45> .
+<http://example.org/gmark/45> <http://example.org/gmark/p2> <http://example.org/gmark/25> .
