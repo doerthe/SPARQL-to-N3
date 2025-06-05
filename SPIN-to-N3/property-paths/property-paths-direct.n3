@@ -4,6 +4,7 @@
 
 PREFIX sin3: <https://notation3.org/sin3#>
 
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 
 
 
@@ -11,8 +12,8 @@ PREFIX sin3: <https://notation3.org/sin3#>
 
 {?s (?p1 "/" ?p2) ?o}<={?p1 sin3:isVariable false.  ?s ?p1 ?o1. ?o1 ?p2 ?o.}.
 
-{?s (?p1 "|" ?p2) ?o}<={?p1 sin3:isVariable false.  ?s ?p1 ?o}.
-{?s (?p1 "|" ?p2) ?o}<={?p1 sin3:isVariable false.  ?s ?p2 ?o}.
+{?s (?p1 "|" ?p2) ?o}<={?p1 sin3:isVariable false.  ?s ?p1 ?o. "dis1" log:trace true}.
+{?s (?p1 "|" ?p2) ?o}<={?p1 sin3:isVariable false.  ?s ?p2 ?o. "dis2" log:trace true}.
 
 {?s (?p "*") ?s}<={?p sin3:isVariable false.  ?s ?p1 ?o. ?p1 log:rawType log:Other. }.
 {?s (?p "*") ?s}<={?p sin3:isVariable false.  ?o ?p1 ?s.  ?p1 log:rawType log:Other. }.
@@ -20,15 +21,33 @@ PREFIX sin3: <https://notation3.org/sin3#>
 
 
 {?s (?p "+") ?o}<={ ?p sin3:isVariable false.  
-{?s (?p "+") ?o.} sin3:circ ().
+1 log:trace 1.
+{?s (?p "+") ?o.} sin3:circ (() ?path).
+2222222 log:trace ((?s?o) ?path).
 }.
 
-{{?o1 (?p "+") ?o.} sin3:circ ?list.}<={?p sin3:isVariable false.  ?o1 ?p ?o. ?list list:notMember ?o.}.
-{{?s (?p "+") ?o.} sin3:circ ?list.}<={ ?p sin3:isVariable false.   
-?s ?p ?o1. ?list list:notMember ?o1.
-(?list (?o1)) list:append ?list2.
-{?o1 (?p "+") ?o.} sin3:circ ?list2.
+{{?s (?p "+") ?o.} sin3:circ (?list ?path).}<={ ?p sin3:isVariable false.   
+3 log:trace 1.
+?s ?p ?o.
+4 log:trace ({?s ?p ?o.} ?list ?o).
+(?s ?p) sin3:check ?list.
+(?list ((?s ?o))) list:append ?path.
+6 log:trace ?path.
 }.
+
+{{?s (?p "+") ?o.} sin3:circ (?list ?path).}<={ ?p sin3:isVariable false.   
+?s ?p ?o1.
+?s log:notEqualTo ?o1.
+
+(?s ?o1) sin3:check ?list.
+5 log:trace ?list.
+(?list ((?s ?o1))) list:append ?list2.
+{?o1 (?p "+") ?o.} sin3:circ (?list2 ?path).
+}.
+
+
+{?s (?p "?") ?s}<={ ?p sin3:isVariable false. }.
+{?s (?p "?") ?o}<={?p sin3:isVariable false.  ?s ?p ?o}.
 
 
 
@@ -52,4 +71,6 @@ PREFIX sin3: <https://notation3.org/sin3#>
 # is variable
 {?p sin3:isVariable false}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.}.
 
-
+# emergency break
+{ (?s ?x) sin3:check ?list  }<={  (?s ?x) list:in ?list. true log:callWithCut true.  false false false.  }.
+{ (?s ?x) sin3:check ?list  }<={}.

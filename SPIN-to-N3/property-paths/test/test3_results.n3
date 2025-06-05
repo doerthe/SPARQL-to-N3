@@ -1,9 +1,9 @@
-# Processed by EYE v10.24.10 (2024-10-02)
+# Processed by EYE v11.19.3 (2025-05-18)
 # eye --quiet test/data3.n3 test/test3_rule_creation.n3 --query test/test3_norm.n3 --nope
 
-@prefix : <http://example.org/gmark/>.
+PREFIX : <http://example.org/gmark/>
 
 _:sk_0 :result (("x0" :x0) ("x1" :x1)).
 _:sk_1 :result (("x0" :x1) ("x1" :x0)).
-# 2025-05-22T15:57:22.568Z in=6 out=2 ent=4 step=8 brake=2 inf=45637 sec=0.027 inf/sec=1690259
+# 2025-05-23T14:53:37.453Z in=5 out=2 ent=4 step=8 brake=2 inf=43812 sec=0.062 inf/sec=706645
 # ENDS
