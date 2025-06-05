@@ -1,0 +1,9 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet test/data-half.n3 property-paths-direct.n3 --query test/evil_pp_1-b2.n3 --nope
+
+PREFIX : <http://example.org/gmark/>
+
+_:sk_0 :result (("x2" :45) ("x1" :25) ("x3" _:sk_1) ("x0" :25)).
+_:sk_2 :result (("x2" :46) ("x1" :29) ("x3" _:sk_3) ("x0" :29)).
+# 2025-06-05T13:08:19.308Z in=19 out=2 ent=2 step=2 brake=1 inf=87370 sec=0.029 inf/sec=3012759
+# ENDS
