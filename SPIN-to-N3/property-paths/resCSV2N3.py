@@ -112,6 +112,3 @@ def convert(file, ordered, out):
         else:
             with open(file, 'r') as input:
                 csv2rdf.convert(csv_reader(input))
-
-convert("/Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/results/query-15.csv",
-        False, "/Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/results/query-15.n3")
