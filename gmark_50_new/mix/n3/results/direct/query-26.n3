@@ -1,8 +1,8 @@
-# Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 property-paths-direct.n3 --query /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-26.n3 --nope
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet ../../gmark_50_new/mix/data.n3 property-paths-direct.n3 --query ../../gmark_50_new/mix/n3/normalized/query-26.n3 --nope
 
-@prefix : <http://example.org/gmark/>.
+PREFIX : <http://example.org/gmark/>
 
 :x :result true.
-# 2025-05-20T14:57:59.609Z in=70 out=1 ent=1 step=868 brake=1 inf=205982 sec=0.035 inf/sec=5885200
+# 2025-06-10T13:05:22.620Z in=74 out=1 ent=1 step=868 brake=1 inf=253380 sec=0.040 inf/sec=6334500
 # ENDS

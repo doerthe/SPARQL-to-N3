@@ -1,7 +1,7 @@
-# Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet /Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-36.n3 rule-creation.n3 --query rule-creation.n3 --nope
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet ../../gmark_50_new/mix/n3/normalized/query-36.n3 rule-creation.n3 --query rule-creation.n3 --nope
 
-@prefix : <http://example.org/gmark/>.
+PREFIX : <http://example.org/gmark/>
 
 {
     ?U_21 :p0 ?U_20.
@@ -138,5 +138,5 @@
 } => {
     ?U_147 ("^" :p3) ?U_148.
 }.
-# 2025-05-20T14:58:49.484Z in=23 out=24 ent=50 step=279 brake=6 inf=1054770 sec=0.101 inf/sec=10443267
+# 2025-06-10T13:05:34.706Z in=25 out=24 ent=50 step=279 brake=6 inf=1258293 sec=0.117 inf/sec=10754641
 # ENDS
