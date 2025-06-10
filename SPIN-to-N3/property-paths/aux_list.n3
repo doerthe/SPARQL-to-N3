@@ -48,6 +48,31 @@
 
 }.
 
+{ ?list aux:lTranslate ( ?pt "*") }<={
+ (  ?r ("*")) list:append ?list.
+ true log:callWithCut true.
+ ?r aux:lTranslate ?pt.
+}.
+
+{ ?list aux:lTranslate ( ?pt "+") }<={
+ (  ?r ("+")) list:append ?list.
+ true log:callWithCut true.
+ ?r aux:lTranslate ?pt.
+}.
+
+{ ?list aux:lTranslate ( ?pt "?") }<={
+ (  ?r ("?")) list:append ?list.
+ true log:callWithCut true.
+ ?r aux:lTranslate ?pt.
+}.
+
+{ ?list aux:lTranslate ( "!" ?pt ) }<={
+ ( "!" ?r ) list:append ?list.
+ true log:callWithCut true.
+ ?r aux:lTranslate ?pt.
+}.
+
+
 { ?p aux:lTranslate ?p }<={
 
 }.
