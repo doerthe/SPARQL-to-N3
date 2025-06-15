@@ -1,2 +1,0 @@
-# Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet test/data-half.n3 property-paths-direct.n3 --query test/evil_pp_2.n3 --nope

@@ -1,8 +1,0 @@
-# Processed by EYE v10.24.10 (2024-10-02)
-# eye --quiet test/data-half.n3 property-paths-direct.n3 --query "test/evil pp 1 - b2.n3" --nope
-
-@prefix : <http://example.org/gmark/>.
-
-_:sk_0 :result (("x2" :45) ("x1" :25) ("x3" _:sk_1) ("x0" :25)).
-# 2025-06-05T12:23:08.558Z in=21 out=1 ent=1 step=1 brake=1 inf=90777 sec=0.035 inf/sec=2593629
-# ENDS
