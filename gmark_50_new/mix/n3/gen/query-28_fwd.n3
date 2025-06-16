@@ -180,5 +180,5 @@ PREFIX : <http://example.org/gmark/>
 } => {
     ?U_135 ("^" :p3) ?U_136.
 }.
-# 2025-06-16T11:50:53.579Z in=25 out=33 ent=70 step=355 brake=6 inf=1612719 sec=0.162 inf/sec=9955056
+# 2025-06-16T14:27:13.588Z in=25 out=33 ent=70 step=355 brake=6 inf=1612720 sec=0.173 inf/sec=9322081
 # ENDS

@@ -1,3 +1,0 @@
-@prefix fh: <http://hl7.org/fhir/> .
-
-[ fh:id "{pat}" ] a fh:Patient .

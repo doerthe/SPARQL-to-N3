@@ -1,0 +1,7 @@
+PREFIX fh: <http://hl7.org/fhir/>
+
+SELECT ?o ?start ?end
+WHERE {
+   ?o fh:effective ?period . 
+   ?period fh:start/fh:v ?start ; fh:end/fh:v ?end . 
+}

@@ -4,5 +4,5 @@
 PREFIX : <http://example.org/gmark/>
 
 :x :result true.
-# 2025-06-16T11:52:17.709Z in=70 out=1 ent=86 step=390 brake=4 inf=207720 sec=0.040 inf/sec=5193000
+# 2025-06-16T14:33:42.987Z in=70 out=1 ent=86 step=390 brake=4 inf=207718 sec=0.039 inf/sec=5326103
 # ENDS

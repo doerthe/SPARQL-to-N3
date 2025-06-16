@@ -1,0 +1,6 @@
+PREFIX fh: <http://hl7.org/fhir/>
+
+SELECT ?r ?c
+WHERE {
+    ?r fh:coding/rdf:rest*/rdf:first/fh:code/fh:v ?c
+} .

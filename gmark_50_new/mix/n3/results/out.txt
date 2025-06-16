@@ -1,0 +1,78 @@
+../../gmark_50_new/mix/n3/normalized/query-0.n3
+../../gmark_50_new/mix/n3/normalized/query-1.n3
+../../gmark_50_new/mix/n3/normalized/query-10.n3
+../../gmark_50_new/mix/n3/normalized/query-11.n3
+../../gmark_50_new/mix/n3/normalized/query-12.n3
+../../gmark_50_new/mix/n3/normalized/query-13.n3
+../../gmark_50_new/mix/n3/normalized/query-14.n3
+../../gmark_50_new/mix/n3/normalized/query-15.n3
+../../gmark_50_new/mix/n3/normalized/query-16.n3
+../../gmark_50_new/mix/n3/normalized/query-17.n3
+../../gmark_50_new/mix/n3/normalized/query-18.n3
+../../gmark_50_new/mix/n3/normalized/query-19.n3
+../../gmark_50_new/mix/n3/normalized/query-2.n3
+../../gmark_50_new/mix/n3/normalized/query-20.n3
+../../gmark_50_new/mix/n3/normalized/query-21.n3
+../../gmark_50_new/mix/n3/normalized/query-22.n3
+../../gmark_50_new/mix/n3/normalized/query-23.n3
+../../gmark_50_new/mix/n3/normalized/query-24.n3
+../../gmark_50_new/mix/n3/normalized/query-25.n3
+../../gmark_50_new/mix/n3/normalized/query-26.n3
+../../gmark_50_new/mix/n3/normalized/query-27.n3
+../../gmark_50_new/mix/n3/normalized/query-28.n3
+../../gmark_50_new/mix/n3/normalized/query-29.n3
+../../gmark_50_new/mix/n3/normalized/query-3.n3
+../../gmark_50_new/mix/n3/normalized/query-30.n3
+../../gmark_50_new/mix/n3/normalized/query-31.n3
+../../gmark_50_new/mix/n3/normalized/query-32.n3
+../../gmark_50_new/mix/n3/normalized/query-33.n3
+../../gmark_50_new/mix/n3/normalized/query-34.n3
+../../gmark_50_new/mix/n3/normalized/query-35.n3
+../../gmark_50_new/mix/n3/normalized/query-36.n3
+../../gmark_50_new/mix/n3/normalized/query-37.n3
+../../gmark_50_new/mix/n3/normalized/query-38.n3
+../../gmark_50_new/mix/n3/normalized/query-39.n3
+../../gmark_50_new/mix/n3/normalized/query-4.n3
+../../gmark_50_new/mix/n3/normalized/query-40.n3
+ERROR: eye --quiet ../../gmark_50_new/mix/data.n3 ../../gmark_50_new/mix/n3/gen/query-40_bwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-40.n3 --nope
+EYE v11.19.7 (2025-06-01)
+SWI-Prolog version 9.2.7
+starting 34 [msec cputime] 43 [msec walltime]
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 SC=55
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/gen/query-40_bwd.n3 SC=24
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-40.n3 SC=1
+networking 22 [msec cputime] 43 [msec walltime]
+** ERROR ** eam ** error(resource_error(stack),stack_overflow{choicepoints:28169,depth:10764,environments:9404,globalused:1040839,localused:5431,stack:[frame(10764,lists:append([8025],_2526,_2528),[]),frame(9410,lists:append_([2],[1353|_2572]),[]),frame(9407,when:trigger_first(true,(:)/2),[]),frame(9404,user: <https://notation3.org/sin3#circ>(exopred/3,[9378]),[]),frame(9403,user: <https://notation3.org/sin3#circ>(exopred/3,[9377]),[])],stack_limit:1048576,trailused:64})
+reasoning 5554 [msec cputime] 22168 [msec walltime]
+2025-06-16T14:33:30.022Z in=80 out=0 ent=1 step=9379 brake=1 inf=89160701 sec=5.610 inf/sec=15893173
+
+
+>>error<<
+../../gmark_50_new/mix/n3/normalized/query-41.n3
+../../gmark_50_new/mix/n3/normalized/query-42.n3
+../../gmark_50_new/mix/n3/normalized/query-43.n3
+../../gmark_50_new/mix/n3/normalized/query-44.n3
+../../gmark_50_new/mix/n3/normalized/query-45.n3
+../../gmark_50_new/mix/n3/normalized/query-46.n3
+../../gmark_50_new/mix/n3/normalized/query-47.n3
+../../gmark_50_new/mix/n3/normalized/query-48.n3
+../../gmark_50_new/mix/n3/normalized/query-49.n3
+ERROR: eye --quiet ../../gmark_50_new/mix/data.n3 ../../gmark_50_new/mix/n3/gen/query-49_bwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-49.n3 --nope
+EYE v11.19.7 (2025-06-01)
+SWI-Prolog version 9.2.7
+starting 31 [msec cputime] 41 [msec walltime]
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/data.n3 SC=55
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/gen/query-49_bwd.n3 SC=31
+GET file:///Users/wvw/git/n3/sparql2n3/SPARQL-to-N3/gmark_50_new/mix/n3/normalized/query-49.n3 SC=1
+networking 29 [msec cputime] 80 [msec walltime]
+** ERROR ** eam ** error(resource_error(stack),stack_overflow{choicepoints:73803,depth:13869,environments:9246,globalused:1021425,localused:12616,stack:[frame(13869,lists:append(<garbage_collected>,_3172,_3174),[]),frame(9252,lists:append_(<garbage_collected>,<garbage_collected>),[]),frame(9249,when:trigger_first(true,<garbage_collected>),[]),frame(9246,user: <https://notation3.org/sin3#circ>(<garbage_collected>,[9220]),[]),frame(9245,user: <https://notation3.org/sin3#circ>(<garbage_collected>,[9219]),[])],stack_limit:1048576,trailused:0})
+reasoning 4113 [msec cputime] 31205 [msec walltime]
+2025-06-16T14:38:35.992Z in=87 out=0 ent=0 step=0 brake=1 inf=86206528 sec=4.173 inf/sec=20658166
+
+
+>>error<<
+../../gmark_50_new/mix/n3/normalized/query-5.n3
+../../gmark_50_new/mix/n3/normalized/query-6.n3
+../../gmark_50_new/mix/n3/normalized/query-7.n3
+../../gmark_50_new/mix/n3/normalized/query-8.n3
+../../gmark_50_new/mix/n3/normalized/query-9.n3
