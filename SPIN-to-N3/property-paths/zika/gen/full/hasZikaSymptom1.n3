@@ -1,0 +1,33 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ut: <http://example.org/utils#> .
+@prefix fh: <http://hl7.org/fhir/> .
+@prefix zk: <http://example.org/zika#> .
+@prefix : <http://example.org/> .
+
+[
+    fh:subject [
+        fh:reference [ fh:v "{pat}" ]
+    ] ;
+    fh:code [
+        fh:coding ( [
+            fh:system [ fh:v "http://snomed.org/sct" ] ;
+            fh:code [ fh:v 271749004 ; rdfs:label "Acute onset of fever" ] # (SNOMED) Acute onset of fever
+        ] )
+    ] ;
+    fh:onset [ fh:v 1688478455140 ] ; # 1 week ago
+    fh:clinicalStatus [
+        fh:coding ( [
+            fh:system [ fh:v "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+            fh:code [ fh:v "active" ]
+        ] )
+    ] ;
+    fh:verificationStatus [
+        fh:coding ( [
+            fh:system [ fh:v "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ;
+            fh:code [ fh:v "confirmed" ]
+        ] )
+    ] 
+] a fh:Condition .

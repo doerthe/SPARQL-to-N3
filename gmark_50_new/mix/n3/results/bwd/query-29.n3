@@ -5,5 +5,5 @@ PREFIX : <http://example.org/gmark/>
 
 _:sk_0 :result (("x0" :45)).
 _:sk_1 :result (("x0" :48)).
-# 2025-06-10T13:05:24.249Z in=74 out=2 ent=2 step=6921 brake=1 inf=509250 sec=0.057 inf/sec=8934211
+# 2025-06-16T11:50:54.256Z in=74 out=2 ent=2 step=6921 brake=1 inf=509249 sec=0.065 inf/sec=7834600
 # ENDS

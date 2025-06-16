@@ -123,5 +123,5 @@ PREFIX : <http://example.org/gmark/>
 } <= {
     ?U_109 :p3 ?U_108.
 }.
-# 2025-06-10T13:05:11.622Z in=24 out=22 ent=48 step=231 brake=6 inf=1192443 sec=0.114 inf/sec=10460026
+# 2025-06-16T11:49:41.991Z in=24 out=22 ent=48 step=231 brake=6 inf=1192443 sec=0.123 inf/sec=9694659
 # ENDS

@@ -69,5 +69,5 @@ PREFIX : <http://example.org/gmark/>
 } => {
     ?U_68 (:p1 "/" :p2) ?U_69.
 }.
-# 2025-06-10T13:06:49.463Z in=25 out=12 ent=26 step=109 brake=4 inf=741071 sec=0.081 inf/sec=9149025
+# 2025-06-16T11:54:03.082Z in=25 out=12 ent=26 step=109 brake=4 inf=741071 sec=0.083 inf/sec=8928566
 # ENDS

@@ -51,5 +51,5 @@ PREFIX : <http://example.org/gmark/>
     ?U_53 :p2 ?U_55.
     ?U_55 (("^" :p2) "/" :p2) ?U_54.
 }.
-# 2025-06-10T13:05:06.002Z in=24 out=9 ent=20 step=94 brake=4 inf=723209 sec=0.076 inf/sec=9515908
+# 2025-06-16T11:49:20.063Z in=24 out=9 ent=20 step=94 brake=4 inf=723212 sec=0.090 inf/sec=8035689
 # ENDS

@@ -1,0 +1,210 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX fh: <http://hl7.org/fhir/>
+PREFIX ut: <http://example.org/utils#>
+PREFIX zk: <http://example.org/zika#>
+
+# https://www.cdc.gov/zika/hc-providers/testing-guidance.html
+
+CONSTRUCT {
+    ?p zk:isPregnant true
+
+} WHERE {
+    ?p a fh:Patient .
+    ?p ut:hasCondition ?c .    
+    ?c fh:code ?ccode . ?ccode ut:hasCodeValue 77386006 . # (SNOMED) pregnancy
+    ?c fh:clinicalStatus ?cstatus . ?cstatus ut:hasCodeValue "active" .
+    ?c fh:verificationStatus ?vstatus . ?vstatus ut:hasCodeValue "confirmed" .
+} .
+
+
+CONSTRUCT {
+    ?p zk:hasZikaSymptom ?c
+
+} WHERE {
+   ?p a fh:Patient .
+   ?p ut:hasCondition ?c .
+   ?c fh:clinicalStatus ?cstatus . ?cstatus ut:hasCodeValue "active" .
+   ?c fh:verificationStatus ?vstatus . ?vstatus ut:hasCodeValue "confirmed" .
+   
+   ?c fh:code ?ccode . ?ccode ut:hasCodeValue ?code .
+
+   # https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.7459
+   FILTER (?code IN ( 84387000, 271749004, 47725002, 57676002, 9826008, 68962001, 25064002 ))
+} .
+
+
+CONSTRUCT {
+    ?p zk:residentOfZikaArea true 
+
+} WHERE {
+    ?p a fh:Patient .
+    ?p fh:address ?pa . ?pa fh:country ?country .
+    zk:world zk:hasZikaArea ?country .
+} .
+
+
+CONSTRUCT {
+    ?p zk:recentTravelToZikaArea true
+
+} WHERE {
+    ?p a fh:Patient .
+
+    # http://build.fh.org/ig/HL7/case-reporting/StructureDefinition-us-ph-travel-history.html
+    ?p ut:hasObservation ?o . 
+    ?o fh:code ?oc . ?oc ut:hasCodeValue 420008001 . # (SNOMED) Travel
+   
+   ?o fh:country ?country .
+   zk:world zk:hasZikaArea ?country .
+
+   ?o ut:timeSinceObsEnd ?timeSince .
+#    FILTER (?timeSince < 2678400000) # 1 month
+} .
+
+
+CONSTRUCT {
+    zk:world zk:hasZikaArea ?country .
+
+} WHERE {
+    ?x fh:country ?country .
+    FILTER (?country in ( "American Samoa", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Aruba", "Bahamas", "Bangladesh", "Barbados", "Belize", "Bolivia", "Bonaire", "Brazil", "British Virgin Islands", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Cape Verde", "Cayman Islands", "Central African Republic", "Colombia", "Cook Islands", "Costa Rica", "Cuba", "Curacao", "Dominica", "Dominican Republic", "Easter Island", "Ecuador", "El Salvador", "Ethiopia", "Federated States of Micronesia", "Fiji", "France", "French Guiana", "French Polynesia", "Gabon", "Grenada", "Guadeloupe", "Guatemala", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "India", "Indonesia", "Ivory Coast", "Jamaica", "Kenya", "Kiribati", "Laos", "Malaysia", "Maldives", "Marshall Islands", "Martinique", "Mexico", "Montserrat", "New Caledonia", "Nicaragua", "Nigeria", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Puerto Rico", "Saba", "Saint Barthelemy", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Vincent and the Grenadines", "Samoa", "Senegal", "Singapore", "Sint Eustatius", "Sint Maarten", "Solomon Islands", "Suriname", "Thailand", "Tonga", "Trinidad and Tobago", "Turks and Caicos", "Uganda", "United States (Continental US)", "United States Virgin Islands", "Vanuatu", "Venezuela", "Vietnam" ) ) .
+} .
+
+
+CONSTRUCT {
+    ?p zk:recentSexualEncounterWithZikaResidentOrTraveler true
+
+} WHERE {
+    ?p ut:hasObservation ?o .
+
+    {
+        ?p2 zk:recentTravelToZikaArea true .
+    }
+    UNION
+    {
+        ?p2 zk:residentOfZikaArea true 
+    }
+
+    ?o fh:code ?ocode . ?ocode ut:hasCodeValue 225517006 . # (SNOMED) Sexual partners
+    ?p2 ut:referredBy ?o .
+
+    ?o ut:timeSinceObsEnd ?timeSince .
+    FILTER (?timeSince < 2678400000) # 1 month
+} .
+
+
+CONSTRUCT {
+    ?p zk:possibleZikaExposure true
+
+} WHERE {
+    {
+        ?p zk:recentTravelToZikaArea true
+    }
+    UNION
+    {
+        ?p zk:recentSexualEncounterWithZikaResidentOrTraveler true
+    }
+} .
+
+
+CONSTRUCT {
+    ?p zk:avgTimeSinceZikaSymptomsOnset ?avgTimeSince
+
+} WHERE {
+   {
+        SELECT (AVG(?timeSince) as ?avgTimeSince) ?p
+        WHERE {
+            ?p a fh:Patient .
+            ?p zk:hasZikaSymptom ?c .
+            ?c ut:timeSinceCondOnset ?timeSince .
+        } 
+        GROUP BY ?p
+    }
+} .
+
+@filter
+CONSTRUCT {
+    ?p zk:testForZika true
+
+} WHERE {
+    ?p zk:isPregnant true .
+    ?p zk:hasZikaSymptom ?symptom .
+
+    ?p zk:possibleZikaExposure true .
+    
+    ?p zk:avgTimeSinceZikaSymptomsOnset ?timeSince .
+    FILTER (?timeSince < 7257600000) . # 12 weeks
+
+    ?p fh:id ?id
+} .
+
+
+# utilities
+
+CONSTRUCT {
+    ?p ut:hasCondition ?c
+
+} WHERE {
+    ?p ut:has ?c .
+    ?c a fh:Condition ;
+} .
+
+
+CONSTRUCT {
+    ?p ut:hasObservation ?o
+
+} WHERE {
+    ?p ut:has ?o .
+    ?o a fh:Observation ;
+} .
+
+
+CONSTRUCT {
+    ?p ut:has ?r
+
+} WHERE {
+    ?p fh:id ?id .
+    ?r fh:subject ?id .
+} .
+
+
+CONSTRUCT {
+    ?r ut:hasCodeValue ?c
+
+} WHERE {
+    ?r fh:coding ?cod . ?cod fh:code ?c
+} .
+
+
+CONSTRUCT {
+    ?p ut:referredBy ?r
+
+} WHERE {
+    ?p fh:id ?id .
+    ?r fh:value ?id
+} .
+
+
+CONSTRUCT {
+    ?o ut:timeSinceObsEnd ?timeSince
+
+} WHERE {
+   ?o fh:effective ?period . 
+   ?period fh:start ?start ; fh:end ?end . 
+   # BIND (now() as ?now ) .
+   ut:now rdf:value ?now .
+   BIND ((?now - ?end) AS ?timeSince) .
+} .
+
+
+CONSTRUCT {
+    ?c ut:timeSinceCondOnset ?timeSince
+
+} WHERE {
+   ?c fh:onset ?onset . 
+   # BIND (now() as ?now ) .
+   ut:now rdf:value ?now .
+   BIND ((?now - ?onset) AS ?timeSince) .
+} .

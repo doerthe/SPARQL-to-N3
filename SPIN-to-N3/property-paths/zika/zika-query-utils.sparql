@@ -1,0 +1,73 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX fh: <http://hl7.org/fhir/>
+PREFIX ut: <http://example.org/utils#>
+PREFIX zk: <http://example.org/zika#>
+
+CONSTRUCT {
+    ?p ut:hasCondition ?c
+
+} WHERE {
+    ?p ut:has ?c .
+    ?c a fh:Condition ;
+} .
+
+
+CONSTRUCT {
+    ?p ut:hasObservation ?o
+
+} WHERE {
+    ?p ut:has ?o .
+    ?o a fh:Observation ;
+} .
+
+
+CONSTRUCT {
+    ?p ut:has ?r
+
+} WHERE {
+    ?p fh:id/fh:v ?id .
+    ?r fh:subject/fh:reference/fh:v ?id .
+} .
+
+
+CONSTRUCT {
+    ?r ut:hasCodeValue ?c
+
+} WHERE {
+    ?r fh:coding/rdf:rest*/rdf:first/fh:code/fh:v ?c
+} .
+
+
+CONSTRUCT {
+    ?r ut:refersTo ?p
+
+} WHERE {
+    ?p fh:id/fh:v ?id .
+    ?r fh:reference/fh:v ?id
+} .
+
+
+CONSTRUCT {
+    ?o ut:timeSinceObsEnd ?timeSince
+
+} WHERE {
+   ?o fh:effective ?period . 
+   ?period fh:start/fh:v ?start ; fh:end/fh:v ?end . 
+   # BIND (now() as ?now ) .
+   ut:now rdf:value ?now .
+   BIND ((?now - ?end) AS ?timeSince) .
+} .
+
+
+CONSTRUCT {
+    ?c ut:timeSinceCondOnset ?timeSince
+
+} WHERE {
+   ?c fh:onset/fh:v ?onset . 
+   # BIND (now() as ?now ) .
+   ut:now rdf:value ?now .
+   BIND ((?now - ?onset) AS ?timeSince) .
+} .

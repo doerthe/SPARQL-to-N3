@@ -1,0 +1,15 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ut: <http://example.org/utils#> .
+@prefix fh: <http://hl7.org/fhir/> .
+@prefix zk: <http://example.org/zika#> .
+@prefix : <http://example.org/> .
+
+[
+    fh:sex "male" ;
+    fh:id "{pat}" ;
+    fh:address [
+        fh:country "Brazil"
+    ]
+] a fh:Patient .

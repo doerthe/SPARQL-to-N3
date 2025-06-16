@@ -1,5 +1,0 @@
-# Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet ../../gmark_50_new/mix/data.n3 ../../gmark_50_new/mix/n3/gen/query-27_bwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-27.n3 --nope
-
-# 2025-06-10T13:05:23.183Z in=78 out=0 ent=0 step=0 brake=1 inf=289392 sec=0.043 inf/sec=6730047
-# ENDS
