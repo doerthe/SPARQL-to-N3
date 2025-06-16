@@ -1,0 +1,3 @@
+> comparing 'fwd'
+- query-40.n3: cannot find file2
+- query-49.n3: cannot find file2
