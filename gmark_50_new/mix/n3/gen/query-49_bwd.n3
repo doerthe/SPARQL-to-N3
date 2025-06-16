@@ -190,5 +190,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     ?U_126 ("^" :p1) ?U_128.
     ?U_128 :p1 ?U_127.
 }.
-# 2025-06-16T14:38:04.592Z in=24 out=31 ent=65 step=355 brake=6 inf=1639254 sec=0.190 inf/sec=8627653
+# 2025-06-16T16:34:28.497Z in=24 out=31 ent=65 step=355 brake=6 inf=1639247 sec=0.161 inf/sec=10181658
 # ENDS

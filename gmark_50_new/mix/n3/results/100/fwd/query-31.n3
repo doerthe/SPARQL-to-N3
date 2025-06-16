@@ -1,0 +1,8 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet ../../gmark_50_new/mix/data_100.nt ../../gmark_50_new/mix/n3/gen/query-31_fwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-31.n3 --nope
+
+PREFIX : <http://example.org/gmark/>
+
+:x :result true.
+# 2025-06-16T18:03:02.146Z in=139 out=1 ent=3919 step=563107 brake=5 inf=21732407 sec=1.198 inf/sec=18140573
+# ENDS

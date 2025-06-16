@@ -1,0 +1,38 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet ../../gmark_50_new/mix/data_100.nt ../../gmark_50_new/mix/n3/gen/query-4_fwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-4.n3 --nope
+
+PREFIX : <http://example.org/gmark/>
+
+_:sk_0 :result (("x0" :86) ("x1" :93)).
+_:sk_1 :result (("x0" :86) ("x1" :97)).
+_:sk_2 :result (("x0" :85) ("x1" :90)).
+_:sk_3 :result (("x0" :82) ("x1" :92)).
+_:sk_4 :result (("x0" :86) ("x1" :90)).
+_:sk_5 :result (("x0" :86) ("x1" :96)).
+_:sk_6 :result (("x0" :81) ("x1" :93)).
+_:sk_7 :result (("x0" :83) ("x1" :97)).
+_:sk_8 :result (("x0" :86) ("x1" :92)).
+_:sk_9 :result (("x0" :81) ("x1" :95)).
+_:sk_10 :result (("x0" :89) ("x1" :94)).
+_:sk_11 :result (("x0" :82) ("x1" :96)).
+_:sk_12 :result (("x0" :82) ("x1" :97)).
+_:sk_13 :result (("x0" :86) ("x1" :95)).
+_:sk_14 :result (("x0" :86) ("x1" :94)).
+_:sk_15 :result (("x0" :81) ("x1" :94)).
+_:sk_16 :result (("x0" :81) ("x1" :99)).
+_:sk_17 :result (("x0" :81) ("x1" :96)).
+_:sk_18 :result (("x0" :83) ("x1" :92)).
+_:sk_19 :result (("x0" :83) ("x1" :90)).
+_:sk_20 :result (("x0" :86) ("x1" :91)).
+_:sk_21 :result (("x0" :81) ("x1" :92)).
+_:sk_22 :result (("x0" :81) ("x1" :91)).
+_:sk_23 :result (("x0" :81) ("x1" :90)).
+_:sk_24 :result (("x0" :86) ("x1" :99)).
+_:sk_25 :result (("x0" :89) ("x1" :95)).
+_:sk_26 :result (("x0" :89) ("x1" :93)).
+_:sk_27 :result (("x0" :89) ("x1" :99)).
+_:sk_28 :result (("x0" :89) ("x1" :96)).
+_:sk_29 :result (("x0" :89) ("x1" :92)).
+_:sk_30 :result (("x0" :89) ("x1" :91)).
+# 2025-06-16T18:03:04.352Z in=147 out=31 ent=572 step=5875 brake=5 inf=783091 sec=0.073 inf/sec=10727274
+# ENDS

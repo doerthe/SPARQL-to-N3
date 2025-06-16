@@ -1,0 +1,17 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet ../../gmark_50_new/mix/data_100.nt ../../gmark_50_new/mix/n3/gen/query-13_fwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-13.n3 --nope
+
+PREFIX : <http://example.org/gmark/>
+
+_:sk_0 :result (("x0" :120)).
+_:sk_1 :result (("x0" :188)).
+_:sk_2 :result (("x0" :132)).
+_:sk_3 :result (("x0" :137)).
+_:sk_4 :result (("x0" :115)).
+_:sk_5 :result (("x0" :145)).
+_:sk_6 :result (("x0" :147)).
+_:sk_7 :result (("x0" :139)).
+_:sk_8 :result (("x0" :143)).
+_:sk_9 :result (("x0" :134)).
+# 2025-06-16T18:02:49.850Z in=135 out=10 ent=80 step=270 brake=3 inf=272665 sec=0.041 inf/sec=6650366
+# ENDS

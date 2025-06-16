@@ -219,5 +219,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_149 :p3 ?U_148.
 }.
-# 2025-06-16T14:21:40.882Z in=24 out=35 ent=71 step=373 brake=6 inf=1669132 sec=0.167 inf/sec=9994802
+# 2025-06-16T16:22:38.218Z in=24 out=35 ent=71 step=373 brake=6 inf=1669132 sec=0.150 inf/sec=11127547
 # ENDS

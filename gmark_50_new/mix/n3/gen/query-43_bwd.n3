@@ -78,5 +78,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_55 :p1 ?U_54.
 }.
-# 2025-06-16T14:34:43.486Z in=24 out=12 ent=26 step=134 brake=5 inf=916883 sec=0.115 inf/sec=7972896
+# 2025-06-16T16:32:11.571Z in=24 out=12 ent=26 step=134 brake=5 inf=916883 sec=0.104 inf/sec=8816183
 # ENDS
