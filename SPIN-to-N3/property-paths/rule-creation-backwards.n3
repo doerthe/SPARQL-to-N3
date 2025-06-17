@@ -27,7 +27,7 @@ PREFIX sin3: <https://notation3.org/sin3#>
 
     {{?s ( ?p "+") ?o} sin3:circ ?list}<={?s ?p ?o. #?list list:notMember ?o
     }. 
-    {{?s ( ?p "+") ?o} sin3:circ ?list}<={?s ?p ?x. ?list list:notMember ?x. (?list (?o)) list:append ?list2.  {?x ( ?p "+") ?o} sin3:circ ?list2}.  
+    {{?s ( ?p "+") ?o} sin3:circ ?list}<={?s ?p ?x. ?list list:notMember ?x. (?list (?x)) list:append ?list2.  {?x ( ?p "+") ?o} sin3:circ ?list2}.  
     }.
 
  {?a =>?b.
