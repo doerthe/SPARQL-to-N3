@@ -1,0 +1,8 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet --turtle zika/gen10_000_pt2.n3 zika/n3/gen/pp4-2_fwd.n3 --query zika/n3/normalized/pp4-2.n3 --nope
+
+PREFIX fh: <http://hl7.org/fhir/>
+
+_:sk_0 fh:result (("p" _:node_124015_1) ("r" _:node_134387_1)).
+# 2025-06-17T14:06:33.155Z in=367319 out=1 ent=36556 step=99246 brake=3 inf=47517758 sec=3.491 inf/sec=13611503
+# ENDS

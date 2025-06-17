@@ -1,0 +1,9 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix fh: <http://hl7.org/fhir/>.
+
+{
+    ?t_0 (fh:coding "/" ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v)))) ?t_1.
+    
+} => {
+    _:t_2 fh:result (("r" ?t_0) ("c" ?t_1)).
+}.

@@ -1,0 +1,5 @@
+@prefix fh: <http://hl7.org/fhir/> .
+@prefix : <http://hl7.org/fhir/> .
+
+{ ?o :effective ?period . ?period (:start '/' :v) ?start . ?period (:end '/' :v) ?end }
+ => { _:x :result ( ('o' ?o) ('start' ?start) ('end' ?end) ) } .

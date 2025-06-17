@@ -1,4 +1,5 @@
 PREFIX fh: <http://hl7.org/fhir/>
+PREFIX : <http://example.org/> .
 
 SELECT ?o ?start ?end
 WHERE {

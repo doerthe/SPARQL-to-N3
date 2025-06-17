@@ -83,23 +83,23 @@ def gen_case(chances, path, all_symptoms, g=None):
         add_snippet(os.path.join(path, "isPregnant.n3"), {'pat': pat}, g)
 
     if odds(chances['hasZikaSymptom']):
-        gen_symptom_zika(path, {'pat': pat}, g)
-        # add_snippet(os.path.join(path, "hasZikaSymptom1.n3"), {'pat': pat}, g)
+        # gen_symptom_zika(path, {'pat': pat}, g)
+        add_snippet(os.path.join(path, "hasZikaSymptom1.n3"), {'pat': pat}, g)
 
     if odds(chances['hasZikaSymptom']):
-        gen_symptom_zika(path, {'pat': pat}, g)
-        # add_snippet(os.path.join(path, "hasZikaSymptom2.n3"), {'pat': pat}, g)
+        # gen_symptom_zika(path, {'pat': pat}, g)
+        add_snippet(os.path.join(path, "hasZikaSymptom2.n3"), {'pat': pat}, g)
         
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
-    gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
+    # gen_symptom_any(path, {'pat': pat}, all_symptoms, g)
 
     if odds(chances['recentTravelToZikaArea']):
         add_snippet(os.path.join(path, "recentTravelToZikaArea.n3"), {'pat': pat}, g)

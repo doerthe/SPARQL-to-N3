@@ -1,0 +1,9 @@
+@prefix fh: <http://hl7.org/fhir/>.
+
+{
+    ?t_0 fh:id [ fh:v "Patient/p50051" ] .
+    ?t_0 (fh:id "/" fh:v) ?t_1.
+    ?t_2 (fh:subject "/" (fh:reference "/" fh:v)) ?t_1.
+} => {
+    _:t_3 fh:result (("p" ?t_0) ("r" ?t_2)).
+}.

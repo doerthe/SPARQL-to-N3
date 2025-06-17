@@ -1,0 +1,63 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet zika/n3/normalized/pp3.n3 rule-creation.n3 --query rule-creation.n3 --nope
+
+PREFIX fh: <http://hl7.org/fhir/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+{
+    ?U_2 fh:coding ?U_4.
+    ?U_4 ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v))) ?U_3.
+} => {
+    ?U_2 (fh:coding "/" ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v)))) ?U_3.
+}.
+{
+    ?U_6 (rdf:rest "*") ?U_8.
+    ?U_8 (rdf:first "/" (fh:code "/" fh:v)) ?U_7.
+} => {
+    ?U_6 ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v))) ?U_7.
+}.
+{
+    ?U_19 rdf:first ?U_21.
+    ?U_21 (fh:code "/" fh:v) ?U_20.
+} => {
+    ?U_19 (rdf:first "/" (fh:code "/" fh:v)) ?U_20.
+}.
+{
+    ?U_22 (rdf:rest "+") ?U_23.
+} => {
+    ?U_22 (rdf:rest "*") ?U_23.
+}.
+{
+    ?U_22 (rdf:rest "0") ?U_22.
+} => {
+    ?U_22 (rdf:rest "*") ?U_22.
+}.
+{
+    ?U_25 rdf:rest ?U_26.
+} => {
+    ?U_25 (rdf:rest "+") ?U_26.
+}.
+{
+    ?U_25 rdf:rest ?U_27.
+    ?U_27 (rdf:rest "+") ?U_26.
+} => {
+    ?U_25 (rdf:rest "+") ?U_26.
+}.
+{
+    ?U_28 ?U_29 ?U_30.
+} => {
+    ?U_28 (rdf:rest "0") ?U_28.
+}.
+{
+    ?U_31 ?U_29 ?U_28.
+} => {
+    ?U_28 (rdf:rest "0") ?U_28.
+}.
+{
+    ?U_36 fh:code ?U_38.
+    ?U_38 fh:v ?U_37.
+} => {
+    ?U_36 (fh:code "/" fh:v) ?U_37.
+}.
+# 2025-06-17T14:15:19.533Z in=25 out=10 ent=20 step=62 brake=5 inf=757539 sec=0.083 inf/sec=9126976
+# ENDS

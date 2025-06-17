@@ -4,4 +4,4 @@ SELECT ?p ?r
 WHERE {
     ?p fh:id/fh:v ?id .
     ?r fh:subject/fh:reference/fh:v ?id .
-} .
+}
