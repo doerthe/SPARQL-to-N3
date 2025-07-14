@@ -1,5 +1,0 @@
-query-2.sparql
-query-22.sparql
-query-3.sparql
-query-44.sparql
-query-45.sparql

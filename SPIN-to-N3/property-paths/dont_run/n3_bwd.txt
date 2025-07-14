@@ -1,9 +1,0 @@
-query-0.n3
-query-20.n3
-query-27.n3
-query-28.n3
-query-38.n3
-query-40.n3
-query-45.n3
-query-6.n3
-query-8.n3
