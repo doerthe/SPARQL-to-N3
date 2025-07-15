@@ -1,9 +1,0 @@
-# Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet --turtle zika/gen100_000_pt2.n3 property-paths-direct.n3 --query zika/n3/normalized/pp2-2.n3 --nope
-
-PREFIX fh: <http://hl7.org/fhir/>
-
-_:sk_0 fh:result (("r" _:node_1343371_1) ("p" _:node_1137354_1) ("id" "Patient/p9")).
-_:sk_1 fh:result (("r" _:node_1343371_1) ("p" _:node_1240193_1) ("id" "Patient/p9")).
-# 2025-06-17T13:33:12.047Z in=3664161 out=2 ent=2 step=2 brake=1 inf=333794258 sec=26.200 inf/sec=12740239
-# ENDS
