@@ -59,5 +59,5 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 } => {
     ?U_36 (fh:code "/" fh:v) ?U_37.
 }.
-# 2025-07-16T18:39:02.870Z in=25 out=10 ent=20 step=62 brake=5 inf=757364 sec=0.078 inf/sec=9709795
+# 2025-07-16T20:01:25.238Z in=25 out=10 ent=20 step=62 brake=5 inf=757364 sec=0.076 inf/sec=9965316
 # ENDS

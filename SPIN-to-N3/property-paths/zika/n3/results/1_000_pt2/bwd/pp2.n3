@@ -1395,5 +1395,5 @@ _:sk_1388 fh:result (("r" <http://example.org/B73e856b4d34fe295ef59fbcde7ad8cab>
 _:sk_1389 fh:result (("r" <http://example.org/B26ca18a04956841c3b5e9db6427e1947>) ("p" <http://example.org/B8354ba92a1605ff2e6253f25b751a5c2>) ("id" "Patient/p145")).
 _:sk_1390 fh:result (("r" <http://example.org/B6001fa19cdfd3bbfd91417f12f9f50e3>) ("p" <http://example.org/B9e1b38c947c4ef1ed022a8717d73df80>) ("id" "Patient/p1056")).
 _:sk_1391 fh:result (("r" <http://example.org/B11036c4912f262beccc1f0b30c8187f8>) ("p" <http://example.org/Bc1690de068d6cfb1fc714aa4cfcc44c7>) ("id" "Patient/p257")).
-# 2025-07-16T18:39:00.015Z in=36361 out=1392 ent=1392 step=1392 brake=1 inf=7843480 sec=0.707 inf/sec=11094031
+# 2025-07-16T19:53:31.139Z in=36361 out=1392 ent=1392 step=1392 brake=1 inf=7843481 sec=0.702 inf/sec=11173050
 # ENDS

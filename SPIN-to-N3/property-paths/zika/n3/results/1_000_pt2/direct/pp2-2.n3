@@ -4,5 +4,5 @@
 PREFIX fh: <http://hl7.org/fhir/>
 
 _:sk_0 fh:result (("r" <http://example.org/B0b0c14ee24a0be12c76c07263554cdfe>) ("p" <http://example.org/Bdc11b87a8d7e64cc6f2cddc849045005>) ("id" "Patient/p9")).
-# 2025-07-16T18:38:57.183Z in=36377 out=1 ent=1 step=1 brake=1 inf=3281768 sec=0.325 inf/sec=10097748
+# 2025-07-16T19:53:28.398Z in=36377 out=1 ent=1 step=1 brake=1 inf=3281768 sec=0.328 inf/sec=10005390
 # ENDS

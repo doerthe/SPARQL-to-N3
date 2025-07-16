@@ -70,5 +70,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     ?U_35 fh:code ?U_37.
     ?U_37 fh:v ?U_36.
 }.
-# 2025-07-16T18:39:01.992Z in=24 out=10 ent=20 step=62 brake=5 inf=759975 sec=0.079 inf/sec=9619937
+# 2025-07-16T20:01:05.474Z in=24 out=10 ent=20 step=62 brake=5 inf=759974 sec=0.077 inf/sec=9869792
 # ENDS

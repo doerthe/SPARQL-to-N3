@@ -1,0 +1,2 @@
+> comparing 'bwd'
+- pp4.n3: different # results: 10421 (sparql) <> 0 (n3)

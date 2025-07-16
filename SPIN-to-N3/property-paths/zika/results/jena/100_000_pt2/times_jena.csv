@@ -1,7 +1,0 @@
-run,query,data,load_time,exec_time
-0,pp1.sparql,data_100_000_pt2.n3,5913,563
-0,pp2-2.sparql,data_100_000_pt2.n3,5839,84
-0,pp2.sparql,data_100_000_pt2.n3,5770,1428
-0,pp3.sparql,data_100_000_pt2.n3,5734,2270
-0,pp4-2.sparql,data_100_000_pt2.n3,5812,90
-0,pp4.sparql,data_100_000_pt2.n3,5818,1220

@@ -1,0 +1,2 @@
+> comparing 'direct'
+- pp4.n3: cannot find file2
