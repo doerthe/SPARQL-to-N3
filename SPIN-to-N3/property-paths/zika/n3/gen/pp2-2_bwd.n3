@@ -15,5 +15,5 @@ PREFIX fh: <http://hl7.org/fhir/>
     ?U_16 fh:reference ?U_17.
     ?U_17 fh:v ?U_15.
 }.
-# 2025-07-15T21:16:42.574Z in=24 out=2 ent=4 step=8 brake=2 inf=403027 sec=0.049 inf/sec=8225041
+# 2025-07-16T18:38:57.267Z in=24 out=2 ent=4 step=8 brake=2 inf=403027 sec=0.051 inf/sec=7902490
 # ENDS

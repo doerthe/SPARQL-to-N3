@@ -2,5 +2,5 @@
 @prefix fh: <http://hl7.org/fhir/> .
 @prefix : <http://hl7.org/fhir/> .
 
-{ ?r (:coding '/' (rdf:rest '*' ) '/' rdf:first '/' :code '/' :v) ?c }
+{ ?r (:coding '/' (rdf:r3st '*' ) '/' rdf:f1rst '/' :code '/' :v) ?c }
  => { _:x :result ( ('r' ?r) ('c' ?c) ) } .

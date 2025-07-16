@@ -60,6 +60,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_35.
 } <= {
     ?U_32 ((("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1))) "|" (("^" :p1) "/" :p1)) ?U_33.
+    ?U_35 list:notMember ?U_33.
 }.
 {
     {
@@ -68,7 +69,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_32 ((("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1))) "|" (("^" :p1) "/" :p1)) ?U_36.
     ?U_35 list:notMember ?U_36.
-    (?U_35 (?U_33)) list:append ?U_37.
+    (?U_35 (?U_36)) list:append ?U_37.
     {
         ?U_36 (((("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1))) "|" (("^" :p1) "/" :p1)) "+") ?U_33.
     } sin3:circ ?U_37.
@@ -86,6 +87,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_40.
 } <= {
     ?U_38 ((("^" :p1) "/" :p1) "|" (("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1)))) ?U_39.
+    ?U_40 list:notMember ?U_39.
 }.
 {
     {
@@ -94,7 +96,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_38 ((("^" :p1) "/" :p1) "|" (("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1)))) ?U_41.
     ?U_40 list:notMember ?U_41.
-    (?U_40 (?U_39)) list:append ?U_42.
+    (?U_40 (?U_41)) list:append ?U_42.
     {
         ?U_41 (((("^" :p1) "/" :p1) "|" (("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1)))) "+") ?U_39.
     } sin3:circ ?U_42.
@@ -113,5 +115,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     ?U_54 :p1 ?U_56.
     ?U_56 (("^" :p1) "/" :p1) ?U_55.
 }.
-# 2025-06-16T16:20:17.988Z in=24 out=17 ent=33 step=124 brake=4 inf=876016 sec=0.087 inf/sec=10069149
+# 2025-07-14T19:34:29.597Z in=24 out=17 ent=33 step=124 brake=4 inf=877404 sec=0.090 inf/sec=9748933
 # ENDS

@@ -59,6 +59,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_31.
 } <= {
     ?U_28 (:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) ?U_30.
+    ?U_31 list:notMember ?U_30.
 }.
 {
     {
@@ -67,7 +68,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_28 (:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) ?U_32.
     ?U_31 list:notMember ?U_32.
-    (?U_31 (?U_30)) list:append ?U_33.
+    (?U_31 (?U_32)) list:append ?U_33.
     {
         ?U_32 ((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "+") ?U_30.
     } sin3:circ ?U_33.
@@ -85,6 +86,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_36.
 } <= {
     ?U_34 ((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "|" ((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "|" (:p1 "/" ("^" :p1)))) ?U_35.
+    ?U_36 list:notMember ?U_35.
 }.
 {
     {
@@ -93,7 +95,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_34 ((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "|" ((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "|" (:p1 "/" ("^" :p1)))) ?U_37.
     ?U_36 list:notMember ?U_37.
-    (?U_36 (?U_35)) list:append ?U_38.
+    (?U_36 (?U_37)) list:append ?U_38.
     {
         ?U_37 (((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "|" ((:p1 "/" (("^" :p1) "/" (:p1 "/" ("^" :p1)))) "|" (:p1 "/" ("^" :p1)))) "+") ?U_35.
     } sin3:circ ?U_38.
@@ -111,6 +113,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_41.
 } <= {
     ?U_39 ((:p1 "/" ("^" :p1)) "|" (:p1 "/" ("^" :p1))) ?U_40.
+    ?U_41 list:notMember ?U_40.
 }.
 {
     {
@@ -119,7 +122,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_39 ((:p1 "/" ("^" :p1)) "|" (:p1 "/" ("^" :p1))) ?U_42.
     ?U_41 list:notMember ?U_42.
-    (?U_41 (?U_40)) list:append ?U_43.
+    (?U_41 (?U_42)) list:append ?U_43.
     {
         ?U_42 (((:p1 "/" ("^" :p1)) "|" (:p1 "/" ("^" :p1))) "+") ?U_40.
     } sin3:circ ?U_43.
@@ -157,5 +160,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_69 :p1 ?U_68.
 }.
-# 2025-06-16T16:31:01.935Z in=24 out=24 ent=49 step=211 brake=5 inf=1225589 sec=0.118 inf/sec=10386347
+# 2025-07-14T19:55:24.775Z in=24 out=24 ent=49 step=211 brake=5 inf=1227231 sec=0.117 inf/sec=10489154
 # ENDS

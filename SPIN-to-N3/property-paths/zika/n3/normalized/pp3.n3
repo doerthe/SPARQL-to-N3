@@ -2,7 +2,7 @@
 @prefix fh: <http://hl7.org/fhir/>.
 
 {
-    ?t_0 (fh:coding "/" ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v)))) ?t_1.
+    ?t_0 (fh:coding "/" ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v)))) ?t_1.
     
 } => {
     _:t_2 fh:result (("r" ?t_0) ("c" ?t_1)).

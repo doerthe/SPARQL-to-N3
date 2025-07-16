@@ -1,4 +1,0 @@
-> comparing 'fwd'
-- query-0.n3: not found in result2: ( ( "x0"^^http://www.w3.org/2001/XMLSchema#string, http://example.org/gmark/455 ), ( "x3"^^http://www.w3.org/2001/XMLSchema#string, http://example.org/gmark/45 ) )
-not found in result1: ( ( "x0"^^http://www.w3.org/2001/XMLSchema#string, http://example.org/gmark/45 ), ( "x3"^^http://www.w3.org/2001/XMLSchema#string, http://example.org/gmark/45 ) )
-results differ :-(

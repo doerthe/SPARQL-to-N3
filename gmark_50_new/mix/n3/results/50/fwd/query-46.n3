@@ -1,5 +1,5 @@
 # Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet ../../gmark_50_new/mix/data.n3 ../../gmark_50_new/mix/n3/gen/query-46_fwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-46.n3 --nope
+# eye --quiet ../../gmark_50_new/mix/data_50.nt ../../gmark_50_new/mix/n3/gen/query-46_fwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-46.n3 --nope
 
 PREFIX : <http://example.org/gmark/>
 
@@ -8,5 +8,5 @@ _:sk_1 :result (("x0" :55) ("x2" :55) ("x1" :55)).
 _:sk_2 :result (("x0" :90) ("x2" :90) ("x1" :90)).
 _:sk_3 :result (("x0" :147) ("x2" :147) ("x1" :147)).
 _:sk_4 :result (("x0" :128) ("x2" :128) ("x1" :128)).
-# 2025-06-16T16:33:27.154Z in=62 out=5 ent=55 step=225 brake=4 inf=142559 sec=0.034 inf/sec=4192912
+# 2025-07-14T20:38:12.697Z in=62 out=5 ent=55 step=225 brake=4 inf=142583 sec=0.031 inf/sec=4599452
 # ENDS

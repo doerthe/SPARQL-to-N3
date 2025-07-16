@@ -7,62 +7,62 @@ PREFIX sin3: <https://notation3.org/sin3#>
 PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 
 {
-    ?U_2 (fh:coding "/" ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v)))) ?U_3.
+    ?U_2 (fh:coding "/" ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v)))) ?U_3.
 } <= {
     ?U_2 fh:coding ?U_4.
-    ?U_4 ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v))) ?U_3.
+    ?U_4 ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v))) ?U_3.
 }.
 {
-    ?U_6 ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v))) ?U_7.
+    ?U_6 ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v))) ?U_7.
 } <= {
-    ?U_6 (rdf:rest "*") ?U_8.
-    ?U_8 (rdf:first "/" (fh:code "/" fh:v)) ?U_7.
+    ?U_6 (rdf:r3st "*") ?U_8.
+    ?U_8 (rdf:f1rst "/" (fh:code "/" fh:v)) ?U_7.
 }.
 {
-    ?U_19 (rdf:first "/" (fh:code "/" fh:v)) ?U_20.
+    ?U_19 (rdf:f1rst "/" (fh:code "/" fh:v)) ?U_20.
 } <= {
-    ?U_19 rdf:first ?U_21.
+    ?U_19 rdf:f1rst ?U_21.
     ?U_21 (fh:code "/" fh:v) ?U_20.
 }.
 {
-    ?U_22 (rdf:rest "*") ?U_23.
+    ?U_22 (rdf:r3st "*") ?U_23.
 } <= {
-    ?U_22 (rdf:rest "+") ?U_23.
+    ?U_22 (rdf:r3st "+") ?U_23.
 }.
 {
-    ?U_22 (rdf:rest "*") ?U_22.
+    ?U_22 (rdf:r3st "*") ?U_22.
 } <= {
-    ?U_22 (rdf:rest "0") ?U_22.
+    ?U_22 (rdf:r3st "0") ?U_22.
 }.
 {
-    ?U_25 (rdf:rest "+") ?U_26.
+    ?U_25 (rdf:r3st "+") ?U_26.
 } <= {
     {
-        ?U_25 (rdf:rest "+") ?U_26.
+        ?U_25 (rdf:r3st "+") ?U_26.
     } sin3:circ ().
 }.
 {
     {
-        ?U_25 (rdf:rest "+") ?U_26.
+        ?U_25 (rdf:r3st "+") ?U_26.
     } sin3:circ ?U_27.
 } <= {
-    ?U_25 rdf:rest ?U_26.
+    ?U_25 rdf:r3st ?U_26.
     ?U_27 list:notMember ?U_26.
 }.
 {
     {
-        ?U_25 (rdf:rest "+") ?U_26.
+        ?U_25 (rdf:r3st "+") ?U_26.
     } sin3:circ ?U_27.
 } <= {
-    ?U_25 rdf:rest ?U_28.
+    ?U_25 rdf:r3st ?U_28.
     ?U_27 list:notMember ?U_28.
     (?U_27 (?U_28)) list:append ?U_29.
     {
-        ?U_28 (rdf:rest "+") ?U_26.
+        ?U_28 (rdf:r3st "+") ?U_26.
     } sin3:circ ?U_29.
 }.
 {
-    ?U_30 (rdf:rest "0") ?U_30.
+    ?U_30 (rdf:r3st "0") ?U_30.
 } <= true.
 {
     ?U_35 (fh:code "/" fh:v) ?U_36.
@@ -70,5 +70,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     ?U_35 fh:code ?U_37.
     ?U_37 fh:v ?U_36.
 }.
-# 2025-07-15T21:17:06.904Z in=24 out=10 ent=20 step=62 brake=5 inf=760156 sec=0.076 inf/sec=10002053
+# 2025-07-16T18:39:01.992Z in=24 out=10 ent=20 step=62 brake=5 inf=759975 sec=0.079 inf/sec=9619937
 # ENDS

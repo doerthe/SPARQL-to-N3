@@ -36,5 +36,5 @@ PREFIX : <http://example.org/gmark/>
 } <= {
     ?U_23 (("^" :p2) "/" (:p2 "/" (("^" :p2) "/" :p2))) ?U_25.
 }.
-# 2025-06-16T16:22:29.979Z in=24 out=6 ent=12 step=44 brake=3 inf=538566 sec=0.061 inf/sec=8828951
+# 2025-07-14T19:35:15.392Z in=24 out=6 ent=12 step=44 brake=3 inf=539450 sec=0.059 inf/sec=9143220
 # ENDS

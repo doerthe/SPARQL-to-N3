@@ -6,52 +6,52 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 {
     ?U_2 fh:coding ?U_4.
-    ?U_4 ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v))) ?U_3.
+    ?U_4 ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v))) ?U_3.
 } => {
-    ?U_2 (fh:coding "/" ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v)))) ?U_3.
+    ?U_2 (fh:coding "/" ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v)))) ?U_3.
 }.
 {
-    ?U_6 (rdf:rest "*") ?U_8.
-    ?U_8 (rdf:first "/" (fh:code "/" fh:v)) ?U_7.
+    ?U_6 (rdf:r3st "*") ?U_8.
+    ?U_8 (rdf:f1rst "/" (fh:code "/" fh:v)) ?U_7.
 } => {
-    ?U_6 ((rdf:rest "*") "/" (rdf:first "/" (fh:code "/" fh:v))) ?U_7.
+    ?U_6 ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v))) ?U_7.
 }.
 {
-    ?U_19 rdf:first ?U_21.
+    ?U_19 rdf:f1rst ?U_21.
     ?U_21 (fh:code "/" fh:v) ?U_20.
 } => {
-    ?U_19 (rdf:first "/" (fh:code "/" fh:v)) ?U_20.
+    ?U_19 (rdf:f1rst "/" (fh:code "/" fh:v)) ?U_20.
 }.
 {
-    ?U_22 (rdf:rest "+") ?U_23.
+    ?U_22 (rdf:r3st "+") ?U_23.
 } => {
-    ?U_22 (rdf:rest "*") ?U_23.
+    ?U_22 (rdf:r3st "*") ?U_23.
 }.
 {
-    ?U_22 (rdf:rest "0") ?U_22.
+    ?U_22 (rdf:r3st "0") ?U_22.
 } => {
-    ?U_22 (rdf:rest "*") ?U_22.
+    ?U_22 (rdf:r3st "*") ?U_22.
 }.
 {
-    ?U_25 rdf:rest ?U_26.
+    ?U_25 rdf:r3st ?U_26.
 } => {
-    ?U_25 (rdf:rest "+") ?U_26.
+    ?U_25 (rdf:r3st "+") ?U_26.
 }.
 {
-    ?U_25 rdf:rest ?U_27.
-    ?U_27 (rdf:rest "+") ?U_26.
+    ?U_25 rdf:r3st ?U_27.
+    ?U_27 (rdf:r3st "+") ?U_26.
 } => {
-    ?U_25 (rdf:rest "+") ?U_26.
+    ?U_25 (rdf:r3st "+") ?U_26.
 }.
 {
     ?U_28 ?U_29 ?U_30.
 } => {
-    ?U_28 (rdf:rest "0") ?U_28.
+    ?U_28 (rdf:r3st "0") ?U_28.
 }.
 {
     ?U_31 ?U_29 ?U_28.
 } => {
-    ?U_28 (rdf:rest "0") ?U_28.
+    ?U_28 (rdf:r3st "0") ?U_28.
 }.
 {
     ?U_36 fh:code ?U_38.
@@ -59,5 +59,5 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 } => {
     ?U_36 (fh:code "/" fh:v) ?U_37.
 }.
-# 2025-07-15T21:17:10.948Z in=25 out=10 ent=20 step=62 brake=5 inf=757539 sec=0.075 inf/sec=10100520
+# 2025-07-16T18:39:02.870Z in=25 out=10 ent=20 step=62 brake=5 inf=757364 sec=0.078 inf/sec=9709795
 # ENDS

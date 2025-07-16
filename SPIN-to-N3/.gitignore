@@ -1,6 +1,5 @@
 .DS_Store
 **/test/run/tmp
-#**/test/run/results
 .plugins
 .settings
 .metadata
@@ -11,3 +10,4 @@ dt/
 test/run/results/owl2rl
 other_systems/SparqLog/SparqLog/src/SPARQL_Benchmarks/
 other_systems/SparqLog/SparqLog/src/HowRepresentativeAreSPARQLBenchsQueries/
+data_100_000_pt2.nt

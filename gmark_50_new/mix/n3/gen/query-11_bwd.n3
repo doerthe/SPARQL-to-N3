@@ -90,5 +90,5 @@ PREFIX : <http://example.org/gmark/>
 } <= {
     ?U_90 :p0 ?U_89.
 }.
-# 2025-06-16T16:21:19.266Z in=24 out=16 ent=38 step=174 brake=5 inf=980131 sec=0.094 inf/sec=10426926
+# 2025-07-14T19:34:30.516Z in=24 out=16 ent=38 step=174 brake=5 inf=981015 sec=0.097 inf/sec=10113557
 # ENDS

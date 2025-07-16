@@ -81,6 +81,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_59.
 } <= {
     ?U_54 (("^" :p1) "/" (("^" :p0) "/" :p0)) ?U_57.
+    ?U_59 list:notMember ?U_57.
 }.
 {
     {
@@ -89,7 +90,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_54 (("^" :p1) "/" (("^" :p0) "/" :p0)) ?U_60.
     ?U_59 list:notMember ?U_60.
-    (?U_59 (?U_57)) list:append ?U_61.
+    (?U_59 (?U_60)) list:append ?U_61.
     {
         ?U_60 ((("^" :p1) "/" (("^" :p0) "/" :p0)) "+") ?U_57.
     } sin3:circ ?U_61.
@@ -107,6 +108,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_64.
 } <= {
     ?U_62 (("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1))) ?U_63.
+    ?U_64 list:notMember ?U_63.
 }.
 {
     {
@@ -115,7 +117,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_62 (("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1))) ?U_65.
     ?U_64 list:notMember ?U_65.
-    (?U_64 (?U_63)) list:append ?U_66.
+    (?U_64 (?U_65)) list:append ?U_66.
     {
         ?U_65 ((("^" :p1) "/" (:p1 "/" (("^" :p1) "/" :p1))) "+") ?U_63.
     } sin3:circ ?U_66.
@@ -133,6 +135,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
     } sin3:circ ?U_69.
 } <= {
     ?U_67 ((("^" :p1) "/" (:p3 "/" ("^" :p3))) "|" ((("^" :p1) "/" (("^" :p0) "/" :p0)) "|" (("^" :p1) "/" (:p3 "/" ("^" :p3))))) ?U_68.
+    ?U_69 list:notMember ?U_68.
 }.
 {
     {
@@ -141,7 +144,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_67 ((("^" :p1) "/" (:p3 "/" ("^" :p3))) "|" ((("^" :p1) "/" (("^" :p0) "/" :p0)) "|" (("^" :p1) "/" (:p3 "/" ("^" :p3))))) ?U_70.
     ?U_69 list:notMember ?U_70.
-    (?U_69 (?U_68)) list:append ?U_71.
+    (?U_69 (?U_70)) list:append ?U_71.
     {
         ?U_70 (((("^" :p1) "/" (:p3 "/" ("^" :p3))) "|" ((("^" :p1) "/" (("^" :p0) "/" :p0)) "|" (("^" :p1) "/" (:p3 "/" ("^" :p3))))) "+") ?U_68.
     } sin3:circ ?U_71.
@@ -219,5 +222,5 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
     ?U_149 :p3 ?U_148.
 }.
-# 2025-06-16T16:22:38.218Z in=24 out=35 ent=71 step=373 brake=6 inf=1669132 sec=0.150 inf/sec=11127547
+# 2025-07-14T19:35:17.098Z in=24 out=35 ent=71 step=373 brake=6 inf=1670772 sec=0.146 inf/sec=11443644
 # ENDS

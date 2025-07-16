@@ -1,5 +1,5 @@
 # Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet ../../gmark_50_new/mix/data.n3 ../../gmark_50_new/mix/n3/gen/query-19_bwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-19.n3 --nope
+# eye --quiet ../../gmark_50_new/mix/data_50.nt ../../gmark_50_new/mix/n3/gen/query-19_bwd.n3 --query ../../gmark_50_new/mix/n3/normalized/query-19.n3 --nope
 
-# 2025-06-16T16:22:32.104Z in=73 out=0 ent=0 step=0 brake=1 inf=227251 sec=0.038 inf/sec=5980289
+# 2025-07-14T19:35:16.262Z in=73 out=0 ent=0 step=0 brake=1 inf=227278 sec=0.035 inf/sec=6493657
 # ENDS
