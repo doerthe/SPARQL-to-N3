@@ -35,3 +35,17 @@ run,query,data,load_time,exec_time
 0,pp3.sparql,data_1_000_pt2.nt,436,144
 0,pp4-2.sparql,data_1_000_pt2.nt,417,82
 0,pp4.sparql,data_1_000_pt2.nt,415,111
+
+0,pp1.sparql,data_1_000_pt2.nt,494,138
+0,pp2-2.sparql,data_1_000_pt2.nt,477,103
+0,pp2.sparql,data_1_000_pt2.nt,454,123
+0,pp3.sparql,data_1_000_pt2.nt,458,159
+0,pp4-2.sparql,data_1_000_pt2.nt,491,82
+0,pp4.sparql,data_1_000_pt2.nt,459,119
+
+0,pp1.sparql,data_1_000_pt2.nt,476,107
+0,pp2-2.sparql,data_1_000_pt2.nt,455,87
+0,pp2.sparql,data_1_000_pt2.nt,442,122
+0,pp3.sparql,data_1_000_pt2.nt,422,144
+0,pp4-2.sparql,data_1_000_pt2.nt,427,82
+0,pp4.sparql,data_1_000_pt2.nt,424,112

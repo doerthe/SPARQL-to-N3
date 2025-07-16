@@ -29,7 +29,11 @@ def n3_term(string):
         case 'iri':
             term = rdflib.URIRef(string)
         case _:
-            term = rdflib.Literal(string)
+            # TODO very hacky solution fine-tuned for our query results
+            if string.isdigit():
+                term = rdflib.Literal(int(string), datatype=rdflib.XSD.int)
+            else:
+                term = rdflib.Literal(string)
     return term
 
 
@@ -84,11 +88,11 @@ class RESRDF:
                 self.result(subj, cells)
 
                 rows += 1
-                if rows % 100000 == 0:
-                    sys.stderr.write(
-                        "%d rows, %d triples, elapsed %.2fs.\n"
-                        % (rows, self.triples, time.time() - start)
-                    )
+                # if rows % 100000 == 0:
+                #     sys.stderr.write(
+                #         "%d rows, %d triples, elapsed %.2fs.\n"
+                #         % (rows, self.triples, time.time() - start)
+                #     )
             except Exception:
                 sys.stderr.write("Error processing line: %d\n" % rows)
                 raise
