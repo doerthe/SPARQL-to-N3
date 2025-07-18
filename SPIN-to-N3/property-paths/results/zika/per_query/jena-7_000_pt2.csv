@@ -1,0 +1,7 @@
+,query,load_time,exec_time,total_time,nr
+0,pp1.sparql,1440.0,136.0,1576.0,pp1
+1,pp2-2.sparql,1406.0,84.0,1490.0,pp2-2
+2,pp2.sparql,1413.0,243.0,1656.0,pp2
+3,pp3.sparql,1401.0,343.0,1744.0,pp3
+4,pp4-2.sparql,1391.0,81.0,1472.0,pp4-2
+5,pp4.sparql,1389.0,210.0,1599.0,pp4
