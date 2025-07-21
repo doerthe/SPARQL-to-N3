@@ -1,0 +1,9 @@
+@prefix fh: <http://hl7.org/fhir/>.
+
+{
+    ?t_0 fh:address ?t_1.
+    ?t_0 (fh:id "/" fh:v) ?t_2.
+    ?t_3 (fh:reference "/" fh:v) ?t_2.
+} => {
+    _:t_4 fh:result (("r" ?t_3) ("p" ?t_0) ("id" ?t_2)).
+}.

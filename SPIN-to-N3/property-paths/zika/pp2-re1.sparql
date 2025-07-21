@@ -1,0 +1,8 @@
+PREFIX fh: <http://hl7.org/fhir/>
+
+SELECT ?r ?p ?id 
+WHERE {
+    ?p fh:address ?a .
+    ?p fh:id/fh:v ?id .
+    ?r fh:reference/fh:v ?id
+}

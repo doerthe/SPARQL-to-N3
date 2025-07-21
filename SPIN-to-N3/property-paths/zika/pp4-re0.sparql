@@ -1,0 +1,8 @@
+PREFIX fh: <http://hl7.org/fhir/>
+
+SELECT ?p ?r
+WHERE {
+    ?p fh:id [ fh:v "Patient/p528" ] .
+    ?p fh:id/fh:v ?id .
+    ?r fh:subject/fh:reference/fh:v ?id .
+}

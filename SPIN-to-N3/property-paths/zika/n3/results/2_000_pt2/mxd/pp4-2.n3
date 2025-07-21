@@ -1,0 +1,5 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet --turtle zika/data/data_2_000_pt2.nt zika/n3/gen/pp4-2_mxd.n3 --query zika/n3/normalized/pp4-2.n3 --nope
+
+# 2025-07-21T13:52:12.154Z in=72831 out=0 ent=7176 step=19470 brake=3 inf=9203062 sec=0.784 inf/sec=11738599
+# ENDS
