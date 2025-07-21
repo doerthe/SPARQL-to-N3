@@ -1,0 +1,73 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+
+PREFIX sin3: <https://notation3.org/sin3#>
+
+{?a =>?b.
+ ?a log:includes {?s ("^" ?p) ?o} . ?p log:rawType ?t. ?t list:in  (log:Other rdf:List). }=>{{?o ?p ?s}=>{?s ("^" ?p) ?o}}.
+
+ {?a =>?b.
+ ?a log:includes {?s (?p1 "/" ?p2) ?o}. ?p1 log:rawType ?t. ?t list:in  (log:Other rdf:List). }=>{{?s ?p1 ?x. ?x ?p2 ?o}=>{?s (?p1 "/" ?p2) ?o}}.
+
+
+ {?a =>?b.
+ ?a log:includes {?s (?p1 "|" ?p2) ?o}. ?p1 log:rawType ?t. ?t list:in  (log:Other rdf:List).}=>{{?s ?p1 ?o.}=>{?s (?p1 "|" ?p2) ?o}. {?s ?p2 ?o.}=>{?s (?p1 "|" ?p2) ?o}.}.
+
+
+ {?a =>?b.
+ ?a log:includes {?s ( ?p "*") ?o}. ?p log:rawType ?t. ?t list:in  (log:Other rdf:List). }=>{{?s ( ?p "*") ?o}<={?s (?p "+") ?o}. {?s ( ?p "*") ?s}<={?s ( ?p "0")  ?s}  }.
+
+  {?a =>?b.
+ ?a log:includes {?s ( ?p "+") ?o}. ?p log:rawType ?t. ?t list:in  (log:Other rdf:List).}=>{
+    {?s ( ?p "+") ?o}<={{?s ( ?p "+") ?o} sin3:circ ()}.
+
+    {{?s ( ?p "+") ?o} sin3:circ ?list}<={?s ?p ?o. ?list list:notMember ?o
+    }. 
+    {{?s ( ?p "+") ?o} sin3:circ ?list}<={?s ?p ?x. ?list list:notMember ?x. (?list (?x)) list:append ?list2.  {?x ( ?p "+") ?o} sin3:circ ?list2}.  
+    }.
+
+ {?a =>?b.
+ ?a log:includes {?s ( ?p "?") ?o}. ?p log:rawType ?t. ?t list:in  (log:Other rdf:List).}=>{{?s ( ?p "?") ?o}<={?s ?p ?o}. {?s ( ?p "?") ?s}<={?s ( ?p "0") ?s}. }.
+
+ {?a =>?b.
+ ?a log:includes {?s ( ?p "0") ?o}. ?p log:rawType ?t. ?t list:in  (log:Other rdf:List).}=>{ {?s ( ?p "0") ?s}<={}.  }.
+
+ {?a =>?b.
+ ?a log:includes {?s ("!" ?list) ?o}.
+ ?list log:rawType rdf:List. 
+  (?p1 { ?p1 list:in ?list. ?p1 log:rawType log:Other} ?posList) log:collectAllIn ?scope.
+ ?posList log:notEqualTo ().
+ }=>{{?s ?p ?o. ?p log:rawType log:Other.
+?posList list:notMember ?p.}=>{?s ("!" ?list) ?o}.  }.
+
+
+ {?a =>?b.
+ ?a log:includes {?s ("!" ?list) ?o}.
+ ?list log:rawType rdf:List.  
+ (?p1 {("^" ?p1) list:in ?list. ?p1 log:rawType log:Other.} ?negList) log:collectAllIn ?scope.
+ ?negList log:notEqualTo ().
+ }=>{{?o ?p ?s. ?p log:rawType log:Other.
+?negList list:notMember ?p.}=>{?s ("!" ?list) ?o}.  }.
+
+{?a =>?b.
+ ?a log:includes {?s ("!" ?p) ?o}.
+ ?p log:rawType rdf:Other.  
+ }=>{{?s ?p2 ?o.
+ ?p2 log:rawType rdf:Other.  
+  ?p2 log:notEqualTo ?p.
+}=>{?s ("!" ?p) ?o}.  }.
+
+{?a =>?b.
+ ?a log:includes {?s ("!" ("^" ?p)) ?o}. 
+  ?p log:rawType rdf:Other.  
+ }=>{{
+    
+    ?o ?p2 ?s. 
+    ?p2 log:rawType rdf:Other.  
+    ?p2 log:notEqualTo ?p.
+}=>{?s ("!" ("^" ?p)) ?o}.  }.
+
+# is variable
+{?p sin3:properArgument true}<={?p log:rawType ?t.  ?t list:in  (log:Other rdf:List).}.
