@@ -4,22 +4,22 @@
 PREFIX fh: <http://hl7.org/fhir/>
 
 {
-    ?U_8 (fh:id "/" fh:v) ?U_10.
+    ?U_6 (fh:subject "/" (fh:reference "/" fh:v)) ?U_7.
 } <= {
-    ?U_8 fh:id ?U_12.
-    ?U_12 fh:v ?U_10.
+    ?U_6 fh:subject ?U_9.
+    ?U_9 (fh:reference "/" fh:v) ?U_7.
 }.
 {
-    ?U_16 (fh:subject "/" (fh:reference "/" fh:v)) ?U_15.
+    ?U_12 (fh:id "/" fh:v) ?U_11.
 } <= {
-    ?U_17 (fh:reference "/" fh:v) ?U_15.
-    ?U_16 fh:subject ?U_17.
+    ?U_13 fh:v ?U_11.
+    ?U_12 fh:id ?U_13.
 }.
 {
-    ?U_19 (fh:reference "/" fh:v) ?U_20.
+    ?U_15 (fh:reference "/" fh:v) ?U_16.
 } <= {
-    ?U_21 fh:v ?U_20.
-    ?U_19 fh:reference ?U_21.
+    ?U_15 fh:reference ?U_17.
+    ?U_17 fh:v ?U_16.
 }.
-# 2025-07-21T18:58:33.387Z in=24 out=3 ent=6 step=17 brake=3 inf=490825 sec=0.059 inf/sec=8319068
+# 2025-07-22T14:56:34.376Z in=24 out=3 ent=6 step=17 brake=3 inf=490092 sec=0.057 inf/sec=8598105
 # ENDS

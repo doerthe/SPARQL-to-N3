@@ -101,3 +101,14 @@ run,query,data,type,phase,netw_time,reas_time
 0,pp4-re0.n3,data_10_000_pt2.nt,mxd,create,15,20
 0,pp4-re0.n3,data_10_000_pt2.nt,mxd,run,3378,875
 0,pp4-re0.n3,data_10_000_pt2.nt,mxd,total,3393,895
+
+0,pp4-re1.n3,data_10_000_pt2.nt,direct,n/a,3416,34022
+0,pp4-re1.n3,data_10_000_pt2.nt,bwd,create,16,20
+0,pp4-re1.n3,data_10_000_pt2.nt,bwd,run,3383,22086
+0,pp4-re1.n3,data_10_000_pt2.nt,bwd,total,3399,22106
+0,pp4-re1.n3,data_10_000_pt2.nt,fwd,create,14,20
+0,pp4-re1.n3,data_10_000_pt2.nt,fwd,run,3353,17902
+0,pp4-re1.n3,data_10_000_pt2.nt,fwd,total,3367,17922
+
+0,pp4-re1.n3,data_10_000_pt2.nt,bwd_ro1,run,3300,1652
+0,pp4-re1.n3,data_10_000_pt2.nt,bwd_ro1,total,3300,1652

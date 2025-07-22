@@ -1,7 +1,7 @@
 @prefix fh: <http://hl7.org/fhir/> .
 @prefix : <http://hl7.org/fhir/> .
 
-{   ?p (:id '/' :v) ?id . 
-    ?r a fh:Condition .
-    ?r (:subject '/' :reference '/' :v) ?id }
- => { _:x :result ( ('p' ?p) ('r' ?r) ) } .
+{   ?r a fh:Condition .
+    ?r (:subject '/' :reference '/' :v) ?id .
+    ?p (:id '/' :v) ?id . 
+} => { _:x :result ( ('p' ?p) ('r' ?r) ) } .
