@@ -2,8 +2,8 @@
 PREFIX sin3: <https://notation3.org/sin3#>
 
 {
-    ?t_0 fh:id [ fh:v "Patient/p50051" ] .
     ?t_0 (fh:id "/" fh:v) ?t_1.
+    ?t_2 a fh:Condition.
     ?t_2 (fh:subject "/" (fh:reference "/" fh:v)) ?t_1.
 } => {
     _:t_3 sin3:result (("p" ?t_0) ("r" ?t_2)).

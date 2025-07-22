@@ -1,5 +1,5 @@
-# Processed by EYE v11.19.8 (2025-06-11)
-# eye --quiet n3/normalized/pp3.n3 ../rule-creation.n3 --query ../rule-creation_mixed.n3 --nope
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet zika/n3/normalized/pp3.n3 rule-creation.n3 --query rule-creation_mixed.n3 --nope
 
 PREFIX fh: <http://hl7.org/fhir/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -73,7 +73,11 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 {
     ?U_30 (rdf:r3st "0") ?U_30.
 } <= true.
-
-# 2025-07-21T09:15:49.810Z in=25 out=10 ent=20 step=62 brake=5 inf=765629 sec=0.169 inf/sec=4530349
+{
+    ?U_35 fh:code ?U_37.
+    ?U_37 fh:v ?U_36.
+} => {
+    ?U_35 (fh:code "/" fh:v) ?U_36.
+}.
+# 2025-07-21T14:02:12.771Z in=25 out=10 ent=20 step=62 brake=5 inf=763995 sec=0.075 inf/sec=10186600
 # ENDS
-

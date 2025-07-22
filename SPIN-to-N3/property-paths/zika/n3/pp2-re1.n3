@@ -1,0 +1,6 @@
+@prefix fh: <http://hl7.org/fhir/> .
+@prefix : <http://hl7.org/fhir/> .
+
+{   ?p fh:address ?a .
+    ?p (:id '/' :v) ?id . ?r (:reference '/' :v) ?id }
+ => { _:x :result ( ('r' ?r) ('p' ?p) ('id' ?id) ) } .
