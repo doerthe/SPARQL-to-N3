@@ -1,9 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix fh: <http://hl7.org/fhir/>.
+PREFIX sin3: <https://notation3.org/sin3#>
 
 {
     ?t_0 (fh:coding "/" ((rdf:r3st "*") "/" (rdf:f1rst "/" (fh:code "/" fh:v)))) ?t_1.
     
 } => {
-    _:t_2 fh:result (("r" ?t_0) ("c" ?t_1)).
+    _:t_2 sin3:result (("r" ?t_0) ("c" ?t_1)).
 }.

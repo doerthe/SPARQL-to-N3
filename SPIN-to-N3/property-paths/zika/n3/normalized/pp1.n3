@@ -1,9 +1,10 @@
 @prefix fh: <http://hl7.org/fhir/>.
+PREFIX sin3: <https://notation3.org/sin3#>
 
 {
     ?t_0 fh:effective ?t_1.
     ?t_1 (fh:start "/" fh:v) ?t_2.
     ?t_1 (fh:end "/" fh:v) ?t_3.
 } => {
-    _:t_4 fh:result (("o" ?t_0) ("start" ?t_2) ("end" ?t_3)).
+    _:t_4 sin3:result (("o" ?t_0) ("start" ?t_2) ("end" ?t_3)).
 }.

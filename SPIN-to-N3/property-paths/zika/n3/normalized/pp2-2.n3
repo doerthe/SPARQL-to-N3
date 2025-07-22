@@ -1,9 +1,10 @@
 @prefix fh: <http://hl7.org/fhir/>.
+PREFIX sin3: <https://notation3.org/sin3#>
 
 {
     ?t_0 fh:id [ fh:v "Patient/p9" ] .
     ?t_0 (fh:id "/" fh:v) ?t_1.
     ?t_2 (fh:reference "/" fh:v) ?t_1.
 } => {
-    _:t_3 fh:result (("r" ?t_2) ("p" ?t_0) ("id" ?t_1)).
+    _:t_3 sin3:result (("r" ?t_2) ("p" ?t_0) ("id" ?t_1)).
 }.

@@ -1,0 +1,20 @@
+# Processed by EYE v11.19.8 (2025-06-11)
+# eye --quiet out1.n3 ../rule-creation.n3 ../scores.n3 --nope --query ../rule-creation-bwd_opt.n3 --quantify http://www.w3.org/2000/10/swap/var
+
+PREFIX fh: <http://hl7.org/fhir/>
+
+{
+    ?t_0 (fh:start "/" fh:v) ?t_1.
+} <= {
+    ?t_0 fh:start ?U_0.
+    ?U_0 fh:v ?t_1.
+}.
+{
+    ?t_0 (fh:end "/" fh:v) ?t_2.
+} <= {
+    ?t_0 fh:end ?U_1.
+    ?U_1 fh:v ?t_2.
+}.
+# 2025-07-22T08:38:51.953Z in=29 out=2 ent=4 step=12 brake=4 inf=643189 sec=0.147 inf/sec=4375435
+# ENDS
+

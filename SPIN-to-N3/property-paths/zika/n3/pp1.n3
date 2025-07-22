@@ -1,5 +1,6 @@
 @prefix fh: <http://hl7.org/fhir/> .
 @prefix : <http://hl7.org/fhir/> .
+PREFIX sin3: <https://notation3.org/sin3#>
 
 { ?o :effective ?period . ?period (:start '/' :v) ?start . ?period (:end '/' :v) ?end }
- => { _:x :result ( ('o' ?o) ('start' ?start) ('end' ?end) ) } .
+ => { _:x sin3:result ( ('o' ?o) ('start' ?start) ('end' ?end) ) } .

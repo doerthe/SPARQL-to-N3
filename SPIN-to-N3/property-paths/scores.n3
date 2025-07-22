@@ -1,0 +1,44 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+PREFIX fh: <http://hl7.org/fhir/>
+PREFIX sin3: <https://notation3.org/sin3#>
+
+
+#scoring of variables
+
+{?s1 sin3:score ?score}<={ 
+?a => {?s sin3:result ?o. }.
+?a log:includes {?s1 ?p1 ?o1.}.
+true log:callWithCut true.
+
+( 1 {?a log:includes {?s1 ?p2 ?o2}. (?p2 ?o2) log:notEqualTo (?p1 ?o1)} ?subject) log:collectAllIn _:scope.
+( 1 {?a log:includes {?o2 ?p2 ?s1}. (?p2 ?o2) log:notEqualTo (?p1 ?o1)} ?object) log:collectAllIn _:scope.
+( 1 {?a log:includes {?s2 ?s1 ?o2}. (?s2 ?o2) log:notEqualTo (?s1 ?o1)} ?predicate) log:collectAllIn _:scope.
+(?subject ?predicate ?object) list:append ?res.
+?res math:sum ?score.
+}.
+
+{?s1 sin3:score ?score}
+<=
+{
+?a => {?s sin3:result ?o. }.
+?a log:includes {?o1 ?p1 ?s1.}.
+true log:callWithCut true.
+
+( 1 {?a log:includes {?s1 ?p2 ?o2}. (?p2 ?o2) log:notEqualTo (?p1 ?o1)} ?subject) log:collectAllIn _:scope.
+( 1 {?a log:includes {?o2 ?p2 ?s1}. (?p2 ?o2) log:notEqualTo (?p1 ?o1)} ?object) log:collectAllIn _:scope.
+( 1 {?a log:includes {?s2 ?s1 ?o2}. (?s2 ?o2) log:notEqualTo (?s1 ?o1)} ?predicate) log:collectAllIn _:scope.
+(?subject ?predicate ?object (0)) list:append ?res.
+?res math:sum ?score.
+}.
+
+
+{?x sin3:score 0}<={}.
+
+
+ {{?s ?p1 ?x. ?x ?p2 ?o} sin3:order {?x ?p2 ?o. ?s ?p1 ?x. } } <={ ?s sin3:score ?sc1. ?o sin3:score ?sc2. ?sc1 math:lessThan ?sc2.   true log:callWithCut true}.
+  {{?s ?p1 ?x. ?x ?p2 ?o} sin3:order {?s ?p1 ?x. ?x ?p2 ?o} } <={}.
