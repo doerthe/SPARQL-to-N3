@@ -29,3 +29,11 @@ run,query,data,load_time,exec_time
 4,pp3.sparql,data_1_000_pt2.nt,420,140
 4,pp4-2.sparql,data_1_000_pt2.nt,434,89
 4,pp4.sparql,data_1_000_pt2.nt,423,113
+
+0,pp2-re0.sparql,data_1_000_pt2.nt,453,85
+
+0,pp2-re1.sparql,data_1_000_pt2.nt,440,92
+
+0,pp4-re0.sparql,data_1_000_pt2.nt,410,84
+
+0,pp4-re1.sparql,data_1_000_pt2.nt,408,101

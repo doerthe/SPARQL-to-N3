@@ -7,3 +7,11 @@ run,query,data,load_time,exec_time
 0,pp3.sparql,data_2_000_pt2.nt,625,186
 0,pp4-2.sparql,data_2_000_pt2.nt,623,81
 0,pp4.sparql,data_2_000_pt2.nt,599,135
+
+0,pp2-re0.sparql,data_2_000_pt2.nt,584,80
+
+0,pp2-re1.sparql,data_2_000_pt2.nt,572,94
+
+0,pp4-re0.sparql,data_2_000_pt2.nt,573,80
+
+0,pp4-re1.sparql,data_2_000_pt2.nt,579,110
