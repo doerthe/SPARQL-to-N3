@@ -1,2 +1,8 @@
 # Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet --turtle zika/data/data_1_000_pt2.nt zika/n3/gen/pp2-2_bwd_ro1.n3 --query zika/n3/normalized/pp2-2.n3 --nope
+# eye --quiet --turtle zika/data/data_1_000_pt2.nt zika/n3/gen/pp2-2_bwd_auto.n3 --query zika/n3/normalized/pp2-2.n3 --nope
+
+PREFIX sin3: <https://notation3.org/sin3#>
+
+_:sk_0 sin3:result (("r" <http://example.org/B0b0c14ee24a0be12c76c07263554cdfe>) ("p" <http://example.org/Bdc11b87a8d7e64cc6f2cddc849045005>) ("id" "Patient/p9")).
+# 2025-07-22T16:03:16.386Z in=36361 out=1 ent=1 step=1 brake=1 inf=3228373 sec=0.334 inf/sec=9665787
+# ENDS

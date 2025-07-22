@@ -1,4 +1,5 @@
-@prefix fh: <http://hl7.org/fhir/>.
+PREFIX fh: <http://hl7.org/fhir/>
+PREFIX sin3: <https://notation3.org/sin3#>
 
 {
     ?t_0 fh:id ?t_1.
@@ -6,5 +7,5 @@
     ?t_0 (fh:id "/" fh:v) ?t_2.
     ?t_3 (fh:reference "/" fh:v) ?t_2.
 } => {
-    _:t_4 fh:result (("r" ?t_3) ("p" ?t_0) ("id" ?t_2)).
+    _:t_4 sin3:result (("r" ?t_3) ("p" ?t_0) ("id" ?t_2)).
 }.

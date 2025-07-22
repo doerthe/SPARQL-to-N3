@@ -1,10 +1,10 @@
 # Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet --turtle zika/data/data_10_000_pt2.nt zika/n3/gen/pp4-re0_bwd_ro1.n3 --query zika/n3/normalized/pp4-re0.n3 --nope
+# eye --quiet --turtle zika/data/data_10_000_pt2.nt zika/n3/gen/pp4-re0_bwd_auto.n3 --query zika/n3/normalized/pp4-re0.n3 --nope
 
-PREFIX fh: <http://hl7.org/fhir/>
+PREFIX sin3: <https://notation3.org/sin3#>
 
-_:sk_0 fh:result (("p" <http://example.org/B55f8e6061bfc97e87fa624ad5d450034>) ("r" <http://example.org/B0ab01567dabc66d90e96b4dc05fb72b1>)).
-_:sk_1 fh:result (("p" <http://example.org/B55f8e6061bfc97e87fa624ad5d450034>) ("r" <http://example.org/B680de01c7b79c344a2763560542ed319>)).
-_:sk_2 fh:result (("p" <http://example.org/B55f8e6061bfc97e87fa624ad5d450034>) ("r" <http://example.org/Bdeb6b429534180a4479b4e21c83f8d8f>)).
-# 2025-07-21T20:38:43.415Z in=367319 out=3 ent=3 step=3 brake=1 inf=32294098 sec=3.183 inf/sec=10145805
+_:sk_0 sin3:result (("p" <http://example.org/B55f8e6061bfc97e87fa624ad5d450034>) ("r" <http://example.org/Bdeb6b429534180a4479b4e21c83f8d8f>)).
+_:sk_1 sin3:result (("p" <http://example.org/B55f8e6061bfc97e87fa624ad5d450034>) ("r" <http://example.org/B680de01c7b79c344a2763560542ed319>)).
+_:sk_2 sin3:result (("p" <http://example.org/B55f8e6061bfc97e87fa624ad5d450034>) ("r" <http://example.org/B0ab01567dabc66d90e96b4dc05fb72b1>)).
+# 2025-07-22T16:41:16.053Z in=367319 out=3 ent=3 step=3 brake=1 inf=32325891 sec=3.137 inf/sec=10304715
 # ENDS

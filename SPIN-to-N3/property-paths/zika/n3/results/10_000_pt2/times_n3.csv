@@ -112,3 +112,27 @@ run,query,data,type,phase,netw_time,reas_time
 
 0,pp4-re1.n3,data_10_000_pt2.nt,bwd_ro1,run,3300,1652
 0,pp4-re1.n3,data_10_000_pt2.nt,bwd_ro1,total,3300,1652
+
+
+0,pp1.n3,data_10_000_pt2.nt,bwd_auto,create,18,20
+0,pp1.n3,data_10_000_pt2.nt,bwd_auto,run,3235,934
+0,pp1.n3,data_10_000_pt2.nt,bwd_auto,total,3253,954
+0,pp2-2.n3,data_10_000_pt2.nt,bwd_auto,create,18,19
+0,pp2-2.n3,data_10_000_pt2.nt,bwd_auto,run,3305,30
+0,pp2-2.n3,data_10_000_pt2.nt,bwd_auto,total,3323,49
+0,pp2-re0.n3,data_10_000_pt2.nt,bwd_auto,create,19,20
+0,pp2-re0.n3,data_10_000_pt2.nt,bwd_auto,run,3314,31
+0,pp2-re0.n3,data_10_000_pt2.nt,bwd_auto,total,3333,51
+0,pp2-re1.n3,data_10_000_pt2.nt,bwd_auto,create,18,20
+0,pp2-re1.n3,data_10_000_pt2.nt,bwd_auto,run,3317,4921
+0,pp2-re1.n3,data_10_000_pt2.nt,bwd_auto,total,3335,4941
+0,pp2.n3,data_10_000_pt2.nt,bwd_auto,create,18,19
+0,pp2.n3,data_10_000_pt2.nt,bwd_auto,run,3288,51200
+0,pp2.n3,data_10_000_pt2.nt,bwd_auto,total,3306,51219
+0,pp3.n3,data_10_000_pt2.nt,bwd_auto,create,18,50
+0,pp3.n3,data_10_000_pt2.nt,bwd_auto,run,3321,16218
+0,pp3.n3,data_10_000_pt2.nt,bwd_auto,total,3339,16268
+0,pp4-2.n3,data_10_000_pt2.nt,bwd_auto,create,18,27
+0,pp4-re0.n3,data_10_000_pt2.nt,bwd_auto,create,19,28
+0,pp4-re0.n3,data_10_000_pt2.nt,bwd_auto,run,3448,39
+0,pp4-re0.n3,data_10_000_pt2.nt,bwd_auto,total,3467,67

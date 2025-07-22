@@ -1,7 +1,8 @@
 @prefix fh: <http://hl7.org/fhir/> .
 @prefix : <http://hl7.org/fhir/> .
+@prefix sin3: <https://notation3.org/sin3#> .
 
 {   ?r a fh:Condition .
     ?r (:subject '/' :reference '/' :v) ?id .
     ?p (:id '/' :v) ?id . 
-} => { _:x :result ( ('p' ?p) ('r' ?r) ) } .
+} => { _:x sin3:result ( ('p' ?p) ('r' ?r) ) } .

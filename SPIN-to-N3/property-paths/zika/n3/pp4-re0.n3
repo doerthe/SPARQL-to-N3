@@ -1,6 +1,7 @@
 @prefix fh: <http://hl7.org/fhir/> .
 @prefix : <http://hl7.org/fhir/> .
+@prefix sin3: <https://notation3.org/sin3#> .
 
 {   ?p fh:id [ fh:v "Patient/p528" ] .
     ?p (:id '/' :v) ?id . ?r (:subject '/' :reference '/' :v) ?id }
- => { _:x :result ( ('p' ?p) ('r' ?r) ) } .
+ => { _:x sin3:result ( ('p' ?p) ('r' ?r) ) } .

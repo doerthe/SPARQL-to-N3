@@ -1,0 +1,25 @@
+# Processed by EYE v11.19.7 (2025-06-01)
+# eye --quiet zika/n3/normalized/pp4-re1.n3 rule-creation.n3 scores.n3 --query rule-creation-bwd_opt.n3 --nope --quantify http://www.w3.org/2000/10/swap/var
+
+PREFIX fh: <http://hl7.org/fhir/>
+
+{
+    ?U_6 (fh:subject "/" (fh:reference "/" fh:v)) ?U_7.
+} <= {
+    ?U_6 fh:subject ?U_9.
+    ?U_9 (fh:reference "/" fh:v) ?U_7.
+}.
+{
+    ?U_12 (fh:id "/" fh:v) ?U_11.
+} <= {
+    ?U_12 fh:id ?U_13.
+    ?U_13 fh:v ?U_11.
+}.
+{
+    ?U_15 (fh:reference "/" fh:v) ?U_16.
+} <= {
+    ?U_15 fh:reference ?U_17.
+    ?U_17 fh:v ?U_16.
+}.
+# 2025-07-22T16:41:16.148Z in=29 out=3 ent=6 step=23 brake=4 inf=636277 sec=0.069 inf/sec=9221406
+# ENDS

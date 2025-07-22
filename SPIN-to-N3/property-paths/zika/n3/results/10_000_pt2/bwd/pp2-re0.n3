@@ -1,8 +1,8 @@
 # Processed by EYE v11.19.7 (2025-06-01)
-# eye --quiet --turtle zika/data/data_10_000_pt2.nt zika/n3/gen/pp2-re0_bwd_ro1.n3 --query zika/n3/normalized/pp2-re0.n3 --nope
+# eye --quiet --turtle zika/data/data_10_000_pt2.nt zika/n3/gen/pp2-re0_bwd_auto.n3 --query zika/n3/normalized/pp2-re0.n3 --nope
 
-PREFIX fh: <http://hl7.org/fhir/>
+PREFIX sin3: <https://notation3.org/sin3#>
 
-_:sk_0 fh:result (("r" <http://example.org/B8c44362eb2830a371ba36c9c6bedf02f>) ("p" <http://example.org/B7b9f6f01958256d9cfb9b2d61ad04aaa>) ("id" "Patient/p9")).
-# 2025-07-21T18:32:29.231Z in=367318 out=1 ent=1 step=1 brake=1 inf=32286397 sec=3.064 inf/sec=10537336
+_:sk_0 sin3:result (("r" <http://example.org/B8c44362eb2830a371ba36c9c6bedf02f>) ("p" <http://example.org/B7b9f6f01958256d9cfb9b2d61ad04aaa>) ("id" "Patient/p9")).
+# 2025-07-22T16:07:07.037Z in=367318 out=1 ent=1 step=1 brake=1 inf=32299389 sec=3.029 inf/sec=10663384
 # ENDS
