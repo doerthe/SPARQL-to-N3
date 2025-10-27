@@ -1,0 +1,6 @@
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix var: <http://www.w3.org/2000/10/swap/var#> .
+@prefix : <http://example.org/aux#> .
+
+# { var:x :result var:y } <= { var:x (:p1 '/' (('^' :p2) '/' (:p3 '|' (:p4 '|' ( :p5 '/' (:p6 '/' :p7)))))) var:y } ; a sp:Construct .
+{ var:x :result var:y } <= { var:x (:p1 '/' (( '^' :p2) '/' (:p5 '/' (:p6 '/' :p7)))) var:y } ; a sp:Construct .

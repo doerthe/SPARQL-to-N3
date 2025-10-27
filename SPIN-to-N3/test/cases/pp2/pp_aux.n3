@@ -1,0 +1,202 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix aux: <http://example.org/aux#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix ex: <http://example.org/spin#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix var: <http://www.w3.org/2000/10/swap/var#> .
+@prefix : <http://example.org/aux#> .
+
+# eye pp_test.n3 pp_aux.n3 --query pp_query.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/ --quantify http://www.w3.org/2000/10/swap/var#
+
+{   ?g :graphToList ?l }
+<= {
+   (?tp { ?g graph:member ?tp } ?l) 
+        log:collectAllIn _:x . 
+} .
+
+#create a graph from subject-predicate-object patterns
+{ ( ?vars ?list ) aux:handleTriples ?graph }
+<= 
+{
+  #normal triples
+   (
+       { ?s1 ?p1 ?o1 }
+       {
+           ?t list:in ?list .
+           ?t log:equalTo { ?s ?p ?o } .
+           ?s aux:gets ?s1 . ?p aux:gets ?p1 . ?o aux:gets ?o1 .
+       }
+       ?whereList
+   ) log:collectAllIn ?scope .
+   ( ?whereList ( {} ) ) list:append ?whereList2 .
+   ?whereList2 log:conjunction ?graph .
+} .
+
+{ ( ?vars ?list ) aux:createGraph ?graph }
+<= 
+{
+   ( ?vars ?list ) aux:handlePropertyPath ?graph1 .
+   ( ?graph1 ) log:conjunction ?graph .
+} .
+
+{ ( ?vars ?list ) aux:handlePropertyPath ?graph }
+<= 
+{
+   (  ?pathGraph
+       {
+           ?list list:member ?tp .
+           ?tp log:equalTo { ?s ?path ?o } .
+           ?s aux:gets ?s1 . ?o aux:gets ?o1 .
+           # todo: simply assuming path if it's a list
+           ?path log:rawType rdf:List .
+           ?path aux:collectPathSteps ?steps .
+           ( ?s1 ?o1 ?steps ) aux:toGraph ?pathGraph .
+       }
+       ?pathGraphs
+   ) log:collectAllIn ?scope .
+
+   ( ?pathGraphs ( {} ) ) list:append ?pathGraphs2 .
+   ?pathGraphs2 log:conjunction ?graph .
+} .
+
+{ ( ?start ?end ?steps ) aux:toGraph ?graph }
+<= {
+   "/" list:in ?steps .
+   ( ?start ?end ?steps ) aux:seqToGraph ( () ?graph ) .
+}. 
+
+{ ( ?cur_s ?end ?steps ) aux:seqToGraph ( ?list ?result ) }
+<= {
+   ?steps aux:nextStep ( ?step ?rest ) .
+   ( ?step ?rest ?cur_s ?end ) aux:stepEnd ?cur_o .
+   ( ?step ?cur_s ?cur_o ) aux:stepToTriple ?tr .
+   ( ?list ( ?tr ) ) list:append ?list2 .
+   ( ?cur_o ?end ?rest ) aux:seqToGraph ( ?list2 ?result ) .
+} .
+
+{ ?steps aux:nextStep ( ?step ?rest ) }
+<= { 
+   "/" list:in ?steps .
+   true log:callWithCut true .
+   ?steps list:firstRest ( ?step ?rest0 ) .
+   ?rest0 list:firstRest ( ?symb ?rest ) .
+} .
+
+{ ?steps aux:nextStep ( ?step ?rest ) }
+<= { ?steps list:firstRest ( ?step ?rest ) . } .
+
+{ ( ?step () ?s ?end ) aux:stepEnd ?end . }
+<= { true log:callWithCut true } .
+
+{ ( ?step ?rest ?s ?end ) aux:stepEnd ?o . }
+<= { 
+   # todo: unsure if the subject list is sufficiently unique ...
+   ( ?step ?rest ?s ) log:skolem ?o
+} .
+
+{ ( ?s ?o () ) aux:seqToGraph ( ?list ?result ) }
+<= {
+   ?list log:conjunction ?result
+} .
+
+{ ( ?step ?s ?o ) aux:stepToTriple ?tr }
+<= {
+   ?step aux:isUri true .
+   ?tr log:equalTo { ?s ?step ?o }
+} .
+
+{ ( ( '^' (?uri) ) ?s ?o ) aux:stepToTriple ?tr }
+<= {
+   # ?step aux:isUri true .
+   ?tr log:equalTo { ?o ?uri ?s }
+} .
+
+
+# flatten path steps for easier processing
+
+{ ( ?p1 '/' ?p2 ) aux:collectPathSteps ?paths }
+<= 
+{  ?p1 aux:collectPathSteps ?p1s .
+   ?p2 aux:collectPathSteps ?p2s .
+   ( ?p1s '|' ) aux:nestIfNeeded ?p1s2 .
+   ( ?p2s '|' ) aux:nestIfNeeded ?p2s2 .
+   ( ?p1s2 ( '/' ) ?p2s2 ) list:append ?paths .
+} .
+
+#
+{ ?x aux:collectPathSteps ( ?x ) }
+<= { ?x aux:isUri true } .
+
+#
+{ ( '^' ?p ) aux:collectPathSteps ( ( '^' ?ps ) ) }
+<= { ?p aux:collectPathSteps ?ps } .
+
+#
+{ ( ?p1 '|' ?p2 ) aux:collectPathSteps ?paths }
+<= 
+{  ?p1 aux:collectPathSteps ?p1s .
+   ?p2 aux:collectPathSteps ?p2s .
+   ( ?p1s '/' ) aux:nestIfNeeded ?p1s2 .
+   ( ?p2s '/' ) aux:nestIfNeeded ?p2s2 .
+   ( ?p1s2 ( '|' ) ?p2s2 ) list:append ?paths .
+} .
+
+#
+{ ( ?p '*' ) aux:collectPathSteps ( ( '*' ?ps ) ) }
+<= { ?p aux:collectPathSteps ?ps } .
+
+#
+{ ( ?p '+' ) aux:collectPathSteps ( ( '+' ?ps ) ) }
+<= { ?p aux:collectPathSteps ?ps } .
+
+#
+{ ( ?p '?' ) aux:collectPathSteps ( ( '?' ?ps ) ) }
+<= { ?p aux:collectPathSteps ?ps } .
+
+#
+{ ( '!' ?p ) aux:collectPathSteps ( ( '!' ( ?p ) ) ) }
+<= { } .
+
+{ ( ?paths ?nestIf ) aux:nestIfNeeded ( ?paths ) }
+<= { 
+   # SPARQL property paths cannot have strings as properties
+   # so, if flattened path list contains e.g., '|', then it's an alt path
+   ?nestIf list:in ?paths .
+   true log:callWithCut true .
+} .
+
+{ ( ?paths ?nestIf ) aux:nestIfNeeded ?paths }
+<= { } .
+
+
+# # - aux:gets
+
+# todo: gave up ... 
+
+# { ?x aux:gets ?y } 
+# <= 
+# {  ?x log:rawType log:ForAll . 
+#    # ?x log:copy ?y .
+#    # true log:callWithCut true .
+# } .
+
+{ ?x aux:gets ?x }
+<= {} .
+
+
+# # - misc
+
+#
+{ ?x aux:isUri true }
+<= { 
+   # todo: checking for uri's this way...
+   ?x log:uri ?uri 
+} .

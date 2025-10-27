@@ -1,0 +1,39 @@
+@prefix aux: <http://example.org/aux#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix ex: <http://example.org/spin#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/aux#> .
+
+# ## construct
+# {
+#    ?x a sp:Construct ;
+#        sp:templates ?temps ;
+#        sp:where ?where .
+#    ( false ?where ) aux:createGraph ?g1 .
+#    ( false ?temps ) aux:handleTriples ?g2 
+# }
+# => 
+# {
+#    ?g1 => ?g2 .
+# } .
+
+## construct
+{   ?x <= ?y ; a sp:Construct .
+    
+    ?x :graphToList ?temps .
+    ?y :graphToList ?where .
+   ( false ?where ) aux:createGraph ?g1 .
+   ( false ?temps ) aux:handleTriples ?g2 
+}
+=> 
+{
+   ?g1 => ?g2 .
+} .
