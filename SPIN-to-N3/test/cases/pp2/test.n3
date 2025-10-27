@@ -1,6 +1,47 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix : <http://example.org/aux#> .
 
-{ ?a log:uri ?uri } => { :x :uri ?uri } .
+:a :p :b .
+:b :p :c .
+:c :p :d .
+:e :p :f .
+
+{ ( :a ?y ) ( :p '*' ) ( ?k ?l ) }
+=> { : :out ( ?k ?l ) } .
+
+# split off a solution when found
+
+{ ( ?x ?y ) ( :p '*' ) ( ?k ?l ) } 
+<= {
+    ?x :p ?y .
+    ( ?x ?y ) :ctu ( ?k ?l ) .
+} .
+
+{ ( ?x ?y ) :ctu ( ?x ?y ) }
+<= {} .
+
+{ ( ?x ?y ) :ctu ( ?k ?l ) }
+<= { ( ?y ?z ) ( :p '*' ) ( ?k ?l ) }  .
+
+
+# collect solutions & then return them
+
+# { ( ?x ?y ) ( :p '*' ) ( ?k ?l ) } 
+# <= {
+#     ( ?x ?y ( :p '*' ) ) :step ( () ?r ) .
+#     ( ?k ?l ) list:in ?r .
+# } .
+
+# { ( ?x ?y ( :p '*' ) ) :step ( ?c ?r ) }
+# <= {
+#     ?x :p ?y .
+#     true log:callWithCut true .
+#     ( ?c ( ( ?x ?y ) ) ) list:append ?c2 .
+#     ( ?y ?z ( :p '*' ) ) :step ( ?c2 ?r ) .
+# } .
+
+# { ( ?x ?x ( :p '*' ) ) :step ( ?c ?c ) }
+# <= {} .
