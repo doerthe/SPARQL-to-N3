@@ -122,6 +122,7 @@
        sp:path1 ?p1;
        sp:path2 ?p2.
     true log:callWithCut true. 
+       1 e:trace  {?s1 ?p ?o1}.
     {?s1 ?p ?o1} log:skolem ?x.
     {?s1 ?p1 ?x} aux:translatePathPattern ( {} ?out1).
     {?x ?p2 ?o1} aux:translatePathPattern ( {} ?out2).
@@ -224,6 +225,11 @@
    ?alist log:conjunction ?aArg.
    ?blist log:conjunction ?bArg.
    (?graph {?aArg aux:union ?bArg}) log:conjunction ?out.
+}.
+
+{{?s1 ?p ?o1} aux:translatePathPattern ( ?graph ?out)}
+<={
+(?graph {?s1 ?p ?o1} ) log:conjunction ?out
 }.
 
 
