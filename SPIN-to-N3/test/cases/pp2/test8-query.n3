@@ -9,9 +9,7 @@
                             <http://spinrdf.org/sp#predicate>
         <http://example.org/result> ;
                             <http://spinrdf.org/sp#subject>
-        [ <http://spinrdf.org/sp#varName>
-                  "x"
-        ]
+        <http://example.org/a>
                           ]) ;
                 <http://spinrdf.org/sp#where>
                         ([ a       <http://spinrdf.org/sp#TriplePath> ;
@@ -34,9 +32,7 @@
                   ]
         ] ;
                             <http://spinrdf.org/sp#subject>
-        [ <http://spinrdf.org/sp#varName>
-                  "x"
-        ]
+        <http://example.org/a>
                           ])
               ] .
 

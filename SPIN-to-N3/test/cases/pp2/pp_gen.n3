@@ -1,5 +1,5 @@
-# Processed by EYE v11.22.3 (2025-10-08)
-# eye --quiet test/cases/pp2/test8-query.n3 auxiliary-files/aux_producing.n3 --nope --quantify https://eyereasoner.github.io/.well-known/genid/ --query queries/query_general_runtime.n3
+# to run the test:
+# eye test/cases/pp2/pp_gen.n3  test/cases/pp2/test8-data.n3 --nope --pass-only-new
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix skolem: <https://eyereasoner.github.io/.well-known/genid/787cb490-1f7d-4d4c-a644-da9bf8eb000c#>.
@@ -55,6 +55,3 @@ PREFIX sin3: <https://notation3.org/sin3#>
 } .
 
 {?p sin3:isVariable false}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.}.
-
-# 2025-10-29T19:08:49.076Z in=167 out=4 ent=4 step=4 brake=2 inf=847529 sec=0.073 inf/sec=11609986
-# ENDS
