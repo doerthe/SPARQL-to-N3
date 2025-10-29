@@ -36,14 +36,7 @@ PREFIX sin3: <https://notation3.org/sin3#>
 # }.
 
 {
-    ?t_5 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_6.
-} <= {
-    ?t_5 ('recur' (<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_6.
-    true log:trace ( ?t_5 ?t_6 ) .
-} .
-
-{
-    ?c ('recur' (<http://example.org/p1> "/" <http://example.org/p2>) "*") ?r.
+    ?c ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?r.
 } <= {
     ?c <http://example.org/p1> ?t_7.
     ?t_7 <http://example.org/p2> ?n.
@@ -58,7 +51,7 @@ PREFIX sin3: <https://notation3.org/sin3#>
 { 
     ?n ('ctu' (<http://example.org/p1> "/" <http://example.org/p2>) "*") ?r
 } <= {
-    ?n ('recur' (<http://example.org/p1> "/" <http://example.org/p2>) "*") ?r
+    ?n ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?r
 } .
 
 {?p sin3:isVariable false}<={?p log:rawType ?t. ?t log:notEqualTo  log:ForAll.}.
