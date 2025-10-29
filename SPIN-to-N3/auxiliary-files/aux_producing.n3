@@ -122,7 +122,6 @@
        sp:path1 ?p1;
        sp:path2 ?p2.
     true log:callWithCut true. 
-       1 e:trace  {?s1 ?p ?o1}.
     {?s1 ?p ?o1} log:skolem ?x.
     {?s1 ?p1 ?x} aux:translatePathPattern ( {} ?out1).
     {?x ?p2 ?o1} aux:translatePathPattern ( {} ?out2).
@@ -151,11 +150,12 @@
     ?p1 aux:translatePath ?p11.
     (?graph {?s1 (?p11 "*") ?o1}) log:conjunction ?out.
      {?s1 ?p1 ?o1} aux:translatePathPattern ( {} ?out2).
-    ({?x (?p11 "*") ?s1} ?out2) log:conjunction ?out3. 
+      {?s1 ?p1 ?x} aux:translatePathPattern ( {} ?out3).
+    ( ?out3 {?x (?p11 "*") ?o1} ) log:conjunction ?out4. 
     {} log:becomes { 
         aux:new aux:create { {?s1 (?p11 "*") ?s1} <= {} }.
         aux:new aux:create { {?s1 (?p11 "*") ?o1} <= ?out2 }.
-        aux:new aux:create { {?x (?p11 "*") ?s1} <= ?out3 }.
+        aux:new aux:create { {?s1 (?p11 "*") ?o1} <= ?out4 }.
      }.
 }.
 
@@ -171,10 +171,11 @@
     ?p1 aux:translatePath ?p11.
     (?graph {?s1 (?p11 "+") ?o1}) log:conjunction ?out.
      {?s1 ?p1 ?o1} aux:translatePathPattern ( {} ?out2).
-    ({?x (?p11 "+") ?s1} ?out2) log:conjunction ?out3. 
+      {?s1 ?p1 ?x} aux:translatePathPattern ( {} ?out3).
+    ( ?out3 {?x (?p11 "+") ?o1} ) log:conjunction ?out4. 
     {} log:becomes { 
-        aux:new aux:create { {?s1 (?p11 "+") ?o1} <= ?out2 }.
-        aux:new aux:create { {?x (?p11 "+") ?s1} <= ?out3 }.
+        aux:new aux:create { {?s1 (?p11 "*") ?o1} <= ?out2 }.
+        aux:new aux:create { {?s1 (?p11 "*") ?o1} <= ?out4 }.
      }.
 }.
 
