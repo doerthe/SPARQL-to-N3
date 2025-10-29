@@ -12,13 +12,15 @@ PREFIX sin3: <https://notation3.org/sin3#>
     ?t_5 <http://example.org/result> ?t_6.
 } .
 
-# {
-#     ?t_5 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_5.
-# } <= {
-#     # else, get results like
-#     # _:sk_0 :result _:sk_0.
-#     ?t_5 sin3:isVariable false .
-# } .
+{
+    ?t_5 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_5.
+} <= {
+    # else, get results like
+    # _:sk_0 :result _:sk_0.
+    # but, I don't know how to properly implement it.
+    ?t_5 sin3:isVariable false .
+} .
+
 # {
 #     ?t_5 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_6.
 # } <= {
@@ -32,14 +34,6 @@ PREFIX sin3: <https://notation3.org/sin3#>
 #     ?t_8 <http://example.org/p2> ?t_9.
 #     ?t_9 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_6.
 # }.
-
-{
-    ?t_5 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_5.
-} <= {
-    # else, get results like
-    # _:sk_0 :result _:sk_0.
-    ?t_5 sin3:isVariable false .
-} .
 
 {
     ?t_5 ((<http://example.org/p1> "/" <http://example.org/p2>) "*") ?t_6.
