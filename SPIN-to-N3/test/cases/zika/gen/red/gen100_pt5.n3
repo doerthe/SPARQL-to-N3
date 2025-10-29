@@ -1,0 +1,3069 @@
+@prefix fh: <http://hl7.org/fhir/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ut: <http://example.org/utils#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ut:now rdf:value 1688478455140 .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p31" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p31" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p31" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p32" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p32" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p31" ;
+    fh:value "Patient/p32" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p33" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p33" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p33" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p34" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p1" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p34" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p34" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p34" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p35" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p35" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p34" ;
+    fh:value "Patient/p35" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p36" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p36" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p37" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p37" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p2" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p37" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p38" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p38" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p38" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p39" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p39" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p38" ;
+    fh:value "Patient/p39" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p40" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p40" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p40" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p2" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p41" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p41" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p40" ;
+    fh:value "Patient/p41" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p42" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p42" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p42" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p43" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p43" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p42" ;
+    fh:value "Patient/p43" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p44" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p2" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p44" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p45" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p45" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p44" ;
+    fh:value "Patient/p45" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p46" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p46" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p47" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p47" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p48" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p48" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p2" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p47" ;
+    fh:value "Patient/p48" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p49" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p49" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p49" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p49" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p50" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p50" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p49" ;
+    fh:value "Patient/p50" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p51" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p51" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p3" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p51" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p52" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p52" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p52" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p53" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p53" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p53" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p53" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p54" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p54" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p3" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p53" ;
+    fh:value "Patient/p54" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p55" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p55" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p56" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p56" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p56" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p56" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p57" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p57" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p56" ;
+    fh:value "Patient/p57" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p2" ;
+    fh:value "Patient/p3" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p58" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p58" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p58" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p58" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p59" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p59" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p59" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p60" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p60" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p61" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p4" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p62" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p62" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p62" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p63" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p63" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p62" ;
+    fh:value "Patient/p63" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p64" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p64" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p64" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p65" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p4" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p65" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p65" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p66" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p66" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p65" ;
+    fh:value "Patient/p66" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p67" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p67" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p67" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p67" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p68" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p4" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p68" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p68" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p68" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p69" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p69" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p68" ;
+    fh:value "Patient/p69" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p70" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p70" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p70" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p71" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p4" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p71" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p70" ;
+    fh:value "Patient/p71" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p72" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p72" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p72" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p72" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p73" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p73" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p72" ;
+    fh:value "Patient/p73" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p74" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p4" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p74" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p75" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p75" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p75" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p76" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p76" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p75" ;
+    fh:value "Patient/p76" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p77" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p77" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p77" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p5" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p78" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p78" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p77" ;
+    fh:value "Patient/p78" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p79" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p79" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p79" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p80" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p80" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p80" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p81" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p5" ;
+    fh:sex "male" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p82" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p82" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p81" ;
+    fh:value "Patient/p82" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p83" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p83" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p83" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p83" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p84" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p84" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p83" ;
+    fh:value "Patient/p84" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p4" ;
+    fh:value "Patient/p5" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p85" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p85" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p86" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p86" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p87" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p87" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p87" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p87" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p88" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p88" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p6" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p87" ;
+    fh:value "Patient/p88" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p89" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p89" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p89" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p89" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p90" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p90" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p89" ;
+    fh:value "Patient/p90" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p91" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p91" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p6" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p91" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p92" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p92" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p92" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p93" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p93" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p93" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p94" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p94" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p94" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p7" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p94" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p95" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p95" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p94" ;
+    fh:value "Patient/p95" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p96" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p96" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p96" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p96" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p96" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p97" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p7" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p0" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p97" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p96" ;
+    fh:value "Patient/p97" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p98" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p98" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p98" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p98" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p99" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p99" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p98" ;
+    fh:value "Patient/p99" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p100" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p8" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p100" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p101" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p101" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p101" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p101" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p102" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p102" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p101" ;
+    fh:value "Patient/p102" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p103" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p104" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p8" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p104" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p105" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p105" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p104" ;
+    fh:value "Patient/p105" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p106" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p106" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p106" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p107" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p107" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p108" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p9" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p108" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p108" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p109" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p109" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p109" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p109" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p110" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p110" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p110" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p111" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p9" ;
+    fh:sex "male" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p111" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p111" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p112" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p112" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p113" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p113" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p112" ;
+    fh:value "Patient/p113" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p114" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p114" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p115" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p8" ;
+    fh:value "Patient/p9" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p115" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p115" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p116" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p116" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p116" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p116" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p117" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p117" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p118" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p118" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p10" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p118" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p118" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p119" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p119" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p118" ;
+    fh:value "Patient/p119" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p120" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p120" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p120" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p120" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p121" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p10" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p121" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p120" ;
+    fh:value "Patient/p121" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p122" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p122" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p122" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p123" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p123" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p122" ;
+    fh:value "Patient/p123" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p124" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p125" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p10" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p125" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p126" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p126" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p126" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p126" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p127" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p127" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p127" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p128" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p128" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p10" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p127" ;
+    fh:value "Patient/p128" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p129" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p129" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p130" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p130" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p129" ;
+    fh:value "Patient/p130" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p131" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p131" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p132" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p132" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p11" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p0" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p131" ;
+    fh:value "Patient/p132" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p133" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p134" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p134" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p135" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p135" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p135" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p135" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p136" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p136" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p11" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p135" ;
+    fh:value "Patient/p136" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p137" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p138" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p138" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p138" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p139" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p139" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p139" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p140" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p140" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p10" ;
+    fh:value "Patient/p11" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p140" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p141" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p141" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p141" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p141" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p142" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p142" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p142" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p142" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p142" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p12" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p143" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p143" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p143" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p143" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p144" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p144" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p145" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p145" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p144" ;
+    fh:value "Patient/p145" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p12" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p12" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p12" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p13" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p13" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p12" ;
+    fh:value "Patient/p13" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p14" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p0" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p14" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p14" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p14" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p15" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p15" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p15" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p16" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p16" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p17" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p17" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p0" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p16" ;
+    fh:value "Patient/p17" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p18" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p18" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p18" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p18" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p19" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p19" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p18" ;
+    fh:value "Patient/p19" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p20" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p20" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p1" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p20" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p21" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p21" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p20" ;
+    fh:value "Patient/p21" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p22" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p22" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p22" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p22" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p23" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p24" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p1" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p24" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p23" ;
+    fh:value "Patient/p24" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p25" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p25" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p25" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p26" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p26" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p27" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p27" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:id "Patient/p28" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p1" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p28" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p27" ;
+    fh:value "Patient/p28" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p29" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 77386006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:subject "Patient/p29" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 271749004 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1688478455140 ;
+    fh:subject "Patient/p29" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 420008001 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:country "Brazil" ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1685454455140 ] ;
+    fh:subject "Patient/p29" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p30" .
+
+[] a fh:Patient ;
+    fh:address [ fh:country "Brazil" ] ;
+    fh:id "Patient/p30" ;
+    fh:sex "male" .
+
+[] a fh:Observation ;
+    fh:code [ fh:coding [ fh:code 225517006 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:effective [ a fh:Period ;
+            fh:end 1687268855140 ;
+            fh:start 1687268855140 ] ;
+    fh:subject "Patient/p29" ;
+    fh:value "Patient/p30" .
+
+[] a fh:Patient ;
+    fh:id "Patient/p31" .
+
+[] a fh:Condition ;
+    fh:clinicalStatus [ fh:coding [ fh:code "active" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ] ;
+    fh:code [ fh:coding [ fh:code 9826008 ;
+                    fh:system "http://snomed.org/sct" ] ] ;
+    fh:onset 1687268855140 ;
+    fh:subject "Patient/p1" ;
+    fh:verificationStatus [ fh:coding [ fh:code "confirmed" ;
+                    fh:system "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ] .
+

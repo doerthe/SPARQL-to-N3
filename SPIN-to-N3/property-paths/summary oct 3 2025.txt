@@ -1,0 +1,72 @@
+(sorry for the length of this post)
+
+dusting off the old property path experiment results.
+I did not re-run the experiments - hoping we can make do with these ones.
+
+terminology:
+foward-chaining generated rules: "fwd"
+backward-chaining generated rules: "bwd"
+direct rules (no pre-generation): "direct"
+
+
+(1) fwd does better on gmark.
+mean performance (gmark-50) -
+fwd: 103ms
+jena: 202ms
+bwd: 1,770ms
+direct: 5,283ms
+
+mean performance (gmark-100) -
+fwd: 326ms
+jena: 1,687ms
+(did not run bwd or direct)
+
+
+(2) jena does much better on zika.
+mean performance (5000 patients, 2% chance of matching condition) -
+jena: 207ms
+bwd: 6,578ms
+fwd: 28,260ms
+direct: 59,101ms
+
+mean performance (10000 patients, 2% chance of matching condition) -
+jena: 276ms
+bwd: 22,998ms
+fwd: 86,266ms
+direct: 31,908ms (no idea why it takes less long here)
+
+sin3 did quite badly for 2 of the rules here (pp2 and pp4).
+
+
+(3) to improve the zika performance, we tried bwd with manual re-ordering of clauses ("bwd-ro") for these 2 rules. this improved performance a lot.
+5000 -
+jena: pp2: 209ms, pp4: 194ms
+bwd-ro: pp2: 2209ms, pp4: 1333ms
+
+10000 -
+jena: pp2: 286ms, pp4: 256ms
+bwd-ro: pp2: 6,660ms, pp4: 3,822ms
+
+
+(4) then, we tried making the rules more restrictive. as expected, this improved performance by much more.
+
+the most restrictive version (only single patient):
+10000 -
+jena: pp2: 82ms, pp4: 83ms
+bwd-ro: 62ms, pp4: 58ms
+
+a less restrictive version (restricting to a type of resource):
+10000 -
+jena: pp2: 121ms, pp4: 186ms
+bwd-ro: pp2: 344ms, pp4: 1,652ms
+
+so, clause re-ordering and restrictions are a potential solution for the zika dataset.
+
+some observations -
+sin3 does better for the gmark "50" and "100" datasets, but these are tiny datasets (max. 125 lines). 
+on smaller zika datasets, sin3 does not do too badly:
+- for 1000 patients (36k lines), 119ms for jena, 370ms for bwd, 1,536ms for fwd, 1,386ms for direct
+- for 2000 patients (73k lines), this gap starts to widen - 144ms for jena, 1,150ms for bwd, 4,355ms for fwd, 5,412ms for direct
+it clearly goes downhill from there. a way to fix this is to simply have "sane" queries that put restrictions on the variables in the property paths.
+
+unsure why fwd is much better on gmark and worse on zika though. 

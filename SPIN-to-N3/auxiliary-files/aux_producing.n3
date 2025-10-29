@@ -14,6 +14,8 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 
 
+# eye test/cases/pp2/test8.n3  auxiliary-files/aux_producing.n3  --nope --quantify https://eyereasoner.github.io/.well-known/genid/  --query queries/query_general_runtime.n3
+
 ##################################################
 # create variable if needed (used in where clause and in select pattern)
 ##################################################
